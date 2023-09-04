@@ -1,0 +1,36 @@
+.footer {
+    color: white;
+    padding: 3em;
+    font-size: 15px;
+    margin-top: auto;
+    background-color: rgb(54, 50, 50);
+    max-height: 270px;
+}
+
+.main-footer{
+    color: #ffffff;
+    background-color: rgb(54, 50, 50);
+    padding-top: 3em;
+    margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+.bg-footer {
+    text-align: center;
+}
+
+@media screen and (max-width: 780px) {
+    .footer {
+        color: white;
+        font-size: 10px;
+        padding: 1em;
+        margin-top: auto;
+        background-color: rgb(54, 50, 50);
+    }
+    .main-title{
+        font-size: 15px;
+    }
+}

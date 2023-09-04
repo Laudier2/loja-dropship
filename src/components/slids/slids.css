@@ -1,0 +1,14 @@
+
+.img-slid{
+    height: 300px;
+}
+
+.mrg-1{
+    margin: auto;
+}
+
+@media screen and (max-width: 780px) {
+    .img-slid{
+        height: 120px;
+    }
+}

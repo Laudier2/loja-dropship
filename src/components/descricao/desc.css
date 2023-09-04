@@ -1,0 +1,76 @@
+.card3{
+    display:none;
+}
+
+.a {
+    text-decoration:none;
+}
+
+.r2 {
+    display:none;
+}
+
+.slid{
+    height: 300px;
+}
+
+@media screen and (max-width: 780px) {
+
+    .img-d {
+        width: 10px;
+        height: 50px;
+        display: inline-block;
+        padding: 1px;
+    }
+
+    .card1{
+        border: none;
+    }
+
+    .r {
+        display:none;
+    }
+
+    .r2 {
+        display:block;
+    }
+
+    hr{
+        width: 100%;
+        font-weight: bold;
+    }
+
+    .card{
+        margin-right: 10%;
+    }
+
+    .m{
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .img-p {
+        width: 50%;
+        display: inline-block;
+    }
+
+    .card1 {
+        display: inline-block;
+        display: none;
+    }
+
+    .card2{
+        width: 242px;
+        margin-left: 0px;
+        display: inline-block;
+    }
+
+    .card3{
+        display: inline-block;
+    }
+}
+
+.img-d{
+    width: 40px;
+}
+

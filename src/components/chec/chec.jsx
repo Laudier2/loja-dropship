@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Slids from '../slids/slids'
 import { Link } from 'react-router-dom'
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
-import { CardActions } from '@material-ui/core';
+import { CardActions, CardMedia } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { red } from '@material-ui/core/colors';
 //import { commerce } from '../../lib/commerce';
 import './chec.css'
 import api from '../../api/api';
+import { AppContext } from '../../Context/Provaider';
 
 const useStyles = makeStyles(() => ({
   icones: {
@@ -34,7 +35,7 @@ const useStyles = makeStyles(() => ({
     backgroundColor: red[500],
   },
   img: {
-    width: 120,
+    width: 125,
     height: 150,
     margin: 'auto',
   },
@@ -46,7 +47,7 @@ const useStyles = makeStyles(() => ({
   }
 }))
 
-const chenger = (e) => {
+/*const chenger = (e) => {
   localStorage.setItem('name', JSON.stringify(e.name))
   localStorage.setItem('price', JSON.stringify(e.price.formatted_with_symbol))
   localStorage.setItem('imagem', JSON.stringify(e.assets[0].url))
@@ -54,12 +55,15 @@ const chenger = (e) => {
   localStorage.setItem('imagem2', JSON.stringify(e.assets[2].url))
   localStorage.setItem('imagem3', JSON.stringify(e.assets[3].url))
   localStorage.setItem('descricao', JSON.stringify(e.description))
-}
+}*/
 
 const Consumo = () => {
 
+  const { data, setData } = useContext(AppContext)
+
   const [busca, setBusca] = useState('')
   const [chec, setChec] = useState([])
+  //const [ts, setTs] = useState([])
 
   useEffect(() => {
     const Proc = async () => {
@@ -106,17 +110,30 @@ const Consumo = () => {
     }, 4000)
   }
 
-  function Teste() {
-    const r = chec.map(r => r.name)
+  function LocalSto(e) {
 
-    return r[1]
+    const dados = JSON.stringify(e)
+    const img = JSON.parse(dados)
+    const name = JSON.parse(dados)
+    const desc = JSON.parse(dados)
+    const price = JSON.parse(dados)
+
+    localStorage.setItem("img0", img.image[0])
+    localStorage.setItem("img1", img.image[1])
+    localStorage.setItem("img2", img.image[2])
+    localStorage.setItem("img3", img.image[3])
+
+    localStorage.setItem("name", name.name)
+    localStorage.setItem("description", desc.description)
+    localStorage.setItem("price", price.price)
+
+    console.log(dados)
   }
 
-  console.log(Teste())
+  //console.log(data)
 
   return (
     <div>
-
       <Slids />
       <form className="form-inline my-2 my-lg-0 container">
         <input
@@ -134,7 +151,12 @@ const Consumo = () => {
               <div key={res.id}>
                 <div className="box1 mt-4">
                   <div className="box1 card">
-                    <img src={res.image[0]} alt="imagem" className={classes.img} />
+                    <CardMedia
+                      image={res.image[0]}
+                      title="Profile Image"
+                      className={classes.img}
+                      component='img'
+                    />
                     <CardActions disableSpacing>
                       <IconButton aria-label="add to favorites" className={classes.icones_marg}>
                         <FavoriteIcon className={classes.icones} onClick={() => handlePost(res.id)} />
@@ -147,7 +169,7 @@ const Consumo = () => {
                     <small className={classes.title_price}>R$ {res.price}</small>
 
                     {/*<a href="https://checkout.chec.io/UMqoMb"data-chec-product-id="UMqoMb" className="btn btn-primary btn-block">Descrição</a>*/}
-                    <Link to="/desc" onClick={() => chenger(res)} >{/*target="_blank"*/}
+                    <Link to="/desc" onClick={() => setData(res) | LocalSto(res)} >{/*target="_blank"*/}
                       <button className="btn btn-primary btn-block">Descrição</button>
                     </Link>
                   </div>

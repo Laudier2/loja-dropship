@@ -160,14 +160,14 @@ const Descricao = () => {
                   <img className={`card ${classes.img_desc_mini} mb-1`} src={receb03} alt="Elemento vindo da função ove2" onMouseOver={() => over3(over3)} />
                 </div>
               </div>
-              <img className={classes.img_desc} id="logo" src={receb1} alt="Elemento vindo da função da pasta public" />
-              <h5 className={classes.div_title}>{receb3}</h5>
+              <img className={`${classes.img_desc}`} id="logo" src={receb1} alt="Elemento vindo da função da pasta public" />
+              <h5 className={`${classes.div_title}`}>{receb3}</h5>
               <strong><p className={classes.div_price}>R$ {receb2}</p></strong>
             </div>
           </div>
           <div className="card col-sm-5">
             <div className="card-body">
-              <h5 className="card-title h2">{receb3}</h5>
+              <h5 className="card-title h3 mb-3"><strong>{receb3}</strong></h5>
               <div className='mt-1'>
                 4.8
                 <StarOutlineIcon className='ml-2 mb-1' />

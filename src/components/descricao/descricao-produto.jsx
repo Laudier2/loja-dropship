@@ -10,11 +10,11 @@ import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
 
 const useStyles = makeStyles(() => ({
   img_desc: {
-    marginTop: '-50px',
-    width: '370px',
+    marginTop: '25px',
+    width: '340px',
     height: '70vh',
     marginLeft: '-10px',
-    '@media screen and (max-width: 1680px)': {
+    '@media screen and (max-width: 1580px)': {
       marginTop: '-320px',
     },
     '@media screen and (max-width: 1180px)': {

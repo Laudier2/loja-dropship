@@ -14,19 +14,25 @@ const useStyles = makeStyles(() => ({
     height: '50vh',
     marginLeft: '-30px',
     marginTop: '10px',
+    '@media screen and (max-width: 1680px)': {
+      marginTop: '-320px',
+    },
+    '@media screen and (max-width: 1180px)': {
+      marginTop: '-320px',
+    },
     '@media screen and (max-width: 780px)': {
       width: '200px',
       height: '30vh',
-      marginTop: '-10px',
-      marginLeft: '50px',
+      marginTop: '-190px',
+      marginLeft: '70px',
     }
   },
   img_desc_mini: {
     display: 'flex',
-    width: '50px',
+    width: '70px',
     marginLeft: '-110px',
     '@media screen and (max-width: 780px)': {
-      width: '35px',
+      width: '42px',
       marginLeft: '-10px',
     }
   },
@@ -37,13 +43,19 @@ const useStyles = makeStyles(() => ({
     '@media screen and (max-width: 780px)': {
       display: "flex",
       fontSize: '15px',
-      marginTop: '20px',
+      marginTop: '55px',
     }
   },
   img_div_mini: {
-    marginTop: '-105%',
+    marginTop: '-50%',
+    '@media screen and (max-width: 1680px)': {
+      marginTop: '20px',
+    },
+    '@media screen and (max-width: 1180px)': {
+      marginTop: '20px',
+    },
     '@media screen and (max-width: 780px)': {
-      marginTop: '-115%',
+      marginTop: '10px',
     }
   },
   div_descriptio: {
@@ -140,25 +152,17 @@ const Descricao = () => {
         <div className="card-group card">
           <div className="container col-sm-5">
             <div className="card-group">
-              {/*<div className="mt-5 card">
-                <img className={classes.img_desc_mini} src={receb1} alt="Elemento vindo da função ove0" onMouseOver={() => over0(over0)} />
-                <img className={classes.img_desc_mini} src={receb01} alt="Elemento vindo da função ove0" onMouseOver={() => over1(over1)} />
-                <img className={classes.img_desc_mini} src={receb02} alt="Elemento vindo da função ove1" onMouseOver={() => over2(over2)} />
-                <img className={classes.img_desc_mini} src={receb03} alt="Elemento vindo da função ove2" onMouseOver={() => over3(over3)} />
-              </div>*/}
-
               <div className="card-body">
-                <img className={classes.img_desc} id="logo" src={receb1} alt="Elemento vindo da função da pasta public" />
-                <h5 className={classes.div_title}>{receb3}</h5>
-                <strong><p className={classes.div_price}>R$ {receb2}</p></strong>
                 <div className={classes.img_div_mini}>
-                  <img className={classes.img_desc_mini} src={receb1} alt="Elemento vindo da função ove0" onMouseOver={() => over0(over0)} />
-                  <img className={classes.img_desc_mini} src={receb01} alt="Elemento vindo da função ove0" onMouseOver={() => over1(over1)} />
-                  <img className={classes.img_desc_mini} src={receb02} alt="Elemento vindo da função ove1" onMouseOver={() => over2(over2)} />
-                  <img className={classes.img_desc_mini} src={receb03} alt="Elemento vindo da função ove2" onMouseOver={() => over3(over3)} />
+                  <img className={`card ${classes.img_desc_mini} mb-1`} src={receb1} alt="Elemento vindo da função ove0" onMouseOver={() => over0(over0)} />
+                  <img className={`card ${classes.img_desc_mini} mb-1`} src={receb01} alt="Elemento vindo da função ove0" onMouseOver={() => over1(over1)} />
+                  <img className={`card ${classes.img_desc_mini} mb-1`} src={receb02} alt="Elemento vindo da função ove1" onMouseOver={() => over2(over2)} />
+                  <img className={`card ${classes.img_desc_mini} mb-1`} src={receb03} alt="Elemento vindo da função ove2" onMouseOver={() => over3(over3)} />
                 </div>
               </div>
-
+              <img className={classes.img_desc} id="logo" src={receb1} alt="Elemento vindo da função da pasta public" />
+              <h5 className={classes.div_title}>{receb3}</h5>
+              <strong><p className={classes.div_price}>R$ {receb2}</p></strong>
             </div>
           </div>
           <div className="card col-sm-5">

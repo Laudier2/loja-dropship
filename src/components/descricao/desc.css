@@ -1,17 +1,13 @@
-.card3{
-    display:none;
-}
-
 .a {
-    text-decoration:none;
+    text-decoration: none;
 }
 
-.r2 {
-    display:none;
-}
-
-.slid{
+.slid {
     height: 300px;
+}
+
+.img-d {
+    width: 10%;
 }
 
 @media screen and (max-width: 780px) {
@@ -19,32 +15,24 @@
     .img-d {
         width: 10px;
         height: 50px;
-        display: inline-block;
+        display: flex;
         padding: 1px;
     }
 
-    .card1{
-        border: none;
-    }
-
-    .r {
-        display:none;
-    }
-
     .r2 {
-        display:block;
+        display: block;
     }
 
-    hr{
+    hr {
         width: 100%;
         font-weight: bold;
     }
 
-    .card{
+    .card {
         margin-right: 10%;
     }
 
-    .m{
+    .m {
         text-align: center;
         font-weight: bold;
     }
@@ -54,23 +42,13 @@
         display: inline-block;
     }
 
-    .card1 {
-        display: inline-block;
-        display: none;
-    }
-
-    .card2{
+    .card2 {
         width: 242px;
         margin-left: 0px;
         display: inline-block;
     }
 
-    .card3{
+    .card3 {
         display: inline-block;
     }
 }
-
-.img-d{
-    width: 40px;
-}
-

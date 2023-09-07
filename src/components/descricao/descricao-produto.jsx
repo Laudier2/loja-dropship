@@ -1,28 +1,62 @@
 import React, { useEffect, useState } from 'react';
 import { Typography } from '@material-ui/core';
-import { Link } from '@material-ui/core';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import './desc.css'
 import { makeStyles } from '@material-ui/core/styles';
+import StarOutlineIcon from '@material-ui/icons/StarOutline';
 
 const useStyles = makeStyles(() => ({
   img_desc: {
-    width: 270,
-    height: 450,
-    marginLeft: 50,
+    width: '460px',
+    height: '50vh',
+    marginLeft: '-30px',
+    marginTop: '10px',
     '@media screen and (max-width: 780px)': {
-      width: 120,
-      height: 230,
-      marginLeft: 45,
+      width: '200px',
+      height: '30vh',
+      marginTop: '-10px',
+      marginLeft: '50px',
     }
   },
   img_desc_mini: {
-    width: '20%',
+    display: 'flex',
+    width: '50px',
+    marginLeft: '-110px',
     '@media screen and (max-width: 780px)': {
-      width: 120,
-
+      width: '35px',
+      marginLeft: '-10px',
     }
   },
-
+  div_title: {
+    fontSize: '1px',
+    display: 'none',
+    marginTop: '20px',
+    '@media screen and (max-width: 780px)': {
+      display: "flex",
+      fontSize: '15px',
+      marginTop: '20px',
+    }
+  },
+  img_div_mini: {
+    marginTop: '-105%',
+    '@media screen and (max-width: 780px)': {
+      marginTop: '-115%',
+    }
+  },
+  div_descriptio: {
+    marginTop: '350px',
+    '@media screen and (max-width: 780px)': {
+      marginTop: '150px',
+    }
+  },
+  div_price: {
+    display: 'none',
+    '@media screen and (max-width: 780px)': {
+      display: "flex",
+      fontSize: '25px',
+      marginTop: '8px',
+    }
+  }
 }))
 
 const Descricao = () => {
@@ -95,65 +129,64 @@ const Descricao = () => {
 
   return (
     <div>
-      <div className="container mt-5">
+      <div className="container col-sm-8 mt-5">
         <div className="card-group card">
           <div className="container col-sm-5">
             <div className="card-group">
-              <div className="mt-5 card1">
-                <img className="card-img-top card img-d" src={receb1} alt="Elemento vindo da função ove0" onMouseOver={() => over0(over0)} />
-                <img className="card-img-top card img-d" src={receb01} alt="Elemento vindo da função ove0" onMouseOver={() => over1(over1)} />
-                <img className="card-img-top card img-d" src={receb02} alt="Elemento vindo da função ove1" onMouseOver={() => over2(over2)} />
-                <img className="card-img-top card img-d" src={receb03} alt="Elemento vindo da função ove2" onMouseOver={() => over3(over3)} />
-              </div>
-              <div className="r2">
-                <h5 className="card-title m">{receb3}</h5>
-                <p className="card-text m">{receb2}</p>
-                <hr />
-              </div>
-              <div className="card-body card2">
+              {/*<div className="mt-5 card">
+                <img className={classes.img_desc_mini} src={receb1} alt="Elemento vindo da função ove0" onMouseOver={() => over0(over0)} />
+                <img className={classes.img_desc_mini} src={receb01} alt="Elemento vindo da função ove0" onMouseOver={() => over1(over1)} />
+                <img className={classes.img_desc_mini} src={receb02} alt="Elemento vindo da função ove1" onMouseOver={() => over2(over2)} />
+                <img className={classes.img_desc_mini} src={receb03} alt="Elemento vindo da função ove2" onMouseOver={() => over3(over3)} />
+              </div>*/}
+
+              <div className="card-body">
                 <img className={classes.img_desc} id="logo" src={receb1} alt="Elemento vindo da função da pasta public" />
-                <div className="card3 col-sm-12">
-                  <img className="img-d" src={receb1} alt="Elemento vindo da função ove0" onMouseOver={() => over0(over0)} />
-                  <img className="img-d" src={receb01} alt="Elemento vindo da função ove0" onMouseOver={() => over1(over1)} />
-                  <img className="img-d" src={receb02} alt="Elemento vindo da função ove1" onMouseOver={() => over2(over2)} />
-                  <img className="img-d" src={receb03} alt="Elemento vindo da função ove2" onMouseOver={() => over3(over3)} />
+                <h5 className={classes.div_title}>{receb3}</h5>
+                <strong><p className={classes.div_price}>R$ {receb2}</p></strong>
+                <div className={classes.img_div_mini}>
+                  <img className={classes.img_desc_mini} src={receb1} alt="Elemento vindo da função ove0" onMouseOver={() => over0(over0)} />
+                  <img className={classes.img_desc_mini} src={receb01} alt="Elemento vindo da função ove0" onMouseOver={() => over1(over1)} />
+                  <img className={classes.img_desc_mini} src={receb02} alt="Elemento vindo da função ove1" onMouseOver={() => over2(over2)} />
+                  <img className={classes.img_desc_mini} src={receb03} alt="Elemento vindo da função ove2" onMouseOver={() => over3(over3)} />
                 </div>
               </div>
 
             </div>
-            <div className="card-body">
-              <br /><br /><br /><br />
-              <br /><br /><br /><br />
-              <h5 className="card-title">Descrição</h5>
-              <Typography className="card-text" dangerouslySetInnerHTML={{ __html: receb4 }} />
-            </div>
           </div>
-          <div className="card col-sm-4 card">
+          <div className="card col-sm-5">
             <div className="card-body">
-              <h5 className="card-title h2 r">{receb3}</h5>
-              <p className="card-text h2 r">{receb2}</p>
-              <div className="btn-block btn-text show">
-                <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
-                  <br /><br />
-                  <div className="carousel-inner ">
-                    <div className="carousel-item active">
-                      <img className="d-block w-100 slid" src={receb01} alt="First slide" />
-                    </div>
-                    <div className="carousel-item">
-                      <img className="d-block w-100 slid" src={receb02} alt="Second slide" />
-                    </div>
-                    <div className="carousel-item">
-                      <img className="d-block w-100 slid" src={receb03} alt="Third slide" />
-                    </div>
-                  </div>
-                  <br /><br />
-                  <br /><br />
-                  <Link to="/" style={{ textDecoration: 'none' }}>
-                    <button className="btn btn-danger btn-block">voltar</button>
-                  </Link>
-                </div>
+              <h5 className="card-title h2">{receb3}</h5>
+              <div className='mt-1'>
+                4.8
+                <StarOutlineIcon className='ml-2 mb-1' />
+                <StarOutlineIcon className='mb-1' />
+                <StarOutlineIcon className='mb-1' />
+                <StarOutlineIcon className='mb-1' />
+                <StarOutlineIcon className='mr-2 mb-1' />
+                (6505)
+              </div>
+              <p className="card-text h2 mt-2"><strong>R$ {receb2}</strong></p>
+              <span><strong>em 12x R$7,²³</strong></span>
+              <br />
+              <a href="/desc"><span>ver os meio de pagamento</span></a>
+              <br /><br />
+              <h5>Cor: <strong>Blue</strong></h5>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-light card text-primary">Preto</button>
+                <button type="button" class="btn btn-light card text-primary">Vermelho</button>
+                <button type="button" class="btn btn-light card text-primary">Branco</button>
+              </div>
+              <div>
+                <h5 className="mt-5"><strong>DESCRIÇÃO</strong></h5>
+                <Typography className="card-text" dangerouslySetInnerHTML={{ __html: receb4 }} />
               </div>
             </div>
+          </div>
+          <div className="card-body col-sm-3">
+            <Link to="/" style={{ textDecoration: 'none' }}>
+              <button className="btn btn-danger btn-block">voltar</button>
+            </Link>
           </div>
         </div>
       </div>

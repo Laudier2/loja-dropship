@@ -59,7 +59,7 @@ const useStyles = makeStyles(() => ({
 
 const Consumo = () => {
 
-  const { data, setData } = useContext(AppContext)
+  const { setData } = useContext(AppContext)
 
   const [busca, setBusca] = useState('')
   const [chec, setChec] = useState([])

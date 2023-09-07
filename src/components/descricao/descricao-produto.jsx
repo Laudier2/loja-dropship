@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import './desc.css'
 import { makeStyles } from '@material-ui/core/styles';
 import StarOutlineIcon from '@material-ui/icons/StarOutline';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
+import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
 
 const useStyles = makeStyles(() => ({
   img_desc: {
@@ -56,6 +59,10 @@ const useStyles = makeStyles(() => ({
       fontSize: '25px',
       marginTop: '8px',
     }
+  },
+  font_span: {
+    fontSize: '16px',
+    opacity: '0.5'
   }
 }))
 
@@ -184,9 +191,41 @@ const Descricao = () => {
             </div>
           </div>
           <div className="card-body col-sm-3">
+            <p>
+              <strong>Envio para todo o país</strong>
+              <br />
+              <span className={classes.font_span}>Saiba os prazos de entrega e as formas de envio.</span>
+            </p>
+            <div className='mt-1 mb-3'>
+              <LocationOnIcon className='text-info' />
+              <a href="/desc">Calcular prazo de entrega</a>
+            </div>
+            <div>
+              <p><strong>Estoque disponível</strong> (1000) <br />
+                <span className={classes.font_span}>Esse produto esta disponivel evio rapido</span>
+              </p>
+            </div>
+            <div>
+              <p><strong>Quantidade: 1 unidade</strong> (1000) <br /><br />
+                <span className={`text-success ${classes.font_span}`}>Frete gratis comprando 2 unidade</span>
+              </p>
+            </div>
             <Link to="/" style={{ textDecoration: 'none' }}>
-              <button className="btn btn-danger btn-block">voltar</button>
+              <button className="btn btn-primary btn-block p-2">Comprar agora</button>
+              <button className="btn btn-light btn-block p-2">Adicionar ao carrinho</button>
             </Link>
+            <br />
+            <div>
+              <p><SwapHorizIcon className='text-primary' /> <strong className='text-primary'>Devolução Gratis</strong> <br />
+                <span className={classes.font_span}>Você tem 7 dias a partir da data de recebimento.</span>
+              </p>
+            </div>
+            <br />
+            <div>
+              <p><VerifiedUserIcon className='text-primary' /> <strong className='text-primary'>Compra Garantida</strong> <br />
+                <span className={classes.font_span}>eceba o produto que está esperando ou devolvemos o dinheiro.</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>

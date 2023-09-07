@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import './desc.css'
@@ -10,10 +10,10 @@ import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
 
 const useStyles = makeStyles(() => ({
   img_desc: {
-    width: '460px',
-    height: '50vh',
-    marginLeft: '-30px',
-    marginTop: '10px',
+    marginTop: '-50px',
+    width: '370px',
+    height: '70vh',
+    marginLeft: '-10px',
     '@media screen and (max-width: 1680px)': {
       marginTop: '-320px',
     },
@@ -48,6 +48,7 @@ const useStyles = makeStyles(() => ({
   },
   img_div_mini: {
     marginTop: '-50%',
+    marginLeft: '-30px',
     '@media screen and (max-width: 1680px)': {
       marginTop: '20px',
     },
@@ -79,6 +80,8 @@ const useStyles = makeStyles(() => ({
 }))
 
 const Descricao = () => {
+
+  const qunt = localStorage.getItem('quantity')
 
   const [receb1, setReceb1] = useState('')
   const [receb2, setReceb2] = useState('')
@@ -146,6 +149,21 @@ const Descricao = () => {
     document.getElementById("logo").src = `${receb03}`;
   }
 
+  //  Counter is a state initialized to 0
+  const [counter, setCounter] = useState(0)
+
+  // Function is called everytime increment button is clicked
+  const handleClick1 = () => {
+    // Counter state is incremented
+    setCounter(counter + 1)
+  }
+
+  // Function is called everytime decrement button is clicked
+  const handleClick2 = () => {
+    // Counter state is decremented
+    setCounter(counter - 1)
+  }
+
   return (
     <div>
       <div className="container col-sm-8 mt-5">
@@ -185,8 +203,7 @@ const Descricao = () => {
               <h5>Cor: <strong>Blue</strong></h5>
               <div class="btn-group" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-light card text-primary">Preto</button>
-                <button type="button" class="btn btn-light card text-primary">Vermelho</button>
-                <button type="button" class="btn btn-light card text-primary">Branco</button>
+                { }
               </div>
               <div>
                 <h5 className="mt-5"><strong>DESCRIÇÃO</strong></h5>
@@ -210,7 +227,14 @@ const Descricao = () => {
               </p>
             </div>
             <div>
-              <p><strong>Quantidade: 1 unidade</strong> (1000) <br /><br />
+              <p><strong>Quantidade:
+                <div>
+                  <button className="btn btn-outline-light text-dark" onClick={handleClick1}>+</button>
+                  {counter < 0 ? 0 : counter} unidade
+                  <button className="btn btn-outline-light text-dark" onClick={handleClick2}>-</button>
+                  ({qunt})
+                </div>
+              </strong> <br /><br />
                 <span className={`text-success ${classes.font_span}`}>Frete gratis comprando 2 unidade</span>
               </p>
             </div>

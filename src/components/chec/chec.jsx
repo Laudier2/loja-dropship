@@ -10,7 +10,13 @@ import { red } from '@material-ui/core/colors';
 //import { commerce } from '../../lib/commerce';
 import './chec.css'
 import api from '../../api/api';
-import { AppContext } from '../../Context/Provaider';
+//import { Context } from '../../Context/Provaider';
+import ReactLoading from 'react-loading';
+import { useDispatch, useSelector } from 'react-redux';
+import CustomButton from '../custom-button';
+import { BsCartPlus } from "react-icons/bs";
+import { addCart } from '../../redux/cart/cart';
+import Footer from "../footer/footer"
 
 const useStyles = makeStyles(() => ({
   icones: {
@@ -47,23 +53,14 @@ const useStyles = makeStyles(() => ({
   }
 }))
 
-/*const chenger = (e) => {
-  localStorage.setItem('name', JSON.stringify(e.name))
-  localStorage.setItem('price', JSON.stringify(e.price.formatted_with_symbol))
-  localStorage.setItem('imagem', JSON.stringify(e.assets[0].url))
-  localStorage.setItem('imagem1', JSON.stringify(e.assets[1].url))
-  localStorage.setItem('imagem2', JSON.stringify(e.assets[2].url))
-  localStorage.setItem('imagem3', JSON.stringify(e.assets[3].url))
-  localStorage.setItem('descricao', JSON.stringify(e.description))
-}*/
-
 const Consumo = () => {
 
-  const { setData } = useContext(AppContext)
+  //const { setData } = useContext(Context)
+
+  const chec = useSelector(productSlace => productSlace.products.items)
 
   const [busca, setBusca] = useState('')
-  const [chec, setChec] = useState([])
-  //const [ts, setTs] = useState([])
+  const [chec2, setChec] = useState([])
 
   useEffect(() => {
     const Proc = async () => {
@@ -81,7 +78,6 @@ const Consumo = () => {
   }, [])
 
   const classes = useStyles();
-
 
   useEffect(() => {
     return
@@ -112,7 +108,12 @@ const Consumo = () => {
 
   function LocalSto(e) {
 
+    localStorage.removeItem("id")
     const dados = JSON.stringify(e)
+    const id = JSON.parse(dados)
+    localStorage.setItem("id", id.id)
+
+    const amount = JSON.parse(dados)
     const img = JSON.parse(dados)
     const name = JSON.parse(dados)
     const desc = JSON.parse(dados)
@@ -137,17 +138,24 @@ const Consumo = () => {
     localStorage.setItem("price", price.price)
     localStorage.setItem("bar_code", bar_code.bar_code)
     localStorage.setItem("slug", slug.slug)
+    localStorage.setItem("amount", amount.amount)
     localStorage.setItem("size", size.size)
     localStorage.setItem("quantity", quantity.quantity)
 
-    console.log(dados)
+    //console.log(dados)*/
   }
 
   //console.log(data)
 
+  const dispatch = useDispatch()
+
+  function handlerCartAdd(e) {
+    dispatch(addCart(e))
+  }
+
   return (
     <div>
-      <Slids />
+      {/*<Slids />
       <form className="form-inline my-2 my-lg-0 container">
         <input
           className="form-control mr-sm-2 col-12"
@@ -156,10 +164,11 @@ const Consumo = () => {
           placeholder="Pesquisa"
           aria-label="Search"
         />
-      </form>
-      <div classNameName="mt-5 conatiner">
+        <br />
+  </form>*/}
+      <div className="mt-5 conatiner">
         <div className="container col-sm-9 mr">
-          {chec.map(res => (
+          {chec == "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> : chec.map(res => (
             <div className="div-lado">
               <div key={res.id}>
                 <div className="box1 mt-4">
@@ -172,7 +181,7 @@ const Consumo = () => {
                     />
                     <CardActions disableSpacing>
                       <IconButton aria-label="add to favorites" className={classes.icones_marg}>
-                        <FavoriteIcon className={classes.icones} onClick={() => handlePost(res.id)} />
+                        <FavoriteIcon className={classes.icones} />
                       </IconButton>
                       <IconButton aria-label="share">
                         <ShareIcon className={classes.icones} />
@@ -182,18 +191,22 @@ const Consumo = () => {
                     <small className={classes.title_price}>R$ {res.price}</small>
 
                     {/*<a href="https://checkout.chec.io/UMqoMb"data-chec-product-id="UMqoMb" className="btn btn-primary btn-block">Descrição</a>*/}
-                    <Link to="/desc" onClick={() => setData(res) | LocalSto(res)} >{/*target="_blank"*/}
+                    <Link to="/desc" onClick={() => handlePost(res) | LocalSto(res)} >{/*target="_blank"*/}
                       <button className="btn btn-primary btn-block">Descrição</button>
                     </Link>
+                    <CustomButton startIcon={<BsCartPlus />} onClick={() => handlerCartAdd(res)} >
+                      Add Cart
+                    </CustomButton>
                   </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="mt-5"></div>
+
       </div>
-    </div>
+      {/*<Footer />*/}
+    </div >
   );
 }
 

@@ -1,22 +1,26 @@
 import React from 'react'
 import './nav.css'
+import { FaOpencart } from "react-icons/fa";
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
+  const length = useSelector(cartSlice => cartSlice.cart.cartItems.length)
 
-  return ( 
+  return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark text-light navbar-red efeito col-sm-12">
-        <a className="navbar-brand col-sm-6 ml-5" href="/">
-          <h1 className="hlogo ml-5">GL-INFO</h1>
+      <nav className="navbar opcy navbar-expand-lg navbar-dark text-light navbar-red col-sm-12">
+        <a className="navbar-brand col-sm-6" href="/">
+          <h1 className="hlogo ml-5">MUNDO MULHER</h1>
         </a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse ml-5" id="navbarSupportedContent">
-          
-          <ul className="navbar-nav ml-5">
-          <li className="nav-item dropdown">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Contato
               </a>
@@ -56,13 +60,19 @@ const Nav = () => {
               </div>
             </li>
             <div className="col-sm-12 navbar-red">
-              
+
             </div>
           </ul>
         </div>
+        <div>
+          <Link to="/cart">
+            <p className='possi'>{length}</p>
+            <FaOpencart className="h2" />
+          </Link>
+        </div>
       </nav>
     </div>
-   );
+  );
 }
- 
+
 export default Nav;

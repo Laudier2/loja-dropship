@@ -26,7 +26,9 @@ const Cart = ({ isVisible, setIsVisible }) => {
           </div>
         )}
         <Link to="/cartFinali">
-          <button className="btn btn-primary btn-lg btn-block mt-5">Finaliza Compra</button>
+          {cart == "" ? <img style={{ marginLeft: "-105px", width: "700px" }} src="https://www.pngkit.com/png/detail/411-4110678_carrinho-de-compras-vazio-shopping-cart.png" alt="" srcset="" /> :
+            <button className="btn btn-primary btn-lg btn-block mt-5">Finaliza Compra</button>
+          }
         </Link>
       </Styles.CartContent>
     </Styles.CartContainer>

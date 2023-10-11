@@ -44,7 +44,7 @@ function Header() {
 
   return (
     <Styles.Container>
-      <Styles.Logo>
+      <Styles.Logo >
         <Link to="/">
           MUNDO MULHER
         </Link>

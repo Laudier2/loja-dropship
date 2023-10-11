@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slids from '../slids/slids'
 import { Link } from 'react-router-dom'
 import IconButton from '@material-ui/core/IconButton';
@@ -16,7 +16,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import CustomButton from '../custom-button';
 import { BsCartPlus } from "react-icons/bs";
 import { addCart } from '../../redux/cart/cart';
-import Footer from "../footer/footer"
 
 const useStyles = makeStyles(() => ({
   icones: {
@@ -145,7 +144,7 @@ const Consumo = () => {
     //console.log(dados)*/
   }
 
-  //console.log(data)
+  console.log(chec)
 
   const dispatch = useDispatch()
 
@@ -168,24 +167,25 @@ const Consumo = () => {
   </form>*/}
       <div className="mt-5 conatiner">
         <div className="container col-sm-9 mr">
-          {chec == "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> : chec.map(res => (
+          {chec === "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> : chec.map(res => (
             <div className="div-lado">
               <div key={res.id}>
-                <div className="box1 mt-4">
+                <div className="box1 mt-5">
                   <div className="box1 card">
+                    {console.log(res.name)}
                     <CardMedia
-                      image={res.image[0]}
+                      image={res.image}
                       title="Profile Image"
                       className={classes.img}
                       component='img'
                     />
                     <CardActions disableSpacing>
-                      <IconButton aria-label="add to favorites" className={classes.icones_marg}>
-                        <FavoriteIcon className={classes.icones} />
+                      {/*<IconButton aria-label="add to favorites" className={classes.icones_marg}>
+                        {<FavoriteIcon className={classes.icones} />}
                       </IconButton>
                       <IconButton aria-label="share">
                         <ShareIcon className={classes.icones} />
-                      </IconButton>
+                      </IconButton>*/}
                     </CardActions>
                     <h5 className={classes.title}>{res.name}</h5>
                     <small className={classes.title_price}>R$ {res.price}</small>

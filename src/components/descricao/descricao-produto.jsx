@@ -1,21 +1,19 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom"
 import { Typography } from '@material-ui/core';
-import './desc.css'
 import { makeStyles } from '@material-ui/core/styles';
 import StarOutlineIcon from '@material-ui/icons/StarOutline';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
-import api from '../../api/api';
 import ReactLoading from 'react-loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCart } from '../../redux/cart/cart';
-import Footer from '../footer/footer';
+import { ConatinerMain } from './styles';
 
 const useStyles = makeStyles(() => ({
   img_desc: {
-    marginTop: '10%',
+    marginTop: '-100%',
     width: '77%',
     height: '60vh',
     marginLeft: '50px',
@@ -28,8 +26,10 @@ const useStyles = makeStyles(() => ({
     '@media screen and (max-width: 780px)': {
       width: '75%',
       height: '30vh',
-      marginTop: '-190px',
+      marginTop: '-240px',
+      marginBottom: '20%',
       marginLeft: '70px',
+
     }
   },
   img_desc_mini: {
@@ -52,7 +52,7 @@ const useStyles = makeStyles(() => ({
     }
   },
   img_div_mini: {
-    marginTop: '-50%',
+    marginTop: '5%',
     marginLeft: '-30px',
     '@media screen and (max-width: 1680px)': {
       marginTop: '20px',
@@ -85,17 +85,6 @@ const useStyles = makeStyles(() => ({
 }))
 
 const Descricao = () => {
-
-  const [prod, setProd] = useState([])
-
-  useEffect(() => {
-    async function Product() {
-      const req = await api.get('/product')
-
-      setProd(req.data)
-    }
-    Product()
-  }, [])
 
   //console.log(orderData)
 
@@ -170,6 +159,11 @@ const Descricao = () => {
     document.getElementById("logo").src = `${img4}`;
   }
 
+  function over4() {
+    document.getElementById("logo").src = `${img5}`;
+  }
+
+
   //  Counter is a state initialized to 0
   const [counter, setCounter] = useState(0)
 
@@ -201,8 +195,8 @@ const Descricao = () => {
 
 
   return (
-    <div>
-      {productFilter == "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> :
+    <ConatinerMain>
+      {productFilter === "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> :
         <div className="container col-sm-8 mt-5 mb-5">
           <div className="card-group card">
             <div className="container col-sm-5">
@@ -213,6 +207,7 @@ const Descricao = () => {
                     <img className={`card ${classes.img_desc_mini} mb-1`} src={img2 === "" ? "" : img2} alt="" onMouseOver={() => over1(over1)} />
                     <img className={`card ${classes.img_desc_mini} mb-1`} src={img3 === "" ? "" : img3} alt="" onMouseOver={() => over2(over2)} />
                     <img className={`card ${classes.img_desc_mini} mb-1`} src={img4 === "" ? "" : img4} alt="" onMouseOver={() => over3(over3)} />
+                    <img className={`card ${classes.img_desc_mini} mb-1`} src={img5 === "" ? "" : img5} alt="" onMouseOver={() => over3(over4)} />
                   </div>
                 </div>
                 <img className={`${classes.img_desc}`} id="logo" src={productFilter[0].image[0]} alt="Elemento vindo da função da pasta public" />
@@ -298,7 +293,7 @@ const Descricao = () => {
           <div className="mt-5"></div>
           {/*  <Footer />*/}
         </div>}
-    </div >
+    </ConatinerMain >
   );
 }
 

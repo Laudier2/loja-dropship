@@ -46,3 +46,111 @@ export const CartTotal = styled.p`
   font-size: 1.125rem;
   margin-bottom: 15px;
 `;
+
+export const Mais = styled.b`
+  position: absolute;
+  margin-top: 35px;
+  margin-left: -130px;
+`
+
+export const Menos = styled.b`
+  position: absolute;
+  margin-top: 35px;
+  margin-left: -130px;
+`
+
+export const cartQuantity = styled.b`
+  margin: 10px;
+`
+
+export const TableCartFinalize = styled.div`
+  & table {
+    width: 960;
+    margin: 0 auto;
+
+    & thead {
+      display: flex;
+  
+      & tr {
+        display: flex;
+      }
+    }
+  
+    & tbody {
+      display: table;
+
+      & img {
+        width: 30%;
+      } 
+
+      & td {
+        display: table-cell;
+        padding: 10px;
+        width: 300px;
+
+        & b {
+          margin: 5px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    & table {
+    width: 960;
+    margin: 0 auto;
+
+    & thead {
+      display: flex;
+  
+      & tr {
+        display: flex;
+      }
+    }
+  
+    & tbody {
+      display: table;
+
+      & img {
+        width: 50px;
+      } 
+
+      & td {
+        display: table-cell;
+        padding: 5px;
+        width: 200px;
+        font-size: 8p;
+
+        & b {
+          margin: 5px;
+          font-size: 8p;
+        }
+      }
+    }
+  }
+  }
+`
+
+export const Button = styled.button`
+  background-color: aquamarine;
+  border: none;
+  border-radius: 6px;
+  width: 30%;
+  padding: 10px;
+  text-align: center;
+  margin-left: 40%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+
+  &:hover {
+    background-color: rgba(0, 255, 255, 0.582);
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
+    font-size: 15px;
+    margin-left: 10%;
+  }
+`

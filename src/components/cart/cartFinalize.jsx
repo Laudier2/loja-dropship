@@ -1,12 +1,16 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from "react-icons/ai";
+import { Button, TableCartFinalize, cartQuantity } from "./styles"
+import { useHistory } from "react-router-dom"
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 export default function CartFinalize() {
 
-    const cart = useSelector(state => [state.cart.cartItems])
+    const hitory = useHistory()
 
-    console.log({ m: cart })
+    const cart = useSelector(state => state.cart.cartItems)
+
+    console.log(cart)
 
     const handleRemoveClick = (id) => {
         //dispatch(removeItem(id))
@@ -22,175 +26,98 @@ export default function CartFinalize() {
     };
 
     return (
-        <div>
-            <table class="table container">
-                <thead>
-                    <tr>
-                        <th scope="">Aque esta todos os items selecionados</th>
-                    </tr>
-
-                </thead>
-                <tbody>
-
-                    {cart.map(carProduct => (
-                        <tr key={carProduct.id}>
-                            <div className="" style={{ width: '18rem' }}>
-                                <img className="card-img-top col-5" src={carProduct[0].image} alt="Card" />
-
-                            </div>
-                            <td>
-                                <div style={{ width: '30rem' }}>
-
-                                    <div class="">
-                                        <h5 class="card-title">
-                                            {carProduct[0].name}
-                                        </h5>
-                                        <p class="card-text">
-                                            {carProduct[0].description}
-                                        </p>
-
-                                    </div>
-                                </div>
-                            </td>
-                            <td >Quantidade de items:
-                                <AiOutlineMinus
-                                    size={20}
-                                    onClick={handleDecreaseClick}
-                                    aria-label={`Decrease quantity of ${carProduct[0].name}`}
-                                />
-
-
-                                <AiOutlinePlus
-                                    size={20}
-                                    onClick={handleIncreaseClick}
-                                    aria-label={`Increase quantity of ${carProduct[0].name}`}
-                                />
-                                {carProduct[0].cartQuantity}</td>
-
-                            <td>Preco de cada unidade: {carProduct[0].price}</td>
-
-                        </tr>
-                    ))},
-                    {cart.map(carProduct => (
-                        <tr key={carProduct.id}>
-                            <div className="" style={{ width: '18rem' }}>
-                                <img className="card-img-top col-5" src={carProduct[1].image} alt="Card" />
-
-                            </div>
-                            <td>
-                                <div style={{ width: '30rem' }}>
-
-                                    <div class="">
-                                        <h5 class="card-title">
-                                            {carProduct[1].name}
-                                        </h5>
-                                        <p class="card-text">
-                                            {carProduct[1].description}
-                                        </p>
-
-                                    </div>
-                                </div>
-                            </td>
-                            <td >Quantidade de items:
-                                <AiOutlineMinus
-                                    size={20}
-                                    onClick={handleDecreaseClick}
-                                    aria-label={`Decrease quantity of ${carProduct[1].name}`}
-                                />
-
-
-                                <AiOutlinePlus
-                                    size={20}
-                                    onClick={handleIncreaseClick}
-                                    aria-label={`Increase quantity of ${carProduct[1].name}`}
-                                />
-                                {carProduct[1].cartQuantity}</td>
-
-                            <td>Preco de cada unidade: {carProduct[1].price}</td>
-
-                        </tr>
-                    ))},
-                    {cart.map(carProduct => (
-                        <tr key={carProduct.id}>
-                            <div className="" style={{ width: '18rem' }}>
-                                <img className="card-img-top col-5" src={carProduct[2].image} alt="Card" />
-
-                            </div>
-                            <td>
-                                <div style={{ width: '30rem' }}>
-
-                                    <div class="">
-                                        <h5 class="card-title">
-                                            {carProduct[2].name}
-                                        </h5>
-                                        <p class="card-text">
-                                            {carProduct[2].description}
-                                        </p>
-
-                                    </div>
-                                </div>
-                            </td>
-                            <td >Quantidade de items:
-                                <AiOutlineMinus
-                                    size={20}
-                                    onClick={handleDecreaseClick}
-                                    aria-label={`Decrease quantity of ${carProduct[2].name}`}
-                                />
-
-
-                                <AiOutlinePlus
-                                    size={20}
-                                    onClick={handleIncreaseClick}
-                                    aria-label={`Increase quantity of ${carProduct[2].name}`}
-                                />
-                                {carProduct[2].cartQuantity}</td>
-
-                            <td>Preco de cada unidade: {carProduct[2].price}</td>
-
-                        </tr>
-                    ))},
-                    {cart.map(carProduct => (
-                        <tr key={carProduct.id}>
-                            <div className="" style={{ width: '18rem' }}>
-                                <img className="card-img-top col-5" src={carProduct[3].image} alt="Card" />
-
-                            </div>
-                            <td>
-                                <div style={{ width: '30rem' }}>
-
-                                    <div class="">
-                                        <h5 class="card-title">
-                                            {carProduct[3].name}
-                                        </h5>
-                                        <p class="card-text">
-                                            {carProduct[3].description}
-                                        </p>
-
-                                    </div>
-                                </div>
-                            </td>
-                            <td >Quantidade de items:
-                                <AiOutlineMinus
-                                    size={20}
-                                    onClick={handleDecreaseClick}
-                                    aria-label={`Decrease quantity of ${carProduct[3].name}`}
-                                />
-
-
-                                <AiOutlinePlus
-                                    size={20}
-                                    onClick={handleIncreaseClick}
-                                    aria-label={`Increase quantity of ${carProduct[3].name}`}
-                                />
-                                {carProduct[3].cartQuantity}</td>
-
-                            <td>Preco de cada unidade: {carProduct[3].price}</td>
-
-                        </tr>
-                    ))},
-
-                </tbody>
-            </table>
-        </div>
+        <>
+            {cart == "" ? hitory.push("/") :
+                <div>
+                    <TableCartFinalize>
+                        <table>
+                            <thead>
+                                <tr>Carrinho de compra finalize</tr>
+                            </thead>
+                            <hr />
+                            <tbody>
+                                {cart.map((res) => (
+                                    <tr>
+                                        <div>
+                                            <td>
+                                                <img src={res.image} alt="img" />
+                                            </td>
+                                            <td>
+                                                {res.name}
+                                            </td>
+                                            <td>
+                                                <b>Quantidade</b>
+                                                {res.cartQuantity}
+                                            </td>
+                                            <td>
+                                                <b>Preco</b>
+                                                ${res.price * res.cartQuantity}
+                                            </td>
+                                        </div>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </TableCartFinalize>
+                    <Button>Escolher a forma de pagamento</Button>
+                </div>
+            }
+        </>
     )
 }
+
+/*<div>
+    <table class="table container">
+        <thead>
+            <tr>
+                <th scope="">Aque esta todos os items selecionados</th>
+            </tr>
+
+        </thead>
+        <tbody>
+
+            {cart.map(carProduct => (
+                <tr key={carProduct.id}>
+                    <div className="" style={{ width: '18rem' }}>
+                        <img className="card-img-top col-5 mt-3" src={carProduct.image} alt="Card" />
+
+                    </div>
+                    <td>
+                        <div style={{ width: '30rem' }}>
+
+                            <div class="">
+                                <h5 class="card-title">
+                                    {carProduct.name}
+                                </h5>
+                                <p class="card-text">
+                                    {carProduct.description}
+                                </p>
+
+                            </div>
+                        </div>
+                    </td>
+                    <td >Quantidade
+                        <AiOutlineMinus
+                            size={20}
+                            onClick={handleDecreaseClick}
+                            aria-label={`Decrease quantity of ${carProduct.name}`}
+                        />
+
+
+                        {carProduct.cartQuantity}
+
+
+                        <AiOutlinePlus
+                            size={20}
+                            onClick={handleIncreaseClick}
+                            aria-label={`Increase quantity of ${carProduct.name}`}
+                        />
+                    </td>
+
+                    <td>Preco {carProduct.price}</td>
+
+                </tr>
+            ))}
+        </tbody>
+    </table>
+            </div>*/

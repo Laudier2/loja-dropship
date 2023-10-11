@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify"
 
 const initialState = {
-    cartItems: [],
+    cartItems: localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [],
     cartTotalQuantyti: 0,
     cartTotalAmount: 0,
 }
@@ -26,11 +26,24 @@ const cartSlice = createSlice({
                     position: "bottom-left"
                 })
             }
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
+        },
+        removeFromCart(state, action) {
+            const nextCartItems = state.cartItems.filter(
+                (cartItem) => cartItem.id !== action.payload.id
+            )
+
+            state.cartItems = nextCartItems;
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
+
+            toast.error(`${action.payload.name} Removido do carrimho`, {
+                position: "bottom-left"
+            })
         }
     }
 })
 
-export const { addCart } = cartSlice.actions;
+export const { addCart, removeFromCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
 

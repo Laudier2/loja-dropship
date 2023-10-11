@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CustomButtonContainer = styled.button`
   width: 100%;
-  background-color: #222222;
+  background-color: gray;
   color: #eeeeee;
   display: flex;
   align-items: center;
@@ -12,8 +12,8 @@ export const CustomButtonContainer = styled.button`
   border: none;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
   font-weight: 600;
   transition: all 0.5s ease;
 

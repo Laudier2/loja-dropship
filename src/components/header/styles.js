@@ -25,6 +25,11 @@ export const Logo = styled.div`
       0 5px 10px rgba(0, 0, 0, .25),
       0 10px 10px rgba(0, 0, 0, .2),
       0 20px 20px rgba(0, 0, 0, .15);
+
+  & a {
+    text-decoration: none;
+    font-size: 25px;
+  }
 `;
 
 export const Buttons = styled.div`

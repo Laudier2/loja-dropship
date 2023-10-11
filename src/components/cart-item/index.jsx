@@ -3,6 +3,7 @@ import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from "react-icons/ai";
 // Styles
 import * as Styles from "./styles";
 import { useDispatch, useSelector } from "react-redux";
+import { addCart, removeFromCart } from "../../redux/cart/cart";
 //import { removeItem, addItem } from "../../redux/cart/cart";
 
 const CartItem = ({ product }) => {
@@ -11,19 +12,19 @@ const CartItem = ({ product }) => {
   const length = useSelector((state) => state.cart.length)
 
   const handleRemoveClick = (id) => {
-    //dispatch(removeItem(id))
+    dispatch(removeFromCart(id))
     console.log(id)
   };
 
-  const handleIncreaseClick = (id) => {
-    //dispatch(addItem({ ...product, quantity: product.quantity + 1 }))
+  const handleIncreaseClick = (dataProduct) => {
+    dispatch(addCart(dataProduct))
   };
 
-  const handleDecreaseClick = () => {
-    //dispatch(addItem({ ...product, quantity: product.quantity - 1 }))
+  const handleDecreaseClick = (dataProduct) => {
+    dispatch(addCart(dataProduct))
   };
 
-  console.log(product.id)
+  console.log(product)
 
   return (
     <div>
@@ -32,26 +33,26 @@ const CartItem = ({ product }) => {
 
         <Styles.CartItemInfo>
           <p>{product.name}</p>
-          <p>R${product.price}</p>
+          <p>R${product.price * product.cartQuantity}</p>
 
           <Styles.CartItemQuantity>
             <AiOutlineMinus
               size={20}
-              onClick={handleDecreaseClick}
+              onClick={() => handleDecreaseClick(product)}
               aria-label={`Decrease quantity of ${product.name}`}
             />
             <b>{length}</b>
             <p>{product.cartQuantity}</p>
             <AiOutlinePlus
               size={20}
-              onClick={handleIncreaseClick}
+              onClick={() => handleIncreaseClick(product)}
               aria-label={`Increase quantity of ${product.name}`}
             />
           </Styles.CartItemQuantity>
         </Styles.CartItemInfo>
 
         <Styles.RemoveButton
-          onClick={() => handleRemoveClick(product.product.id)}
+          onClick={() => handleRemoveClick(product)}
           aria-label={`Remove`}
         >
           <AiOutlineClose size={25} />

@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react'
 import "react-toastify/dist/ReactToastify.css"
 import { ToastContainer } from "react-toastify"
 import { ErrorBoundary } from "react-error-boundary"
-//import Nav from './components/nav/navBar';
 import { Route, Switch } from 'react-router-dom';
-import Consume from './components/chec/chec';
+import Products from './components/chec/Products';
 import Desc2 from './components/descricao/descricao-produto'
 import { Context } from './Context/Provaider';
 import Card from './components/cart/CartMercadopago';
@@ -56,13 +55,8 @@ function App() {
     return <h4>Houve um erro</h4>
     }
 
-    console.log(q)
-
   return (
     <Context.Provider value={{data, setData, preferenceId, isLoading, orderData, prodFilter, setOrderData, setIsLoading, setPreferenceId, orderData2, setOrderData2}}>
-      {/*<Checkout onClick={handleClick} description />
-      <Payment />*/}
-      {/*<ReactLoading type='bars' color='#0000FF' />*/}
       <Header />
       <ToastContainer />
       <div className="page-container">
@@ -76,7 +70,7 @@ function App() {
               
             <Route exact path="/cart" component={Cart} />   
             <Route exact path="/cartFinali" component={CartFinalize} />   
-            <Route exact path='/' component={Consume}/>
+            <Route exact path='/' component={Products}/>
             <Route exact path='/desc' component={Desc2} />  
             <Route exact path="/card" component={Card} />   
           </Switch>

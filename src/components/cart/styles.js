@@ -26,10 +26,9 @@ export const CartEscapeArea = styled.div`
 
 export const CartContent = styled.div`
   height: 100%;
-  min-width: 500px;
+  min-width: 200px;
   z-index: 200;
   background-color: white;
-  padding: 20px;
   overflow-y: scroll;
 
   @media (max-width: 768px) {

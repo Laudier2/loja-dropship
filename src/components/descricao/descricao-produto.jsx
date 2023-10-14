@@ -9,7 +9,7 @@ import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
 import ReactLoading from 'react-loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCart } from '../../redux/cart/cart';
-import { ConatinerMain } from './styles';
+import { ConatinerMain, ContainerDecription, ContainerDecriptionSecudaria, ContainerImage, ContainerImageMini } from './styles';
 
 const useStyles = makeStyles(() => ({
   img_desc: {
@@ -197,100 +197,93 @@ const Descricao = () => {
   return (
     <ConatinerMain>
       {productFilter === "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> :
-        <div className="container col-sm-8 mt-5 mb-5">
-          <div className="card-group card">
-            <div className="container col-sm-5">
-              <div className="card-group">
-                <div className="card-body">
+        <div >
+          <div >
+            <div >
+              <div >
+                <div >
                   <div className={classes.img_div_mini}>
-                    <img className={`card ${classes.img_desc_mini} mb-1`} src={img1 === "" ? "" : img1} alt="" onMouseOver={() => over0(over0)} />
+                    <ContainerImageMini>
+                      <img src={img1 === "" ? "" : img1} alt="" onMouseOver={() => over0(over0)} />
+                    </ContainerImageMini>
+                    {/*<img className={`card ${classes.img_desc_mini} mb-1`} src={img1 === "" ? "" : img1} alt="" onMouseOver={() => over0(over0)} />
                     <img className={`card ${classes.img_desc_mini} mb-1`} src={img2 === "" ? "" : img2} alt="" onMouseOver={() => over1(over1)} />
                     <img className={`card ${classes.img_desc_mini} mb-1`} src={img3 === "" ? "" : img3} alt="" onMouseOver={() => over2(over2)} />
                     <img className={`card ${classes.img_desc_mini} mb-1`} src={img4 === "" ? "" : img4} alt="" onMouseOver={() => over3(over3)} />
-                    <img className={`card ${classes.img_desc_mini} mb-1`} src={img5 === "" ? "" : img5} alt="" onMouseOver={() => over3(over4)} />
+  <img className={`card ${classes.img_desc_mini} mb-1`} src={img5 === "" ? "" : img5} alt="" onMouseOver={() => over3(over4)} />*/}
                   </div>
                 </div>
-                <img className={`${classes.img_desc}`} id="logo" src={productFilter[0].image[0]} alt="Elemento vindo da função da pasta public" />
-                <h5 className={`${classes.div_title}`}>{receb_data_name}</h5>
-                <strong><p className={classes.div_price}>R$ {price}</p></strong>
-              </div>
-            </div>
-            <div className="card col-sm-5">
-              <div className="card-body">
-                <h5 className="card-title h3 mb-3"><strong>{receb_data_name}</strong></h5>
-                <div className='mt-1'>
-                  4.8
-                  <StarOutlineIcon className='ml-2 mb-1' />
-                  <StarOutlineIcon className='mb-1' />
-                  <StarOutlineIcon className='mb-1' />
-                  <StarOutlineIcon className='mb-1' />
-                  <StarOutlineIcon className='mr-2 mb-1' />
-                  (6505)
-                </div>
-                <p className="card-text h2 mt-2"><strong>R$ {price}</strong></p>
-                <span><strong>em 12x R$7,²³</strong></span>
-                <br />
-                <a href="/desc"><span>ver os meio de pagamento</span></a>
-                <br /><br />
-                <h5>Cor: <strong>Blue</strong></h5>
-                <div class="btn-group" role="group" aria-label="Basic example">
-                  <button type="button" class="btn btn-light card text-primary">Preto</button>
-                  { }
-                </div>
-                <div>
-                  <h5 className="mt-5"><strong>DESCRIÇÃO</strong></h5>
-                  <Typography className="card-text" dangerouslySetInnerHTML={{ __html: desc }} />
-                </div>
-              </div>
-            </div>
-            <div className="card-body col-sm-3">
-              <p>
-                <strong>Envio para todo o país</strong>
-                <br />
-                <span className={classes.font_span}>Saiba os prazos de entrega e as formas de envio.</span>
-              </p>
-              <div className='mt-1 mb-3'>
-                <LocationOnIcon className='text-info' />
-                <a href="/desc">Calcular prazo de entrega</a>
-              </div>
-              <div>
-                <p><strong>Estoque disponível</strong> (1000) <br />
-                  <span className={classes.font_span}>Esse produto esta disponivel evio rapido</span>
-                </p>
-              </div>
-              <div>
-                <p><strong>Quantidade:
+                <ContainerImage >
+                  <img src={img1} id="logo" alt="Elemento vindo da função da pasta public" />
+                </ContainerImage>
+                <ContainerDecription>
+                  <h5 ><strong>{receb_data_name}</strong></h5>
                   <div>
-                    <button className="btn btn-outline-light text-dark" onClick={handleClick1}>+</button>
-                    {counter < 0 ? 0 : counter} unidade
-                    <button className="btn btn-outline-light text-dark" onClick={handleClick2}>-</button>
-                    ({qunt})
+                    4.8
+                    <StarOutlineIcon />
+                    <StarOutlineIcon />
+                    <StarOutlineIcon />
+                    <StarOutlineIcon />
+                    <StarOutlineIcon />
+                    (6505)
                   </div>
-                </strong> <br /><br />
-                  <span className={`text-success ${classes.font_span}`}>Frete gratis comprando 2 unidade</span>
-                </p>
-              </div>
-              <Link to="/card" style={{ textDecoration: 'none' }}>
-                <button className="btn btn-primary btn-block p-2">Comprar agora</button>
-                {/*<button className="btn btn-primary btn-block p-2">Comprar agora</button>*/}
-              </Link>
-              <button className="btn btn-light btn-block p-2" onClick={() => handlerCartAdd(productFilter)}>Adicionar ao carrinho</button>
+                  <p><strong>R$ {price}</strong></p>
+                  <span><strong>em 12x R$7,²³</strong></span>
+                  <br />
+                  <a href="/desc"><span>ver os meio de pagamento</span></a>
+                  <br /><br />
+                  <h5>Cor: <strong>Blue</strong></h5>
+                  <div role="group" aria-label="Basic example">
+                    <button type="button">Preto</button>
+                    { }
+                  </div>
+                  <div>
+                    <h5 ><strong>DESCRIÇÃO</strong></h5>
+                  </div>
+                </ContainerDecription>
+                <ContainerDecriptionSecudaria>
 
-              <br />
-              <div>
-                <p><SwapHorizIcon className='text-primary' /> <strong className='text-primary'>Devolução Gratis</strong> <br />
-                  <span className={classes.font_span}>Você tem 7 dias a partir da data de recebimento.</span>
-                </p>
-              </div>
-              <br />
-              <div>
-                <p><VerifiedUserIcon className='text-primary' /> <strong className='text-primary'>Compra Garantida</strong> <br />
-                  <span className={classes.font_span}>eceba o produto que está esperando ou devolvemos o dinheiro.</span>
-                </p>
+                  <strong>Envio para todo o país</strong>
+                  <br />
+                  <span>Saiba os prazos de entrega e as formas de envio.</span>
+                  <div >
+                    <LocationOnIcon />
+                    <a href="/desc">Calcular prazo de entrega</a>
+                  </div>
+                  <div>
+                    <p><strong>Quantidade:
+                      <div>
+                        <button className="" onClick={handleClick1}>+</button>
+                        {counter < 0 ? 0 : counter} unidade
+                        <button className="" onClick={handleClick2}>-</button>
+                        ({qunt})
+                      </div>
+                    </strong> <br /><br />
+                      <span>Frete gratis comprando 2 unidade</span>
+                    </p>
+                  </div>
+                  <Link to="/card" style={{ textDecoration: 'none' }}>
+                    <button>Comprar agora</button>
+                    {/*<button className="btn btn-primary btn-block p-2">Comprar agora</button>*/}
+                  </Link>
+                  <button onClick={() => handlerCartAdd(productFilter)}>Adicionar ao carrinho</button>
+
+                  <br />
+                  <div>
+                    <p><SwapHorizIcon /> <strong>Devolução Gratis</strong> <br />
+                      <span >Você tem 7 dias a partir da data de recebimento.</span>
+                    </p>
+                  </div>
+                  <br />
+                  <div>
+                    <p><VerifiedUserIcon /> <strong >Compra Garantida</strong> <br />
+                      <span >eceba o produto que está esperando ou devolvemos o dinheiro.</span>
+                    </p>
+                  </div>
+                </ContainerDecriptionSecudaria>
               </div>
             </div>
           </div>
-          <div className="mt-5"></div>
           {/*  <Footer />*/}
         </div>}
     </ConatinerMain >

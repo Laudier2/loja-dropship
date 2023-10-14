@@ -39,11 +39,27 @@ const cartSlice = createSlice({
             toast.error(`${action.payload.name} Removido do carrimho`, {
                 position: "bottom-left"
             })
+        },
+        decrementCart(state, action) {
+            const itemIndex = state.cartItems.findIndex(
+                (cartItem) => cartItem.id === action.payload.id
+            )
+            if (state.cartItems[itemIndex].cartQuantity > 1) {
+                state.cartItems[itemIndex].cartQuantity -= 1;
+            } else if (state.cartItems[itemIndex].cartQuantity === 1) {
+                const nextCartItems = state.cartItems.filter(
+                    (cartItem) => cartItem.id !== action.payload.id
+                )
+
+                state.cartItems = nextCartItems
+            }
+
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
         }
     }
 })
 
-export const { addCart, removeFromCart } = cartSlice.actions;
+export const { addCart, removeFromCart, decrementCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
 

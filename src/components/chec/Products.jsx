@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Slids from '../slids/slids'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
@@ -13,48 +13,15 @@ import api from '../../api/api';
 //import { Context } from '../../Context/Provaider';
 import ReactLoading from 'react-loading';
 import { useDispatch, useSelector } from 'react-redux';
-import CustomButton from '../custom-button';
+import { CustomButton, CustomButtonDescription } from '../custom-button';
 import { BsCartPlus } from "react-icons/bs";
 import { addCart } from '../../redux/cart/cart';
+import { ContainerBody, ContainerProduct, ProductImage, ProductInfo } from './stylend';
 
-const useStyles = makeStyles(() => ({
-  icones: {
-    width: 16,
-  },
-  icones_marg: {
-    marginRight: '40%',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 16,
-    maxWidth: '17ch',
-    overflow: 'hidden',
-    textText: 'ellipsis',
-    whiteSpace: 'nowrap',
-  },
-  title_price: {
-    fontWeight: 'bold',
-    fontSize: 15,
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
-  img: {
-    width: 125,
-    height: 150,
-    margin: 'auto',
-  },
-  texto: {
-    maxWidth: '15ch',
-    overflow: 'hidden',
-    textText: 'ellipsis',
-    whiteSpace: 'nowrap',
-  }
-}))
 
-const Consumo = () => {
+const Products = () => {
 
-  //const { setData } = useContext(Context)
+  const history = useHistory()
 
   const chec = useSelector(productSlace => productSlace.products.items)
 
@@ -76,7 +43,6 @@ const Consumo = () => {
     Proc()
   }, [])
 
-  const classes = useStyles();
 
   useEffect(() => {
     return
@@ -148,66 +114,35 @@ const Consumo = () => {
 
   const dispatch = useDispatch()
 
-  function handlerCartAdd(e) {
+  function hendlerCartAdd(e) {
     dispatch(addCart(e))
   }
 
+  function hendleUrl() {
+    history.push("/desc")
+  }
+
   return (
-    <div>
-      {/*<Slids />
-      <form className="form-inline my-2 my-lg-0 container">
-        <input
-          className="form-control mr-sm-2 col-12"
-          onChange={handleChanher}
-          type="search"
-          placeholder="Pesquisa"
-          aria-label="Search"
-        />
-        <br />
-  </form>*/}
-      <div className="mt-5 conatiner">
-        <div className="container col-sm-9 mr">
-          {chec === "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> : chec.map(res => (
-            <div className="div-lado">
-              <div key={res.id}>
-                <div className="box1 mt-5">
-                  <div className="box1 card">
-                    {console.log(res.name)}
-                    <CardMedia
-                      image={res.image}
-                      title="Profile Image"
-                      className={classes.img}
-                      component='img'
-                    />
-                    <CardActions disableSpacing>
-                      {/*<IconButton aria-label="add to favorites" className={classes.icones_marg}>
-                        {<FavoriteIcon className={classes.icones} />}
-                      </IconButton>
-                      <IconButton aria-label="share">
-                        <ShareIcon className={classes.icones} />
-                      </IconButton>*/}
-                    </CardActions>
-                    <h5 className={classes.title}>{res.name}</h5>
-                    <small className={classes.title_price}>R$ {res.price}</small>
-
-                    {/*<a href="https://checkout.chec.io/UMqoMb"data-chec-product-id="UMqoMb" className="btn btn-primary btn-block">Descrição</a>*/}
-                    <Link to="/desc" onClick={() => handlePost(res) | LocalSto(res)} >{/*target="_blank"*/}
-                      <button className="btn btn-primary btn-block">Descrição</button>
-                    </Link>
-                    <CustomButton startIcon={<BsCartPlus />} onClick={() => handlerCartAdd(res)} >
-                      Add Cart
-                    </CustomButton>
-                  </div>
-                </div>
-              </div>
+    <ContainerBody>
+      {chec == "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> : chec.map(res => (
+        <ProductImage imageUrl={res.image}>
+          <ContainerProduct>
+            <div key={res.id}>
+              <CustomButtonDescription onClick={hendleUrl} >
+                Descrição
+              </CustomButtonDescription>
+              <CustomButton startIcon={<BsCartPlus />} onClick={() => hendlerCartAdd(res)} >
+                Adicionar ao carrinho
+              </CustomButton>
             </div>
-          ))}
-        </div>
+          </ContainerProduct>
+        </ProductImage>
 
-      </div>
-      {/*<Footer />*/}
-    </div >
+
+      ))
+      }
+    </ContainerBody >
   );
 }
 
-export default Consumo;
+export default Products;

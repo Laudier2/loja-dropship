@@ -16,7 +16,7 @@ export const CustomButtonContainer = styled.button`
 
   &:hover {
     cursor: pointer;
-    background-color: green;
+    background-color: rgb(10, 155, 212);
   }
 `;
 
@@ -36,7 +36,7 @@ export const CustomButtonDescription = styled.button`
 
   &:hover {
     cursor: pointer;
-    background-color: green;
+    background-color: rgb(10, 155, 212);
   }
 `;
 

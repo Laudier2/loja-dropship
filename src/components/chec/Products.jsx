@@ -78,7 +78,6 @@ const Products = () => {
     const id = JSON.parse(dados)
     localStorage.setItem("id", id.id)
 
-    const amount = JSON.parse(dados)
     const img = JSON.parse(dados)
     const name = JSON.parse(dados)
     const desc = JSON.parse(dados)
@@ -103,10 +102,10 @@ const Products = () => {
     localStorage.setItem("price", price.price)
     localStorage.setItem("bar_code", bar_code.bar_code)
     localStorage.setItem("slug", slug.slug)
-    localStorage.setItem("amount", amount.amount)
     localStorage.setItem("size", size.size)
     localStorage.setItem("quantity", quantity.quantity)
 
+    history.push("/desc")
     //console.log(dados)*/
   }
 
@@ -128,7 +127,7 @@ const Products = () => {
         <ProductImage imageUrl={res.image}>
           <ContainerProduct>
             <div key={res.id}>
-              <CustomButtonDescription onClick={hendleUrl} >
+              <CustomButtonDescription onClick={() => LocalSto(res)} >
                 Descrição
               </CustomButtonDescription>
               <CustomButton startIcon={<BsCartPlus />} onClick={() => hendlerCartAdd(res)} >

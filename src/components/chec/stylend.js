@@ -1,34 +1,38 @@
 import styled from "styled-components";
 
 export const ProductItems = styled.div`
-    display: inline-block;
-`
+  display: inline-block;
+`;
 export const ContainerBody = styled.div`
-    margin: auto;
-    display: flex;
-    height: 100%;
-    width: 80%;
-`
+  margin: auto;
+  display: flex;
+  height: 100%;
+  width: 80%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
 export const ContainerProduct = styled.div`
-    margin: 10px;
-    width: 200px;
-    display: inline-block;
+  margin: 10px;
+  width: 200px;
+  display: inline-block;
 
-    & img {
-        margin-top: 50px;
-        width: 160px;
-        height: 28vh;
-        border-radius: 6px;
-        transition: 1s;
+  & img {
+    margin-top: 50px;
+    width: 160px;
+    height: 28vh;
+    border-radius: 6px;
+    transition: 1s;
 
-        &:hover {
-            transform: scale(1.3);
-            box-shadow: 0px 0px 0px rgb(54, 52, 52);
-            border-radius: 6px;
-            z-index: 2;
-        }
+    &:hover {
+      transform: scale(1.3);
+      box-shadow: 0px 0px 0px rgb(54, 52, 52);
+      border-radius: 6px;
+      z-index: 2;
     }
-`
+  }
+`;
 
 export const ProductImage = styled.div`
   background-image: ${(props) => `url('${props.imageUrl}')`};
@@ -46,49 +50,49 @@ export const ProductImage = styled.div`
   background-blend-mode: color;
   margin: 12px;
 
-    &:hover {
-        transform: scale(1.1);
-        box-shadow: 0px 0px 0px rgb(54, 52, 52);
-        border-radius: 6px;
-        z-index: 2;
-    }
-    
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 0px rgb(54, 52, 52);
+    border-radius: 6px;
+    z-index: 2;
+  }
+
+  button {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+    margin: 2px;
+    font-size: 8px;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: color;
+    cursor: pointer;
 
     button {
-        visibility: hidden;
-        opacity: 0;
-        transition: all 0.5s ease;
-        margin: 2px;
-        font-size: 13px;
+      visibility: visible;
+      opacity: 1;
     }
+  }
 
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.5);
-        background-blend-mode: color;
-        cursor: pointer;
-
-        button {
-        visibility: visible;
-        opacity: 1;
-        }
-    }
-
-    @media (max-width: 768px) {
-        width: 100%;
-    }
+  @media (max-width: 768px) {
+    width: 27%;
+    height: 20vh;
+  }
 `;
 
 export const ProductInfo = styled.div`
-    max-width: 15ch;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: 20px;
-    position: absolute;
-    font-weight: bold;
+  max-width: 15ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 20px;
+  position: absolute;
+  font-weight: bold;
 
-    & p:hover {
-        visibility: hidden;
-        opacity: 0;
-    }
+  & p:hover {
+    visibility: hidden;
+    opacity: 0;
+  }
 `;

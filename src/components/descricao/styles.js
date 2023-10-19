@@ -1,63 +1,157 @@
 import styled from "styled-components";
 
 export const ConatinerMain = styled.div`
-    width: 100%;
-`
+  margin-top: 10%;
+  width: 100%;
+`;
 
 export const ContainerImage = styled.div`
-    position: absolute;
-    width: 50%;
+  margin-top: -25%;
+  margin-left: 28%;
+  width: 350px;
 
-    & img {
-        width: 250px;
-        margin-top: 45px;
-        margin-left: 600px;
+  & img {
+    width: 260px;
+    height: 50vh;
+    margin-top: 45px;
 
-        @media (max-width: 768px) {
-            width: 160px;
-            margin-left: 60px;
-        }
+    @media (max-width: 1600px) {
+      width: 180px;
+      margin-left: 70px;
+      margin-top: 60px;
     }
 
-`
+    @media (max-width: 1400px) {
+      width: 180px;
+      margin-left: 250px;
+      margin-top: -5px;
+    }
+
+    @media (max-width: 768px) {
+      width: 160px;
+      margin-left: 20px;
+      margin-top: -50%;
+    }
+  }
+`;
 
 export const ContainerImageMini = styled.div`
-    position: absolute;
-    margin-left: 400px;
-    width: 10px;
+  margin-left: 390px;
+  width: 10px;
 
-    & img {
-        width: 50px;
-        margin-top: 5px;
+  & img {
+    width: 60px;
+    margin-top: 2px;
+    border: solid gray;
 
-        @media (max-width: 768px) {
-            width: 160px;
-            margin-left: 60px;
-        }
+    @media (max-width: 1600px) {
+      width: 30px;
+      margin-left: -2px;
     }
 
-`
+    @media (max-width: 768px) {
+      width: 30px;
+      margin-left: -365px;
+      border: solid gray;
+    }
+  }
+`;
 
 export const ContainerDecription = styled.div`
-  position: absolute;
+  margin-top: -26%;
   width: 250px;
   margin-left: 940px;
+
+  & button {
+    background-color: rgba(128, 128, 128, 0.575);
+    border: none;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: gray;
+    }
+  }
+
+  & h4 {
+    position: absolute;
+    margin-top: 30px;
+  }
+
+  @media (max-width: 1600px) {
+    margin-top: -33%;
+    width: 250px;
+    margin-left: 940px;
+  }
+
+  @media (max-width: 1400px) {
+    margin-top: -37%;
+    width: 250px;
+    margin-left: 940px;
+  }
 
   @media (max-width: 768px) {
     width: 250px;
     margin-left: 3px;
     margin-top: 400px;
   }
-`
+`;
 
 export const ContainerDecriptionSecudaria = styled.div`
-  position: absolute;
+  margin-top: -16%;
   width: 200px;
   margin-left: 1210px;
+
+  & button {
+    background-color: rgba(128, 128, 128, 0.575);
+    border: none;
+    border-radius: 4px;
+    margin: 7px;
+
+    &:hover {
+      background-color: gray;
+    }
+  }
+
+  @media (max-width: 1600px) {
+    margin-top: -19.5%;
+    width: 200px;
+    margin-left: 1210px;
+  }
 
   @media (max-width: 768px) {
     width: 250px;
     margin-left: 3px;
     margin-top: 900px;
   }
-`
+`;
+export const ContainerDescriptionButton = styled.div`
+  margin-top: 1%;
+  width: 200px;
+  margin-left: 1210px;
+
+  & button {
+    background-color: rgb(10, 155, 212);
+    width: 80%;
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    margin: 7px;
+    font-size: 13px;
+
+    &:hover {
+      background-color: green;
+    }
+  }
+
+  @media (max-width: 1600px) {
+    margin-top: 1%;
+    width: 200px;
+    margin-left: 1210px;
+  }
+
+  @media (max-width: 768px) {
+    width: 250px;
+    margin-left: 3px;
+    margin-top: 900px;
+  }
+`;

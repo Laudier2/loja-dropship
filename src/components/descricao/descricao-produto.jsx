@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom"
-import { Typography } from '@material-ui/core';
+//import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import StarOutlineIcon from '@material-ui/icons/StarOutline';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
@@ -9,7 +9,7 @@ import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
 import ReactLoading from 'react-loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCart } from '../../redux/cart/cart';
-import { ConatinerMain, ContainerDecription, ContainerDecriptionSecudaria, ContainerImage, ContainerImageMini } from './styles';
+import {  ConatinerMain, ContainerDecription, ContainerDecriptionSecudaria, ContainerDescriptionButton, ContainerImage, ContainerImageMini, ContainerImageMiniPhone } from './styles';
 
 const useStyles = makeStyles(() => ({
   img_desc: {
@@ -53,7 +53,7 @@ const useStyles = makeStyles(() => ({
   },
   img_div_mini: {
     marginTop: '5%',
-    marginLeft: '-30px',
+    marginLeft: '100px',
     '@media screen and (max-width: 1680px)': {
       marginTop: '20px',
     },
@@ -202,16 +202,21 @@ const Descricao = () => {
             <div >
               <div >
                 <div >
-                  <div className={classes.img_div_mini}>
-                    <ContainerImageMini>
-                      <img src={img1 === "" ? "" : img1} alt="" onMouseOver={() => over0(over0)} />
-                    </ContainerImageMini>
-                    {/*<img className={`card ${classes.img_desc_mini} mb-1`} src={img1 === "" ? "" : img1} alt="" onMouseOver={() => over0(over0)} />
-                    <img className={`card ${classes.img_desc_mini} mb-1`} src={img2 === "" ? "" : img2} alt="" onMouseOver={() => over1(over1)} />
-                    <img className={`card ${classes.img_desc_mini} mb-1`} src={img3 === "" ? "" : img3} alt="" onMouseOver={() => over2(over2)} />
-                    <img className={`card ${classes.img_desc_mini} mb-1`} src={img4 === "" ? "" : img4} alt="" onMouseOver={() => over3(over3)} />
-  <img className={`card ${classes.img_desc_mini} mb-1`} src={img5 === "" ? "" : img5} alt="" onMouseOver={() => over3(over4)} />*/}
-                  </div>
+                  <ContainerImageMini>
+                    <img src={img1 === "" ? "" : img1} alt="" onMouseOver={() => over0(over0)} />
+                  </ContainerImageMini>
+                  <ContainerImageMini>
+                    <img src={img2 === "" ? "" : img2} alt="" onMouseOver={() => over1(over1)} />
+                  </ContainerImageMini>
+                  <ContainerImageMini>
+                    <img src={img3 === "" ? "" : img3} alt="" onMouseOver={() => over2(over2)} />
+                  </ContainerImageMini>
+                  <ContainerImageMini>
+                    <img src={img4 === "" ? "" : img4} alt="" onMouseOver={() => over3(over3)} />
+                  </ContainerImageMini>
+                  <ContainerImageMini>
+                    <img src={img5 === "" ? "" : img5} alt="" onMouseOver={() => over3(over4)} />
+                  </ContainerImageMini>
                 </div>
                 <ContainerImage >
                   <img src={img1} id="logo" alt="Elemento vindo da função da pasta public" />
@@ -238,7 +243,7 @@ const Descricao = () => {
                     { }
                   </div>
                   <div>
-                    <h5 ><strong>DESCRIÇÃO</strong></h5>
+                    <h4><strong>DESCRIÇÃO</strong></h4>
                   </div>
                 </ContainerDecription>
                 <ContainerDecriptionSecudaria>
@@ -262,7 +267,10 @@ const Descricao = () => {
                       <span>Frete gratis comprando 2 unidade</span>
                     </p>
                   </div>
-                  <Link to="/card" style={{ textDecoration: 'none' }}>
+                  
+                </ContainerDecriptionSecudaria>
+                <ContainerDescriptionButton>
+                <Link to="/card" style={{ textDecoration: 'none' }}>
                     <button>Comprar agora</button>
                     {/*<button className="btn btn-primary btn-block p-2">Comprar agora</button>*/}
                   </Link>
@@ -280,13 +288,13 @@ const Descricao = () => {
                       <span >eceba o produto que está esperando ou devolvemos o dinheiro.</span>
                     </p>
                   </div>
-                </ContainerDecriptionSecudaria>
+                </ContainerDescriptionButton>
               </div>
             </div>
           </div>
           {/*  <Footer />*/}
         </div>}
-    </ConatinerMain >
+    </ConatinerMain>
   );
 }
 

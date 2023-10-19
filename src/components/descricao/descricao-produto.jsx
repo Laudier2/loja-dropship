@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom"
 //import { Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import StarOutlineIcon from '@material-ui/icons/StarOutline';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
@@ -9,80 +8,7 @@ import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
 import ReactLoading from 'react-loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCart } from '../../redux/cart/cart';
-import {  ConatinerMain, ContainerDecription, ContainerDecriptionSecudaria, ContainerDescriptionButton, ContainerImage, ContainerImageMini, ContainerImageMiniPhone } from './styles';
-
-const useStyles = makeStyles(() => ({
-  img_desc: {
-    marginTop: '-100%',
-    width: '77%',
-    height: '60vh',
-    marginLeft: '50px',
-    '@media screen and (max-width: 1580px)': {
-      marginTop: '-20px',
-    },
-    '@media screen and (max-width: 1180px)': {
-      marginTop: '15px',
-    },
-    '@media screen and (max-width: 780px)': {
-      width: '75%',
-      height: '30vh',
-      marginTop: '-240px',
-      marginBottom: '20%',
-      marginLeft: '70px',
-
-    }
-  },
-  img_desc_mini: {
-    display: 'flex',
-    width: '70px',
-    marginLeft: '-110px',
-    '@media screen and (max-width: 780px)': {
-      width: '42px',
-      marginLeft: '-10px',
-    }
-  },
-  div_title: {
-    fontSize: '1px',
-    display: 'none',
-    marginTop: '20px',
-    '@media screen and (max-width: 780px)': {
-      display: "flex",
-      fontSize: '15px',
-      marginTop: '55px',
-    }
-  },
-  img_div_mini: {
-    marginTop: '5%',
-    marginLeft: '100px',
-    '@media screen and (max-width: 1680px)': {
-      marginTop: '20px',
-    },
-    '@media screen and (max-width: 1180px)': {
-      marginTop: '20px',
-    },
-    '@media screen and (max-width: 780px)': {
-      marginTop: '10px',
-    }
-  },
-  div_descriptio: {
-    marginTop: '350px',
-    '@media screen and (max-width: 780px)': {
-      marginTop: '150px',
-    }
-  },
-  div_price: {
-    display: 'none',
-    '@media screen and (max-width: 780px)': {
-      display: "flex",
-      fontSize: '25px',
-      marginTop: '8px',
-    }
-  },
-  font_span: {
-    fontSize: '16px',
-    opacity: '0.5'
-  }
-}))
+import {  ConatinerMain, ContainerDecription, ContainerDecriptionSecudaria, ContainerDescriptionButton, ContainerImage, ContainerImageMini } from './styles';
 
 const Descricao = () => {
 
@@ -103,7 +29,6 @@ const Descricao = () => {
   const [receb_data_name, setReceb3] = useState('')
   const [desc, setReceb4] = useState('')
 
-  const classes = useStyles();
 
   useEffect(() => {
     const req = localStorage.getItem("img0")
@@ -141,7 +66,7 @@ const Descricao = () => {
   }, [])
 
   useEffect(() => {
-    const req3 = localStorage.getItem("descricao")
+    const req3 = localStorage.getItem("description")
     setReceb4(req3)
   }, [])
 
@@ -244,6 +169,10 @@ const Descricao = () => {
                   </div>
                   <div>
                     <h4><strong>DESCRIÇÃO</strong></h4>
+                    <br /><br /><br />
+                    <p>
+                    {desc}
+                    </p>
                   </div>
                 </ContainerDecription>
                 <ContainerDecriptionSecudaria>

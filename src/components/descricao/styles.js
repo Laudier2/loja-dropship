@@ -30,7 +30,7 @@ export const ContainerImage = styled.div`
     @media (max-width: 768px) {
       width: 160px;
       margin-left: 20px;
-      margin-top: -50%;
+      margin-top: -30%;
     }
   }
 `;
@@ -78,7 +78,7 @@ export const ContainerDecription = styled.div`
   }
 
   @media (max-width: 1600px) {
-    margin-top: -33%;
+    margin-top: -23%;
     width: 250px;
     margin-left: 940px;
   }
@@ -97,7 +97,7 @@ export const ContainerDecription = styled.div`
 `;
 
 export const ContainerDecriptionSecudaria = styled.div`
-  margin-top: -16%;
+  margin-top: -25%;
   width: 200px;
   margin-left: 1210px;
 
@@ -113,7 +113,7 @@ export const ContainerDecriptionSecudaria = styled.div`
   }
 
   @media (max-width: 1600px) {
-    margin-top: -19.5%;
+    margin-top: -31%;
     width: 200px;
     margin-left: 1210px;
   }

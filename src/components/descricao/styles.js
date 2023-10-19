@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const ConatinerMain = styled.div`
   margin-top: 10%;
   width: 100%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 20px;
+  }
 `;
 
 export const ContainerImage = styled.div`
@@ -90,9 +95,9 @@ export const ContainerDecription = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 250px;
-    margin-left: 3px;
-    margin-top: 400px;
+    width: 320px;
+    margin: auto;
+    margin-top: 40px;
   }
 `;
 
@@ -119,9 +124,9 @@ export const ContainerDecriptionSecudaria = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 250px;
-    margin-left: 3px;
-    margin-top: 900px;
+    width: 320px;
+    margin: auto;
+    margin-top: 40px;
   }
 `;
 export const ContainerDescriptionButton = styled.div`
@@ -150,8 +155,8 @@ export const ContainerDescriptionButton = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 250px;
-    margin-left: 3px;
-    margin-top: 900px;
+    width: 320px;
+    margin: auto;
+    margin-top: 40px;
   }
 `;

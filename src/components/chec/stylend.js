@@ -62,7 +62,11 @@ export const ProductImage = styled.div`
     opacity: 0;
     transition: all 0.5s ease;
     margin: 2px;
-    font-size: 8px;
+    font-size: 14px;
+
+    @media (max-width: 768px) {
+      font-size: 8px;
+    }
   }
 
   &:hover {

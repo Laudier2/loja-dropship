@@ -1,8 +1,11 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { Button, TableCartFinalize, cartQuantity } from "./styles"
 import { useHistory } from "react-router-dom"
 import { RiDeleteBin2Fill } from "react-icons/ri";
+import { FaPlus, FaWindowMinimize} from "react-icons/fa";
+import { addCart, decrementCart, removeFromCart } from '../../redux/cart/cart';
+
 
 export default function CartFinalize() {
 
@@ -10,19 +13,21 @@ export default function CartFinalize() {
 
     const cart = useSelector(state => state.cart.cartItems)
 
+    const dispatch = useDispatch()
+
     console.log(cart)
 
     const handleRemoveClick = (id) => {
-        //dispatch(removeItem(id))
+        dispatch(removeFromCart(id))
         console.log(id)
     };
 
-    const handleIncreaseClick = (id) => {
-        //dispatch(addItem({ ...product, quantity: product.quantity + 1 }))
+    const handleIncreaseClick = (e) => {
+        dispatch(addCart(e))
     };
 
-    const handleDecreaseClick = () => {
-        //dispatch(addItem({ ...product, quantity: product.quantity - 1 }))
+    const handleDecreaseClick = (e) => {
+        dispatch(decrementCart(e))
     };
 
     return (
@@ -46,13 +51,20 @@ export default function CartFinalize() {
                                                 {res.name}
                                             </td>
                                             <td>
-                                                <b>Quantidade</b>
-                                                {res.cartQuantity}
+                                                <button onClick={() => handleIncreaseClick(res)}>
+                                                    <FaPlus/>
+                                                </button>
+                                                    (<b>Unidade</b>
+                                                    {res.cartQuantity})
+                                                <button onClick={() => handleDecreaseClick(res)}>
+                                                    <FaWindowMinimize className='mb-2' />
+                                                </button>
+                                                
                                             </td>
                                             <td>
                                                 <b>Preco</b>
                                                 ${res.price * res.cartQuantity}
-                                                <button className='btn btn-outline-secondary ml-2'> Excluir 
+                                                <button className='btn btn-outline-secondary ml-2' onClick={() => handleRemoveClick(res)}> Excluir 
                                                     <RiDeleteBin2Fill className='ml-2 text-danger h5' />
                                                 </button>
                                             </td>

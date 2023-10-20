@@ -91,6 +91,16 @@ export const TableCartFinalize = styled.div`
         & b {
           margin: 5px;
         }
+
+        & button {
+          border: none;
+
+          &:hover {
+            background-color: gba(54, 51, 51, 0.466);
+            color: rgba(0, 255, 255, 0.582);
+            font-weight: bold;
+          }
+        }
       }
     }
   }

@@ -1,5 +1,4 @@
 import React from 'react'
-import "./slids.css"
 
 export default function Slids() {
     return (

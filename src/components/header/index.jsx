@@ -43,30 +43,32 @@ function Header() {
   };
 
   return (
-    <Styles.Container>
-      <Styles.Logo >
-        <Link to="/">
-          MUNDO MULHER
-        </Link>
-      </Styles.Logo>
-      <Styles.Buttons>
-        {currentUser ? (
-          <div onClick={handleLogoutClick}>Sair</div>
-        ) : (
-          <div onClick={handleLoginClick}>Login</div>
-        )}
+    <>
+      <Styles.Container>
+        <Styles.Logo >
+          <Link to="/">
+            MUNDO MULHER
+          </Link>
+        </Styles.Logo>
+        <Styles.Buttons>
+          {currentUser ? (
+            <div onClick={handleLogoutClick}>Sair</div>
+          ) : (
+            <div onClick={handleLoginClick}>Login</div>
+          )}
 
-        <div onClick={handleCartClick}>
-          <b>{length}</b>
-          {length > 0 ?
-            <SlBasketLoaded style={{ fontSize: 30 }} />
-            : <SlBasket style={{ fontSize: 30 }} />
-          }
-        </div>
-      </Styles.Buttons>
-      <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
+          <div onClick={handleCartClick}>
+            <b>{length}</b>
+            {length > 0 ?
+              <SlBasketLoaded style={{ fontSize: 30 }} />
+              : <SlBasket style={{ fontSize: 30 }} />
+            }
+          </div>
+        </Styles.Buttons>
+        <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
 
-    </Styles.Container>
+      </Styles.Container>
+    </>
   );
 }
 

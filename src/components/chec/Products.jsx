@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Slids from '../slids/slids'
 import { useHistory } from 'react-router-dom'
-import IconButton from '@material-ui/core/IconButton';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import { CardActions, CardMedia } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import { red } from '@material-ui/core/colors';
-//import { commerce } from '../../lib/commerce';
 import './chec.css'
 import api from '../../api/api';
 //import { Context } from '../../Context/Provaider';
@@ -16,7 +8,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CustomButton, CustomButtonDescription } from '../custom-button';
 import { BsCartPlus } from "react-icons/bs";
 import { addCart } from '../../redux/cart/cart';
-import { ContainerBody, ContainerProduct, ProductImage, ProductInfo } from './stylend';
+import { ContainerBody, ContainerProduct, ProductImage } from './stylend';
+import Slinds from '../slids/slids';
+import Slids from '../slids/slids';
 
 
 const Products = () => {
@@ -122,25 +116,26 @@ const Products = () => {
   }
 
   return (
-    <ContainerBody>
-      {chec == "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> : chec.map(res => (
-        <ProductImage imageUrl={res.image}>
-          <ContainerProduct>
-            <div key={res.id}>
-              <CustomButtonDescription onClick={() => LocalSto(res)} >
-                Descrição
-              </CustomButtonDescription>
-              <CustomButton startIcon={<BsCartPlus />} onClick={() => hendlerCartAdd(res)} >
-                Adicionar ao carrinho
-              </CustomButton>
-            </div>
-          </ContainerProduct>
-        </ProductImage>
-
-
-      ))
-      }
-    </ContainerBody >
+    <>
+    <Slids />
+        <ContainerBody>
+          {chec === "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> : chec.map(res => (
+            <ProductImage imageUrl={res.image}>
+              <ContainerProduct>
+                <div key={res.id}>
+                  <CustomButtonDescription onClick={() => LocalSto(res)} >
+                    Descrição
+                  </CustomButtonDescription>
+                  <CustomButton startIcon={<BsCartPlus />} onClick={() => hendlerCartAdd(res)} >
+                    Adicionar ao carrinho
+                  </CustomButton>
+                </div>
+              </ContainerProduct>
+            </ProductImage>
+          ))
+          }
+      </ContainerBody >
+  </>
   );
 }
 

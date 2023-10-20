@@ -88,22 +88,6 @@ const Descricao = () => {
     document.getElementById("logo").src = `${img5}`;
   }
 
-
-  //  Counter is a state initialized to 0
-  const [counter, setCounter] = useState(0)
-
-  // Function is called everytime increment button is clicked
-  const handleClick1 = () => {
-    // Counter state is incremented
-    setCounter(counter + 1)
-  }
-
-  // Function is called everytime decrement button is clicked
-  const handleClick2 = () => {
-    // Counter state is decremented
-    setCounter(counter - 1)
-  }
-
   const product = useSelector(productsSlice => productsSlice.products.items)
 
   const localId = localStorage.getItem("id")
@@ -185,12 +169,9 @@ const Descricao = () => {
                     <a href="/desc">Calcular prazo de entrega</a>
                   </div>
                   <div>
-                    <p><strong>Quantidade:
+                    <p><strong>Quantidade
                       <div>
-                        <button className="" onClick={handleClick1}>+</button>
-                        {counter < 0 ? 0 : counter} unidade
-                        <button className="" onClick={handleClick2}>-</button>
-                        ({qunt})
+                        disponivel ({qunt})
                       </div>
                     </strong> <br /><br />
                       <span>Frete gratis comprando 2 unidade</span>

@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Button, TableCartFinalize, cartQuantity } from "./styles"
 import { useHistory } from "react-router-dom"
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { RiDeleteBin2Fill } from "react-icons/ri";
 
 export default function CartFinalize() {
 
@@ -52,6 +52,9 @@ export default function CartFinalize() {
                                             <td>
                                                 <b>Preco</b>
                                                 ${res.price * res.cartQuantity}
+                                                <button className='btn btn-outline-secondary ml-2'> Excluir 
+                                                    <RiDeleteBin2Fill className='ml-2 text-danger h5' />
+                                                </button>
                                             </td>
                                         </div>
                                     </tr>

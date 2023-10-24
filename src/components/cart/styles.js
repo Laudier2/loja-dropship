@@ -154,10 +154,10 @@ export const SubTotal = styled.div`
   font-size: 22px;
 
   @media (max-width: 768px) {
-    width: 20%;
-    font-size: 18px;
+    width: 30%;
+    font-size: 12px;
     margin-left: 60%;
-    margin-top: -70px;
+    margin-top: -50px;
   }
 `;
 

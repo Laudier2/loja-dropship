@@ -133,7 +133,7 @@ const Products = () => {
               </ContainerProduct>
             </ProductImage>
           ))
-          }
+        }
       </ContainerBody >
   </>
   );

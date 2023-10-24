@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Button, TableCartFinalize, cartQuantity } from "./styles"
 import { useHistory } from "react-router-dom"
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { FaPlus, FaWindowMinimize} from "react-icons/fa";
-import { addCart, decrementCart, removeFromCart } from '../../redux/cart/cart';
+import { addCart, decrementCart, removeFromCart, cauculateTotal, clearCart } from '../../redux/cart/cart';
+import axios from 'axios';
 
 
 export default function CartFinalize() {
@@ -12,11 +13,14 @@ export default function CartFinalize() {
     const hitory = useHistory()
 
     const cart = useSelector(state => state.cart.cartItems)
+    const cart2 = useSelector(state => state.cart)
 
     const dispatch = useDispatch()
 
-    console.log(cart)
-
+    useEffect(() => {
+        dispatch(cauculateTotal())
+    },[cart])
+    
     const handleRemoveClick = (id) => {
         dispatch(removeFromCart(id))
         console.log(id)
@@ -29,6 +33,12 @@ export default function CartFinalize() {
     const handleDecreaseClick = (e) => {
         dispatch(decrementCart(e))
     };
+
+    const handleClearCart = () => {
+        dispatch(clearCart())
+    };
+
+    console.log(cart2.cartTotalAmount)
 
     return (
         <>
@@ -72,67 +82,18 @@ export default function CartFinalize() {
                                     </tr>
                                 ))}
                             </tbody>
+                            <button onClick={() => handleClearCart()}>Clear Cart</button>
+                            
                         </table>
+                        <div class="position-fixed">{cart2.cartTotalAmount}</div>
                     </TableCartFinalize>
-                    <Button>Escolher a forma de pagamento</Button>
+                    <Button onClick={() => {
+                        axios.post("http://localhost:3333/payment", cart)
+                        .then((res) => 
+                            (window.location.href = res.data.response.body.init_point))
+                    }}>Escolher a forma de pagamento</Button>
                 </div>
             }
         </>
     )
 }
-
-/*<div>
-    <table class="table container">
-        <thead>
-            <tr>
-                <th scope="">Aque esta todos os items selecionados</th>
-            </tr>
-
-        </thead>
-        <tbody>
-
-            {cart.map(carProduct => (
-                <tr key={carProduct.id}>
-                    <div className="" style={{ width: '18rem' }}>
-                        <img className="card-img-top col-5 mt-3" src={carProduct.image} alt="Card" />
-
-                    </div>
-                    <td>
-                        <div style={{ width: '30rem' }}>
-
-                            <div class="">
-                                <h5 class="card-title">
-                                    {carProduct.name}
-                                </h5>
-                                <p class="card-text">
-                                    {carProduct.description}
-                                </p>
-
-                            </div>
-                        </div>
-                    </td>
-                    <td >Quantidade
-                        <AiOutlineMinus
-                            size={20}
-                            onClick={handleDecreaseClick}
-                            aria-label={`Decrease quantity of ${carProduct.name}`}
-                        />
-
-
-                        {carProduct.cartQuantity}
-
-
-                        <AiOutlinePlus
-                            size={20}
-                            onClick={handleIncreaseClick}
-                            aria-label={`Increase quantity of ${carProduct.name}`}
-                        />
-                    </td>
-
-                    <td>Preco {carProduct.price}</td>
-
-                </tr>
-            ))}
-        </tbody>
-    </table>
-            </div>*/

@@ -3,7 +3,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { ErrorBoundary } from "react-error-boundary";
 import { Route, Switch } from "react-router-dom";
-import Products from "./components/chec/Products";
+import Products from "./components/products/Products";
 import Desc2 from "./components/descricao/descricao-produto";
 import { Context } from "./Context/Provaider";
 import Card from "./components/cart/CartMercadopago";

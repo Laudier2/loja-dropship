@@ -10,7 +10,7 @@ import productReducer, {
   productFatch,
 } from "./redux/product/productsSlice.jsx";
 import { productsApi } from "./redux/product/productsApi.jsx";
-import creatsReducer from "./redux/cart/cart.jsx";
+import creatsReducer, { cauculateTotal } from "./redux/cart/cart.jsx";
 
 const store = configureStore({
   reducer: {
@@ -24,6 +24,7 @@ const store = configureStore({
 });
 
 store.dispatch(productFatch());
+store.dispatch(cauculateTotal());
 
 ReactDOM.render(
   <React.StrictMode>

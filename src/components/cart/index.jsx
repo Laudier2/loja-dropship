@@ -11,14 +11,14 @@ const Cart = ({ isVisible, setIsVisible }) => {
 
   const cart = useSelector((state) => state.cart.cartItems)
 
-  console.log(cart)
+  //console.log(cart)
 
   return (
     <Styles.CartContainer isVisible={isVisible}>
       <Styles.CartEscapeArea onClick={handleEscapeAreaClick} />
       <Styles.CartContent>
         <Styles.CartTitle>
-          <SlBasket /> Seu Carrinho
+          <SlBasket className="col-sm-2" /> Seu Carrinho
         </Styles.CartTitle>
         {cart.map((product) =>
           <div key={product.id}>

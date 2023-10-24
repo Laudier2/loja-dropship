@@ -141,6 +141,26 @@ export const TableCartFinalize = styled.div`
   }
 `;
 
+export const SubTotal = styled.div`
+  border-radius: 70px;
+  width: 20%;
+  border: solid 0.5px;
+  padding: 10px;
+  text-align: center;
+  margin-left: 74%;
+  margin-top: -80px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 22px;
+
+  @media (max-width: 768px) {
+    width: 20%;
+    font-size: 18px;
+    margin-left: 60%;
+    margin-top: -70px;
+  }
+`;
+
 export const Button = styled.button`
   background-color: aquamarine;
   border: none;
@@ -160,6 +180,31 @@ export const Button = styled.button`
 
   @media (max-width: 768px) {
     width: 80%;
+    font-size: 15px;
+    margin-left: 10%;
+  }
+`;
+
+export const ButtonClearCart = styled.button`
+  background-color: aquamarine;
+  border: none;
+  border-radius: 6px;
+  width: 10%;
+  padding: 10px;
+  text-align: center;
+  margin-left: 1%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+
+  &:hover {
+    background-color: red;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    width: 30%;
     font-size: 15px;
     margin-left: 10%;
   }

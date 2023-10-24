@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Button, TableCartFinalize, cartQuantity } from "./styles"
+import { Button, ButtonClearCart, SubTotal, TableCartFinalize, cartQuantity } from "./styles"
 import { useHistory } from "react-router-dom"
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { FaPlus, FaWindowMinimize} from "react-icons/fa";
@@ -82,10 +82,9 @@ export default function CartFinalize() {
                                     </tr>
                                 ))}
                             </tbody>
-                            <button onClick={() => handleClearCart()}>Clear Cart</button>
-                            
+                            <ButtonClearCart onClick={() => handleClearCart()}>Clear Cart</ButtonClearCart>
+                            <SubTotal>Total: R$ {cart2.cartTotalAmount}</SubTotal>
                         </table>
-                        <div class="position-fixed">{cart2.cartTotalAmount}</div>
                     </TableCartFinalize>
                     <Button onClick={() => {
                         axios.post("http://localhost:3333/payment", cart)

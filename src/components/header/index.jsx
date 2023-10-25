@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { SlBasket, SlBasketLoaded } from "react-icons/sl";
 
 
@@ -7,24 +7,12 @@ import { SlBasket, SlBasketLoaded } from "react-icons/sl";
 import Cart from "../cart/index";
 
 // Styles
-import * as Styles from "./styles";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
-
-// Utilities
-//import { loginUser, logoutUser } from "../../redux/user/actions";
+import { Container, Logo, Buttons } from "./styles";
 
 function Header() {
   const [cartIsVisible, setCartIsVisible] = useState(false);
 
-  const dispatch = useDispatch();
-
-  /*const { currentUser } = useSelector((state) => state.userReducer);
-  const { ...products } = useSelector((state) => state.cartReducer);*/
   const length = useSelector((state) => state.cart.cartItems.length)
-
-  /*const productsCount = useMemo(() => {
-    return products.state2.reduce((acc, curr) => acc + curr.quantity, 0)
-  }, [products.state2])*/
 
   console.log({ r: length })
 
@@ -44,13 +32,13 @@ function Header() {
 
   return (
     <>
-      <Styles.Container>
-        <Styles.Logo >
-          <Link to="/">
+      <Container>
+        <Logo >
+          <a href="/">
             MUNDO MULHER
-          </Link>
-        </Styles.Logo>
-        <Styles.Buttons>
+          </a>
+        </Logo>
+        <Buttons>
           {currentUser ? (
             <div onClick={handleLogoutClick}>Sair</div>
           ) : (
@@ -64,10 +52,10 @@ function Header() {
               : <SlBasket style={{ fontSize: 30 }} />
             }
           </div>
-        </Styles.Buttons>
+        </Buttons>
         <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
 
-      </Styles.Container>
+      </Container>
     </>
   );
 }

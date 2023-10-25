@@ -22,13 +22,15 @@ export const CustomButtonContainer = styled.button`
 
 export const CustomButtonDescription = styled.button`
   width: 100%;
-  background-color: gray;
-  color: #eeeeee;
+  background-color: transparent;
+  color: dark;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  border: none;
+  text-decoration: none;
   border: none;
   margin: auto;
   font-weight: 600;
@@ -36,7 +38,7 @@ export const CustomButtonDescription = styled.button`
 
   &:hover {
     cursor: pointer;
-    background-color: rgb(10, 155, 212);
+    background-color: transparent;
   }
 `;
 

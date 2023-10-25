@@ -100,3 +100,14 @@ export const ProductInfo = styled.div`
     opacity: 0;
   }
 `;
+
+export const ContainerTitle = styled.h4`
+  color: #000;
+  font-size: 15px;
+  transition: all 0.5s ease;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(10, 155, 212);
+  }
+`;

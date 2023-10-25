@@ -168,11 +168,18 @@ export const Button = styled.button`
   width: 30%;
   padding: 10px;
   text-align: center;
-  margin-left: 40%;
+  margin-left: 35%;
   margin-top: 30px;
   margin-bottom: 10px;
   font-weight: bold;
   font-size: 20px;
+
+  & a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    border: none;
+  }
 
   &:hover {
     background-color: rgba(0, 255, 255, 0.582);

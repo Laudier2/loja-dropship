@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom"
-//import { Typography } from '@material-ui/core';
 import StarOutlineIcon from '@material-ui/icons/StarOutline';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
@@ -94,15 +92,14 @@ const Descricao = () => {
 
   const productFilter = product.filter(product => (product.id === localId))
 
-  console.log(localId)
+  console.log(productFilter)
 
   const dispatch = useDispatch()
 
   function handlerCartAdd(e) {
     dispatch(addCart(e))
   }
-
-
+  
   return (
     <ConatinerMain>
       {productFilter === "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> :
@@ -180,11 +177,10 @@ const Descricao = () => {
                   
                 </ContainerDecriptionSecudaria>
                 <ContainerDescriptionButton>
-                <Link to="/card" style={{ textDecoration: 'none' }}>
-                    <button>Comprar agora</button>
-                    {/*<button className="btn btn-primary btn-block p-2">Comprar agora</button>*/}
-                  </Link>
-                  <button onClick={() => handlerCartAdd(productFilter)}>Adicionar ao carrinho</button>
+                  <a href="/cartFinali">
+                    <button onClick={() => handlerCartAdd(productFilter[0])}>Comprar agora</button>
+                  </a>
+                  <button onClick={() => handlerCartAdd(productFilter[0])}>Adicionar ao carrinho</button>
 
                   <br />
                   <div>

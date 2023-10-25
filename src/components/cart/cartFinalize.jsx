@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Button, ButtonClearCart, SubTotal, TableCartFinalize, cartQuantity } from "./styles"
-import { useHistory } from "react-router-dom"
+import { Button, ButtonClearCart, SubTotal, TableCartFinalize } from "./styles"
+import { useHistory, Link } from "react-router-dom"
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { FaPlus, FaWindowMinimize} from "react-icons/fa";
 import { addCart, decrementCart, removeFromCart, cauculateTotal, clearCart } from '../../redux/cart/cart';
@@ -13,17 +13,18 @@ export default function CartFinalize() {
     const hitory = useHistory()
 
     const cart = useSelector(state => state.cart.cartItems)
+    const items = useSelector(state => state.cart.cartItems.length)
     const cart2 = useSelector(state => state.cart)
 
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(cauculateTotal())
-    },[cart])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
     
     const handleRemoveClick = (id) => {
         dispatch(removeFromCart(id))
-        console.log(id)
     };
 
     const handleIncreaseClick = (e) => {
@@ -38,7 +39,20 @@ export default function CartFinalize() {
         dispatch(clearCart())
     };
 
-    console.log(cart2.cartTotalAmount)
+    const res = cart.map(r => r.cartQuantity)
+
+    //console.log(cart)
+    
+    let prod = [
+        {
+            title: res > 0 ? cart[0].name : "",
+            price: cart2.cartTotalAmount,
+            image: res > 0 ? cart[0].image[0] : "",
+            category: "placas",
+            description: res > 0 ? cart[0].description : "",
+        },
+    ]
+    console.log(...prod)
 
     return (
         <>
@@ -47,7 +61,7 @@ export default function CartFinalize() {
                     <TableCartFinalize>
                         <table>
                             <thead>
-                                <tr>Carrinho de compra finalize</tr>
+                            <tr className='m-auto h3'>Você tem {items} produtos em seu carrimho</tr>
                             </thead>
                             <hr />
                             <tbody>
@@ -82,15 +96,22 @@ export default function CartFinalize() {
                                     </tr>
                                 ))}
                             </tbody>
-                            <ButtonClearCart onClick={() => handleClearCart()}>Clear Cart</ButtonClearCart>
-                            <SubTotal>Total: R$ {cart2.cartTotalAmount}</SubTotal>
+                            {cart2.cartTotalAmount === 0 
+                            ? <img style={{ margin: "auto", width: "1000px", height: "50vh" }} src="https://www.pngkit.com/png/detail/411-4110678_carrinho-de-compras-vazio-shopping-cart.png" alt="iage" />
+                            :  <div>
+                                <ButtonClearCart onClick={() => handleClearCart()}>Clear Cart</ButtonClearCart> 
+                                <SubTotal>Total: R$ {cart2.cartTotalAmount}</SubTotal>
+                                </div> }
                         </table>
                     </TableCartFinalize>
-                    <Button onClick={() => {
-                        axios.post("http://localhost:3333/payment", cart)
-                        .then((res) => 
-                            (window.location.href = res.data.response.body.init_point))
-                    }}>Escolher a forma de pagamento</Button>
+                   {cart2.cartTotalAmount === 0 
+                   ? <Button>
+                        <Link to="/">Volta para pagina inicial</Link>
+                   </Button>
+                   : <Button onClick={async () => {
+                        await axios.post("http://localhost:3333/payment", ...prod)
+                        .then((res) => (window.location.href = res.data.response.body.init_point))
+                    }}>Escolher a forma de pagamento</Button>}
                 </div>
             }
         </>

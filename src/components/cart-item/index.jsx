@@ -12,7 +12,6 @@ const CartItem = ({ product }) => {
 
   const handleRemoveClick = (id) => {
     dispatch(removeFromCart(id))
-    console.log(id)
   };
 
   const handleIncreaseClick = (dataProduct) => {
@@ -21,7 +20,6 @@ const CartItem = ({ product }) => {
 
   const handleDecreaseClick = (dataProduct) => {
     dispatch(decrementCart(dataProduct))
-    console.log(product)
   };
 
 

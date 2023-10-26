@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Button, ButtonClearCart, SubTotal, TableCartFinalize } from "./styles"
-import { useHistory, Link } from "react-router-dom"
+//import { useHistory } from "react-router-dom"
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { FaPlus, FaWindowMinimize} from "react-icons/fa";
 import { addCart, decrementCart, removeFromCart, cauculateTotal, clearCart } from '../../redux/cart/cart';
@@ -10,7 +10,7 @@ import axios from 'axios';
 
 export default function CartFinalize() {
 
-    const hitory = useHistory()
+    //const hitory = useHistory()
 
     const cart = useSelector(state => state.cart.cartItems)
     const items = useSelector(state => state.cart.cartItems.length)
@@ -40,10 +40,11 @@ export default function CartFinalize() {
     };
 
     const res = cart.map(r => r.cartQuantity)
+   
+    console.log()
 
-    //console.log(cart)
     
-    let prod = [
+    let prod2 = [
         {
             title: res > 0 ? cart[0].name : "",
             price: cart2.cartTotalAmount,
@@ -52,11 +53,22 @@ export default function CartFinalize() {
             description: res > 0 ? cart[0].description : "",
         },
     ]
-    console.log(...prod)
+
+    let prod = [
+        {
+            title: "Fone",
+            price: 25,
+            image: "https://m.media-amazon.com/images/I/41qM+itS5SL._AC_SY300_SX300_.jpg",
+            category: "placas",
+            description: "Isso é um teste",
+        },
+    ]
+    console.log(prod)
+    //console.log(prod)
 
     return (
         <>
-            {cart == "" ? hitory.push("/") :
+            {items === 0 ? "" :
                 <div>
                     <TableCartFinalize>
                         <table>
@@ -106,10 +118,10 @@ export default function CartFinalize() {
                     </TableCartFinalize>
                    {cart2.cartTotalAmount === 0 
                    ? <Button>
-                        <Link to="/">Volta para pagina inicial</Link>
+                        <a href="/">Volta para pagina inicial</a>
                    </Button>
                    : <Button onClick={async () => {
-                        await axios.post("http://localhost:3333/payment", ...prod)
+                        await axios.post("http://localhost:3334/payment", ...prod)
                         .then((res) => (window.location.href = res.data.response.body.init_point))
                     }}>Escolher a forma de pagamento</Button>}
                 </div>

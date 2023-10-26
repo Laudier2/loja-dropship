@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom'
+//import { useHistory } from 'react-router-dom'
 import ReactLoading from 'react-loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { CustomButton } from '../custom-button';
@@ -11,7 +11,7 @@ import { CustomButtonDescription } from '../custom-button/styles';
 
 const Products = () => {
 
-  const history = useHistory()
+  //const history = useHistory()
 
   const chec = useSelector(productSlace => productSlace.products.items)
 
@@ -49,7 +49,6 @@ const Products = () => {
     localStorage.setItem("size", size.size)
     localStorage.setItem("quantity", quantity.quantity)
 
-    history.push("/desc")
     //console.log(dados)*/
   }
 
@@ -73,9 +72,6 @@ const Products = () => {
                     <CustomButtonDescription>
                       {res.name}
                     </CustomButtonDescription>
-                    <CustomButton startIcon={<BsCartPlus />} onClick={() => hendlerCartAdd(res)} >
-                      Adicionar ao carrinho
-                    </CustomButton>
                   </div>
                 </ContainerProduct>
               </ProductImage>

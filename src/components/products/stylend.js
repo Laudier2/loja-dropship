@@ -8,6 +8,9 @@ export const ContainerBody = styled.div`
   display: flex;
   height: 100%;
   width: 80%;
+  & a {
+    text-decoration: none;
+  }
 
   @media (max-width: 768px) {
     width: 100%;

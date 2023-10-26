@@ -8,7 +8,7 @@ export const CustomButtonContainer = styled.button`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25) darkblue;
   border: none;
   margin: auto;
   font-weight: 600;
@@ -23,12 +23,12 @@ export const CustomButtonContainer = styled.button`
 export const CustomButtonDescription = styled.button`
   width: 100%;
   background-color: transparent;
-  color: dark;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+
   border: none;
   text-decoration: none;
   border: none;
@@ -39,6 +39,7 @@ export const CustomButtonDescription = styled.button`
   &:hover {
     cursor: pointer;
     background-color: transparent;
+    border: none;
   }
 `;
 

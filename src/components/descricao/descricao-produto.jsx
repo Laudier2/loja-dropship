@@ -7,6 +7,7 @@ import ReactLoading from 'react-loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCart } from '../../redux/cart/cart';
 import {  ConatinerMain, ContainerDecription, ContainerDecriptionSecudaria, ContainerDescriptionButton, ContainerImage, ContainerImageMini } from './styles';
+import { Link } from 'react-router-dom';
 
 const Descricao = () => {
 
@@ -177,9 +178,9 @@ const Descricao = () => {
                   
                 </ContainerDecriptionSecudaria>
                 <ContainerDescriptionButton>
-                  <a href="/cartFinali">
+                  <Link to="/cartFinali">
                     <button onClick={() => handlerCartAdd(productFilter[0])}>Comprar agora</button>
-                  </a>
+                  </Link>
                   <button onClick={() => handlerCartAdd(productFilter[0])}>Adicionar ao carrinho</button>
 
                   <br />

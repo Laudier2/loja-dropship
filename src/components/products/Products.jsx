@@ -7,13 +7,17 @@ import { addCart } from '../../redux/cart/cart';
 import { ContainerBody, ContainerProduct, ProductImage } from './stylend';
 //import Slids from '../slids/slids';
 import { CustomButtonDescription } from '../custom-button/styles';
+import { Link } from 'react-router-dom';
+import Slids from '../slids/slids';
+import SlidsProducts from '../slids/SlidsProducts';
 
 
 const Products = () => {
-
+  
   //const history = useHistory()
-
-  const chec = useSelector(productSlace => productSlace.products.items)
+  
+  const products = useSelector(productSlace => productSlace.products.items)
+  console.log(products)
 
   function LocalSto(e) {
 
@@ -52,7 +56,7 @@ const Products = () => {
     //console.log(dados)*/
   }
 
-  console.log(chec)
+  console.log(products)
 
   const dispatch = useDispatch()
 
@@ -62,10 +66,10 @@ const Products = () => {
 
   return (
     <>
-    {/*<Slids />*/}
+    {<Slids />}
         <ContainerBody>
-          {chec == "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> : chec.map(res => (
-            <a href='/desc' onClick={() => LocalSto(res)}>
+          {products == "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> : products.map(res => (
+            <Link to='/desc' onClick={() => LocalSto(res)}>
               <ProductImage imageUrl={res.image}>
                 <ContainerProduct>
                   <div key={res.id}>
@@ -75,10 +79,11 @@ const Products = () => {
                   </div>
                 </ContainerProduct>
               </ProductImage>
-            </a>
+            </Link>
           ))
         }
       </ContainerBody >
+      <SlidsProducts />
   </>
   );
 }

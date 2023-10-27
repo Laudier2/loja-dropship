@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Button, ButtonClearCart, SubTotal, TableCartFinalize } from "./styles"
-//import { useHistory } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { FaPlus, FaWindowMinimize} from "react-icons/fa";
 import { addCart, decrementCart, removeFromCart, cauculateTotal, clearCart } from '../../redux/cart/cart';
 import axios from 'axios';
+import api from "../../api/api"
 
 
 export default function CartFinalize() {
 
-    //const hitory = useHistory()
+    const navigate = useNavigate()
 
     const cart = useSelector(state => state.cart.cartItems)
     const items = useSelector(state => state.cart.cartItems.length)
@@ -44,7 +45,7 @@ export default function CartFinalize() {
     console.log()
 
     
-    let prod2 = [
+    let prod = [
         {
             title: res > 0 ? cart[0].name : "",
             price: cart2.cartTotalAmount,
@@ -54,7 +55,7 @@ export default function CartFinalize() {
         },
     ]
 
-    let prod = [
+    let prod2 = [
         {
             title: "Fone",
             price: 25,
@@ -68,7 +69,7 @@ export default function CartFinalize() {
 
     return (
         <>
-            {items === 0 ? "" :
+            {items === 0 ? navigate("/") :
                 <div>
                     <TableCartFinalize>
                         <table>
@@ -118,10 +119,10 @@ export default function CartFinalize() {
                     </TableCartFinalize>
                    {cart2.cartTotalAmount === 0 
                    ? <Button>
-                        <a href="/">Volta para pagina inicial</a>
+                        <Link to="/">Volta para pagina inicial</Link>
                    </Button>
                    : <Button onClick={async () => {
-                        await axios.post("http://localhost:3334/payment", ...prod)
+                        await api.post("payment", ...prod)
                         .then((res) => (window.location.href = res.data.response.body.init_point))
                     }}>Escolher a forma de pagamento</Button>}
                 </div>

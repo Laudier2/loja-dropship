@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addCart } from '../../redux/cart/cart';
 import {  ConatinerMain, ContainerDecription, ContainerDecriptionSecudaria, ContainerDescriptionButton, ContainerImage, ContainerImageMini } from './styles';
 import { Link } from 'react-router-dom';
+import { FaCreditCard } from "react-icons/fa";
+
 
 const Descricao = () => {
 
@@ -139,8 +141,10 @@ const Descricao = () => {
                     <StarOutlineIcon />
                     (6505)
                   </div>
-                  <p><strong>R$ {price}</strong></p>
-                  <span><strong>em 12x R$7,²³</strong></span>
+                  <p><strong>R${price},00</strong></p>
+                  <span>
+                <FaCreditCard className='mt-1 m-1'/> Em até 12x sem juros
+              </span>
                   <br />
                   <a href="/desc"><span>ver os meio de pagamento</span></a>
                   <br /><br />

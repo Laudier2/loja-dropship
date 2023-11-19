@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ConatinerMain = styled.div`
-  margin-top: 20%;
+  margin-top: 7%;
   width: 100%;
 
   @media (max-width: 768px) {
@@ -46,7 +46,7 @@ export const ContainerImageMini = styled.div`
 `;
 
 export const ContainerDecription = styled.div`
-  margin-top: -26%;
+margin-top: -28%;
   width: 250px;
   margin-left: 940px;
 
@@ -64,19 +64,7 @@ export const ContainerDecription = styled.div`
     position: absolute;
     margin-top: 30px;
   }
-
-  @media (max-width: 1600px) {
-    margin-top: -23%;
-    width: 250px;
-    margin-left: 940px;
-  }
-
-  @media (max-width: 1400px) {
-    margin-top: -37%;
-    width: 250px;
-    margin-left: 940px;
-  }
-
+  
   @media (max-width: 768px) {
     width: 320px;
     margin: auto;
@@ -85,7 +73,7 @@ export const ContainerDecription = styled.div`
 `;
 
 export const ContainerDecriptionSecudaria = styled.div`
-  margin-top: -25%;
+  margin-top: -30%;
   width: 200px;
   margin-left: 1210px;
 
@@ -100,12 +88,6 @@ export const ContainerDecriptionSecudaria = styled.div`
     }
   }
 
-  @media (max-width: 1600px) {
-    margin-top: -31%;
-    width: 200px;
-    margin-left: 1210px;
-  }
-
   @media (max-width: 768px) {
     width: 320px;
     margin: auto;
@@ -113,7 +95,7 @@ export const ContainerDecriptionSecudaria = styled.div`
   }
 `;
 export const ContainerDescriptionButton = styled.div`
-  margin-top: 1%;
+  margin-top: -1%;
   width: 200px;
   margin-left: 1210px;
 

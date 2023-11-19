@@ -3,11 +3,8 @@ import ReactLoading from 'react-loading';
 import { useSelector } from 'react-redux';
 import { ProductProd } from './stylend';
 import { FaCreditCard } from "react-icons/fa";
-import { CustomButtonDescription } from '../custom-button/styles';
 import { Link } from 'react-router-dom';
 import Slids from '../slids/slids';
-import SlidsProducts from '../slids/SlidsProducts';
-import { Container } from '../header/styles';
 
 
 const Products = () => {

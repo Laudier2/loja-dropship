@@ -29,6 +29,8 @@ const Descricao = () => {
   const [price, setReceb2] = useState('')
   const [receb_data_name, setReceb3] = useState('')
   const [desc, setReceb4] = useState('')
+  const [colors, setColors] = useState('')
+  const [sizers, setSizers] = useState('')
 
 
   useEffect(() => {
@@ -64,6 +66,16 @@ const Descricao = () => {
   useEffect(() => {
     const req2 = localStorage.getItem("name")
     setReceb3(req2)
+  }, [])
+
+  useEffect(() => {
+    const color = localStorage.getItem("color0")
+    setColors(color)
+  }, [])
+
+  useEffect(() => {
+    const size = localStorage.getItem("size")
+    setSizers(size)
   }, [])
 
   useEffect(() => {
@@ -148,10 +160,15 @@ const Descricao = () => {
                   <br />
                   <a href="/desc"><span>ver os meio de pagamento</span></a>
                   <br /><br />
-                  <h5>Cor: <strong>Blue</strong></h5>
+                  <h5>Cor</h5>
                   <div role="group" aria-label="Basic example">
-                    <button type="button">Preto</button>
+                    <button type="button">{colors}</button>
                     { }
+                  </div>
+                  <div>
+                    <h4><strong>MEDIDAS</strong></h4>
+                    <br /><br /><br />
+                    <p>{sizers}</p>
                   </div>
                   <div>
                     <h4><strong>DESCRIÇÃO</strong></h4>

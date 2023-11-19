@@ -56,7 +56,7 @@ margin-top: -28%;
     border-radius: 4px;
 
     &:hover {
-      background-color: gray;
+      background-color: whitesmoke;
     }
   }
 
@@ -73,7 +73,7 @@ margin-top: -28%;
 `;
 
 export const ContainerDecriptionSecudaria = styled.div`
-  margin-top: -30%;
+  margin-top: -45%;
   width: 200px;
   margin-left: 1210px;
 

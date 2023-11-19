@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ConatinerMain = styled.div`
-  margin-top: 10%;
+  margin-top: 20%;
   width: 100%;
 
   @media (max-width: 768px) {
@@ -13,49 +13,32 @@ export const ConatinerMain = styled.div`
 export const ContainerImage = styled.div`
   margin-top: -25%;
   margin-left: 28%;
-  width: 350px;
 
   & img {
-    width: 260px;
-    height: 50vh;
+    width: 40%;
+    height: 60vh;
     margin-top: 45px;
 
-    @media (max-width: 1600px) {
-      width: 180px;
-      margin-left: 70px;
-      margin-top: 100px;
-    }
-
-    @media (max-width: 1400px) {
-      width: 180px;
-      margin-left: 250px;
-      margin-top: -5px;
-    }
-
-    @media (max-width: 768px) {
-      width: 160px;
-      margin-left: 20px;
-      margin-top: -30%;
+    @media (max-width: 720px) {
+      margin-top: -140px;
+      width: 80%;
+      height: 40vh;
+      margin-left: -2px;
     }
   }
 `;
 
 export const ContainerImageMini = styled.div`
   margin-left: 390px;
-  width: 10px;
 
   & img {
-    width: 60px;
     margin-top: 2px;
     border: solid gray;
-
-    @media (max-width: 1600px) {
-      width: 30px;
-      margin-left: -2px;
-    }
+    width: 80px;
+    margin-left: -25px;
 
     @media (max-width: 768px) {
-      width: 30px;
+      width: 50px;
       margin-left: -365px;
       border: solid gray;
     }

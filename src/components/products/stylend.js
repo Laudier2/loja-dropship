@@ -1,116 +1,66 @@
 import styled from "styled-components";
 
-export const ProductItems = styled.div`
+export const ProductProd = styled.div`
+  width: 100%;
+  background: transparent;
   display: inline-block;
-`;
-export const ContainerBody = styled.div`
-  margin: auto;
-  display: flex;
-  height: 100%;
-  width: 80%;
-  & a {
-    text-decoration: none;
-  }
 
-  @media (max-width: 768px) {
+  & section {
     width: 100%;
-  }
-`;
-export const ContainerProduct = styled.div`
-  margin: 10px;
-  width: 200px;
-  display: inline-block;
 
-  & img {
-    margin-top: 50px;
-    width: 160px;
-    height: 28vh;
-    border-radius: 6px;
-    transition: 1s;
+    & div {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 25px;
 
-    &:hover {
-      transform: scale(1.3);
-      box-shadow: 0px 0px 0px rgb(54, 52, 52);
+    & img {
+      width: 100%;
+      height: 40vh;
+      border-radius: 8px;
+    }
+
+    & h5 {
+      width: 100%;
+      color: #000000;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    & h3 {
+      color: #000000;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    & span {
+      width: 60%;
+      margin: auto;
+      display: flex;
+      text-align: center;
+      color: rgba(8, 8, 8, 0.511);
+    }
+
+    & button {
+      background-color: #00FF00;
+      width: 90%;
+      margin: auto;
+      display: block;
+      padding: 8px;
       border-radius: 6px;
-      z-index: 2;
+      border: none;
+      font-size: 16px;
+      font-weight: bolder;
+      
+      &:hover {
+        background-color: #7CFC00;
+      }
+
     }
-  }
-`;
-
-export const ProductImage = styled.div`
-  background-image: ${(props) => `url('${props.imageUrl}')`};
-  height: 300px;
-  width: 200px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  display: flex;
-  align-items: flex-end;
-  transition: all 1s ease;
-  background-color: transparent;
-  background-blend-mode: color;
-  margin: 12px;
-
-  &:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 0px rgb(54, 52, 52);
-    border-radius: 6px;
-    z-index: 2;
-  }
-
-  button {
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.5s ease;
-    margin: 2px;
-    font-size: 14px;
-
     @media (max-width: 768px) {
-      font-size: 8px;
+      width: 100%;
     }
   }
-
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: color;
-    cursor: pointer;
-
-    button {
-      visibility: visible;
-      opacity: 1;
-    }
   }
-
-  @media (max-width: 768px) {
-    width: 27%;
-    height: 20vh;
-  }
-`;
-
-export const ProductInfo = styled.div`
-  max-width: 15ch;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 20px;
-  position: absolute;
-  font-weight: bold;
-
-  & p:hover {
-    visibility: hidden;
-    opacity: 0;
-  }
-`;
-
-export const ContainerTitle = styled.h4`
-  color: #000;
-  font-size: 15px;
-  transition: all 0.5s ease;
-
-  &:hover {
-    cursor: pointer;
-    background-color: rgb(10, 155, 212);
-  }
-`;
+`

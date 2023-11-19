@@ -26,7 +26,7 @@ const CartItem = ({ product }) => {
   return (
     <div>
       <CartItemContainer>
-        <CartItemImage imageUrl={product.image} />
+        <CartItemImage imageUrl={product.image[0]} />
 
         <CartItemInfo>
           <p>{product.name}</p>

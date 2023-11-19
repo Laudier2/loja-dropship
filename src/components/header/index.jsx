@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { SlBasket, SlBasketLoaded } from "react-icons/sl";
+import { AiFillAlert } from "react-icons/ai";
+import { AiOutlineWhatsApp } from "react-icons/ai";
+import { AiOutlineNotification } from "react-icons/ai";
+import { BsTruck } from "react-icons/bs";
+import { BsJournalText } from "react-icons/bs";
+
 
 
 // Components
 import Cart from "../cart/index";
 
 // Styles
-import { Container, Logo, Buttons } from "./styles";
+import { Container, Logo, Buttons, ContainerAMR, ContainerPRT } from "./styles";
 
 function Header() {
   const [cartIsVisible, setCartIsVisible] = useState(false);
@@ -32,19 +38,16 @@ function Header() {
 
   return (
     <>
+    <ContainerAMR>
+      <a href="/"><AiFillAlert className="mb-2 h4"/> BLACK FRIDAY - Bonés Baratos</a>
+    </ContainerAMR>
       <Container>
         <Logo >
           <a href="/">
-            MUNDO MULHER
+            Top dos Boné
           </a>
         </Logo>
         <Buttons>
-          {currentUser ? (
-            <div onClick={handleLogoutClick}>Sair</div>
-          ) : (
-            <div onClick={handleLoginClick}>Login</div>
-          )}
-
           <div onClick={handleCartClick}>
             <b>{length}</b>
             {length > 0 ?
@@ -54,8 +57,40 @@ function Header() {
           </div>
         </Buttons>
         <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
-
       </Container>
+        <ContainerPRT>
+          <ul>
+            <li>
+            <span>
+                <AiOutlineNotification className="text-white h5 m-1 mb-2 p"/>
+              </span>
+              <a href="/">Pormocão</a>
+            </li>
+            <li> 
+              <span>
+                <AiOutlineWhatsApp className="text-white h5 m-1 mb-2 p"/>
+              </span>
+              <a href="/">Contato</a></li>
+            <li>
+              <span>
+                <BsTruck className="text-white h5 m-1 mb-2 p"/>
+              </span>
+              <a href="/">Rastreio</a>
+            </li>
+            <li>
+              <span>
+                <AiFillAlert className="text-white h5 m-1 mb-2 p"/>
+              </span>
+              <a href="/">Novidade</a>
+            </li>
+            <li>
+              <span>
+                <BsJournalText className="text-white h5 m-1 mb-2 p"/>
+              </span>
+              <a href="/">Politica</a>
+            </li>
+          </ul>
+        </ContainerPRT>
     </>
   );
 }

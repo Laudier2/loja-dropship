@@ -5,7 +5,6 @@ import { useNavigate, Link } from "react-router-dom"
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { FaPlus, FaWindowMinimize} from "react-icons/fa";
 import { addCart, decrementCart, removeFromCart, cauculateTotal, clearCart } from '../../redux/cart/cart';
-import axios from 'axios';
 import api from "../../api/api"
 
 
@@ -30,10 +29,12 @@ export default function CartFinalize() {
 
     const handleIncreaseClick = (e) => {
         dispatch(addCart(e))
+        window.location.reload()
     };
 
     const handleDecreaseClick = (e) => {
         dispatch(decrementCart(e))
+       // window.location.reload()
     };
 
     const handleClearCart = () => {
@@ -41,9 +42,6 @@ export default function CartFinalize() {
     };
 
     const res = cart.map(r => r.cartQuantity)
-   
-    console.log()
-
     
     let prod = [
         {
@@ -55,7 +53,7 @@ export default function CartFinalize() {
         },
     ]
 
-    let prod2 = [
+    /*let prod2 = [
         {
             title: "Fone",
             price: 25,
@@ -63,9 +61,8 @@ export default function CartFinalize() {
             category: "placas",
             description: "Isso é um teste",
         },
-    ]
-    console.log(prod)
-    //console.log(prod)
+    ]*/
+    //console.log(cart[0].price)
 
     return (
         <>
@@ -82,7 +79,7 @@ export default function CartFinalize() {
                                     <tr>
                                         <div>
                                             <td>
-                                                <img src={res.image} alt="img" />
+                                                <img src={res.image[0]} alt="img" />
                                             </td>
                                             <td>
                                                 {res.name}
@@ -113,7 +110,7 @@ export default function CartFinalize() {
                             ? <img style={{ margin: "auto", width: "1000px", height: "50vh" }} src="https://www.pngkit.com/png/detail/411-4110678_carrinho-de-compras-vazio-shopping-cart.png" alt="iage" />
                             :  <div>
                                 <ButtonClearCart onClick={() => handleClearCart()}>Clear Cart</ButtonClearCart> 
-                                <SubTotal>Total: R$ {cart2.cartTotalAmount}</SubTotal>
+                                <SubTotal>Total: R$ {cart[0].price * cart[0].cartQuantity}</SubTotal>
                                 </div> }
                         </table>
                     </TableCartFinalize>
@@ -122,8 +119,8 @@ export default function CartFinalize() {
                         <Link to="/">Volta para pagina inicial</Link>
                    </Button>
                    : <Button onClick={async () => {
-                        await api.post("payment", ...prod)
-                        .then((res) => (window.location.href = res.data.response.body.init_point))
+                       await api.post("payment", ...prod)
+                       .then((res) => (window.location.href = res.data.response.body.init_point))
                     }}>Escolher a forma de pagamento</Button>}
                 </div>
             }

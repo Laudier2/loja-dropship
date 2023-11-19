@@ -23,7 +23,7 @@ export const CustomButtonContainer = styled.button`
 export const CustomButtonDescription = styled.button`
   width: 100%;
   background-color: transparent;
-  color: white;
+  color: #0000;
   display: flex;
   align-items: center;
   justify-content: center;

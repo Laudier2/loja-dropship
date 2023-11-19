@@ -1,13 +1,11 @@
 //import { useHistory } from 'react-router-dom'
 import ReactLoading from 'react-loading';
 import { useSelector } from 'react-redux';
-import { ProductProd } from './stylend';
-import { FaCreditCard } from "react-icons/fa";
+import { ContainerBody, ContainerProduct, ProductImage, ProductItems } from './stylend';
 import { CustomButtonDescription } from '../custom-button/styles';
 import { Link } from 'react-router-dom';
 import Slids from '../slids/slids';
 import SlidsProducts from '../slids/SlidsProducts';
-import { Container } from '../header/styles';
 
 
 const Products = () => {
@@ -54,35 +52,35 @@ const Products = () => {
     //console.log(dados)*/
   }
 
+  /* <Link to='/desc' onClick={() => LocalSto(res)}>
+                <ProductImage imageUrl={res.image[0]}>
+                  
+                </ProductImage>
+                <ContainerProduct>
+                    <div key={res.id}>
+                      <CustomButtonDescription>
+                        {res.name}
+                      </CustomButtonDescription>
+                    </div>
+                  </ContainerProduct>
+        </Link>*/
+
   return (
-    <>
+    <div className="container">
     {/*<Slids />*/}
-      
-    <ProductProd>
-      <section>
-      {products === !products 
-        ? <ReactLoading className='container col-sm-2' type='bars' color='#0000FF' /> 
-        : products.map(res => (
-          <Link to="desc" onClick={() => LocalSto(res)}>
-            <div key={res.id}>
-              <img src={res.image[0]} alt="img" />
-              <h5>{res.name}</h5>
-              <h3>R${res.price},00</h3>
-              <span>
-                <FaCreditCard className='mt-1 m-1'/> Em até 12x sem juros
-              </span>
-              <button>
-                DESCRIÇÃO
-              </button>
+      {products.map(res => (
+        <div className="card-deck" key={res.id}>
+          <div className="card col-sm-3">
+            <img className="card-img-top" src=".../100px200/" alt="Imagem de capa do card"/>
+            <div className="card-body">
+              <h5 className="card-title">Título do card</h5>
+              <p className="card-text">Este é um card mais longo com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior.</p>
+              <p className="card-text"><small className="text-muted">Atualizados 3 minutos atrás</small></p>
             </div>
-          </Link>
-          ))
-        }
-      </section>  
-    </ProductProd>
-      
-      
-  </>
+          </div>
+        </div>    
+      ))}  
+    </div>
   );
 }
 

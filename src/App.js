@@ -7,6 +7,7 @@ import Desc from "./components/descricao/descricao-produto";
 import Cart from "./components/cart";
 import Header from "./components/header";
 import CartFinalize from "./components/cart/cartFinalize";
+import Footer from "./components/footer/footer";
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
           </div>
         </div>
       </RouterProvider>
+      <Footer />
     </>
   );
 }

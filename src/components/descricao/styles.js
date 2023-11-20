@@ -65,7 +65,7 @@ margin-top: -28%;
     margin-top: 30px;
   }
   
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     width: 320px;
     margin: auto;
     margin-top: 40px;

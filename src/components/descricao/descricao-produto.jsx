@@ -166,7 +166,7 @@ const Descricao = () => {
           <span>Saiba os prazos de entrega e as formas de envio.</span>
           <div >
             <LocationOnIcon />
-            <a href="/desc">Calcular prazo de entrega</a>
+            <a href="/desc">Frete gratis para todo o pais</a>
           </div>
           <div>
             <p><strong>Quantidade
@@ -174,7 +174,7 @@ const Descricao = () => {
                 disponivel ({qunt})
               </div>
             </strong> <br /><br />
-              <span>Frete gratis comprando 2 unidade</span>
+              <span>Finalize sua compra aqui</span>
             </p>
           </div>
           <Link to="/cartFinali">

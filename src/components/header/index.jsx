@@ -22,19 +22,19 @@ function Header() {
 
   console.log({ r: length })
 
-  const currentUser = ''
+  //const currentUser = ''
 
   const handleCartClick = () => {
     setCartIsVisible(true);
   };
 
-  const handleLoginClick = () => {
+  /*const handleLoginClick = () => {
     //dispatch(loginUser({ name: "Felipe Rocha", email: "felipe@rocha.com" }));
   };
 
   const handleLogoutClick = () => {
     //dispatch(logoutUser());
-  };
+  };*/
 
   return (
     <>

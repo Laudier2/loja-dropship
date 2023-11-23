@@ -1,6 +1,6 @@
 import React from 'react'
-import { ContainerFooter, ContainerFooter1, ContainerFooter2, ContainerFooter3 } from './styles';
-import { Height } from '@material-ui/icons';
+import { ContainerFooter, ContainerFooter1, ContainerFooter2 } from './styles';
+//import { Height } from '@material-ui/icons';
 
 export default function Footer() {
 

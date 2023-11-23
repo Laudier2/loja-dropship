@@ -168,32 +168,35 @@ const Descricao = () => {
             <LocationOnIcon />
             <a href="/desc">Frete gratis para todo o pais</a>
           </div>
+          <br /><br />
           <div>
-            <p><strong>Quantidade
+            <p>
+              <strong>Quantidade</strong> 
               <div>
                 disponivel ({qunt})
               </div>
-            </strong> <br /><br />
-              <span>Finalize sua compra aqui</span>
+              <br /><br />
+              <strong>Finalize sua compra aqui!</strong>
             </p>
           </div>
           <Link to="/cartFinali">
-                    <button onClick={() => handlerCartAdd(productFilter[0])}>Comprar agora</button>
-                  </Link>
-                  <button onClick={() => handlerCartAdd(productFilter[0])}>Adicionar ao carrinho</button>
+            <button onClick={() => handlerCartAdd(productFilter[0])}>Comprar agora</button>
+            </Link>
+            <button onClick={() => handlerCartAdd(productFilter[0])}>Adicionar ao carrinho</button>
 
-                  <br />
-                  <div>
-                    <p><SwapHorizIcon /> <strong>Devolução Gratis</strong> <br />
-                      <span >Você tem 7 dias a partir da data de recebimento.</span>
-                    </p>
-                  </div>
-                  <br />
-                  <div>
-                    <p><VerifiedUserIcon /> <strong >Compra Garantida</strong> <br />
-                      <span >eceba o produto que está esperando ou devolvemos o dinheiro.</span>
-                    </p>
-                  </div>
+            <br />
+            <div>
+              <br /><br />
+              <p><SwapHorizIcon /> <strong>Devolução Gratis</strong> <br />
+                <span >Você tem 7 dias a partir da data de recebimento.</span>
+              </p>
+            </div>
+            <br />
+            <div>
+              <p><VerifiedUserIcon /> <strong >Compra Garantida</strong> <br />
+                <span >eceba o produto que está esperando ou devolvemos o dinheiro.</span>
+              </p>
+            </div>
           </div>
           <div className="div3">
             <div className='div1' >

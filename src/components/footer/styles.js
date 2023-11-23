@@ -11,6 +11,7 @@ export const ContainerFooter = styled.div`
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 
   @media screen and (max-width: 768px) {
+    margin-top: 60px;
     width: 100%;
   }
 
@@ -30,6 +31,7 @@ export const ContainerFooter = styled.div`
       margin-left: -5px;
       margin-top: -45px;
       font-size: 40px;
+      
     }
   }
 
@@ -68,6 +70,7 @@ export const ContainerFooter = styled.div`
         padding: 10px;
         margin: 5px;
       }
+
     }
 
     @media (max-width: 768px) {
@@ -110,6 +113,104 @@ export const ContainerFooter2 = styled.div`
   }
 
   & div {
+    width: 400px;
+    
+    & img {
+      width: 10%;
+      height: 4vh;
+      margin: 2px;
+      margin-top: 3px;
+    }
+
+    & .img {
+      width: 70%;
+      height: 10vh;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-left: 20px;
+
+      & h3 {
+        font-size: 15px;
+      }
+
+      & h4 {
+        font-size: 12px;
+      }
+
+      & img {
+        width: 25px;
+        height: 3vh;
+        margin: 2px;
+          margin-top: 3px;
+      }
+
+      & .img {
+        width: 120%;
+        height: 7vh;
+      }
+    }
+  }
+`;
+
+export const ContainerFooter1 = styled.div`
+  width: 100%;
+  background-color: #000000;
+  display: flex;
+  justify-content: space-between;
+  color: #eee;
+  padding: 50px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+  & div {
+    width: 600px;
+    
+    & img {
+      width: 10%;
+      height: 5vh;
+      margin: 2px;
+      margin-top: 3px;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-left: 20px;
+
+      & h3 {
+        font-size: 15px;
+      }
+
+      & h4 {
+        font-size: 12px;
+      }
+
+      & img {
+        width: 25px;
+        height: 3vh;
+        margin: 2px;
+        margin-top: 3px;
+    }
+  }
+}
+`;
+
+export const ContainerFooter3 = styled.div`
+  width: 100%;
+  background-color: #000000;
+  display: flex;
+  justify-content: space-between;
+  color: #eee;
+  padding: 50px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+  & div {
     width: 600px;
     
     & img {
@@ -120,39 +221,24 @@ export const ContainerFooter2 = styled.div`
     }
 
     @media screen and (max-width: 768px) {
+      margin-left: 20px;
+
       & h3 {
-        font-size: 10px;
+        font-size: 15px;
       }
 
       & h4 {
-        font-size: 10px;
+        font-size: 12px;
       }
+
+      & img {
+        width: 25px;
+        height: 3vh;
+        margin: 2px;
+        margin-top: 3px;
     }
   }
-
-  & main {
-    width: 300px;
-    position: absolute;
-    margin-left: 80%;
-    
-    & img {
-      width: 150px;
-      height: 7vh;
-      margin: 2px;
-      margin-top: 3px;
-    }
-
-    @media screen and (max-width: 768px) {
-      display: flex;
-      & h3 {
-        font-size: 10px;
-      }
-
-      & h4 {
-        font-size: 10px;
-      }
-    }
-  }
+}
 `;
 
 

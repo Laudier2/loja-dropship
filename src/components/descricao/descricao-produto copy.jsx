@@ -6,7 +6,7 @@ import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
 import ReactLoading from 'react-loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCart } from '../../redux/cart/cart';
-import {  ConatinerMain } from './styles';
+import {  ConatinerMain, ContainerDecription, ContainerDecriptionSecudaria, ContainerDescriptionButton, ContainerImage, ContainerImageMini } from './styles';
 import { Link } from 'react-router-dom';
 import { FaCreditCard } from "react-icons/fa";
 
@@ -119,65 +119,87 @@ const Descricao = () => {
     <ConatinerMain>
       {productFilter === "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> :
         <div >
-          <div className="div2">
-            <img src={img1} alt="img" id="logo" />
-          </div>
-          <div className="divdesc">
-              <h5 ><strong>{receb_data_name}</strong></h5>
-              <div>
-                4.8
-                <StarOutlineIcon />
-                <StarOutlineIcon />
-                <StarOutlineIcon />
-                <StarOutlineIcon />
-                <StarOutlineIcon />
-                (6505)
-              </div>
-              <p><strong>R${price},00</strong></p>
-              <span>
-            <FaCreditCard className='mt-1 m-1'/> Em até 12x sem juros
-          </span>
-              <br />
-              <a href="/desc"><span>ver os meio de pagamento</span></a>
-              <br /><br />
-              <h5>Cor</h5>
-             
-              <div role="group" aria-label="Basic example">
-                <button type="button">{colors}</button>
-                { }
-              </div>
-              <div>
-              <br /><br />
-                <h4><strong>MEDIDAS</strong></h4>
-                
-                <p>{sizers}</p>
-              </div>
-              <div>
-                <h4><strong>DESCRIÇÃO</strong></h4>
-              
-                <p>
-                {desc}
-                </p>
-              </div>
-            </div>
-          <div className="divdescSecudare">
-          <strong>Envio para todo o país</strong>
-          <br />
-          <span>Saiba os prazos de entrega e as formas de envio.</span>
           <div >
-            <LocationOnIcon />
-            <a href="/desc">Calcular prazo de entrega</a>
-          </div>
-          <div>
-            <p><strong>Quantidade
-              <div>
-                disponivel ({qunt})
-              </div>
-            </strong> <br /><br />
-              <span>Frete gratis comprando 2 unidade</span>
-            </p>
-          </div>
-          <Link to="/cartFinali">
+            <div >
+              <div >
+                <div >
+                  <ContainerImageMini>
+                    <img src={img1 === "" ? "" : img1} alt="" onMouseOver={() => over0(over0)} />
+                  </ContainerImageMini>
+                  <ContainerImageMini>
+                    <img src={img2 === "" ? "" : img2} alt="" onMouseOver={() => over1(over1)} />
+                  </ContainerImageMini>
+                  <ContainerImageMini>
+                    <img src={img3 === "" ? "" : img3} alt="" onMouseOver={() => over2(over2)} />
+                  </ContainerImageMini>
+                  <ContainerImageMini>
+                    <img src={img4 === "" ? "" : img4} alt="" onMouseOver={() => over3(over3)} />
+                  </ContainerImageMini>
+                  <ContainerImageMini>
+                    <img src={img5 === "" ? "" : img5} alt="" onMouseOver={() => over3(over4)} />
+                  </ContainerImageMini>
+                </div>
+                <ContainerImage >
+                  <img src={img1} id="logo" alt="Elemento vindo da função da pasta public" />
+                </ContainerImage>
+                <ContainerDecription>
+                  <h5 ><strong>{receb_data_name}</strong></h5>
+                  <div>
+                    4.8
+                    <StarOutlineIcon />
+                    <StarOutlineIcon />
+                    <StarOutlineIcon />
+                    <StarOutlineIcon />
+                    <StarOutlineIcon />
+                    (6505)
+                  </div>
+                  <p><strong>R${price},00</strong></p>
+                  <span>
+                <FaCreditCard className='mt-1 m-1'/> Em até 12x sem juros
+              </span>
+                  <br />
+                  <a href="/desc"><span>ver os meio de pagamento</span></a>
+                  <br /><br />
+                  <h5>Cor</h5>
+                  <div role="group" aria-label="Basic example">
+                    <button type="button">{colors}</button>
+                    { }
+                  </div>
+                  <div>
+                    <h4><strong>MEDIDAS</strong></h4>
+                    <br /><br /><br />
+                    <p>{sizers}</p>
+                  </div>
+                  <div>
+                    <h4><strong>DESCRIÇÃO</strong></h4>
+                    <br /><br /><br />
+                    <p>
+                    {desc}
+                    </p>
+                  </div>
+                </ContainerDecription>
+                <ContainerDecriptionSecudaria>
+
+                  <strong>Envio para todo o país</strong>
+                  <br />
+                  <span>Saiba os prazos de entrega e as formas de envio.</span>
+                  <div >
+                    <LocationOnIcon />
+                    <a href="/desc">Calcular prazo de entrega</a>
+                  </div>
+                  <div>
+                    <p><strong>Quantidade
+                      <div>
+                        disponivel ({qunt})
+                      </div>
+                    </strong> <br /><br />
+                      <span>Frete gratis comprando 2 unidade</span>
+                    </p>
+                  </div>
+                  
+                </ContainerDecriptionSecudaria>
+                <ContainerDescriptionButton>
+                  <Link to="/cartFinali">
                     <button onClick={() => handlerCartAdd(productFilter[0])}>Comprar agora</button>
                   </Link>
                   <button onClick={() => handlerCartAdd(productFilter[0])}>Adicionar ao carrinho</button>
@@ -194,27 +216,12 @@ const Descricao = () => {
                       <span >eceba o produto que está esperando ou devolvemos o dinheiro.</span>
                     </p>
                   </div>
-          </div>
-          <div className="div3">
-            <div className='div1' >
-              <img src={img1 === "" ? "" : img1} alt="img0" onMouseOver={() => over0(over0)} />
-            </div>
-            <div className='div1' >
-              <img src={img2 === "" ? "" : img2} alt="img1" onMouseOver={() => over1(over1)} />
-            </div>
-            <div className='div1' >
-              <img src={img3 === "" ? "" : img3} alt="img2" onMouseOver={() => over2(over2)} />
-            </div>
-            <div className='div1' >
-              <img src={img4 === "" ? "" : img4} alt="img3" onMouseOver={() => over3(over3)} />
-            </div>
-            <div className='div1' >
-              <img src={img5 === "" ? "" : img5} alt="img4" onMouseOver={() => over3(over4)} />
+                </ContainerDescriptionButton>
+              </div>
             </div>
           </div>
-          
-        </div>
-      }
+          {/*  <Footer />*/}
+        </div>}
     </ConatinerMain>
   );
 }

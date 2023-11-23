@@ -29,7 +29,7 @@ export default function CartFinalize() {
 
     const handleIncreaseClick = (e) => {
         dispatch(addCart(e))
-        window.location.reload()
+        //window.location.reload()
     };
 
     const handleDecreaseClick = (e) => {
@@ -66,12 +66,14 @@ export default function CartFinalize() {
 
     return (
         <>
-            {items === 0 ? navigate("/") :
+            {items === 0 ? <img src="https://www.roboticaeducacional.art.br/images/cart-vazio.jpg" alt="img" srcset="" /> :
                 <div>
                     <TableCartFinalize>
                         <table>
                             <thead>
-                            <tr className='m-auto h3'>Você tem {items} produtos em seu carrimho</tr>
+                            <tr className='m-auto h3'>
+                                <h2>Seu carrimho</h2>
+                            </tr>
                             </thead>
                             <hr />
                             <tbody>
@@ -88,16 +90,15 @@ export default function CartFinalize() {
                                                 <button onClick={() => handleIncreaseClick(res)}>
                                                     <FaPlus/>
                                                 </button>
-                                                    (<b>Unidade</b>
-                                                    {res.cartQuantity})
+                                                    <b><p>Quantidade {res.cartQuantity}</p></b>
                                                 <button onClick={() => handleDecreaseClick(res)}>
                                                     <FaWindowMinimize className='mb-2' />
                                                 </button>
                                                 
                                             </td>
                                             <td>
-                                                <b>Preco</b>
-                                                ${res.price * res.cartQuantity}
+                                                <strong>Preco R${res.price * res.cartQuantity},00</strong>
+                                                
                                                 <button className='btn btn-outline-secondary ml-2' onClick={() => handleRemoveClick(res)}> Excluir 
                                                     <RiDeleteBin2Fill className='ml-2 text-danger h5' />
                                                 </button>
@@ -106,15 +107,10 @@ export default function CartFinalize() {
                                     </tr>
                                 ))}
                             </tbody>
-                            {cart2.cartTotalAmount === 0 
-                            ? <img style={{ margin: "auto", width: "1000px", height: "50vh" }} src="https://www.pngkit.com/png/detail/411-4110678_carrinho-de-compras-vazio-shopping-cart.png" alt="iage" />
-                            :  <div>
-                                <ButtonClearCart onClick={() => handleClearCart()}>Clear Cart</ButtonClearCart> 
-                                <SubTotal>Total: R$ {cart[0].price * cart[0].cartQuantity}</SubTotal>
-                                </div> }
+                            
                         </table>
                     </TableCartFinalize>
-                   {cart2.cartTotalAmount === 0 
+                   {cart2.cartTotalAmount == null
                    ? <Button>
                         <Link to="/">Volta para pagina inicial</Link>
                    </Button>
@@ -122,6 +118,7 @@ export default function CartFinalize() {
                        await api.post("payment", ...prod)
                        .then((res) => (window.location.href = res.data.response.body.init_point))
                     }}>Escolher a forma de pagamento</Button>}
+                    <SubTotal>Total: R$ {cart[0].cartQuantity * cart2.cartTotalAmount},00 </SubTotal>
                 </div>
             }
         </>

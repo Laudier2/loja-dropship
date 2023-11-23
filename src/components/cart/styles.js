@@ -15,6 +15,22 @@ export const CartContainer = styled.div`
   visibility: ${(props) => (props.isVisible ? "visible" : "hidden")};
   opacity: ${(props) => (props.isVisible ? "1" : "0")};
   transition: all 0.3s ease;
+  
+  & a {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+
+    & button {
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    @media (max-width: 768px) {
+      
+    }
+
+  }
 
   p {
     color: #222222;
@@ -73,6 +89,11 @@ export const TableCartFinalize = styled.div`
 
       & tr {
         display: flex;
+
+        & h2 {
+          margin-top: 10px;
+          font-weight: bold;
+        }
       }
     }
 
@@ -89,20 +110,37 @@ export const TableCartFinalize = styled.div`
         width: 300px;
 
         & b {
-          margin: 5px;
+          font-weight: bolder;
+
+          @media (max-width: 768px) {
+            position: absolute;
+            
+            & p {
+              margin-top: 28px;
+              margin-left: -60px;
+              font-size: 12px;
+            }
+          }
         }
 
         & button {
           border: none;
+          border-radius: 8px;
+          font-weight: bold;
+          background-color: aqua;
 
           &:hover {
-            background-color: gba(54, 51, 51, 0.466);
-            color: rgba(0, 255, 255, 0.582);
+            background-color: rgba(0, 255, 255, 0.582);
+            color: #000000;
             font-weight: bold;
           }
         }
       }
     }
+  }
+
+  & button {
+    margin: 8px
   }
 
   @media (max-width: 768px) {
@@ -143,11 +181,11 @@ export const TableCartFinalize = styled.div`
 
 export const SubTotal = styled.div`
   border-radius: 70px;
-  width: 20%;
-  border: solid 0.5px;
+  width: 13%;
+  border: solid 0.9px;
   padding: 10px;
   text-align: center;
-  margin-left: 74%;
+  margin-left: 68%;
   margin-top: -80px;
   margin-bottom: 10px;
   font-weight: bold;
@@ -157,12 +195,12 @@ export const SubTotal = styled.div`
     width: 30%;
     font-size: 12px;
     margin-left: 60%;
-    margin-top: -50px;
+    margin-top: -5px;
   }
 `;
 
 export const Button = styled.button`
-  background-color: aquamarine;
+  background-color: aqua;
   border: none;
   border-radius: 6px;
   width: 30%;

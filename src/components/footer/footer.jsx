@@ -1,5 +1,6 @@
 import React from 'react'
-import { ContainerFooter, ContainerFooter2 } from './styles';
+import { ContainerFooter, ContainerFooter1, ContainerFooter2, ContainerFooter3 } from './styles';
+import { Height } from '@material-ui/icons';
 
 export default function Footer() {
 
@@ -49,22 +50,25 @@ export default function Footer() {
 						<img src={img.envio} alt="im"/>
 					))}
 				</div>
-				<main>
+				<div>
 					<h4>Segurança</h4>
-					{seguranca.map(img => (
-						<img src={img.seguro} alt="im"/>
+					{seguranca.map(seg => (
+						<img src={seg.seguro} className='img' alt="im"/>
 					))}
-				</main>
+				</div>
+				
 			</ContainerFooter2>
-			<ContainerFooter2>
+			
+			<ContainerFooter1>
 				<div>
-					<h3>Trabalhamos com boné de ótima qualidade, receba seu produto ou devolvemos seudinhiro.</h3>
-					<p>@copy:teste</p>
+					<h4>Trabalhamos com boné de ótima qualidade, receba seu produto ou devolvemos seudinhiro.</h4>
+					<p>&copy; Todos os direitos reservado Top dos Boné</p>
+					
 				</div>
 				<div>
-					<h3>Trabalhamos com boné de ótima qualidade, receba seu produto ou devolvemos seudinhiro.</h3>
+					<h4>Trabalhamos com boné de ótima qualidade, receba seu produto ou devolvemos seudinhiro.</h4>
 				</div>
-			</ContainerFooter2>
+			</ContainerFooter1>
 		</>
 	)
 }

@@ -19,6 +19,8 @@ export const ProductProd = styled.div`
       width: 100%;
       height: 40vh;
       border-radius: 8px;
+
+      
     }
 
     & h5 {
@@ -39,7 +41,7 @@ export const ProductProd = styled.div`
       margin: auto;
       display: flex;
       text-align: center;
-      color: rgba(8, 8, 8, 0.511);
+      color: rgba(10, 10, 10, 0.687);
     }
 
     & button {
@@ -59,7 +61,7 @@ export const ProductProd = styled.div`
 
     }
     @media (max-width: 768px) {
-      width: 100%;
+      width: 96%;
     }
   }
   }

@@ -4,13 +4,101 @@ export const ConatinerMain = styled.div`
   margin-top: 7%;
   width: 100%;
 
-  @media (max-width: 768px) {
-    width: 100%;
-    margin-left: 20px;
+  & .div1 {
+    width: 60px;
+    margin-left: 10%;
+    margin-top: 2px;
+
+    & img {
+      width: 80px;
+    }
+
+    @media (max-width: 768px) {
+      width: 40px;
+      margin-left: 10%;
+      
+      & img {
+        width: 40px;
+        margin-top: 2px;
+      }
+
+    }
+    
+  }
+
+  & .div2 {
+    width: 80%;
+    display: flex;
+    margin: auto;
+
+    & img {
+      width: 50%;
+    }
+
+    @media (max-width: 768px) {
+      width: 0%;
+      margin-left: 0%;
+      margin-top: 0%;
+      
+      & img {
+        width: 80%;
+        display: flex;
+        margin: auto;
+      }
+
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  & .div3 {
+    width: 80px;
+    margin-left: 10%;
+    margin-top: -40%;
+    position: absolute;
+
+    @media (max-width: 768px) {
+      margin-top: -399%;
+      margin-left: 30px;
+      background: transparent;
+    }
+    
+  }
+
+  & .divdesc {
+    width: 16%;
+    margin: auto;
+    position: absolute;
+    margin-top: -40%;
+    margin-left: 52%;
+
+    @media (max-width: 768px) {
+      width: 80%;
+      margin: auto;
+      position: inherit;
+      margin-top: 10%;
+    }
+  }
+
+  & .divdescSecudare {
+    width: 13%;
+    margin: auto;
+    position: absolute;
+    margin-top: -40%;
+    margin-left: 70%;
+
+    @media (max-width: 768px) {
+      width: 80%;
+      margin: auto;
+      position: inherit;
+      margin-top: 10%;
+    }
   }
 `;
 
-export const ContainerImage = styled.div`
+/*export const ContainerImage2 = styled.div`
   margin-top: -25%;
   margin-left: 28%;
 
@@ -28,7 +116,7 @@ export const ContainerImage = styled.div`
   }
 `;
 
-export const ContainerImageMini = styled.div`
+export const ContainerImageMini2 = styled.div`
   margin-left: 390px;
 
   & img {
@@ -45,7 +133,7 @@ export const ContainerImageMini = styled.div`
   }
 `;
 
-export const ContainerDecription = styled.div`
+export const ContainerDecription2 = styled.div`
 margin-top: -28%;
   width: 250px;
   margin-left: 940px;
@@ -72,7 +160,7 @@ margin-top: -28%;
   }
 `;
 
-export const ContainerDecriptionSecudaria = styled.div`
+export const ContainerDecriptionSecudaria2 = styled.div`
   margin-top: -45%;
   width: 200px;
   margin-left: 1210px;
@@ -125,3 +213,4 @@ export const ContainerDescriptionButton = styled.div`
     margin-top: 40px;
   }
 `;
+*/

@@ -1,4 +1,5 @@
 .t {
-    color: rgb(179, 179, 25);
-    background-color: rgba(128, 128, 128, 0.133);
+    color: rgb(25, 176, 179);
+    background-color: aqua;
+    display: inline-block;
 }

@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { CartContainer, CartEscapeArea, CartContent, CartTitle } from "./styles";
 import CartItem from "../cart-item/index"
 import { SlBasket } from "react-icons/sl";
+import { Link } from "react-router-dom";
 
 const Cart = ({ isVisible, setIsVisible }) => {
   const handleEscapeAreaClick = () => setIsVisible(false);
@@ -16,7 +17,10 @@ const Cart = ({ isVisible, setIsVisible }) => {
       <CartEscapeArea onClick={handleEscapeAreaClick} />
       <CartContent>
         <CartTitle>
-          <SlBasket className="col-sm-2" /> Seu Carrinho
+          <a href="/cartFinali">
+            <SlBasket className="col-sm-2" /> Seu Carrinho
+          </a>
+          <hr />
         </CartTitle>
         {cart.map((product) =>
           <div key={product.id}>

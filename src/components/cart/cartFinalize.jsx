@@ -29,12 +29,13 @@ export default function CartFinalize() {
 
     const handleIncreaseClick = (e) => {
         dispatch(addCart(e))
-        //window.location.reload()
+        window.location.reload()
     };
 
     const handleDecreaseClick = (e) => {
+        //console.log({e: e})
         dispatch(decrementCart(e))
-       // window.location.reload()
+        window.location.reload()
     };
 
     const handleClearCart = () => {
@@ -118,7 +119,7 @@ export default function CartFinalize() {
                        await api.post("payment", ...prod)
                        .then((res) => (window.location.href = res.data.response.body.init_point))
                     }}>Escolher a forma de pagamento</Button>}
-                    <SubTotal>Total: R$ {cart[0].cartQuantity * cart2.cartTotalAmount},00 </SubTotal>
+                    <SubTotal>Total: R$ {cart2.cartTotalAmount},00 </SubTotal>
                 </div>
             }
         </>

@@ -1,11 +1,29 @@
 //import { useHistory } from 'react-router-dom'
 import ReactLoading from 'react-loading';
 import { useSelector } from 'react-redux';
-import { ProductProd } from './stylend';
+import { ProductProd, LoadingPage } from './stylend';
 import { FaCreditCard } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Slids from '../slids/slids';
 
+const Example = () => (
+    /*
+    blank
+    balls
+    bars
+    bubbles
+    cubes
+    cylon
+    spin
+    spinningBubbles
+    spokes 
+    */
+  <LoadingPage>
+    <ReactLoading type='spokes' color='aqua' height={'100%'} width={'100%'}  />
+  </LoadingPage>
+);
+
+const product = []
 
 const Products = () => {
   
@@ -51,15 +69,15 @@ const Products = () => {
     //console.log(dados)*/
   }
 
+  console.log(products)
+
   return (
     <>
     {/*<Slids />*/}
-      
+  {products == ""  ? <Example /> :
     <ProductProd>
       <section>
-      {products === !products 
-        ? <ReactLoading className='container col-sm-2' type='bars' color='#0000FF' /> 
-        : products.map(res => (
+      { products.map(res => (
           <Link to="desc" onClick={() => LocalSto(res)}>
             <div key={res.id}>
               <img src={res.image[0]} alt="img" />
@@ -77,7 +95,7 @@ const Products = () => {
         }
       </section>  
     </ProductProd>
-      
+      }
       
   </>
   );

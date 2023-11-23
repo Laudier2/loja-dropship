@@ -61,8 +61,22 @@ export const ProductProd = styled.div`
 
     }
     @media (max-width: 768px) {
-      width: 96%;
+      width: 95%;
     }
   }
   }
+`
+export const LoadingPage1 = styled.div`
+ position: absolute;
+  top: 30%;
+  left: 45%;
+`
+export const LoadingPage = styled.div`
+  width: 20%;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `

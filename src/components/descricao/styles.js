@@ -80,6 +80,18 @@ export const ConatinerMain = styled.div`
       position: inherit;
       margin-top: 10%;
     }
+
+    & button {
+      background-color: whitesmoke;
+      border-radius: 6px;
+      font-weight: bold;
+      margin: 3px;
+      padding: 5px;
+
+      &:hover {
+        background-color: rgb(25, 176, 179);
+      }
+    }
   }
 
   & .divdescSecudare {
@@ -95,122 +107,19 @@ export const ConatinerMain = styled.div`
       position: inherit;
       margin-top: 10%;
     }
-  }
-`;
 
-/*export const ContainerImage2 = styled.div`
-  margin-top: -25%;
-  margin-left: 28%;
-
-  & img {
-    width: 40%;
-    height: 60vh;
-    margin-top: 45px;
-
-    @media (max-width: 720px) {
-      margin-top: -140px;
+    & button {
+      background-color: aqua;
       width: 80%;
-      height: 40vh;
-      margin-left: -2px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin: 3px;
+      padding: 5px;
+
+      &:hover {
+        background-color: #00FF00;
+      }
     }
   }
 `;
-
-export const ContainerImageMini2 = styled.div`
-  margin-left: 390px;
-
-  & img {
-    margin-top: 2px;
-    border: solid gray;
-    width: 80px;
-    margin-left: -25px;
-
-    @media (max-width: 768px) {
-      width: 50px;
-      margin-left: -365px;
-      border: solid gray;
-    }
-  }
-`;
-
-export const ContainerDecription2 = styled.div`
-margin-top: -28%;
-  width: 250px;
-  margin-left: 940px;
-
-  & button {
-    background-color: rgba(128, 128, 128, 0.575);
-    border: none;
-    border-radius: 4px;
-
-    &:hover {
-      background-color: whitesmoke;
-    }
-  }
-
-  & h4 {
-    position: absolute;
-    margin-top: 30px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    width: 320px;
-    margin: auto;
-    margin-top: 40px;
-  }
-`;
-
-export const ContainerDecriptionSecudaria2 = styled.div`
-  margin-top: -45%;
-  width: 200px;
-  margin-left: 1210px;
-
-  & button {
-    background-color: rgba(128, 128, 128, 0.575);
-    border: none;
-    border-radius: 4px;
-    margin: 7px;
-
-    &:hover {
-      background-color: gray;
-    }
-  }
-
-  @media (max-width: 768px) {
-    width: 320px;
-    margin: auto;
-    margin-top: 40px;
-  }
-`;
-export const ContainerDescriptionButton = styled.div`
-  margin-top: -1%;
-  width: 200px;
-  margin-left: 1210px;
-
-  & button {
-    background-color: rgb(10, 155, 212);
-    width: 80%;
-    padding: 6px;
-    border: none;
-    border-radius: 4px;
-    margin: 7px;
-    font-size: 13px;
-
-    &:hover {
-      background-color: green;
-    }
-  }
-
-  @media (max-width: 1600px) {
-    margin-top: 1%;
-    width: 200px;
-    margin-left: 1210px;
-  }
-
-  @media (max-width: 768px) {
-    width: 320px;
-    margin: auto;
-    margin-top: 40px;
-  }
-`;
-*/

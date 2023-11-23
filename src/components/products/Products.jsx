@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { ProductProd, LoadingPage } from './stylend';
 import { FaCreditCard } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import Slids from '../slids/slids';
+//import Slids from '../slids/slids';
 
 const Example = () => (
     /*
@@ -23,7 +23,7 @@ const Example = () => (
   </LoadingPage>
 );
 
-const product = []
+//const product = []
 
 const Products = () => {
   
@@ -74,7 +74,7 @@ const Products = () => {
   return (
     <>
     {/*<Slids />*/}
-  {products == ""  ? <Example /> :
+  {products === ""  ? <Example /> :
     <ProductProd>
       <section>
       { products.map(res => (

@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Button, ButtonClearCart, SubTotal, TableCartFinalize } from "./styles"
-import { useNavigate, Link } from "react-router-dom"
+import { Button, SubTotal, TableCartFinalize } from "./styles"
+import { Link } from "react-router-dom"
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { FaPlus, FaWindowMinimize} from "react-icons/fa";
-import { addCart, decrementCart, removeFromCart, cauculateTotal, clearCart } from '../../redux/cart/cart';
+import { addCart, decrementCart, removeFromCart, cauculateTotal} from '../../redux/cart/cart';
 import api from "../../api/api"
 
 
 export default function CartFinalize() {
 
-    const navigate = useNavigate()
+    //const navigate = useNavigate()
 
     const cart = useSelector(state => state.cart.cartItems)
     const items = useSelector(state => state.cart.cartItems.length)
@@ -38,9 +38,9 @@ export default function CartFinalize() {
         window.location.reload()
     };
 
-    const handleClearCart = () => {
+    /*const handleClearCart = () => {
         dispatch(clearCart())
-    };
+    };*/
 
     const res = cart.map(r => r.cartQuantity)
     

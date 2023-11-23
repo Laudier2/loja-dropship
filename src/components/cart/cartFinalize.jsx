@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Button, SubTotal, TableCartFinalize } from "./styles"
+import { Button, CartVazio, SubTotal, TableCartFinalize } from "./styles"
 import { Link } from "react-router-dom"
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { FaPlus, FaWindowMinimize} from "react-icons/fa";
@@ -54,6 +54,14 @@ export default function CartFinalize() {
         },
     ]
 
+    const carrinhoVazio = () => {
+        return (
+            <CartVazio>
+                <img src="https://www.roboticaeducacional.art.br/images/cart-vazio.jpg" alt="img" />
+            </CartVazio>
+        )
+    }
+
     /*let prod2 = [
         {
             title: "Fone",
@@ -67,7 +75,7 @@ export default function CartFinalize() {
 
     return (
         <>
-            {items === 0 ? <img src="https://www.roboticaeducacional.art.br/images/cart-vazio.jpg" alt="img" srcset="" /> :
+            {items === 0 ? carrinhoVazio() :
                 <div>
                     <TableCartFinalize>
                         <table>

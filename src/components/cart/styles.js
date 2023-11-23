@@ -179,6 +179,21 @@ export const TableCartFinalize = styled.div`
   }
 `;
 
+export const CartVazio = styled.div`
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+
+  & img {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+   
+  }
+`
+
 export const SubTotal = styled.div`
   border-radius: 70px;
   width: 13%;

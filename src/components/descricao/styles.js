@@ -81,7 +81,7 @@ export const ConatinerMain = styled.div`
     }
 
     @media (max-width: 680px) {
-      margin-top: -337%;
+      margin-top: -347%;
       margin-left: 23px;
       background: transparent;
 
@@ -90,7 +90,7 @@ export const ConatinerMain = styled.div`
       }
     }
 
-    @media (max-width: 380px) {
+    @media (max-width: 280px) {
       margin-top: -472%;
       margin-left: -6px;
       background: transparent;

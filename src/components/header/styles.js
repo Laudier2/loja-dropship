@@ -121,6 +121,8 @@ export const ContainerPRT = styled.div`
       }
 
       &:hover {
+        margin-left: -10px;
+        padding: 0px 1px 4px 20px;
         background-color: #FDD201;
 
         & a {

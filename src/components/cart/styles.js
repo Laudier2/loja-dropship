@@ -194,6 +194,21 @@ export const CartVazio = styled.div`
   }
 `
 
+export const CartIcon = styled.div`
+  text-align: left;
+  color: aqua;
+  margin-top: 5px;
+`
+
+export const ButtonCard = styled.button`
+  background-color: aqua;
+  width: 90%;
+  font-weight: bold;
+  margin-left: 15px;
+  border: none;
+  border-radius: 6px;
+`
+
 export const SubTotal = styled.div`
   border-radius: 70px;
   width: 13%;

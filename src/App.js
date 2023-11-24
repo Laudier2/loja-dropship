@@ -8,6 +8,7 @@ import Cart from "./components/cart";
 import Header from "./components/header";
 import CartFinalize from "./components/cart/cartFinalize";
 import Footer from "./components/footer/footer";
+import Politicas from "./components/politica/Politicas";
 
 
 function App() {
@@ -31,6 +32,10 @@ function App() {
     {
       path: "/cartFinali",
       element: <CartFinalize />,
+    },
+    {
+      path: "/politica",
+      element: <Politicas />,
     },
   ]);  
 

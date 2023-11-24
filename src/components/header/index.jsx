@@ -72,7 +72,7 @@ function Header() {
               <span>
                 <AiOutlineWhatsApp className="text-white h5 m-1 mb-2 p"/>
               </span>
-              <a href="/">Contato</a></li>
+              <a href="https://wa.me/5575998172448?text=Ol%C3%A1%20tudo%20bem%2C%20gostaria%20de%20saber%20mais%20sobre%20alguns%20produtos%20da%20Loja%3F" target="blank">Contato</a></li>
             <li>
               <span>
                 <BsTruck className="text-white h5 m-1 mb-2 p"/>
@@ -89,7 +89,7 @@ function Header() {
               <span>
                 <BsJournalText className="text-white h5 m-1 mb-2 p"/>
               </span>
-              <a href="/">Politica</a>
+              <a href="/politica" target="blank">Politica</a>
             </li>
           </ul>
         </ContainerPRT>

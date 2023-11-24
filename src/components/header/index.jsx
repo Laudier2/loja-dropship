@@ -6,6 +6,7 @@ import { AiOutlineWhatsApp } from "react-icons/ai";
 import { AiOutlineNotification } from "react-icons/ai";
 import { BsTruck } from "react-icons/bs";
 import { BsJournalText } from "react-icons/bs";
+import { LuPackageSearch } from "react-icons/lu";
 
 
 
@@ -77,7 +78,7 @@ function Header() {
               <span>
                 <BsTruck className="text-white h5 m-1 mb-2 p"/>
               </span>
-              <a href="/">Rastreio</a>
+              <a href="https://rastreamento.correios.com.br/app/index.php" target="blank">Rastreio</a>
             </li>
             <li>
               <span>
@@ -90,6 +91,12 @@ function Header() {
                 <BsJournalText className="text-white h5 m-1 mb-2 p"/>
               </span>
               <a href="/politica" target="blank">Politica</a>
+            </li>
+            <li>
+              <span>
+                <LuPackageSearch className="text-white h5 m-1 mb-2 p"/>
+              </span>
+              <a href="/politica" target="blank">Meu pedido</a>
             </li>
           </ul>
         </ContainerPRT>

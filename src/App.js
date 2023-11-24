@@ -9,7 +9,11 @@ import Header from "./components/header";
 import CartFinalize from "./components/cart/cartFinalize";
 import Footer from "./components/footer/footer";
 import Politicas from "./components/politica/Politicas";
+import ReactGA from "react-ga" 
 
+const TRACKING_ID = "G-1GXW3W538Z" 
+
+ReactGA.initialize(TRACKING_ID)
 
 function App() {
   

@@ -118,8 +118,8 @@ export const ContainerFooter2 = styled.div`
     & img {
       width: 10%;
       height: 4vh;
-      margin: 2px;
-      margin-top: 3px;
+      margin: 1px;
+      margin-top: 1px;
     }
 
     & .img {
@@ -139,15 +139,15 @@ export const ContainerFooter2 = styled.div`
       }
 
       & img {
-        width: 25px;
-        height: 3vh;
-        margin: 2px;
-          margin-top: 3px;
+        width: 18px;
+        height: 2vh;
+        margin: 1px;
+        margin-top: 1px;
       }
 
       & .img {
         width: 120%;
-        height: 7vh;
+        height: 5vh;
       }
     }
   }
@@ -172,8 +172,8 @@ export const ContainerFooter1 = styled.div`
     & img {
       width: 10%;
       height: 5vh;
-      margin: 2px;
-      margin-top: 3px;
+      margin: 1px;
+      margin-top: 1px;
     }
 
     @media screen and (max-width: 768px) {

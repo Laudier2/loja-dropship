@@ -27,12 +27,12 @@ export const ConatinerMain = styled.div`
   }
 
   & .div2 {
-    width: 80%;
+    width: 90%;
     display: flex;
     margin: auto;
 
     & img {
-      width: 50%;
+      width: 100%;
     }
 
     @media (max-width: 768px) {
@@ -71,7 +71,7 @@ export const ConatinerMain = styled.div`
     }
 
     @media (max-width: 850px) {
-      margin-top: -309%;
+      margin-top: -309s%;
       margin-left: 30px;
       background: transparent;
 
@@ -81,7 +81,7 @@ export const ConatinerMain = styled.div`
     }
 
     @media (max-width: 680px) {
-      margin-top: -347%;
+      margin-top: -337%;
       margin-left: 23px;
       background: transparent;
 

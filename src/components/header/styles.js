@@ -76,6 +76,10 @@ export const ContainerAMR = styled.div`
   }
 `;
 
+export const CartIconVazio = styled.div`
+  width: 5%;
+`
+
 export const ContainerPRT = styled.div`
   width: 100%;
   background-color: #000000;

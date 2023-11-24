@@ -108,6 +108,17 @@ export const ContainerPRT = styled.div`
         padding: 0px;
         margin-left: 5px;
 
+        &:hover {
+          margin-left: -10px;
+          padding: 0px 1px 4px 20px;
+          background-color: #FDD201;
+
+          & a {
+            color: #000000;
+          }
+
+        }
+
         & .h4 {
           display: mome;
         }
@@ -121,8 +132,6 @@ export const ContainerPRT = styled.div`
       }
 
       &:hover {
-        margin-left: -10px;
-        padding: 0px 1px 4px 20px;
         background-color: #FDD201;
 
         & a {

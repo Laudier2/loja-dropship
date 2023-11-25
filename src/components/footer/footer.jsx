@@ -61,12 +61,16 @@ export default function Footer() {
 			
 			<ContainerFooter1>
 				<div>
-					<h4>Trabalhamos com boné de ótima qualidade, receba seu produto ou devolvemos seudinhiro.</h4>
+					<strong>Trabalhamos com boné de ótima qualidade, receba seu produto ou devolvemos seudinhiro.</strong>
 					<p>&copy; Todos os direitos reservado Top dos Boné</p>
 					
 				</div>
 				<div>
-					<h4>Trabalhamos com boné de ótima qualidade, receba seu produto ou devolvemos seudinhiro.</h4>
+					<url>
+						<li>E-mail: laudiersantanamei@gmail.com</li>
+						<li>Phone: (75) 998239680</li>
+						<li>CNPJ: 11.363.576/0001-30</li>
+					</url>
 				</div>
 			</ContainerFooter1>
 		</>

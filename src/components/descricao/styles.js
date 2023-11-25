@@ -62,6 +62,10 @@ export const ConatinerMain = styled.div`
     & img {
       width: 100%;
       border: solid 1px;
+
+      &:hover {
+        border-color: aqua;
+      }
     }
 
     @media (max-width: 971px) {
@@ -87,10 +91,7 @@ export const ConatinerMain = styled.div`
     }
 
     @media (max-width: 280px) {
-      margin-top: -472%;
-      margin-left: -6px;
-      background: transparent;
-
+    
       & img {
         width: 10px;
         font-size: 10px;
@@ -106,6 +107,10 @@ export const ConatinerMain = styled.div`
     margin-top: -40%;
     margin-left: 52%;
     font-size: 1vw;
+
+    & .h4 {
+        width: 15px;
+      }
 
     & h5 {
       font-size: 1vw;

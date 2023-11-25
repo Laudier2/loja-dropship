@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import StarOutlineIcon from '@material-ui/icons/StarOutline';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
@@ -9,6 +8,8 @@ import { addCart } from '../../redux/cart/cart';
 import {  ConatinerMain } from './styles';
 import { Link } from 'react-router-dom';
 import { FaCreditCard } from "react-icons/fa";
+import { TiStarHalfOutline } from "react-icons/ti";
+import { GoStarFill } from "react-icons/go";
 
 
 const Descricao = () => {
@@ -142,21 +143,24 @@ const Descricao = () => {
           <div className="divdesc">
               <h5 ><strong>{receb_data_name}</strong></h5>
               <div>
-                4.8
-                <StarOutlineIcon />
-                <StarOutlineIcon />
-                <StarOutlineIcon />
-                <StarOutlineIcon />
-                <StarOutlineIcon />
-                (6505)
+                <span className='mr-2'>4.8</span>
+                <GoStarFill className='text-warning mb-1'/>
+                <GoStarFill className='text-warning mb-1'/>
+                <GoStarFill className='text-warning mb-1'/>
+                <GoStarFill className='text-warning mb-1'/>
+                <TiStarHalfOutline className='text-warning mb-1 h4'/>
+                <span className='ml-2'>(6505)</span>
+                <p></p>
+                <span>ESSE É UM DOS MAIS VENDIDOS NA LOJA</span>
               </div>
-              <p><strong>R${price},00</strong></p>
+              <br />
+              <h1>R$ {price},00</h1>
               <span>
             <FaCreditCard className='mt-1 m-1'/> Em até 12x sem juros
           </span>
               <br />
               <a href="/desc"><span>ver os meio de pagamento</span></a>
-              <br /><br />
+              <br />
               <h5>Cor</h5>
              
               <div role="group" aria-label="Basic example">
@@ -164,7 +168,7 @@ const Descricao = () => {
                 { }
               </div>
               <div>
-              <br /><br />
+              <br />
                 <h4><strong>MEDIDAS</strong></h4>
                 
                 <p>{sizers}</p>

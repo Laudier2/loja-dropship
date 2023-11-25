@@ -164,6 +164,10 @@ export const ContainerFooter1 = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
+
+    & div {
+      font-size: 2.5vw;
+    }
   }
 
   & div {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { ToastContainer } from "react-toastify";
 import { ErrorBoundary } from "react-error-boundary";
@@ -16,6 +16,10 @@ const TRACKING_ID = "G-1GXW3W538Z"
 ReactGA.initialize(TRACKING_ID)
 
 function App() {
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   
   const router = createBrowserRouter([
     {

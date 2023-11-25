@@ -83,6 +83,24 @@ export const TableCartFinalize = styled.div`
   & table {
     width: 960;
     margin: 0 auto;
+    font-size: 1vw;
+
+    & td {
+      & .div1 {
+        width: 108px;
+        border: solid 1px;
+        border-radius: 8px;
+      }
+
+      & .div2 {
+        width: 80%;
+        border-radius: 8px;
+      }
+
+      @media screen and (max-width: 680px) {
+        font-size: 3vw;
+      }
+    }
 
     & thead {
       display: flex;

@@ -96,21 +96,23 @@ export default function CartFinalize() {
                                                 {res.name}
                                             </td>
                                             <td>
-                                                <button onClick={() => handleIncreaseClick(res)}>
-                                                    <FaPlus/>
-                                                </button>
-                                                    <b><p>Quantidade {res.cartQuantity}</p></b>
-                                                <button onClick={() => handleDecreaseClick(res)}>
-                                                    <FaWindowMinimize className='mb-2' />
-                                                </button>
-                                                
+                                                <div className='div1'>
+                                                    <button onClick={() => handleIncreaseClick(res)}>
+                                                        <FaPlus/>
+                                                    </button>
+                                                        {res.cartQuantity}
+                                                    <button onClick={() => handleDecreaseClick(res)}>
+                                                        <FaWindowMinimize className='mb-2' />
+                                                    </button></div>                                                
                                             </td>
                                             <td>
-                                                <strong>Preco R${res.price * res.cartQuantity},00</strong>
-                                                
-                                                <button className='btn btn-outline-secondary ml-2' onClick={() => handleRemoveClick(res)}> Excluir 
-                                                    <RiDeleteBin2Fill className='ml-2 text-danger h5' />
-                                                </button>
+                                                <div className="div2">
+                                                    <strong>Preco: R${res.price * res.cartQuantity},00</strong>
+                                                    
+                                                    <button className='btn btn-outline-secondary ml-2' onClick={() => handleRemoveClick(res)}> Excluir 
+                                                        <RiDeleteBin2Fill className='ml-2 text-danger h5' />
+                                                    </button>
+                                                </div>
                                             </td>
                                         </div>
                                     </tr>

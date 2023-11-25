@@ -121,6 +121,23 @@ const Descricao = () => {
         <div >
           <div className="div2">
             <img src={img1} alt="img" id="logo" />
+            <div className="div3">
+            <div className='div1' >
+              {!img1 ? "" : <img src={img1} alt="img0" onMouseOver={() => over0(over0)} />}
+            </div>
+            <div className='div1' >
+              {!img2 ? "" : <img src={img2} alt="img1" onMouseOver={() => over1(over1)} />}
+            </div>
+            <div className='div1' >
+              {!img3 ? "" : <img src={img3} alt="img2" onMouseOver={() => over2(over2)} />}
+            </div>
+            <div className='div1' >
+              {!img4 ? "" : <img src={img4} alt="img3" onMouseOver={() => over3(over3)} />}
+            </div>
+            <div className='div1' >
+              {!img5 ? "" : <img src={img5} alt="img4" onMouseOver={() => over3(over4)} />}
+            </div>
+          </div>
           </div>
           <div className="divdesc">
               <h5 ><strong>{receb_data_name}</strong></h5>
@@ -198,23 +215,23 @@ const Descricao = () => {
               </p>
             </div>
           </div>
-          <div className="div3">
+          {/*<div className="div3">
             <div className='div1' >
-              <img src={img1 === "" ? "" : img1} alt="img0" onMouseOver={() => over0(over0)} />
+              {!img1 ? "" : <img src={img1} alt="img0" onMouseOver={() => over0(over0)} />}
             </div>
             <div className='div1' >
-              <img src={img2 === "" ? "" : img2} alt="img1" onMouseOver={() => over1(over1)} />
+              {!img2 ? "" : <img src={img2} alt="img1" onMouseOver={() => over1(over1)} />}
             </div>
             <div className='div1' >
-              <img src={img3 === "" ? "" : img3} alt="img2" onMouseOver={() => over2(over2)} />
+              {!img3 ? "" : <img src={img3} alt="img2" onMouseOver={() => over2(over2)} />}
             </div>
             <div className='div1' >
-              <img src={img4 === "" ? "" : img4} alt="img3" onMouseOver={() => over3(over3)} />
+              {!img4 ? "" : <img src={img4} alt="img3" onMouseOver={() => over3(over3)} />}
             </div>
             <div className='div1' >
-              <img src={img5 === "" ? "" : img5} alt="img4" onMouseOver={() => over3(over4)} />
+              {!img5 ? "" : <img src={img5} alt="img4" onMouseOver={() => over3(over4)} />}
             </div>
-          </div>
+          </div>*/}
           
         </div>
       }

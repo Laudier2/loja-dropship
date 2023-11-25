@@ -55,15 +55,15 @@ export const ConatinerMain = styled.div`
 
   & .div3 {
     width: 80px;
-    margin-left: 10%;
-    margin-top: -40%;
     position: absolute;
 
+    & img {
+      width: 100%;
+      border: solid 1px;
+    }
+
     @media (max-width: 971px) {
-      width: 60%;
-      margin-top: -39%;
-      margin-left: 34px;
-      background: transparent;
+      width: 8%;
 
       & img {
         width: 40px;
@@ -71,19 +71,13 @@ export const ConatinerMain = styled.div`
     }
 
     @media (max-width: 850px) {
-      margin-top: -309%;
-      margin-left: 30px;
-      background: transparent;
 
       & img {
-        width: 70px;
+        width: 40px;
       }
     }
 
     @media (max-width: 680px) {
-      margin-top: -347%;
-      margin-left: 23px;
-      background: transparent;
 
       & img {
         width: 40px;

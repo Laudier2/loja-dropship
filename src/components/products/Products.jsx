@@ -69,12 +69,12 @@ const Products = () => {
     //console.log(dados)*/
   }
 
-  console.log(!products)
+  console.log({ts: products})
 
   return (
     <>
     {/*<Slids />*/}
-  {!products ? <Example /> :
+  {products === "" || products === null || products === undefined ? <Example /> :
     <ProductProd>
       <section>
       { products.map(res => (

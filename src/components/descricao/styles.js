@@ -54,6 +54,8 @@ export const ConatinerMain = styled.div`
   }
 
   & .div3 {
+    margin-top: -2px;
+    margin-left: -3px;
     width: 80px;
     position: absolute;
 

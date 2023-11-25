@@ -45,7 +45,7 @@ export const ProductProd = styled.div`
     }
 
     & button {
-      background-color: #00FF00;
+      background-color: aqua; /*#00FF00*/
       width: 90%;
       margin: auto;
       display: block;
@@ -56,7 +56,7 @@ export const ProductProd = styled.div`
       font-weight: bolder;
       
       &:hover {
-        background-color: #7CFC00;
+        background-color: #00FF00;
       }
 
     }

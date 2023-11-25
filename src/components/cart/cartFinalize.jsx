@@ -110,7 +110,7 @@ export default function CartFinalize() {
                                                     <strong>Preco: R${res.price * res.cartQuantity},00</strong>
                                                     
                                                     <button className='btn btn-outline-secondary ml-2' onClick={() => handleRemoveClick(res)}> Excluir 
-                                                        <RiDeleteBin2Fill className='ml-2 text-danger h5' />
+                                                        <RiDeleteBin2Fill className='text-danger h5' />
                                                     </button>
                                                 </div>
                                             </td>

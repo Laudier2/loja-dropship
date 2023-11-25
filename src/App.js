@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { ToastContainer } from "react-toastify";
 import { ErrorBoundary } from "react-error-boundary";
@@ -9,17 +9,17 @@ import Header from "./components/header";
 import CartFinalize from "./components/cart/cartFinalize";
 import Footer from "./components/footer/footer";
 import Politicas from "./components/politica/Politicas";
-import ReactGA from "react-ga" 
+//import ReactGA from "react-ga" 
 
-const TRACKING_ID = "G-1GXW3W538Z" 
+//const TRACKING_ID = "G-1GXW3W538Z" 
 
-ReactGA.initialize(TRACKING_ID)
+//ReactGA.initialize(TRACKING_ID)
 
 function App() {
 
-  useEffect(() => {
+  /*useEffect(() => {
     ReactGA.pageview(window.location.pathname);
-  }, []);
+  }, []);*/
   
   const router = createBrowserRouter([
     {

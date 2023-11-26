@@ -108,14 +108,17 @@ export const TableCartFinalize = styled.div`
 
       @media screen and (max-width: 680px) {
         font-size: 3vw;
-      }
 
-      & .divnome {
-        @media screen and (max-width: 680px) {
+        & .divimg {
+          position: absolute;
+          margin-top: 15px;
+        }
+
+        & .divnome {
+          margin-left: 20px;
           font-size: 1.8vw;
         }
       }
-
     }
 
     & thead {
@@ -256,10 +259,10 @@ export const SubTotal = styled.div`
   font-size: 22px;
 
   @media (max-width: 768px) {
-    width: 30%;
+    width: 35%;
     font-size: 12px;
-    margin-left: 60%;
-    margin-top: -5px;
+    margin-left: 55%;
+    margin-top: -100px;
   }
 `;
 
@@ -291,6 +294,7 @@ export const Button = styled.button`
     width: 80%;
     font-size: 15px;
     margin-left: 10%;
+    margin-top: 70px;
   }
 `;
 

@@ -78,10 +78,8 @@ export const ProductProd = styled.div`
       
       & img {
         width: 100%;
-        height: 25vh;
+        height: 18vh;
         border-radius: 8px;
-        margin-bottom: 2px;
-
         
       }
 

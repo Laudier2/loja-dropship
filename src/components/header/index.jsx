@@ -96,7 +96,7 @@ function Header() {
               <span>
                 <LuPackageSearch className="text-white h5 m-1 mb-2 p"/>
               </span>
-              <a href="/politica" target="blank">Meu pedido</a>
+              <a href="/politica" target="blank">Meus pedido</a>
             </li>
           </ul>
         </ContainerPRT>

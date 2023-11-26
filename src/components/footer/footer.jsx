@@ -30,7 +30,7 @@ export default function Footer() {
 		<>
 			<ContainerFooter>
 				<h2>Top dos Boné</h2>
-				<span>Receba novidades em primeira mão, dei seu e-mail aqui!</span>
+				<span>Receba novidades em primeira mão, deixe seu e-mail aqui!</span>
 				<form action="">
 					<input type="text" placeholder='Nome' />
 					<input type="email" placeholder='E-mail' />

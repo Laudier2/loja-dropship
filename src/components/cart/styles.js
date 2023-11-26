@@ -90,6 +90,15 @@ export const TableCartFinalize = styled.div`
         width: 108px;
         border: solid 1px;
         border-radius: 8px;
+
+        & button {
+          background-color: white;
+        }
+
+        @media screen and (max-width: 780px) {
+          width: 100px;
+        }
+
       }
 
       & .div2 {

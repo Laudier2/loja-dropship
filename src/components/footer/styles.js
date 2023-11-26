@@ -38,9 +38,10 @@ export const ContainerFooter = styled.div`
   & span {
     position: absolute;
     margin-top: -35px;
-    margin-left: 45%;
+    margin-left: 51%;
     font-weight: bold;
     font-size: 20px;
+    color: aqua;
 
     @media (max-width: 768px) {
       width: 80%;
@@ -53,7 +54,8 @@ export const ContainerFooter = styled.div`
 
   & form {
     width: 50%;
-    margin-left: 48%;
+    margin-left: 53%;
+    border: none;
 
     & input {
       width: 250px;
@@ -81,9 +83,10 @@ export const ContainerFooter = styled.div`
     }
 
     & button {
-      background-color: gray;
+      background-color: aqua;
       padding: 10px;
       border: none;
+      width: 60px;
       border-radius: 8px;
 
       &:hover {
@@ -107,6 +110,7 @@ export const ContainerFooter2 = styled.div`
   justify-content: space-between;
   color: #eee;
   padding: 50px;
+  border: none;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 
   @media screen and (max-width: 768px) {
@@ -126,8 +130,8 @@ export const ContainerFooter2 = styled.div`
     }
 
     & .img {
-      width: 70%;
-      height: 10vh;
+      width: 50%;
+      height: 8vh;
     }
 
     @media screen and (max-width: 768px) {

@@ -33,9 +33,13 @@ const Descricao = () => {
   const [colors, setColors] = useState('')
   const [sizers, setSizers] = useState('')
 
+  useEffect(() => {
+    window.scroll({
+      top: 100,
+    });
+  },[])
 
   useEffect(() => {
-    window.location.href='#foo';
     const req = localStorage.getItem("img0")
     setImage1(req)
   }, [])

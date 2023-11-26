@@ -2,7 +2,7 @@
 //import { useHistory } from 'react-router-dom'
 import ReactLoading from 'react-loading';
 import { useSelector } from 'react-redux';
-import { ProductProd, LoadingPage } from './stylend';
+import { ProductProd, LoadingPage } from './stylend2';
 import { FaCreditCard } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 //import Slids from '../slids/slids';
@@ -85,7 +85,7 @@ const Products = () => {
               <h5>{res.name}</h5>
               <h3>R${res.price},00</h3>
               <span>
-                <FaCreditCard className='mt-1 m-1'/> Em até 12x sem juros
+                <FaCreditCard style={{marginTop: "0.7px", margin: 3}}/> Em até 12x sem juros
               </span>
               <button>
                 DESCRIÇÃO

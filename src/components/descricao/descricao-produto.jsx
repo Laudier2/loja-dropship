@@ -35,6 +35,7 @@ const Descricao = () => {
 
 
   useEffect(() => {
+    window.location.href='#foo';
     const req = localStorage.getItem("img0")
     setImage1(req)
   }, [])

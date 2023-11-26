@@ -85,7 +85,7 @@ const Products = () => {
               <h5>{res.name}</h5>
               <h3>R${res.price},00</h3>
               <span>
-                <FaCreditCard style={{marginTop: "0.4px", margin: 3}}/> Em até 12x sem juros
+                <FaCreditCard className='cartao'/> Em até 12x sem juros
               </span>
               <button>
                 DESCRIÇÃO

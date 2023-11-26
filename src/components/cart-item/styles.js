@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CartItemContainer = styled.div`
   display: flex;
+  padding: 4px;
   align-items: center;
   margin-bottom: 15px;
 
@@ -16,8 +17,10 @@ export const CartItemContainer = styled.div`
 
 export const CartItemImage = styled.div`
   background-image: ${(props) => `url('${props.imageUrl}')`};
-  height: 260px;
-  width: 170px;
+  height: 80px;
+  width: 80px;
+  margin-top: -30px;
+  font-size: 2vw;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -29,6 +32,7 @@ export const CartItemImage = styled.div`
 export const CartItemInfo = styled.div`
   display: flex;
   flex-direction: column;
+  font-size: 10px;
   margin-left: 20px;
   flex: 1;
 
@@ -39,6 +43,23 @@ export const CartItemInfo = styled.div`
 
   p:nth-child(2) {
     font-weight: 500;
+  }
+
+  @media screen and (max-width: 780px) {
+    display: flex;
+    flex-direction: column;
+    font-size: 2.3vw;
+    margin-left: 20px;
+    flex: 1;
+
+    p:nth-child(1) {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    p:nth-child(2) {
+      font-weight: 500;
+    }   
   }
 `;
 
@@ -62,7 +83,8 @@ export const CartItemQuantity = styled.div`
 `;
 
 export const RemoveButton = styled.div`
-  margin-right: 20px;
+  margin-right: 15px;
+  margin-top: -75px;
   background-color: red;
   border-radius: 5px;
   padding: 5px;

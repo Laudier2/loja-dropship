@@ -42,6 +42,19 @@ export const ProductProd = styled.div`
       display: flex;
       text-align: center;
       color: rgba(10, 10, 10, 0.687);
+
+      & .cartao {
+        position: absolute;
+        margin-left: -25px;
+        margin-top: 2px;
+      }
+
+     @media screen and (max-width: 780px) {
+      & .cartao {
+        position: absolute;
+        margin-left: -12px;
+      }
+     }
     }
 
     & button {

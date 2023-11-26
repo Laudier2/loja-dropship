@@ -30,7 +30,7 @@ const CartItem = ({ product }) => {
 
         <CartItemInfo>
           <p>{product.name}</p>
-          <p>R${product.price * product.cartQuantity}</p>
+          <p><strong>R$ {product.price * product.cartQuantity},00</strong></p>
 
           <CartItemQuantity>
             <AiOutlineMinus

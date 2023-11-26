@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 //import { useHistory } from 'react-router-dom'
 import ReactLoading from 'react-loading';
 import { useSelector } from 'react-redux';
@@ -30,7 +31,7 @@ const Products = () => {
   //const history = useHistory()
   
   const products = useSelector(productSlace => productSlace.products.items)
-  console.log(products)
+  //console.log(products)
 
   function LocalSto(e) {
 
@@ -69,12 +70,12 @@ const Products = () => {
     //console.log(dados)*/
   }
 
-  console.log({ts: products})
+  //console.log({ts: products})
 
   return (
     <>
     {/*<Slids />*/}
-  {products === "" || products === null || products === undefined ? <Example /> :
+  {products == "" ? <Example /> :
     <ProductProd>
       <section>
       { products.map(res => (

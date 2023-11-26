@@ -30,8 +30,7 @@ export const Logo = styled.div`
     }
 
     @media (max-width: 768px) {
-      margin-left: 5px;
-      font-size: 20px;
+      font-size: 35px;
 
     }
   }

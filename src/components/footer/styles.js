@@ -28,8 +28,8 @@ export const ContainerFooter = styled.div`
     margin-top: -25px;
 
     @media (max-width: 768px) {
-      margin-left: -5px;
-      margin-top: -45px;
+      margin-left: 16px;
+      margin-top: 0px;
       font-size: 40px;
       
     }
@@ -45,8 +45,9 @@ export const ContainerFooter = styled.div`
     @media (max-width: 768px) {
       width: 80%;
       margin-left: -0px;
-      margin-top: 5px;
+      margin-top: 75px;
       font-size: 15px;
+
     }
   }
 
@@ -75,7 +76,7 @@ export const ContainerFooter = styled.div`
 
     @media (max-width: 768px) {
       width: 100%;
-      margin-top: 50px;
+      margin-top: 150px;
       margin-left: 0%;
     }
 
@@ -110,6 +111,8 @@ export const ContainerFooter2 = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
+    margin-top: -50px;
+    padding: 40px;
   }
 
   & div {
@@ -164,7 +167,9 @@ export const ContainerFooter1 = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
-
+    margin-top: -50px;
+    padding: 40px;
+    
     & div {
       font-size: 2.5vw;
     }

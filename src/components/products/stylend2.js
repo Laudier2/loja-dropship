@@ -77,9 +77,11 @@ export const ProductProd = styled.div`
       width: 30%;
       
       & img {
-        width: 100%;
-        height: 18vh;
+        width: 105%;
+        height: 22vh;
         border-radius: 8px;
+        margin-bottom: 2px;
+
         
       }
 
@@ -108,6 +110,10 @@ export const ProductProd = styled.div`
         text-align: center;
         color: rgba(10, 10, 10, 0.687);
         font-size: 2vw;
+      }
+
+      & p {
+       margin-left: 15px;
       }
 
       & button {

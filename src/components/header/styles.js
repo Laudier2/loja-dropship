@@ -12,7 +12,7 @@ export const Container = styled.div`
 
 export const Logo = styled.div`
   font-weight: bold;
-  font-size: 50px;
+  font-size: 60px;
   text-shadow: 0 5px 0 rgb(121, 116, 116), 0 3px 0 #c9c9c9, 0 1px 0 #bbb,
     0 1px 0 #b9b9b9, 0 1px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
     0 0 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),

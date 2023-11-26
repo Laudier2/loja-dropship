@@ -17,7 +17,7 @@ export const ProductProd = styled.div`
 
     & img {
       width: 100%;
-      height: 40vh;
+      height: 30vh;
       border-radius: 8px;
 
       

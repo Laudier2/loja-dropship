@@ -93,7 +93,9 @@ export default function CartFinalize() {
                                                 <img src={res.image[0]} alt="img" />
                                             </td>
                                             <td>
-                                                {res.name}
+                                                <div className="divnome">
+                                                    {res.name}
+                                                </div>
                                             </td>
                                             <td>
                                                 <div className='div1'>

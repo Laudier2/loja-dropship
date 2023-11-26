@@ -109,6 +109,13 @@ export const TableCartFinalize = styled.div`
       @media screen and (max-width: 680px) {
         font-size: 3vw;
       }
+
+      & .divnome {
+        @media screen and (max-width: 680px) {
+          font-size: 1.8vw;
+        }
+      }
+
     }
 
     & thead {

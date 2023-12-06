@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { ToastContainer } from "react-toastify";
 import { ErrorBoundary } from "react-error-boundary";
-import Products from "./components/products/Products2";
+import Products from "./components/products/Products";
 import Desc from "./components/descricao/descricao-produto";
 import Cart from "./components/cart";
 import Header from "./components/header";
@@ -10,6 +10,7 @@ import CartFinalize from "./components/cart/cartFinalize";
 import Footer from "./components/footer/footer";
 import Politicas from "./components/politica/Politicas";
 import ReactGA from "react-ga" 
+import Compra from "./components/compra/Compra";
 
 const TRACKING_ID = "G-1GXW3W538Z" 
 
@@ -45,6 +46,10 @@ function App() {
       path: "/politica",
       element: <Politicas />,
     },
+    {
+      path: "/endereco",
+      element: <Compra />,
+    },
   ]);  
 
   function ErroHandler() {
@@ -55,7 +60,7 @@ function App() {
     <>
       <Header />
       <RouterProvider router={router}>
-        <ToastContainer />
+      <ToastContainer autoClose={3000} />
         <div className="page-container">
           <div className="conatiner-wrap">
             <ErrorBoundary

@@ -5,7 +5,7 @@ export const FormBox = styled.div`
     position: relative;
     width: 60%;
     height: 750px;
-    background: rgba(33, 36, 36, 0.63);
+    background: rgba(33, 36, 36, 0.448);
     border: 2px solid #ffffff80;
     border-radius: 20px;
     backdrop-filter: blur(15px);

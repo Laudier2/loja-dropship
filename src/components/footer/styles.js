@@ -90,7 +90,7 @@ export const ContainerFooter = styled.div`
       border-radius: 8px;
 
       &:hover {
-        background-color: #7CFC00;
+        background-color: #7CFC00; /*teal*/
       }
 
       @media (max-width: 768px) {

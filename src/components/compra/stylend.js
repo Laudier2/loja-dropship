@@ -101,6 +101,7 @@ export const InputBox = styled.div`
         font-size: 1vw;
         pointer-events: none;
         transition: .5s;
+        color: #000000;
 
         @media (max-width: 768px){
             font-size: 3vw;

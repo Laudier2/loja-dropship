@@ -31,7 +31,7 @@ const Products = () => {
   //const history = useHistory()
   
   const products = useSelector(productSlace => productSlace.products.items)
-  //console.log(products)
+  console.log("teste", products)
 
   function LocalSto(e) {
 

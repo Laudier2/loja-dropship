@@ -153,7 +153,7 @@ const Descricao = () => {
                     <StarOutlineIcon />
                     (6505)
                   </div>
-                  <p><strong>R${price},00</strong></p>
+                  <p><strong>R${price}</strong></p>
                   <span>
                 <FaCreditCard className='mt-1 m-1'/> Em até 12x sem juros
               </span>

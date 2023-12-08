@@ -131,8 +131,8 @@ export default function CartFinalize() {
                         <Link to="/">Volta para pagina inicial</Link>
                    </Button>
                    : <Button onClick={ async () => {
-                    await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point))  
-        
+                    await api.post("/payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), localStorage.clear())  
+                  
                     }}>
                         Proceguir com pagamento
                         {/*<Link to="/endereco">Finaliza comprar</Link>*/}

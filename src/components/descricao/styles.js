@@ -120,6 +120,11 @@ export const ConatinerMain = styled.div`
       font-size: 1vw;
     }
 
+    & h1 {
+      font-weight: bold;
+      font-size: 2vw;
+    }
+
     @media (max-width: 768px) {
       width: 80%;
       margin: auto;
@@ -133,6 +138,10 @@ export const ConatinerMain = styled.div`
 
       & h4 {
         font-size: 5vw;
+      }
+
+      & h1 {
+        font-size: 4vw;
       }
     }
 

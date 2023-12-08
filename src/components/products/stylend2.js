@@ -16,8 +16,8 @@ export const ProductProd = styled.div`
     margin-top: 25px;
 
     & img {
-      width: 100%;
-      height: 40vh;
+      width: 90%;
+      height: 80%;
       border-radius: 8px;
       margin-bottom: 5px;
       
@@ -78,7 +78,7 @@ export const ProductProd = styled.div`
       
       & img {
         width: 105%;
-        height: 22vh;
+        height: 50%;
         border-radius: 8px;
         margin-bottom: 2px;
 

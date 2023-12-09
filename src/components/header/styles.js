@@ -57,6 +57,11 @@ export const Buttons = styled.div`
       font-size: 11px;
     }
   }
+
+  @media (max-width: 768px){
+    position: absolute;
+    margin-left: 80%;
+  }
 `;
 
 export const ContainerAMR = styled.div`
@@ -104,7 +109,6 @@ export const ContainerPRT = styled.div`
       @media (max-width: 768px) {
         width: 100%;
         margin: 1px;
-        padding: 0px;
         margin-left: 5px;
 
         &:hover {
@@ -112,10 +116,11 @@ export const ContainerPRT = styled.div`
           padding: 0px 1px 4px 20px;
           background-color: #FDD201;
 
-          & a {
-            color: #000000;
-          }
-
+          
+        }
+        
+        & a {
+          color: #000000;
         }
 
         & .h4 {
@@ -148,7 +153,7 @@ export const ContainerPRT = styled.div`
         @media (max-width: 768px) {
           width: 100%;
           margin-left: -10px;
-          font-size: 10px;
+          font-size: 1.8vw;
         }
       }
     }

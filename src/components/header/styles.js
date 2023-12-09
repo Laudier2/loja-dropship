@@ -130,7 +130,7 @@ export const ContainerPRT = styled.div`
         & span {
           position: absolute;
           margin-top: -20px;
-          margin-left: -5px;
+          margin-left: -10px;
         }
         
       }

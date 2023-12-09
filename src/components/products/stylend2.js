@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ProductProd = styled.div`
   width: 100%;
+  margin-left: 17px;
   background: transparent;
   display: inline-block;
 
@@ -16,8 +17,8 @@ export const ProductProd = styled.div`
     margin-top: 25px;
 
     & img {
-      width: 90%;
-      height: 80%;
+      width: 100%;
+      height: 90%;
       border-radius: 8px;
       margin-bottom: 5px;
       
@@ -77,8 +78,8 @@ export const ProductProd = styled.div`
       width: 30%;
       
       & img {
-        width: 105%;
-        height: 50%;
+        width: 100%;
+        height: 55%;
         border-radius: 8px;
         margin-bottom: 2px;
 

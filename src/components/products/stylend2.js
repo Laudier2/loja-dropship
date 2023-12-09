@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const ProductProd = styled.div`
   width: 100%;
-  margin-left: 17px;
   background: transparent;
   display: inline-block;
 

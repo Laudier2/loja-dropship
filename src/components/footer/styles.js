@@ -27,6 +27,13 @@ export const ContainerFooter = styled.div`
     margin-left: 100px;
     margin-top: -25px;
 
+    @media (max-width: 868px) {
+      margin-left: 16px;
+      margin-top: 0px;
+      font-size: 40px;
+      
+    }
+
     @media (max-width: 768px) {
       margin-left: 16px;
       margin-top: 0px;
@@ -43,9 +50,33 @@ export const ContainerFooter = styled.div`
     font-size: 20px;
     color: aqua;
 
+    @media (max-width: 1368px) {
+      width: 80%;
+      margin-left: 550px;
+      margin-top: -35px;
+      font-size: 20px;
+
+    }
+
+    @media (max-width: 1068px) {
+      width: 80%;
+      margin-left: 380px;
+      margin-top: -35px;
+      font-size: 15px;
+
+    }
+
+    @media (max-width: 868px) {
+      width: 80%;
+      margin-left: 280px;
+      margin-top: -25px;
+      font-size: 15px;
+
+    }
+
     @media (max-width: 768px) {
       width: 80%;
-      margin-left: -0px;
+      margin-left: 10px;
       margin-top: 75px;
       font-size: 15px;
 

@@ -5,6 +5,10 @@ import { useSelector } from 'react-redux';
 import { ProductProd, LoadingPage } from './stylend2';
 import { FaCreditCard } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import api from '../../api/api';
+import { useState } from 'react';
+import { Category } from '@material-ui/icons';
 //import Slids from '../slids/slids';
 
 const Example = () => (
@@ -31,7 +35,7 @@ const Products = () => {
   //const history = useHistory()
   
   const products = useSelector(productSlace => productSlace.products.items)
-  console.log(products)
+  //console.log(products)
 
   function LocalSto(e) {
 
@@ -70,20 +74,52 @@ const Products = () => {
     //console.log(dados)*/
   }
 
-  //console.log({ts: products})
+  const [categoroy, setCategory] = useState([])
+  const [categoroyC, setCategoryC] = useState([])
+  const [categoroyS, setCategoryS] = useState([])
+  const [categoroyCA, setCategoryCA] = useState([])
+  const [categoroyName, setCategoryName] = useState([])
+
+  useEffect(() =>{    
+    (async() => {
+      const reqName = await api.get("/category")
+      const resName = await reqName.data
+      const reqB = await api.get("/category/fc80a298-ba09-4195-879c-7ecd5dadbf24")
+      const resB = await reqB.data[0].products_categories
+      const reqC = await api.get("/category/3c6b8fd2-6375-415d-95b1-0fdef777ef5f")
+      const resC = await reqC.data[0].products_categories
+      const reqS = await api.get("/category/7db4cb05-6f6b-4555-9dd4-75965dfcb13f")
+      const resS = await reqS.data[0].products_categories
+      const reqCA = await api.get("/category/d49e0541-24ca-4a45-a9d0-bfc5e294a444")
+      const resCA = await reqCA.data[0].products_categories
+
+      setCategory(resB)
+      setCategoryC(resC)
+      setCategoryS(resS)
+      setCategoryCA(resCA)
+      setCategoryName(resName)
+    })()
+  },[])
+
+  const NameCategory = categoroyName.map(res => res.name)
+
+  console.log(categoroyName)
 
   return (
     <>
     {/*<Slids />*/}
-  {products == "" ? <Example /> :
+  {categoroy == "" ? <Example /> :
     <ProductProd>
       <section>
-      { products.map(res => (
-          <Link to="desc" onClick={() => LocalSto(res)}>
+      <br />
+      <h2 className='ml-3'>{NameCategory[0]}</h2>
+      
+      {categoroy.map(res => (
+          <Link to="desc" onClick={() => LocalSto(res.products)}>
             <div key={res.id}>
-              <img src={res.image[0]} alt="img" />
-              <h5>{res.name}</h5>
-              <h3>R${res.price},00</h3>
+              <img src={res.products.image[0]} alt="img" />
+              <h5>{res.products.name}</h5>
+              <h3>R${res.products.price},00</h3>
               <span>
                 <p>
                   <FaCreditCard className='cartao'/> Em até 12x sem juros
@@ -95,11 +131,93 @@ const Products = () => {
             </div>
           </Link>
           ))
-        }
+      }
       </section>  
+      
     </ProductProd>
       }
+    
+    <ProductProd>
+      <section>
+      <br />
+      <h2 className='ml-3'>{NameCategory[1]}</h2>
       
+      {categoroyC.map(res => (
+          <Link to="desc" onClick={() => LocalSto(res.products)}>
+            <div key={res.id}>
+              <img src={res.products.image[0]} alt="img" />
+              <h5>{res.products.name}</h5>
+              <h3>R${res.products.price},00</h3>
+              <span>
+                <p>
+                  <FaCreditCard className='cartao'/> Em até 12x sem juros
+                </p>
+              </span>
+              <button>
+                DESCRIÇÃO
+              </button>
+            </div>
+          </Link>
+          ))
+      }
+      </section>  
+      
+    </ProductProd>
+      
+    <ProductProd>
+      <section>
+      <br />
+      <h2 className='ml-3'>{NameCategory[2]}</h2>
+      
+      {categoroyS.map(res => (
+          <Link to="desc" onClick={() => LocalSto(res.products)}>
+            <div key={res.id}>
+              <img src={res.products.image[0]} alt="img" />
+              <h5>{res.products.name}</h5>
+              <h3>R${res.products.price},00</h3>
+              <span>
+                <p>
+                  <FaCreditCard className='cartao'/> Em até 12x sem juros
+                </p>
+              </span>
+              <button>
+                DESCRIÇÃO
+              </button>
+            </div>
+          </Link>
+          ))
+      }
+      </section>  
+      
+    </ProductProd>
+     
+    <ProductProd>
+      <section>
+      <br />
+      <h2 className='ml-3'>{NameCategory[3]}</h2>
+      
+      {categoroyCA.map(res => (
+          <Link to="desc" onClick={() => LocalSto(res.products)}>
+            <div key={res.id}>
+              <img src={res.products.image[0]} alt="img" />
+              <h5>{res.products.name}</h5>
+              <h3>R${res.products.price},00</h3>
+              <span>
+                <p>
+                  <FaCreditCard className='cartao'/> Em até 12x sem juros
+                </p>
+              </span>
+              <button>
+                DESCRIÇÃO
+              </button>
+            </div>
+          </Link>
+          ))
+      }
+      </section>  
+      
+    </ProductProd>
+     
   </>
   );
 }

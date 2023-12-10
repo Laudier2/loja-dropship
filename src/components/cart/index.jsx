@@ -10,7 +10,7 @@ const Cart = ({ isVisible, setIsVisible }) => {
 
   const cart = useSelector((state) => state.cart.cartItems)
 
-  console.log(cart)
+  //console.log(cart)
 
   return (
     <CartContainer isVisible={isVisible}>

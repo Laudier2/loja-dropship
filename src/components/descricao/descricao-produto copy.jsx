@@ -107,7 +107,7 @@ const Descricao = () => {
 
   const productFilter = product.filter(product => (product.id === localId))
 
-  console.log(productFilter)
+  //console.log(productFilter)
 
   const dispatch = useDispatch()
 

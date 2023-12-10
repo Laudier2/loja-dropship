@@ -10,11 +10,6 @@ console.clear()
 
 function Compra() {
 
-  let test = `{"name":"Laudier", "age":"37"}`
-  let crv = JSON.parse(test)
-  
-  console.log(crv)
-
   const cart = useSelector(state => state.cart.cartItems)
   const cartTotal = useSelector(state => state.cart)
 
@@ -30,9 +25,6 @@ function Compra() {
   `{amount: ${productAmount}}`,
  ]
 
-  //console.log(cartTotal.cartTotalAmount)
-  //console.log(cartTotal.cartTotalQuantyti)
-  //console.log(cartTotal.cartItems[0].cartQuantity)
   console.log("")
   console.log("")
 

@@ -26,6 +26,7 @@ export default function CartFinalize() {
     
     const handleRemoveClick = (id) => {
         dispatch(removeFromCart(id))
+        window.location.reload()
     };
 
     const handleIncreaseClick = (e) => {

@@ -1,10 +1,13 @@
 /* eslint-disable eqeqeq */
-//import { useHistory } from 'react-router-dom'
 import ReactLoading from 'react-loading';
 import { useSelector } from 'react-redux';
 import { ProductProd, LoadingPage } from './stylend';
 import { FaCreditCard } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import api from '../../api/api';
+import { Category } from '@material-ui/icons';
 //import Slids from '../slids/slids';
 
 const Example = () => (
@@ -29,9 +32,22 @@ const Example = () => (
 const Products = () => {
   
   //const history = useHistory()
+
+  const [categroy, setCategory] = useState([])
+
+  useEffect(() =>{    
+    (async() => {
+      const req = await api.get("/category")
+      const res = await req.data
+
+      setCategory(res)
+    })()
+  },[])
+
+  console.log(Category)
   
   const products = useSelector(productSlace => productSlace.products.items)
-  console.log("teste", products)
+  //console.log("teste", products)
 
   function LocalSto(e) {
 

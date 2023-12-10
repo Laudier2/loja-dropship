@@ -1,4 +1,5 @@
-import { useState } from "react";
+/* eslint-disable eqeqeq */
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { SlBasket, SlBasketLoaded } from "react-icons/sl";
 import { AiFillAlert } from "react-icons/ai";
@@ -7,21 +8,32 @@ import { AiOutlineNotification } from "react-icons/ai";
 import { BsTruck } from "react-icons/bs";
 import { BsJournalText } from "react-icons/bs";
 import { LuPackageSearch } from "react-icons/lu";
+import api from "../../api/api"
 
 
 
 // Components
 import Cart from "../cart/index";
 
+
 // Styles
 import { Container, Logo, Buttons, ContainerAMR, ContainerPRT } from "./styles";
 
 function Header() {
+  const [categoria, setCategoria] = useState([])
+
+  useEffect(() => {
+    (async() => {
+      const req = await api.get("/category/fc80a298-ba09-4195-879c-7ecd5dadbf24")
+      const res = await req.data
+      setCategoria(res)
+    })()
+  },[])
   const [cartIsVisible, setCartIsVisible] = useState(false);
 
   const length = useSelector((state) => state.cart.cartItems.length)
 
-  console.log({ r: length })
+  //console.log({ r: length })
 
   //const currentUser = ''
 
@@ -38,6 +50,11 @@ function Header() {
   };*/
 
   //https://wa.me/5575998239680
+
+  const products = useSelector(productSlace => productSlace.products.items)
+
+  const filtrar = products.filter(e => e.id == "c7c0d39f-36b8-4df5-9820-a5e64ce54217")
+  //console.log(categoria)
 
   return (
     <>
@@ -67,7 +84,7 @@ function Header() {
               <span>
                 <AiOutlineNotification className="text-white h5 m-1 mb-2 p"/>
               </span>
-              <a href="/">Pormocão</a>
+              <a href="/">Categorias</a>
             </li>
             <li> 
               <span>

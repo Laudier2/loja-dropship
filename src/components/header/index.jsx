@@ -10,10 +10,7 @@ import { BsJournalText } from "react-icons/bs";
 import { LuPackageSearch } from "react-icons/lu";
 
 
-
-// Components
 import Cart from "../cart/index";
-
 
 // Styles
 import { Container, Logo, Buttons, ContainerAMR, ContainerPRT } from "./styles";
@@ -24,26 +21,9 @@ function Header() {
 
   const length = useSelector((state) => state.cart.cartItems.length)
 
-  //console.log({ r: length })
-
-  //const currentUser = ''
-
   const handleCartClick = () => {
     setCartIsVisible(true);
   };
-
-  /*const handleLoginClick = () => {
-    //dispatch(loginUser({ name: "Felipe Rocha", email: "felipe@rocha.com" }));
-  };
-
-  const handleLogoutClick = () => {
-    //dispatch(logoutUser());
-  };*/
-
-  //https://wa.me/5575998239680
-
-  //const products = useSelector(productSlace => productSlace.products.items)
-  //console.log(categoria)
 
   return (
     <>

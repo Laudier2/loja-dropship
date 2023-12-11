@@ -1,14 +1,13 @@
 /* eslint-disable eqeqeq */
 //import { useHistory } from 'react-router-dom'
 import ReactLoading from 'react-loading';
-import { useSelector } from 'react-redux';
+//import { useSelector } from 'react-redux';
 import { ProductProd, LoadingPage } from './stylend2';
 import { FaCreditCard } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import api from '../../api/api';
 import { useState } from 'react';
-import { Category } from '@material-ui/icons';
 //import Slids from '../slids/slids';
 
 const Example = () => (
@@ -34,7 +33,7 @@ const Products = () => {
   
   //const history = useHistory()
   
-  const products = useSelector(productSlace => productSlace.products.items)
+  //const products = useSelector(productSlace => productSlace.products.items)
   //console.log(products)
 
   function LocalSto(e) {

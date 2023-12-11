@@ -29,7 +29,7 @@ export default function Footer() {
 	return (
 		<>
 			<ContainerFooter>
-				<h2>Top Shoping</h2>
+				<h2> Semana de Oferta</h2>
 				<span>Receba novidades em primeira mão, deixe seu e-mail aqui!</span>
 				<form action="">
 					<input type="text" placeholder='Nome' />

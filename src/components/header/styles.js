@@ -23,7 +23,16 @@ export const Logo = styled.div`
     margin-left: 1px;
     color: white;
     text-decoration: none;
-    font-size: 45px;
+    font-size: 65px;
+
+    & img {
+      position: absolute;
+      width: 150px;
+      height: 16vh;
+      margin-top: -20px;
+      margin-left: 30px;
+      border-radius: 50px;
+    }
 
     &:hover {
       color: #B3B3B3;

@@ -33,7 +33,7 @@ function Header() {
       <Container>
         <Logo >
           <a href="/">
-            Top Shoping
+            Semana de Oferta
           </a>
         </Logo>
         <Buttons>

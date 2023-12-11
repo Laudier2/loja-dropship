@@ -166,7 +166,7 @@ const Products = () => {
     <ProductProd>
       <section>
       <br />
-      <h2 className='ml-3'>{NameCategory[2]}</h2>
+      <h2 className='ml-3'>{NameCategory[7]}</h2>
       
       {categoroyS.map(res => (
           <Link to="desc" onClick={() => LocalSto(res.products)}>
@@ -193,7 +193,7 @@ const Products = () => {
     <ProductProd>
       <section>
       <br />
-      <h2 className='ml-3'>{NameCategory[3]}</h2>
+      <h2 className='ml-3'>{NameCategory[2]}</h2>
       
       {categoroyCA.map(res => (
           <Link to="desc" onClick={() => LocalSto(res.products)}>

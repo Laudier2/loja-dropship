@@ -31,6 +31,10 @@ export const ConatinerMain = styled.div`
     display: flex;
     margin: auto;
 
+    & .formatImg {
+      height: 80vh;
+    }
+
     & img {
       width: 50%;
     }
@@ -50,6 +54,10 @@ export const ConatinerMain = styled.div`
 
     @media (max-width: 768px) {
       width: 100%;
+
+      & .formatImg {
+        height: 40vh;
+      }
     }
   }
 

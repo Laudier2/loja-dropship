@@ -30,8 +30,18 @@ const Descricao = () => {
   const [price, setReceb2] = useState('')
   const [receb_data_name, setReceb3] = useState('')
   const [desc, setReceb4] = useState('')
-  const [colors, setColors] = useState('')
   const [sizers, setSizers] = useState('')
+  
+  const [color1, setcolor1] = useState('')
+  const [color2, setcolor2] = useState('')
+  const [color3, setcolor3] = useState('')
+  const [color4, setcolor4] = useState('')
+  const [color5, setcolor5] = useState('')
+  const [color6, setcolor6] = useState('')
+  
+  const [marca, setMarca] = useState('')
+
+  console.log(marca)
 
   useEffect(() => {
     window.scroll({
@@ -75,8 +85,18 @@ const Descricao = () => {
   }, [])
 
   useEffect(() => {
-    const color = localStorage.getItem("color0")
-    setColors(color)
+    const color01 = localStorage.getItem("color0")
+    const color02 = localStorage.getItem("color1")
+    const color03 = localStorage.getItem("color2")
+    const color04 = localStorage.getItem("color3")
+    const color05 = localStorage.getItem("color4")
+    const color06 = localStorage.getItem("color5")
+    setcolor1(color01)
+    setcolor2(color02)
+    setcolor3(color03)
+    setcolor4(color04)
+    setcolor5(color05)
+    setcolor6(color06)
   }, [])
 
   useEffect(() => {
@@ -88,6 +108,14 @@ const Descricao = () => {
     const req3 = localStorage.getItem("description")
     setReceb4(req3)
   }, [])
+
+  function Test(){
+    document.getElementById("logo").src = `${img2}`;
+  }
+
+  function Test2(){
+    document.getElementById("logo").src = `${img3}`;
+  }
 
   function over0() {
     document.getElementById("logo").src = `${img1}`;
@@ -126,24 +154,24 @@ const Descricao = () => {
       {productFilter === "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> :
         <div >
           <div className="div2">
-            <img src={img1} alt="img" id="logo" />
+            <img src={img1} alt="img" className='formatImg' id="logo" />
             <div className="div3">
-            <div className='div1' >
-              {!img1 ? "" : <img src={img1} alt="img0" onMouseOver={() => over0(over0)} />}
+              <div className='div1' >
+                {!img1 ? "" : <img src={img1} alt="img0" onMouseOver={() => over0(over0)} />}
+              </div>
+              <div className='div1' >
+                {!img2 ? "" : <img src={img2} alt="img1" onMouseOver={() => over1(over1)} />}
+              </div>
+              <div className='div1' >
+                {!img3 ? "" : <img src={img3} alt="img2" onMouseOver={() => over2(over2)} />}
+              </div>
+              <div className='div1' >
+                {!img4 ? "" : <img src={img4} alt="img3" onMouseOver={() => over3(over3)} />}
+              </div>
+              <div className='div1' >
+                {!img5 ? "" : <img src={img5} alt="img4" onMouseOver={() => over3(over4)} />}
+              </div>
             </div>
-            <div className='div1' >
-              {!img2 ? "" : <img src={img2} alt="img1" onMouseOver={() => over1(over1)} />}
-            </div>
-            <div className='div1' >
-              {!img3 ? "" : <img src={img3} alt="img2" onMouseOver={() => over2(over2)} />}
-            </div>
-            <div className='div1' >
-              {!img4 ? "" : <img src={img4} alt="img3" onMouseOver={() => over3(over3)} />}
-            </div>
-            <div className='div1' >
-              {!img5 ? "" : <img src={img5} alt="img4" onMouseOver={() => over3(over4)} />}
-            </div>
-          </div>
           </div>
           <div className="divdesc">
               <h5 ><strong>{receb_data_name}</strong></h5>
@@ -166,17 +194,24 @@ const Descricao = () => {
               <br />
               <a href="/desc"><span>ver os meio de pagamento</span></a>
               <br />
-              <h5>Cor</h5>
-             
+              <h5>Cores</h5>
               <div role="group" aria-label="Basic example">
-                <button type="button">{colors}</button>
+                {color1 === "preto" ? <button type="button" style={{background: "#000000", border: "none", color: "white", padding: "15px"}} onClick={Test}></button> : ""}
+                {color2 === "Dins" ? <button type="button" style={{background: "#215088", border: "none", color: "white", padding: "15px"}} onClick={Test2}></button> : ""}
+                {color3 === "Dins" ? <button type="button" style={{background: "#000000", border: "none", color: "blue", padding: "15px"}} onClick={Test}></button> : ""}
+                {color4 === "bage" ? <button type="button" style={{background: "#000000", border: "none", color: "gray", padding: "15px"}} onClick={Test}></button> : ""}
+                {color5 === "verde" ? <button type="button" style={{background: "#000000", border: "none", color: "green", padding: "15px"}} onClick={Test}></button> : ""}
+                {color6 === "vermelho" ? <button type="button" style={{background: "#000000", border: "none", color: "red", padding: "15px"}} onClick={Test}></button> : ""}
                 { }
               </div>
               <div>
               <br />
                 <h4><strong>MEDIDAS</strong></h4>
                 
-                <p>{sizers}</p>
+                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setMarca(`${sizers[0]}${sizers[1]}`)}>{`${sizers[0]}${sizers[1]}`}</button>
+                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setMarca(`${sizers[3]}${sizers[4]}`)}>{`${sizers[3]}${sizers[4]}`}</button>
+                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setMarca(`${sizers[6]}${sizers[7]}`)}>{`${sizers[6]}${sizers[7]}`}</button>
+                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setMarca(`${sizers[9]}${sizers[10]}`)}>{`${sizers[9]}${sizers[10]}`}</button>
               </div>
               <div>
                 <h4><strong>DESCRIÇÃO</strong></h4>
@@ -223,25 +258,7 @@ const Descricao = () => {
                 <span >eceba o produto que está esperando ou devolvemos o dinheiro.</span>
               </p>
             </div>
-          </div>
-          {/*<div className="div3">
-            <div className='div1' >
-              {!img1 ? "" : <img src={img1} alt="img0" onMouseOver={() => over0(over0)} />}
-            </div>
-            <div className='div1' >
-              {!img2 ? "" : <img src={img2} alt="img1" onMouseOver={() => over1(over1)} />}
-            </div>
-            <div className='div1' >
-              {!img3 ? "" : <img src={img3} alt="img2" onMouseOver={() => over2(over2)} />}
-            </div>
-            <div className='div1' >
-              {!img4 ? "" : <img src={img4} alt="img3" onMouseOver={() => over3(over3)} />}
-            </div>
-            <div className='div1' >
-              {!img5 ? "" : <img src={img5} alt="img4" onMouseOver={() => over3(over4)} />}
-            </div>
-          </div>*/}
-          
+          </div>          
         </div>
       }
     </ConatinerMain>

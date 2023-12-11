@@ -70,10 +70,14 @@ const Products = () => {
     localStorage.setItem("img1", img.image[1])
     localStorage.setItem("img2", img.image[2])
     localStorage.setItem("img3", img.image[3])
+    localStorage.setItem("img4", img.image[4])
 
-    localStorage.setItem("color0", color.color[0])
-    localStorage.setItem("color1", color.color[1])
-    localStorage.setItem("color2", color.color[2])
+    localStorage.setItem("color1", color.color[0])
+    localStorage.setItem("color2", color.color[1])
+    localStorage.setItem("color3", color.color[2])
+    localStorage.setItem("color4", color.color[3])
+    localStorage.setItem("color5", color.color[4])
+    localStorage.setItem("color6", color.color[5])
 
     localStorage.setItem("name", name.name)
     localStorage.setItem("description", desc.description)

@@ -102,16 +102,17 @@ const Products = () => {
 
   const NameCategory = categoroyName.map(res => res.name)
 
-  console.log(categoroyName)
+  console.log(categoroy)
 
   return (
     <>
     {/*<Slids />*/}
-  {categoroy == "" ? <Example /> :
-    <ProductProd>
+  {categoroy == "" && categoroyC == "" && categoroyS == "" && categoroyCA == "" ? <Example /> : 
+    <div>
+      <ProductProd>
       <section>
       <br />
-      <h2 className='ml-3'>{NameCategory[0]}</h2>
+      <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[0]}</h2>
       
       {categoroy.map(res => (
           <Link to="desc" onClick={() => LocalSto(res.products)}>
@@ -134,12 +135,12 @@ const Products = () => {
       </section>  
       
     </ProductProd>
-      }
+  
     
     <ProductProd>
       <section>
       <br />
-      <h2 className='ml-3'>{NameCategory[1]}</h2>
+      <h2 className='ml-3'>{categoroyC == "" ? "" : NameCategory[1]}</h2>
       
       {categoroyC.map(res => (
           <Link to="desc" onClick={() => LocalSto(res.products)}>
@@ -166,7 +167,7 @@ const Products = () => {
     <ProductProd>
       <section>
       <br />
-      <h2 className='ml-3'>{NameCategory[7]}</h2>
+      <h2 className='ml-3'>{categoroyS == "" ? "" : NameCategory[7]}</h2>
       
       {categoroyS.map(res => (
           <Link to="desc" onClick={() => LocalSto(res.products)}>
@@ -193,7 +194,7 @@ const Products = () => {
     <ProductProd>
       <section>
       <br />
-      <h2 className='ml-3'>{NameCategory[2]}</h2>
+      <h2 className='ml-3'>{categoroyCA == "" ? "" : NameCategory[2]}</h2>
       
       {categoroyCA.map(res => (
           <Link to="desc" onClick={() => LocalSto(res.products)}>
@@ -216,7 +217,10 @@ const Products = () => {
       </section>  
       
     </ProductProd>
-     
+}
+    </div>
+  }
+    
   </>
   );
 }

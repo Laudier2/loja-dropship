@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContainerFooter = styled.div`
   width: 100%;
-  margin-top: 5%;
+  margin-top: 15%;
   background-color: #000000;
   display: flex;
   justify-content: space-between;

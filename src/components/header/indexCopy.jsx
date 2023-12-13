@@ -16,12 +16,10 @@ import Cart from "../cart/index";
 // Styles
 import { Container, Logo, Buttons, ContainerAMR, ContainerPRT } from "./styles";
 
-function Header() {
+export function Header() {
   const [cartIsVisible, setCartIsVisible] = useState(false);
 
-  const length = useSelector((state) => state.cart.cartItems.length)
-
-  console.log({ r: length })
+  //const {length} = useSelector(state => state.cart.cartItems.length)
 
   //const currentUser = ''
 
@@ -38,6 +36,8 @@ function Header() {
   };*/
 
   //https://wa.me/5575998239680
+
+  const length = 1
 
   return (
     <>
@@ -103,5 +103,3 @@ function Header() {
     </>
   );
 }
-
-export default Header;

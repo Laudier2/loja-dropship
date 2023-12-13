@@ -8,6 +8,7 @@ export const ConatinerMain = styled.div`
     width: 60px;
     margin-left: 10%;
     margin-top: 2px;
+    
 
     & img {
       width: 80px;
@@ -52,6 +53,13 @@ export const ConatinerMain = styled.div`
 
     }
 
+    @media (max-width: 1350px) {
+      & .formatImg {
+        height: 40vh;
+        margin-bottom: 10%;
+      }
+    }
+
     @media (max-width: 768px) {
       width: 100%;
 
@@ -73,6 +81,12 @@ export const ConatinerMain = styled.div`
 
       &:hover {
         border-color: aqua;
+      }
+    }
+
+    @media (max-width: 1350px) {
+      & img {
+        width: 40px;
       }
     }
 
@@ -133,6 +147,31 @@ export const ConatinerMain = styled.div`
       font-size: 2vw;
     }
 
+    @media (max-width: 1750px) {
+      position: inherit;
+      margin-top: -46%;
+    }
+
+    @media (max-width: 1550px) {
+      position: inherit;
+      margin-top: -55%;
+    }
+
+    @media (max-width: 1350px) {
+      position: inherit;
+      margin-top: -42%;
+    }
+
+    @media (max-width: 1150px) {
+      position: inherit;
+      margin-top: -48%;
+    }
+
+    @media (max-width: 950px) {
+      position: inherit;
+      margin-top: -55%;
+    }
+
     @media (max-width: 768px) {
       width: 80%;
       margin: auto;
@@ -161,7 +200,7 @@ export const ConatinerMain = styled.div`
       padding: 5px;
 
       &:hover {
-        background-color: rgb(25, 176, 179);
+        background-color: rgb(188, 204, 204);
       }
     }
   }
@@ -173,6 +212,26 @@ export const ConatinerMain = styled.div`
     margin-top: -40%;
     margin-left: 70%;
     font-size: 1vw;
+
+    @media (max-width: 1550px) {
+      position: inherit;
+      margin-top: -41%;
+    }
+
+    @media (max-width: 1350px) {
+      position: inherit;
+      margin-top: -43.5%;
+    }
+
+    @media (max-width: 1150px) {
+      position: inherit;
+      margin-top: -46%;
+    }
+
+    @media (max-width: 950px) {
+      position: inherit;
+      margin-top: -49%;
+    }
 
     @media (max-width: 768px) {
       width: 80%;

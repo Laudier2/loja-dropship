@@ -15,7 +15,7 @@ import Cart from "../cart/index";
 // Styles
 import { Container, Logo, Buttons, ContainerAMR, ContainerPRT } from "./styles";
 
-function Header() {
+export function Header() {
 
   const [cartIsVisible, setCartIsVisible] = useState(false);
 
@@ -90,4 +90,3 @@ function Header() {
   );
 }
 
-export default Header;

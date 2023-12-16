@@ -43,18 +43,17 @@ export default function CartFinalize() {
     /*const handleClearCart = () => {
         dispatch(clearCart())
     };*/
-
-   const res = cart.map(r => r.cartQuantity)
     
     let prod = [
         {
-            title: res > 0 ? cart[0].name : "",
+            title: cart2 > 0 ? cart[0].name : "",
             price: cart2.cartTotalAmount,
-            image: res > 0 ? cart[0].image[0] : "",
-            category: "placas",
-            description: res > 0 ? cart[0].description : "",
+            image: cart2 > 0 ? cart[0].image : "",
+            category: "",
+            description: cart2 > 0 ? cart[0].description : "",
         },
     ]
+
 
     const carrinhoVazio = () => {
         return (
@@ -73,7 +72,14 @@ export default function CartFinalize() {
             description: "Isso é um teste",
         },
     ]*/
-    //console.log(cart[0].price)
+    console.log(cart)
+
+    /*
+    <Button onClick={ async () => {
+    await api.post("/payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), localStorage.clear())  
+    
+    }}
+    */
 
     return (
         <>
@@ -113,7 +119,7 @@ export default function CartFinalize() {
                                             </td>
                                             <td>
                                                 <div className="div2">
-                                                    <strong>Preco: R${res.price * res.cartQuantity},00</strong>
+                                                    <strong>Preco: R${res.price * res.cartQuantity}</strong>
                                                     
                                                     <button className='btn btn-outline-secondary ml-2' onClick={() => handleRemoveClick(res)}> Excluir 
                                                         <RiDeleteBin2Fill className='text-danger h5' />
@@ -132,9 +138,7 @@ export default function CartFinalize() {
                         <Link to="/">Volta para pagina inicial</Link>
                    </Button>
                    : <Button onClick={ async () => {
-                    await api.post("/payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), localStorage.clear())  
-                  
-                    }}>
+                    await api.post("/payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point))}}>
                         Proceguir com pagamento
                         {/*<Link to="/endereco">Finaliza comprar</Link>*/}
                     </Button>}

@@ -90,7 +90,7 @@ const Products = () => {
     //console.log(dados)*/
   }
 
-  //console.log({ts: products})
+  console.log()
 
   return (
     <>

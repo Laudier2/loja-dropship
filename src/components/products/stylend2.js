@@ -4,6 +4,7 @@ export const ProductProd = styled.div`
   width: 100%;
   background: transparent;
   display: inline-block;
+  margin-top: 50px;
 
   & section {
     width: 100%;

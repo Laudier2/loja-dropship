@@ -57,8 +57,9 @@ export const Buttons = styled.div`
   }
 
   @media (max-width: 768px){
-    position: absolute;
-    margin-left: 80%;
+    float: right;
+    margin-right: -20px;
+    margin-top: -30px;
   }
 `;
 
@@ -114,8 +115,6 @@ export const ContainerPRT = styled.div`
           margin-left: -10px;
           padding: 0px 1px 4px 20px;
           background-color: #FDD201;
-
-          
         }
         
         & a {
@@ -130,12 +129,42 @@ export const ContainerPRT = styled.div`
           position: absolute;
           margin-top: -20px;
           margin-left: -10px;
+
+          @media (max-width: 768px){
+            margin-left: 3px;
+          }
         }
         
       }
 
+     
+      & button {
+        text-decoration: none;
+        background-color: #000000;
+        border: none;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+
+        &:hover {
+          background-color: #FDD201;
+          color: #000000;
+        }
+
+        @media (max-width: 768px) {
+          width: 100%;
+          margin-left: -10px;
+          font-size: 1.8vw;
+        }
+      }
+      
+
       &:hover {
         background-color: #FDD201;
+
+        & .li {
+          padding: -15px;
+        }
 
         & a {
           color: #000000;
@@ -153,9 +182,71 @@ export const ContainerPRT = styled.div`
           width: 100%;
           margin-left: -10px;
           font-size: 1.8vw;
+          margin-left: 1px;
         }
       }
     }
   }
-`;
+`
+export const DropDow = styled.div`
+
+  list-style:none;
+  margin-top: -4px;  
+
+  & li{
+    position:relative;
+  }
+
+  & li a{
+    color:#333; 
+    text-decoration:none; 
+    padding:5px 10px; 
+    display:block;
+  }
+
+
+
+  & ul{
+    position:absolute;
+    top:32px;
+    margin-left:-80px;
+    background-color:#fff;
+    display:none;
+    border-radius: 10px;
+    text-align: left;
+    
+  }
+
+  & li:hover ul, li.over ul{display:block;}
+
+  &:hover{
+    background: transparent;
+  }
+
+  @media (max-width: 768px) {
+
+    margin-top: 0px;
+
+    & ul{
+      position:absolute;
+      width: 120px;
+      top:32px;
+      margin-left:-50px;
+      background-color:#fff;
+      display:none;
+      border-radius: 10px;
+      text-align: left;
+      border: 1px;
+      
+    }
+  }
+  
+`
+
+export const IcomCategory = styled.div`
+  position: absolute;
+  color: #ffff;
+  margin-left: 48px;
+  margin-top: 10px;
+`
 

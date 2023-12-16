@@ -79,18 +79,16 @@ function Compra() {
     apartment_or_house: house,
     code_compra
   }
-
-  const res = cart.map(r => r.cartQuantity)
     
-    let prod = [
-        {
-            title: res > 0 ? cart[0].name : "",
-            price: cartTotal.cartTotalAmount,
-            image: res > 0 ? cart[0].image[0] : "",
-            category: "placas",
-            description: res > 0 ? cart[0].description : "",
-        },
-    ]
+  let prod = [
+    {
+        title: productAmount > 0 ? cart[0].name : "",
+        price: productAmount.cartTotalAmount,
+        image: productAmount > 0 ? cart[0].image : "",
+        category: "",
+        description: productAmount > 0 ? cart[0].description : "",
+    },
+]
 
 
   const handleSubmit = async (e) => {

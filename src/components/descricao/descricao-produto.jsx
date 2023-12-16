@@ -33,21 +33,26 @@ const Descricao = () => {
   const [desc, setReceb4] = useState('')
   const [sizers, setSizers] = useState('')
   
-  const [color1, setcolor1] = useState('')
-  const [color2, setcolor2] = useState('')
-  const [color3, setcolor3] = useState('')
-  const [color4, setcolor4] = useState('')
-  const [color5, setcolor5] = useState('')
-  const [color6, setcolor6] = useState('')
+  const [color1, setColor1] = useState('')
+  const [color2, setColor2] = useState('')
+  const [color3, setColor3] = useState('')
+  const [color4, setColor4] = useState('')
+  const [color5, setColor5] = useState('')
+  const [color6, setColor6] = useState('')
   
   const [marca, setMarca] = useState('')
 
-  console.log(marca)
+  console.log(sizers[0]+sizers[1])
+
+  function Marca(e){
+    localStorage.setItem("Tamanho", e)
+  }
 
   useEffect(() => {
     window.scroll({
       top: 100,
     });
+
   },[])
 
   useEffect(() => {
@@ -92,19 +97,21 @@ const Descricao = () => {
     const color04 = localStorage.getItem("color3")
     const color05 = localStorage.getItem("color4")
     const color06 = localStorage.getItem("color5")
-    setcolor1(color01)
-    setcolor2(color02)
-    setcolor3(color03)
-    setcolor4(color04)
-    setcolor5(color05)
-    setcolor6(color06)
+
+    setColor1(color01)
+    setColor2(color02)
+    setColor3(color03)
+    setColor4(color04)
+    setColor5(color05)
+    setColor6(color06)
+
   }, [])
 
   const Todes = [color1, color2, color3, color3, color4, color5, color6]
 
   const FilterColor1 = Todes.filter(e => e == "preto" || e == "Preto" || e == "black" || e == "Black")
   const FilterColor2 = Todes.filter(e => e == "Bege" || e == "bege" || e == "Gray" || e == "gray")
-  const FilterColor3 = Todes.filter(e => e == "Dins" || e == "dins")
+  const FilterColor3 = Todes.filter(e => e == "Dins" || e == "dins" || e == "dins claro" || e == "dins escuro")
   const FilterColor4 = Todes.filter(e => e == "Roxo" || e == "roxo" || e == "pink" || e == "Pink")
   const FilterColor5 = Todes.filter(e => e == "Branco" || e == "branco" || e == "white" || e == "White")
   const FilterColor6 = Todes.filter(e => e == "Vermelho" || e == "vermelho" || e == "red" || e == "Red")
@@ -166,34 +173,37 @@ const Descricao = () => {
         {sizers[2] == "M" 
         ?
         <div>
-          <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setMarca(`${sizers[0]}${sizers[1]}`)}>
+          <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Marca(sizers[0])}>
           {sizers[0] ? sizers[0] : ""}
         </button>
-        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setMarca(`${sizers[3]}${sizers[4]}`)}>
+        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Marca(sizers[2])}>
           {sizers[4] ? sizers[2] : ""}
           </button>
-        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setMarca(`${sizers[3]}${sizers[4]}`)}>
+        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Marca(sizers[4])}>
+          {sizers[4] ? sizers[4] : ""}
+        </button>
+        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Marca(sizers[4]+sizers[6])}>
           {sizers[4] ? sizers[4]+sizers[6] : ""}
         </button>
-        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setMarca(`${sizers[9]}${sizers[10]}`)}>
+        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Marca(sizers[9]+sizers[10]+sizers[11])}>
           {sizers[9] ? sizers[9]+sizers[10]+sizers[11] : ""}
         </button>
       </div>
       : 
       <div>
-        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setMarca(`${sizers[0]}${sizers[1]}`)}>
+        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Marca(`${sizers[0]}${sizers[1]}`)}>
           {sizers[0] ? sizers[0]+sizers[1] : ""}
           </button>
-        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setMarca(`${sizers[3]}${sizers[4]}`)}>
+        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Marca(`${sizers[3]}${sizers[4]}`)}>
           {sizers[4] ? sizers[4]+sizers[6] : ""}
           </button>
-        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setMarca(`${sizers[6]}${sizers[7]}`)}>
+        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Marca(`${sizers[6]}${sizers[7]}`)}>
           {sizers[6] ? sizers[6]+sizers[7] : ""}
           </button>
-        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setMarca(`${sizers[9]}${sizers[10]}`)}>
+        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Marca(`${sizers[9]}${sizers[10]}`)}>
           {sizers[9] ? sizers[9]+sizers[10] : ""}
         </button>
-        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setMarca(`${sizers[9]}${sizers[10]}`)}>
+        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Marca(`${sizers[9]}${sizers[10]}`)}>
           {sizers[13] ? sizers[9]+sizers[13] : ""}
         </button>
         </div>

@@ -217,7 +217,7 @@ const Products = () => {
       </section>  
       
     </ProductProd>
-}
+
     </div>
   }
     

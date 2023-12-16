@@ -39,8 +39,6 @@ const Descricao = () => {
   const [color4, setColor4] = useState('')
   const [color5, setColor5] = useState('')
   const [color6, setColor6] = useState('')
-  
-  const [marca, setMarca] = useState('')
 
   console.log(sizers[0]+sizers[1])
 

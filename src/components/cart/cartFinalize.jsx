@@ -142,7 +142,7 @@ export default function CartFinalize() {
                         Proceguir com pagamento
                         {/*<Link to="/endereco">Finaliza comprar</Link>*/}
                     </Button>}
-                    <SubTotal>Total: R$ {cart2.cartTotalAmount},00 </SubTotal>
+                    <SubTotal>Total: R$ {cart2.cartTotalAmount}</SubTotal>
                 </div>
             }
         </>

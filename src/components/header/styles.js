@@ -29,7 +29,8 @@ export const Logo = styled.div`
     }
 
     @media (max-width: 768px) {
-      font-size: 6vw;
+      font-size: 7vw;
+      margin-left: -15px;
     }
   }
 `;

@@ -119,7 +119,7 @@ const Products = () => {
             <div key={res.id}>
               <img src={res.products.image[0]} alt="img" />
               <h5>{res.products.name}</h5>
-              <h3>R${res.products.price},00</h3>
+              <h3>R${res.products.price}</h3>
               <span>
                 <p>
                   <FaCreditCard className='cartao'/> Em até 12x sem juros
@@ -201,7 +201,7 @@ const Products = () => {
             <div key={res.id}>
               <img src={res.products.image[0]} alt="img" />
               <h5>{res.products.name}</h5>
-              <h3>R${res.products.price},00</h3>
+              <h3>R${res.products.price}</h3>
               <span>
                 <p>
                   <FaCreditCard className='cartao'/> Em até 12x sem juros

@@ -6,7 +6,7 @@ import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
 import ReactLoading from 'react-loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCart } from '../../redux/cart/cart';
-import {  ConatinerMain, ContainerDesc, ContainerSobre } from './styles';
+import {  ConatinerMain } from './styles2';
 import { Link } from 'react-router-dom';
 import { FaCreditCard } from "react-icons/fa";
 import { TiStarHalfOutline } from "react-icons/ti";
@@ -234,8 +234,6 @@ const Descricao = () => {
               </div>
             </div>
           </div>
-          <ContainerDesc>
-           
           <div className="divdesc">
               <h5 ><strong>{receb_data_name}</strong></h5>
               <div>
@@ -284,7 +282,14 @@ const Descricao = () => {
                }
         
               </div>
+              <div>
+                <br />
+                <h4><strong>DESCRIÇÃO</strong></h4>
               
+                <p>
+                {desc}
+                </p>
+              </div>
             </div>
           <div className="divdescSecudare">
           <strong>Envio para todo o país</strong>
@@ -323,14 +328,7 @@ const Descricao = () => {
                 <span >eceba o produto que está esperando ou devolvemos o dinheiro.</span>
               </p>
             </div>
-          </div>
-          </ContainerDesc> 
-          <ContainerSobre>
-            <h4><strong>DESCRIÇÃO</strong></h4>
-            <p>
-            {desc}
-            </p>
-          </ContainerSobre>
+          </div>          
         </div>
       }
     </ConatinerMain>

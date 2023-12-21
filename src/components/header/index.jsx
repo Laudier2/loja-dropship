@@ -37,7 +37,7 @@ export function Header() {
     })()
   },[])
 
-  console.log(category)
+  //console.log(category)
 
   return (
     <>

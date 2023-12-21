@@ -44,7 +44,7 @@ const Products = () => {
     })()
   },[])
 
-  console.log(Category)
+  //console.log(Category)
   
   const products = useSelector(productSlace => productSlace.products.items)
   //console.log("teste", products)

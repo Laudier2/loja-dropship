@@ -6,7 +6,6 @@ import { Link } from "react-router-dom"
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { FaPlus, FaWindowMinimize} from "react-icons/fa";
 import { addCart, decrementCart, removeFromCart, cauculateTotal} from '../../redux/cart/cart';
-import api from "../../api/api"
 
 
 export default function CartFinalize() {
@@ -40,21 +39,6 @@ export default function CartFinalize() {
         window.location.reload()
     };
 
-    /*const handleClearCart = () => {
-        dispatch(clearCart())
-    };*/
-    
-    let prod = [
-        {
-            title: cart2 > 0 ? cart[0].name : "",
-            price: cart2.cartTotalAmount,
-            image: cart2 > 0 ? cart[0].image : "",
-            category: "",
-            description: cart2 > 0 ? cart[0].description : "",
-        },
-    ]
-
-
     const carrinhoVazio = () => {
         return (
             <CartVazio>
@@ -72,7 +56,6 @@ export default function CartFinalize() {
             description: "Isso é um teste",
         },
     ]*/
-    console.log(cart)
 
     /*
     <Button onClick={ async () => {
@@ -137,11 +120,14 @@ export default function CartFinalize() {
                    ? <Button>
                         <Link to="/">Volta para pagina inicial</Link>
                    </Button>
-                   : <Button onClick={ async () => {
+                   : /*<Button onClick={ async () => {
                     await api.post("/payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point))}}>
                         Proceguir com pagamento
-                        {/*<Link to="/endereco">Finaliza comprar</Link>*/}
-                    </Button>}
+                    </Button>*/
+                    <Button>
+                        <Link to="/endereco">Finaliza comprar</Link>
+                    </Button>
+                    }
                     <SubTotal>Total: R$ {cart2.cartTotalAmount}</SubTotal>
                 </div>
             }

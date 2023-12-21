@@ -102,7 +102,7 @@ const Products = () => {
 
   const NameCategory = categoroyName.map(res => res.name)
 
-  console.log(categoroyS)
+  //console.log(categoroyS)
 
   return (
     <>

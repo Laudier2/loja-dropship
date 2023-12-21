@@ -5,6 +5,7 @@ import { FormBox, LoadingPage } from "./FormBox";
 import api from '../../api/api';
 import { useSelector } from 'react-redux';
 import ReactLoading from 'react-loading';
+import emailjs from "@emailjs/browser"
 
 console.clear()
 
@@ -13,20 +14,9 @@ function Compra() {
   const cart = useSelector(state => state.cart.cartItems)
   const cartTotal = useSelector(state => state.cart)
 
-  const id0 = [cartTotal.cartItems]
   const productAmount = [cartTotal.cartTotalAmount]
-  const productQuantity = [cartTotal.cartTotalQuantyti]
+  //const productQuantity = [cartTotal.cartTotalQuantyti]
 
- let resid0 = id0[0].map(e => (`{id: ${e.id}}`))
-
- const prosuctsCart = [
-  `${resid0}`,
-  `{quantity: ${productQuantity}}`,
-  `{amount: ${productAmount}}`,
- ]
-
-  console.log("")
-  console.log("")
 
   const GeraCode = Math.random()
   const ConvertCode = JSON.stringify(GeraCode)
@@ -42,7 +32,7 @@ function Compra() {
   const [ district, setDistrict ] = useState("")
   const [ house, setHouse ] = useState("")
   const [ code_compra ] = useState(ConvertCode)
-  const [ productslist] = useState(prosuctsCart)
+  //const [ productslist] = useState(res)
   
   //window.location.reload();
 
@@ -75,7 +65,7 @@ function Compra() {
     street,
     number,
     district,
-    productslist,
+    /*productslist,*/
     apartment_or_house: house,
     code_compra
   }
@@ -90,11 +80,12 @@ function Compra() {
     },
 ]
 
+console.log(productAmount)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    api.post("/compra", data)
+    /*api.post("/compra", data)
       .then(() => {
           console.log('A compra foi Criado com sucesso');
           
@@ -104,18 +95,170 @@ function Compra() {
       })
       .catch((err) => {
         console.error('Os campos sao obrigatorio ou usuario email ja cadastrado, tente novamente', err);
-      });
+      });*/
 
-      setTimeout(() => {
-        (async() => {
-          const req = await api.get("/compra")
 
-          const filtra = req.data.filter(code => code.code_compra === code_compra)
+      if(cart[0] && cart[1] === undefined && cart[2] === undefined){
 
-          console.log(filtra)
-          
-        })()
-      }, 10000)
+        let adress = `Estado: ${data.state}, Cidade: ${data.city}, Cep: ${data.cep}, Barrio: ${data.district}, Rua: ${data.street}, Numero: ${data.number}, AP/Casa: ${data.apartment_or_house}`
+    
+        let res1 = JSON.stringify(cart[0].image[0])
+        let res4 = JSON.stringify(adress)
+        let res5 = JSON.stringify(productAmount)
+
+        const templeteParams = {
+          from_name: name ? name : "",
+          adress: `${res4}` ? `${res4}` : "",
+          email: email ? email : "",
+          phone: phone ? phone : "",
+          image1: `${res1}` ? `${res1}` : "",
+          nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
+          quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
+          price1: `${cart[0].price}` ? `${cart[0].price * cart[0].cartQuantity}` : "",
+          total: `${res5}`
+        }
+    
+        emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
+        .then((res) => {
+          console.log("EMAIL ENVIADO", res.status, res.text)
+        }, (err) => {
+          console.log("ERRO: ", err)
+        })
+
+        const PagamentoMercadoPago = async () => {
+          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point))  
+        }
+        PagamentoMercadoPago()
+      }
+
+      if(cart[0] && cart[1] && cart[2] === undefined){
+
+        let adress = `Estado: ${data.state}, Cidade: ${data.city}, Cep: ${data.cep}, Barrio: ${data.district}, Rua: ${data.street}, Numero: ${data.number}, AP/Casa: ${data.apartment_or_house}`
+    
+        let res1 = JSON.stringify(cart[0].image[0])
+        let res2 = JSON.stringify(cart[1].image[0])
+        let res4 = JSON.stringify(adress)
+        let res5 = JSON.stringify(productAmount)
+
+        const templeteParams = {
+          from_name: name ? name : "",
+          adress: `${res4}` ? `${res4}` : "",
+          email: email ? email : "",
+          phone: phone ? phone : "",
+          image1: `${res1}` ? `${res1}` : "",
+          nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
+          quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
+          price1: `${cart[0].price}` ? `${cart[0].price * cart[0].cartQuantity}` : "",
+          image2: `${res2}` ? `${res2}` : "",
+          nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
+          quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
+          price2: `${cart[1].price}` ? `${cart[1].price * cart[1].cartQuantity}` : "",
+          total: `${res5}`
+        }
+    
+        emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
+        .then((res) => {
+          console.log("EMAIL ENVIADO", res.status, res.text)
+        }, (err) => {
+          console.log("ERRO: ", err)
+        })
+
+        const PagamentoMercadoPago = async () => {
+          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point))  
+        }
+        PagamentoMercadoPago()
+      }
+      
+      if(cart[0] && cart[1] && cart[2]){
+
+        let adress = `Estado: ${data.state}, Cidade: ${data.city}, Cep: ${data.cep}, Barrio: ${data.district}, Rua: ${data.street}, Numero: ${data.number}, AP/Casa: ${data.apartment_or_house}`
+    
+        let res1 = JSON.stringify(cart[0].image[0])
+        let res2 = JSON.stringify(cart[1].image[0])
+        let res3 =  JSON.stringify(cart[2].image[0]) 
+        let res4 = JSON.stringify(adress)
+        let res5 = JSON.stringify(productAmount)
+
+        const templeteParams = {
+          from_name: name ? name : "",
+          adress: `${res4}` ? `${res4}` : "",
+          email: email ? email : "",
+          phone: phone ? phone : "",
+          image1: `${res1}` ? `${res1}` : "",
+          nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
+          quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
+          price1: `${cart[0].price}` ? `${cart[0].price * cart[0].cartQuantity}` : "",
+          image2: `${res2}` ? `${res2}` : "",
+          nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
+          quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
+          price2: `${cart[1].price}` ? `${cart[1].price * cart[1].cartQuantity}` : "",
+          image3: `${res3}` ? ` ${res3}` : "",
+          nameproduct3: `${cart[2].name ? cart[2].name : ""}`,
+          quanty3: `${cart[2].cartQuantity ? cart[2].cartQuantity : ""}`,
+          price3: `${cart[2].price ? cart[2].price * cart[2].cartQuantity : ""}`,
+          total: `${res5}`
+        }
+    
+        emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
+        .then((res) => {
+          console.log("EMAIL ENVIADO", res.status, res.text)
+        }, (err) => {
+          console.log("ERRO: ", err)
+        })
+
+        const PagamentoMercadoPago = async () => {
+          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point))  
+        }
+        PagamentoMercadoPago()
+      }
+
+      if(cart[0] && cart[1] && cart[2] && cart[3]){
+
+        let adress = `Estado: ${data.state}, Cidade: ${data.city}, Cep: ${data.cep}, Barrio: ${data.district}, Rua: ${data.street}, Numero: ${data.number}, AP/Casa: ${data.apartment_or_house}`
+    
+        let res1 = JSON.stringify(cart[0].image[0])
+        let res2 = JSON.stringify(cart[1].image[0])
+        let res3 =  JSON.stringify(cart[2].image[0]) 
+        let res6 =  JSON.stringify(cart[3].image[0]) 
+        let res4 = JSON.stringify(adress)
+        let res5 = JSON.stringify(productAmount)
+
+        const templeteParams = {
+          from_name: name ? name : "",
+          adress: `${res4}` ? `${res4}` : "",
+          email: email ? email : "",
+          phone: phone ? phone : "",
+          image1: `${res1}` ? `${res1}` : "",
+          nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
+          quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
+          price1: `${cart[0].price}` ? `${cart[0].price * cart[0].cartQuantity}` : "",
+          image2: `${res2}` ? `${res2}` : "",
+          nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
+          quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
+          price2: `${cart[1].price}` ? `${cart[1].price * cart[1].cartQuantity}` : "",
+          image3: `${res3}` ? ` ${res3}` : "",
+          nameproduct3: `${cart[2].name ? cart[2].name : ""}`,
+          quanty3: `${cart[2].cartQuantity ? cart[2].cartQuantity : ""}`,
+          price3: `${cart[2].price ? cart[2].price * cart[2].cartQuantity : ""}`,
+          image4: `${res6}` ? ` ${res6}` : "",
+          nameproduct4: `${cart[6].name ? cart[6].name : ""}`,
+          quanty4: `${cart[6].cartQuantity ? cart[3].cartQuantity : ""}`,
+          price4: `${cart[6].price ? cart[6].price * cart[6].cartQuantity : ""}`,
+          total: `${res5}`
+        }
+    
+        emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
+        .then((res) => {
+          console.log("EMAIL ENVIADO", res.status, res.text)
+        }, (err) => {
+          console.log("ERRO: ", err)
+        })
+
+        const PagamentoMercadoPago = async () => {
+          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point))  
+        }
+        PagamentoMercadoPago()
+      }
 
   }
 
@@ -247,7 +390,7 @@ function Compra() {
                 value={house.house}  
                 required
               />
-              <label htmlFor="">Complemento</label>
+              <label htmlFor="">Complemento AP/CASA</label>
             </InputBox>       
             <ButtonBox type="submit">
               Finaliza Compra

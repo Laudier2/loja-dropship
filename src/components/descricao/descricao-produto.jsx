@@ -40,7 +40,7 @@ const Descricao = () => {
   const [color5, setColor5] = useState('')
   const [color6, setColor6] = useState('')
 
-  console.log(sizers[0]+sizers[1])
+  //console.log(sizers[0]+sizers[1])
 
   function Marca(e){
     localStorage.setItem("Tamanho", e)
@@ -117,7 +117,7 @@ const Descricao = () => {
   const FilterColor8 = Todes.filter(e => e == "Azul" || e == "azul" || e == "blue" || e == "Blue")
   const FilterColor9 = Todes.filter(e => e == "Camuflado" || e == "Rjado" || e == "rajado" || e == "camuflado")
 
-  console.log(FilterColor2[0])
+  //console.log(FilterColor2[0])
 
   useEffect(() => {
     const size = localStorage.getItem("size")
@@ -157,7 +157,7 @@ const Descricao = () => {
 
   const productFilter = product.filter(product => (product.id === localId))
 
-  console.log(productFilter)
+  //console.log(productFilter)
 
   const dispatch = useDispatch()
 

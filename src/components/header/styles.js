@@ -194,15 +194,20 @@ export const DropDow = styled.div`
   list-style:none;
   margin-top: -4px;  
 
-  & li{
-    position:relative;
+  & ul{
+    position: absolute;
   }
 
-  & li a{
+  & div li a{
     color:#333; 
     text-decoration:none; 
-    padding:5px 10px; 
     display:block;
+    font-size: 1vw;
+
+    @media (max-width: 768px) {
+      font-size: 2vw;
+      position: absolute;
+    }
   }
 
 

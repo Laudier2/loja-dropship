@@ -8,7 +8,8 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import api from '../../api/api';
 import { useState } from 'react';
-//import Slids from '../slids/slids';
+import { Header } from '../header';
+import Slids from '../slids/slids';
 
 const Example = () => (
     /*
@@ -102,16 +103,17 @@ const Products = () => {
 
   const NameCategory = categoroyName.map(res => res.name)
 
-  //console.log(categoroyS)
+  console.log(categoroyName)
 
   return (
     <>
-    {/*<Slids />*/}
+    <Header/>
+    <Slids />
   {categoroy == "" && categoroyC == "" && categoroyS == "" && categoroyCA == "" ? <Example /> : 
     <div>
       <ProductProd>
       <section>
-      <br />
+      
       <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[0]}</h2>
       
       {categoroy.map(res => (
@@ -167,7 +169,7 @@ const Products = () => {
     <ProductProd>
       <section>
       <br />
-      <h2 className='ml-3'>{categoroyS == "" ? "" : NameCategory[7]}</h2>
+      <h2 className='ml-3'>{categoroyS == "" ? "" : NameCategory[5]}</h2>
       
       {categoroyS.map(res => (
           <Link to="desc" onClick={() => LocalSto(res.products)}>

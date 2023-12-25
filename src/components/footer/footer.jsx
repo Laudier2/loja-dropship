@@ -62,7 +62,7 @@ export default function Footer() {
 			<ContainerFooter1>
 				<div>
 					<strong>Trabalhamos com boné de ótima qualidade, receba seu produto ou devolvemos seudinhiro.</strong>
-					<p>&copy; Todos os direitos reservado Top dos Boné</p>
+					<p>&copy; Todos os direitos reservado StylesTop</p>
 					
 				</div>
 				<div>

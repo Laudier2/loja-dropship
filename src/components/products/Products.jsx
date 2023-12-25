@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import api from '../../api/api';
-import { Category } from '@material-ui/icons';
+import { Header } from "../header"
 //import Slids from '../slids/slids';
 
 const Example = () => (
@@ -95,6 +95,7 @@ const Products = () => {
   return (
     <>
     {/*<Slids />*/}
+  <Header />
   {products == "" ? <Example /> :
     <ProductProd>
       <section>

@@ -5,7 +5,6 @@ import { ErrorBoundary } from "react-error-boundary";
 import Products from "./components/products/Products2";
 import Desc from "./components/descricao/descricao-produto";
 import Cart from "./components/cart";
-import { Header } from "./components/header";
 import CartFinalize from "./components/cart/cartFinalize";
 import Footer from "./components/footer/footer";
 import Politicas from "./components/politica/Politicas";
@@ -58,7 +57,6 @@ function App() {
 
   return (
     <>
-      <Header />
       <RouterProvider router={router}>
       <ToastContainer autoClose={3000} />
         <div className="page-container">

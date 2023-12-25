@@ -71,8 +71,20 @@ export default function CartFinalize() {
                     <TableCartFinalize>
                         <table>
                             <thead>
+                            <Link to="/" style={
+                                {
+                                    textDecoration: "none", 
+                                    fontSize: "30px", 
+                                    fontWeight: "bold",
+                                    background: "aqua",
+                                    padding: "5px",
+                                    borderRadius: "10px",
+                                    marginTop: "5px",
+                                    margin: "5px"
+                                }
+                            }>StylesTop</Link> 
                             <tr className='m-auto h3'>
-                                <h2>Seu carrimho</h2>
+                               <h2>Seu carrimho</h2>
                             </tr>
                             </thead>
                             <hr />

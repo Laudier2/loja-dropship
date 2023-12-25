@@ -131,6 +131,12 @@ export const TableCartFinalize = styled.div`
           margin-top: 10px;
           font-weight: bold;
         }
+
+        @media(max-width: 768px){
+          & h2 {
+            font-size: 4vw;
+          }
+        }
       }
     }
 

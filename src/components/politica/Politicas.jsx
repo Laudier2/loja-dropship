@@ -1,10 +1,14 @@
+
 import React from 'react'
-import { ContainerPolitica } from './styled'
+import { ContainerPolitica } from './styled';
+import { Link } from 'react-router-dom';
 
 export default function Politicas() {
   return (
     <>
         <ContainerPolitica>
+            <br />
+            <Link to="/" style={{textDecoration: "none"}}>Voltar Para o site</Link>
             <h2>Política Privacidade</h2>
             <p>
                 A sua privacidade é importante para nós. É política do Top dos Boné respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site Top dos Boné, e outros sites que possuímos e operamos.

@@ -6,6 +6,7 @@ import api from '../../api/api';
 import { useSelector } from 'react-redux';
 import ReactLoading from 'react-loading';
 import emailjs from "@emailjs/browser"
+import { Link } from 'react-router-dom';
 
 console.clear()
 
@@ -69,18 +70,35 @@ function Compra() {
     apartment_or_house: house,
     code_compra
   }
+
+  const name2 = cart[0].name ? cart[0].name : ""
+  const price2 = cart[0].name ? productAmount[0] : ""
+  const image2 = cart[0].name ? cart[0].image[0] : ""
+  //const description2 = cart[0].name ? cart[0].description : ""
+
     
   let prod = [
     {
-        title: productAmount > 0 ? cart[0].name : "",
-        price: productAmount.cartTotalAmount,
-        image: productAmount > 0 ? cart[0].image : "",
-        category: "",
-        description: productAmount > 0 ? cart[0].description : "",
-    },
-]
+        title: name2,
+        price: price2,
+        image: image2,
+        category: "Roupas",
+        description: "",
+    }
+  ]
 
-console.log(productAmount)
+
+let prod2 = [
+  {
+      title: "Fone",
+      price: 25,
+      image: "https://m.media-amazon.com/images/I/41qM+itS5SL._AC_SY300_SX300_.jpg",
+      category: "placas",
+      description: "Isso é um teste",
+  },
+]
+  
+  console.log("teste: ", prod, prod2)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -126,7 +144,10 @@ console.log(productAmount)
         })
 
         const PagamentoMercadoPago = async () => {
-          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point))  
+          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), (err) => {
+            alert(err)
+            console.log(prod, prod2)
+          })  
         }
         PagamentoMercadoPago()
       }
@@ -164,7 +185,9 @@ console.log(productAmount)
         })
 
         const PagamentoMercadoPago = async () => {
-          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point))  
+          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), (err) => {
+            alert(err)
+          })  
         }
         PagamentoMercadoPago()
       }
@@ -207,7 +230,9 @@ console.log(productAmount)
         })
 
         const PagamentoMercadoPago = async () => {
-          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point))  
+          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), (err) => {
+            alert(err)
+          })  
         }
         PagamentoMercadoPago()
       }
@@ -255,7 +280,9 @@ console.log(productAmount)
         })
 
         const PagamentoMercadoPago = async () => {
-          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point))  
+          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), (err) => {
+            alert(err)
+          })  
         }
         PagamentoMercadoPago()
       }
@@ -263,12 +290,24 @@ console.log(productAmount)
   }
 
 
-  return (//
+  return (
     <>
       {cart == "" ? <Example /> :
         <CompraStyle>
        <FormBox>
           <form onSubmit={handleSubmit}>
+          <Link to="/" style={
+              {
+                  textDecoration: "none", 
+                  fontSize: "30px", 
+                  fontWeight: "bold",
+                  background: "aqua",
+                  padding: "5px",
+                  borderRadius: "10px",
+                  marginTop: "5px",
+                  margin: "5px"
+              }
+          }>Voltar para StylesTop</Link> 
             <Title>
               Preencha com seus dados
             </Title>

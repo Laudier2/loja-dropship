@@ -1,5 +1,5 @@
 /* eslint-disable eqeqeq */
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { SlBasket, SlBasketLoaded } from "react-icons/sl";
 import { AiFillAlert } from "react-icons/ai";
@@ -13,12 +13,9 @@ import { LuPackageSearch } from "react-icons/lu";
 import Cart from "../cart/index";
 
 // Styles
-import { Container, Logo, Buttons, ContainerAMR, ContainerPRT, DropDow } from "./styles";
-import api from "../../api/api";
+import { Container, Logo, Buttons, ContainerAMR, ContainerPRT} from "./styles";
 
 export function Header() {
-
-  const [category, setCategory] = useState([])
 
   const [cartIsVisible, setCartIsVisible] = useState(false);
 
@@ -27,15 +24,6 @@ export function Header() {
   const handleCartClick = () => {
     setCartIsVisible(true);
   };
-
-  useEffect(() => {
-    (async() => {
-      const req = await api.get("/category")
-      const res = await req.data
-
-      setCategory(res)
-    })()
-  },[])
 
   //console.log(category)
 

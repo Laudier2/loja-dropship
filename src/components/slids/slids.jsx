@@ -30,7 +30,7 @@ export default function Slids() {
 					<li>
 						<a href="https://rastreamento.correios.com.br/app/index.php" target="blank">
 							<span>
-								<img src="https://shoppingcity.com.br/media/catalog/product/cache/51a80c9da94f85ac42b65ba251e9fd91/c/a/cal_a_masculina_jeans_rasgado_azul.jpg" alt="img" srcset="" />
+								<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSMu265ymj1MxowEa1nBKxjaIPv2F-RPo1ZaTvmcTl-eO_JOYz5__3-OGzgOE8KwQeIkp2SEVAc9gZn666S6kGvzM3YMgl6FRxVY0JxxkldFbDdGbg1BGiTVQ&usqp=CAE" alt="img" srcset="" />
 							</span>
 						</a>
 					</li>

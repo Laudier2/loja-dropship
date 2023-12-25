@@ -8,6 +8,39 @@ export const Container = styled.div`
   color: #eee;
   padding: 20px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+
+  & input {
+    margin-left: 30%;
+    width: 45%;
+    border: none;
+    border-radius: 8px;
+    background: #eee;
+    border-color: #eee;
+
+    &:hover {
+      border-color: #eee;
+      background: #eee;
+    }
+
+    @media(max-width: 768px){
+      width: 100%;
+      margin-bottom: 5px;
+      margin-left: 10%;
+    }
+  }
+
+  & .lupa {
+    margin-right: 17%;
+    margin-top: 5px;
+    font-size: 2vw;
+
+    @media(max-width: 768px) {
+      margin-right: 10%;
+      margin-top: -1px;
+      font-size: 10vw;
+    }
+  }
+
 `;
 
 export const Logo = styled.div`

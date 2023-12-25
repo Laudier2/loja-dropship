@@ -8,6 +8,7 @@ import { AiOutlineWhatsApp } from "react-icons/ai";
 import { BsTruck } from "react-icons/bs";
 import { BsJournalText } from "react-icons/bs";
 import { LuPackageSearch } from "react-icons/lu";
+import { HiMiniMagnifyingGlass } from "react-icons/hi2"
 
 
 import Cart from "../cart/index";
@@ -30,14 +31,16 @@ export function Header() {
   return (
     <>
     <ContainerAMR>
-      <a href="/"><AiFillAlert className="mb-2 h4"/> BLACK FRIDAY - Bonés Baratos</a>
+    <Logo >
+        <a href="/">
+          StylesTop
+        </a>
+      </Logo>
+      <a href="/"><AiFillAlert className="mb-2 h4"/> SUPER OFERTAS - StylesTop</a>
     </ContainerAMR>
       <Container>
-        <Logo >
-          <a href="/">
-            StylesTop
-          </a>
-        </Logo>
+        <input type="search" name="test" id="test" />
+        <HiMiniMagnifyingGlass className="lupa"/>
         <Buttons>
           <div onClick={handleCartClick}>
             <b>{length}</b>

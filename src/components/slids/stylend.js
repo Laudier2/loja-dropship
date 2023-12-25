@@ -96,8 +96,8 @@ export const ContainerPRT = styled.div`
           & span {
             & img {
               width: 30px;
-              height: 3vh;
-              padding: 1px;
+              height: 4vh;
+              padding: -10px;
               border-radius: 50px;
               margin-left: -4px;
             }

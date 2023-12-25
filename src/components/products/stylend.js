@@ -19,8 +19,6 @@ export const ProductProd = styled.div`
       width: 100%;
       height: 30vh;
       border-radius: 8px;
-
-      
     }
 
     & h5 {
@@ -62,6 +60,12 @@ export const ProductProd = styled.div`
     }
     @media (max-width: 768px) {
       width: 95%;
+
+      & img {
+        width: 100%;
+        height: 28vh;
+        border-radius: 8px;
+      }
     }
   }
   }

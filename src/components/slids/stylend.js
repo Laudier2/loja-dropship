@@ -10,7 +10,6 @@ export const Slids2 = styled.div`
 
   & div {
     display: flex;
-    translate: ;
   }
 
   & img {
@@ -54,4 +53,107 @@ export const Slids = styled.div`
       cursor: pointer;
     }
   }
-`;
+`
+export const ContainerPRT = styled.div`
+  margin-top: 20px;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  background-color: #FDD201;
+
+  & ul {
+    display: flex;
+    margin: auto;
+
+    & li {
+      display: inline-block;
+      margin: 5px;
+      padding: 1px;
+      border-radius: 50px;
+      border-color: "rgb(159, 161, 161)";
+      border: solid 0px;
+      
+      & a {
+        margin: 5px;
+        & span {
+          & img {
+            width: 60px;
+            height: 5vh;
+            border-radius: 50px;
+          }
+        }
+      }
+
+      @media (max-width: 768px) {
+        width: 10%;
+        margin-top: 10px;
+        padding: 5px;
+        margin: 3px;
+        
+        & a {
+          & span {
+            & img {
+              width: 30px;
+              height: 3vh;
+              padding: 1px;
+              border-radius: 50px;
+              margin-left: -4px;
+            }
+          }
+        }
+        
+      }
+
+     
+      & button {
+        text-decoration: none;
+        background-color: #000000;
+        border: none;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+
+        &:hover {
+          background-color: #FDD201;
+          color: #000000;
+        }
+
+        @media (max-width: 768px) {
+          width: 100%;
+          margin-left: -10px;
+          font-size: 1.8vw;
+        }
+      }
+      
+
+      &:hover {
+        background-color: #ffff;
+
+        & .li {
+          padding: -15px;
+        }
+
+        & a {
+          color: #000000;
+        }
+
+      }
+
+      & a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+
+        @media (max-width: 768px) {
+          width: 100%;
+          margin-left: -10px;
+          font-size: 1.8vw;
+          margin-left: 1px;
+        }
+      }
+    }
+  }
+`

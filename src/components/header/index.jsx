@@ -63,22 +63,7 @@ export function Header() {
       </Container>
         <ContainerPRT>
           <ul>
-            <DropDow>
-              
-                <li className="li">
-                  <button>Categorias</button>
-                  <ul>
-                   {category.map(cate => (
-                    <div key={cate.id}>
-                      <li>
-                        <a href="/">{cate.name}</a>
-                      </li>
-                    </div>
-                   ))}
-                  </ul>
-                </li>
           
-              </DropDow>
             <li> 
               <span>
                 <AiOutlineWhatsApp className="text-white h5 m-1 mb-2 p"/>

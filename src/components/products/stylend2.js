@@ -18,7 +18,7 @@ export const ProductProd = styled.div`
 
     & img {
       width: 100%;
-      height: 90%;
+      height: 80%;
       border-radius: 8px;
       margin-bottom: 5px;
       
@@ -54,6 +54,15 @@ export const ProductProd = styled.div`
       & .cartao {
         position: absolute;
         margin-left: -12px;
+      }
+      @media (max-width: 768px) {
+      width: 95%;
+
+      & img {
+        width: 100%;
+        height: 20vh;
+        border-radius: 8px;
+      }
       }
      }
     }

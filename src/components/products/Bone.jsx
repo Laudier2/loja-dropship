@@ -30,7 +30,7 @@ const Example = () => (
 
 //const product = []
 
-const Products = () => {
+export const Bone = () => {
   
   //const history = useHistory()
   
@@ -136,89 +136,7 @@ const Products = () => {
       }
       </section>  
       
-    </ProductProd>
-  
-    
-    <ProductProd>
-      <section>
-      <br />
-      <h2 className='ml-3'>{categoroyC == "" ? "" : NameCategory[1]}</h2>
-      
-      {categoroyC.map(res => (
-          <Link to="/desc" onClick={() => LocalSto(res.products)}>
-            <div key={res.id}>
-              <img src={res.products.image[0]} alt="img" />
-              <h5>{res.products.name}</h5>
-              <h3>R${res.products.price}</h3>
-              <span>
-                <p>
-                  <FaCreditCard className='cartao'/> Em até 12x sem juros
-                </p>
-              </span>
-              <button>
-                DESCRIÇÃO
-              </button>
-            </div>
-          </Link>
-          ))
-      }
-      </section>  
-      
-    </ProductProd>
-      
-    <ProductProd>
-      <section>
-      <br />
-      <h2 className='ml-3'>{categoroyS == "" ? "" : NameCategory[5]}</h2>
-      
-      {categoroyS.map(res => (
-          <Link to="/desc" onClick={() => LocalSto(res.products)}>
-            <div key={res.id}>
-              <img src={res.products.image[0]} alt="img" />
-              <h5>{res.products.name}</h5>
-              <h3>R${res.products.price}</h3>
-              <span>
-                <p>
-                  <FaCreditCard className='cartao'/> Em até 12x sem juros
-                </p>
-              </span>
-              <button>
-                DESCRIÇÃO
-              </button>
-            </div>
-          </Link>
-          ))
-      }
-      </section>  
-      
-    </ProductProd>
-     
-    <ProductProd>
-      <section>
-      <br />
-      <h2 className='ml-3'>{categoroyCA == "" ? "" : NameCategory[2]}</h2>
-      
-      {categoroyCA.map(res => (
-          <Link to="/desc" onClick={() => LocalSto(res.products)}>
-            <div key={res.id}>
-              <img src={res.products.image[0]} alt="img" />
-              <h5>{res.products.name}</h5>
-              <h3>R${res.products.price}</h3>
-              <span>
-                <p>
-                  <FaCreditCard className='cartao'/> Em até 12x sem juros
-                </p>
-              </span>
-              <button>
-                DESCRIÇÃO
-              </button>
-            </div>
-          </Link>
-          ))
-      }
-      </section>  
-      
-    </ProductProd>
+    </ProductProd>   
 
     </div>
   }
@@ -226,5 +144,3 @@ const Products = () => {
   </>
   );
 }
-
-export default Products;

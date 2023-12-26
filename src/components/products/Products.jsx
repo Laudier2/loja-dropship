@@ -100,7 +100,7 @@ const Products = () => {
     <ProductProd>
       <section>
       { products.map(res => (
-          <Link to="desc" onClick={() => LocalSto(res)}>
+          <Link to="/desc" onClick={() => LocalSto(res)}>
             <div key={res.id}>
               <img src={res.image[0]} alt="img" />
               <h5>{res.name}</h5>

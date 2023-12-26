@@ -30,7 +30,7 @@ const Example = () => (
 
 //const product = []
 
-const Products = () => {
+export const Tenis = () => {
   
   //const history = useHistory()
   
@@ -77,6 +77,7 @@ const Products = () => {
   const [categoroy, setCategory] = useState([])
   const [categoroyC, setCategoryC] = useState([])
   const [categoroyS, setCategoryS] = useState([])
+  const [categoroyT, setCategoryTe] = useState([])
   const [categoroyCA, setCategoryCA] = useState([])
   const [categoroyName, setCategoryName] = useState([])
 
@@ -92,10 +93,13 @@ const Products = () => {
       const resS = await reqS.data[0].products_categories
       const reqCA = await api.get("/category/d49e0541-24ca-4a45-a9d0-bfc5e294a444")
       const resCA = await reqCA.data[0].products_categories
+      const reqTe = await api.get("/category/3712cb38-ac40-4c85-8b34-9d066898006")
+      const resTe = await reqTe.data[0].products_categories
 
       setCategory(resB)
       setCategoryC(resC)
       setCategoryS(resS)
+      setCategoryTe(resTe)
       setCategoryCA(resCA)
       setCategoryName(resName)
     })()
@@ -114,92 +118,10 @@ const Products = () => {
       <ProductProd>
       <section>
       
-      <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[0]}</h2>
+      <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[4]}</h2>
       
-      {categoroy.map(res => (
-          <Link to="/desc" onClick={() => LocalSto(res.products)}>
-            <div key={res.id}>
-              <img src={res.products.image[0]} alt="img" />
-              <h5>{res.products.name}</h5>
-              <h3>R${res.products.price}</h3>
-              <span>
-                <p>
-                  <FaCreditCard className='cartao'/> Em até 12x sem juros
-                </p>
-              </span>
-              <button>
-                DESCRIÇÃO
-              </button>
-            </div>
-          </Link>
-          ))
-      }
-      </section>  
-      
-    </ProductProd>
-  
-    
-    <ProductProd>
-      <section>
-      <br />
-      <h2 className='ml-3'>{categoroyC == "" ? "" : NameCategory[1]}</h2>
-      
-      {categoroyC.map(res => (
-          <Link to="/desc" onClick={() => LocalSto(res.products)}>
-            <div key={res.id}>
-              <img src={res.products.image[0]} alt="img" />
-              <h5>{res.products.name}</h5>
-              <h3>R${res.products.price}</h3>
-              <span>
-                <p>
-                  <FaCreditCard className='cartao'/> Em até 12x sem juros
-                </p>
-              </span>
-              <button>
-                DESCRIÇÃO
-              </button>
-            </div>
-          </Link>
-          ))
-      }
-      </section>  
-      
-    </ProductProd>
-      
-    <ProductProd>
-      <section>
-      <br />
-      <h2 className='ml-3'>{categoroyS == "" ? "" : NameCategory[5]}</h2>
-      
-      {categoroyS.map(res => (
-          <Link to="/desc" onClick={() => LocalSto(res.products)}>
-            <div key={res.id}>
-              <img src={res.products.image[0]} alt="img" />
-              <h5>{res.products.name}</h5>
-              <h3>R${res.products.price}</h3>
-              <span>
-                <p>
-                  <FaCreditCard className='cartao'/> Em até 12x sem juros
-                </p>
-              </span>
-              <button>
-                DESCRIÇÃO
-              </button>
-            </div>
-          </Link>
-          ))
-      }
-      </section>  
-      
-    </ProductProd>
-     
-    <ProductProd>
-      <section>
-      <br />
-      <h2 className='ml-3'>{categoroyCA == "" ? "" : NameCategory[2]}</h2>
-      
-      {categoroyCA.map(res => (
-          <Link to="/desc" onClick={() => LocalSto(res.products)}>
+      {categoroyT.map(res => (
+          <Link to="desc" onClick={() => LocalSto(res.products)}>
             <div key={res.id}>
               <img src={res.products.image[0]} alt="img" />
               <h5>{res.products.name}</h5>
@@ -227,4 +149,3 @@ const Products = () => {
   );
 }
 
-export default Products;

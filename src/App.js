@@ -10,6 +10,13 @@ import Footer from "./components/footer/footer";
 import Politicas from "./components/politica/Politicas";
 import ReactGA from "react-ga" 
 import Compra from "./components/compra/Compra";
+import { Bone } from "./components/products/Bone";
+import { Camiseta } from "./components/products/Camiseta";
+import { Short } from "./components/products/Short";
+import { Calca } from "./components/products/Calca";
+import { Moleton } from "./components/products/Moleton";
+import { Sandalia } from "./components/products/Sandalia";
+import { Tenis } from "./components/products/Tenis";
 
 const TRACKING_ID = "G-1GXW3W538Z" 
 
@@ -46,7 +53,35 @@ function App() {
       element: <Politicas />,
     },
     {
-      path: "/endereco",
+      path: "/bone",
+      element: <Bone />,
+    },
+    {
+      path: "/camiseta",
+      element: <Camiseta />,
+    },
+    {
+      path: "/short",
+      element: <Short />,
+    },
+    {
+      path: "/calca",
+      element: <Calca />,
+    },
+    {
+      path: "/moleton",
+      element: <Moleton />,
+    },
+    {
+      path: "/sandalia",
+      element: <Sandalia />,
+    },
+    {
+      path: "/tenis",
+      element: <Tenis />,
+    },
+    {
+      path: "/compra",
       element: <Compra />,
     },
   ]);  

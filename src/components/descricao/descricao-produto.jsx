@@ -174,7 +174,7 @@ const Descricao = () => {
     }
   }
 
-  function Teste(){
+  /*function Teste(){
     return (
       <div>
         {sizers[2] == "M" 
@@ -217,7 +217,7 @@ const Descricao = () => {
         }      
       </div>
     )
-  }
+  }*/
   
   return (
     <>

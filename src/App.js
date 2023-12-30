@@ -17,6 +17,7 @@ import { Calca } from "./components/products/Calca";
 import { Moleton } from "./components/products/Moleton";
 import { Sandalia } from "./components/products/Sandalia";
 import { Tenis } from "./components/products/Tenis";
+import Cadastro from "./components/Cadastro/Cadastro";
 
 const TRACKING_ID = "G-1GXW3W538Z" 
 
@@ -83,6 +84,10 @@ function App() {
     {
       path: "/compra",
       element: <Compra />,
+    },
+    {
+      path: "/cadastro",
+      element: <Cadastro />,
     },
   ]);  
 

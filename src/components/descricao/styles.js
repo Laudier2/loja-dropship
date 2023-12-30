@@ -162,7 +162,7 @@ export const ContainerDesc = styled.div`
 & .divdesc {
   width: 16%;
   margin: auto;  
-  margin-top: -40%;
+  margin-top: -41%;
   margin-left: 52%;
   font-size: 1vw;
 
@@ -173,22 +173,22 @@ export const ContainerDesc = styled.div`
 
   @media (max-width: 1550px) {
     position: inherit;
-    margin-top: -54%;
+    margin-top: -52%;
   }
 
   @media (max-width: 1350px) {
     position: inherit;
-    margin-top: -42%;
+    margin-top: -40%;
   }
 
   @media (max-width: 1150px) {
     position: inherit;
-    margin-top: -45%;
+    margin-top: -49%;
   }
 
   @media (max-width: 950px) {
     position: inherit;
-    margin-top: -51%;
+    margin-top: -56%;
   }
 
   @media (max-width: 768px) {
@@ -250,33 +250,33 @@ export const ContainerDesc = styled.div`
 & .divdescSecudare {
   width: 13%;
   margin: auto;
-  margin-top: -22.5%;
+  margin-top: -25.2%;
   margin-left: 70%;
   font-size: 1vw;
 
   @media (max-width: 1750px) {
     position: inherit;
-    margin-top: -23.5%;
+    margin-top: -26.5%;
   }
 
   @media (max-width: 1550px) {
     position: inherit;
-    margin-top: -24.5%;
+    margin-top: -26.5%;
   }
 
   @media (max-width: 1350px) {
     position: inherit;
-    margin-top: -25%;
+    margin-top: -27%;
   }
 
   @media (max-width: 1150px) {
     position: inherit;
-    margin-top: -28.5%;
+    margin-top: -32%;
   }
 
   @media (max-width: 950px) {
     position: inherit;
-    margin-top: -31%;
+    margin-top: -35%;
   }
 
   @media (max-width: 768px) {

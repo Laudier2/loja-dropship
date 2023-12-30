@@ -292,10 +292,10 @@ const Descricao = () => {
                   <span>Medidas</span>
                   <br />m n 
                   <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Marca(sizers[0])}>
-                  {sizers[0] ? sizers[0] : ""}
+                  {sizers[0] ? sizers[0].join(",") : ""}
                 </button>
                 <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Marca(sizers[2])}>
-                  {sizers[4] ? sizers[2] : ""}
+                  {sizers[4] ? sizers[2].join(",") : ""}
                   </button>
                 <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Marca(sizers[4])}>
                   {sizers[4] ? sizers[4] : ""}

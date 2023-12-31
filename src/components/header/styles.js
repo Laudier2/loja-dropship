@@ -13,7 +13,7 @@ export const Container = styled.div`
     margin-left: 30%;
     width: 45%;
     border: none;
-    border-radius: 8px;
+    border-radius: 20px;
     background: #eee;
     border-color: #eee;
 
@@ -29,7 +29,7 @@ export const Container = styled.div`
     }
   }
 
-  & .lupa {
+  & .lupa2 {
     margin-right: 17%;
     margin-top: 5px;
     font-size: 2vw;
@@ -38,6 +38,20 @@ export const Container = styled.div`
       margin-right: 10%;
       margin-top: -1px;
       font-size: 10vw;
+    }
+  }
+
+  & .lupa {
+    position: absolute;
+    margin-left: 71.3%;
+    margin-top: 0.5px;
+    font-size: 1.5vw;
+    color: #000000;
+
+    @media(max-width: 768px) {
+      margin-left: 69%;
+      margin-top: 1px;
+      font-size: 6vw;
     }
   }
 
@@ -58,7 +72,7 @@ export const Logo = styled.div`
     text-decoration: none;
 
     &:hover {
-      color: #B3B3B3;
+      color: aqua;
     }
 
     @media (max-width: 768px) {

@@ -86,6 +86,14 @@ export const ContainerPRT = styled.div`
         }
       }
 
+      & p {
+        text-align: center;
+
+        @media (max-width: 768px) {
+          font-size: 2vw;
+        }
+      }
+
       @media (max-width: 768px) {
         width: 10%;
         margin-top: 10px;

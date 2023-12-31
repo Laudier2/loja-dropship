@@ -42,6 +42,7 @@ export default function CartFinalize() {
     const carrinhoVazio = () => {
         return (
             <CartVazio>
+                    <Link to="/">Volta para as compras</Link>
                 <img src="https://www.roboticaeducacional.art.br/images/cart-vazio.jpg" alt="img" />
             </CartVazio>
         )
@@ -137,7 +138,7 @@ export default function CartFinalize() {
                         Proceguir com pagamento
                     </Button>*/
                     <Button>
-                        <Link to="/endereco">Finaliza comprar</Link>
+                        <Link to="/compra">Finaliza comprar</Link>
                     </Button>
                     }
                     <SubTotal>Total: R$ {cart2.cartTotalAmount}</SubTotal>

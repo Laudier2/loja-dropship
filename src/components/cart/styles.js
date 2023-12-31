@@ -228,6 +228,17 @@ export const CartVazio = styled.div`
   margin: auto;
   display: flex;
 
+  & a {
+    text-decoration: none;
+    margin-left: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 2vw;
+    width: 30%;
+    height: 10vh;
+    text-shadow: 0 0 0 10px #000000;
+  }
+
   & img {
     width: 100%;
   }

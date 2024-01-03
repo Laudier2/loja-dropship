@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Modal from '../modal/Modal';
 import { toast } from 'react-toastify';
 import api from '../../api/api';
-import { ContainerBG } from "./styled"
+//import { ContainerBG } from "./styled"
 
 export default function Cadastro() {
 

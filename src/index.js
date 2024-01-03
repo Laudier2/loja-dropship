@@ -5,9 +5,7 @@ import App from "./App";
 
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
-import productReducer, {
-  productFatch,
-} from "./redux/product/productsSlice.jsx";
+import productReducer, { productFatch, } from "./redux/product/productsSlice.jsx";
 import { productsApi } from "./redux/product/productsApi.jsx";
 import creatsReducer, { cauculateTotal } from "./redux/cart/cart.jsx";
 

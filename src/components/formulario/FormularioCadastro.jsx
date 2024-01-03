@@ -3,18 +3,48 @@ import { useNavigate } from 'react-router-dom';
 import api from '../../api/api';
 import { toast } from 'react-toastify';
 
-/**
- * Essa variável é quem determina os valores iniciais dos input citado no values do useState
- */
-const camposIniciasDeValores = {
-  name: '',
-  imagem: '',
-  email: '',
-  password: '',
-  phone: ''
-};
-
 export default function FormularioCadastro(props) {
+
+  const [img1, setImg1] = useState('')
+  const [img2, setImg2] = useState('')
+  const [img3, setImg3] = useState('')
+  const [img4, setImg4] = useState('')
+  const [img5, setImg5] = useState('')
+
+  const [size1, setSize1] = useState('')
+  const [size2, setSize2] = useState('')
+  const [size3, setSize3] = useState('')
+  const [size4, setSize4] = useState('')
+  const [size5, setSize5] = useState('')
+
+  const [cor1, setCor1] = useState('')
+  const [cor2, setCor2] = useState('')
+  const [cor3, setCor3] = useState('')
+  const [cor4, setCor4] = useState('')
+  const [cor5, setCor5] = useState('')
+
+  const [name, setName] = useState('')
+  const [price, setPrice] = useState('')
+  const [quantity, setQuantity] = useState('')
+  const [desc, setDesc] = useState('')
+  const [slug, setSlug] = useState('')
+
+
+
+  /**
+   * Essa variável é quem determina os valores iniciais dos input citado no values do useState
+   */
+  const camposIniciasDeValores = {
+    name: name,
+    image: [`${img1}`,`${img2}`,`${img3}`,`${img4}`,`${img5}`],
+    size: [`${size1}`,`${size2}`,`${size3}`,`${size4}`,`${size5}`],
+    cor: [`${cor1}`,`${cor2}`,`${cor3}`,`${cor4}`,`${cor5}`],
+    price: price,
+    quantity: quantity,
+    slug: slug,
+    description: desc
+  };
+
   const [values, setValues] = useState(camposIniciasDeValores);
   const history = useNavigate();
 
@@ -101,7 +131,33 @@ export default function FormularioCadastro(props) {
         <div className="form-group input-group">
           <div className="input-grou-prepend align-self-center">
             <div className="input-group-text">
-              <img src={values.imagem} alt="img" srcset="" />
+              <img src={values.img1} alt="img" style={{width: "100", height: "2.5vh"}} />
+            </div>
+          </div>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="URL da Imagem do produto"
+            name="imagem"
+            value={values.img1}
+            onChange={(e) => setImg1(e.target.value)}
+          />
+          <div className="input-grou-prepend align-self-center">
+            <div className="input-group-text">
+              <img src={values.ima2} alt="img" style={{width: "100", height: "2.5vh"}} />
+            </div>
+          </div>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="URL da Imagem do produto"
+            name="imagem"
+            value={values.ima2}
+            onChange={onChange}
+          />
+          <div className="input-grou-prepend align-self-center">
+            <div className="input-group-text">
+              <img src={values.imagem} alt="img" style={{width: "100", height: "2.5vh"}} />
             </div>
           </div>
           <input
@@ -112,8 +168,36 @@ export default function FormularioCadastro(props) {
             value={values.imagem}
             onChange={onChange}
           />
-        </div>
           
+        </div>
+        <div className="form-group input-group">
+          <div className="input-grou-prepend align-self-center">
+            <div className="input-group-text">
+              <img src={values.imagem} alt="img" style={{width: "100", height: "2.5vh"}} />
+            </div>
+          </div>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="URL da Imagem do produto"
+            name="imagem"
+            value={values.imagem}
+            onChange={onChange}
+          />
+          <div className="input-grou-prepend align-self-center">
+            <div className="input-group-text">
+              <img src={values.imagem} alt="img" style={{width: "100", height: "2.5vh"}} />
+            </div>
+          </div>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="URL da Imagem do produto"
+            name="imagem"
+            value={values.imagem}
+            onChange={onChange}
+          />          
+        </div>
         </div>
         <div className="input-grou-prepend align-self-center">
           <div className="input-group-text">

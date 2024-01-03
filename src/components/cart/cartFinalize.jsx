@@ -16,6 +16,18 @@ export default function CartFinalize() {
     const items = useSelector(state => state.cart.cartItems.length)
     const cart2 = useSelector(state => state.cart)
 
+    //let id = localStorage.getItem("id")
+
+    const productSize = useSelector(cartItems => cartItems.cart.tmMedidas)
+    const productCor = useSelector(cartItems => cartItems.cart.tmCores)
+
+		console.log(productCor)
+
+		if(cart == ""){
+			localStorage.removeItem("tmMedidas")
+			localStorage.removeItem("tmCores")
+		}
+
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -40,34 +52,19 @@ export default function CartFinalize() {
     };
 
     const carrinhoVazio = () => {
+        
         return (
             <CartVazio>
-                    <Link to="/">Volta para as compras</Link>
+                <Link to="/">Volta para as compras</Link>
                 <img src="https://www.roboticaeducacional.art.br/images/cart-vazio.jpg" alt="img" />
+								
             </CartVazio>
-        )
+        )		
     }
-
-    /*let prod2 = [
-        {
-            title: "Fone",
-            price: 25,
-            image: "https://m.media-amazon.com/images/I/41qM+itS5SL._AC_SY300_SX300_.jpg",
-            category: "placas",
-            description: "Isso é um teste",
-        },
-    ]*/
-
-    /*
-    <Button onClick={ async () => {
-    await api.post("/payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), localStorage.clear())  
-    
-    }}
-    */
 
     return (
         <>
-            {items === 0 ? carrinhoVazio() :
+            {items === 0 ? carrinhoVazio():
                 <div>
                     <TableCartFinalize>
                         <table>
@@ -94,13 +91,24 @@ export default function CartFinalize() {
                                     <tr>
                                         <div>
                                             <td>
-                                                <div className="divimg">
+                                                <a href='/desc' className="divimg">
                                                     <img src={res.image[0]} alt="img" />
-                                                </div>
+                                                </a>
                                             </td>
                                             <td>
                                                 <div className="divnome">
-                                                    {res.name}
+                                              
+                                                    <div>{
+																											productCor.map(cor => (
+                                                        productSize.map(resp => (
+                                                            <div key={resp.id}>
+                                                                {
+																																	res.id === resp.id && res.id === cor.id ? res.name + " Tamanho: " + resp.tm + " Cor: " + cor.cor : ""
+																																}
+                                                            </div>
+                                                        ))    
+																											))
+                                                    }</div>
                                                 </div>
                                             </td>
                                             <td>
@@ -111,7 +119,7 @@ export default function CartFinalize() {
                                                         {res.cartQuantity}
                                                     <button onClick={() => handleDecreaseClick(res)}>
                                                         <FaWindowMinimize className='mb-2' />
-                                                    </button></div>                                                
+                                                    </button></div>   
                                             </td>
                                             <td>
                                                 <div className="div2">

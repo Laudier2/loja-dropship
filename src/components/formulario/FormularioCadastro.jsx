@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 export default function FormularioCadastro(props) {
 
   const [img1, setImg1] = useState('')
-  const [img2, setImg2] = useState('')
+  /*const [img2, setImg2] = useState('')
   const [img3, setImg3] = useState('')
   const [img4, setImg4] = useState('')
   const [img5, setImg5] = useState('')
@@ -34,7 +34,7 @@ export default function FormularioCadastro(props) {
   /**
    * Essa variável é quem determina os valores iniciais dos input citado no values do useState
    */
-  const camposIniciasDeValores = {
+ /*const camposIniciasDeValores = {
     name: name,
     image: [`${img1}`,`${img2}`,`${img3}`,`${img4}`,`${img5}`],
     size: [`${size1}`,`${size2}`,`${size3}`,`${size4}`,`${size5}`],
@@ -43,7 +43,11 @@ export default function FormularioCadastro(props) {
     quantity: quantity,
     slug: slug,
     description: desc
-  };
+  };*/
+
+  console.log(img1)
+
+  const camposIniciasDeValores = {}
 
   const [values, setValues] = useState(camposIniciasDeValores);
   const history = useNavigate();

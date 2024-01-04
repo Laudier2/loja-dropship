@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import FormularioCadastro from '../formulario/FormularioCadastro';
 //import './cadastro.css';
 //import axios from 'axios';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import Modal from '../modal/Modal';
 import { toast } from 'react-toastify';
 import api from '../../api/api';
@@ -39,22 +39,20 @@ export default function Cadastro() {
    * que esta vindo via evento do onClick
    */
   const Apagausuario = (id) => {
+
+    console.log(id)
+
     api //Esse process.env.REACT_APP_API_URL é uma variave de ambiente que contem a url da api
-      .delete("/user/" + id)
+      .delete("/product/" + id)
       .then((res) => {
         toast.success('O usuário foi deletado com sucesso');
-        setTimeout(() => {
-          window.location.reload()
-        }, 6280)
+        
       })
       .catch((erro) => {
         toast.error(
           'Houve um erro ao tenta apaga esse usuário, erro relacionado a ' +
           erro
         );
-        setTimeout(() => {
-          window.location.reload()
-        }, 6280)
       });
   };
 
@@ -143,18 +141,12 @@ export default function Cadastro() {
                   </td>
                   <td>R$ {r.price},00</td>
                   <td>
-                    <Link
-                      to="/"
-                      onClick={() => {
-                        setIdAtual(r._id);
-                      }}
-                      className="mr-2"
-                    >
+                    <p onClick={() => { setIdAtual(r.id)}} className="mr-2">
                       <i className="fas fa-edit mt-2 p-2 text-info btn btn-light card" />
-                    </Link>
-                    <Link to="/" onClick={() => Apagausuario(r._id)}>
+                    </p>
+                    <p onClick={() => Apagausuario(r.id)}>
                       <i className="fas fa-trash-alt mt-2 p-2 text-danger btn btn-light card" />
-                    </Link>
+                    </p>
                   </td>
                 </tr>
               </tbody>

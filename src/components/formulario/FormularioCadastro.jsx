@@ -45,9 +45,20 @@ export default function FormularioCadastro(props) {
     description: desc
   };*/
 
+  const camposIniciasDeValores = {
+    name: "",
+    image: [],
+    size: [],
+    cor: [],
+    price: "",
+    quantity: "",
+    slug: "",
+    description: ""
+  };
+
   console.log(img1)
 
-  const camposIniciasDeValores = {}
+  //const camposIniciasDeValores = {}
 
   const [values, setValues] = useState(camposIniciasDeValores);
   const history = useNavigate();
@@ -135,7 +146,7 @@ export default function FormularioCadastro(props) {
         <div className="form-group input-group">
           <div className="input-grou-prepend align-self-center">
             <div className="input-group-text">
-              <img src={values.img1} alt="img" style={{width: "100", height: "2.5vh"}} />
+              <img src={values.image} alt="img" style={{width: "100", height: "2.5vh"}} />
             </div>
           </div>
           <input
@@ -143,8 +154,8 @@ export default function FormularioCadastro(props) {
             className="form-control"
             placeholder="URL da Imagem do produto"
             name="imagem"
-            value={values.img1}
-            onChange={(e) => setImg1(e.target.value)}
+            value={values.image}
+            onChange={onChange}
           />
           <div className="input-grou-prepend align-self-center">
             <div className="input-group-text">
@@ -156,7 +167,7 @@ export default function FormularioCadastro(props) {
             className="form-control"
             placeholder="URL da Imagem do produto"
             name="imagem"
-            value={values.ima2}
+            value={values.image}
             onChange={onChange}
           />
           <div className="input-grou-prepend align-self-center">
@@ -169,7 +180,7 @@ export default function FormularioCadastro(props) {
             className="form-control"
             placeholder="URL da Imagem do produto"
             name="imagem"
-            value={values.imagem}
+            value={values.image}
             onChange={onChange}
           />
           
@@ -185,7 +196,7 @@ export default function FormularioCadastro(props) {
             className="form-control"
             placeholder="URL da Imagem do produto"
             name="imagem"
-            value={values.imagem}
+            value={values.image}
             onChange={onChange}
           />
           <div className="input-grou-prepend align-self-center">
@@ -198,7 +209,7 @@ export default function FormularioCadastro(props) {
             className="form-control"
             placeholder="URL da Imagem do produto"
             name="imagem"
-            value={values.imagem}
+            value={values.image}
             onChange={onChange}
           />          
         </div>
@@ -226,7 +237,7 @@ export default function FormularioCadastro(props) {
             className="form-control"
             placeholder="Valor do produto"
             name="name"
-            value={values.name}
+            value={values.size}
             onChange={onChange}
           />
           <div className="input-grou-prepend align-self-center">
@@ -239,7 +250,7 @@ export default function FormularioCadastro(props) {
               className="form-control"
               placeholder="Slug do produto"
               name="name"
-              value={values.name}
+              value={values.cor}
               onChange={onChange}
             /><div className="input-grou-prepend align-self-center">
             <div className="input-group-text">
@@ -251,7 +262,7 @@ export default function FormularioCadastro(props) {
             className="form-control"
             placeholder="Quantidade disponivel"
             name="name"
-            value={values.name}
+            value={values.quantity}
             onChange={onChange}
           />
           <div className="input-grou-prepend align-self-center">
@@ -264,7 +275,7 @@ export default function FormularioCadastro(props) {
             className="form-control"
             placeholder="Tamnho ou medidas do produto"
             name="name"
-            value={values.name}
+            value={values.description}
             onChange={onChange}
           />
           <div className="input-grou-prepend align-self-center">
@@ -277,7 +288,7 @@ export default function FormularioCadastro(props) {
             className="form-control"
             placeholder="Nome do produto"
             name="name"
-            value={values.name}
+            value={values.slug}
             onChange={onChange}
           />
         

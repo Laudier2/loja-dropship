@@ -48,8 +48,26 @@ export const Container = styled.div`
     font-size: 1.5vw;
     color: #000000;
 
+    @media(max-width: 1780px) {
+      margin-left: 70.6%;
+      margin-top: -1px;
+      font-size: 2vw;
+    }
+
+    @media(max-width: 1150px) {
+      margin-left: 68%;
+      margin-top: 1px;
+      font-size: 3vw;
+    }
+    
+    @media(max-width: 1580px) {
+      margin-left: 68%;
+      margin-top: 1px;
+      font-size: 3vw;
+    }
+
     @media(max-width: 768px) {
-      margin-left: 69%;
+      margin-left: 82%;
       margin-top: 1px;
       font-size: 6vw;
     }
@@ -83,8 +101,7 @@ export const Logo = styled.div`
 `;
 
 export const Buttons = styled.div`
-  display: flex;
-  align-items: center;
+  float: right;
 
   div {
     font-weight: 500;
@@ -105,9 +122,9 @@ export const Buttons = styled.div`
   }
 
   @media (max-width: 768px){
-    float: right;
-    margin-right: -20px;
-    margin-top: -30px;
+    margin-top: -3px;
+    margin-left: -12px;
+    position: absolute;
   }
 `;
 

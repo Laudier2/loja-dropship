@@ -14,6 +14,10 @@ function Compra() {
 
   const cart = useSelector(state => state.cart.cartItems)
   const cartTotal = useSelector(state => state.cart)
+  const tmItens = useSelector(state => state.cart.tmMedidas)
+  const tmCor = useSelector(state => state.cart.tmCores)
+
+  console.log(tmCor[0].cor)
 
   const productAmount = [cartTotal.cartTotalAmount]
   //const productQuantity = [cartTotal.cartTotalQuantyti]
@@ -98,7 +102,7 @@ let prod2 = [
   },
 ]
   
-  console.log("teste: ", prod, prod2)
+  //console.log(cart)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -133,7 +137,9 @@ let prod2 = [
           nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
           quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
           price1: `${cart[0].price}` ? `${cart[0].price * cart[0].cartQuantity}` : "",
-          total: `${res5}`
+          total: `${res5}`,
+          cor1: `${tmCor[0].cor}` ? `${tmCor[0].cor}` : "",
+          medidas1: `${tmItens[0].tm}` ? `${tmItens[0].tm}` : ""
         }
     
         emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
@@ -170,11 +176,15 @@ let prod2 = [
           nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
           quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
           price1: `${cart[0].price}` ? `${cart[0].price * cart[0].cartQuantity}` : "",
+          cor1: `${tmCor[0].cor}` ? `${tmCor[0].cor}` : "",
+          medidas1: `${tmItens[0].tm}` ? `${tmItens[0].tm}` : "",
           image2: `${res2}` ? `${res2}` : "",
           nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
           quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
           price2: `${cart[1].price}` ? `${cart[1].price * cart[1].cartQuantity}` : "",
-          total: `${res5}`
+          total: `${res5}`,
+          cor2: tmCor[1] ? tmCor[1].cor : "",
+          medidas2: tmItens[1] ? tmItens[1].tm : ""
         }
     
         emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
@@ -211,20 +221,27 @@ let prod2 = [
           nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
           quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
           price1: `${cart[0].price}` ? `${cart[0].price * cart[0].cartQuantity}` : "",
+          cor1: `${tmCor[0].cor}` ? `${tmCor[0].cor}` : "",
+          medidas1: `${tmItens[0].tm}` ? `${tmItens[0].tm}` : "",
           image2: `${res2}` ? `${res2}` : "",
           nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
           quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
           price2: `${cart[1].price}` ? `${cart[1].price * cart[1].cartQuantity}` : "",
+          cor2: `${tmCor[1].cor}` ? `${tmCor[1].cor}` : "",
+          medidas2: `${tmItens[1].tm}` ? `${tmItens[0].tm}` : "",
           image3: `${res3}` ? ` ${res3}` : "",
           nameproduct3: `${cart[2].name ? cart[2].name : ""}`,
           quanty3: `${cart[2].cartQuantity ? cart[2].cartQuantity : ""}`,
           price3: `${cart[2].price ? cart[2].price * cart[2].cartQuantity : ""}`,
-          total: `${res5}`
+          total: `${res5}`,
+          cor3: tmCor[2] ? tmCor[2].cor : "",
+          medidas3: tmItens[2] ? tmItens[2].tm : ""
         }
     
         emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
         .then((res) => {
           console.log("EMAIL ENVIADO", res.status, res.text)
+         
         }, (err) => {
           console.log("ERRO: ", err)
         })
@@ -234,6 +251,7 @@ let prod2 = [
             alert(err)
           })  
         }
+        localStorage.clear()
         PagamentoMercadoPago()
       }
 
@@ -269,7 +287,9 @@ let prod2 = [
           nameproduct4: `${cart[6].name ? cart[6].name : ""}`,
           quanty4: `${cart[6].cartQuantity ? cart[3].cartQuantity : ""}`,
           price4: `${cart[6].price ? cart[6].price * cart[6].cartQuantity : ""}`,
-          total: `${res5}`
+          total: `${res5}`,
+          cor: tmCor[3] ? tmCor[3].cor : "",
+          medidas: tmItens[3] ? tmItens[3].tm : ""
         }
     
         emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")

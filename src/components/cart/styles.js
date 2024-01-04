@@ -226,7 +226,7 @@ export const CartVazio = styled.div`
   width: 100%;
   height: 100%;
   margin: auto;
-  display: flex;
+  float: left;
 
   & a {
     text-decoration: none;

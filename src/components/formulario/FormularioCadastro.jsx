@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 
 export default function FormularioCadastro(props) {
 
-  const [img1, setImg1] = useState('')
+  const [img1] = useState('')
   /*const [img2, setImg2] = useState('')
   const [img3, setImg3] = useState('')
   const [img4, setImg4] = useState('')

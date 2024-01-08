@@ -9,6 +9,12 @@ import { addCart, decrementCart, removeFromCart, cauculateTotal} from '../../red
 
 
 export default function CartFinalize() {
+    useEffect(() => {
+        window.scroll({
+          top: 100,
+        });
+    
+      },[])
 
     //const navigate = useNavigate()
 

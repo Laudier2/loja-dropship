@@ -1,69 +1,47 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 import api from '../../api/api';
 import { toast } from 'react-toastify';
+import { FormularioCreateUpdate, FormularioCreateUpdate2 } from './styled';
+import { Promocao } from '../Cadastro/styled';
 
 export default function FormularioCadastro(props) {
-
-  const [img1] = useState('')
-  /*const [img2, setImg2] = useState('')
-  const [img3, setImg3] = useState('')
-  const [img4, setImg4] = useState('')
-  const [img5, setImg5] = useState('')
-
-  const [size1, setSize1] = useState('')
-  const [size2, setSize2] = useState('')
-  const [size3, setSize3] = useState('')
-  const [size4, setSize4] = useState('')
-  const [size5, setSize5] = useState('')
-
-  const [cor1, setCor1] = useState('')
-  const [cor2, setCor2] = useState('')
-  const [cor3, setCor3] = useState('')
-  const [cor4, setCor4] = useState('')
-  const [cor5, setCor5] = useState('')
-
-  const [name, setName] = useState('')
-  const [price, setPrice] = useState('')
-  const [quantity, setQuantity] = useState('')
-  const [desc, setDesc] = useState('')
-  const [slug, setSlug] = useState('')
-
-
+  //console.log(props.idAtual)
 
   /**
    * Essa variável é quem determina os valores iniciais dos input citado no values do useState
    */
- /*const camposIniciasDeValores = {
-    name: name,
-    image: [`${img1}`,`${img2}`,`${img3}`,`${img4}`,`${img5}`],
-    size: [`${size1}`,`${size2}`,`${size3}`,`${size4}`,`${size5}`],
-    cor: [`${cor1}`,`${cor2}`,`${cor3}`,`${cor4}`,`${cor5}`],
-    price: price,
-    quantity: quantity,
-    slug: slug,
-    description: desc
-  };*/
-
-  const camposIniciasDeValores = {
+ const camposIniciasDeValores = {
+    id: "",
     name: "",
-    image: [],
-    size: [],
-    cor: [],
+    image: "",
+    size: "",
+    color:"",
     price: "",
     quantity: "",
     slug: "",
-    description: ""
+    bar_code: "",
+    description: "",
   };
 
-  console.log(img1)
+  const camposIniciasDeValoresPromo = {
+    name: "",
+    image: "",
+    size: "",
+    color:"",
+    price: "",
+    quantity: "",
+    slug: "",
+    description: "",
+  };
+ 
+ const [values, setValues] = useState(camposIniciasDeValores);
+ const [pro, setPro] = useState(camposIniciasDeValoresPromo);
+ //const history = useNavigate();
+ 
+ console.log(props.product)
 
-  //const camposIniciasDeValores = {}
-
-  const [values, setValues] = useState(camposIniciasDeValores);
-  const history = useNavigate();
-
-  const URL = "https://api-store-v4bm.onrender.com//user/"
+  const URL = "https://api-store-v4bm.onrender.com/product"
 
 
   /**
@@ -76,20 +54,28 @@ export default function FormularioCadastro(props) {
 
     setValues({ ...values, [name]: value });
   };
+
+  const onChange2 = (ev) => {
+    const { name, value } = ev.target;
+
+    setPro({ ...values, [name]: value });
+  };
   /**
    * Aqui estamos fazendo uma espesse de filtragem do produto via id via props,
    * lembra da variável que eivamos para o formulário via props a idAtual, então é ela que
    * estamos usando, porque ela traz o id de um produto
    */
-  useEffect(() => {
+ useEffect(() => {
     if (props.idAtual) {
       api
-        .get(`/user/${props.idAtual}`)
+        .get(`/productcategoryid/${props.idAtual}`)
         .then((res) => {
           setValues(res.data);
         });
     }
   }, [props.idAtual]);
+
+  //console.log(values)
   /**
    * E aqui que fazemos a criação e editação do produto o onSubmit.
    */
@@ -101,13 +87,15 @@ export default function FormularioCadastro(props) {
      */
     ev.preventDefault();
 
+    console.log(values)
+
     /**
      * Agora estamos criando uma variável method com uma condição.
      * Se a requisição for put, vai ser executada put, se não execute post
      */
     const method = props.idAtual ? 'put' : 'post';
     const url = props.idAtual
-      ? `${URL}${props.idAtual}`
+      ? `${URL}${props.idAtua0}`
       : `${URL}`;
 
     /**
@@ -117,187 +105,296 @@ export default function FormularioCadastro(props) {
     api[method](url, values)
       .then(() => {
         if (props.idAtual === '') {
+          ///toast.success('O produto foi Criado com sucesso');
+          alert('O produto foi Criado com sucesso');
+        } else {
+          //toast.success('O produto foi Atualizado com sucesso');
+          alert('O produto foi Atualizado com sucesso');
+
+        }
+        //Correção de eero
+        /*history('/cadastro');*/
+        setTimeout(() => {
+          //window.location.reload()
+        }, 1000)
+      })
+      .catch((err) => {
+        alert('Os campos sao obrigatorio ou usuario email ja cadastrado, tente novamente');
+        /*history('/cadastro');*/
+        setTimeout(() => {
+          ///window.location.reload()
+        }, 1000)
+
+      });
+  }
+
+  function onSubmitPromo(ev) {
+    /**
+     * Esse ev.preventDefault() é para evitar que o botão faça a,
+     * ação natural dele que é da refresh, e ai podemos determinar para
+     * onde a pagina seja redirecionada com o useHistory do react-router-dom
+     */
+    ev.preventDefault();
+
+    console.log(ev)
+
+    /**
+     * Agora estamos criando uma variável method com uma condição.
+     * Se a requisição for put, vai ser executada put, se não execute post
+     */
+    const method = props.idAtual ? 'put' : 'post';
+    const url = props.idAtual
+      ? `${URL}${props.idAtua0}`
+      : `${URL}`;
+
+    /**
+     * E o que for resolvido na condição de cima vai ser executado aqui.
+     * Seja para criar um produto ou para atualizar
+     */
+    api[method](url, props.product)
+      .then(() => {
+        if (props.idAtual === '') {
           toast.success('O produto foi Criado com sucesso');
         } else {
           toast.success('O produto foi Atualizado com sucesso');
 
         }
-        //Correção de eero
-        history('/cadastro');
-        setTimeout(() => {
-          window.location.reload()
-        }, 6250)
+       
       })
       .catch((err) => {
         toast.error('Os campos sao obrigatorio ou usuario email ja cadastrado, tente novamente');
-        history('/cadastro');
-        setTimeout(() => {
-          window.location.reload()
-        }, 6250)
-
+        
       });
   }
 
+  //const imagem = [values.image]
+  console.log(values.image)
+
   return (
     <>
-      <h2 className="titolo mx-auto">Crie ou Atualize user</h2>
+    <FormularioCreateUpdate>
       <form onSubmit={onSubmit}>
-        <div className="form-group input-group">
-        <div className="form-group input-group">
-          <div className="input-grou-prepend align-self-center">
-            <div className="input-group-text">
-              <img src={values.image} alt="img" style={{width: "100", height: "2.5vh"}} />
+        <h3>Crie ou Atualize user</h3>
+        
+            <div>
+              {values.image ?
+                <img src={values.image[0]} alt="img"/>  
+            : ""
+              },
+              {values.image ?
+                <img src={values.image[1]} alt="img"/>  
+            : ""
+              },
+              {values.image ?
+                <img src={values.image[2]} alt="img"/>  
+            : ""
+              },
+              {values.image ?
+                <img src={values.image[3]} alt="img"/>  
+            : ""
+              },
+              {values.image ?
+                <img src={values.image[4]} alt="img"/>  
+            : ""
+              }
             </div>
-          </div>
+            
+            <input
+              type="text"
+              className="input"            
+              placeholder="URL da Imagem do produto"
+              name="image"
+              value={values.image[0] ? values.image[0] : ""}
+              onChange={onChange}
+            />
+            
+            <input
+              type="text"
+              className="input"            
+              placeholder="URL da Imagem do produto"
+              value={values.image[1]}
+              onChange={onChange}
+            />
+            
+            <input
+              type="text"
+              className="input"           
+              placeholder="URL da Imagem do produto"
+              name="image"
+              value={values.image[2]}
+              onChange={onChange}
+            />
+            <input
+              type="text"
+              className="input"
+              placeholder="URL da Imagem do produto"
+              name="image"
+              value={values.image[3]}
+              onChange={onChange}
+            />
+            
+            <input
+              type="text"
+              className="input"
+              placeholder="URL da Imagem do produto"
+              name="image"
+              value={values.image[4]}
+              onChange={onChange}
+          />   
           <input
-            type="text"
-            className="form-control"
-            placeholder="URL da Imagem do produto"
-            name="imagem"
-            value={values.image}
-            onChange={onChange}
-          />
-          <div className="input-grou-prepend align-self-center">
-            <div className="input-group-text">
-              <img src={values.ima2} alt="img" style={{width: "100", height: "2.5vh"}} />
-            </div>
-          </div>
+              type="text"
+              className="input"
+              placeholder="URL da Imagem do produto"
+              name="image"
+              value={values.image[5]}
+              onChange={onChange}
+          />    
+            
+        
           <input
-            type="text"
-            className="form-control"
-            placeholder="URL da Imagem do produto"
-            name="imagem"
-            value={values.image}
-            onChange={onChange}
-          />
-          <div className="input-grou-prepend align-self-center">
-            <div className="input-group-text">
-              <img src={values.imagem} alt="img" style={{width: "100", height: "2.5vh"}} />
-            </div>
-          </div>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="URL da Imagem do produto"
-            name="imagem"
-            value={values.image}
-            onChange={onChange}
-          />
-          
-        </div>
-        <div className="form-group input-group">
-          <div className="input-grou-prepend align-self-center">
-            <div className="input-group-text">
-              <img src={values.imagem} alt="img" style={{width: "100", height: "2.5vh"}} />
-            </div>
-          </div>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="URL da Imagem do produto"
-            name="imagem"
-            value={values.image}
-            onChange={onChange}
-          />
-          <div className="input-grou-prepend align-self-center">
-            <div className="input-group-text">
-              <img src={values.imagem} alt="img" style={{width: "100", height: "2.5vh"}} />
-            </div>
-          </div>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="URL da Imagem do produto"
-            name="imagem"
-            value={values.image}
-            onChange={onChange}
-          />          
-        </div>
-        </div>
-        <div className="input-grou-prepend align-self-center">
-          <div className="input-group-text">
-            <span style={{fontSize: "20px", textAling: "center",  fontWeight: "bold"}}>Nome</span>
-          </div>
-          </div>
-          <input
-            type="text"
-            className="form-control"
+            type="text"            
             placeholder="Nome do produto"
             name="name"
             value={values.name}
             onChange={onChange}
             />
-          <div className="input-grou-prepend align-self-center">
-            <div className="input-group-text">
-              <span style={{fontSize: "20px", textAlign: "center", fontWeight: "bold"}}>Preçe</span>
-            </div>
-          </div>
+         
           <input
             type="text"
-            className="form-control"
             placeholder="Valor do produto"
-            name="name"
-            value={values.size}
+            name="price"
+            value={values.price}
             onChange={onChange}
           />
-          <div className="input-grou-prepend align-self-center">
-          <div className="input-group-text">
-            <span style={{fontSize: "20px", textAling: "center",  fontWeight: "bold"}}>Slug</span>
-          </div>
-            </div>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Slug do produto"
-              name="name"
-              value={values.cor}
-              onChange={onChange}
-            /><div className="input-grou-prepend align-self-center">
-            <div className="input-group-text">
-              <span style={{fontSize: "20px", textAling: "center",  fontWeight: "bold"}}>Quantidade</span>
-            </div>
-          </div>
+         
           <input
-            type="text"
-            className="form-control"
+            type="text"              
+            placeholder="Slug do produto"
+            name="slug"
+            value={values.slug}
+            onChange={onChange}
+          />
+            <input
+            type="text"              
+            placeholder="bar_code do produto"
+            name="bar_code"
+            value={values.bar_code}
+            onChange={onChange}
+          />
+          <input
+            type="text"            
             placeholder="Quantidade disponivel"
-            name="name"
+            name="quntity"
             value={values.quantity}
             onChange={onChange}
           />
-          <div className="input-grou-prepend align-self-center">
-          <div className="input-group-text">
-            <span style={{fontSize: "20px", textAling: "center",  fontWeight: "bold"}}>Medidas</span>
-          </div>
-          </div>
+          
           <input
-            type="text"
-            className="form-control"
+            type="text"            
             placeholder="Tamnho ou medidas do produto"
-            name="name"
-            value={values.description}
+            name="desc"
+            value={values.size}
             onChange={onChange}
           />
-          <div className="input-grou-prepend align-self-center">
-          <div className="input-group-text">
-            <span style={{fontSize: "20px", textAling: "center",  fontWeight: "bold"}}>Nome</span>
-          </div>
-          </div>
+
           <input
-            type="text"
-            className="form-control"
+            type="text"            
+            placeholder="Cores do produto"
+            name="desc"
+            value={values.color}
+            onChange={onChange}
+          />
+         
+          <textarea
+            type="text"            
             placeholder="Nome do produto"
-            name="name"
-            value={values.slug}
+            name="desc"
+            value={values.description}
             onChange={onChange}
           />
         
         <input
           type="submit"
           value={props.idAtual === '' ? 'Salvar' : 'Atualizar'}
-          className="btn btn-primary btn-block mb-5"
         />
       </form>
-    </>
+    </FormularioCreateUpdate>
+     <FormularioCreateUpdate2>
+     <form onSubmit={onSubmitPromo}>
+       <h3>Crie ou Atualize Promoçoes</h3>
+       
+           <div>
+           {Promocao.image ?
+                <img src={values.image[0]} alt="img"/>  
+            : ""
+              },
+              {pro.image ?
+                <img src={values.image[1]} alt="img"/>  
+            : ""
+              },
+              {pro.image ?
+                <img src={values.image[2]} alt="img"/>  
+            : ""
+              },
+              {pro.image ?
+                <img src={values.image[3]} alt="img"/>  
+            : ""
+              },
+              {pro.image ?
+                <img src={values.image[4]} alt="img"/>  
+            : ""
+              }
+           </div>
+           <input
+              type="text"
+              className="input"            
+              placeholder="URL da Imagem do produto"
+              name="image"
+              value={pro.image[0]}
+              onChange={onChange2}
+            />
+            
+            <input
+              type="text"
+              className="input"            
+              placeholder="URL da Imagem do produto"
+              name="image"
+              value={pro.image[1]}
+              onChange={onChange2}
+            />
+            
+            <input
+              type="text"
+              className="input"           
+              placeholder="URL da Imagem do produto"
+              name="image"
+              value={pro.image[2]}
+              onChange={onChange2}
+            />
+            <input
+              type="text"
+              className="input"
+              placeholder="URL da Imagem do produto"
+              name="image"
+              value={values.image[3]}
+              onChange={onChange2}
+            />
+            
+            <input
+              type="text"
+              className="input"
+              placeholder="URL da Imagem do produto"
+              name="image"
+              value={pro.image[4]}
+              onChange={onChange2}
+          />   
+       <input
+       className='btninput'
+         type="submit"
+         value={props.idAtual === '' ? 'Salvar' : 'Atualizar'}
+       />
+     </form>
+   </FormularioCreateUpdate2>
+   </>
   );
 }

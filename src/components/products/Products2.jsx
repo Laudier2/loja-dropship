@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable eqeqeq */
 //import { useHistory } from 'react-router-dom'
 import ReactLoading from 'react-loading';
@@ -5,11 +6,11 @@ import ReactLoading from 'react-loading';
 import { ProductProd, LoadingPage } from './stylend2';
 import { FaCreditCard } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import api from '../../api/api';
-import { useState } from 'react';
 import { Header } from '../header';
 import Slids from '../slids/slids';
+import SlidsProducts from '../slids/SlidsProducts';
 
 const Example = () => (
     /*
@@ -31,6 +32,13 @@ const Example = () => (
 //const product = []
 
 const Products = () => {
+
+  useEffect(() => {
+    window.scroll({
+      top: 100,
+    });
+
+  },[])
   
   //const history = useHistory()
   
@@ -101,9 +109,22 @@ const Products = () => {
     })()
   },[])
 
+  const [promo, setPromo] = useState([])
+
+  useEffect((
+    async function Promo(){
+      const req = await api.get("/promocao")
+      const res = await req.data;
+
+      setPromo(res)
+    }
+  ), [])
+
+  console.log(promo)
+
   const NameCategory = categoroyName.map(res => res.name)
 
-  console.log(categoroyName)
+  //console.log("test",categoroyName)
 
   return (
     <>
@@ -192,6 +213,8 @@ const Products = () => {
       </section>  
       
     </ProductProd>
+    
+    <SlidsProducts/>
      
     <ProductProd>
       <section>

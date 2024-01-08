@@ -33,18 +33,18 @@ const Products = () => {
   
   //const history = useHistory()
 
-  const [categroy, setCategory] = useState([])
+  const [promo, setPromocao] = useState([])
 
   useEffect(() =>{    
     (async() => {
-      const req = await api.get("/category")
+      const req = await api.get("/promocao")
       const res = await req.data
 
-      setCategory(res)
+      setPromocao(res)
     })()
   },[])
 
-  //console.log(Category)
+  console.log("teste",promo)
   
   const products = useSelector(productSlace => productSlace.products.items)
   //console.log("teste", products)

@@ -60,7 +60,7 @@ export const ProductProd = styled.div`
 
       & img {
         width: 100%;
-        height: 20vh;
+        height: 10vh;
         border-radius: 8px;
       }
       }

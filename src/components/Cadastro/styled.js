@@ -8,3 +8,12 @@ export const ContainerBG = styled.div`
     width: 100%;
     height: 100%;
 `
+export const Promocao = styled.div`
+    margin: auto;
+    display: flex;
+
+    & img {
+        display: inline-block;
+        width: 90%;
+    }
+`

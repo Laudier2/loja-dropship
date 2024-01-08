@@ -4,13 +4,13 @@ import { ContainerPRT } from './stylend'
 
 
 const data = [
-    {id: '1', image: "https://images.tcdn.com.br/img/img_prod/819624/1658245548_mini_banner_2_-_fitness.jpg"},
-    {id: '2', image: "https://i.pinimg.com/originals/f4/4b/04/f44b04304daac11aebaed9d364dc7614.jpg"},
-    {id: '3', image: "https://img.freepik.com/vetores-premium/modelo-de-banner-da-semana-da-moda-banner-promocional-de-moda_122059-223.jpg"},
+    {id: '1', image: "https://img.freepik.com/psd-premium/venta-black-friday-publicacion-redes-sociales-publicacion-instagram-banner-web-o-plantilla-portada-facebook_220443-1063.jpg?w=2000"},
+    {id: '2', image: "https://img.freepik.com/psd-premium/venda-de-black-friday-nas-midias-sociais-no-instagram-no-banner-da-web-ou-no-modelo-de-capa-do-facebook_220443-1040.jpg"},
+    {id: '3', image: "https://img.freepik.com/psd-premium/venta-black-friday-publicacion-redes-sociales-publicacion-instagram-banner-web-o-plantilla-portada-facebook_220443-1063"},
     {id: '4', image: "https://www.lojasvitorina.com.br/imagens/BANNER-VITORINA-11.jpg"},
 ]
 
-export default function Slinds() {
+export default function Slids() {
   return (
     <>
 			<div className='slider'>

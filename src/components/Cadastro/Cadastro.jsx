@@ -4,26 +4,36 @@ import FormularioCadastro from '../formulario/FormularioCadastro';
 //import axios from 'axios';
 //import { Link } from 'react-router-dom';
 import Modal from '../modal/Modal';
-import { toast } from 'react-toastify';
+//import { toast } from 'react-toastify';
 import api from '../../api/api';
+import { Promocao } from './styled';
 //import { ContainerBG } from "./styled"
 
 export default function Cadastro() {
 
   //const URL = "https://api-store-v4bm.onrender.com/user"
 
-  const [users, setUser] = useState([])
+  const [product, setProduct] = useState([])
+  const [promo, setPromo] = useState([])
 
   useEffect(() => {
-    (async() => {
+    async function ProductAll(){
       const req = await api.get("/product")
       const res = await req.data
 
-      setUser(res)
-    })()
+      setProduct(res)
+    }
+    ProductAll()
+    async function PromoAll(){
+      const req = await api.get("/promocao")
+      const res = await req.data
+
+      setPromo(res)
+    }
+    PromoAll()
   },[])
 
-  console.log(users)
+  //console.log(promo)
 
   /**
    * Esse hook useState esta recebendo o valor do evento onClick e assim
@@ -40,35 +50,35 @@ export default function Cadastro() {
    */
   const Apagausuario = (id) => {
 
-    console.log(id)
+    //console.log(id)
 
     api //Esse process.env.REACT_APP_API_URL é uma variave de ambiente que contem a url da api
       .delete("/product/" + id)
       .then((res) => {
-        toast.success('O usuário foi deletado com sucesso');
+        alert('O usuário foi deletado com sucesso');
         
       })
       .catch((erro) => {
-        toast.error(
+        alert(
           'Houve um erro ao tenta apaga esse usuário, erro relacionado a ' +
           erro
         );
       });
   };
 
+  //https://piracicabamktdigital.com.br/wp-content/uploads/2023/03/Banner-Promocao-Dia-dos-Pais-1-1536x768.jpg
+  //https://img.freepik.com/psd-premium/venda-de-black-friday-nas-midias-sociais-no-instagram-no-banner-da-web-ou-no-modelo-de-capa-do-facebook_220443-1040.jpg
+  //https://img.freepik.com/psd-premium/venta-black-friday-publicacion-redes-sociales-publicacion-instagram-banner-web-o-plantilla-portada-facebook_220443-1063.jpg?w=2000
+
   return (
     <div className='bg-dark'>
       <br />
-      <h1 style={{textAlign: "center", fontWeight: "bold", color: "white"}}>Painel de controle para gerenciamento de produtos</h1>
-      <br />
-      <hr className='h1 bg-white'/>
-      <br />
-      <br />
-      <br />
+      <h3 style={{textAlign: "left", fontWeight: "bold", color: "white", padding: "10px"}}>Painel de controle para gerenciamento de produtos</h3>
+     
       <div className="row">
         
         <div className="col-md-6 ">
-          <h2 style={{textAlign: "center", fontWeight: "bold", color: "white"}}>Lista de produtos na database</h2>
+          <h3 style={{textAlign: "center", fontWeight: "bold", color: "white"}}>Lista de produtos na database</h3>
           <table class="table">
             <thead>
               <tr className="text-white">
@@ -80,7 +90,7 @@ export default function Cadastro() {
               </tr>
             </thead>
 
-            {users.map((r) => (
+            {product.map((r) => (
               <tbody key={r.id}>
                 <tr className="btn-outline-secondary text-white">
                   <th scope="row">
@@ -152,9 +162,16 @@ export default function Cadastro() {
               </tbody>
             ))}
           </table>
+          <Promocao>
+            {promo.map(im => (
+              <div key={im.id}>
+                <img src={im.image} alt="img" />
+              </div>
+            ))}
+          </Promocao>
         </div>
         <div className="col-md-5" style={{textAlign: "center", fontWeight: "bold", color: "white"}}>
-          <FormularioCadastro {...{ idAtual, users }} />
+          <FormularioCadastro {...{ idAtual, product, promo }} />
         </div>
       </div>
     </div>

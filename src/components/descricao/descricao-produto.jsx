@@ -157,12 +157,20 @@ const Descricao = () => {
 
   const product = useSelector(productsSlice => productsSlice.products.items)
   const cart = useSelector(cartItems => cartItems.cart.cartItems.length)
+  const cart2 = useSelector(cartItems => [cartItems.cart.cartItems[0]])
   const itemsTm = useSelector(cartItems => cartItems.cart.tmMedidas)
   const itemsCor = useSelector(cartItems => cartItems.cart.tmCores)
 
-  //console.log(items)
+  const request = cart2.map(n => n.name)
+  const test = request[0].split(" ")
+
+  console.log(test[0])
 
   const localId = localStorage.getItem("id")
+  const BNT = localStorage.getItem("name")
+
+  console.log(BNT)
+
 
   const productFilter = product.filter(product => (product.id === localId))
   
@@ -179,6 +187,21 @@ const Descricao = () => {
       if(cart <= 4){
 
         console.log(resultTm)
+        /*if(BNT){
+
+          const confere = BNT.filter(nome => nome.name)
+          const result = confere.split(" ")
+
+          if(result == "BONÉ"){
+            if(resultCor == ""){
+              alert("Você tem que escolher uma cor antes!")
+            }else{
+              dispatch(addCart(e))
+              usenavigate("/cartFinali")
+            }
+          } 
+        }*/
+
 
         if(resultTm == ""){
           alert("Você tem que escolher um tamanho antes!")
@@ -206,6 +229,21 @@ const Descricao = () => {
     if(cart <= 4){
 
       console.log(resultTm)
+
+      /*if(BNT){
+
+        const confere = BNT.filter(nome => nome.name)
+        const result = confere.split(" ")
+
+        if(result == "BONÉ"){
+          if(resultCor == ""){
+            alert("Você tem que escolher uma cor antes!")
+          }else{
+            dispatch(addCart(e))
+            usenavigate("/cartFinali")
+          }
+        } 
+      }*/
 
       if(resultTm == ""){
         alert("Você tem que escolher um tamanho antes!")
@@ -249,7 +287,8 @@ const Descricao = () => {
     
     console.log(data)
   }
-  
+
+
   return (
     <>
       <Header/>
@@ -338,25 +377,26 @@ const Descricao = () => {
                   {sizers[9] ? sizers[9]+sizers[10]+sizers[11] : ""}
                 </button>
               </div>
-              : 
+              : ""
+              } ,
+              {sizers[0] == 3 || sizers[0] == 4?  
               <div>
-                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(`${sizers[0]}${sizers[1]}`)}>
-                  {sizers[0] & sizers[0] == 3 || 4 || 5 ? sizers[0]+sizers[1] : ""}
-                </button>
-                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(`${sizers[3]}${sizers[4]}`)}>
-                  {sizers[4] & sizers[4] == 3 || 4 || 5 ? sizers[3]+sizers[4] : ""}
-                </button>
-                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(`${sizers[6]}${sizers[7]}`)}>
-                  {sizers[6] & sizers[6] == 3 || 4 || 5 ? sizers[6]+sizers[7] : ""}
-                </button>
-                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(`${sizers[9]}${sizers[10]}`)}>
-                  {sizers[9] & sizers[9] == 3 || 4 || 5 ? sizers[9]+sizers[10] : ""}
-                </button>
-                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(`${sizers[9]}${sizers[12]}`)}>
-                  {sizers[13] & sizers[13] == 4 || 5 || 6 ? sizers[9]+sizers[12] : ""}
-                </button>
-                </div>
-                } 
+              <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(`${sizers[0]}${sizers[1]}`)}>
+                {sizers[0] & sizers[0] == 3 || 4 || 5 ? sizers[0]+sizers[1] : ""}
+              </button>
+              <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(`${sizers[3]}${sizers[4]}`)}>
+                {sizers[4] & sizers[4] == 3 || 4 || 5 ? sizers[3]+sizers[4] : ""}
+              </button>
+              <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(`${sizers[6]}${sizers[7]}`)}>
+                {sizers[6] & sizers[6] == 3 || 4 || 5 ? sizers[6]+sizers[7] : ""}
+              </button>
+              <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(`${sizers[9]}${sizers[10]}`)}>
+                {sizers[9] & sizers[9] == 3 || 4 || 5 ? sizers[9]+sizers[10] : ""}
+              </button>
+              <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(`${sizers[9]}${sizers[12]}`)}>
+                {sizers[13] & sizers[13] == 4 || 5 || 6 ? sizers[9]+sizers[12] : ""}
+              </button>
+              </div> : ""}
                 <div>
                 </div>
                 

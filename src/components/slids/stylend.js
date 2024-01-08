@@ -165,3 +165,12 @@ export const ContainerPRT = styled.div`
     }
   }
 `
+
+export const ContainerSlid = styled.div`
+
+  & img {
+    @media screen and (max-width: 768px) {
+    height: 30vh;
+  }
+  }
+`

@@ -26,6 +26,13 @@ ReactGA.initialize(TRACKING_ID)
 function App() {
 
   useEffect(() => {
+    window.scroll({
+      top: 100,
+    });
+
+  },[])
+
+  useEffect(() => {
     ReactGA.pageview(window.location.pathname);
   }, []);
   
@@ -86,7 +93,7 @@ function App() {
       element: <Compra />,
     },
     {
-      path: "/cadastro",
+      path: "/admin",
       element: <Cadastro />,
     },
   ]);  

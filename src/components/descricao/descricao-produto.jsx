@@ -161,9 +161,6 @@ const Descricao = () => {
   const itemsTm = useSelector(cartItems => cartItems.cart.tmMedidas)
   const itemsCor = useSelector(cartItems => cartItems.cart.tmCores)
 
-  const request = cart2.map(n => n.name)
-  const test = request[0].split(" ")
-
   console.log(test[0])
 
   const localId = localStorage.getItem("id")
@@ -187,21 +184,6 @@ const Descricao = () => {
       if(cart <= 4){
 
         console.log(resultTm)
-        /*if(BNT){
-
-          const confere = BNT.filter(nome => nome.name)
-          const result = confere.split(" ")
-
-          if(result == "BONÉ"){
-            if(resultCor == ""){
-              alert("Você tem que escolher uma cor antes!")
-            }else{
-              dispatch(addCart(e))
-              usenavigate("/cartFinali")
-            }
-          } 
-        }*/
-
 
         if(resultTm == ""){
           alert("Você tem que escolher um tamanho antes!")
@@ -229,21 +211,6 @@ const Descricao = () => {
     if(cart <= 4){
 
       console.log(resultTm)
-
-      /*if(BNT){
-
-        const confere = BNT.filter(nome => nome.name)
-        const result = confere.split(" ")
-
-        if(result == "BONÉ"){
-          if(resultCor == ""){
-            alert("Você tem que escolher uma cor antes!")
-          }else{
-            dispatch(addCart(e))
-            usenavigate("/cartFinali")
-          }
-        } 
-      }*/
 
       if(resultTm == ""){
         alert("Você tem que escolher um tamanho antes!")

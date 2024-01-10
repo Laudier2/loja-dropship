@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from "react-icons/ai";
 
 // Styles

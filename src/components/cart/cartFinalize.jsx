@@ -70,7 +70,7 @@ export default function CartFinalize() {
 
     return (
         <>
-            {items === 0 ? carrinhoVazio():
+            {items === 0 || productCor == "" || productSize == "" ? carrinhoVazio():
                 <div>
                     <TableCartFinalize>
                         <table>
@@ -105,15 +105,15 @@ export default function CartFinalize() {
                                                 <div className="divnome">
                                               
                                                     <div>{
-																											productCor.map(cor => (
-                                                        productSize.map(resp => (
-                                                            <div key={resp.id}>
-                                                                {
-																																	res.id === resp.id && res.id === cor.id ? res.name + " Tamanho: " + resp.tm + " Cor: " + cor.cor : ""
-																																}
-                                                            </div>
-                                                        ))    
-																											))
+														productCor.map(cor => (
+                                                            productSize.map(resp => (
+                                                                <div key={resp.id}>
+                                                                    {
+                                                                        res.id === resp.id && res.id === cor.id ? res.name + " Tamanho: " + resp.tm + " Cor: " + cor.cor : ""
+                                                                    }
+                                                                </div>
+                                                            ))    
+                                                        ))
                                                     }</div>
                                                 </div>
                                             </td>

@@ -126,9 +126,21 @@ export const ConatinerMain = styled.div`
 
 export const ContainerDesc = styled.div`
 
+& .efctButton {
+    background: rgba(128, 128, 128, 0.452);
+    padding: 3px;
+    border-radius: 5px;
+
+    & button {
+      &:hover {
+        box-shadow: 0 0 0 3px white;
+      }
+    }
+}
+
 @media (max-width: 1750px) {
   position: inherit;
-  margin-top: -6%;
+  margin-top: 10%;
 }
 
 @media (max-width: 1550px) {
@@ -138,17 +150,17 @@ export const ContainerDesc = styled.div`
 
 @media (max-width: 1350px) {
   position: inherit;
-  margin-top: 3%;
+  margin-top: 10%;
 }
 
 @media (max-width: 1150px) {
   position: inherit;
-  margin-top: -2%;
+  margin-top: 14%;
 }
 
 @media (max-width: 950px) {
   position: inherit;
-  margin-top: -9%;
+  margin-top: 15%;
 }
 
 @media (max-width: 768px) {
@@ -256,7 +268,7 @@ export const ContainerDesc = styled.div`
 
   @media (max-width: 1750px) {
     position: inherit;
-    margin-top: -26.5%;
+    margin-top: -35%;
   }
 
   @media (max-width: 1550px) {
@@ -266,17 +278,17 @@ export const ContainerDesc = styled.div`
 
   @media (max-width: 1350px) {
     position: inherit;
-    margin-top: -27%;
+    margin-top: -35%;
   }
 
   @media (max-width: 1150px) {
     position: inherit;
-    margin-top: -32%;
+    margin-top: -38%;
   }
 
   @media (max-width: 950px) {
     position: inherit;
-    margin-top: -35%;
+    margin-top: -45%;
   }
 
   @media (max-width: 768px) {

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.min.css'
 import { ErrorBoundary } from "react-error-boundary";
 import Products from "./components/products/Products2";
 import Desc from "./components/descricao/descricao-produto";
@@ -104,8 +105,8 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={router}>
       <ToastContainer autoClose={3000} />
+      <RouterProvider router={router}>
         <div className="page-container">
           <div className="conatiner-wrap">
             <ErrorBoundary

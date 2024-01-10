@@ -43,9 +43,9 @@ export function Header() {
         <HiMiniMagnifyingGlass className="lupa"/>
         <Buttons>
           <div onClick={handleCartClick}>
-            <b>{length}</b>
+            <b className="bg">{length}</b>
             {length > 0 ?
-              <SlBasketLoaded style={{ fontSize: 30 }} />
+              <SlBasketLoaded style={{ fontSize: 30, marginLeft: "-2px"}} />
               : <SlBasket style={{ fontSize: 30 }} />
             }
           </div>

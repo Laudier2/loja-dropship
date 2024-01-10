@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { toast } from "react-toastify"
+//import { toast } from "react-toastify"
 
 const initialState = {
     cartItems: localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [],
@@ -18,15 +18,15 @@ const cartSlice = createSlice({
             const itemsIndex = state.cartItems.findIndex((item) => item.id === action.payload.id)
             if (itemsIndex >= 0) {
                 state.cartItems[itemsIndex].cartQuantity += 1
-                toast.info(`${action.payload.name} ja ta no carrinho, agora são ${state.cartItems[itemsIndex].cartQuantity}`, {
+                /*toast.info(`${action.payload.name} ja ta no carrinho, agora são ${state.cartItems[itemsIndex].cartQuantity}`, {
                     position: "bottom-left"
-                })
+                })*/
             } else {
                 const tempProduct = { ...action.payload, cartQuantity: 1 };
                 state.cartItems.push(tempProduct)
-                toast.success(`${action.payload.name} adicionado ao carrimho`, {
+                /*toast.success(`${action.payload.name} adicionado ao carrimho`, {
                     position: "bottom-left"
-                })
+                })*/
             }
             
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
@@ -54,15 +54,15 @@ const cartSlice = createSlice({
             const itemsIndex = state.tmCores.findIndex((item) => item.id === action.payload.id)
             if (itemsIndex >= 0) {
                 state.tmCores[itemsIndex].tmCores += 1
-                toast.info(`${action.payload.name} ja ta no carrinho, agora são ${state.tmCores[itemsIndex]}`, {
+                /*toast.info(`${action.payload.name} ja ta no carrinho, agora são ${state.tmCores[itemsIndex]}`, {
                     position: "bottom-left"
-                })
+                })*/
             } else {
                 const tempProduct = { ...action.payload};
                 state.tmCores.push(tempProduct)
-                toast.success(`${action.payload} adicionado ao carrimho`, {
+                /*toast.success(`${action.payload} adicionado ao carrimho`, {
                     position: "bottom-left"
-                })
+                })*/
             }
             localStorage.setItem("tmCores", JSON.stringify(state.tmCores))
         },
@@ -77,15 +77,15 @@ const cartSlice = createSlice({
 
             if (itemsIndex >= 0) {
                 state.tmMedidas[itemsIndex].tmMedidas += 1
-                toast.info(`${action.payload.name} ja ta no carrinho, agora são ${state.tmCores[itemsIndex]}`, {
+                /*toast.info(`${action.payload.name} ja ta no carrinho, agora são ${state.tmCores[itemsIndex]}`, {
                     position: "bottom-left"
-                })
+                })*/
             } else {
                 const tempProduct = { ...action.payload};
                 state.tmMedidas.push(tempProduct)
-                toast.success(`${action.payload} adicionado ao carrimho`, {
+                /*toast.success(`${action.payload} adicionado ao carrimho`, {
                     position: "bottom-left"
-                })
+                })*/
             }
             localStorage.setItem("tmMedidas", JSON.stringify(state.tmMedidas))
         },
@@ -99,9 +99,9 @@ const cartSlice = createSlice({
             }else{
                 state.tmCores = []
                 localStorage.setItem("tmCores", JSON.stringify(state.tmCores))
-                toast.error(`${action.payload.cor} Removido`, {
+                /*toast.error(`${action.payload.cor} Removido`, {
                     position: "bottom-left"
-                })
+                })*/
             }
 
         },
@@ -114,9 +114,9 @@ const cartSlice = createSlice({
             state.tmCores = nextCores;
             localStorage.setItem("tmCores", JSON.stringify(state.tmCores))
 
-            toast.error(`${action.payload.cor} Removido`, {
+            /*toast.error(`${action.payload.cor} Removido`, {
                 position: "bottom-left"
-            })
+            })*/
         },
        
         cauculateTotal(state, action) {
@@ -148,16 +148,16 @@ const cartSlice = createSlice({
             state.cartItems = nextCartItems;
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
 
-            toast.error(`${action.payload.name} Removido do carrimho`, {
+            /*toast.error(`${action.payload.name} Removido do carrimho`, {
                 position: "bottom-left"
-            })
+            })*/
         },
 
         clearCart(state, action){
             state.cartItems = []
-            toast.error("Cartt cleared", {
+            /*toast.error("Cartt cleared", {
                 position: "bottom-left"
-            })
+            })*/
             localStorage.getItem("cartItems", JSON.stringify(state.cartItems))
         },
     }

@@ -9,6 +9,16 @@ export const Container = styled.div`
   padding: 20px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 
+  & .bg {
+    background: red;
+    border-radius: 20px;
+    padding: 1px;
+    width: 20px;
+    margin-left: 25px;
+    margin-top: -7px;
+    text-align: center;
+  }
+
   & input {
     margin-left: 30%;
     width: 45%;

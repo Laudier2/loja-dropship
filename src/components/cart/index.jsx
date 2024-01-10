@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 // Styles
 import { useSelector } from "react-redux";
 import { CartContainer, CartEscapeArea, CartContent, CartTitle, CartIcon, ButtonCard } from "./styles";
@@ -9,6 +10,11 @@ const Cart = ({ isVisible, setIsVisible }) => {
   const handleEscapeAreaClick = () => setIsVisible(false);
 
   const cart = useSelector((state) => state.cart.cartItems)
+
+  if(cart == ""){
+    localStorage.removeItem("tmMedidas")
+    localStorage.removeItem("tmCores")
+  }
 
   //console.log(cart)
 
@@ -30,7 +36,7 @@ const Cart = ({ isVisible, setIsVisible }) => {
           </div>
         )}
         <a href="/cartFinali">
-          {!cart ? <img style={{ marginLeft: "-105px", width: "700px" }} src="https://www.pngkit.com/png/detail/411-4110678_carrinho-de-compras-vazio-shopping-cart.png" alt="img"/> :
+          {cart == "" ? <img style={{ marginLeft: "-105px", width: "700px" }} src="https://www.pngkit.com/png/detail/411-4110678_carrinho-de-compras-vazio-shopping-cart.png" alt="img"/> :
             <ButtonCard>
               Ver meu carrinho
             </ButtonCard>

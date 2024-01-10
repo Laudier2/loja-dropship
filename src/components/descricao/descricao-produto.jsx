@@ -1,5 +1,6 @@
 /* eslint-disable no-redeclare */
 /* eslint-disable eqeqeq */
+import { toast } from 'react-toastify';
 import React, { useEffect, useState } from 'react';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
@@ -8,7 +9,7 @@ import ReactLoading from 'react-loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCart, addCor, addTm } from '../../redux/cart/cart';
 import {  ConatinerMain, ContainerDesc, ContainerSobre } from './styles';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 import { FaCreditCard } from "react-icons/fa";
 import { TiStarHalfOutline } from "react-icons/ti";
 import { GoStarFill } from "react-icons/go";
@@ -19,8 +20,25 @@ const Descricao = () => {
 
   //console.log(orderData)
 
-  const usenavigate = useNavigate()
+  //const usenavigate = useNavigate()
+  
+  const [dataCores, setDatacores] = useState('')
+  const [dataTamanho, setTamanho] = useState('')
 
+  console.log(dataCores)
+
+  //imagem de meio de pagamentos bandeiras
+  const imgCart = [
+		{img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png"},
+		{img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png"},
+		{img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png"},
+		{img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/diners@2x.png"},
+		{img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/aura@2x.png"},
+		{img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/elo@2x.png"},
+		{img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/hipercard@2x.png"},
+		{img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/payment-method-types/pix@2x.png"},
+		{img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/discover@2x.png"},
+	]
 
   const qunt = localStorage.getItem('quantity')
   //const id = localStorage.getItem('id')
@@ -44,7 +62,7 @@ const Descricao = () => {
   const [color5, setColor5] = useState('')
   const [color6, setColor6] = useState('')
   
-  //State de tamanhos
+  //State de setTamanho
   //const [tamanho, setTamanho] = useState([])
 
   //console.log(cart)
@@ -137,9 +155,7 @@ const Descricao = () => {
     setReceb4(req3)
   }, [])
 
-  function Cores(e){
-    document.getElementById("logo").src = `${img2}`;
-  }
+
 
   function over0() {
     document.getElementById("logo").src = `${img1}`;
@@ -162,10 +178,8 @@ const Descricao = () => {
   const product = useSelector(productsSlice => productsSlice.products.items)
   const cart = useSelector(cartItems => cartItems.cart.cartItems.length)
   //const cart2 = useSelector(cartItems => [cartItems.cart.cartItems[0]])
-  const itemsTm = useSelector(cartItems => cartItems.cart.tmMedidas)
-  const itemsCor = useSelector(cartItems => cartItems.cart.tmCores)
-
-  console.log(test[0])
+  //const itemsTm = useSelector(cartItems => cartItems.cart.tmMedidas)
+  //const itemsCor = useSelector(cartItems => cartItems.cart.tmCores)
 
   const localId = localStorage.getItem("id")
   const BNT = localStorage.getItem("name")
@@ -178,85 +192,66 @@ const Descricao = () => {
 
   const dispatch = useDispatch()
 
-    function handlerCartAdd(e) {
+  function handlerCartAdd(e) {
 
-      const id = localStorage.getItem("id")
+    const id = localStorage.getItem("id")
 
-      const resultTm = itemsTm.filter(req => (req.id === id))
-      const resultCor = itemsCor.filter(req => (req.id === id))
-
+    const dataCor = {id: id, cor: dataCores}
+    const dataTm = {id: id, tm: dataTamanho}
+      
+    dispatch(addTm(dataTm))
+    dispatch(addCor(dataCor))
+  
       if(cart <= 4){
-
-        console.log(resultTm)
-
-        if(resultTm == ""){
+  
+        if(dataTamanho == ""){
           alert("Você tem que escolher um tamanho antes!")
         }else{
-          if(resultCor == ""){
+          if(dataCores == ""){
             alert("Você tem que escolher uma cor antes!")
           }else{
             dispatch(addCart(e))
-            usenavigate("/cartFinali")
           }
-        }       
-       
-      }else{
-        alert("Você so pode adiciona 5 itens no carrio por vez")
+        }        
+      
+    }else{
+      alert("Você so pode adiciona 5 itens no carrio por vez")
       }   
   }
 
   function handlerCartAdd2(e) {
 
-    const id = localStorage.getItem("id")
+    let id = localStorage.getItem("id")
+    let nameProduct = localStorage.getItem("name")
+   
+   const dataCor = {id: id, cor: dataCores}
+   const dataTm = {id: id, tm: dataTamanho}
 
-    const resultTm = itemsTm.filter(req => (req.id === id))
-    const resultCor = itemsCor.filter(req => (req.id === id))
+
+   console.log(dataCor, dataTm)
+    
+    dispatch(addTm(dataTm))
+    dispatch(addCor(dataCor))
 
     if(cart <= 4){
 
-      console.log(resultTm)
-
-      if(resultTm == ""){
-        alert("Você tem que escolher um tamanho antes!")
+      if(dataTamanho == ""){
+        alert("Você tem que escolher um tamanho e uma cor!")
       }else{
-        if(resultCor == ""){
-          alert("Você tem que escolher uma cor antes!")
+        if(dataCores == ""){
+          alert("Você so escolheu um tamnho tem que escolher uma cor tambem!")
         }else{
           dispatch(addCart(e))
+          toast.success(`O produto ${nameProduct} foi adicionado ao carrinho!`, 
+           {position: toast.POSITION.TOP_CENTER})
+    
+          //toast.success(`O produto ${nameProduct}`)
         }
       }        
       
     }else{
       alert("Você so pode adiciona 5 itens no carrio por vez")
     }   
-  }
-
-  function Tamanhos(e) {
-
-    //window.location.reload()
-    //localStorage.removeItem("tmMedidas")
-    let id = localStorage.getItem("id")
-
-    const data = {id: id, tm: e}
-    
-    dispatch(addTm(data))
-    console.log(data)
-  }
-
-  function Cores(e) {
-
-   //window.location.reload()
-    
-   
-   let id = localStorage.getItem("id")
-   
-   const data = {id: id, cor: e}
-   
-   
-    //dispatch(removeCores(e))
-    dispatch(addCor(data))
-    
-    console.log(data)
   }
 
 
@@ -305,28 +300,33 @@ const Descricao = () => {
                 <h1>R$ {price},00</h1>
                 <span>
               <FaCreditCard className='mt-1 m-1'/> Em até 12x sem juros
+              <br />
+              {imgCart.map(imgCard => (
+                <img src={imgCard.img} alt="img" style={{width: "17%", display: "inline-block"}}/>
+              ))}
             </span>
                 <br />
-                <a href="/desc"><span>ver os meio de pagamento</span></a>
                 <br />
                 <br /><br />
-                <h5>Cores</h5>
-                
+                <p>
+                  <strong className=''>Cor: </strong>
+                  <span>{dataCores ? dataCores : "Escolha uma cor"}</span>
+                </p>
                 <div>
-                <div role="group" aria-label="Basic example">
-                  {FilterColor1[0] ? <button type="button" style={{background: "#000000", border: "none", color: "white", padding: "15px"}} onClick={() => Cores(FilterColor1[0])}></button> : ""}
-                  {FilterColor2[0] ? <button type="button" style={{background: "#9CBAF2", border: "none", color: "white", padding: "15px"}} onClick={() => Cores(FilterColor2[0])}></button> : ""}
-                  {FilterColor3[0] ? <button type="button" style={{background: "#215088", border: "none", color: "blue", padding: "15px"}} onClick={() => Cores(FilterColor3[0])}></button> : ""}
-                  {FilterColor4[0] ? <button type="button" style={{background: "pink", border: "none", color: "gray", padding: "15px"}} onClick={() => Cores(FilterColor4[0])}></button> : ""}
-                  {FilterColor5[0] ? <button type="button" style={{background: "#white", border: "solid 1px", color: "green", padding: "15px"}} onClick={() => Cores(FilterColor5[0])}></button> : ""}
-                  {FilterColor6[0] ? <button type="button" style={{background: "red", border: "none", color: "red", padding: "15px"}} onClick={() => Cores(FilterColor6[0])}></button> : ""}
-                  {FilterColor7[0] ? <button type="button" style={{background: "#3956b3", border: "none", color: "red", padding: "15px"}} onClick={() => Cores(FilterColor7[0])}></button> : ""}
-                  {FilterColor8[0] ? <button type="button" style={{background: "#247dd1", border: "none", color: "red", padding: "15px"}} onClick={() => Cores(FilterColor8[0])}></button> : ""}
-                  {FilterColor9[0] ? <button type="button" style={{backgroundImage: `url("https://www.shutterstock.com/image-vector/camouflage-seamless-pattern-trendy-style-600nw-1456834667.jpg")`, border: "none", color: "red", padding: "15px"}} onClick={() => Cores(FilterColor9[0])}></button> : ""}
-                  {FilterColor10[0] ? <button type="button" style={{backgroundImage: `url("https://img.freepik.com/vetores-premium/fundo-preto-e-amarelo-com-tinta-ilustracao-vetorial-com-fundo-gradiente-ilustracao-vetorial_176456-656.jpg")`, border: "none", color: "red", padding: "15px"}} onClick={() => Cores(FilterColor10[0])}></button> : ""}
-                  {FilterColor11[0] ? <button type="button" style={{background: "#8ca031", border: "none", color: "red", padding: "15px"}} onClick={() => Cores(FilterColor11[0])}></button> : ""}
-                  {FilterColor12[0] ? <button type="button" style={{background: "#31b63c", border: "none", color: "red", padding: "15px"}} onClick={() => Cores(FilterColor12[0])}></button> : ""}
-                  {FilterColor13[0] ? <button type="button" style={{backgroundImage: `url("https://i.pinimg.com/736x/db/48/79/db4879aa3ebd36d996fe2fba6a3ccbef.jpg")`, border: "none", color: "red", padding: "15px"}} onClick={() => Cores(FilterColor10[0])}></button> : ""}
+                <div role="group" aria-label="Basic example" className='efctButton'>
+                  {FilterColor1[0] ? <button type="button" style={{background: "#000000", border: "none", color: "white", padding: "15px"}} onClick={() => setDatacores(FilterColor1[0])}></button> : ""}
+                  {FilterColor2[0] ? <button type="button" style={{background: "#9CBAF2", border: "none", color: "white", padding: "15px"}} onClick={() => setDatacores(FilterColor2[0])}></button> : ""}
+                  {FilterColor3[0] ? <button type="button" style={{background: "#215088", border: "none", color: "blue", padding: "15px"}} onClick={() => setDatacores(FilterColor3[0])}></button> : ""}
+                  {FilterColor4[0] ? <button type="button" style={{background: "pink", border: "none", color: "gray", padding: "15px"}} onClick={() => setDatacores(FilterColor4[0])}></button> : ""}
+                  {FilterColor5[0] ? <button type="button" style={{background: "#white", border: "solid 1px", color: "green", padding: "15px"}} onClick={() => setDatacores(FilterColor5[0])}></button> : ""}
+                  {FilterColor6[0] ? <button type="button" style={{background: "red", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor6[0])}></button> : ""}
+                  {FilterColor7[0] ? <button type="button" style={{background: "#3956b3", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor7[0])}></button> : ""}
+                  {FilterColor8[0] ? <button type="button" style={{background: "#247dd1", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor8[0])}></button> : ""}
+                  {FilterColor9[0] ? <button type="button" style={{backgroundImage: `url("https://www.shutterstock.com/image-vector/camouflage-seamless-pattern-trendy-style-600nw-1456834667.jpg")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor9[0])}></button> : ""}
+                  {FilterColor10[0] ? <button type="button" style={{backgroundImage: `url("https://img.freepik.com/vetores-premium/fundo-preto-e-amarelo-com-tinta-ilustracao-vetorial-com-fundo-gradiente-ilustracao-vetorial_176456-656.jpg")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor10[0])}></button> : ""}
+                  {FilterColor11[0] ? <button type="button" style={{background: "#8ca031", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor11[0])}></button> : ""}
+                  {FilterColor12[0] ? <button type="button" style={{background: "#31b63c", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor12[0])}></button> : ""}
+                  {FilterColor13[0] ? <button type="button" style={{backgroundImage: `url("https://i.pinimg.com/736x/db/48/79/db4879aa3ebd36d996fe2fba6a3ccbef.jpg")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor10[0])}></button> : ""}
                   { }
                 </div>
                 <br />
@@ -334,49 +334,58 @@ const Descricao = () => {
                 {sizers[2] == "M" 
                 ?
                 <div>
-                  <span>Medidas</span>
-                  <br />
-                  <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(sizers[0])}>
+                  <p>
+                    <strong>Tamnho: </strong>
+                    <span>{dataTamanho ? dataTamanho : "Escolha uma tamanho"}</span>
+                  </p>
+                  <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(sizers[0])}>
                   {sizers[0] ? sizers[0] : ""}
                 </button>
-                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(sizers[2])}>
+                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(sizers[2])}>
                   {sizers[4] ? sizers[2] : ""}
                   </button>
-                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(sizers[4])}>
+                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(sizers[4])}>
                   {sizers[4] ? sizers[4] : ""}
                 </button>
-                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(sizers[4]+sizers[6])}>
+                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(sizers[4]+sizers[6])}>
                   {sizers[4] ? sizers[4]+sizers[6] : ""}
                 </button>
-                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(sizers[9]+sizers[10]+sizers[11])}>
+                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(sizers[9]+sizers[10]+sizers[11])}>
                   {sizers[9] ? sizers[9]+sizers[10]+sizers[11] : ""}
                 </button>
               </div>
               : ""
-              } ,
+              }
               {sizers[0] == 3 || sizers[0] == 4?  
               <div>
-              <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(`${sizers[0]}${sizers[1]}`)}>
+              <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(`${sizers[0]}${sizers[1]}`)}>
                 {sizers[0] & sizers[0] == 3 || 4 || 5 ? sizers[0]+sizers[1] : ""}
               </button>
-              <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(`${sizers[3]}${sizers[4]}`)}>
+              <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(`${sizers[3]}${sizers[4]}`)}>
                 {sizers[4] & sizers[4] == 3 || 4 || 5 ? sizers[3]+sizers[4] : ""}
               </button>
-              <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(`${sizers[6]}${sizers[7]}`)}>
+              <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(`${sizers[6]}${sizers[7]}`)}>
                 {sizers[6] & sizers[6] == 3 || 4 || 5 ? sizers[6]+sizers[7] : ""}
               </button>
-              <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(`${sizers[9]}${sizers[10]}`)}>
+              <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(`${sizers[9]}${sizers[10]}`)}>
                 {sizers[9] & sizers[9] == 3 || 4 || 5 ? sizers[9]+sizers[10] : ""}
               </button>
-              <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(`${sizers[9]}${sizers[12]}`)}>
+              <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(`${sizers[9]}${sizers[12]}`)}>
                 {sizers[13] & sizers[13] == 4 || 5 || 6 ? sizers[9]+sizers[12] : ""}
               </button>
               </div> : ""
-              },
-              {sizers == "Padrão" ?
-                <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => Tamanhos(sizers)}>
-                {sizers}
-              </button>
+              }
+              {
+              sizers == "Padrão" ?
+                <div>
+                  <p>
+                    <strong>Tamnho: </strong>
+                    <span>{dataTamanho ? dataTamanho : "Escolha uma tamanho"}</span>
+                  </p>
+                  <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(sizers)}>
+                  {sizers}
+                </button>
+                </div>
               : ""
               }
 
@@ -389,13 +398,12 @@ const Descricao = () => {
             <br />
             <span>Saiba os prazos de entrega e as formas de envio.</span>
             <div >
-              <LocationOnIcon />
-              <a href="/desc">Frete gratis para todo o pais</a>
+              <LocationOnIcon /> Frete Gratis
             </div>
             <br /><br />
             <div>
               <p>
-                <strong>Quantidade</strong> 
+                <strong>Disponivel em Estoque</strong> 
                 <div>
                   disponivel ({qunt})
                 </div>

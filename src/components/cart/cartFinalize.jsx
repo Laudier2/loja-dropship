@@ -108,13 +108,16 @@ export default function CartFinalize() {
 														productCor.map(cor => (
                                                             productSize.map(resp => (
                                                                 <div key={resp.id}>
+                                                                    <p className='namePosition'>
                                                                     {
                                                                         res.id === resp.id && res.id === cor.id ? res.name + " Tamanho: " + resp.tm + " Cor: " + cor.cor : ""
                                                                     }
+                                                                    </p>
                                                                 </div>
                                                             ))    
                                                         ))
                                                     }</div>
+                                                    <br />
                                                 </div>
                                             </td>
                                             <td>

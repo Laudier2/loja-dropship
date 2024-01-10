@@ -9,7 +9,7 @@ import ReactLoading from 'react-loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCart, addCor, addTm } from '../../redux/cart/cart';
 import {  ConatinerMain, ContainerDesc, ContainerSobre } from './styles';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { FaCreditCard } from "react-icons/fa";
 import { TiStarHalfOutline } from "react-icons/ti";
 import { GoStarFill } from "react-icons/go";
@@ -20,7 +20,7 @@ const Descricao = () => {
 
   //console.log(orderData)
 
-  //const usenavigate = useNavigate()
+  const navigate = useNavigate()
   
   const [dataCores, setDatacores] = useState('')
   const [dataTamanho, setTamanho] = useState('')
@@ -211,6 +211,7 @@ const Descricao = () => {
             alert("Você tem que escolher uma cor antes!")
           }else{
             dispatch(addCart(e))
+            navigate("/cartFinali")
           }
         }        
       

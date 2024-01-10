@@ -85,6 +85,17 @@ export const TableCartFinalize = styled.div`
     margin: 0 auto;
     font-size: 1vw;
 
+    @media(max-width: 780px) {
+
+        & .namePosition {
+          width: 60%;
+          position: absolute;
+          margin-top: 30px;
+          margin-left: -80px;
+          font-size: 2.5vw;
+        } 
+      }
+
     & td {
       & .div1 {
         width: 108px;
@@ -95,8 +106,13 @@ export const TableCartFinalize = styled.div`
           background-color: white;
         }
 
-        @media screen and (max-width: 780px) {
+        @media(max-width: 780px) {
           width: 100px;
+
+          & .namePosition {
+            position: absolute;
+            margin-top: -20px;
+          } 
         }
 
       }

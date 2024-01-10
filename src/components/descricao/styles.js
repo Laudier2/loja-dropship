@@ -164,10 +164,10 @@ export const ContainerDesc = styled.div`
 }
 
 @media (max-width: 768px) {
-  width: 80%;
+  width: 95%;
   margin: auto;
   position: inherit;
-  margin-top: 10%;
+  margin-top: 2%;
   font-size: 3vw;
 }
 

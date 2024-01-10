@@ -1,7 +1,7 @@
 /* eslint-disable eqeqeq */
 import React, { useState } from 'react';
 import { ButtonBox, InputBox, CompraStyle, Title } from './stylend';
-import { FormBox, LoadingPage } from "./FormBox";
+import { FormBox, LoadingPage, Logo2 } from "./FormBox";
 import api from '../../api/api';
 import { useSelector } from 'react-redux';
 import ReactLoading from 'react-loading';
@@ -312,22 +312,14 @@ let prod2 = [
 
   return (
     <>
+      <Logo2>
+        <Link to="/" className='Logo'>Voltar para StylesTop</Link> 
+      </Logo2>
       {cart == "" ? <Example /> :
         <CompraStyle>
        <FormBox>
           <form onSubmit={handleSubmit}>
-          <Link to="/" style={
-              {
-                  textDecoration: "none", 
-                  fontSize: "30px", 
-                  fontWeight: "bold",
-                  background: "aqua",
-                  padding: "5px",
-                  borderRadius: "10px",
-                  marginTop: "5px",
-                  margin: "5px"
-              }
-          }>Voltar para StylesTop</Link> 
+          
             <Title>
               Preencha com seus dados
             </Title>

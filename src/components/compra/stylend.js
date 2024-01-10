@@ -3,7 +3,7 @@ import img from "./img/sacola.jpg"
 
 export const CompraStyle = styled.div`
     display: flex;
-    margin-top: -50px;
+    margin-top: 20px;
     justify-content: center;
     align-items: center;
     height: 100vh;

@@ -91,7 +91,7 @@ export const TableCartFinalize = styled.div`
           width: 60%;
           position: absolute;
           margin-top: 30px;
-          margin-left: -80px;
+          margin-left: -65px;
           font-size: 2.5vw;
         } 
       }

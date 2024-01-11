@@ -87,7 +87,7 @@ const Products = () => {
     localStorage.setItem("size", size.size)
     localStorage.setItem("quantity", quantity.quantity)
 
-    //console.log(dados)*/
+    console.log(dados)
   }
 
   console.log()
@@ -100,7 +100,7 @@ const Products = () => {
     <ProductProd>
       <section>
       { products.map(res => (
-          <Link to="/desc" onClick={() => LocalSto(res)}>
+          <button onClick={() => LocalSto(res)}>
             <div key={res.id}>
               <img src={res.image[0]} alt="img" />
               <h5>{res.name}</h5>
@@ -112,7 +112,7 @@ const Products = () => {
                 DESCRIÇÃO
               </button>
             </div>
-          </Link>
+          </button>
           ))
         }
       </section>  

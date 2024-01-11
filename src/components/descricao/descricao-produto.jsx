@@ -130,20 +130,21 @@ const Descricao = () => {
   const Todes = [color1, color2, color3, color3, color4, color5, color6]
 
   const FilterColor1 = Todes.filter(e => e == "preto" || e == "Preto" || e == "black" || e == "Black")
-  const FilterColor2 = Todes.filter(e => e == "Berge" || e == "berge" || e == "Gray" || e == "gray")
-  const FilterColor3 = Todes.filter(e => e == "Dins" || e == "dins" || e == "dins claro" || e == "dins escuro")
+  const FilterColor2 = Todes.filter(e => e == "Bege" || e == "bege" || e == "beje" || e == "Beje" || e == "Gray" || e == "gray")
+  const FilterColor3 = Todes.filter(e => e == "Dins" || e == "dins" || e == "dins claro" || e == "dins escuro" || e == "Dins ecuro")
   const FilterColor4 = Todes.filter(e => e == "Roxo" || e == "roxo" || e == "pink" || e == "Pink")
   const FilterColor5 = Todes.filter(e => e == "Branco" || e == "branco" || e == "white" || e == "White")
-  const FilterColor6 = Todes.filter(e => e == "Vermelho" || e == "vermelho" || e == "red" || e == "Red")
-  const FilterColor7 = Todes.filter(e => e == "Azul escuro" || e == "azul escuro" || e == "Azul claro" || e == "azul claro")
-  const FilterColor8 = Todes.filter(e => e == "Azul" || e == "azul" || e == "blue" || e == "Blue" || e == "Jens claro")
-  const FilterColor9 = Todes.filter(e => e == "Camuflado" || e == "Rjado" || e == "rajado" || e == "camuflado")
+  const FilterColor6 = Todes.filter(e => e == "Vermelho" || e == "vermelho" || e == "red" || e == "Red" || e == "Vermelho com Preto")
+  const FilterColor7 = Todes.filter(e => e == "Azul escuro" || e == "azul escuro" || e == "Azul claro" || e == "azul claro" || e == "Jens ecuro"  || e == "Jeans escuro"  || e == "Dins")
+  const FilterColor8 = Todes.filter(e => e == "Azul" || e == "azul" || e == "blue" || e == "Blue" || e == "Jens claro" || e == "Dins claro")
+  const FilterColor9 = Todes.filter(e => e == "Camuflado" || e == "Rajado" || e == "rajado" || e == "camuflado")
   const FilterColor10 = Todes.filter(e => e == "Amarela com Preto" || e == "Amarela com Branco" || e == "Preto com Branco" || e == "Preto com Verde")
   const FilterColor11 = Todes.filter(e => e == "Amarela")
   const FilterColor12 = Todes.filter(e => e == "Verde")
   const FilterColor13 = Todes.filter(e => e == "Preto com Rosa")
+  const FilterColor14 = Todes.filter(e => e == "Kaki" || e == "kaki")
 
-  //console.log(FilterColor2[0])
+console.log(FilterColor2[0], FilterColor1[0])
 
   useEffect(() => {
     const size = localStorage.getItem("size")
@@ -303,7 +304,7 @@ const Descricao = () => {
               <FaCreditCard className='mt-1 m-1'/> Em até 12x sem juros
               <br />
               {imgCart.map(imgCard => (
-                <img src={imgCard.img} alt="img" style={{width: "17%", display: "inline-block"}}/>
+                <img src={imgCard.img} alt="img" style={{width: "8%", display: "inline-block"}}/>
               ))}
             </span>
                 <br />
@@ -316,18 +317,19 @@ const Descricao = () => {
                 <div>
                 <div role="group" aria-label="Basic example" className='efctButton'>
                   {FilterColor1[0] ? <button type="button" style={{background: "#000000", border: "none", color: "white", padding: "15px"}} onClick={() => setDatacores(FilterColor1[0])}></button> : ""}
-                  {FilterColor2[0] ? <button type="button" style={{background: "#9CBAF2", border: "none", color: "white", padding: "15px"}} onClick={() => setDatacores(FilterColor2[0])}></button> : ""}
-                  {FilterColor3[0] ? <button type="button" style={{background: "#215088", border: "none", color: "blue", padding: "15px"}} onClick={() => setDatacores(FilterColor3[0])}></button> : ""}
+                  {FilterColor2[0] ? <button type="button" style={{background: "#989ca7", border: "none", color: "white", padding: "15px"}} onClick={() => setDatacores(FilterColor2[0])}></button> : ""}
+                  {FilterColor3[0] ? <button type="button" style={{background: "#606366", border: "none", color: "blue", padding: "15px"}} onClick={() => setDatacores(FilterColor3[0])}></button> : ""}
                   {FilterColor4[0] ? <button type="button" style={{background: "pink", border: "none", color: "gray", padding: "15px"}} onClick={() => setDatacores(FilterColor4[0])}></button> : ""}
                   {FilterColor5[0] ? <button type="button" style={{background: "#white", border: "solid 1px", color: "green", padding: "15px"}} onClick={() => setDatacores(FilterColor5[0])}></button> : ""}
                   {FilterColor6[0] ? <button type="button" style={{background: "red", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor6[0])}></button> : ""}
-                  {FilterColor7[0] ? <button type="button" style={{background: "#3956b3", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor7[0])}></button> : ""}
-                  {FilterColor8[0] ? <button type="button" style={{background: "#247dd1", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor8[0])}></button> : ""}
+                  {FilterColor7[0] ? <button type="button" style={{background: "#1146f5", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor7[0])}></button> : ""}
+                  {FilterColor8[0] ? <button type="button" style={{background: "#24a0d1", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor8[0])}></button> : ""}
                   {FilterColor9[0] ? <button type="button" style={{backgroundImage: `url("https://www.shutterstock.com/image-vector/camouflage-seamless-pattern-trendy-style-600nw-1456834667.jpg")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor9[0])}></button> : ""}
-                  {FilterColor10[0] ? <button type="button" style={{backgroundImage: `url("https://img.freepik.com/vetores-premium/fundo-preto-e-amarelo-com-tinta-ilustracao-vetorial-com-fundo-gradiente-ilustracao-vetorial_176456-656.jpg")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor10[0])}></button> : ""}
-                  {FilterColor11[0] ? <button type="button" style={{background: "#8ca031", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor11[0])}></button> : ""}
+                  {FilterColor10[0] ? <button type="button" style={{background: "#fad60c", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor10[0])}></button> : ""}
+                  {FilterColor11[0] ? <button type="button" style={{background: "#b5d818", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor11[0])}></button> : ""}
                   {FilterColor12[0] ? <button type="button" style={{background: "#31b63c", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor12[0])}></button> : ""}
-                  {FilterColor13[0] ? <button type="button" style={{backgroundImage: `url("https://i.pinimg.com/736x/db/48/79/db4879aa3ebd36d996fe2fba6a3ccbef.jpg")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor10[0])}></button> : ""}
+                  {FilterColor13[0] ? <button type="button" style={{backgroundImage: `url("https://i.pinimg.com/736x/db/48/79/db4879aa3ebd36d996fe2fba6a3ccbef.jpg")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor13[0])}></button> : ""}
+                  {FilterColor14[0] ? <button type="button" style={{background: "#8c5b32", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor14[0])}></button> : ""}
                   { }
                 </div>
                 <br />

@@ -20,7 +20,7 @@ import { Sandalia } from "./components/products/Sandalia";
 import { Tenis } from "./components/products/Tenis";
 import Cadastro from "./components/Cadastro/Cadastro";
 
-const TRACKING_ID = "G-1GXW3W538Z" 
+const TRACKING_ID = "G-YJVYCLYTD3" 
 
 ReactGA.initialize(TRACKING_ID)
 

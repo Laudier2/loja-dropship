@@ -132,7 +132,7 @@ const Descricao = () => {
   const FilterColor1 = Todes.filter(e => e == "preto" || e == "Preto" || e == "black" || e == "Black")
   const FilterColor2 = Todes.filter(e => e == "Bege" || e == "bege" || e == "beje" || e == "Beje" || e == "Gray" || e == "gray")
   const FilterColor3 = Todes.filter(e => e == "Dins" || e == "dins" || e == "dins claro" || e == "dins escuro" || e == "Dins ecuro")
-  const FilterColor4 = Todes.filter(e => e == "Roxo" || e == "roxo" || e == "pink" || e == "Pink")
+  const FilterColor4 = Todes.filter(e => e == "Roxo" || e == "Rosa" || e == "pink" || e == "Pink")
   const FilterColor5 = Todes.filter(e => e == "Branco" || e == "branco" || e == "white" || e == "White")
   const FilterColor6 = Todes.filter(e => e == "Vermelho" || e == "vermelho" || e == "red" || e == "Red" || e == "Vermelho com Preto")
   const FilterColor7 = Todes.filter(e => e == "Azul escuro" || e == "azul escuro" || e == "Azul claro" || e == "azul claro" || e == "Jens ecuro"  || e == "Jeans escuro"  || e == "Dins")
@@ -143,6 +143,7 @@ const Descricao = () => {
   const FilterColor12 = Todes.filter(e => e == "Verde")
   const FilterColor13 = Todes.filter(e => e == "Preto com Rosa")
   const FilterColor14 = Todes.filter(e => e == "Kaki" || e == "kaki")
+  const FilterColor15 = Todes.filter(e => e == "Azul com rosa")
 
 console.log(FilterColor2[0], FilterColor1[0])
 
@@ -330,6 +331,7 @@ console.log(FilterColor2[0], FilterColor1[0])
                   {FilterColor12[0] ? <button type="button" style={{background: "#31b63c", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor12[0])}></button> : ""}
                   {FilterColor13[0] ? <button type="button" style={{backgroundImage: `url("https://i.pinimg.com/736x/db/48/79/db4879aa3ebd36d996fe2fba6a3ccbef.jpg")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor13[0])}></button> : ""}
                   {FilterColor14[0] ? <button type="button" style={{background: "#8c5b32", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor14[0])}></button> : ""}
+                  {FilterColor15[0] ? <button type="button" style={{background: "orange", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor15[0])}></button> : ""}
                   { }
                 </div>
                 <br />

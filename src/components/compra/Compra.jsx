@@ -6,13 +6,11 @@ import api from '../../api/api';
 import { useSelector } from 'react-redux';
 import ReactLoading from 'react-loading';
 import emailjs from "@emailjs/browser"
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 console.clear()
 
 function Compra() {
-
-  const navigate = useNavigate()
 
   const cart = useSelector(state => state.cart.cartItems)
   const cartTotal = useSelector(state => state.cart)
@@ -403,7 +401,7 @@ let prod2 = [
       <Logo2>
         <Link to="/" className='Logo'>Voltar para StylesTop</Link> 
       </Logo2>
-      {cart == "" ? navigate("/") :
+      {cart == "" ? <Example/> :
         <CompraStyle>
        <FormBox>
           <form onSubmit={handleSubmit}>

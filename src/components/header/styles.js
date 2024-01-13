@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  
   width: 100%;
   background-color: #000000;
   display: flex;
@@ -147,6 +148,10 @@ export const ContainerAMR = styled.div`
   padding: 2px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   text-align: center;
+
+  @media (max-width: 768px) {
+    background: #FDD201;
+  }
 
   & a {
     text-decoration: none;

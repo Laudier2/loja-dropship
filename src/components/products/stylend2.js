@@ -11,10 +11,10 @@ export const ProductProd = styled.div`
 
     & div {
     width: 300px;
-    height: 300px;
+    height: 200px;
     display: inline-block;
     margin-left: 10px;
-    margin-top: 25px;
+    margin-top: 10px;
 
     & img {
       width: 100%;

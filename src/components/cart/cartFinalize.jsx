@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { FaPlus, FaWindowMinimize} from "react-icons/fa";
 import { addCart, decrementCart, removeFromCart, cauculateTotal} from '../../redux/cart/cart';
-
+//teste
 
 export default function CartFinalize() {
     useEffect(() => {

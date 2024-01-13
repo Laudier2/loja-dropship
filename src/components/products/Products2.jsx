@@ -89,6 +89,7 @@ const Products = () => {
   const [categoroyC, setCategoryC] = useState([])
   const [categoroyS, setCategoryS] = useState([])
   const [categoroyCA, setCategoryCA] = useState([])
+  const [categoroyMA, setCategoryMa] = useState([])
   const [categoroyName, setCategoryName] = useState([])
 
   useEffect(() =>{    
@@ -103,11 +104,14 @@ const Products = () => {
       const resS = await reqS.data[0].products_categories
       const reqCA = await api.get("/category/d49e0541-24ca-4a45-a9d0-bfc5e294a444")
       const resCA = await reqCA.data[0].products_categories
+      const reqMA = await api.get("/category/7a07d7d3-9f53-407f-853f-f6df23fc578e")
+      const resMA = await reqMA.data[0].products_categories
 
       setCategory(resB)
       setCategoryC(resC)
       setCategoryS(resS)
       setCategoryCA(resCA)
+      setCategoryMa(resMA)
       setCategoryName(resName)
     })()
   },[])
@@ -127,13 +131,13 @@ const Products = () => {
 
   const NameCategory = categoroyName.map(res => res.name)
 
-  //console.log("test",categoroyName)
+  console.log("test",categoroyName)
 
   return (
     <>
     <Header/>
     <Slids />
-  {categoroy == "" && categoroyC == "" && categoroyS == "" && categoroyCA == "" ? <Example /> : 
+  {categoroy == "" && categoroyC == "" && categoroyS == "" && categoroyCA == "" && categoroyMA == "" ? <Example /> : 
     <div>
       <ProductProd>
       <section>
@@ -166,7 +170,7 @@ const Products = () => {
     <ProductProd>
       <section>
       <br />
-      <h2 className='ml-3'>{categoroyC == "" ? "" : NameCategory[1]}</h2>
+      <h2 className='ml-3'>{categoroyC == "" ? "" : NameCategory[8]}</h2>
       
       {categoroyC.map(res => (
           <Link to="/desc" onClick={() => LocalSto(res.products)}>
@@ -193,7 +197,7 @@ const Products = () => {
     <ProductProd>
       <section>
       <br />
-      <h2 className='ml-3'>{categoroyS == "" ? "" : NameCategory[5]}</h2>
+      <h2 className='ml-3'>{categoroyS == "" ? "" : NameCategory[4]}</h2>
       
       {categoroyS.map(res => (
           <Link to="/desc" onClick={() => LocalSto(res.products)}>
@@ -222,9 +226,36 @@ const Products = () => {
     <ProductProd>
       <section>
       <br />
-      <h2 className='ml-3'>{categoroyCA == "" ? "" : NameCategory[2]}</h2>
+      <h2 className='ml-3'>{categoroyCA == "" ? "" : NameCategory[7]}</h2>
       
       {categoroyCA.map(res => (
+          <Link to="/desc" onClick={() => LocalSto(res.products)}>
+            <div key={res.id}>
+              <img src={res.products.image[0]} alt="img" />
+              <h5>{res.products.name}</h5>
+              <h3>R${res.products.price}</h3>
+              <span>
+                <p>
+                  <FaCreditCard className='cartao'/> Em até 12x sem juros
+                </p>
+              </span>
+              <button>
+                DESCRIÇÃO
+              </button>
+            </div>
+          </Link>
+          ))
+      }
+      </section>  
+      
+    </ProductProd>
+
+    <ProductProd>
+      <section>
+      <br />
+      <h2 className='ml-3'>{categoroyMA == "" ? "" : NameCategory[1]}</h2>
+      
+      {categoroyMA.map(res => (
           <Link to="/desc" onClick={() => LocalSto(res.products)}>
             <div key={res.id}>
               <img src={res.products.image[0]} alt="img" />

@@ -8,7 +8,7 @@ import { AiOutlineWhatsApp } from "react-icons/ai";
 import { BsTruck } from "react-icons/bs";
 import { BsJournalText } from "react-icons/bs";
 import { LuPackageSearch } from "react-icons/lu";
-import { HiMiniMagnifyingGlass } from "react-icons/hi2"
+//import { HiMiniMagnifyingGlass } from "react-icons/hi2"
 
 
 import Cart from "../cart/index";

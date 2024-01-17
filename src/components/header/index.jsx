@@ -59,7 +59,7 @@ export function Header() {
       <Container>
        <form onChange={(e) => handleSearch(e)}>
         <input type="search" name="test" id="test" />
-        <HiMiniMagnifyingGlass className="lupa4" />
+        {/*<HiMiniMagnifyingGlass className="lupa4" />*/}
        </form>
        <DivContainer>
         <div>

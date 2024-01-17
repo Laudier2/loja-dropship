@@ -14,12 +14,16 @@ import { HiMiniMagnifyingGlass } from "react-icons/hi2"
 import Cart from "../cart/index";
 
 // Styles
-import { Container, Logo, Buttons, ContainerAMR, ContainerPRT} from "./styles";
+import { Container, Logo, Buttons, ContainerAMR, ContainerPRT, DivContainer} from "./styles";
+import { SeartResult } from "./SeartResult";
 
 export function Header() {
 
+  const [ dados, setDados ] = useState([])
+
   const [cartIsVisible, setCartIsVisible] = useState(false);
 
+  const products = useSelector(productSlace => productSlace.products.items)
   const length = useSelector((state) => state.cart.cartItems.length)
 
   const handleCartClick = () => {
@@ -27,6 +31,20 @@ export function Header() {
   };
 
   //console.log(category)
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    const value = e.target.value
+
+    setDados(value)
+  }
+
+  //const str = dados.substring(0, 10)
+
+  const filterData = products.filter(e => e.slug == dados)
+
+  console.log(filterData)
 
   return (
     <>
@@ -39,8 +57,18 @@ export function Header() {
       <a href="/"><AiFillAlert className="mb-2 h4"/> SUPER OFERTAS - StylesTop</a>
     </ContainerAMR>
       <Container>
+       <form onChange={(e) => handleSearch(e)}>
         <input type="search" name="test" id="test" />
-        <HiMiniMagnifyingGlass className="lupa"/>
+        <HiMiniMagnifyingGlass className="lupa4" />
+       </form>
+       <DivContainer>
+        <div>
+          {!filterData ? ""
+          : 
+          <SeartResult data={filterData} />  
+        }
+        </div>
+      </DivContainer>
         <Buttons>
           <div onClick={handleCartClick}>
             <b className="bg">{length}</b>

@@ -3,7 +3,7 @@ import ReactLoading from 'react-loading';
 import { useSelector } from 'react-redux';
 import { ProductProd, LoadingPage } from './stylend';
 import { FaCreditCard } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import api from '../../api/api';
@@ -30,8 +30,7 @@ const Example = () => (
 //const product = []
 
 const Products = () => {
-  
-  //const history = useHistory()
+  const navigate = useNavigate()
 
   const [promo, setPromocao] = useState([])
 
@@ -90,7 +89,11 @@ const Products = () => {
     console.log(dados)
   }
 
-  console.log()
+  
+  const Description = (e) => {
+    //console.log(e)
+    navigate("/desc")
+  }
 
   return (
     <>
@@ -108,7 +111,7 @@ const Products = () => {
               <span>
                 <FaCreditCard className='mt-1 m-1'/> Em até 12x sem juros
               </span>
-              <button>
+              <button onClick={Description}>
                 DESCRIÇÃO
               </button>
             </div>

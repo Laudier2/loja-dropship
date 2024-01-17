@@ -7,19 +7,19 @@ export const ProductProd = styled.div`
 
   & section {
     width: 100%;
-
+    
     & div {
-    width: 300px;
-    height: 300px;
-    display: inline-block;
-    margin-left: 10px;
-    margin-top: 25px;
+      width: 200px;
+      height: 300px;
+      display: inline-block;
+      margin-left: 10px;
+      margin-top: 25px;
 
-    & img {
-      width: 100%;
-      height: 30vh;
-      border-radius: 8px;
-    }
+      & img {
+        width: 100%;
+        height: 25vh;
+        border-radius: 8px;
+      }
 
     & h5 {
       width: 100%;
@@ -59,7 +59,7 @@ export const ProductProd = styled.div`
 
     }
     @media (max-width: 768px) {
-      width: 95%;
+      width: 100%;
 
       & img {
         width: 100%;

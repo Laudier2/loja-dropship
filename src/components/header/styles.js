@@ -20,30 +20,53 @@ export const Container = styled.div`
     text-align: center;
   }
 
-  & input {
+  & form {
     margin-left: 30%;
     width: 45%;
     border: none;
     border-radius: 20px;
-    background: #eee;
-    border-color: #eee;
 
-    &:hover {
-      border-color: #eee;
-      background: #eee;
+    & .lupa {
+      font-size: 30px;
+      position: absolute;
+      margin-top: -26px;
+      margin-left: 38.8%;
+
+      @media(max-width: 768px){
+        width: 100%;
+        margin-top: -30px;
+        margin-left: 0%;
+      }
     }
 
-    @media(max-width: 768px){
-      width: 100%;
-      margin-bottom: 5px;
-      margin-left: 10%;
+    & input {
+      align-items: center;
+      margin: auto;
+      display: flex;
+      width: 75%;
+      border: none;
+      border-radius: 20px;
+      background: #eee;
+      border-color: #eee;
+
+      &:hover {
+        border-color: #eee;
+        background: #eee;
+      }
+
+      @media(max-width: 768px){
+        width: 100%;
+        margin-bottom: 5px;
+        margin-left: 10%;
+      }
     }
   }
 
   & .lupa2 {
     margin-right: 17%;
     margin-top: 5px;
-    font-size: 2vw;
+    font-size: 5vw;
+    background: #eee;
 
     @media(max-width: 768px) {
       margin-right: 10%;
@@ -52,7 +75,7 @@ export const Container = styled.div`
     }
   }
 
-  & .lupa {
+  & .lupa3 {
     position: absolute;
     margin-left: 71.3%;
     margin-top: 0.5px;
@@ -334,4 +357,40 @@ export const IcomCategory = styled.div`
   margin-left: 48px;
   margin-top: 10px;
 `
+export const DivContainer = styled.div`
+  position: absolute;
+  border-radius: 6px;
+  width: 24%;
+  margin-top: 37px;
+  background: #000000;
+  text-decoration: none;
+  
+  & p {
+    position: absolute;
+    text-decoration: none;
+    margin-left: 60px;
+    margin-top: 6px;
+    cursor: pointer;
+  }
 
+  & img {
+    width: 70px;
+    height: 80px;
+    margin-left: -15px;
+    margin-top: 6px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    position: inherit;
+    width: 100%;
+    margin-left: -300px;
+    font-size: vw;
+    background: #000000;
+
+    & .lupa4 {
+      color: white;
+    }
+  }
+  
+`

@@ -17,6 +17,7 @@ import { Header } from '../header';
 
 
 const Descricao = () => {
+  //window.location.reload()
 
   //console.log(orderData)
 

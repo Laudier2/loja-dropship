@@ -8,7 +8,7 @@ import { AiOutlineWhatsApp } from "react-icons/ai";
 import { BsTruck } from "react-icons/bs";
 import { BsJournalText } from "react-icons/bs";
 import { LuPackageSearch } from "react-icons/lu";
-//import { HiMiniMagnifyingGlass } from "react-icons/hi2"
+import { HiMiniMagnifyingGlass } from "react-icons/hi2"
 
 
 import Cart from "../cart/index";
@@ -58,14 +58,8 @@ export function Header() {
     </ContainerAMR>
       <Container>
        <form onChange={(e) => handleSearch(e)}>
-        <input type="search" name="test" id="test" 
-          style={{
-            width: "220%", 
-            marginLeft: "-55px",
-            
-          }} 
-        />
-        {/*<HiMiniMagnifyingGlass className="lupa4" />*/}
+        <input type="search" name="test" id="test" placeholder="Pesquisar"/>
+        {/*<HiMiniMagnifyingGlass className="lupaMarge" />*/}
        </form>
        <DivContainer>
         <div>

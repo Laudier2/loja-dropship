@@ -26,19 +26,6 @@ export const Container = styled.div`
     border: none;
     border-radius: 20px;
 
-    & .lupa {
-      font-size: 30px;
-      position: absolute;
-      margin-top: -26px;
-      margin-left: 38.8%;
-
-      @media(max-width: 768px){
-        width: 100%;
-        margin-top: -30px;
-        margin-left: 0%;
-      }
-    }
-
     & input {
       align-items: center;
       margin: auto;
@@ -53,27 +40,22 @@ export const Container = styled.div`
       &:hover {
         background: #eee;
         border: none;
-      }
+      }    
 
-      @media(max-width: 768px){
-        width: 100%;
-        margin-bottom: 5px;
-        margin-left: 10%;
-      }
     }
-  }
-
-  & .lupa2 {
-    margin-right: 17%;
-    margin-top: 5px;
-    font-size: 5vw;
-    background: #eee;
-
-    @media(max-width: 768px) {
-      margin-right: 10%;
-      margin-top: -1px;
-      font-size: 10vw;
+    @media(max-width: 768px){
+      width: 1100px;
+      margin-left: 2%;
     }
+
+    & .lupaMarge {
+      margin-top: -28px;
+      margin-left: 69%;
+      font-size: 30px;
+      position: absolute;
+      color: #000000;
+    }
+  
   }
 
   & .lupa3 {
@@ -393,7 +375,7 @@ export const DivContainer = styled.div`
       position: absolute;
       width: 60%;
       text-decoration: none;
-      margin-left: -8%;
+      margin-left: -50%;
       margin-top: 8px;
       font-size: 3vw;
       cursor: pointer;
@@ -402,7 +384,7 @@ export const DivContainer = styled.div`
     & img {
       width: 70px;
       height: 80px;
-      margin-left: -50%;
+      margin-left: -380%;
       margin-top: 6px;
       cursor: pointer;
     }

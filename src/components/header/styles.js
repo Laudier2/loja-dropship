@@ -384,10 +384,28 @@ export const DivContainer = styled.div`
   
   @media (max-width: 768px) {
     position: inherit;
-    width: 100%;
-    margin-left: -300px;
+    width: 80%;
+    margin-left: -100px;
     font-size: vw;
     background: #000000;
+
+    & p {
+      position: absolute;
+      width: 60%;
+      text-decoration: none;
+      margin-left: -8%;
+      margin-top: 8px;
+      font-size: 3vw;
+      cursor: pointer;
+    }
+
+    & img {
+      width: 70px;
+      height: 80px;
+      margin-left: -50%;
+      margin-top: 6px;
+      cursor: pointer;
+    }
 
     & .lupa4 {
       color: white;
@@ -395,4 +413,3 @@ export const DivContainer = styled.div`
   }
   
 `
-

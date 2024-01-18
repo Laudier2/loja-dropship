@@ -58,7 +58,13 @@ export function Header() {
     </ContainerAMR>
       <Container>
        <form onChange={(e) => handleSearch(e)}>
-        <input type="search" name="test" id="test" />
+        <input type="search" name="test" id="test" 
+          style={{
+            width: "220%", 
+            marginLeft: "-55px",
+            
+          }} 
+        />
         {/*<HiMiniMagnifyingGlass className="lupa4" />*/}
        </form>
        <DivContainer>

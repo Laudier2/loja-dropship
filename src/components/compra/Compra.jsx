@@ -12,12 +12,13 @@ console.clear()
 
 function Compra() {
 
+  //Aqui estamos recebendo os respequitivos valores de arrey contido no estados gerenciado pelo redux
   const cart = useSelector(state => state.cart.cartItems)
   const cartTotal = useSelector(state => state.cart)
   const tmItens = useSelector(state => state.cart.tmMedidas)
   const tmCor = useSelector(state => state.cart.tmCores)
 
-  console.log(tmCor[0].cor)
+  //console.log(tmCor[0].cor)
 
   const productAmount = [cartTotal.cartTotalAmount]
   //const productQuantity = [cartTotal.cartTotalQuantyti]
@@ -25,7 +26,8 @@ function Compra() {
 
   const GeraCode = Math.random()
   const ConvertCode = JSON.stringify(GeraCode)
-  
+
+  // Aqui abaixo estamos criando arrey de estados para receber os valores do input vindo co form compra com useSatate
   const [ name, setName ] = useState("")
   const [ email, setEmail] = useState("")
   const [ phone, setPhone] = useState("")
@@ -36,6 +38,7 @@ function Compra() {
   const [ number, setNumber ] = useState("")
   const [ district, setDistrict ] = useState("")
   const [ house, setHouse ] = useState("")
+  const [ cpf, setCpf ] = useState("")
   const [ code_compra ] = useState(ConvertCode)
   //const [ productslist] = useState(res)
   
@@ -44,7 +47,7 @@ function Compra() {
   //console.log(productslist)
 
   const Example = () => (
-    /*
+    /* Deixei esse valores aqui para lembra os metodos que posso usar no ReactLoading
     blank
     balls
     bars
@@ -55,11 +58,14 @@ function Compra() {
     spinningBubbles
     spokes 
     */
+
+    //Aqui ja criamos um componente com ReactLoading para aaguarda o carregamento da pagia
   <LoadingPage>
     <ReactLoading type='spokes' color='aqua' height={'100%'} width={'100%'}  />
   </LoadingPage>
 );
 
+  //Criei esse arrey para os dados formatado para melhor manuzeio dos dados que vem do input via useState
   const data = {
     name,
     email,
@@ -70,17 +76,19 @@ function Compra() {
     street,
     number,
     district,
+    cpf,
     /*productslist,*/
     apartment_or_house: house,
     code_compra
   }
 
+  //Aqui crio variaveis que recebe os valores que quero
   const name2 = cart[0].name ? cart[0].name : ""
   const price2 = cart[0].name ? productAmount[0] : ""
   const image2 = cart[0].name ? cart[0].image[0] : ""
   //const description2 = cart[0].name ? cart[0].description : ""
 
-    
+  //E usso elas para esse arrey que vai ser enviado para api do mercado pado contida em minha api
   let prod = [
     {
         title: name2,
@@ -91,7 +99,7 @@ function Compra() {
     }
   ]
 
-
+//E usso elas para esse arrey que vai ser enviado para api do mercado pado contida em minha api
 let prod2 = [
   {
       title: "Fone",
@@ -122,7 +130,7 @@ let prod2 = [
 
       if(cart[0] && cart[1] === undefined && cart[2] === undefined && cart[3] == undefined && cart[4] == undefined){
 
-        let adress = `Estado: ${data.state}, Cidade: ${data.city}, Cep: ${data.cep}, Barrio: ${data.district}, Rua: ${data.street}, Numero: ${data.number}, AP/Casa: ${data.apartment_or_house}`
+        let adress = `Estado: ${data.state} , Cidade: ${data.city} , Cep: ${data.cep} , Barrio: ${data.district} , Rua: ${data.street}, Numero: ${data.number} , AP/Casa: ${data.apartment_or_house} , CPF: ${cpf}`
     
         let res1 = JSON.stringify(cart[0].image[0])
         let res4 = JSON.stringify(adress)
@@ -398,14 +406,12 @@ let prod2 = [
 
   return (
     <>
-      <Logo2>
-        <Link to="/" className='Logo'>Voltar para StylesTop</Link> 
-      </Logo2>
+     
       {cart == "" ? <Example/> :
         <CompraStyle>
        <FormBox>
           <form onSubmit={handleSubmit}>
-          
+          <br />
             <Title>
               Preencha com seus dados
             </Title>
@@ -528,12 +534,26 @@ let prod2 = [
                 required
               />
               <label htmlFor="">Complemento AP/CASA</label>
-            </InputBox>       
+            </InputBox>     
+            <Logo2>
+              <Link to="/" className='Logo'>Voltar para StylesTop</Link> 
+            </Logo2>
+            <InputBox>
+              <ion-icon name="mail-outline"></ion-icon>
+              <input 
+                type="text" 
+                name="house" 
+                id="house" 
+                onChange={(e) => setCpf(e.target.value)} 
+                value={house.cpf}  
+                required
+              />
+              <label htmlFor="">CPF/CNPJ</label>
+            </InputBox>         
             <ButtonBox type="submit">
               Finaliza Compra
             </ButtonBox>
           </form>  
-          
       </FormBox>
     </CompraStyle>}
     </>

@@ -127,7 +127,7 @@ export const TableCartFinalize = styled.div`
 
         & .divimg {
           position: absolute;
-          margin-top: -5px;
+          margin-top: -16px;
         }
 
         & .divnome {

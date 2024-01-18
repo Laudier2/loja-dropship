@@ -63,7 +63,7 @@ export const Title = styled.h1`
 export const InputBox = styled.div`
     position: relative;
     margin: 30px;
-    width: 26%;
+    width: 30%;
     border-bottom: 2px solid #fff;
     display: inline-block;
 
@@ -81,6 +81,7 @@ export const InputBox = styled.div`
 
         @media (max-width: 768px){
             padding: 0;
+            margin-top: -12px;
         }
     }
 
@@ -115,8 +116,7 @@ export const InputBox = styled.div`
 `
 
 export const ButtonBox = styled.button`
-    margin-top: 160px;
-    margin-left: -60px;
+    margin-top: -60px;
     width: 50%;
     height: 48px;
     border-radius: 48px;

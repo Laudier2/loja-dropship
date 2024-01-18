@@ -158,7 +158,7 @@ export default function CartFinalize() {
                         <Link to="/compra">Finaliza comprar</Link>
                     </Button>
                     }
-                    <SubTotal>Total: R$ {cart2.cartTotalAmount}</SubTotal>
+                    <SubTotal>Total: R$ {cart2.cartTotalAmount},00</SubTotal>
                 </div>
             }
         </>

@@ -262,13 +262,13 @@ export const ContainerDesc = styled.div`
 & .divdescSecudare {
   width: 13%;
   margin: auto;
-  margin-top: -25.2%;
+  margin-top: -26.5%;
   margin-left: 70%;
   font-size: 1vw;
 
   @media (max-width: 1750px) {
     position: inherit;
-    margin-top: -35%;
+    margin-top: -28%;
   }
 
   @media (max-width: 1550px) {
@@ -315,9 +315,75 @@ export const ContainerDesc = styled.div`
 `
 export const ContainerSobre = styled.div`
   width: 50%;
-  margin: 50px;
+  margin-left: 10%;
+  margin-top: 5%;
+
+  @media (max-width: 1768px) {
+    width: 80%;
+    margin-top: 1%;
+  }
 
   @media (max-width: 768px) {
     width: 80%;
+    margin: 10%;
+  }
+`
+
+export const ProductOfertas = styled.div`
+  width: 90%;
+  margin: auto;
+  display: flex;
+
+  & div {
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+    margin: 3px;
+    margin-top: 15px;
+
+    & h3 {
+      font-size: 0.8vw;
+    }
+
+    & p {
+      font-weight: bold;
+    }
+    
+    & button {
+      background-color: aqua;
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin: 3px;
+      padding: 5px;
+
+      &:hover {
+        background-color: #00FF00;
+      }
+    }
+    
+    & img {
+      width: 100%;
+      height: 30vh;
+    }
+
+    @media (max-width: 768px) {
+
+      display: inline-block;
+      width: 100px;
+      height: 200px;
+      margin: 3px;
+      margin-top: 15px;
+
+      & button {
+        font-size: 2.8vw;
+      }
+    
+      & img {
+        width: 100%;
+        height: 18vh;
+      }
+    }
   }
 `

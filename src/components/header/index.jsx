@@ -37,7 +37,7 @@ export function Header() {
 
     const value = e.target.value
 
-    setDados(value)
+    setDados(value.toLowerCase())
   }
 
   //const str = dados.substring(0, 10)

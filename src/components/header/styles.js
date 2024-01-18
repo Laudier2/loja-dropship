@@ -48,10 +48,11 @@ export const Container = styled.div`
       border-radius: 20px;
       background: #eee;
       border-color: #eee;
+      text-align: center;
 
       &:hover {
-        border-color: #eee;
         background: #eee;
+        border: none;
       }
 
       @media(max-width: 768px){
@@ -358,7 +359,7 @@ export const IcomCategory = styled.div`
   margin-top: 10px;
 `
 export const DivContainer = styled.div`
-  position: absolute;
+  position: inherit;
   border-radius: 6px;
   width: 24%;
   margin-top: 37px;
@@ -368,15 +369,15 @@ export const DivContainer = styled.div`
   & p {
     position: absolute;
     text-decoration: none;
-    margin-left: 60px;
-    margin-top: 6px;
+    margin-left: -39%;
+    margin-top: 8px;
     cursor: pointer;
   }
 
   & img {
     width: 70px;
     height: 80px;
-    margin-left: -15px;
+    margin-left: -200%;
     margin-top: 6px;
     cursor: pointer;
   }
@@ -394,3 +395,4 @@ export const DivContainer = styled.div`
   }
   
 `
+

@@ -10,61 +10,61 @@ export const ProductProd = styled.div`
     width: 100%;
 
     & div {
-    width: 300px;
-    height: 230px;
-    display: inline-block;
-    margin-left: 10px;
-    margin-top: 10px;
-
-    & img {
-      width: 100%;
-      height: 80%;
-      border-radius: 8px;
-      margin-bottom: 5px;
-      
-    }
-
-    & h5 {
-      width: 100%;
-      color: #000000;
-      font-weight: bold;
-      font-size: 13px;
-    }
-
-    & h3 {
-      color: #000000;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    & span {
-      width: 60%;
-      margin: auto;
-      display: flex;
-      text-align: center;
-      color: rgba(10, 10, 10, 0.687);
-
-      & .cartao {
-        position: absolute;
-        margin-left: -25px;
-        margin-top: 2px;
-      }
-
-     @media screen and (max-width: 780px) {
-      & .cartao {
-        position: absolute;
-        margin-left: -12px;
-      }
-      @media (max-width: 768px) {
-      width: 95%;
+      width: 200px;
+      height: 230px;
+      display: inline-block;
+      margin-left: 10px;
+      margin-top: 10px;
 
       & img {
         width: 100%;
-        height: 10vh;
+        height: 20vh;
         border-radius: 8px;
+        margin-bottom: 5px;
+        
+      }
+
+      & h5 {
+        width: 100%;
+        color: #000000;
+        font-weight: bold;
+        font-size: 13px;
+      }
+
+      & h3 {
+        color: #000000;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      & span {
+        width: 60%;
+        margin: auto;
+        display: flex;
+        text-align: center;
+        color: rgba(10, 10, 10, 0.687);
+
+        & .cartao {
+          position: absolute;
+          margin-left: -25px;
+          margin-top: 2px;
+        }
+
+      @media screen and (max-width: 780px) {
+        & .cartao {
+          position: absolute;
+          margin-left: -12px;
+        }
+        @media (max-width: 768px) {
+        width: 95%;
+
+        & img {
+          width: 100%;
+          height: 10vh;
+          border-radius: 8px;
+        }
       }
       }
-     }
     }
 
     & button {

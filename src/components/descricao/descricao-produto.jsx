@@ -8,12 +8,14 @@ import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
 import ReactLoading from 'react-loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCart, addCor, addTm } from '../../redux/cart/cart';
-import {  ConatinerMain, ContainerDesc, ContainerSobre } from './styles';
-import { useNavigate } from 'react-router-dom';
+import {  ConatinerMain, ContainerDesc, ContainerSobre, ProductOfertas } from './styles';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaCreditCard } from "react-icons/fa";
 import { TiStarHalfOutline } from "react-icons/ti";
+import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md'
 import { GoStarFill } from "react-icons/go";
 import { Header } from '../header';
+import './style.css'
 
 
 const Descricao = () => {
@@ -25,6 +27,8 @@ const Descricao = () => {
   
   const [dataCores, setDatacores] = useState('')
   const [dataTamanho, setTamanho] = useState('')
+  const [load, setLoad] = useState(false)
+  const [ scollx, setScollx ] = useState(-400)
 
   console.log(dataCores)
 
@@ -258,6 +262,24 @@ console.log(FilterColor2[0], FilterColor1[0])
     }   
   }
 
+  const handleLeftArrow = () => {
+    let x = scollx - Math.round(window.innerWidth / 2);
+    let listw = product.length * 150;
+    if((window.innerWidth - listw) > x) {
+      x = (window.innerWidth - listw) - 60;
+    }
+    setScollx(x)
+  }
+
+  const handleRightArrow = () => {
+    
+    let x = scollx + Math.round(window.innerWidth / 2);
+    if(x > 0) {
+      x = 0;
+    }
+    setScollx(x)
+  }
+
 
   return (
     <>
@@ -446,6 +468,68 @@ console.log(FilterColor2[0], FilterColor1[0])
           </div>
         }
       </ConatinerMain>
+      <ProductOfertas>
+        <section>
+        {product.map(e => (
+          <div key={e.id}>
+            <img src={e.image} alt={e.title} />
+            <div>
+              <h3>{e.name}</h3>
+              <p>R${e.price},00</p>
+              <button >Ver mais detalhes</button>
+            </div>
+          </div>
+        ))}
+        </section>
+      </ProductOfertas>
+      <div className="movieRow">
+      <div className="movieRow--left">
+        <MdNavigateBefore style={{
+          fontSize: 50, 
+          color: "#000", 
+          background: "#FFF"           
+        }} onClick={handleLeftArrow} className="imgBoder" />
+      </div>
+      <div className="movieRow--right">
+        <MdNavigateNext style={{
+          fontSize: 50, 
+          color: "#000", 
+          background: "#FFF" 
+        }} onClick={handleRightArrow} className="imgBoder" />
+      </div>
+      
+      
+      
+      <div className="movieRow--listarea" >
+        <div className="movieRow--list" style={{
+            marginLeft: scollx,
+            width: product.length * 150
+          }}>
+        {product.length > 0 && product.map(e => (
+          <Link to={`/desc/${e.id}`}>
+            <div key={e.id} className="movieRow--item">
+              <div className="card-group card border-0">
+                <div className="">
+                  <img className="card-img-top" src={e.image} alt="Card cap" />
+                  <div className="card-body">
+                    <strong className="card-title text-white" style={
+                      {
+                        textAlign: "center",
+                        fontWeight: "bold",
+                        fontSize: 20
+                      }
+                      }>{e.title}</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
+          
+        ))}
+        </div>
+        {!!load && ""}
+      </div>   
+  </div>
     </>
   );
 }

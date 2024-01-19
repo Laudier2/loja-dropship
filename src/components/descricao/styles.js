@@ -262,13 +262,13 @@ export const ContainerDesc = styled.div`
 & .divdescSecudare {
   width: 13%;
   margin: auto;
-  margin-top: -26.5%;
+  margin-top: -32%;
   margin-left: 70%;
   font-size: 1vw;
 
   @media (max-width: 1750px) {
     position: inherit;
-    margin-top: -28%;
+    margin-top: -33%;
   }
 
   @media (max-width: 1550px) {

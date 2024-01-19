@@ -13,13 +13,13 @@ export default function SlidsProducts() {
             <div className="carousel-inner" style={{height: "10%"}}>
                 <ContainerSlid>
                     <div className="carousel-item active">
-                    <img src="https://piracicabamktdigital.com.br/wp-content/uploads/2023/03/Banner-Promocao-Dia-dos-Pais-1-1536x768.jpg" style={{height: "10%"}} className="d-block w-100" alt="img"/>
+                    <img src="https://piracicabamktdigital.com.br/wp-content/uploads/2023/03/Banner-Promocao-Dia-dos-Pais-1-1536x768.jpg" className="d-block w-100" alt="img"/>
                     </div>
                     <div className="carousel-item">
-                    <img src="https://img.freepik.com/vector-premium/oferta-venta-ano-nuevo-diseno-banner_220809-288.jpg" style={{height: "10%"}} className="d-block w-100" alt="img"/>
+                    <img src="https://img.freepik.com/vector-premium/oferta-venta-ano-nuevo-diseno-banner_220809-288.jpg" className="d-block w-100" alt="img"/>
                     </div>
                     <div className="carousel-item">
-                    <img src="https://img.freepik.com/vetores-premium/design-de-banner-horizontal-para-venda-de-moda_601782-11.jpg?w=2000" style={{height: "10%"}} className="d-block w-100" alt="img"/>
+                    <img src="https://img.freepik.com/vetores-premium/design-de-banner-horizontal-para-venda-de-moda_601782-11.jpg?w=2000" className="d-block w-100" alt="img"/>
                     </div>
                 </ContainerSlid>
             </div>

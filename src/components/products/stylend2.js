@@ -48,6 +48,11 @@ export const ProductProd = styled.div`
           position: absolute;
           margin-left: -25px;
           margin-top: 2px;
+
+        }
+        & p {
+          font-size: 0.7vw;
+          color: #00FF00;
         }
 
       @media screen and (max-width: 780px) {
@@ -68,7 +73,7 @@ export const ProductProd = styled.div`
     }
 
     & button {
-      background-color: aqua; /*#00FF00*/
+      background-color: rgba(0, 255, 255, 0.39); /*#00FF00*/
       width: 90%;
       margin: auto;
       display: block;
@@ -79,7 +84,7 @@ export const ProductProd = styled.div`
       font-weight: bolder;
       
       &:hover {
-        background-color: #00FF00;
+        background-color: aqua;
       }
 
     }

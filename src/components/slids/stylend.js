@@ -168,6 +168,12 @@ export const ContainerPRT = styled.div`
 
 export const ContainerSlid = styled.div`
 
+  & div {
+    & img {
+      height: 100vh;
+    }
+  }
+
   @media (max-width: 768px) {
    & div {
     & img {      

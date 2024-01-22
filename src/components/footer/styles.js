@@ -105,15 +105,16 @@ export const ContainerFooter = styled.div`
       margin-left: 0%;
     }
 
-    & button {
+    & .btnInput {
       background-color: aqua;
       padding: 10px;
       border: none;
-      width: 60px;
+      width: 80px;
+      text-align: center;
       border-radius: 8px;
 
       &:hover {
-        background-color: #7CFC00; /*teal*/
+        background-color: aquamarine; /*teal*/
       }
 
       @media (max-width: 768px) {

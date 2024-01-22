@@ -34,7 +34,7 @@ export default function Footer() {
 				<form method='post' name="contact" nelify>
 					<input type="text" placeholder='Nome' />
 					<input type="email" placeholder='E-mail' />
-					<button>ok</button>
+					<input type="submit" value="Enviar" className='btnInput' />
 				</form>
 			</ContainerFooter>
 			<ContainerFooter2>

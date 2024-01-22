@@ -52,7 +52,7 @@ export const ProductProd = styled.div`
         }
         & p {
           font-size: 0.7vw;
-          color: #00FF00;
+          //color: #00FF00;
         }
 
       @media screen and (max-width: 780px) {

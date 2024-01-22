@@ -8,22 +8,6 @@ import { Promocao } from '../Cadastro/styled';
 export default function FormularioCadastro(props) {
   //console.log(props.idAtual)
 
-  /**
-   * Essa variável é quem determina os valores iniciais dos input citado no values do useState
-   */
- const camposIniciasDeValores = {
-    id: "",
-    name: "",
-    image: "",
-    size: "",
-    color:"",
-    price: "",
-    quantity: "",
-    slug: "",
-    bar_code: "",
-    description: "",
-  };
-
   const camposIniciasDeValoresPromo = {
     name: "",
     image: "",
@@ -35,11 +19,39 @@ export default function FormularioCadastro(props) {
     description: "",
   };
  
- const [values, setValues] = useState(camposIniciasDeValores);
- const [pro, setPro] = useState(camposIniciasDeValoresPromo);
- //const history = useNavigate();
- 
- console.log(props.product)
+  const [img0, setImg0] = useState("");
+  const [img1, setImg1] = useState("");
+  const [img2, setImg2] = useState("");
+  const [img3, setImg3] = useState("");
+  const [img4, setImg4] = useState("");
+  
+  const [pro] = useState(camposIniciasDeValoresPromo);
+
+  //const hi5story = useNavigate();
+  const dataImage = [`${img0}`, `${img1}`, `${img2}`, `${img3}`, `${img4}`]
+
+  console.log(dataImage)
+
+  /**
+   * Essa variável é quem determina os valores iniciais dos input citado no values do useState
+   */
+    const camposIniciasDeValores = {
+    id: "",
+    name: "",
+    image: dataImage,
+    size: "",
+    color:"",
+    price: "",
+    quantity: "",
+    slug: "",
+    bar_code: "",
+    description: "",
+    };
+
+
+  const [values, setValues] = useState(camposIniciasDeValores);
+
+  console.log("teste", values)
 
   const URL = "https://api-store-v4bm.onrender.com/product"
 
@@ -55,11 +67,36 @@ export default function FormularioCadastro(props) {
     setValues({ ...values, [name]: value });
   };
 
-  const onChange2 = (ev) => {
-    const { name, value } = ev.target;
+  const onChangeImg0 = (ev) => {
+    const value =  ev.target.value;
 
-    setPro({ ...values, [name]: value });
+    setImg0(value);
   };
+
+  const onChangeImg1 = (ev) => {
+    const value =  ev.target.value;
+
+    setImg1(value);
+  };
+  
+  const onChangeImg2 = (ev) => {
+    const value =  ev.target.value;
+
+    setImg2(value);
+  };
+  
+  const onChangeImg3 = (ev) => {
+    const value =  ev.target.value;
+
+    setImg3(value);
+  };
+  
+  const onChangeImg4 = (ev) => {
+    const value =  ev.target.value;
+
+    setImg4(value);
+  };  
+
   /**
    * Aqui estamos fazendo uma espesse de filtragem do produto via id via props,
    * lembra da variável que eivamos para o formulário via props a idAtual, então é ela que
@@ -87,7 +124,7 @@ export default function FormularioCadastro(props) {
      */
     ev.preventDefault();
 
-    console.log(values)
+    //console.log(values)
 
     /**
      * Agora estamos criando uma variável method com uma condição.
@@ -95,7 +132,7 @@ export default function FormularioCadastro(props) {
      */
     const method = props.idAtual ? 'put' : 'post';
     const url = props.idAtual
-      ? `${URL}${props.idAtua0}`
+      ? `${URL}/${values}`
       : `${URL}`;
 
     /**
@@ -119,12 +156,7 @@ export default function FormularioCadastro(props) {
         }, 1000)
       })
       .catch((err) => {
-        alert('Os campos sao obrigatorio ou usuario email ja cadastrado, tente novamente');
-        /*history('/cadastro');*/
-        setTimeout(() => {
-          ///window.location.reload()
-        }, 1000)
-
+        alert('Os campos sao obrigatorio ou ', err);
       });
   }
 
@@ -152,6 +184,7 @@ export default function FormularioCadastro(props) {
      * Seja para criar um produto ou para atualizar
      */
     api[method](url, props.product)
+    console.log(props.product)
       .then(() => {
         if (props.idAtual === '') {
           toast.success('O produto foi Criado com sucesso');
@@ -168,7 +201,7 @@ export default function FormularioCadastro(props) {
   }
 
   //const imagem = [values.image]
-  console.log(values.image)
+  //console.log(values.image)
 
   return (
     <>
@@ -202,58 +235,50 @@ export default function FormularioCadastro(props) {
             <input
               type="text"
               className="input"            
-              placeholder="URL da Imagem do produto"
-              name="image"
-              value={values.image[0] ? values.image[0] : ""}
-              onChange={onChange}
+              placeholder="URL da Imagem"
+              name="image0"
+              value={values.image[0] ? values.image[0] : img0}
+              onChange={onChangeImg0}
             />
             
             <input
               type="text"
               className="input"            
-              placeholder="URL da Imagem do produto"
+              placeholder="URL da Imagem"
+              name="image1"
               value={values.image[1]}
-              onChange={onChange}
+              onChange={onChangeImg1}
             />
             
             <input
               type="text"
               className="input"           
-              placeholder="URL da Imagem do produto"
-              name="image"
+              placeholder="URL da Imagem"
+              name="image2"
               value={values.image[2]}
-              onChange={onChange}
+              onChange={onChangeImg2}
             />
             <input
               type="text"
               className="input"
-              placeholder="URL da Imagem do produto"
-              name="image"
+              placeholder="URL da Imagem"
+              name="image3"
               value={values.image[3]}
-              onChange={onChange}
+              onChange={onChangeImg3}
             />
             
             <input
               type="text"
               className="input"
-              placeholder="URL da Imagem do produto"
-              name="image"
+              placeholder="URL da Imagem"
+              name="image4"
               value={values.image[4]}
-              onChange={onChange}
+              onChange={onChangeImg4}
           />   
-          <input
-              type="text"
-              className="input"
-              placeholder="URL da Imagem do produto"
-              name="image"
-              value={values.image[5]}
-              onChange={onChange}
-          />    
-            
-        
+    
           <input
             type="text"            
-            placeholder="Nome do produto"
+            placeholder="Nome"
             name="name"
             value={values.name}
             onChange={onChange}
@@ -261,7 +286,7 @@ export default function FormularioCadastro(props) {
          
           <input
             type="text"
-            placeholder="Valor do produto"
+            placeholder="Preço"
             name="price"
             value={values.price}
             onChange={onChange}
@@ -269,30 +294,30 @@ export default function FormularioCadastro(props) {
          
           <input
             type="text"              
-            placeholder="Slug do produto"
+            placeholder="Slug"
             name="slug"
             value={values.slug}
             onChange={onChange}
           />
             <input
             type="text"              
-            placeholder="bar_code do produto"
+            placeholder="Bar_code"
             name="bar_code"
             value={values.bar_code}
             onChange={onChange}
           />
           <input
             type="text"            
-            placeholder="Quantidade disponivel"
-            name="quntity"
+            placeholder="Quantidade"
+            name="quantity"
             value={values.quantity}
             onChange={onChange}
           />
           
           <input
             type="text"            
-            placeholder="Tamnho ou medidas do produto"
-            name="desc"
+            placeholder="Tamnho"
+            name="size"
             value={values.size}
             onChange={onChange}
           />
@@ -300,18 +325,18 @@ export default function FormularioCadastro(props) {
           <input
             type="text"            
             placeholder="Cores do produto"
-            name="desc"
+            name="color"
             value={values.color}
             onChange={onChange}
           />
          
-          <textarea
+          <input
             type="text"            
-            placeholder="Nome do produto"
-            name="desc"
+            placeholder="Descrição"
+            name="description"
             value={values.description}
             onChange={onChange}
-          />
+            style={{width: "80%", height: "15vh", wordBreak: "keep-all"}}/>
         
         <input
           type="submit"
@@ -351,7 +376,7 @@ export default function FormularioCadastro(props) {
               placeholder="URL da Imagem do produto"
               name="image"
               value={pro.image[0]}
-              onChange={onChange2}
+              onChange={onChange}
             />
             
             <input
@@ -360,7 +385,7 @@ export default function FormularioCadastro(props) {
               placeholder="URL da Imagem do produto"
               name="image"
               value={pro.image[1]}
-              onChange={onChange2}
+              onChange={onChange}
             />
             
             <input
@@ -369,7 +394,7 @@ export default function FormularioCadastro(props) {
               placeholder="URL da Imagem do produto"
               name="image"
               value={pro.image[2]}
-              onChange={onChange2}
+              onChange={onChange}
             />
             <input
               type="text"
@@ -377,7 +402,7 @@ export default function FormularioCadastro(props) {
               placeholder="URL da Imagem do produto"
               name="image"
               value={values.image[3]}
-              onChange={onChange2}
+              onChange={onChange}
             />
             
             <input
@@ -386,7 +411,7 @@ export default function FormularioCadastro(props) {
               placeholder="URL da Imagem do produto"
               name="image"
               value={pro.image[4]}
-              onChange={onChange2}
+              onChange={onChange}
           />   
        <input
        className='btninput'

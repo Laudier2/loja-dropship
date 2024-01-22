@@ -8,6 +8,7 @@ export const FormularioCreateUpdate = styled.div`
 
     & button {
         background: #5FC8CC;
+        border-radius: 8px;
     }
 
     & img {
@@ -17,7 +18,7 @@ export const FormularioCreateUpdate = styled.div`
     }
 
     & .input {
-        width: 100px;
+        width: 121px;
         margin: 2px;
         display: inline-block;
     }
@@ -69,7 +70,7 @@ export const FormularioCreateUpdate2 = styled.div`
     }
 
     & .btninput {
-        background: #5FC8CC;
+        background: rgba(0, 255, 255, 0.39);
 
         &:hover {
             background: #9CE496;

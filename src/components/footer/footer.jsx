@@ -31,7 +31,7 @@ export default function Footer() {
 			<ContainerFooter>
 				<h2>StylesTop</h2>
 				<span>Receba novidades em primeira mão, deixe seu e-mail aqui!</span>
-				<form action="">
+				<form method='post' name="contact" nelify>
 					<input type="text" placeholder='Nome' />
 					<input type="email" placeholder='E-mail' />
 					<button>ok</button>

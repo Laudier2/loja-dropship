@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.min.css'
 import { ErrorBoundary } from "react-error-boundary";
-import Products from "./components/products/Products2";
+import Products from "./components/products/Products";
 import Desc from "./components/descricao/descricao-produto";
 import Cart from "./components/cart";
 import CartFinalize from "./components/cart/cartFinalize";

@@ -32,9 +32,10 @@ export default function Footer() {
 				<h2>StylesTop</h2>
 				<span>Receba novidades em primeira mão, deixe seu e-mail aqui!</span>
 				<form method='post' name="contact" nelify>
-					<input type="text" placeholder='Nome' />
-					<input type="email" placeholder='E-mail' />
+					<input type="text" placeholder='Nome' name='name' />
+					<input type="email" placeholder='E-mail' name='email' />
 					<input type="submit" value="Enviar" className='btnInput' />
+					<textarea name="message" id="" cols="63" rows="4" placeholder='Message'></textarea>
 				</form>
 			</ContainerFooter>
 			<ContainerFooter2>

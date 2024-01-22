@@ -123,6 +123,9 @@ export const ContainerFooter = styled.div`
       }
     }
 
+    & textarea {
+      border-radius: 6px;
+    }
     
   }
 `;

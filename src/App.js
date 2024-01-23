@@ -7,7 +7,6 @@ import Products from "./components/products/Products";
 import Desc from "./components/descricao/descricao-produto";
 import Cart from "./components/cart";
 import CartFinalize from "./components/cart/cartFinalize";
-import Footer from "./components/footer/footer";
 import Politicas from "./components/politica/Politicas";
 import ReactGA from "react-ga" 
 import Compra from "./components/compra/Compra";

@@ -35,7 +35,7 @@ export default function Footer() {
 					<input type="text" placeholder='Nome' name='name' />
 					<input type="email" placeholder='E-mail' name='email' />
 					<input type="submit" value="Enviar" className='btnInput' />
-					<textarea name="message" id="" cols="63" rows="4" placeholder='Message'></textarea>
+					{/*<textarea name="message" id="" cols="100%" rows="4" placeholder='Message'></textarea>*/}
 				</form>
 			</ContainerFooter>
 			<ContainerFooter2>

@@ -11,7 +11,7 @@ export default function Politicas() {
             <Link to="/" style={{textDecoration: "none"}}>Voltar Para o site</Link>
             <h2>Política Privacidade</h2>
             <p>
-                A sua privacidade é importante para nós. É política do Top dos Boné respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site Top dos Boné, e outros sites que possuímos e operamos.
+                A sua privacidade é importante para nós. É política do Styles Top respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site Styles Top, e outros sites que possuímos e operamos.
             </p>
             <p>
                 Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.
@@ -46,7 +46,7 @@ export default function Politicas() {
 
             <p>Compromisso do Usuário</p>
             <p>
-                O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o Top dos Boné oferece no site e com caráter enunciativo, mas não limitativo:
+                O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o Styles Top oferece no site e com caráter enunciativo, mas não limitativo:
             </p>
             <span>
               A) Não se envolver em atividades que sejam ilegais ou contrárias à boa fé a à ordem pública;
@@ -55,7 +55,7 @@ export default function Politicas() {
 							B) Não difundir propaganda ou conteúdo de natureza racista, xenofóbica, kiwibet ou azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;
 						</span>
             <span>
-							C) Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do Top dos Boné, de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas de hardware ou software que sejam capazes de causar danos anteriormente mencionados.
+							C) Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do Styles Top, de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas de hardware ou software que sejam capazes de causar danos anteriormente mencionados.
 						</span>
 						<p>
 							Mais informações

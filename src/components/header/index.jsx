@@ -99,6 +99,12 @@ export function Header() {
             </li>
             <li>
               <span>
+                <LuPackageSearch className="text-white h5 m-1 mb-2 p"/>
+              </span>
+              <a href="/politica" target="blank">Devolução</a>
+            </li>
+            <li>
+              <span>
                 <AiFillAlert className="text-white h5 m-1 mb-2 p"/>
               </span>
               <a href="/">Novidade</a>

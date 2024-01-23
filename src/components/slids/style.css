@@ -8,24 +8,6 @@
   border-radius: 50px;
 }
 
-.movieRow {
-  width: 100%;
-  margin-bottom: 30px;
-  background: #FDD201;
-}
-
-.movieRow--listarea {
-    overflow-x: hidden;
-}
-
-.movieRow--list {
-  transition: all ease 0.5s;
-}
-
-.movieRow--item {
-  display: inline-block;
-  width: 150px;
-}
 
 
 .movieRow--item img {

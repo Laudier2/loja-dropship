@@ -18,34 +18,7 @@ import { Container, Logo, Buttons, ContainerAMR, ContainerPRT, DivContainer} fro
 import { SeartResult } from "./SeartResult";
 
 export function Header() {
-
-  const SlidsMenu = [
-    {
-      id: "1",
-      image: "https://img.freepik.com/psd-premium/venda-de-black-friday-nas-midias-sociais-no-instagram-no-banner-da-web-ou-no-modelo-de-capa-do-facebook_220443-1040.jpg",
-      name: "Moda Masculina",
-      url: ""
-    },
-    {
-      id: "1",
-      image: "https://img.freepik.com/psd-premium/venda-de-black-friday-nas-midias-sociais-no-instagram-no-banner-da-web-ou-no-modelo-de-capa-do-facebook_220443-1040.jpg",
-      name: "Moda Masculina",
-      url: ""
-    },
-    {
-      id: "1",
-      image: "https://img.freepik.com/psd-premium/venda-de-black-friday-nas-midias-sociais-no-instagram-no-banner-da-web-ou-no-modelo-de-capa-do-facebook_220443-1040.jpg",
-      name: "Moda Masculina",
-      url: ""
-    },
-    {
-      id: "1",
-      image: "https://img.freepik.com/psd-premium/venda-de-black-friday-nas-midias-sociais-no-instagram-no-banner-da-web-ou-no-modelo-de-capa-do-facebook_220443-1040.jpg",
-      name: "Moda Masculina",
-      url: ""
-    }
-  ]
-
+  
   const [ dados, setDados ] = useState([])
 
   const [cartIsVisible, setCartIsVisible] = useState(false);

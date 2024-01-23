@@ -11,6 +11,8 @@ import api from '../../api/api';
 import { Header } from '../header';
 import Slids from '../slids/slids';
 import SlidsProducts from '../slids/SlidsProducts';
+import { SlidsMenu } from '../slids/SlidsMenu';
+import Footer from '../footer/footer';
 
 const Example = () => (
     /*
@@ -48,9 +50,23 @@ const Products = () => {
   function LocalSto(e) {
 
     localStorage.removeItem("id")
+    localStorage.removeItem("img0")
+    localStorage.removeItem("img1")
+    localStorage.removeItem("img2")
+    localStorage.removeItem("img3")
+    localStorage.removeItem("img4")
+
+    localStorage.removeItem("color0")
+    localStorage.removeItem("color1")
+    localStorage.removeItem("color2")
+    localStorage.removeItem("color3")
+    localStorage.removeItem("color4")
+    localStorage.removeItem("color5")
+
     const dados = JSON.stringify(e)
     const id = JSON.parse(dados)
     localStorage.setItem("id", id.id)
+    localStorage.setItem("categoryId", e.id)
 
     const img = JSON.parse(dados)
     const name = JSON.parse(dados)
@@ -66,6 +82,7 @@ const Products = () => {
     localStorage.setItem("img1", img.image[1])
     localStorage.setItem("img2", img.image[2])
     localStorage.setItem("img3", img.image[3])
+    localStorage.setItem("img4", img.image[4])
 
     localStorage.setItem("color0", color.color[0])
     localStorage.setItem("color1", color.color[1])
@@ -82,7 +99,7 @@ const Products = () => {
     localStorage.setItem("size", size.size)
     localStorage.setItem("quantity", quantity.quantity)
 
-    //console.log(dados)*/
+    console.log(e)
   }
 
   const [categoroy, setCategory] = useState([])
@@ -133,10 +150,18 @@ const Products = () => {
 
   console.log("test",categoroyName)
 
+  /*
+    var salario = 100;
+    var percentual = 0.25;
+    var aumento = salario * percentual;
+    var novo_salario = salario - aumento;
+  */
+
   return (
     <>
     <Header/>
     <Slids />
+    <SlidsMenu/>
   {categoroy == "" && categoroyC == "" && categoroyS == "" && categoroyCA == "" && categoroyMA == "" ? <Example /> : 
     <div>
       <ProductProd>
@@ -144,14 +169,25 @@ const Products = () => {
       
       <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[0]}</h2>
       
-      {categoroy.map(res => (
+      {categoroy.map(res => {
+
+        const { id, name, image, price } = res.products;
+
+        var percentual = 0.25;
+        var aumento = price * percentual;
+        var novo_salario = price - aumento;
+
+        return (
           <Link to="/desc" onClick={() => LocalSto(res.products)}>
-            <div key={res.id}>
-              <img src={res.products.image[0]} alt="img" />
-              <h5>{res.products.name}</h5>
-              <h3>R${res.products.price},00</h3>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <>
+                <b className='oldPrice'>R${price},00 </b>
+                <b> por R${novo_salario},00</b>
+              </>
               <span>
-                <p>
+                <p className='p'>
                   <FaCreditCard className='cartao'/> Em até 12x sem juros
                 </p>
               </span>
@@ -160,7 +196,8 @@ const Products = () => {
               </button>
             </div>
           </Link>
-          ))
+          )
+      })
       }
       </section>  
       
@@ -172,14 +209,25 @@ const Products = () => {
       <br />
       <h2 className='ml-3'>{categoroyC == "" ? "" : NameCategory[1]}</h2>
       
-      {categoroyC.map(res => (
+      {categoroyC.map(res => {
+
+        const { id, name, image, price } = res.products;
+
+        var percentual = 0.25;
+        var aumento = price * percentual;
+        var novo_salario = price - aumento;
+
+        return (
           <Link to="/desc" onClick={() => LocalSto(res.products)}>
-            <div key={res.id}>
-              <img src={res.products.image[0]} alt="img" />
-              <h5>{res.products.name}</h5>
-              <h3>R${res.products.price},00</h3>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <>
+                <b className='oldPrice'>R${price},00 </b>
+                <b> por R${novo_salario},00</b>
+              </>
               <span>
-                <p>
+                <p className='p'>
                   <FaCreditCard className='cartao'/> Em até 12x sem juros
                 </p>
               </span>
@@ -188,7 +236,8 @@ const Products = () => {
               </button>
             </div>
           </Link>
-          ))
+          )
+        })
       }
       </section>  
       
@@ -199,14 +248,25 @@ const Products = () => {
       <br />
       <h2 className='ml-3'>{categoroyS == "" ? "" : NameCategory[2]}</h2>
       
-      {categoroyS.map(res => (
+      {categoroyS.map(res => {
+
+        const { id, name, image, price } = res.products;
+
+        var percentual = 0.25;
+        var aumento = price * percentual;
+        var novo_salario = price - aumento;
+
+        return (
           <Link to="/desc" onClick={() => LocalSto(res.products)}>
-            <div key={res.id}>
-              <img src={res.products.image[0]} alt="img" />
-              <h5>{res.products.name}</h5>
-              <h3>R${res.products.price},00</h3>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <>
+                <b className='oldPrice'>R${price},00 </b>
+                <b> por R${novo_salario},00</b>
+              </>
               <span>
-                <p>
+                <p className='p'>
                   <FaCreditCard className='cartao'/> Em até 12x sem juros
                 </p>
               </span>
@@ -215,7 +275,8 @@ const Products = () => {
               </button>
             </div>
           </Link>
-          ))
+          )
+        })
       }
       </section>  
       
@@ -228,14 +289,25 @@ const Products = () => {
       <br />
       <h2 className='ml-3'>{categoroyCA == "" ? "" : NameCategory[3]}</h2>
       
-      {categoroyCA.map(res => (
+      {categoroyCA.map(res => {
+
+        const { id, name, image, price } = res.products;
+
+        var percentual = 0.25;
+        var aumento = price * percentual;
+        var novo_salario = price - aumento;
+
+        return (
           <Link to="/desc" onClick={() => LocalSto(res.products)}>
-            <div key={res.id}>
-              <img src={res.products.image[0]} alt="img" />
-              <h5>{res.products.name}</h5>
-              <h3>R${res.products.price},00</h3>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <>
+                <b className='oldPrice'>R${price},00 </b>
+                <b> por R${novo_salario},00</b>
+              </>
               <span>
-                <p>
+                <p className='p'>
                   <FaCreditCard className='cartao'/> Em até 12x sem juros
                 </p>
               </span>
@@ -244,7 +316,8 @@ const Products = () => {
               </button>
             </div>
           </Link>
-          ))
+          )
+        })
       }
       </section>  
       
@@ -255,14 +328,25 @@ const Products = () => {
 
       <h2 className='ml-3'>{categoroyMA == "" ? "" : NameCategory[3]}</h2>
       
-      {categoroyMA.map(res => (
+      {categoroyMA.map(res => {
+
+        const { id, name, image, price } = res.products;
+
+        var percentual = 0.25;
+        var aumento = price * percentual;
+        var novo_salario = price - aumento;
+
+        return (
           <Link to="/desc" onClick={() => LocalSto(res.products)}>
-            <div key={res.id}>
-              <img src={res.products.image[0]} alt="img" />
-              <h5>{res.products.name}</h5>
-              <h3>R${res.products.price},00</h3>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <>
+                <b className='oldPrice'>R${price},00 </b>
+                <b> por R${novo_salario},00</b>
+              </>
               <span>
-                <p>
+                <p className='p'>
                   <FaCreditCard className='cartao'/> Em até 12x sem juros
                 </p>
               </span>
@@ -271,7 +355,8 @@ const Products = () => {
               </button>
             </div>
           </Link>
-          ))
+          )
+        })
       }
       </section>  
       
@@ -279,7 +364,7 @@ const Products = () => {
 
     </div>
   }
-    
+  <Footer/>
   </>
   );
 }

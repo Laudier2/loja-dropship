@@ -387,3 +387,107 @@ export const ProductOfertas = styled.div`
     }
   }
 `
+
+//Slids de Ofertas
+
+export const Coontainer = styled.div`
+  margin: 0 auto;
+
+  & .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    & .item {
+      background-color: white;
+      margin: 10px;
+      padding: 10px;
+      width: 300px;
+      height: 42vh;
+      flex: none;
+      cursor: pointer;
+
+      & .image {
+        & img {
+          width: 100%;
+          height: 40vh;
+          object-fit: cover;
+          margin: auto;
+          display: flex;
+        }
+      }
+    }
+
+    & .info {
+      margin-top: 16px;
+
+      & .name {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      & h5 {
+        color: #000000;
+      }
+    }
+
+    & a {
+        text-decoration: none;
+        border: solid 1px;
+        margin: 5px;
+        color: darkolivegreen;
+        padding: 5px;
+      }
+  }
+
+  & .buttons1 {
+    left: 0;
+    position: absolute;
+    width: 20%;
+    height: 170px;
+    background-color:rgba(255, 255, 255, 0);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*overflow: hidden;*/
+    cursor: pointer;
+    opacity: 1;
+    margin-left: 0%;
+    margin-top: 1px;
+
+   @media (max-width: 768px){
+    &:hover{
+      opacity: 0;
+    }
+   }
+}
+
+& .buttons2 {
+  right: 0;
+  position: absolute;
+  width: 20%;
+  height: 170px;
+  background-color:rgba(255, 255, 255, 0);
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*overflow: hidden;*/
+  cursor: pointer;
+  opacity: 1;
+  margin-right: 0%;
+  margin-top: -224px;
+}
+
+& button {
+  border: none;
+  background: transparent
+}
+`

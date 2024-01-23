@@ -10,7 +10,7 @@ export const ProductProd = styled.div`
     width: 100%;
 
     & div {
-      width: 200px;
+      width: 220px;
       height: 230px;
       display: inline-block;
       margin-left: 10px;
@@ -18,7 +18,7 @@ export const ProductProd = styled.div`
 
       & img {
         width: 100%;
-        height: 20vh;
+        height: 30vh;
         border-radius: 8px;
         margin-bottom: 5px;
         
@@ -28,7 +28,7 @@ export const ProductProd = styled.div`
         width: 100%;
         color: #000000;
         font-weight: bold;
-        font-size: 13px;
+        font-size: 0.9vw;
       }
 
       & h3 {
@@ -44,22 +44,13 @@ export const ProductProd = styled.div`
         text-align: center;
         color: rgba(10, 10, 10, 0.687);
 
-        & .cartao {
-          position: absolute;
-          margin-left: -25px;
-          margin-top: 2px;
-
-        }
         & p {
           font-size: 0.7vw;
           //color: #00FF00;
         }
 
       @media screen and (max-width: 780px) {
-        & .cartao {
-          position: absolute;
-          margin-left: -12px;
-        }
+    
         @media (max-width: 768px) {
         width: 95%;
 
@@ -70,6 +61,15 @@ export const ProductProd = styled.div`
         }
       }
       }
+    }
+    
+    & .oldPrice {
+      font-size: 0%.8rem;
+      text-decoration: line-through;
+      flex-grow: 1;
+      color: red;
+      opacity: 0.7;
+      padding: 3px;
     }
 
     & button {
@@ -88,8 +88,28 @@ export const ProductProd = styled.div`
       }
 
     }
+    
     @media (max-width: 768px) {
       width: 30%;
+
+      & h5 {
+        width: 100%;
+        color: #000000;
+        font-weight: bold;
+        font-size: 2vw;
+      }
+
+      & b {
+        font-size: 3.5vw;
+      }
+
+      & .cartao {
+        font-size: 2vw;
+      }
+
+      & .p {
+        font-size: 1.8vw;
+      }
       
       & img {
         width: 100%;
@@ -98,17 +118,7 @@ export const ProductProd = styled.div`
         margin-bottom: 2px;
 
         
-      }
-
-      & h5 {
-        width: 100%;
-        color: #000000;
-        font-weight: bold;
-        font-size: 1.8vw;
-        position: absolute;
-        margin-top: 5px;
-        width: 30%;
-      }
+      }      
 
       & h3 {
         margin-top: 50px;
@@ -147,6 +157,7 @@ export const ProductProd = styled.div`
         }
         }
       }
+      
     }
   }
 `

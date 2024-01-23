@@ -1,6 +1,4 @@
-import React from 'react'
-import { ContainerPRT } from './stylend'
-import { SlidsMenu } from './SlidsMenu' 
+import React from 'react' 
 
 export default function Slids() {
 

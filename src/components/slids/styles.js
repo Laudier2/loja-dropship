@@ -97,5 +97,8 @@ export const Coontainer = styled.div`
   margin-top: -125px;
 }
 
- 
+& button {
+  border: none;
+  background: transparent
+} 
 `

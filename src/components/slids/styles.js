@@ -6,9 +6,7 @@ export const Coontainer = styled.div`
   margin: 0 auto;
   background: yellow;
 
-  &:hover {
-    background: darkcyan;
-  }
+ 
 
   & .carousel {
     display: flex;
@@ -53,7 +51,15 @@ export const Coontainer = styled.div`
         font-size: 20px;
         font-weight: bold;
         cursor: pointer;
+        margin-left: 10px;
+        padding: 5px;
+
+        @media (max-width: 768px){
+          font-size: 12px;
+          margin-left: 15px;
+        }
       }
+
     }
   }
 

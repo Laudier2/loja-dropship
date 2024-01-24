@@ -235,7 +235,7 @@ export function SlidsMenu() {
           </button>
         </div>
         <div className="carousel" ref={carrousel}>
-          {Categroy.map(res => {
+          {data.map(res => {
 
             const { id, name, image } = res
             

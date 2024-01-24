@@ -384,7 +384,7 @@ export const DivContainer = styled.div`
     & img {
       width: 70px;
       height: 80px;
-      margin-left: -380%;
+      margin-left: -285%;
       margin-top: 6px;
       cursor: pointer;
     }

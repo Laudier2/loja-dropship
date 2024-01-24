@@ -15,5 +15,6 @@ var salario = 100;
 var percentual = 0.30;
 var aumento = salario * percentual;
 var novo_salario = salario - aumento;
+var novo_salario2 = salario + aumento;
 
-console.log(novo_salario)
+console.log(novo_salario2)

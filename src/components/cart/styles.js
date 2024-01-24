@@ -26,10 +26,11 @@ export const CartContainer = styled.div`
       font-size: 30px;
     }
 
-    @media (max-width: 768px) {
-      
-    }
-
+    
+  }
+  @media (max-width: 768px) {
+    width: 75vw;
+    margin-left: 103px;
   }
 
   p {

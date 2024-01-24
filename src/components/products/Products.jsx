@@ -113,15 +113,15 @@ const Products = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const reqB = await api.get("/category/d61cee60-bfb2-454c-ba5a-c210738d2b9f")
+      const reqB = await api.get("/category/2a81825a-0328-4ece-ba6a-2d84a19ad6a2")
       const resB = await reqB.data[0].products_categories
-      const reqC = await api.get("/category/ef3303d9-c71d-4d4b-bcee-a7c8133d8deb")
+      const reqC = await api.get("/category/42fe8d97-0c8f-4103-8efe-1421541606ec")
       const resC = await reqC.data[0].products_categories
-      const reqS = await api.get("/category/b320eb28-3a35-48e0-b63d-d4742c23ba60")
+      const reqS = await api.get("/category/8ab8b4b2-bb09-4f6d-aea3-e2ae7f783223")
       const resS = await reqS.data[0].products_categories
-      const reqCA = await api.get("/category/6cdfb4ab-3d0f-469c-98ab-70984790ecb9")
+      const reqCA = await api.get("/category/ba525322-71e2-4bf3-8ab5-79fd4b257c30")
       const resCA = await reqCA.data[0].products_categories
-      const reqMA = await api.get("/category/124594af-d1db-4ab9-a8f6-ce3c43f8f964")
+      const reqMA = await api.get("/category/9bbfc216-d221-43e6-83cc-246f8adb3310")
       const resMA = await reqMA.data[0].products_categories
 
       setCategory(resB)
@@ -173,9 +173,9 @@ const Products = () => {
 
         const { id, name, image, price } = res.products;
 
-        var percentual = 0.25;
+        var percentual = 0.30;
         var aumento = price * percentual;
-        var novo_salario = price - aumento;
+        var novo_price = price - aumento;
 
         return (
           <Link to="/desc" onClick={() => LocalSto(res.products)}>
@@ -184,7 +184,7 @@ const Products = () => {
               <h5>{name}</h5>
               <>
                 <b className='oldPrice'>R${price},00 </b>
-                <b> por R${novo_salario},00</b>
+                <b> por R${novo_price}</b>
               </>
               <span>
                 <p className='p'>
@@ -224,7 +224,7 @@ const Products = () => {
               <h5>{name}</h5>
               <>
                 <b className='oldPrice'>R${price},00 </b>
-                <b> por R${novo_salario},00</b>
+                <b> por R${novo_salario}</b>
               </>
               <span>
                 <p className='p'>
@@ -263,7 +263,7 @@ const Products = () => {
               <h5>{name}</h5>
               <>
                 <b className='oldPrice'>R${price},00 </b>
-                <b> por R${novo_salario},00</b>
+                <b> por R${novo_salario}</b>
               </>
               <span>
                 <p className='p'>
@@ -304,7 +304,7 @@ const Products = () => {
               <h5>{name}</h5>
               <>
                 <b className='oldPrice'>R${price},00 </b>
-                <b> por R${novo_salario},00</b>
+                <b> por R${novo_salario}</b>
               </>
               <span>
                 <p className='p'>
@@ -343,7 +343,7 @@ const Products = () => {
               <h5>{name}</h5>
               <>
                 <b className='oldPrice'>R${price},00 </b>
-                <b> por R${novo_salario},00</b>
+                <b> por R${novo_salario}</b>
               </>
               <span>
                 <p className='p'>

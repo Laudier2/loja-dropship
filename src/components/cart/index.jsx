@@ -35,8 +35,8 @@ const Cart = ({ isVisible, setIsVisible }) => {
             <CartItem key={product.id} product={product} />
           </div>
         )}
-        <a href="/cartFinali">
-          {cart == "" ? <img style={{ marginLeft: "-105px", width: "700px" }} src="https://www.pngkit.com/png/detail/411-4110678_carrinho-de-compras-vazio-shopping-cart.png" alt="img"/> :
+        <a href="/">
+          {cart == "" ? <img style={{ marginLeft: "-5px", width: "300px" }} src="https://www.pngkit.com/png/detail/411-4110678_carrinho-de-compras-vazio-shopping-cart.png" alt="img"/> :
             <ButtonCard>
               Ver meu carrinho
             </ButtonCard>

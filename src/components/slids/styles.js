@@ -50,13 +50,14 @@ export const Coontainer = styled.div`
         }
         @media (max-width: 768px) {
           & img {
-          width: 85%;
-          height: 5vh;
-          object-fit: cover;
-          margin: auto;
-          display: flex;
-          border-radius: 40px;
-        }
+            width: 100%;
+            height: 6.3vh;
+            object-fit: cover;
+            margin: auto;
+            display: flex;
+            border-radius: 40px;
+            margin-top: -9px;
+          }
         }
       }
     }

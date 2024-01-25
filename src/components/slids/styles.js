@@ -6,12 +6,19 @@ export const Coontainer = styled.div`
   margin: 0 auto;
   background: yellow;
 
- 
+  @media(max-width: 768px) {
+    height: 100px;
+  }
 
   & .carousel {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
+    margin-left: 60px;
+
+    @media (max-width: 768px) {
+      margin-left: 0px;
+    }
 
     &::-webkit-scrollbar {
       display: none;
@@ -21,11 +28,12 @@ export const Coontainer = styled.div`
       background-color: white;
       margin: 10px;
       padding: 10px;
-      width: 100px;
-      height: 13vh;
+      width: 70px;
+      height: 7vh;
       border-radius: 50px;
       flex: none;
       cursor: pointer;
+      border: solid 1px;
       
       &:hover {
         background-color: darkgray;
@@ -33,12 +41,22 @@ export const Coontainer = styled.div`
 
       & .image {
         & img {
-          width: 100%;
-          height: 10vh;
+          width: 80%;
+          height: 5vh;
           object-fit: cover;
           margin: auto;
           display: flex;
           border-radius: 40px;
+        }
+        @media (max-width: 768px) {
+          & img {
+          width: 80%;
+          height: 5vh;
+          object-fit: cover;
+          margin: auto;
+          display: flex;
+          border-radius: 40px;
+        }
         }
       }
     }
@@ -48,7 +66,7 @@ export const Coontainer = styled.div`
 
       & .name {
         text-align: center;
-        font-size: 20px;
+        font-size: 15px;
         font-weight: bold;
         cursor: pointer;
         margin-left: 10px;
@@ -56,8 +74,12 @@ export const Coontainer = styled.div`
 
         @media (max-width: 768px){
           font-size: 12px;
-          margin-left: 15px;
+          margin-left: 18px;
         }
+      }
+
+      @media (max-width: 768px){
+        margin-top: -10px;
       }
 
     }
@@ -77,13 +99,14 @@ export const Coontainer = styled.div`
     cursor: pointer;
     opacity: 1;
     margin-left: 0%;
-    margin-top: -48px;
+    margin-top: -40px;
 
-   @media (max-width: 768px){
-    &:hover{
+    @media (max-width: 768px){
       opacity: 0;
+      margin-top: -44px;
+      margin-left: -10px;
     }
-   }
+    
 }
 
 & .buttons2 {
@@ -100,7 +123,12 @@ export const Coontainer = styled.div`
   cursor: pointer;
   opacity: 1;
   margin-right: 0.3%;
-  margin-top: -125px;
+  margin-top: -92px;
+  
+  @media (max-width: 768px){
+    opacity: 0;
+    margin-top: -104px;
+  }
 }
 
 & button {

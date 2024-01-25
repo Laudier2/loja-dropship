@@ -73,8 +73,8 @@ export const Coontainer = styled.div`
         padding: 5px;
 
         @media (max-width: 768px){
-          font-size: 12px;
-          margin-left: 18px;
+          font-size: 10px;
+          margin-left: 10px;
         }
       }
 

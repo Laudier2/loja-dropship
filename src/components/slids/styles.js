@@ -28,7 +28,7 @@ export const Coontainer = styled.div`
       background-color: white;
       margin: 10px;
       padding: 10px;
-      width: 70px;
+      width: 60px;
       height: 7vh;
       border-radius: 50px;
       flex: none;
@@ -41,7 +41,7 @@ export const Coontainer = styled.div`
 
       & .image {
         & img {
-          width: 80%;
+          width: 100%;
           height: 5vh;
           object-fit: cover;
           margin: auto;
@@ -50,7 +50,7 @@ export const Coontainer = styled.div`
         }
         @media (max-width: 768px) {
           & img {
-          width: 80%;
+          width: 85%;
           height: 5vh;
           object-fit: cover;
           margin: auto;

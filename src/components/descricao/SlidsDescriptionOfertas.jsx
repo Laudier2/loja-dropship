@@ -93,7 +93,6 @@ export function SlidsDescriptionOfertas() {
 
   return (
     <>
-      <h1 className="h1">Mais ofertas aproveita</h1>
       <Coontainer>
         <div className="buttons1">
           <button onClick={(e) => hendleLeftClik(e)}>

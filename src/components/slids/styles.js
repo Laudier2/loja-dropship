@@ -66,7 +66,7 @@ export const Coontainer = styled.div`
   & .buttons1 {
     left: 0;
     position: absolute;
-    width: 20%;
+    width: 6%;
     height: 170px;
     background-color:rgba(255, 255, 255, 0);
     z-index: 99;
@@ -89,7 +89,7 @@ export const Coontainer = styled.div`
 & .buttons2 {
   right: 0;
   position: absolute;
-  width: 20%;
+  width: 5%;
   height: 170px;
   background-color:rgba(255, 255, 255, 0);
   z-index: 99;
@@ -99,12 +99,12 @@ export const Coontainer = styled.div`
   /*overflow: hidden;*/
   cursor: pointer;
   opacity: 1;
-  margin-right: 0%;
+  margin-right: 0.3%;
   margin-top: -125px;
 }
 
 & button {
   border: none;
-  background: transparent
+  background: transparent;
 } 
 `

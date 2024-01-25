@@ -102,6 +102,9 @@ const Products = () => {
     console.log(e)
   }
 
+  // Aqui estamos fazenso as requisição na API REstful com o axio, 
+  //e recebendo os dados atraves do useState para poder manipula os estados
+
   const [categoroy, setCategory] = useState([])
   const [categoroyC, setCategoryC] = useState([])
   const [categoroyS, setCategoryS] = useState([])
@@ -109,19 +112,20 @@ const Products = () => {
   const [categoroyMA, setCategoryMa] = useState([])
   const [categoroyName, setCategoryName] = useState([])
 
+  //Aqui estamos usado o useEffect para deixa os estados sempre atualizados ao carrega o compodnent
   useEffect(() =>{    
     (async() => {
-      const reqName = await api.get("/category")
+      const reqName = await api.get("/category/2a81825a-0328-4ece-ba6a-2d84a19ad6a2")
       const resName = await reqName.data
       const reqB = await api.get("/category/2a81825a-0328-4ece-ba6a-2d84a19ad6a2")
       const resB = await reqB.data[0].products_categories
-      const reqC = await api.get("/category/42fe8d97-0c8f-4103-8efe-1421541606ec")
+      const reqC = await api.get("/category/2a81825a-0328-4ece-ba6a-2d84a19ad6a2")
       const resC = await reqC.data[0].products_categories
-      const reqS = await api.get("/category/8ab8b4b2-bb09-4f6d-aea3-e2ae7f783223")
+      const reqS = await api.get("/category/2a81825a-0328-4ece-ba6a-2d84a19ad6a2")
       const resS = await reqS.data[0].products_categories
-      const reqCA = await api.get("/category/ba525322-71e2-4bf3-8ab5-79fd4b257c30")
+      const reqCA = await api.get("/category/2a81825a-0328-4ece-ba6a-2d84a19ad6a2")
       const resCA = await reqCA.data[0].products_categories
-      const reqMA = await api.get("/category/9bbfc216-d221-43e6-83cc-246f8adb3310")
+      const reqMA = await api.get("/category/2a81825a-0328-4ece-ba6a-2d84a19ad6a2")
       const resMA = await reqMA.data[0].products_categories
 
       setCategory(resB)
@@ -132,6 +136,8 @@ const Products = () => {
       setCategoryName(resName)
     })()
   },[])
+
+  console.log(categoroy)
 
   const [promo, setPromo] = useState([])
 

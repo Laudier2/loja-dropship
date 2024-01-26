@@ -173,7 +173,7 @@ const Products = () => {
       <ProductProd>
       <section>
       
-      <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[0]}</h2>
+      <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[7]}</h2>
       
       {categoroy.map(res => {
 

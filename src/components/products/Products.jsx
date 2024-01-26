@@ -212,7 +212,7 @@ const Products = () => {
     
     <ProductProd>
       <section>
-      <br />
+     
       <h2 className='ml-3'>{categoroyVestido == "" ? "" : NameCategory[12]}</h2>
       
       {categoroyVestido.map(res => {
@@ -251,7 +251,7 @@ const Products = () => {
       
     <ProductProd>
       <section>
-      <br />
+     
       <h2 className='ml-3'>{categoryShort == "" ? "" : NameCategory[6]}</h2>
       
       {categoryShort.map(res => {
@@ -289,8 +289,9 @@ const Products = () => {
     </ProductProd>
      
     <ProductProd>
+      
       <section>
-      <br />
+      
       <h2 className='ml-3'>{categoryConjunto == "" ? "" : NameCategory[5]}</h2>
       
       {categoroyShortF.map(res => {
@@ -328,11 +329,11 @@ const Products = () => {
     </ProductProd>
 
     <SlidsProducts/>
-
+    <br />
     <ProductProd style={{marginTop: "-10px"}}>
       <section>
 
-      <h2 className='ml-3'>{categoryConjunto == "" ? "" : NameCategory[3]}</h2>
+      <h2 className='ml-3'>{categoryConjunto == "" ? "" : NameCategory[9]}</h2>
       
       {categoryConjunto.map(res => {
 

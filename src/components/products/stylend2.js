@@ -14,7 +14,7 @@ export const ProductProd = styled.div`
       height: 230px;
       display: inline-block;
       margin-left: 10px;
-      margin-top: 10px;
+      margin-top: 20px;
 
       & img {
         width: 100%;

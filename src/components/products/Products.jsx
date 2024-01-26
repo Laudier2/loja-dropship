@@ -117,15 +117,15 @@ const Products = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const reqB = await api.get("/category/2a81825a-0328-4ece-ba6a-2d84a19ad6a2")
+      const reqB = await api.get("/category/465ce7a8-5174-4543-a7b8-5e8a6ca885b1")
       const resB = await reqB.data[0].products_categories
-      const reqV = await api.get("/category/2abe662b-3668-4dbd-807c-500fe942128f")
+      const reqV = await api.get("/category/aef683d7-5d14-4b24-a289-9100185769a8")
       const resV = await reqV.data[0].products_categories
-      const reqShort = await api.get("/category/42fe8d97-0c8f-4103-8efe-1421541606ec")
+      const reqShort = await api.get("/category/48122c17-5228-46d6-87bc-14ed904d0b78")
       const resShort = await reqShort.data[0].products_categories
-      const reqShortF = await api.get("/category/09ee85a3-901f-41bf-bc9b-eceac0456820")
+      const reqShortF = await api.get("/category/4f9bf968-4ef7-4384-9e16-71050dc22650")
       const resShortF = await reqShortF.data[0].products_categories
-      const reqConjunto = await api.get("/category/8ab8b4b2-bb09-4f6d-aea3-e2ae7f783223")
+      const reqConjunto = await api.get("/category/9555b31a-b622-4fa8-be94-c4a157c912fc")
       const resConjunto = await reqConjunto.data[0].products_categories
 
       setCategory(resB)
@@ -173,7 +173,7 @@ const Products = () => {
       <ProductProd>
       <section>
       
-      <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[7]}</h2>
+      <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[0]}</h2>
       
       {categoroy.map(res => {
 
@@ -213,7 +213,7 @@ const Products = () => {
     <ProductProd>
       <section>
      
-      <h2 className='ml-3'>{categoroyVestido == "" ? "" : NameCategory[12]}</h2>
+      <h2 className='ml-3'>{categoroyVestido == "" ? "" : NameCategory[2]}</h2>
       
       {categoroyVestido.map(res => {
 
@@ -252,7 +252,7 @@ const Products = () => {
     <ProductProd>
       <section>
      
-      <h2 className='ml-3'>{categoryShort == "" ? "" : NameCategory[6]}</h2>
+      <h2 className='ml-3'>{categoryShort == "" ? "" : NameCategory[3]}</h2>
       
       {categoryShort.map(res => {
 
@@ -292,7 +292,7 @@ const Products = () => {
       
       <section>
       
-      <h2 className='ml-3'>{categoryConjunto == "" ? "" : NameCategory[5]}</h2>
+      <h2 className='ml-3'>{categoryConjunto == "" ? "" : NameCategory[4]}</h2>
       
       {categoroyShortF.map(res => {
 
@@ -333,7 +333,7 @@ const Products = () => {
     <ProductProd style={{marginTop: "-10px"}}>
       <section>
 
-      <h2 className='ml-3'>{categoryConjunto == "" ? "" : NameCategory[9]}</h2>
+      <h2 className='ml-3'>{categoryConjunto == "" ? "" : NameCategory[1]}</h2>
       
       {categoryConjunto.map(res => {
 

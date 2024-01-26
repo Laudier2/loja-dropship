@@ -375,7 +375,7 @@ export const DivContainer = styled.div`
       position: absolute;
       width: 60%;
       text-decoration: none;
-      margin-left: -50%;
+      margin-left: -45%;
       margin-top: 8px;
       font-size: 3vw;
       cursor: pointer;
@@ -384,7 +384,7 @@ export const DivContainer = styled.div`
     & img {
       width: 70px;
       height: 80px;
-      margin-left: -285%;
+      margin-left: -300%;
       margin-top: 6px;
       cursor: pointer;
     }

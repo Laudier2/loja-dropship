@@ -106,33 +106,33 @@ const Products = () => {
   //e recebendo os dados atraves do useState para poder manipula os estados
 
   const [categoroy, setCategory] = useState([])
-  const [categoroyC, setCategoryC] = useState([])
-  const [categoroyS, setCategoryS] = useState([])
-  const [categoroyCA, setCategoryCA] = useState([])
-  const [categoroyMA, setCategoryMa] = useState([])
+  const [categoroyVestido, setCategoryVestido] = useState([])
+  const [categoryShort, setcategoryShort] = useState([])
+  const [categoroyShortF, setCategoryShortF] = useState([])
+  const [categoryConjunto, setCategoryConjunto] = useState([])
   const [categoroyName, setCategoryName] = useState([])
 
   //Aqui estamos usado o useEffect para deixa os estados sempre atualizados ao carrega o compodnent
   useEffect(() =>{    
     (async() => {
-      const reqName = await api.get("/category/2a81825a-0328-4ece-ba6a-2d84a19ad6a2")
+      const reqName = await api.get("/category")
       const resName = await reqName.data
       const reqB = await api.get("/category/2a81825a-0328-4ece-ba6a-2d84a19ad6a2")
       const resB = await reqB.data[0].products_categories
-      const reqC = await api.get("/category/2a81825a-0328-4ece-ba6a-2d84a19ad6a2")
-      const resC = await reqC.data[0].products_categories
-      const reqS = await api.get("/category/2a81825a-0328-4ece-ba6a-2d84a19ad6a2")
-      const resS = await reqS.data[0].products_categories
-      const reqCA = await api.get("/category/2a81825a-0328-4ece-ba6a-2d84a19ad6a2")
-      const resCA = await reqCA.data[0].products_categories
-      const reqMA = await api.get("/category/2a81825a-0328-4ece-ba6a-2d84a19ad6a2")
-      const resMA = await reqMA.data[0].products_categories
+      const reqV = await api.get("/category/2abe662b-3668-4dbd-807c-500fe942128f")
+      const resV = await reqV.data[0].products_categories
+      const reqShort = await api.get("/category/42fe8d97-0c8f-4103-8efe-1421541606ec")
+      const resShort = await reqShort.data[0].products_categories
+      const reqShortF = await api.get("/category/09ee85a3-901f-41bf-bc9b-eceac0456820")
+      const resShortF = await reqShortF.data[0].products_categories
+      const reqConjunto = await api.get("/category/8ab8b4b2-bb09-4f6d-aea3-e2ae7f783223")
+      const resConjunto = await reqConjunto.data[0].products_categories
 
       setCategory(resB)
-      setCategoryC(resC)
-      setCategoryS(resS)
-      setCategoryCA(resCA)
-      setCategoryMa(resMA)
+      setCategoryVestido(resV)
+      setcategoryShort(resShort)
+      setCategoryShortF(resShortF)
+      setCategoryConjunto(resConjunto)
       setCategoryName(resName)
     })()
   },[])
@@ -168,7 +168,7 @@ const Products = () => {
     <Header/>
     <Slids />
     <SlidsMenu/>
-  {categoroy == "" && categoroyC == "" && categoroyS == "" && categoroyCA == "" && categoroyMA == "" ? <Example /> : 
+  {categoroy == "" && categoroyVestido == "" && categoryShort == "" && categoroyShortF == "" && categoryConjunto == "" ? <Example /> : 
     <div>
       <ProductProd>
       <section>
@@ -213,9 +213,9 @@ const Products = () => {
     <ProductProd>
       <section>
       <br />
-      <h2 className='ml-3'>{categoroyC == "" ? "" : NameCategory[1]}</h2>
+      <h2 className='ml-3'>{categoroyVestido == "" ? "" : NameCategory[12]}</h2>
       
-      {categoroyC.map(res => {
+      {categoroyVestido.map(res => {
 
         const { id, name, image, price } = res.products;
 
@@ -252,9 +252,9 @@ const Products = () => {
     <ProductProd>
       <section>
       <br />
-      <h2 className='ml-3'>{categoroyS == "" ? "" : NameCategory[2]}</h2>
+      <h2 className='ml-3'>{categoryShort == "" ? "" : NameCategory[6]}</h2>
       
-      {categoroyS.map(res => {
+      {categoryShort.map(res => {
 
         const { id, name, image, price } = res.products;
 
@@ -287,15 +287,13 @@ const Products = () => {
       </section>  
       
     </ProductProd>
-    
-    <SlidsProducts/>
      
     <ProductProd>
       <section>
       <br />
-      <h2 className='ml-3'>{categoroyCA == "" ? "" : NameCategory[3]}</h2>
+      <h2 className='ml-3'>{categoryConjunto == "" ? "" : NameCategory[5]}</h2>
       
-      {categoroyCA.map(res => {
+      {categoroyShortF.map(res => {
 
         const { id, name, image, price } = res.products;
 
@@ -329,12 +327,14 @@ const Products = () => {
       
     </ProductProd>
 
+    <SlidsProducts/>
+
     <ProductProd style={{marginTop: "-10px"}}>
       <section>
 
-      <h2 className='ml-3'>{categoroyMA == "" ? "" : NameCategory[3]}</h2>
+      <h2 className='ml-3'>{categoryConjunto == "" ? "" : NameCategory[3]}</h2>
       
-      {categoroyMA.map(res => {
+      {categoryConjunto.map(res => {
 
         const { id, name, image, price } = res.products;
 

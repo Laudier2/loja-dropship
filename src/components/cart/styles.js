@@ -29,8 +29,8 @@ export const CartContainer = styled.div`
     
   }
   @media (max-width: 768px) {
-    width: 75vw;
-    margin-left: 103px;
+    width: 100vw;
+    
   }
 
   p {

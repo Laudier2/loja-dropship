@@ -101,7 +101,7 @@ export function Header() {
               <span>
                 <LuPackageSearch className="text-white h5 m-1 mb-2 p"/>
               </span>
-              <a href="/politica" target="blank">Devolução</a>
+              <a href="/politicatrocadevolucao" target="blank">Devolução</a>
             </li>
             <li>
               <span>

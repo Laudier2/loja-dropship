@@ -68,6 +68,10 @@ export default function CartFinalize() {
         )		
     }
 
+    let percentual = 0.25;
+    let aumento = cart2.cartTotalAmount * percentual;
+    let novo_amount = cart2.cartTotalAmount - aumento;
+
     return (
         <>
             {items === 0 || productCor == "" || productSize == "" ? carrinhoVazio():
@@ -93,55 +97,64 @@ export default function CartFinalize() {
                             </thead>
                             <hr />
                             <tbody>
-                                {cart.map((res) => (
-                                    <tr>
-                                        <div>
-                                            <td>
-                                                <a href='/desc' className="divimg">
-                                                    <img src={res.image[0]} alt="img" />
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <div className="divnome">
-                                              
-                                                    <div>{
-														productCor.map(cor => (
-                                                            productSize.map(resp => (
-                                                                <div key={resp.id}>
-                                                                    <p className='namePosition'>
-                                                                    {
-                                                                        res.id === resp.id && res.id === cor.id ? res.name + " Tamanho: " + resp.tm + " Cor: " + cor.cor : ""
-                                                                    }
-                                                                    </p>
-                                                                </div>
-                                                            ))    
-                                                        ))
-                                                    }</div>
-                                                    <br />
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div className='div1'>
-                                                    <button onClick={() => handleIncreaseClick(res)}>
-                                                        <FaPlus/>
-                                                    </button>
-                                                        {res.cartQuantity}
-                                                    <button onClick={() => handleDecreaseClick(res)}>
-                                                        <FaWindowMinimize className='mb-2' />
-                                                    </button></div>   
-                                            </td>
-                                            <td>
-                                                <div className="div2">
-                                                    <strong>Preco: R${res.price * res.cartQuantity}</strong>
-                                                    
-                                                    <button className='btn btn-outline-secondary ml-2' onClick={() => handleRemoveClick(res)}> Excluir 
-                                                        <RiDeleteBin2Fill className='text-danger h5' />
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </div>
-                                    </tr>
-                                ))}
+                                {cart.map((res) => {
+
+                                    const { id, image, price, name, cartQuantity } = res
+
+                                    let percentual = 0.25;
+                                    let aumento = price * percentual;
+                                    let novo_price = price - aumento;
+
+                                    return (
+                                        <tr>
+                                            <div key={id}>
+                                                <td>
+                                                    <a href='/desc' className="divimg">
+                                                        <img src={image[0]} alt="img" />
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <div className="divnome">
+                                                
+                                                        <div>{
+                                                            productCor.map(cor => (
+                                                                productSize.map(resp => (
+                                                                    <div key={resp.id}>
+                                                                        <p className='namePosition'>
+                                                                        {
+                                                                            res.id === resp.id && res.id === cor.id ? name + " Tamanho: " + resp.tm + " Cor: " + cor.cor : ""
+                                                                        }
+                                                                        </p>
+                                                                    </div>
+                                                                ))    
+                                                            ))
+                                                        }</div>
+                                                        <br />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className='div1'>
+                                                        <button onClick={() => handleIncreaseClick(res)}>
+                                                            <FaPlus/>
+                                                        </button>
+                                                            {cartQuantity}
+                                                        <button onClick={() => handleDecreaseClick(res)}>
+                                                            <FaWindowMinimize className='mb-2' />
+                                                        </button></div>   
+                                                </td>
+                                                <td>
+                                                    <div className="div2">
+                                                        <strong>Preco: R${novo_price * res.cartQuantity}</strong>
+                                                        
+                                                        <button className='btn btn-outline-secondary ml-2' onClick={() => handleRemoveClick(res)}> Excluir 
+                                                            <RiDeleteBin2Fill className='text-danger h5' />
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </div>
+                                        </tr>
+                                    )
+                                })}
                             </tbody>
                             
                         </table>
@@ -158,7 +171,7 @@ export default function CartFinalize() {
                         <Link to="/compra">Finaliza comprar</Link>
                     </Button>
                     }
-                    <SubTotal>Total: R$ {cart2.cartTotalAmount},00</SubTotal>
+                    <SubTotal>Total: R$ {novo_amount},00</SubTotal>
                 </div>
             }
         </>

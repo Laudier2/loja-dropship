@@ -103,6 +103,10 @@ export function SlidsDescriptionOfertas() {
           {data.map(res => {
 
             const { id, name, image, price } = res;
+
+            let percentual = 0.25;
+            let aumento = price * percentual;
+            let novo_price = price - aumento;
             
             return (
               <Link to="/desc" onClick={() => LocalSto(res)}>
@@ -113,7 +117,7 @@ export function SlidsDescriptionOfertas() {
                 </div>
                 <div className="info">
                 <span className="name">{name}</span>
-                <h5>R${price},00</h5>
+                <h5>R${novo_price},00</h5>
               </div>
             </Link>
             )

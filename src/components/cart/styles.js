@@ -91,7 +91,7 @@ export const TableCartFinalize = styled.div`
         & .namePosition {
           width: 60%;
           position: absolute;
-          margin-top: 30px;
+          margin-top: 35px;
           margin-left: -65px;
           font-size: 2.5vw;
         } 

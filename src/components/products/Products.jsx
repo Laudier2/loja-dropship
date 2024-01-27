@@ -160,7 +160,7 @@ const Products = () => {
     var salario = 100;
     var percentual = 0.25;
     var aumento = salario * percentual;
-    var novo_salario = salario - aumento;
+    var novo_price = salario - aumento;
   */
 
   return (
@@ -179,9 +179,9 @@ const Products = () => {
 
         const { id, name, image, price } = res.products;
 
-        var percentual = 0.30;
-        var aumento = price * percentual;
-        var novo_price = price - aumento;
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
 
         return (
           <Link to="/desc" onClick={() => LocalSto(res.products)}>
@@ -219,9 +219,9 @@ const Products = () => {
 
         const { id, name, image, price } = res.products;
 
-        var percentual = 0.25;
-        var aumento = price * percentual;
-        var novo_salario = price - aumento;
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
 
         return (
           <Link to="/desc" onClick={() => LocalSto(res.products)}>
@@ -230,7 +230,7 @@ const Products = () => {
               <h5>{name}</h5>
               <>
                 <b className='oldPrice'>R${price},00 </b>
-                <b> por R${novo_salario}</b>
+                <b> por R${novo_price}</b>
               </>
               <span>
                 <p className='p'>
@@ -258,9 +258,9 @@ const Products = () => {
 
         const { id, name, image, price } = res.products;
 
-        var percentual = 0.25;
-        var aumento = price * percentual;
-        var novo_salario = price - aumento;
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
 
         return (
           <Link to="/desc" onClick={() => LocalSto(res.products)}>
@@ -269,7 +269,7 @@ const Products = () => {
               <h5>{name}</h5>
               <>
                 <b className='oldPrice'>R${price},00 </b>
-                <b> por R${novo_salario}</b>
+                <b> por R${novo_price}</b>
               </>
               <span>
                 <p className='p'>
@@ -298,9 +298,9 @@ const Products = () => {
 
         const { id, name, image, price } = res.products;
 
-        var percentual = 0.25;
-        var aumento = price * percentual;
-        var novo_salario = price - aumento;
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
 
         return (
           <Link to="/desc" onClick={() => LocalSto(res.products)}>
@@ -309,7 +309,7 @@ const Products = () => {
               <h5>{name}</h5>
               <>
                 <b className='oldPrice'>R${price},00 </b>
-                <b> por R${novo_salario}</b>
+                <b> por R${novo_price}</b>
               </>
               <span>
                 <p className='p'>
@@ -339,9 +339,9 @@ const Products = () => {
 
         const { id, name, image, price } = res.products;
 
-        var percentual = 0.25;
-        var aumento = price * percentual;
-        var novo_salario = price - aumento;
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
 
         return (
           <Link to="/desc" onClick={() => LocalSto(res.products)}>
@@ -350,7 +350,7 @@ const Products = () => {
               <h5>{name}</h5>
               <>
                 <b className='oldPrice'>R${price},00 </b>
-                <b> por R${novo_salario}</b>
+                <b> por R${novo_price}</b>
               </>
               <span>
                 <p className='p'>

@@ -260,6 +260,10 @@ console.log(FilterColor2[0], FilterColor1[0])
     }   
   }
 
+  let percentual = 0.25;
+  let aumento = price * percentual;
+  let novo_price = price - aumento;
+
   return (
     <>
       <Header/>
@@ -302,7 +306,8 @@ console.log(FilterColor2[0], FilterColor1[0])
                   <span>ESSE É UM DOS MAIS VENDIDOS NA LOJA</span>
                 </div>
                 <br />
-                <h1>R$ {price},00</h1>
+                
+                <h1>R$ {novo_price},00</h1>
                 <span>
               <FaCreditCard className='mt-1 m-1'/> Em até 12x sem juros
               <br />

@@ -175,6 +175,7 @@ export const ContainerPRT = styled.div`
   display: flex;
   justify-content: space-between;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 
   & ul {
     display: flex;
@@ -246,14 +247,10 @@ export const ContainerPRT = styled.div`
       
 
       &:hover {
-        background-color: #FDD201;
+        background-color: rgba(128, 128, 128, 0.464);
 
         & .li {
           padding: -15px;
-        }
-
-        & a {
-          color: #000000;
         }
 
       }

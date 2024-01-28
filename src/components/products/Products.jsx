@@ -137,9 +137,11 @@ const Products = () => {
     })()
   },[])
 
-  console.log(categoroy)
+  //const teste = categoroyVestido.map(img => img)
 
-  const [promo, setPromo] = useState([])
+  //console.log("ts", teste)
+
+  /*const [promo, setPromo] = useState([])
 
   useEffect((
     async function Promo(){
@@ -148,13 +150,13 @@ const Products = () => {
 
       setPromo(res)
     }
-  ), [])
+  ), [])*/
 
-  console.log(promo)
+  //console.log(promo)
 
   const NameCategory = categoroyName.map(res => res.name)
 
-  console.log("test",categoroyName)
+  //console.log("test",categoroyName)
 
   /*
     var salario = 100;
@@ -182,6 +184,8 @@ const Products = () => {
         let percentual = 0.25;
         let aumento = price * percentual;
         let novo_price = price - aumento;
+
+        console.log("img", image[0])
 
         return (
           <Link to="/desc" onClick={() => LocalSto(res.products)}>

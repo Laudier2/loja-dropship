@@ -1,5 +1,6 @@
 import React from 'react'
 import { ContainerFooter, ContainerFooter1, ContainerFooter2 } from './styles';
+import { Link } from 'react-router-dom';
 //import { Height } from '@material-ui/icons';
 
 export default function Footer() {
@@ -29,7 +30,9 @@ export default function Footer() {
 	return (
 		<>
 			<ContainerFooter>
-				<h2>StylesTop</h2>
+				<Link to="/">
+					<h2>StylesTop</h2>
+				</Link>
 				<span>Receba novidades em primeira mão, deixe seu e-mail aqui!</span>
 				<form method='post' name="contact" nelify>
 					<input type="text" placeholder='Nome' name='name' />

@@ -26,6 +26,7 @@ export const ContainerFooter = styled.div`
     position: absolute;
     margin-left: 100px;
     margin-top: -25px;
+    color: aqua;
 
     @media (max-width: 768px) {
       margin-left: 16px;

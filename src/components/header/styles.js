@@ -215,11 +215,8 @@ export const ContainerPRT = styled.div`
         & span {
           position: absolute;
           margin-top: -20px;
-          margin-left: -10px;
+          margin-left: -1px;
 
-          @media (max-width: 768px){
-            margin-left: 3px;
-          }
         }
         
       }

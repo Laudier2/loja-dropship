@@ -139,7 +139,7 @@ const Products = () => {
 
   //const teste = categoroyVestido.map(img => img)
 
-  //console.log("ts", teste)
+  console.log(categoroy)
 
   /*const [promo, setPromo] = useState([])
 
@@ -175,7 +175,7 @@ const Products = () => {
       <ProductProd>
       <section>
       
-      <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[0]}</h2>
+      <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[8]}</h2>
       
       {categoroy.map(res => {
 
@@ -194,7 +194,7 @@ const Products = () => {
               <h5>{name}</h5>
               <>
                 <b className='oldPrice'>R${price},00 </b>
-                <b> por R${novo_price}</b>
+                <b> por R${novo_price},00</b>
               </>
               <span>
                 <p className='p'>
@@ -217,7 +217,7 @@ const Products = () => {
     <ProductProd>
       <section>
      
-      <h2 className='ml-3'>{categoroyVestido == "" ? "" : NameCategory[2]}</h2>
+      <h2 className='ml-3'>{categoroyVestido == "" ? "" : NameCategory[7]}</h2>
       
       {categoroyVestido.map(res => {
 
@@ -234,7 +234,7 @@ const Products = () => {
               <h5>{name}</h5>
               <>
                 <b className='oldPrice'>R${price},00 </b>
-                <b> por R${novo_price}</b>
+                <b> por R${novo_price},00</b>
               </>
               <span>
                 <p className='p'>
@@ -256,7 +256,7 @@ const Products = () => {
     <ProductProd>
       <section>
      
-      <h2 className='ml-3'>{categoryShort == "" ? "" : NameCategory[3]}</h2>
+      <h2 className='ml-3'>{categoryShort == "" ? "" : NameCategory[10]}</h2>
       
       {categoryShort.map(res => {
 
@@ -273,7 +273,7 @@ const Products = () => {
               <h5>{name}</h5>
               <>
                 <b className='oldPrice'>R${price},00 </b>
-                <b> por R${novo_price}</b>
+                <b> por R${novo_price},00</b>
               </>
               <span>
                 <p className='p'>
@@ -296,7 +296,7 @@ const Products = () => {
       
       <section>
       
-      <h2 className='ml-3'>{categoryConjunto == "" ? "" : NameCategory[4]}</h2>
+      <h2 className='ml-3'>{categoryConjunto == "" ? "" : NameCategory[0]}</h2>
       
       {categoroyShortF.map(res => {
 
@@ -313,7 +313,7 @@ const Products = () => {
               <h5>{name}</h5>
               <>
                 <b className='oldPrice'>R${price},00 </b>
-                <b> por R${novo_price}</b>
+                <b> por R${novo_price},00</b>
               </>
               <span>
                 <p className='p'>
@@ -354,7 +354,84 @@ const Products = () => {
               <h5>{name}</h5>
               <>
                 <b className='oldPrice'>R${price},00 </b>
-                <b> por R${novo_price}</b>
+                <b> por R${novo_price},00</b>
+              </>
+              <span>
+                <p className='p'>
+                  <FaCreditCard className='cartao'/> Em até 12x sem juros
+                </p>
+              </span>
+              <button>
+                DESCRIÇÃO
+              </button>
+            </div>
+          </Link>
+          )
+        })
+      }
+      </section>  
+      
+    </ProductProd>
+
+    <ProductProd style={{marginTop: "-10px"}}>
+      <section>
+
+      <h2 className='ml-3'>{categoryConjunto == "" ? "" : NameCategory[10]}</h2>
+      
+      {categoryConjunto.map(res => {
+
+        const { id, name, image, price } = res.products;
+
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
+
+        return (
+          <Link to="/desc" onClick={() => LocalSto(res.products)}>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <>
+                <b className='oldPrice'>R${price},00 </b>
+                <b> por R${novo_price},00</b>
+              </>
+              <span>
+                <p className='p'>
+                  <FaCreditCard className='cartao'/> Em até 12x sem juros
+                </p>
+              </span>
+              <button>
+                DESCRIÇÃO
+              </button>
+            </div>
+          </Link>
+          )
+        })
+      }
+      </section>  
+      
+    </ProductProd>
+    <ProductProd style={{marginTop: "-10px"}}>
+      <section>
+
+      <h2 className='ml-3'>{categoryConjunto == "" ? "" : NameCategory[12]}</h2>
+      
+      {categoryConjunto.map(res => {
+
+        const { id, name, image, price } = res.products;
+
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
+
+        return (
+          <Link to="/desc" onClick={() => LocalSto(res.products)}>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <>
+                <b className='oldPrice'>R${price},00 </b>
+                <b> por R${novo_price},00</b>
               </>
               <span>
                 <p className='p'>

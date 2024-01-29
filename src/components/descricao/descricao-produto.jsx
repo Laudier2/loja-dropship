@@ -147,6 +147,7 @@ const Descricao = () => {
   const FilterColor14 = Todes.filter(e => e == "Kaki" || e == "kaki")
   const FilterColor15 = Todes.filter(e => e == "Azul com rosa")
   const FilterColor16 = Todes.filter(e => e == "multi" ||  e == "Multi" ||  e == "MULTI")
+  const FilterColor17 = Todes.filter(e => e == "Vinho" ||  e == "vinho")
 
 console.log(FilterColor2[0], FilterColor1[0])
 
@@ -340,6 +341,7 @@ console.log(FilterColor2[0], FilterColor1[0])
                   {FilterColor14[0] ? <button type="button" style={{background: "#8c5b32", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor14[0])}></button> : ""}
                   {FilterColor15[0] ? <button type="button" style={{background: "orange", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor15[0])}></button> : ""}
                   {FilterColor16[0] ? <button type="button" style={{backgroundImage: `url("https://ae01.alicdn.com/kf/S451958a0dc9b415aa02e94e439d709f9R/Conjunto-de-Shorts-e-Top-sem-mangas-estampa-tropical-das-mulheres-decote-em-V-ver-o.jpg_640x640.jpg_.webp")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor16[0])}></button> : ""}
+                  {FilterColor17[0] ? <button type="button" style={{background: `#712D52`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor17[0])}></button> : ""}
                   { }
                 </div>
                 <br />

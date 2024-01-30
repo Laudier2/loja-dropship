@@ -138,7 +138,7 @@ export const TableCartFinalize = styled.div`
           width: 60%;
           position: absolute;
           margin-top: 5px;
-          margin-left: -23px;
+          margin-left: -19px;
           font-size: 2.5vw;
           padding: 10px;
         } 

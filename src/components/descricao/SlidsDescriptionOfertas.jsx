@@ -1,20 +1,20 @@
 import { useEffect, useState, useRef } from "react";
 import { Coontainer } from "./styles";
-import axios from "axios";
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md'
 import { Link } from "react-router-dom";
+import api from "../../api/api";
 
 export function SlidsDescriptionOfertas() {
 
   const [ data, setData ] = useState([])
   const carrousel = useRef(null)
 
-  //const localId = localStorage.getItem("categoryId")
   
-  console.log(data)
+  //const localId = localStorage.getItem("categoryId")
+
   useEffect(() => {
     async function RequaryData(){
-      const req = await axios.get(`https://api-store-v4bm.onrender.com/product`)
+      const req = await api.get(`/product`)
       const res = await req.data
 
       setData(res)
@@ -112,13 +112,15 @@ export function SlidsDescriptionOfertas() {
               <Link to="/desc" onClick={() => LocalSto(res)}>
                 <div className="item" key={id}>
                   <div className="image">
-                    <img src={image} alt="img" />
+                    <img src={image[0]} alt="img" />
                   </div>
                 </div>
                 <div className="info">
-                <span className="name">{name}</span>
-                <h5>R${novo_price},00</h5>
-              </div>
+                  <span className="name">{name}</span>
+                  <br />
+                  <h5 className='oldPrice'>R${price},00</h5>
+                  <h5 >R${novo_price},00</h5>
+                </div>
             </Link>
             )
             

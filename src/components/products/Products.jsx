@@ -348,7 +348,46 @@ const Products = () => {
       
     </ProductProd>
     <br />
-    
+    <ProductProd>
+          <section>
+          
+          <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[0]}</h2>
+        
+          {categoroyVestido.map(res => {
+
+          const { id, name, image, price } = res.products;
+
+          let percentual = 0.25;
+          let aumento = price * percentual;
+          let novo_price = price - aumento;
+
+          console.log("img", image[0])
+
+          return (
+            <Link to="/desc" onClick={() => LocalSto(res.products)}>
+              <div key={id}>
+                <img src={image[0]} alt="img" />
+                <h5>{name}</h5>
+                <>
+                  <b className='oldPrice'>R${price},00 </b>
+                  <b> por R${novo_price},00</b>
+                </>
+                <span>
+                  <p className='p'>
+                    <FaCreditCard className='cartao'/> Em até 12x sem juros
+                  </p>
+                </span>
+                <button>
+                  DESCRIÇÃO
+                </button>
+              </div>
+            </Link>
+            )
+        })
+      }
+      </section>  
+      
+    </ProductProd>
 
     </div>
   }

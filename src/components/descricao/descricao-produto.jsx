@@ -373,6 +373,10 @@ console.log(FilterColor2[0], FilterColor1[0])
               }
               {sizers[0] == 3 || sizers[0] == 4?  
               <div>
+                <p>
+                  <strong>Tamnho: </strong>
+                  <span>{dataTamanho ? dataTamanho : "Escolha uma tamanho"}</span>
+                </p>
               <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(`${sizers[0]}${sizers[1]}`)}>
                 {sizers[0] & sizers[0] == 3 || 4 || 5 ? sizers[0]+sizers[1] : ""}
               </button>

@@ -430,10 +430,13 @@ export const Coontainer = styled.div`
         font-size: 20px;
         font-weight: bold;
         cursor: pointer;
+        color: #000000;
       }
 
       & h5 {
         color: #000000;
+        display: inline-block;
+        font-weight: bold;
       }
     }
 
@@ -444,6 +447,16 @@ export const Coontainer = styled.div`
         color: darkolivegreen;
         padding: 5px;
       }
+
+    & .oldPrice {
+      font-size: 1.3rem;
+      text-decoration: line-through;
+      flex-grow: 1;
+      color: red;
+      opacity: 0.7;
+      padding: 3px;
+      margin: 5px;
+    }
   }
 
   & .buttons1 {

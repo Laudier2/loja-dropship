@@ -18,6 +18,20 @@ import { Moleton } from "./components/products/Moleton";
 import { Sandalia } from "./components/products/Sandalia";
 import { Tenis } from "./components/products/Tenis";
 import Cadastro from "./components/Cadastro/Cadastro";
+import { Vestido } from "./components/categorys/Vestido";
+import { Calcado } from "./components/categorys/Calcado";
+import { Relogio } from "./components/categorys/Relogio";
+import { AudioVideo } from "./components/categorys/AudioVideo";
+import { Rintima } from "./components/categorys/Rintima";
+import { Maquiagem } from "./components/categorys/Maquiagem";
+import { Conjuntof } from "./components/categorys/Conjuntof";
+import { Calcaf } from "./components/categorys/Calcaf";
+import { Shortm } from "./components/categorys/Shortm";
+import { Shortf } from "./components/categorys/Shortf";
+import { Calcam } from "./components/categorys/Calcam";
+import { Camisetaf } from "./components/categorys/Camisetaf";
+import { Camisetam } from "./components/categorys/Camisetam";
+import { Informatica } from "./components/categorys/Informatica";
 
 const TRACKING_ID = "G-YJVYCLYTD3" 
 
@@ -96,6 +110,61 @@ function App() {
       path: "/admin",
       element: <Cadastro />,
     },
+    {
+      path: "/vestido",
+      element: <Vestido />,
+    }, {
+      path: "/calcados",
+      element: <Calcado />,
+    },
+    {
+      path: "/relogio",
+      element: <Relogio />,
+    },
+    {
+      path: "/audiovideo",
+      element: <AudioVideo />,
+    },
+    {
+      path: "/rintima",
+      element: <Rintima />,
+    },
+    {
+      path: "/maquiagem",
+      element: <Maquiagem />,
+    },
+    {
+      path: "/conjuntof",
+      element: <Conjuntof />,
+    },
+    {
+      path: "/calcaf",
+      element: <Calcaf />,
+    },
+    {
+      path: "/shortm",
+      element: <Shortm />,
+    },
+    {
+      path: "/shortf",
+      element: <Shortf />,
+    },
+    {
+      path: "/calcam",
+      element: <Calcam />,
+    },
+    {
+      path: "/camisetaf",
+      element: <Camisetaf />,
+    },{
+      path: "/camisetam",
+      element: <Camisetam />,
+    },
+    {
+      path: "/informatica",
+      element: <Informatica />,
+    },
+
   ]);  
 
   function ErroHandler() {

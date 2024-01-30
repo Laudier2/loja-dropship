@@ -37,14 +37,17 @@ export function Header() {
 
     const value = e.target.value
 
-    setDados(value.toLowerCase())
+    setDados(value.toLowerCase()) //Todas as letras minusculas
+    //setDados(value.toUpperCase()) //Todas as letras maiusculas
+    //setDados(value.replace(/^./, dados[0].toUpperCase()))
   }
 
-  //const str = dados.substring(0, 10)
+  //const str = dados.toUpperCase()
 
   const filterData = products.filter(e => e.slug == dados)
+  //const filterData = products.filter(e => e.slug == "Vestido")
 
-  console.log(filterData)
+  console.log(dados)
 
   return (
     <>

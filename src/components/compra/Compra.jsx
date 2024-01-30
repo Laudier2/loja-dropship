@@ -65,6 +65,24 @@ function Compra() {
   </LoadingPage>
 );
 
+    const CreateCompra = {
+      name: name,
+      email: email,
+      phone: phone,
+      state: state,
+      city: city,
+      cep: cep,
+      street: street,
+      number: number,
+      district: district,
+      apartment_or_house: house,
+      cpf: cpf,
+      code_compra: code_compra,
+      productslist: []
+    }
+
+    console.log(CreateCompra)
+
   //Criei esse arrey para os dados formatado para melhor manuzeio dos dados que vem do input via useState
   const data = {
     name,
@@ -411,7 +429,7 @@ let prod2 = [
         }
         PagamentoMercadoPago()
       }
-
+    
   }
 
 

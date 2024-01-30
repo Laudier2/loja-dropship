@@ -79,19 +79,9 @@ export default function CartFinalize() {
                     <TableCartFinalize>
                         <table>
                             <thead>
-                            <Link to="/" style={
-                                {
-                                    textDecoration: "none", 
-                                    fontSize: "30px", 
-                                    fontWeight: "bold",
-                                    background: "aqua",
-                                    padding: "5px",
-                                    borderRadius: "10px",
-                                    marginTop: "5px",
-                                    margin: "5px"
-                                }
-                            }>StylesTop</Link> 
+                            
                             <tr className='m-auto h3'>
+                            <Link to="/" className='logoTitle'>StylesTop</Link> 
                                <h2>Seu carrimho</h2>
                             </tr>
                             </thead>
@@ -146,7 +136,7 @@ export default function CartFinalize() {
                                                     <div className="div2">
                                                         <strong>Preco: R${novo_price * res.cartQuantity}</strong>
                                                         
-                                                        <button className='btn btn-outline-secondary ml-2' onClick={() => handleRemoveClick(res)}> Excluir 
+                                                        <button className='button' onClick={() => handleRemoveClick(res)}> Excluir 
                                                             <RiDeleteBin2Fill className='text-danger h5' />
                                                         </button>
                                                     </div>

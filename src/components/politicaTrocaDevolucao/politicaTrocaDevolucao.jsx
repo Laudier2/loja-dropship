@@ -3,7 +3,7 @@ import React from 'react'
 import { ContainerPolitica } from './styled';
 import { Link } from 'react-router-dom';
 
-export default function PoliticasDevolucaoTroca() {
+export function PoliticasDevolucaoTroca() {
   return (
     <>
         <ContainerPolitica>

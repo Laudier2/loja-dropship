@@ -86,21 +86,68 @@ export const TableCartFinalize = styled.div`
     margin: 0 auto;
     font-size: 1vw;
 
+    & hr {
+      width: 100%;
+      margin: 0 auto;
+      height: 1px;
+      border: 0;
+      background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0)
+      );
+      margin-bottom: 20px;
+    }
+
+    & .logoTitle {
+      position: absolute;
+      text-decoration: none;
+      margin-left: -30%;
+      font-weight: bold;
+      font-size: 2.5vw;
+      color: aqua;
+      text-shadow: 0 4px 0 rgb(121, 116, 116), 0 3px 0 #c9c9c9, 0 1px 0 #bbb,
+        0 1px 0 #b9b9b9, 0 1px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
+        0 0 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+        0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+
+      @media(max-width: 780px) {
+        margin-left: -35%;
+        font-size: 5.5vw;
+
+        text-shadow: 0 1px 0 rgb(121, 116, 116), 0 3px 0 #c9c9c9, 0 1px 0 #bbb,
+        0 1px 0 #b9b9b9, 0 1px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
+        0 0 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+        0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      &:hover {
+        background: gray;
+        color: rgba(0, 255, 255, 0.582);
+        padding: 10px;
+        border-radius: 8px;
+      }
+    }
+
     @media(max-width: 780px) {
 
         & .namePosition {
           width: 60%;
           position: absolute;
-          margin-top: 35px;
-          margin-left: -65px;
+          margin-top: 5px;
+          margin-left: -23px;
           font-size: 2.5vw;
+          padding: 10px;
         } 
       }
 
     & td {
       & .div1 {
         width: 108px;
-        border: solid 1px;
+        border: none;
         border-radius: 8px;
 
         & button {
@@ -118,9 +165,24 @@ export const TableCartFinalize = styled.div`
 
       }
 
+      & img {
+        width: 100px;
+        height: 100px;
+        border-radius: 8px;
+        margin-right: 10px;
+
+        @media(max-width: 780px) {
+          width: 80px;
+          height: 70px;
+          margin-right: 5px;
+          margin-top: -0.8px;
+        }
+      }
+
       & .div2 {
         width: 80%;
         border-radius: 8px;
+        margin-left: 15px;
       }
 
       @media screen and (max-width: 680px) {
@@ -128,7 +190,7 @@ export const TableCartFinalize = styled.div`
 
         & .divimg {
           position: absolute;
-          margin-top: -16px;
+          margin-top: -10px;
         }
 
         & .divnome {
@@ -187,12 +249,29 @@ export const TableCartFinalize = styled.div`
           border: none;
           border-radius: 8px;
           font-weight: bold;
-          background-color: aqua;
+          background-color: transparent;
 
           &:hover {
             background-color: rgba(0, 255, 255, 0.582);
             color: #000000;
             font-weight: bold;
+          }
+        }
+
+        & .button {
+          border: solid 0.1px;
+          border-radius: 8px;
+          font-weight: bold;
+          background-color: transparent;
+
+          &:hover {
+            background-color: rgba(0, 255, 255, 0.582);
+            color: #000000;
+            font-weight: bold;
+          }
+
+          @media (max-width: 768px) {
+            width: 85px;
           }
         }
       }

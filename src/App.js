@@ -10,13 +10,6 @@ import CartFinalize from "./components/cart/cartFinalize";
 import Politicas from "./components/politica/Politicas";
 import ReactGA from "react-ga" 
 import Compra from "./components/compra/Compra";
-import { Bone } from "./components/products/Bone";
-import { Camiseta } from "./components/products/Camiseta";
-import { Short } from "./components/products/Short";
-import { Calca } from "./components/products/Calca";
-import { Moleton } from "./components/products/Moleton";
-import { Sandalia } from "./components/products/Sandalia";
-import { Tenis } from "./components/products/Tenis";
 import Cadastro from "./components/Cadastro/Cadastro";
 import { Vestido } from "./components/categorys/Vestido";
 import { Calcado } from "./components/categorys/Calcado";
@@ -32,6 +25,7 @@ import { Calcam } from "./components/categorys/Calcam";
 import { Camisetaf } from "./components/categorys/Camisetaf";
 import { Camisetam } from "./components/categorys/Camisetam";
 import { Informatica } from "./components/categorys/Informatica";
+import { PoliticasDevolucaoTroca } from "./components/politicaTrocaDevolucao/politicaTrocaDevolucao";
 
 const TRACKING_ID = "G-YJVYCLYTD3" 
 
@@ -75,32 +69,8 @@ function App() {
       element: <Politicas />,
     },
     {
-      path: "/bone",
-      element: <Bone />,
-    },
-    {
-      path: "/camiseta",
-      element: <Camiseta />,
-    },
-    {
-      path: "/short",
-      element: <Short />,
-    },
-    {
-      path: "/calca",
-      element: <Calca />,
-    },
-    {
-      path: "/moleton",
-      element: <Moleton />,
-    },
-    {
-      path: "/sandalia",
-      element: <Sandalia />,
-    },
-    {
-      path: "/tenis",
-      element: <Tenis />,
+      path: "/politicatrocadevolucao",
+      element: <PoliticasDevolucaoTroca />,
     },
     {
       path: "/compra",

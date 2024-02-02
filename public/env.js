@@ -66,7 +66,7 @@ window.env = {
   "npm_package_browserslist_development_0": "last 1 chrome version",
   "npm_package_dependencies_axios": "^1.5.1",
   "npm_package_dependencies__fortawesome_react_fontawesome": "^0.1.14",
-  "PATH": "/tmp/yarn--1706839433678-0.18752859829922142:/home/hk/PJ-StylesTop/loja-dropship/node_modules/.bin:/usr/local/share/.config/yarn/link/node_modules/.bin:/root/.nvm/versions/node/v20.11.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v20.11.0/lib/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v20.11.0/bin/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v20.11.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games",
+  "PATH": "/tmp/yarn--1706841676728-0.6748921796877423:/home/hk/PJ-StylesTop/loja-dropship/node_modules/.bin:/usr/local/share/.config/yarn/link/node_modules/.bin:/root/.nvm/versions/node/v20.11.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v20.11.0/lib/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v20.11.0/bin/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v20.11.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games",
   "NODE": "/root/.nvm/versions/node/v20.11.0/bin/node",
   "npm_package_browserslist_development_1": "last 1 firefox version",
   "npm_package_dependencies_swiper": "^10.3.1",

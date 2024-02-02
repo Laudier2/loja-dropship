@@ -1,5 +1,5 @@
 /* eslint-disable eqeqeq */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ButtonBox, InputBox, CompraStyle, Title } from './stylend';
 import { FormBox, LoadingPage, Logo2 } from "./FormBox";
 import api from '../../api/api';
@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import ReactLoading from 'react-loading';
 import emailjs from "@emailjs/browser"
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 console.clear()
 
@@ -65,64 +66,46 @@ function Compra() {
   </LoadingPage>
 );
 
-    const CreateCompra = {
-      name: name,
-      email: email,
-      phone: phone,
-      state: state,
-      city: city,
-      cep: cep,
-      street: street,
-      number: number,
-      district: district,
-      apartment_or_house: house,
-      cpf: cpf,
-      code_compra: code_compra,
-      productslist: []
-    }
+//Criei esse arrey para os dados formatado para melhor manuzeio dos dados que vem do input via useState
+const data = {
+  name,
+  email,
+  phone,
+  state,
+  city,
+  cep,
+  street,
+  number,
+  district,
+  cpf,
+  /*productslist,*/
+  apartment_or_house: house,
+  code_compra
+}
 
-    console.log(CreateCompra)
+let percentual = 0.25;
+let aumento = productAmount[0] * percentual;
+let novo_amount = productAmount[0] - aumento;
+let aumentoPrice = cart[0].price * percentual;
+let novo_price = cart[0].price - aumentoPrice;
 
-  //Criei esse arrey para os dados formatado para melhor manuzeio dos dados que vem do input via useState
-  const data = {
-    name,
-    email,
-    phone,
-    state,
-    city,
-    cep,
-    street,
-    number,
-    district,
-    cpf,
-    /*productslist,*/
-    apartment_or_house: house,
-    code_compra
+
+//Aqui crio variaveis que recebe os valores que quero
+const name2 = cart[0].name ? cart[0].name : ""
+const price2 = cart[0].name ? novo_amount : ""
+const image2 = cart[0].name ? cart[0].image[0] : ""
+//const description2 = cart[0].name ? cart[0].description : ""
+
+//E usso elas para esse arrey que vai ser enviado para api do mercado pado contida em minha api
+let prod = [
+  {
+      title: name2,
+      price: price2,
+      image: image2,
+      category: "Roupas",
+      description: "",
   }
-
-  let percentual = 0.25;
-  let aumento = productAmount[0] * percentual;
-  let novo_amount = productAmount[0] - aumento;
-  let aumentoPrice = cart[0].price * percentual;
-  let novo_price = cart[0].price - aumentoPrice;
-  
-
-  //Aqui crio variaveis que recebe os valores que quero
-  const name2 = cart[0].name ? cart[0].name : ""
-  const price2 = cart[0].name ? novo_amount : ""
-  const image2 = cart[0].name ? cart[0].image[0] : ""
-  //const description2 = cart[0].name ? cart[0].description : ""
-
-  //E usso elas para esse arrey que vai ser enviado para api do mercado pado contida em minha api
-  let prod = [
-    {
-        title: name2,
-        price: price2,
-        image: image2,
-        category: "Roupas",
-        description: "",
-    }
-  ]
+]
 
 //E usso elas para esse arrey que vai ser enviado para api do mercado pado contida em minha api
 let prod2 = [
@@ -134,301 +117,351 @@ let prod2 = [
       description: "Isso é um teste",
   },
 ]
+
+const [ data2, setData2 ] = useState([])
+
+console.log("data2", data2)
+
+useEffect(() => {
+  (async() => {
+    const req = await api.get("/compra")
+    const res = await req.data;
+
+    setData2(res)
+  })()
+},[])
+
+const ts = data2.map(r => r.productslist)
+
   
-  //console.log(cart)
+console.log(ts[2])
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+const handleSubmit = async (e) => {
+e.preventDefault()
 
-      if(cart[0] && cart[1] === undefined && cart[2] === undefined && cart[3] == undefined && cart[4] == undefined){
+if(cart[0] && cart[1] === undefined && cart[2] === undefined && cart[3] == undefined && cart[4] == undefined){
 
-        let adress = `Estado: ${data.state} , Cidade: ${data.city} , Cep: ${data.cep} , Barrio: ${data.district} , Rua: ${data.street}, Numero: ${data.number} , AP/Casa: ${data.apartment_or_house} , CPF: ${cpf}`
-    
-        let res1 = JSON.stringify(cart[0].image[0])
-        let res4 = JSON.stringify(adress)
-        let res5 = JSON.stringify(novo_amount)
+    let adress = `Estado: ${data.state} , Cidade: ${data.city} , Cep: ${data.cep} , Barrio: ${data.district} , Rua: ${data.street}, Numero: ${data.number} , AP/Casa: ${data.apartment_or_house} , CPF: ${cpf}`
 
-        const templeteParams = {
-          from_name: name ? name : "",
-          adress: `${res4}` ? `${res4}` : "",
-          email: email ? email : "",
-          phone: phone ? phone : "",
-          image1: `${res1}` ? `${res1}` : "",
-          nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
-          quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
-          price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
-          total: `${res5}`,
-          cor1: `${tmCor[0].cor}` ? `${tmCor[0].cor}` : "",
-          medidas1: `${tmItens[0].tm}` ? `${tmItens[0].tm}` : "",
-          url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : ""
-        }
-    
-        emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
-        .then((res) => {
-          console.log("EMAIL ENVIADO", res.status, res.text)
-        }, (err) => {
-          console.log("ERRO: ", err)
-        })
+    let res1 = JSON.stringify(cart[0].image[0])
+      let res4 = JSON.stringify(adress)
+      let res5 = JSON.stringify(novo_amount)
 
-        const PagamentoMercadoPago = async () => {
-          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), (err) => {
-            alert(err)
-            console.log(prod, prod2)
-          })  
-        }
-        PagamentoMercadoPago()
+      const templeteParams = {
+        from_name: name ? name : "",
+        adress: `${res4}` ? `${res4}` : "",
+        email: email ? email : "",
+        phone: phone ? phone : "",
+        image1: `${res1}` ? `${res1}` : "",
+        nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
+        quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
+        price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
+        total: `${res5}`,
+        cor1: `${tmCor[0].cor}` ? `${tmCor[0].cor}` : "",
+        medidas1: `${tmItens[0].tm}` ? `${tmItens[0].tm}` : "",
+        url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : ""
       }
+  
+      emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
+      .then((res) => {
+        console.log("EMAIL ENVIADO", res.status, res.text)
+      }, (err) => {
+        console.log("ERRO: ", err)
+      })
 
-      if(cart[0] && cart[1] && cart[2] === undefined && cart[3] == undefined && cart[4] == undefined){
-
-        let adress = `Estado: ${data.state}, Cidade: ${data.city}, Cep: ${data.cep}, Barrio: ${data.district}, Rua: ${data.street}, Numero: ${data.number}, AP/Casa: ${data.apartment_or_house}`
-    
-        let res1 = JSON.stringify(cart[0].image[0])
-        let res2 = JSON.stringify(cart[1].image[0])
-        let res4 = JSON.stringify(adress)
-        let res5 = JSON.stringify(novo_amount)
-
-        const templeteParams = {
-          from_name: name ? name : "",
-          adress: `${res4}` ? `${res4}` : "",
-          email: email ? email : "",
-          phone: phone ? phone : "",
-
-          image1: `${res1}` ? `${res1}` : "",
-          nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
-          quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
-          price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
-          cor1: `${tmCor[0].cor}` ? `${tmCor[0].cor}` : "",
-          medidas1: `${tmItens[0].tm}` ? `${tmItens[0].tm}` : "",
-          url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
-
-          image2: `${res2}` ? `${res2}` : "",
-          nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
-          quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
-          price2: `${cart[1].price}` ? `${cart[1].price * cart[1].cartQuantity}` : "",
-          cor2: tmCor[1] ? tmCor[1].cor : "",
-          medidas2: tmItens[1] ? tmItens[1].tm : "",
-          url_product2: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
-          total: `${res5}`
-        }
-    
-        emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
-        .then((res) => {
-          console.log("EMAIL ENVIADO", res.status, res.text)
-        }, (err) => {
-          console.log("ERRO: ", err)
-        })
-
-        const PagamentoMercadoPago = async () => {
-          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), (err) => {
-            alert(err)
-          })  
-        }
-        PagamentoMercadoPago()
+      const PagamentoMercadoPago = async () => {
+        await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), (err) => {
+          alert(err)
+          console.log(prod, prod2)
+        })  
       }
+      PagamentoMercadoPago()
+
+      if(cart[0]){
+
+        const dataCart = JSON.stringify(cart)
+
+        const CreateCompra = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: state,
+          city: city,
+          cep: cep,
+          street: street,
+          number: number,
+          district: district,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: dataCart
+        }
+        
+        console.log(CreateCompra)
+
+
+        await api.post("/compra", CreateCompra).then((res) => {
+          toast.success("A compra foi criada com sucesso")
+          console.log(res)
+        }).catch((err) => {
+          toast.error("Houve um erro ", err)
+        })
       
-      if(cart[0] && cart[1] && cart[2] && cart[3] == undefined && cart[4] == undefined){
-
-        let adress = `Estado: ${data.state}, Cidade: ${data.city}, Cep: ${data.cep}, Barrio: ${data.district}, Rua: ${data.street}, Numero: ${data.number}, AP/Casa: ${data.apartment_or_house}`
     
-        let res1 = JSON.stringify(cart[0].image[0])
-        let res2 = JSON.stringify(cart[1].image[0])
-        let res3 =  JSON.stringify(cart[2].image[0]) 
-        let res4 = JSON.stringify(adress)
-        let res5 = JSON.stringify(novo_amount)
-
-        const templeteParams = {
-          from_name: name ? name : "",
-          adress: `${res4}` ? `${res4}` : "",
-          email: email ? email : "",
-          phone: phone ? phone : "",
-
-          image1: `${res1}` ? `${res1}` : "",
-          nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
-          quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
-          price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
-          cor1: `${tmCor[0].cor}` ? `${tmCor[0].cor}` : "",
-          medidas1: `${tmItens[0].tm}` ? `${tmItens[0].tm}` : "",
-          url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
-
-          image2: `${res2}` ? `${res2}` : "",
-          nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
-          quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
-          price2: `${cart[1].price}` ? `${cart[1].price * cart[1].cartQuantity}` : "",
-          cor2: `${tmCor[1].cor}` ? `${tmCor[1].cor}` : "",
-          medidas2: `${tmItens[1].tm}` ? `${tmItens[1].tm}` : "",
-          url_product2: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
-
-          image3: `${res3}` ? ` ${res3}` : "",
-          nameproduct3: `${cart[2].name ? cart[2].name : ""}`,
-          quanty3: `${cart[2].cartQuantity ? cart[2].cartQuantity : ""}`,
-          price3: `${cart[2].price ? cart[2].price * cart[2].cartQuantity : ""}`,
-          cor3: tmCor[2] ? tmCor[2].cor : "",
-          medidas3: tmItens[2] ? tmItens[2].tm : "",
-          url_product3: `${cart[2].url_product}` ? `${cart[2].url_product}` : "",
-          
-          total: `${res5}`
-        }
-    
-        emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
-        .then((res) => {
-          console.log("EMAIL ENVIADO", res.status, res.text)
-         
-        }, (err) => {
-          console.log("ERRO: ", err)
-        })
-
-        const PagamentoMercadoPago = async () => {
-          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), (err) => {
-            alert(err)
-          })  
-        }
-        //localStorage.clear()
-        PagamentoMercadoPago()
+        console.log(CreateCompra)
       }
+    }
 
-      if(cart[0] && cart[1] && cart[2] && cart[3] && cart[3] == undefined && cart[4] == undefined){
+    if(cart[0] && cart[1] && cart[2] === undefined && cart[3] == undefined && cart[4] == undefined){
 
-        let adress = `Estado: ${data.state}, Cidade: ${data.city}, Cep: ${data.cep}, Barrio: ${data.district}, Rua: ${data.street}, Numero: ${data.number}, AP/Casa: ${data.apartment_or_house}`
-    
-        let res1 = JSON.stringify(cart[0].image[0])
-        let res2 = JSON.stringify(cart[1].image[0])
-        let res3 =  JSON.stringify(cart[2].image[0]) 
-        let res04 =  JSON.stringify(cart[3].image[0]) 
-        let res4 = JSON.stringify(adress)
-        let res5 = JSON.stringify(novo_amount)
+      let adress = `Estado: ${data.state}, Cidade: ${data.city}, Cep: ${data.cep}, Barrio: ${data.district}, Rua: ${data.street}, Numero: ${data.number}, AP/Casa: ${data.apartment_or_house}`
+  
+      let res1 = JSON.stringify(cart[0].image[0])
+      let res2 = JSON.stringify(cart[1].image[0])
+      let res4 = JSON.stringify(adress)
+      let res5 = JSON.stringify(novo_amount)
 
-        const templeteParams = {
-          from_name: name ? name : "",
-          adress: `${res4}` ? `${res4}` : "",
-          email: email ? email : "",
-          phone: phone ? phone : "",
+      const templeteParams = {
+        from_name: name ? name : "",
+        adress: `${res4}` ? `${res4}` : "",
+        email: email ? email : "",
+        phone: phone ? phone : "",
 
-          image1: `${res1}` ? `${res1}` : "",
-          nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
-          quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
-          price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
-          cor1: `${tmCor[0].cor}` ? `${tmCor[0].cor}` : "",
-          medidas1: `${tmItens[0].tm}` ? `${tmItens[0].tm}` : "",
-          url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
+        image1: `${res1}` ? `${res1}` : "",
+        nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
+        quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
+        price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
+        cor1: `${tmCor[0].cor}` ? `${tmCor[0].cor}` : "",
+        medidas1: `${tmItens[0].tm}` ? `${tmItens[0].tm}` : "",
+        url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
 
-          image2: `${res2}` ? `${res2}` : "",
-          nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
-          quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
-          price2: `${cart[1].price}` ? `${cart[1].price * cart[1].cartQuantity}` : "",
-          cor2: `${tmCor[1].cor}` ? `${tmCor[1].cor}` : "",
-          medidas2: `${tmItens[1].tm}` ? `${tmItens[1].tm}` : "",
-          url_product2: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
-
-          image3: `${res3}` ? ` ${res3}` : "",
-          nameproduct3: `${cart[2].name ? cart[2].name : ""}`,
-          quanty3: `${cart[2].cartQuantity ? cart[2].cartQuantity : ""}`,
-          price3: `${cart[2].price ? cart[2].price * cart[2].cartQuantity : ""}`,
-          cor3: tmCor[2] ? tmCor[2].cor : "",
-          medidas3: tmItens[2] ? tmItens[2].tm : "",
-          url_product3: `${cart[2].url_product}` ? `${cart[2].url_product}` : "",
-
-          image4: `${res04}`? ` ${res04}` : "",
-          nameproduct4: `${cart[3].name}`? `${cart[3].name}` : "",
-          quanty4: `${cart[3].cartQuantity}`? `${cart[3].cartQuantity}` : "",
-          price4: `${cart[3].price ? cart[3].price * cart[3].cartQuantity : ""}`,
-          cor4: tmCor[3] ? tmCor[3].cor : "",
-          medidas4: tmItens[3] ? tmItens[3].tm : "",
-          url_product4: `${cart[3].url_product}` ? `${cart[3].url_product}` : "",
-
-          total: `${res5}`
-        }
-    
-        emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
-        .then((res) => {
-          console.log("EMAIL ENVIADO", res.status, res.text)
-        }, (err) => {
-          console.log("ERRO: ", err)
-        })
-
-        const PagamentoMercadoPago = async () => {
-          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), (err) => {
-            alert(err)
-          })  
-        }
-        PagamentoMercadoPago()
+        image2: `${res2}` ? `${res2}` : "",
+        nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
+        quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
+        price2: `${cart[1].price}` ? `${cart[1].price * cart[1].cartQuantity}` : "",
+        cor2: tmCor[1] ? tmCor[1].cor : "",
+        medidas2: tmItens[1] ? tmItens[1].tm : "",
+        url_product2: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
+        total: `${res5}`
       }
+  
+      emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
+      .then((res) => {
+        console.log("EMAIL ENVIADO", res.status, res.text)
+      }, (err) => {
+        console.log("ERRO: ", err)
+      })
 
-      if(cart[0] && cart[1] && cart[2] && cart[3] && cart[4]){
-
-        let adress = `Estado: ${data.state}, Cidade: ${data.city}, Cep: ${data.cep}, Barrio: ${data.district}, Rua: ${data.street}, Numero: ${data.number}, AP/Casa: ${data.apartment_or_house}`
-    
-        let res1 = JSON.stringify(cart[0].image[0])
-        let res2 = JSON.stringify(cart[1].image[0])
-        let res3 =  JSON.stringify(cart[2].image[0]) 
-        let res04 =  JSON.stringify(cart[3].image[0]) 
-        let res05 =  JSON.stringify(cart[4].image[0]) 
-        let res4 = JSON.stringify(adress)
-        let res5 = JSON.stringify(novo_amount)
-
-        const templeteParams = {
-          from_name: name ? name : "",
-          adress: `${res4}` ? `${res4}` : "",
-          email: email ? email : "",
-          phone: phone ? phone : "",
-
-          image1: `${res1}` ? `${res1}` : "",
-          nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
-          quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
-          price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
-          cor1: `${tmCor[0].cor}` ? `${tmCor[0].cor}` : "",
-          medidas1: `${tmItens[0].tm}` ? `${tmItens[0].tm}` : "",
-          url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
-
-          image2: `${res2}` ? `${res2}` : "",
-          nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
-          quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
-          price2: `${cart[1].price}` ? `${cart[1].price * cart[1].cartQuantity}` : "",
-          cor2: `${tmCor[1].cor}` ? `${tmCor[1].cor}` : "",
-          medidas2: `${tmItens[1].tm}` ? `${tmItens[1].tm}` : "",
-          url_product2: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
-
-          image3: `${res3}` ? ` ${res3}` : "",
-          nameproduct3: `${cart[2].name ? cart[2].name : ""}`,
-          quanty3: `${cart[2].cartQuantity ? cart[2].cartQuantity : ""}`,
-          price3: `${cart[2].price ? cart[2].price * cart[2].cartQuantity : ""}`,
-          cor3: tmCor[2] ? tmCor[2].cor : "",
-          medidas3: tmItens[2] ? tmItens[2].tm : "",
-          url_product3: `${cart[2].url_product}` ? `${cart[2].url_product}` : "",
-
-          image4: `${res04}`? ` ${res04}` : "",
-          nameproduct4: `${cart[3].name}`? `${cart[3].name}` : "",
-          quanty4: `${cart[3].cartQuantity}`? `${cart[3].cartQuantity}` : "",
-          price4: `${cart[3].price ? cart[3].price * cart[3].cartQuantity : ""}`,
-          cor4: tmCor[3] ? tmCor[3].cor : "",
-          medidas4: tmItens[3] ? tmItens[3].tm : "",
-          url_product4: `${cart[3].url_product}` ? `${cart[3].url_product}` : "",
-
-          image5: `${res05}`? ` ${res05}` : "",
-          nameproduct5: `${cart[4].name}`? `${cart[4].name}` : "",
-          quanty5: `${cart[4].cartQuantity}`? `${cart[4].cartQuantity}` : "",
-          price5: `${cart[4].price ? cart[4].price * cart[4].cartQuantity : ""}`,
-          cor5: tmCor[4] ? tmCor[4].cor : "",
-          medidas5: tmItens[4] ? tmItens[4].tm : "",
-          url_product5: `${cart[4].url_product}` ? `${cart[4].url_product}` : "",
-
-          total: `${res5}`
-        }
-    
-        emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
-        .then((res) => {
-          console.log("EMAIL ENVIADO", res.status, res.text)
-        }, (err) => {
-          console.log("ERRO: ", err)
-        })
-
-        const PagamentoMercadoPago = async () => {
-          await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), (err) => {
-            alert(err)
-          })  
-        }
-        PagamentoMercadoPago()
+      const PagamentoMercadoPago = async () => {
+        await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), (err) => {
+          alert(err)
+        })  
       }
+      PagamentoMercadoPago()
+    }
+    
+    if(cart[0] && cart[1] && cart[2] && cart[3] == undefined && cart[4] == undefined){
+
+      let adress = `Estado: ${data.state}, Cidade: ${data.city}, Cep: ${data.cep}, Barrio: ${data.district}, Rua: ${data.street}, Numero: ${data.number}, AP/Casa: ${data.apartment_or_house}`
+  
+      let res1 = JSON.stringify(cart[0].image[0])
+      let res2 = JSON.stringify(cart[1].image[0])
+      let res3 =  JSON.stringify(cart[2].image[0]) 
+      let res4 = JSON.stringify(adress)
+      let res5 = JSON.stringify(novo_amount)
+
+      const templeteParams = {
+        from_name: name ? name : "",
+        adress: `${res4}` ? `${res4}` : "",
+        email: email ? email : "",
+        phone: phone ? phone : "",
+
+        image1: `${res1}` ? `${res1}` : "",
+        nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
+        quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
+        price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
+        cor1: `${tmCor[0].cor}` ? `${tmCor[0].cor}` : "",
+        medidas1: `${tmItens[0].tm}` ? `${tmItens[0].tm}` : "",
+        url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
+
+        image2: `${res2}` ? `${res2}` : "",
+        nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
+        quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
+        price2: `${cart[1].price}` ? `${cart[1].price * cart[1].cartQuantity}` : "",
+        cor2: `${tmCor[1].cor}` ? `${tmCor[1].cor}` : "",
+        medidas2: `${tmItens[1].tm}` ? `${tmItens[1].tm}` : "",
+        url_product2: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
+
+        image3: `${res3}` ? ` ${res3}` : "",
+        nameproduct3: `${cart[2].name ? cart[2].name : ""}`,
+        quanty3: `${cart[2].cartQuantity ? cart[2].cartQuantity : ""}`,
+        price3: `${cart[2].price ? cart[2].price * cart[2].cartQuantity : ""}`,
+        cor3: tmCor[2] ? tmCor[2].cor : "",
+        medidas3: tmItens[2] ? tmItens[2].tm : "",
+        url_product3: `${cart[2].url_product}` ? `${cart[2].url_product}` : "",
+        
+        total: `${res5}`
+      }
+  
+      emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
+      .then((res) => {
+        console.log("EMAIL ENVIADO", res.status, res.text)
+        
+      }, (err) => {
+        console.log("ERRO: ", err)
+      })
+
+      const PagamentoMercadoPago = async () => {
+        await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), (err) => {
+          alert(err)
+        })  
+      }
+      //localStorage.clear()
+      PagamentoMercadoPago()
+    }
+
+    if(cart[0] && cart[1] && cart[2] && cart[3] && cart[3] == undefined && cart[4] == undefined){
+
+      let adress = `Estado: ${data.state}, Cidade: ${data.city}, Cep: ${data.cep}, Barrio: ${data.district}, Rua: ${data.street}, Numero: ${data.number}, AP/Casa: ${data.apartment_or_house}`
+  
+      let res1 = JSON.stringify(cart[0].image[0])
+      let res2 = JSON.stringify(cart[1].image[0])
+      let res3 =  JSON.stringify(cart[2].image[0]) 
+      let res04 =  JSON.stringify(cart[3].image[0]) 
+      let res4 = JSON.stringify(adress)
+      let res5 = JSON.stringify(novo_amount)
+
+      const templeteParams = {
+        from_name: name ? name : "",
+        adress: `${res4}` ? `${res4}` : "",
+        email: email ? email : "",
+        phone: phone ? phone : "",
+
+        image1: `${res1}` ? `${res1}` : "",
+        nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
+        quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
+        price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
+        cor1: `${tmCor[0].cor}` ? `${tmCor[0].cor}` : "",
+        medidas1: `${tmItens[0].tm}` ? `${tmItens[0].tm}` : "",
+        url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
+
+        image2: `${res2}` ? `${res2}` : "",
+        nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
+        quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
+        price2: `${cart[1].price}` ? `${cart[1].price * cart[1].cartQuantity}` : "",
+        cor2: `${tmCor[1].cor}` ? `${tmCor[1].cor}` : "",
+        medidas2: `${tmItens[1].tm}` ? `${tmItens[1].tm}` : "",
+        url_product2: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
+
+        image3: `${res3}` ? ` ${res3}` : "",
+        nameproduct3: `${cart[2].name ? cart[2].name : ""}`,
+        quanty3: `${cart[2].cartQuantity ? cart[2].cartQuantity : ""}`,
+        price3: `${cart[2].price ? cart[2].price * cart[2].cartQuantity : ""}`,
+        cor3: tmCor[2] ? tmCor[2].cor : "",
+        medidas3: tmItens[2] ? tmItens[2].tm : "",
+        url_product3: `${cart[2].url_product}` ? `${cart[2].url_product}` : "",
+
+        image4: `${res04}`? ` ${res04}` : "",
+        nameproduct4: `${cart[3].name}`? `${cart[3].name}` : "",
+        quanty4: `${cart[3].cartQuantity}`? `${cart[3].cartQuantity}` : "",
+        price4: `${cart[3].price ? cart[3].price * cart[3].cartQuantity : ""}`,
+        cor4: tmCor[3] ? tmCor[3].cor : "",
+        medidas4: tmItens[3] ? tmItens[3].tm : "",
+        url_product4: `${cart[3].url_product}` ? `${cart[3].url_product}` : "",
+
+        total: `${res5}`
+      }
+  
+      emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
+      .then((res) => {
+        console.log("EMAIL ENVIADO", res.status, res.text)
+      }, (err) => {
+        console.log("ERRO: ", err)
+      })
+
+      const PagamentoMercadoPago = async () => {
+        await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), (err) => {
+          alert(err)
+        })  
+      }
+      PagamentoMercadoPago()
+    }
+
+    if(cart[0] && cart[1] && cart[2] && cart[3] && cart[4]){
+
+      let adress = `Estado: ${data.state}, Cidade: ${data.city}, Cep: ${data.cep}, Barrio: ${data.district}, Rua: ${data.street}, Numero: ${data.number}, AP/Casa: ${data.apartment_or_house}`
+  
+      let res1 = JSON.stringify(cart[0].image[0])
+      let res2 = JSON.stringify(cart[1].image[0])
+      let res3 =  JSON.stringify(cart[2].image[0]) 
+      let res04 =  JSON.stringify(cart[3].image[0]) 
+      let res05 =  JSON.stringify(cart[4].image[0]) 
+      let res4 = JSON.stringify(adress)
+      let res5 = JSON.stringify(novo_amount)
+
+      const templeteParams = {
+        from_name: name ? name : "",
+        adress: `${res4}` ? `${res4}` : "",
+        email: email ? email : "",
+        phone: phone ? phone : "",
+
+        image1: `${res1}` ? `${res1}` : "",
+        nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
+        quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
+        price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
+        cor1: `${tmCor[0].cor}` ? `${tmCor[0].cor}` : "",
+        medidas1: `${tmItens[0].tm}` ? `${tmItens[0].tm}` : "",
+        url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
+
+        image2: `${res2}` ? `${res2}` : "",
+        nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
+        quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
+        price2: `${cart[1].price}` ? `${cart[1].price * cart[1].cartQuantity}` : "",
+        cor2: `${tmCor[1].cor}` ? `${tmCor[1].cor}` : "",
+        medidas2: `${tmItens[1].tm}` ? `${tmItens[1].tm}` : "",
+        url_product2: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
+
+        image3: `${res3}` ? ` ${res3}` : "",
+        nameproduct3: `${cart[2].name ? cart[2].name : ""}`,
+        quanty3: `${cart[2].cartQuantity ? cart[2].cartQuantity : ""}`,
+        price3: `${cart[2].price ? cart[2].price * cart[2].cartQuantity : ""}`,
+        cor3: tmCor[2] ? tmCor[2].cor : "",
+        medidas3: tmItens[2] ? tmItens[2].tm : "",
+        url_product3: `${cart[2].url_product}` ? `${cart[2].url_product}` : "",
+
+        image4: `${res04}`? ` ${res04}` : "",
+        nameproduct4: `${cart[3].name}`? `${cart[3].name}` : "",
+        quanty4: `${cart[3].cartQuantity}`? `${cart[3].cartQuantity}` : "",
+        price4: `${cart[3].price ? cart[3].price * cart[3].cartQuantity : ""}`,
+        cor4: tmCor[3] ? tmCor[3].cor : "",
+        medidas4: tmItens[3] ? tmItens[3].tm : "",
+        url_product4: `${cart[3].url_product}` ? `${cart[3].url_product}` : "",
+
+        image5: `${res05}`? ` ${res05}` : "",
+        nameproduct5: `${cart[4].name}`? `${cart[4].name}` : "",
+        quanty5: `${cart[4].cartQuantity}`? `${cart[4].cartQuantity}` : "",
+        price5: `${cart[4].price ? cart[4].price * cart[4].cartQuantity : ""}`,
+        cor5: tmCor[4] ? tmCor[4].cor : "",
+        medidas5: tmItens[4] ? tmItens[4].tm : "",
+        url_product5: `${cart[4].url_product}` ? `${cart[4].url_product}` : "",
+
+        total: `${res5}`
+      }
+  
+      emailjs.send("service_lflbrlm", "template_6bgdvos", templeteParams, "uh-vq_J-Q9IBlCdVH")
+      .then((res) => {
+        console.log("EMAIL ENVIADO", res.status, res.text)
+      }, (err) => {
+        console.log("ERRO: ", err)
+      })
+
+      const PagamentoMercadoPago = async () => {
+        await api.post("payment", ...prod).then((res) => (window.location.href = res.data.response.body.init_point), (err) => {
+          alert(err)
+        })  
+      }
+      PagamentoMercadoPago()
+    }
     
   }
 

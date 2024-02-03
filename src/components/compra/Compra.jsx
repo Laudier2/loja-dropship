@@ -217,7 +217,14 @@ if(cart[0] && cart[1] === undefined && cart[2] === undefined && cart[3] == undef
           cvQuantity,
           cvTamnho,
           cvCorres,
-          cvCodeCompra
+          cvCodeCompra,
+          "_______________________________________________________________________________________________________________",
+          "Dados do Cliente abaixo!",
+          "_______________________________________________________________________________________________________________",
+          "Nome: " + name,
+          "Telefone: " + phone,
+          "Email: " + email,
+          "_______________________________________________________________________________________________________________",
         ]
 
         const CreateCompra = {
@@ -373,7 +380,14 @@ if(cart[0] && cart[1] === undefined && cart[2] === undefined && cart[3] == undef
           cvQuantity2,
           cvTamnho2,
           cvCorres2,
-          cvCodeCompra2
+          cvCodeCompra2,
+          "_______________________________________________________________________________________________________________",
+          "Dados do Cliente abaixo!",
+          "_______________________________________________________________________________________________________________",
+          "Nome: " + name,
+          "Telefone: " + phone,
+          "Email: " + email,
+          "_______________________________________________________________________________________________________________",
 
         ]
 
@@ -467,9 +481,159 @@ if(cart[0] && cart[1] === undefined && cart[2] === undefined && cart[3] == undef
       }
       //localStorage.clear()
       PagamentoMercadoPago()
+
+      if(cart[0] && cart[1] && cart[2]){
+
+        const ids = JSON.stringify(cart[0].id)
+        const names = JSON.stringify(cart[0].name)
+        const images = JSON.stringify(cart[0].image[0])
+        const prices = JSON.stringify(cart[0].price)
+        const cartQuantitys = JSON.stringify(cart[0].cartQuantity)
+        const cvCodeCompra = JSON.stringify(GeraCode)
+        const localTn  = localStorage.getItem("tmMedidas")
+        const localCor  = localStorage.getItem("tmCores")
+
+        const ids2 = JSON.stringify(cart[1].id)
+        const names2 = JSON.stringify(cart[1].name)
+        const images2 = JSON.stringify(cart[1].image[0])
+        const prices2 = JSON.stringify(cart[1].price)
+        const cartQuantitys2 = JSON.stringify(cart[1].cartQuantity)
+        const cvCodeCompra2 = JSON.stringify(GeraCode)
+        const localTn2  = localStorage.getItem("tmMedidas")
+        const localCor2  = localStorage.getItem("tmCores")
+
+        const ids3 = JSON.stringify(cart[1].id)
+        const names3 = JSON.stringify(cart[1].name)
+        const images3 = JSON.stringify(cart[1].image[0])
+        const prices3 = JSON.stringify(cart[1].price)
+        const cartQuantitys3 = JSON.stringify(cart[1].cartQuantity)
+        const cvCodeCompra3 = JSON.stringify(GeraCode)
+        const localTn3  = localStorage.getItem("tmMedidas")
+        const localCor3  = localStorage.getItem("tmCores")
+
+
+        const resTm = JSON.parse(localTn)
+        const resCor = JSON.parse(localCor)
+
+        const resTm2 = JSON.parse(localTn2)
+        const resCor2 = JSON.parse(localCor2)
+
+        const resTm3 = JSON.parse(localTn3)
+        const resCor3 = JSON.parse(localCor3)
+
+        //console.log(localCor)
+
+        const tmMedidas = JSON.stringify(resTm[0].tm)
+        const tmCores = JSON.stringify(resCor[0].cor)
+
+        const tmMedidas2 = JSON.stringify(resTm2[1].tm)
+        const tmCores2 = JSON.stringify(resCor2[1].cor)
+
+        const tmMedidas3 = JSON.stringify(resTm3[1].tm)
+        const tmCores3 = JSON.stringify(resCor3[1].cor)
+
+        let cvId = ids.replace(/"/g, "");
+        let cvName = names.replace(/"/g, "");
+        let cvImage = images.replace(/"/g, "");
+        let cvPrice = prices.replace(/"/g, "");
+        let cvQuantity = cartQuantitys.replace(/"/g, "");
+        let cvTamnho = tmMedidas.replace(/"/g, "");
+        let cvCorres = tmCores.replace(/"/g, "");
+
+        let cvId2 = ids2.replace(/"/g, "");
+        let cvName2 = names2.replace(/"/g, "");
+        let cvImage2 = images2.replace(/"/g, "");
+        let cvPrice2 = prices2.replace(/"/g, "");
+        let cvQuantity2 = cartQuantitys2.replace(/"/g, "");
+        let cvTamnho2 = tmMedidas2.replace(/"/g, "");
+        let cvCorres2 = tmCores2.replace(/"/g, "");
+
+        let cvId3 = ids3.replace(/"/g, "");
+        let cvName3 = names3.replace(/"/g, "");
+        let cvImage3 = images3.replace(/"/g, "");
+        let cvPrice3 = prices3.replace(/"/g, "");
+        let cvQuantity3 = cartQuantitys3.replace(/"/g, "");
+        let cvTamnho3 = tmMedidas3.replace(/"/g, "");
+        let cvCorres3= tmCores3.replace(/"/g, "");
+
+        let lembrete = "Informação lenght: 2 = id, 3 = name, 4 = image, 5 = price, 6 = quantity, 7 = size, 8 = cor, 9 = code_compra: Aqui é compra 1"
+        
+        let lembrete2 = "Informação lenght: 12 = id, 13 = name, 14 = image, 15 = price, 16 = quantity, 17 = size, 18 = cor, 19 = code_compra: Aqui é compra 2"
+        
+        let lembrete3 = "Informação lenght: 22 = id, 23 = name, 24 = image, 25 = price, 26 = quantity, 27 = size, 28 = cor, 29 = code_compra: Aqui é compra 3"
+
+        const ArreyData = [
+          lembrete,
+          "______________________________________________________________________________________________________________",
+          cvId,
+          cvName,
+          cvImage,
+          cvPrice,
+          cvQuantity,
+          cvTamnho,
+          cvCorres,
+          cvCodeCompra,
+          lembrete2,
+          "______________________________________________________________________________________________________________",
+          cvId2,
+          cvName2,
+          cvImage2,
+          cvPrice2,
+          cvQuantity2,
+          cvTamnho2,
+          cvCorres2,
+          cvCodeCompra2,
+          lembrete3,
+          "______________________________________________________________________________________________________________",
+          cvId3,
+          cvName3,
+          cvImage3,
+          cvPrice3,
+          cvQuantity3,
+          cvTamnho3,
+          cvCorres3,
+          cvCodeCompra3,
+          "_______________________________________________________________________________________________________________",
+          "Dados do Cliente abaixo!",
+          "_______________________________________________________________________________________________________________",
+          "Nome: " + name,
+          "Telefone: " + phone,
+          "Email: " + email,
+          "_______________________________________________________________________________________________________________",
+        ]
+
+        const CreateCompra = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: state,
+          city: city,
+          cep: cep,
+          street: street,
+          number: number,
+          district: district,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData
+        }
+        
+        console.log(CreateCompra)
+
+
+        await api.post("/compra", CreateCompra).then((res) => {
+          toast.success("A compra foi criada com sucesso")
+          console.log(res)
+        }).catch((err) => {
+          toast.error("Houve um erro ", err)
+        })
+      
+    
+        console.log(CreateCompra)
+      }
     }
 
-    if(cart[0] && cart[1] && cart[2] && cart[3] && cart[3] == undefined && cart[4] == undefined){
+    if(cart[0] && cart[1] && cart[2] && cart[3] && cart[4] == undefined){
 
       let adress = `Estado: ${data.state}, Cidade: ${data.city}, Cep: ${data.cep}, Barrio: ${data.district}, Rua: ${data.street}, Numero: ${data.number}, AP/Casa: ${data.apartment_or_house}`
   
@@ -534,6 +698,189 @@ if(cart[0] && cart[1] === undefined && cart[2] === undefined && cart[3] == undef
         })  
       }
       PagamentoMercadoPago()
+      
+      if(cart[0] && cart[1] && cart[2] && cart[3]){
+
+        const ids = JSON.stringify(cart[0].id)
+        const names = JSON.stringify(cart[0].name)
+        const images = JSON.stringify(cart[0].image[0])
+        const prices = JSON.stringify(cart[0].price)
+        const cartQuantitys = JSON.stringify(cart[0].cartQuantity)
+        const cvCodeCompra = JSON.stringify(GeraCode)
+        const localTn  = localStorage.getItem("tmMedidas")
+        const localCor  = localStorage.getItem("tmCores")
+
+        const ids2 = JSON.stringify(cart[1].id)
+        const names2 = JSON.stringify(cart[1].name)
+        const images2 = JSON.stringify(cart[1].image[0])
+        const prices2 = JSON.stringify(cart[1].price)
+        const cartQuantitys2 = JSON.stringify(cart[1].cartQuantity)
+        const cvCodeCompra2 = JSON.stringify(GeraCode)
+        const localTn2  = localStorage.getItem("tmMedidas")
+        const localCor2  = localStorage.getItem("tmCores")
+
+        const ids3 = JSON.stringify(cart[2].id)
+        const names3 = JSON.stringify(cart[2].name)
+        const images3 = JSON.stringify(cart[2].image[0])
+        const prices3 = JSON.stringify(cart[2].price)
+        const cartQuantitys3 = JSON.stringify(cart[2].cartQuantity)
+        const cvCodeCompra3 = JSON.stringify(GeraCode)
+        const localTn3  = localStorage.getItem("tmMedidas")
+        const localCor3  = localStorage.getItem("tmCores")
+
+        const ids4 = JSON.stringify(cart[3].id)
+        const names4 = JSON.stringify(cart[3].name)
+        const images4 = JSON.stringify(cart[3].image[0])
+        const prices4 = JSON.stringify(cart[3].price)
+        const cartQuantitys4 = JSON.stringify(cart[3].cartQuantity)
+        const cvCodeCompra4 = JSON.stringify(GeraCode)
+        const localTn4  = localStorage.getItem("tmMedidas")
+        const localCor4  = localStorage.getItem("tmCores")
+
+        const resTm = JSON.parse(localTn)
+        const resCor = JSON.parse(localCor)
+
+        const resTm2 = JSON.parse(localTn2)
+        const resCor2 = JSON.parse(localCor2)
+
+        const resTm3 = JSON.parse(localTn3)
+        const resCor3 = JSON.parse(localCor3)
+
+        const resTm4 = JSON.parse(localTn4)
+        const resCor4 = JSON.parse(localCor4)
+
+        const tmMedidas = JSON.stringify(resTm[0].tm)
+        const tmCores = JSON.stringify(resCor[0].cor)
+
+        const tmMedidas2 = JSON.stringify(resTm2[1].tm)
+        const tmCores2 = JSON.stringify(resCor2[1].cor)
+
+        const tmMedidas3 = JSON.stringify(resTm3[2].tm)
+        const tmCores3 = JSON.stringify(resCor3[2].cor)
+
+        const tmMedidas4 = JSON.stringify(resTm4[3].tm)
+        const tmCores4 = JSON.stringify(resCor4[3].cor)
+
+        let cvId = ids.replace(/"/g, "");
+        let cvName = names.replace(/"/g, "");
+        let cvImage = images.replace(/"/g, "");
+        let cvPrice = prices.replace(/"/g, "");
+        let cvQuantity = cartQuantitys.replace(/"/g, "");
+        let cvTamnho = tmMedidas.replace(/"/g, "");
+        let cvCorres = tmCores.replace(/"/g, "");
+
+        let cvId2 = ids2.replace(/"/g, "");
+        let cvName2 = names2.replace(/"/g, "");
+        let cvImage2 = images2.replace(/"/g, "");
+        let cvPrice2 = prices2.replace(/"/g, "");
+        let cvQuantity2 = cartQuantitys2.replace(/"/g, "");
+        let cvTamnho2 = tmMedidas2.replace(/"/g, "");
+        let cvCorres2 = tmCores2.replace(/"/g, "");
+
+        let cvId3 = ids3.replace(/"/g, "");
+        let cvName3 = names3.replace(/"/g, "");
+        let cvImage3 = images3.replace(/"/g, "");
+        let cvPrice3 = prices3.replace(/"/g, "");
+        let cvQuantity3 = cartQuantitys3.replace(/"/g, "");
+        let cvTamnho3 = tmMedidas3.replace(/"/g, "");
+        let cvCorres3= tmCores3.replace(/"/g, "");
+
+        let cvId4 = ids4.replace(/"/g, "");
+        let cvName4 = names4.replace(/"/g, "");
+        let cvImage4 = images4.replace(/"/g, "");
+        let cvPrice4 = prices4.replace(/"/g, "");
+        let cvQuantity4 = cartQuantitys4.replace(/"/g, "");
+        let cvTamnho4 = tmMedidas4.replace(/"/g, "");
+        let cvCorres4 = tmCores4.replace(/"/g, "");
+
+        let lembrete = "Informação lenght: 2 = id, 3 = name, 4 = image, 5 = price, 6 = quantity, 7 = size, 8 = cor, 9 = code_compra: Aqui é compra 1"
+        
+        let lembrete2 = "Informação lenght: 12 = id, 13 = name, 14 = image, 15 = price, 16 = quantity, 17 = size, 18 = cor, 19 = code_compra: Aqui é compra 2"
+        
+        let lembrete3 = "Informação lenght: 22 = id, 23 = name, 24 = image, 25 = price, 26 = quantity, 27 = size, 28 = cor, 29 = code_compra: Aqui é compra 3"
+        
+        let lembrete4 = "Informação lenght: 32 = id, 33 = name, 34 = image, 35 = price, 36 = quantity, 37 = size, 38 = cor, 39 = code_compra: Aqui é compra 4"
+      
+        const ArreyData = [
+          lembrete,
+          "______________________________________________________________________________________________________________",
+          cvId,
+          cvName,
+          cvImage,
+          cvPrice,
+          cvQuantity,
+          cvTamnho,
+          cvCorres,
+          cvCodeCompra,
+          lembrete2,
+          "______________________________________________________________________________________________________________",
+          cvId2,
+          cvName2,
+          cvImage2,
+          cvPrice2,
+          cvQuantity2,
+          cvTamnho2,
+          cvCorres2,
+          cvCodeCompra2,
+          lembrete3,
+          "______________________________________________________________________________________________________________",
+          cvId3,
+          cvName3,
+          cvImage3,
+          cvPrice3,
+          cvQuantity3,
+          cvTamnho3,
+          cvCorres3,
+          cvCodeCompra3,
+          lembrete4,
+          "______________________________________________________________________________________________________________",
+          cvId4,
+          cvName4,
+          cvImage4,
+          cvPrice4,
+          cvQuantity4,
+          cvTamnho4,
+          cvCorres4,
+          cvCodeCompra4,
+          "_______________________________________________________________________________________________________________",
+          "Dados do Cliente abaixo!",
+          "_______________________________________________________________________________________________________________",
+          "Nome: " + name,
+          "Telefone: " + phone,
+          "Email: " + email,
+          "_______________________________________________________________________________________________________________",
+          
+        ]
+
+        const CreateCompra = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: state,
+          city: city,
+          cep: cep,
+          street: street,
+          number: number,
+          district: district,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData
+        }
+        
+        console.log(CreateCompra)
+
+
+        await api.post("/compra", CreateCompra).then((res) => {
+          toast.success("A compra foi criada com sucesso")
+          console.log(res)
+        }).catch((err) => {
+          toast.error("Houve um erro ", err)
+        })
+      
+    
+        console.log(CreateCompra)
+      }
     }
 
     if(cart[0] && cart[1] && cart[2] && cart[3] && cart[4]){
@@ -610,6 +957,225 @@ if(cart[0] && cart[1] === undefined && cart[2] === undefined && cart[3] == undef
         })  
       }
       PagamentoMercadoPago()
+
+      if(cart[0] && cart[1] && cart[2] && cart[3] && cart[4]){
+
+        const ids = JSON.stringify(cart[0].id)
+        const names = JSON.stringify(cart[0].name)
+        const images = JSON.stringify(cart[0].image[0])
+        const prices = JSON.stringify(cart[0].price)
+        const cartQuantitys = JSON.stringify(cart[0].cartQuantity)
+        const cvCodeCompra = JSON.stringify(GeraCode)
+        const localTn  = localStorage.getItem("tmMedidas")
+        const localCor  = localStorage.getItem("tmCores")
+
+        const ids2 = JSON.stringify(cart[1].id)
+        const names2 = JSON.stringify(cart[1].name)
+        const images2 = JSON.stringify(cart[1].image[0])
+        const prices2 = JSON.stringify(cart[1].price)
+        const cartQuantitys2 = JSON.stringify(cart[1].cartQuantity)
+        const cvCodeCompra2 = JSON.stringify(GeraCode)
+        const localTn2  = localStorage.getItem("tmMedidas")
+        const localCor2  = localStorage.getItem("tmCores")
+
+        const ids3 = JSON.stringify(cart[2].id)
+        const names3 = JSON.stringify(cart[2].name)
+        const images3 = JSON.stringify(cart[2].image[0])
+        const prices3 = JSON.stringify(cart[2].price)
+        const cartQuantitys3 = JSON.stringify(cart[2].cartQuantity)
+        const cvCodeCompra3 = JSON.stringify(GeraCode)
+        const localTn3  = localStorage.getItem("tmMedidas")
+        const localCor3  = localStorage.getItem("tmCores")
+
+        const ids4 = JSON.stringify(cart[3].id)
+        const names4 = JSON.stringify(cart[3].name)
+        const images4 = JSON.stringify(cart[3].image[0])
+        const prices4 = JSON.stringify(cart[3].price)
+        const cartQuantitys4 = JSON.stringify(cart[3].cartQuantity)
+        const cvCodeCompra4 = JSON.stringify(GeraCode)
+        const localTn4  = localStorage.getItem("tmMedidas")
+        const localCor4  = localStorage.getItem("tmCores")
+
+        const ids5 = JSON.stringify(cart[4].id)
+        const names5 = JSON.stringify(cart[4].name)
+        const images5 = JSON.stringify(cart[4].image[0])
+        const prices5 = JSON.stringify(cart[4].price)
+        const cartQuantitys5 = JSON.stringify(cart[4].cartQuantity)
+        const cvCodeCompra5 = JSON.stringify(GeraCode)
+        const localTn5  = localStorage.getItem("tmMedidas")
+        const localCor5  = localStorage.getItem("tmCores")
+
+        const resTm = JSON.parse(localTn)
+        const resCor = JSON.parse(localCor)
+
+        const resTm2 = JSON.parse(localTn2)
+        const resCor2 = JSON.parse(localCor2)
+
+        const resTm3 = JSON.parse(localTn3)
+        const resCor3 = JSON.parse(localCor3)
+
+        const resTm4 = JSON.parse(localTn4)
+        const resCor4 = JSON.parse(localCor4)
+
+        const resTm5 = JSON.parse(localTn5)
+        const resCor5 = JSON.parse(localCor5)
+
+        //console.log(localCor)
+
+        const tmMedidas = JSON.stringify(resTm[0].tm)
+        const tmCores = JSON.stringify(resCor[0].cor)
+
+        const tmMedidas2 = JSON.stringify(resTm2[1].tm)
+        const tmCores2 = JSON.stringify(resCor2[1].cor)
+
+        const tmMedidas3 = JSON.stringify(resTm3[2].tm)
+        const tmCores3 = JSON.stringify(resCor3[2].cor)
+
+        const tmMedidas4 = JSON.stringify(resTm4[3].tm)
+        const tmCores4 = JSON.stringify(resCor4[3].cor)
+
+        const tmMedidas5 = JSON.stringify(resTm5[4].tm)
+        const tmCores5 = JSON.stringify(resCor5[4].cor)
+
+        let cvId = ids.replace(/"/g, "");
+        let cvName = names.replace(/"/g, "");
+        let cvImage = images.replace(/"/g, "");
+        let cvPrice = prices.replace(/"/g, "");
+        let cvQuantity = cartQuantitys.replace(/"/g, "");
+        let cvTamnho = tmMedidas.replace(/"/g, "");
+        let cvCorres = tmCores.replace(/"/g, "");
+
+        let cvId2 = ids2.replace(/"/g, "");
+        let cvName2 = names2.replace(/"/g, "");
+        let cvImage2 = images2.replace(/"/g, "");
+        let cvPrice2 = prices2.replace(/"/g, "");
+        let cvQuantity2 = cartQuantitys2.replace(/"/g, "");
+        let cvTamnho2 = tmMedidas2.replace(/"/g, "");
+        let cvCorres2 = tmCores2.replace(/"/g, "");
+
+        let cvId3 = ids3.replace(/"/g, "");
+        let cvName3 = names3.replace(/"/g, "");
+        let cvImage3 = images3.replace(/"/g, "");
+        let cvPrice3 = prices3.replace(/"/g, "");
+        let cvQuantity3 = cartQuantitys3.replace(/"/g, "");
+        let cvTamnho3 = tmMedidas3.replace(/"/g, "");
+        let cvCorres3= tmCores3.replace(/"/g, "");
+
+        let cvId4 = ids4.replace(/"/g, "");
+        let cvName4 = names4.replace(/"/g, "");
+        let cvImage4 = images4.replace(/"/g, "");
+        let cvPrice4 = prices4.replace(/"/g, "");
+        let cvQuantity4 = cartQuantitys4.replace(/"/g, "");
+        let cvTamnho4 = tmMedidas4.replace(/"/g, "");
+        let cvCorres4 = tmCores4.replace(/"/g, "");
+
+        let cvId5 = ids5.replace(/"/g, "");
+        let cvName5 = names5.replace(/"/g, "");
+        let cvImage5 = images5.replace(/"/g, "");
+        let cvPrice5 = prices5.replace(/"/g, "");
+        let cvQuantity5 = cartQuantitys5.replace(/"/g, "");
+        let cvTamnho5 = tmMedidas5.replace(/"/g, "");
+        let cvCorres5 = tmCores5.replace(/"/g, "");
+
+        let lembrete = "Informação lenght: 2 = id, 3 = name, 4 = image, 5 = price, 6 = quantity, 7 = size, 8 = cor, 9 = code_compra: Aqui é compra 1"
+        
+        let lembrete2 = "Informação lenght: 12 = id, 13 = name, 14 = image, 15 = price, 16 = quantity, 17 = size, 18 = cor, 19 = code_compra: Aqui é compra 2"
+        
+        let lembrete3 = "Informação lenght: 22 = id, 23 = name, 24 = image, 25 = price, 26 = quantity, 27 = size, 28 = cor, 29 = code_compra: Aqui é compra 3"
+        
+        let lembrete4 = "Informação lenght: 32 = id, 33 = name, 34 = image, 35 = price, 36 = quantity, 37 = size, 38 = cor, 39 = code_compra: Aqui é compra 4"
+        
+        let lembrete5 = "Informação lenght: 42 = id, 43 = name, 44 = image, 45 = price, 46 = quantity, 47 = size, 48 = cor, 49 = code_compra: Aqui é compra 5"
+
+        const ArreyData = [
+          lembrete,
+          "______________________________________________________________________________________________________________",
+          cvId,
+          cvName,
+          cvImage,
+          cvPrice,
+          cvQuantity,
+          cvTamnho,
+          cvCorres,
+          cvCodeCompra,
+          lembrete2,
+          "______________________________________________________________________________________________________________",
+          cvId2,
+          cvName2,
+          cvImage2,
+          cvPrice2,
+          cvQuantity2,
+          cvTamnho2,
+          cvCorres2,
+          cvCodeCompra2,
+          lembrete3,
+          "______________________________________________________________________________________________________________",
+          cvId3,
+          cvName3,
+          cvImage3,
+          cvPrice3,
+          cvQuantity3,
+          cvTamnho3,
+          cvCorres3,
+          cvCodeCompra3,
+          lembrete4,
+          "______________________________________________________________________________________________________________",
+          cvId4,
+          cvName4,
+          cvImage4,
+          cvPrice4,
+          cvQuantity4,
+          cvTamnho4,
+          cvCorres4,
+          cvCodeCompra4,
+          lembrete5,
+          "______________________________________________________________________________________________________________",
+          cvId5,
+          cvName5,
+          cvImage5,
+          cvPrice5,
+          cvQuantity5,
+          cvTamnho5,
+          cvCorres5,
+          cvCodeCompra5,
+          "_______________________________________________________________________________________________________________",
+          "Dados do Cliente abaixo!",
+          "_______________________________________________________________________________________________________________",
+          "Nome: " + name,
+          "Telefone: " + phone,
+          "Email: " + email,
+          "_______________________________________________________________________________________________________________",
+        ]
+
+        const CreateCompra = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: state,
+          city: city,
+          cep: cep,
+          street: street,
+          number: number,
+          district: district,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData
+        }
+        
+        console.log(CreateCompra)
+
+
+        await api.post("/compra", CreateCompra).then((res) => {
+          toast.success("A compra foi criada com sucesso")
+          console.log(res)
+        }).catch((err) => {
+          toast.error("Houve um erro ", err)
+        })
+      
+    
+        console.log(CreateCompra)
+      }
     }
     
   }

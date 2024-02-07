@@ -28,21 +28,18 @@ export const CoontainerSlids = styled.div`
           width: 380px;
           height: 40vh;
           object-fit: cover;
-          margin: auto;
-          display: flex;
         }
       }
       @media (max-width: 768px) {
-        width: 280px;
+        width: 110px;
         height: 20vh;
 
         & .image {
           & img {
-            width: 340px;
-            height: 20vh;
+            width: 128px;
+            height: 18vh;
             object-fit: cover;
-            margin: auto;
-            display: flex;
+            margin-left: -20px;
           }
         }
       }
@@ -102,6 +99,10 @@ export const CoontainerSlids = styled.div`
     margin-top: 1px;
 
    @media (max-width: 768px){
+    margin-top: -40px;
+    width: 30%;
+    height: 170px;
+    color: whitesmoke;
     &:hover{
       opacity: 0;
     }
@@ -123,6 +124,13 @@ export const CoontainerSlids = styled.div`
   opacity: 1;
   margin-right: 0%;
   margin-top: -180px;
+
+  @media (max-width: 768px) {
+    margin-top: -130px;
+    width: 35%;
+    height: 170px;
+    color: whitesmoke;
+  }
 }
 
 & button {

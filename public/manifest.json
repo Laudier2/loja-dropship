@@ -3,12 +3,12 @@
   "name": "StylesTop",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "sp.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "boneIcon.png",
+      "src": "sp.png",
       "type": "image/png",
       "sizes": "192x192"
     },

@@ -1,6 +1,8 @@
 import React from 'react'
 import { ContainerFooter, ContainerFooter1, ContainerFooter2 } from './styles';
 import { Link } from 'react-router-dom';
+
+import {ShareSocial} from 'react-share-social'
 //import { Height } from '@material-ui/icons';
 
 export default function Footer() {
@@ -62,7 +64,22 @@ export default function Footer() {
 				</div>
 				
 			</ContainerFooter2>
-			
+			<ShareSocial url="https://stylestop.netlify.app" socialTypes={
+				[
+					'facebook',
+					'whatsapp',
+					'twitter',
+					'linkedin', 
+					'twitter', 
+					'telegram',
+					'reddit',
+					'line',
+					'instapaper',
+					'email',
+					'ok',
+					'email'
+				]
+			}/>
 			<ContainerFooter1>
 				<div>
 					<strong>Trabalhamos com boné de ótima qualidade, receba seu produto ou devolvemos seudinhiro.</strong>

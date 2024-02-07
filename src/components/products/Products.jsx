@@ -9,10 +9,10 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import api from '../../api/api';
 import { Header } from '../header';
-import Slids from '../slids/slids';
 import SlidsProducts from '../slids/SlidsProducts';
 import { SlidsMenu } from '../slids/SlidsMenu';
 import Footer from '../footer/footer';
+import { Slids } from '../slids/slids';
 
 const Example = () => (
     /*
@@ -27,7 +27,7 @@ const Example = () => (
     spokes 
     */
   <LoadingPage>
-    <ReactLoading type='spokes' color='aqua' height={'100%'} width={'100%'}  />
+    <ReactLoading type='spokes' color='aqua' height={'100%'} width={'100%'} delay={'100'} />
   </LoadingPage>
 );
 
@@ -180,7 +180,7 @@ const Products = () => {
   return (
     <>
     <Header/>
-    <Slids />
+    <SlidsProducts/>
     <SlidsMenu/>
   {categoroy == "" && categoroyTenis == "" && categoryShort == "" && categoroyCamisetaF == "" && categoroyVestido == "" && categoroyShortF == "" && categoryConjunto == "" && categoroyFone ? <Example /> : 
     <div>
@@ -253,6 +253,7 @@ const Products = () => {
                     <FaCreditCard className='cartao'/> Em até 12x sem juros
                   </p>
                 </span>
+                
                 <button>
                   DESCRIÇÃO
                 </button>
@@ -305,7 +306,7 @@ const Products = () => {
       
     </ProductProd>
 
-    <SlidsProducts/>
+    <Slids/>
 
     <ProductProd>
           <section>

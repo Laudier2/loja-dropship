@@ -37,7 +37,6 @@ export function SlidsMenu() {
 
   return (
     <>
-    <br />
       <Coontainer>
         <div className="buttons1">
           <button onClick={(e) => hendleLeftClik(e)}>

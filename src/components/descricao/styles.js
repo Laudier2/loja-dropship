@@ -180,50 +180,202 @@ export const ContainerDesc = styled.div`
 
   & .Favorit {
     opacity: 1;
+    cursor: pointer;
 
     & .addFavorit {
       position: absolute;
-      margin-top: 60px;
+      margin-top: 50px;
+       font-size: 1.5vw;
     }
 
     & .removeFavorit {
       position: absolute;
       color: red;
-      margin-top: 60px;
+      margin-top: 50px;
+       font-size: 1.5vw;
+    }
+
+    & .compartilhar {
+      position: absolute;
+      margin-top: 50px;
+      margin-left: 200px;
+      font-size: 1.5vw;
     }
 
     &:hover {
       opacity: 1;
     }
 
-    @media (max-width: 1750px) {
-      
-    }
   }
 
   @media (max-width: 1750px) {
     position: inherit;
     margin-top: -47.5%;
+
+    & .Favorit {
+    opacity: 1;
+
+    & .addFavorit {
+      position: absolute;
+      margin-top: 50px;
+       font-size: 1.5vw;
+    }
+
+    & .removeFavorit {
+      position: absolute;
+      color: red;
+      margin-top: 50px;
+       font-size: 1.5vw;
+    }
+
+    & .compartilhar {
+      position: absolute;
+      margin-top: 50px;
+      margin-left: 180px;
+      font-size: 1.5vw;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+  }
   }
 
   @media (max-width: 1550px) {
     position: inherit;
     margin-top: -52%;
+
+    & .Favorit {
+    opacity: 1;
+
+    & .addFavorit {
+      position: absolute;
+      margin-top: 50px;
+       font-size: 1.5vw;
+    }
+
+    & .removeFavorit {
+      position: absolute;
+      color: red;
+      margin-top: 50px;
+       font-size: 1.5vw;
+    }
+
+    & .compartilhar {
+      position: absolute;
+      margin-top: 50px;
+      margin-left: 160px;
+      font-size: 1.5vw;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+  }
   }
 
   @media (max-width: 1350px) {
     position: inherit;
     margin-top: -40%;
+
+    & .Favorit {
+    opacity: 1;
+
+    & .addFavorit {
+      position: absolute;
+      margin-top: 50px;
+       font-size: 1.5vw;
+    }
+
+    & .removeFavorit {
+      position: absolute;
+      color: red;
+      margin-top: 50px;
+       font-size: 1.5vw;
+    }
+
+    & .compartilhar {
+      position: absolute;
+      margin-top: 50px;
+      margin-left: 130px;
+      font-size: 1.5vw;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+  }
   }
 
   @media (max-width: 1150px) {
     position: inherit;
     margin-top: -49%;
+
+    & .Favorit {
+    opacity: 1;
+
+    & .addFavorit {
+      position: absolute;
+      margin-top: 50px;
+       font-size: 1.5vw;
+    }
+
+    & .removeFavorit {
+      position: absolute;
+      color: red;
+      margin-top: 50px;
+       font-size: 1.5vw;
+    }
+
+    & .compartilhar {
+      position: absolute;
+      margin-top: 50px;
+      margin-left: 110px;
+      font-size: 1.5vw;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+  }
   }
 
   @media (max-width: 950px) {
     position: inherit;
     margin-top: -56%;
+
+      & .Favorit {
+      opacity: 1;
+
+      & .addFavorit {
+        position: absolute;
+        margin-top: -260px;
+        font-size: 3vw;
+      }
+
+      & .removeFavorit {
+        position: absolute;
+        color: red;
+        margin-top: -260px;
+        font-size: 3vw;
+      }
+
+      & .compartilhar {
+        position: absolute;
+        margin-left: 300px;
+        margin-top: -260px;
+        font-size: 3vw;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+    }
   }
 
   @media (max-width: 768px) {
@@ -231,6 +383,35 @@ export const ContainerDesc = styled.div`
     margin: auto;
     position: inherit;
     font-size: 3vw;
+
+    & .Favorit {
+      opacity: 1;
+
+      & .addFavorit {
+        position: absolute;
+        margin-top: -420px;
+        font-size: 3vw;
+      }
+
+      & .removeFavorit {
+        position: absolute;
+        color: red;
+        margin-top: -420px;
+        font-size: 3vw;
+      }
+
+      & .compartilhar {
+        position: absolute;
+        margin-left: 25px;
+        margin-top: -420px;
+        font-size: 3vw;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+    }
   }
 
   & .h4 {

@@ -1,6 +1,6 @@
 /* eslint-disable no-redeclare */
 /* eslint-disable eqeqeq */
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import React, { useEffect, useState } from 'react';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
@@ -18,7 +18,7 @@ import './style.css'
 import { SlidsDescriptionOfertas } from './SlidsDescriptionOfertas';
 import Footer from '../footer/footer';
 import { FaRegHeart, FaHeart } from "react-icons/fa";
-import { Favorite } from '@material-ui/icons';
+import { LuShare2 } from "react-icons/lu";
 
 
 const Descricao = () => {
@@ -274,7 +274,7 @@ console.log(FilterColor2[0], FilterColor1[0])
     const n = 1
     setRemovef(n)
     localStorage.setItem('favorit', 1)
-    toast.info("Seu produto foi adicionado aos favorito", <p></p>)
+    toast.info(`O produto foi adicionado aos seus favorito` )
   }
 
   const removeValue = () => {
@@ -440,6 +440,7 @@ console.log(FilterColor2[0], FilterColor1[0])
                   :
                   <FaRegHeart className='addFavorit' onClick={() => setRemovef(addValue)}/>
                   }
+                  <LuShare2 className='compartilhar'/>
                 </span>
                 
               </div>

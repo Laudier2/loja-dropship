@@ -166,6 +166,22 @@ export const ContainerDesc = styled.div`
   margin-left: 52%;
   font-size: 1vw;
 
+  & .Favorit {
+    opacity: 1;
+
+    & .addFavorit {
+
+    }
+
+    & .removeFavorit {
+      color: red;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
   @media (max-width: 1750px) {
     position: inherit;
     margin-top: -47.5%;

@@ -1,6 +1,6 @@
 /* eslint-disable no-redeclare */
 /* eslint-disable eqeqeq */
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import React, { useEffect, useState } from 'react';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
@@ -17,6 +17,8 @@ import { Header } from '../header';
 import './style.css'
 import { SlidsDescriptionOfertas } from './SlidsDescriptionOfertas';
 import Footer from '../footer/footer';
+import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { Favorite } from '@material-ui/icons';
 
 
 const Descricao = () => {
@@ -26,6 +28,8 @@ const Descricao = () => {
   
   const [dataCores, setDatacores] = useState('')
   const [dataTamanho, setTamanho] = useState('')
+  
+  const [removeF, setRemovef] = useState([])
 
   console.log(dataCores)
 
@@ -265,6 +269,24 @@ console.log(FilterColor2[0], FilterColor1[0])
   let aumento = price * percentual;
   let novo_price = price - aumento;
 
+  const addValue = () => {
+
+    const n = 1
+    setRemovef(n)
+    localStorage.setItem('favorit', 1)
+    toast.info("Seu produto foi adicionado aos favorito", <p></p>)
+  }
+
+  const removeValue = () => {
+    const n = removeF - 1
+    setRemovef(n)
+    localStorage.removeItem('favorit')
+  }
+
+  const existFavorit = localStorage.getItem('favorit')
+
+  console.log(existFavorit)
+
   return (
     <>
       <Header/>
@@ -404,12 +426,21 @@ console.log(FilterColor2[0], FilterColor1[0])
                   <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(sizers)}>
                   {sizers}
                 </button>
+                
                 </div>
               : ""
               }
 
                 <div>
                 </div>
+                <span className='Favorit'>
+                  {removeF > 0 || existFavorit > 0
+                  ? 
+                  <FaHeart className='removeFavorit' onClick={() => setRemovef(removeValue)}/> 
+                  :
+                  <FaRegHeart className='addFavorit' onClick={() => setRemovef(addValue)}/>
+                  }
+                </span>
                 
               </div>
             <div className="divdescSecudare">

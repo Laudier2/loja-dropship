@@ -25,6 +25,8 @@ import { Calcam } from "./components/categorys/Calcam";
 import { Camisetaf } from "./components/categorys/Camisetaf";
 import { Camisetam } from "./components/categorys/Camisetam";
 import { Informatica } from "./components/categorys/Informatica";
+import { Ferramentas } from "./components/categorys/Ferramentas"
+import { Estetica } from "./components/categorys/Estetica"
 import { PoliticasDevolucaoTroca } from "./components/politicaTrocaDevolucao/politicaTrocaDevolucao";
 
 const TRACKING_ID = "G-YJVYCLYTD3" 
@@ -134,6 +136,14 @@ function App() {
       path: "/informatica",
       element: <Informatica />,
     },
+    {
+      path: "/ferramentas",
+      element: <Ferramentas />,
+    },
+    {
+      path: "/estetica",
+      element: <Estetica />,
+    }
 
   ]);  
 

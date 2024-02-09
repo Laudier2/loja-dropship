@@ -212,6 +212,30 @@ export function SlidsMenu() {
                 </div>
               </Link>
           </div>
+          <div>
+              <Link to="/ferramentas">
+                <div className="item">
+                  <div className="image">
+                    <img src={data[14].image} alt="img" />
+                  </div>
+                </div>
+                <div className="info">
+                  <span className="name">{data[14].name}</span>
+                </div>
+              </Link>
+          </div>
+          <div>
+              <Link to="/estetica">
+                <div className="item">
+                  <div className="image">
+                    <img src={data[15].image} alt="img" />
+                  </div>
+                </div>
+                <div className="info">
+                  <span className="name">{data[15].name}</span>
+                </div>
+              </Link>
+          </div>
           
         </div>
     

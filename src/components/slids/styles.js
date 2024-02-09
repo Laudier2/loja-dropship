@@ -41,12 +41,12 @@ export const Coontainer = styled.div`
 
       & .image {
         & img {
-          width: 100%;
-          height: 5vh;
+          margin-top: -7px;
+          width: 125%;
+          height: 6vh;
           object-fit: cover;
-          margin: auto;
-          display: flex;
           border-radius: 40px;
+          margin-left: -5px;
         }
         @media (max-width: 768px) {
           & img {

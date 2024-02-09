@@ -390,21 +390,21 @@ export const ContainerDesc = styled.div`
       & .addFavorit {
         position: absolute;
         margin-top: -420px;
-        font-size: 3vw;
+        font-size: 5vw;
       }
 
       & .removeFavorit {
         position: absolute;
         color: red;
         margin-top: -420px;
-        font-size: 3vw;
+        font-size: 5vw;
       }
 
       & .compartilhar {
         position: absolute;
         margin-left: 25px;
         margin-top: -420px;
-        font-size: 3vw;
+        font-size: 5vw;
       }
 
       &:hover {

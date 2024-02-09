@@ -15,23 +15,21 @@ export const ProductProd = styled.div`
       display: inline-block;
       margin-left: 10px;
       margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
 
-      & .Favorit {
-        opacity: 1;
-
-        & .addFavorit {
-
-        }
-
-        & .removeFavorit {
-          position: absolute;
-          margin-top: -180px;
-          color: red;
-        }
-
-        &:hover {
-          opacity: 1;
-        }
+      &:hover {
+        opacity: 0.8;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.582);
+        color: #000000;
+        font-weight: bold;
+        font-size: 0.8rem;
+        text-align: center;
+        border: solid 0.1px;
       }
 
       & img {
@@ -46,7 +44,7 @@ export const ProductProd = styled.div`
         width: 100%;
         color: #000000;
         font-weight: bold;
-        font-size: 1vw;
+        font-size: 0.8rem;
       }
 
       & h3 {
@@ -80,13 +78,41 @@ export const ProductProd = styled.div`
         }
       }
       }
+
+      &:haver {
+        opacity: 0;
+      }
     }
     
     & .oldPrice {
-      font-size: 0%.8rem;
+      font-size: 0.9rem;
       text-decoration: line-through;
       flex-grow: 1;
-      color: red;
+      color: gray;
+      opacity: 1;
+
+      
+    }
+
+    & .frete {
+      font-size: 1.5rem;
+      color: #00A650;
+    }
+
+    & .cartImg {
+      width: 50px;
+      height: 50px;
+      flex-grow: 1;
+      color: #000000;
+      opacity: 0.7;
+      padding: 3px;
+    }
+
+    & .oldPricereal {
+      font-size: 1.8rem;
+      flex-grow: 1;
+      font-weight: initial;
+      color: #000000;
       opacity: 0.7;
       padding: 3px;
     }
@@ -110,6 +136,28 @@ export const ProductProd = styled.div`
     
     @media (max-width: 768px) {
       width: 30%;
+
+      & .oldPricereal {
+        font-size: 1.2rem;
+        flex-grow: 1;
+        color: #000000;
+        opacity: 0.7;
+        padding: 3px;
+      }
+
+      & .frete {
+        font-size: 3vw;
+        color: #00A650;
+      }
+
+      & .cartImg {
+        width: 30px;
+        height: 30px;
+        flex-grow: 1;
+        color: #000000;
+        opacity: 0.7;
+        padding: 3px;
+      }
 
       & h5 {
         width: 100%;

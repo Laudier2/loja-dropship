@@ -204,16 +204,15 @@ const Products = () => {
               <div key={id}>
                 <img src={image[0]} alt="img" />
                 <h5>{name}</h5>
+                <b className="frete">Frete Gratis</b>
+                <img src="https://www.episinos.com.br/fotos/1/180/icone-entrega.jpg" alt="img" className="cartImg" />
                 <span>
                   <p className='p'>
                     <FaCreditCard className='cartao'/> Em até 12x sem juros
                   </p>
                 </span>
-                <>
-                  <b className='oldPrice'>R${price},00 </b>
-                  <b> por R${novo_price},00</b>
-                </>
-              
+                <h4 className='oldPrice'>R${price},00 </h4>
+                <h4 className='oldPricereal'> R$ {novo_price},00</h4>
               </div>
             </Link>
             )
@@ -242,15 +241,15 @@ const Products = () => {
               <div key={id}>
                 <img src={image[0]} alt="img" />
                 <h5>{name}</h5>
+                <b className="frete">Frete Gratis</b>
+                <img src="https://www.episinos.com.br/fotos/1/180/icone-entrega.jpg" alt="img" className="cartImg" />
                 <span>
                   <p className='p'>
                     <FaCreditCard className='cartao'/> Em até 12x sem juros
                   </p>
                 </span>
-                <>
-                  <b className='oldPrice'>R${price},00 </b>
-                  <b> por R${novo_price},00</b>
-                </>
+                <h4 className='oldPrice'>R${price},00 </h4>
+                <h4 className='oldPricereal'> R$ {novo_price},00</h4>
               </div>
             </Link>
             )
@@ -279,15 +278,15 @@ const Products = () => {
               <div key={id}>
                 <img src={image[0]} alt="img" />
                 <h5>{name}</h5>
+                <b className="frete">Frete Gratis</b>
+                <img src="https://www.episinos.com.br/fotos/1/180/icone-entrega.jpg" alt="img" className="cartImg" />
                 <span>
                   <p className='p'>
                     <FaCreditCard className='cartao'/> Em até 12x sem juros
                   </p>
                 </span>
-                <>
-                  <b className='oldPrice'>R${price},00 </b>
-                  <b> por R${novo_price},00</b>
-                </>
+                <h4 className='oldPrice'>R${price},00 </h4>
+                <h4 className='oldPricereal'> R$ {novo_price},00</h4>
               </div>
             </Link>
             )
@@ -319,15 +318,15 @@ const Products = () => {
               <div key={id}>
                 <img src={image[0]} alt="img" />
                 <h5>{name}</h5>
+                <b className="frete">Frete Gratis</b>
+                <img src="https://www.episinos.com.br/fotos/1/180/icone-entrega.jpg" alt="img" className="cartImg" />
                 <span>
                   <p className='p'>
                     <FaCreditCard className='cartao'/> Em até 12x sem juros
                   </p>
                 </span>
-                <>
-                  <b className='oldPrice'>R${price},00 </b>
-                  <b> por R${novo_price},00</b>
-                </>
+                <h4 className='oldPrice'>R${price},00 </h4>
+                <h4 className='oldPricereal'> R$ {novo_price},00</h4>
               </div>
             </Link>
             )
@@ -357,15 +356,15 @@ const Products = () => {
               <div key={id}>
                 <img src={image[0]} alt="img" />
                 <h5>{name}</h5>
+                <b className="frete">Frete Gratis</b>
+                <img src="https://www.episinos.com.br/fotos/1/180/icone-entrega.jpg" alt="img" className="cartImg" />
                 <span>
                   <p className='p'>
                     <FaCreditCard className='cartao'/> Em até 12x sem juros
                   </p>
                 </span>
-                <>
-                  <b className='oldPrice'>R${price},00 </b>
-                  <b> por R${novo_price},00</b>
-                </>
+                <h4 className='oldPrice'>R${price},00 </h4>
+                <h4 className='oldPricereal'> R$ {novo_price},00</h4>
               </div>
             </Link>
             )

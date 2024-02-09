@@ -135,25 +135,29 @@ const Descricao = () => {
 
   const Todes = [color1, color2, color3, color3, color4, color5, color6]
 
-  const FilterColor1 = Todes.filter(e => e == "preto" || e == "Preto" || e == "black" || e == "Black")
+  const FilterColor1 = Todes.filter(e => e == "preto" || e == "Preto" || e == "PRETO" || e == "black" || e == "Black")
   const FilterColor2 = Todes.filter(e => e == "Bege" || e == "bege" || e == "beje" || e == "Beje" || e == "Gray" || e == "gray" || e == "Cinza" || e == "cinza")
   const FilterColor3 = Todes.filter(e => e == "Dins" || e == "dins" || e == "dins claro" || e == "dins escuro" || e == "Dins ecuro")
   const FilterColor4 = Todes.filter(e => e == "Roxo" || e == "Rosa" || e == "pink" || e == "Pink")
   const FilterColor5 = Todes.filter(e => e == "Branco" || e == "branco" || e == "white" || e == "White")
   const FilterColor6 = Todes.filter(e => e == "Vermelho" || e == "vermelho" || e == "red" || e == "Red" || e == "Vermelho com Preto")
-  const FilterColor7 = Todes.filter(e => e == "Jeans escuro" || e == "jeans escuro" || e == "Jeans claro" || e == "Jeans Claro" || e == "jeans claro" || e == "Jens escuro" || e == "Jeans Escuro" || e == "Jeans escuro"  || e == "Dins")
+  const FilterColor7 = Todes.filter(e => e == "Jeans escuro" || e == "jeans escuro" || e == "Jeans claro" || e == "Jeans Claro" || e == "jeans claro" || e == "Jens escuro" || "Jeans escuro rasgado" || e == "jeans escuro rasgado" || e == "Jeans claro rasgado" || e == "Jeans Claro rasgado" || e == "jeans claro rasgado" || e == "Jens escuro rasgado" || e == "Jeans Escuro" || e == "Jeans escuro"  || e == "Dins")
   const FilterColor8 = Todes.filter(e => e == "Jeans" || e == "jeans")
   const FilterColor9 = Todes.filter(e => e == "Camuflado" || e == "Rajado" || e == "rajado" || e == "camuflado")
   const FilterColor10 = Todes.filter(e => e == "Amarela com Preto" || e == "Amarela com Branco" || e == "Preto com Branco" || e == "Preto com Verde")
   const FilterColor11 = Todes.filter(e => e == "Amarela")
-  const FilterColor12 = Todes.filter(e => e == "Verde")
+  const FilterColor12 = Todes.filter(e => e == "Verde" || e == "verde")
   const FilterColor13 = Todes.filter(e => e == "Preto com Rosa")
   const FilterColor14 = Todes.filter(e => e == "Kaki" || e == "kaki")
   const FilterColor15 = Todes.filter(e => e == "Azul com rosa")
   const FilterColor16 = Todes.filter(e => e == "multi" ||  e == "Multi" ||  e == "MULTI")
   const FilterColor17 = Todes.filter(e => e == "Vinho" ||  e == "vinho")
-
-console.log(FilterColor2[0], FilterColor1[0])
+  const FilterColor18 = Todes.filter(e => e == "Jeans escuro rasgado" || e == "jeans escuro rasgado" || e == "Jeans claro rasgado" || e == "Jeans Claro rasgado" || e == "jeans claro rasgado" || e == "Jens escuro rasgado")
+  const FilterColor19 = Todes.filter(e => e == "Nude" || e == "nude" || e == "NUDE")
+  const FilterColor20 = Todes.filter(e => e == "Roxo" || e == "roxo" || e == "lilais" || e == "Lilais")
+  const FilterColor21 = Todes.filter(e => e == "Marron" || e == "marron" || e == "MARRON")
+  
+  console.log(FilterColor2[0], FilterColor1[0])
 
   useEffect(() => {
     const size = localStorage.getItem("size")
@@ -364,6 +368,10 @@ console.log(FilterColor2[0], FilterColor1[0])
                   {FilterColor15[0] ? <button type="button" style={{background: "orange", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor15[0])}></button> : ""}
                   {FilterColor16[0] ? <button type="button" style={{backgroundImage: `url("https://ae01.alicdn.com/kf/S451958a0dc9b415aa02e94e439d709f9R/Conjunto-de-Shorts-e-Top-sem-mangas-estampa-tropical-das-mulheres-decote-em-V-ver-o.jpg_640x640.jpg_.webp")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor16[0])}></button> : ""}
                   {FilterColor17[0] ? <button type="button" style={{background: `#712D52`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor17[0])}></button> : ""}
+                  {FilterColor18[0] ? <button type="button" style={{background: "#8ab0c9", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor18[0])}></button> : ""}
+                  {FilterColor19[0] ? <button type="button" style={{background: "#D0AD92", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor19[0])}></button> : ""}
+                  {FilterColor20[0] ? <button type="button" style={{background: "#2525c0", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor20[0])}></button> : ""}
+                  {FilterColor21[0] ? <button type="button" style={{background: "", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor21[0])}></button> : ""}
                   { }
                 </div>
                 <br />

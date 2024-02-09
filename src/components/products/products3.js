@@ -176,10 +176,10 @@ export const ProductProd = styled.div`
       }
 
       & .p {
-        font-size: 2vw;
-        margin-left: -14px;
-        margin-bottom: -2px;
-        color: aquamarine;
+        font-size: 1.6vw;
+        margin-bottom: 2px;
+        margin-left: 5px;
+        text-align: center;
       }
       
       & img {

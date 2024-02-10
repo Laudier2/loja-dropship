@@ -6,7 +6,7 @@ export const CoontainerSlids = styled.div`
 
   & .carousel {
     display: flex;
-    overflow-x: auto;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     margin-top: 40px;
 

@@ -3,6 +3,7 @@ import { Coontainer } from "./styles";
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md'
 import { Link } from "react-router-dom";
 import api from "../../api/api";
+import { FaCreditCard } from "react-icons/fa";
 
 export function SlidsDescriptionOfertas() {
 
@@ -110,17 +111,19 @@ export function SlidsDescriptionOfertas() {
             
             return (
               <Link to="/desc" onClick={() => LocalSto(res)}>
-                <div className="item" key={id}>
-                  <div className="image">
-                    <img src={image[0]} alt="img" />
-                  </div>
-                </div>
-                <div className="info">
-                  <span className="name">{name}</span>
-                  <br />
-                  <h5 className='oldPrice'>R${price},00</h5>
-                  <h5 >R${novo_price},00</h5>
-                </div>
+                <div key={id}>
+                <img src={image[0]} alt="img" />
+                <h5>{name}</h5>
+                <b className="frete">Frete Gratis</b>
+                <img src="https://www.episinos.com.br/fotos/1/180/icone-entrega.jpg" alt="img" className="cartImg" />
+                <span>
+                  <p className='p'>
+                    <FaCreditCard className='cartao'/> Em até 12x sem juros
+                  </p>
+                </span>
+                <h4 className='oldPrice'>R${price},00 </h4>
+                <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+              </div>
             </Link>
             )
             

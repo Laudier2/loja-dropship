@@ -137,25 +137,27 @@ const Descricao = () => {
 
   const FilterColor1 = Todes.filter(e => e == "preto" || e == "Preto" || e == "PRETO" || e == "black" || e == "Black")
   const FilterColor2 = Todes.filter(e => e == "Bege" || e == "bege" || e == "beje" || e == "Beje" || e == "Gray" || e == "gray" || e == "Cinza" || e == "cinza")
-  const FilterColor3 = Todes.filter(e => e == "Dins" || e == "dins" || e == "dins claro" || e == "dins escuro" || e == "Dins ecuro")
-  const FilterColor4 = Todes.filter(e => e == "Roxo" || e == "Rosa" || e == "pink" || e == "Pink")
-  const FilterColor5 = Todes.filter(e => e == "Branco" || e == "branco" || e == "white" || e == "White")
-  const FilterColor6 = Todes.filter(e => e == "Vermelho" || e == "vermelho" || e == "red" || e == "Red" || e == "Vermelho com Preto")
-  const FilterColor7 = Todes.filter(e => e == "Jeans escuro" || e == "jeans escuro" || e == "Jeans claro" || e == "Jeans Claro" || e == "jeans claro" || e == "Jens escuro" || "Jeans escuro rasgado" || e == "jeans escuro rasgado" || e == "Jeans claro rasgado" || e == "Jeans Claro rasgado" || e == "jeans claro rasgado" || e == "Jens escuro rasgado" || e == "Jeans Escuro" || e == "Jeans escuro"  || e == "Dins")
-  const FilterColor8 = Todes.filter(e => e == "Jeans" || e == "jeans")
+  const FilterColor3 = Todes.filter(e => e == "NUDE" || e == "nude" || e == "Nude")
+  const FilterColor4 = Todes.filter(e => e == "ROSA" || e == "Rosa" || e == "rosa" || e == "pink" || e == "Pink" || e == "PINK")
+  const FilterColor5 = Todes.filter(e => e == "Branco" || e == "branco" || e == "white" || e == "White" || e == "BRANCO")
+  const FilterColor6 = Todes.filter(e => e == "Vermelho" || e == "vermelho" || e == "red" || e == "Red" || e == "VERMELHO")
+  const FilterColor7 = Todes.filter(e => e == "Jeans escuro rasgado" || e == "jeans escuro rasgado" || e == "Jens escuro rasgado" || e == "Jeans Escuro" || e == "Jeans escuro"  || e == "Dins")
+  const FilterColor8 = Todes.filter(e => e == "Jeans" || e == "jeans" || e == "JEANS")
   const FilterColor9 = Todes.filter(e => e == "Camuflado" || e == "Rajado" || e == "rajado" || e == "camuflado")
   const FilterColor10 = Todes.filter(e => e == "Amarela com Preto" || e == "Amarela com Branco" || e == "Preto com Branco" || e == "Preto com Verde")
-  const FilterColor11 = Todes.filter(e => e == "Amarela")
-  const FilterColor12 = Todes.filter(e => e == "Verde" || e == "verde")
+  const FilterColor11 = Todes.filter(e => e == "Amarela" || e == "AMERELO" || e == "amarelo")
+  const FilterColor12 = Todes.filter(e => e == "Verde" || e == "verde" || e == "VERDE")
   const FilterColor13 = Todes.filter(e => e == "Preto com Rosa")
-  const FilterColor14 = Todes.filter(e => e == "Kaki" || e == "kaki")
+  const FilterColor14 = Todes.filter(e => e == "Kaki" || e == "kaki" || e == "KAKI")
   const FilterColor15 = Todes.filter(e => e == "Azul com rosa")
   const FilterColor16 = Todes.filter(e => e == "multi" ||  e == "Multi" ||  e == "MULTI")
   const FilterColor17 = Todes.filter(e => e == "Vinho" ||  e == "vinho")
-  const FilterColor18 = Todes.filter(e => e == "Jeans escuro rasgado" || e == "jeans escuro rasgado" || e == "Jeans claro rasgado" || e == "Jeans Claro rasgado" || e == "jeans claro rasgado" || e == "Jens escuro rasgado")
+  const FilterColor18 = Todes.filter(e => e == "Jeans claro rasgado" || e == "Jeans Claro rasgado" || e == "jeans claro rasgado" || e == "Jeans claro resgado")
   const FilterColor19 = Todes.filter(e => e == "Nude" || e == "nude" || e == "NUDE")
-  const FilterColor20 = Todes.filter(e => e == "Roxo" || e == "roxo" || e == "lilais" || e == "Lilais")
+  const FilterColor20 = Todes.filter(e => e == "Roxo" || e == "roxo" || e == "lilais" || e == "Lilais" || e == "ROXO")
   const FilterColor21 = Todes.filter(e => e == "Marron" || e == "marron" || e == "MARRON")
+  const FilterColor22 = Todes.filter(e => e == "Jeans escuro" || e == "jeans escuro" || e == "JEANS ESCURO")
+  const FilterColor23 = Todes.filter(e => e == "Jeans claro" || e == "Jeans Claro" || e == "jeans claro" || e == "JEANS CLARO" || e == "Jenas Escuro")
   
   console.log(FilterColor2[0], FilterColor1[0])
 
@@ -352,26 +354,28 @@ const Descricao = () => {
                 <div>
                 <div role="group" aria-label="Basic example" className='efctButton'>
                   {FilterColor1[0] ? <button type="button" style={{background: "#000000", border: "none", color: "white", padding: "15px"}} onClick={() => setDatacores(FilterColor1[0])}></button> : ""}
-                  {FilterColor2[0] ? <button type="button" style={{background: "#919390", border: "none", color: "white", padding: "15px"}} onClick={() => setDatacores(FilterColor2[0])}></button> : ""}
-                  {FilterColor3[0] ? <button type="button" style={{background: "#606366", border: "none", color: "blue", padding: "15px"}} onClick={() => setDatacores(FilterColor3[0])}></button> : ""}
+                  {FilterColor2[0] ? <button type="button" style={{background: "gray", border: "none", color: "white", padding: "15px"}} onClick={() => setDatacores(FilterColor2[0])}></button> : ""}
+                  {FilterColor3[0] ? <button type="button" style={{background: "#D0BDB2", border: "none", color: "blue", padding: "15px"}} onClick={() => setDatacores(FilterColor3[0])}></button> : ""}
                   {FilterColor4[0] ? <button type="button" style={{background: "pink", border: "none", color: "gray", padding: "15px"}} onClick={() => setDatacores(FilterColor4[0])}></button> : ""}
                   {FilterColor5[0] ? <button type="button" style={{background: "#white", border: "solid 1px", color: "green", padding: "15px"}} onClick={() => setDatacores(FilterColor5[0])}></button> : ""}
                   {FilterColor6[0] ? <button type="button" style={{background: "red", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor6[0])}></button> : ""}
-                  {FilterColor7[0] ? <button type="button" style={{background: "#607E92", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor7[0])}></button> : ""}
-                  {FilterColor8[0] ? <button type="button" style={{background: "#193363", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor8[0])}></button> : ""}
+                  {FilterColor7[0] ? <button type="button" style={{background: "#3084bd", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor7[0])}></button> : ""}
+                  {FilterColor8[0] ? <button type="button" style={{background: "#175de0", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor8[0])}></button> : ""}
                   {FilterColor9[0] ? <button type="button" style={{backgroundImage: `url("https://www.shutterstock.com/image-vector/camouflage-seamless-pattern-trendy-style-600nw-1456834667.jpg")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor9[0])}></button> : ""}
                   {FilterColor10[0] ? <button type="button" style={{background: "#fad60c", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor10[0])}></button> : ""}
-                  {FilterColor11[0] ? <button type="button" style={{background: "#b5d818", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor11[0])}></button> : ""}
+                  {FilterColor11[0] ? <button type="button" style={{background: "#d6ec0e", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor11[0])}></button> : ""}
                   {FilterColor12[0] ? <button type="button" style={{background: "#31b63c", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor12[0])}></button> : ""}
                   {FilterColor13[0] ? <button type="button" style={{backgroundImage: `url("https://i.pinimg.com/736x/db/48/79/db4879aa3ebd36d996fe2fba6a3ccbef.jpg")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor13[0])}></button> : ""}
                   {FilterColor14[0] ? <button type="button" style={{background: "#8c5b32", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor14[0])}></button> : ""}
                   {FilterColor15[0] ? <button type="button" style={{background: "orange", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor15[0])}></button> : ""}
                   {FilterColor16[0] ? <button type="button" style={{backgroundImage: `url("https://ae01.alicdn.com/kf/S451958a0dc9b415aa02e94e439d709f9R/Conjunto-de-Shorts-e-Top-sem-mangas-estampa-tropical-das-mulheres-decote-em-V-ver-o.jpg_640x640.jpg_.webp")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor16[0])}></button> : ""}
                   {FilterColor17[0] ? <button type="button" style={{background: `#712D52`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor17[0])}></button> : ""}
-                  {FilterColor18[0] ? <button type="button" style={{background: "#8ab0c9", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor18[0])}></button> : ""}
+                  {FilterColor18[0] ? <button type="button" style={{background: "#8fc8ed", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor18[0])}></button> : ""}
                   {FilterColor19[0] ? <button type="button" style={{background: "#D0AD92", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor19[0])}></button> : ""}
                   {FilterColor20[0] ? <button type="button" style={{background: "#2525c0", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor20[0])}></button> : ""}
-                  {FilterColor21[0] ? <button type="button" style={{background: "", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor21[0])}></button> : ""}
+                  {FilterColor21[0] ? <button type="button" style={{background: "#884E1E", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor21[0])}></button> : ""}
+                  {FilterColor22[0] ? <button type="button" style={{background: "#113adf", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor22[0])}></button> : ""}
+                  {FilterColor23[0] ? <button type="button" style={{background: "#45a2e0", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor23[0])}></button> : ""}
                   { }
                 </div>
                 <br />

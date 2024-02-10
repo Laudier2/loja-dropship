@@ -389,21 +389,21 @@ export const ContainerDesc = styled.div`
 
       & .addFavorit {
         position: absolute;
-        margin-top: -420px;
+        margin-top: -450px;
         font-size: 5vw;
       }
 
       & .removeFavorit {
         position: absolute;
         color: red;
-        margin-top: -420px;
+        margin-top: -450px;
         font-size: 5vw;
       }
 
       & .compartilhar {
         position: absolute;
         margin-left: 25px;
-        margin-top: -420px;
+        margin-top: -450px;
         font-size: 5vw;
       }
 
@@ -599,8 +599,117 @@ export const Coontainer = styled.div`
 
   & .carousel {
     display: flex;
-    overflow-x: auto;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    & div {
+      width: 220px;
+      height: 230px;
+      display: inline-block;
+      margin-left: 10px;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+
+      &:hover {
+        opacity: 0.8;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.582);
+        color: #000000;
+        font-weight: bold;
+        font-size: 0.8rem;
+        text-align: center;
+        border: solid 0.1px;
+      }
+
+      & img {
+        width: 100%;
+        height: 30vh;
+        border-radius: 8px;
+        margin-bottom: 5px;
+        
+      }
+
+      & h5 {
+        width: 100%;
+        color: #000000;
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
+
+      & h3 {
+        color: #000000;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      & span {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        text-align: center;
+        color: rgba(10, 10, 10, 0.687);
+
+        & p {
+          font-size: 1vw;
+          margin-left: -15px;
+          //color: #00FF00;
+        }
+
+      @media screen and (max-width: 780px) {
+    
+        @media (max-width: 768px) {
+        width: 95%;
+
+        & img {
+          width: 100%;
+          height: 10vh;
+          border-radius: 8px;
+        }
+      }
+      }
+
+      &:haver {
+        opacity: 0;
+      }
+    }
+    
+    & .oldPrice {
+      font-size: 0.9rem;
+      text-decoration: line-through;
+      flex-grow: 1;
+      color: gray;
+      opacity: 1;
+
+      
+    }
+
+    & .frete {
+      font-size: 1.5rem;
+      color: #00A650;
+    }
+
+    & .cartImg {
+      width: 50px;
+      height: 50px;
+      flex-grow: 1;
+      color: #000000;
+      opacity: 0.7;
+      padding: 3px;
+    }
+
+    & .oldPricereal {
+      font-size: 1.8rem;
+      flex-grow: 1;
+      font-weight: initial;
+      color: #000000;
+      opacity: 0.7;
+      padding: 3px;
+    }
 
     &::-webkit-scrollbar {
       display: none;
@@ -662,6 +771,7 @@ export const Coontainer = styled.div`
       margin: 5px;
     }
   }
+}
 
   & .buttons1 {
     left: 0;
@@ -677,12 +787,10 @@ export const Coontainer = styled.div`
     cursor: pointer;
     opacity: 1;
     margin-left: 0%;
-    margin-top: 1px;
+    margin-top: 10px;
 
    @media (max-width: 768px){
-    &:hover{
-      opacity: 0;
-    }
+     opacity: 0;
    }
 }
 
@@ -701,6 +809,10 @@ export const Coontainer = styled.div`
   opacity: 1;
   margin-right: 0%;
   margin-top: -224px;
+
+  @media (max-width: 768px){
+     opacity: 0;
+   }
 }
 
 & button {

@@ -15,6 +15,22 @@ export const ProductProd = styled.div`
       display: inline-block;
       margin-left: 10px;
       margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+
+      &:hover {
+        opacity: 0.8;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.582);
+        color: #000000;
+        font-weight: bold;
+        font-size: 0.8rem;
+        text-align: center;
+        border: solid 0.1px;
+      }
 
       & img {
         width: 100%;
@@ -28,7 +44,7 @@ export const ProductProd = styled.div`
         width: 100%;
         color: #000000;
         font-weight: bold;
-        font-size: 0.9vw;
+        font-size: 0.8rem;
       }
 
       & h3 {
@@ -38,14 +54,15 @@ export const ProductProd = styled.div`
       }
 
       & span {
-        width: 60%;
+        width: 80%;
         margin: auto;
         display: flex;
         text-align: center;
         color: rgba(10, 10, 10, 0.687);
 
         & p {
-          font-size: 0.7vw;
+          font-size: 1vw;
+          margin-left: -15px;
           //color: #00FF00;
         }
 
@@ -61,6 +78,44 @@ export const ProductProd = styled.div`
         }
       }
       }
+
+      &:haver {
+        opacity: 0;
+      }
+    }
+    
+    & .oldPrice {
+      font-size: 0.9rem;
+      text-decoration: line-through;
+      flex-grow: 1;
+      color: gray;
+      opacity: 1;
+
+      
+    }
+
+    & .frete {
+      font-size: 1.5rem;
+      color: #00A650;
+    }
+
+    & .cartImg {
+      width: 50px;
+      height: 50px;
+      flex-grow: 1;
+      color: #000000;
+      opacity: 0.7;
+      padding: 3px;
+    }
+
+    & .oldPricereal {
+      font-size: 1.8rem;
+      flex-grow: 1;
+      font-weight: initial;
+      color: #000000;
+      opacity: 0.7;
+      padding: 3px;
+    }
     }
     
     & .oldPrice {

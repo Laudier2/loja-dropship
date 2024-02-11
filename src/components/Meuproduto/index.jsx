@@ -1,6 +1,5 @@
 /* eslint-disable eqeqeq */
 import { useState } from "react";
-import { useSelector } from "react-redux";
 import { AiFillAlert } from "react-icons/ai";
 import { FaLongArrowAltDown } from "react-icons/fa";
 import { useQuery } from "react-query";
@@ -16,11 +15,13 @@ export function Meuproduto() {
   const [ dados, setDados ] = useState([])
   const [ products, setProducts ] = useState([])
 
+  // eslint-disable-next-line no-unused-vars
   const { isLoading, data } = useQuery("meuproduto", async () => {
     return await api
     .get("/compra")
     .then((res) => setProducts(res.data))
 
+    // eslint-disable-next-line no-unreachable
     if(isLoading){
       return <div className="load">Carregando...</div>
     }

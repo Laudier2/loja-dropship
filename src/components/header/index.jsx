@@ -43,8 +43,24 @@ export function Header() {
   }
 
   //const str = dados.toUpperCase()
-
-  const filterData = products.filter(e => e.slug == dados)
+  //Filtro de pesquisa do input
+  const filterData = products.filter(
+    e => 
+    e.slug[0] == dados || 
+    e.slug[1] == dados || 
+    e.slug[2] == dados || 
+    e.slug[3] == dados || 
+    e.slug[4] == dados || 
+    e.slug[5] == dados ||
+    e.slug[6] == dados ||
+    e.slug[7] == dados ||
+    e.slug[8] == dados ||
+    e.slug[9] == dados ||
+    e.slug[10] == dados ||
+    e.slug[11] == dados ||
+    e.slug[12] == dados ||
+    e.slug[13] == dados 
+  )
   //const filterData = products.filter(e => e.slug == "Vestido")
 
   console.log(dados)
@@ -122,7 +138,7 @@ export function Header() {
             <span>
               <LuPackageSearch className="text-white h5 m-1 mb-2 p"/>
             </span>
-            <a href="/politica" target="blank">Meus pedido</a>
+            <a href="/meuproduto" target="blank">Meus pedido</a>
           </li>
         </ul>
       </ContainerPRT>

@@ -9,7 +9,7 @@ import Cart from "./components/cart";
 import CartFinalize from "./components/cart/cartFinalize";
 import Politicas from "./components/politica/Politicas";
 import ReactGA from "react-ga" 
-import Compra from "./components/compra/Compra";
+import Compra from "./components/compra/Compra2";
 import Cadastro from "./components/Cadastro/Cadastro";
 import { Vestido } from "./components/categorys/Vestido";
 import { Calcado } from "./components/categorys/Calcado";
@@ -28,6 +28,7 @@ import { Informatica } from "./components/categorys/Informatica";
 import { Ferramentas } from "./components/categorys/Ferramentas"
 import { Estetica } from "./components/categorys/Estetica"
 import { PoliticasDevolucaoTroca } from "./components/politicaTrocaDevolucao/politicaTrocaDevolucao";
+import { Meuproduto } from "./components/Meuproduto";
 
 const TRACKING_ID = "G-YJVYCLYTD3" 
 
@@ -143,6 +144,10 @@ function App() {
     {
       path: "/estetica",
       element: <Estetica />,
+    },
+    {
+      path: "/meuproduto",
+      element: <Meuproduto />,
     }
 
   ]);  

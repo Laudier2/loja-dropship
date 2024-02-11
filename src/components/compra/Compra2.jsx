@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import ReactLoading from 'react-loading';
 import emailjs from "@emailjs/browser"
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 console.clear()
 
@@ -177,6 +178,78 @@ let prod2 = [
           })  
         }
         PagamentoMercadoPago()
+
+        if(cart[0]){
+
+          //const ids = JSON.stringify(cart[0].id)
+          const names = JSON.stringify(cart[0].name)
+          const images = JSON.stringify(cart[0].image[0])
+          const prices = JSON.stringify(cart[0].price)
+          const cartQuantitys = JSON.stringify(cart[0].cartQuantity)
+          const localTn  = localStorage.getItem("tmMedidas")
+          const localCor  = localStorage.getItem("tmCores")
+  
+          const resTm = JSON.parse(localTn)
+          const resCor = JSON.parse(localCor)
+  
+          //console.log(localCor)
+  
+          const tmMedidas = JSON.stringify(resTm[0].tm)
+          const tmCores = JSON.stringify(resCor[0].cor)
+  
+          //let cvId = ids.replace(/"/g, "");
+          let cvName = names.replace(/"/g, "");
+          let cvImage = images.replace(/"/g, "");
+          let cvPrice = prices.replace(/"/g, "");
+          let cvQuantity = cartQuantitys.replace(/"/g, "");
+          let cvTamnho = tmMedidas.replace(/"/g, "");
+          let cvCorres = tmCores.replace(/"/g, "");
+  
+          const ArreyData = [
+            cvName,
+            cvPrice,
+            cvQuantity,
+            cvImage,
+            cvTamnho,
+            cvCorres,
+            cart[0].url_product
+            ]
+  
+          const CreateCompra = {
+            name: name,
+            email: email,
+            phone: phone,
+            state: state,
+            city: city,
+            cep: cep,
+            street: street,
+            number: number,
+            district: district,
+            apartment_or_house: house,
+            cpf: cpf,
+            code_compra: code_compra,
+            productName: ArreyData[0],
+            productPrice: ArreyData[1],
+            productQuantity: ArreyData[2],
+            productImage: ArreyData[3],
+            productSize: ArreyData[4],    
+            productClolor: ArreyData[5],
+            productUrl: ArreyData[6],
+          }
+          
+          console.log(CreateCompra)
+  
+  
+          await api.post("/compra", CreateCompra).then((res) => {
+            toast.success("A compra foi criada com sucesso")
+            console.log(res)
+          }).catch((err) => {
+            toast.error("Houve um erro ", err)
+          })
+        
+      
+          console.log(CreateCompra)
+        }
       }
 
       if(cart[0] && cart[1] && cart[2] === undefined && cart[3] == undefined && cart[4] == undefined){
@@ -564,9 +637,6 @@ let prod2 = [
               />
               <label htmlFor="">Complemento AP/CASA</label>
             </InputBox>     
-            <Logo2>
-              <Link to="/" className='Logo'>Voltar para StylesTop</Link> 
-            </Logo2>
             <InputBox>
               <ion-icon name="mail-outline"></ion-icon>
               <input 
@@ -585,6 +655,9 @@ let prod2 = [
           </form>  
       </FormBox>
     </CompraStyle>}
+    <Logo2>
+      <Link to="/" className='Logo'>Voltar para StylesTop</Link> 
+    </Logo2>
     </>
   );
 }

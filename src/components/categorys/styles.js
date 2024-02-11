@@ -116,16 +116,6 @@ export const ProductProd = styled.div`
       opacity: 0.7;
       padding: 3px;
     }
-    }
-    
-    & .oldPrice {
-      font-size: 0%.8rem;
-      text-decoration: line-through;
-      flex-grow: 1;
-      color: red;
-      opacity: 0.7;
-      padding: 3px;
-    }
 
     & button {
       background-color: rgba(0, 255, 255, 0.39); /*#00FF00*/
@@ -147,6 +137,28 @@ export const ProductProd = styled.div`
     @media (max-width: 768px) {
       width: 30%;
 
+      & .oldPricereal {
+        font-size: 1.2rem;
+        flex-grow: 1;
+        color: #000000;
+        opacity: 0.7;
+        padding: 3px;
+      }
+
+      & .frete {
+        font-size: 3vw;
+        color: #00A650;
+      }
+
+      & .cartImg {
+        width: 30px;
+        height: 30px;
+        flex-grow: 1;
+        color: #000000;
+        opacity: 0.7;
+        padding: 3px;
+      }
+
       & h5 {
         width: 100%;
         color: #000000;
@@ -156,6 +168,7 @@ export const ProductProd = styled.div`
 
       & b {
         font-size: 3.5vw;
+        text-align: center;
       }
 
       & .cartao {
@@ -163,7 +176,10 @@ export const ProductProd = styled.div`
       }
 
       & .p {
-        font-size: 1.8vw;
+        font-size: 1.6vw;
+        margin-bottom: 2px;
+        margin-left: 5px;
+        text-align: center;
       }
       
       & img {

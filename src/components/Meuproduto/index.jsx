@@ -55,7 +55,7 @@ export function Meuproduto() {
         <a href="/"><AiFillAlert className="mb-2 h4"/> ENCONTRE SEU PEDIDO AQUI - StylesTop</a>
       </ContainerAMR>
       <ContainerAMR>
-        <p>Cole aqui o doigo da compra</p>
+        <p>Cole aqui o dóigo da compra</p>
         <FaLongArrowAltDown className="flecha"/>
        <form onChange={(e) => handleSearch(e)}>
         <input type="search" name="test" id="test" placeholder="Código da compra"/>

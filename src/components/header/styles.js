@@ -155,15 +155,41 @@ export const ContainerAMR = styled.div`
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   text-align: center;
 
-  @media (max-width: 768px) {
-    background: #FDD201;
+  
+  & img {
+    position: absolute;
+    margin-left: -50%;
+    margin-top: 12px;
+    width: 150px;
+    
+    @media (max-width: 1300px) {
+      margin-left: -50%;
+      margin-top: 5px;
+      width: 130px;
+    }
+    
+    @media (max-width: 1100px) {
+      margin-left: -50%;
+      margin-top: 5px;
+      width: 120px;
+    }
+    
+    @media (max-width: 768px) {
+      margin-left: -50%;
+      margin-top: 5px;
+      width: 80px;
+    }
   }
-
+  
   & a {
     text-decoration: none;
     color: black;
   }
-`;
+
+  @media (max-width: 768px) {
+    background: #FDD201;
+  }
+  `;
 
 export const CartIconVazio = styled.div`
   width: 5%;

@@ -170,7 +170,7 @@ export const ContainerSlid = styled.div`
 
   & div {
     & img {
-      height: 100vh;
+      height: 70vh;
     }
   }
 

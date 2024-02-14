@@ -13,13 +13,13 @@ export default function SlidsProducts() {
             <div className="carousel-inner" style={{height: "10%"}}>
                 <ContainerSlid>
                     <div className="carousel-item active">
-                    <img src="banner01.png" className="d-block w-100" alt="img"/>
+                    <img src="banner02.png" className="d-block w-100" alt="img"/>
                     </div>
                     <div className="carousel-item">
                     <img src="banner03.gif" className="d-block w-100" alt="img"/>
                     </div>
                     <div className="carousel-item">
-                    <img src="banner02.png" className="d-block w-100" alt="img"/>
+                    <img src="bannerEletronico01.psd.gif" className="d-block w-100" alt="img"/>
                     </div>
                 </ContainerSlid>
             </div>

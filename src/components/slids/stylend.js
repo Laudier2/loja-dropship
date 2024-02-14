@@ -166,6 +166,16 @@ export const ContainerPRT = styled.div`
   }
 `
 
+export const buttonContainer = styled.button`
+  & button {
+    & span {
+      & .carousel-control-next-icon {
+        color: red;
+      }
+    }
+  }
+`
+
 export const ContainerSlid = styled.div`
 
   & div {

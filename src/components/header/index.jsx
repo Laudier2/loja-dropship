@@ -68,7 +68,7 @@ export function Header() {
   return (
     <>
       <ContainerAMR>
-        <img src="logoadmin2.gif" alt="" srcset="" />
+        <img src="logosimples.png" alt="img" className="img3" />
          <Logo >
           <a href="/">
             StylesTop

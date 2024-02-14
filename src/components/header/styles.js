@@ -155,6 +155,45 @@ export const ContainerAMR = styled.div`
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   text-align: center;
 
+  & .img3 {
+    position: absolute;
+    width: 5%;
+    margin-left: -170px;
+    border-radius: 50px;
+    padding: 10px;
+    margin-top: -5px;
+
+    @media (max-width: 1300px) {
+      margin-left: -125px;
+      margin-top: -5px;
+      width: 5%;
+    }
+    
+    @media (max-width: 1100px) {
+      margin-left: -125px;
+      margin-top: -5px;
+      width: 5%;
+      width: 120px;
+    }
+
+    @media(max-width: 1024px) {
+      margin-left: -110px;
+      margin-top: -10px;
+      width: 4%;
+    }
+
+    @media(max-width: 998px) {
+      margin-left: -110px;
+      margin-top: -10px;
+      width: 6%;
+    }
+
+    @media(max-width: 768px) {
+      margin-left: -125px;
+      margin-top: -5px;
+      width: 14%;
+    }
+  }
   
   & img {
     position: absolute;

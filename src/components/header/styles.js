@@ -241,6 +241,7 @@ export const ContainerPRT = styled.div`
   justify-content: space-between;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  margin-bottom: -22px;
 
   & ul {
     display: flex;

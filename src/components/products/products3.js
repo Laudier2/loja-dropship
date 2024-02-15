@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const ProductProd = styled.div`
-  width: 100%;
+  width: 88%;
   background: transparent;
-  display: inline-block;
+  display: flex;
+  margin: auto;
   margin-top: 50px;
 
   & section {
@@ -32,7 +33,7 @@ export const ProductProd = styled.div`
       &:hover {
         opacity: 0.8;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease-in-out;
         cursor: pointer;
         background-color: rgba(255, 255, 255, 0.582);
@@ -40,7 +41,6 @@ export const ProductProd = styled.div`
         font-weight: bold;
         font-size: 0.8rem;
         text-align: center;
-        border: solid 0.1px;
       }
 
       & img {
@@ -48,7 +48,6 @@ export const ProductProd = styled.div`
         height: 30vh;
         border-radius: 8px;
         margin-bottom: 5px;
-        
       }
 
       & h5 {

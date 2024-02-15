@@ -602,10 +602,7 @@ export const Coontainer = styled.div`
     display: flex;
     scroll-behavior: smooth;
     overflow-x: hidden;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    overflow-y: hidden;
 
     & div {
       width: 220px;
@@ -615,7 +612,6 @@ export const Coontainer = styled.div`
       margin-top: 20px;
       text-align: center;
       font-weight: bold;
-      flex: none;
 
       &:hover {
         opacity: 0.8;
@@ -788,16 +784,14 @@ export const Coontainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    /*overflow: hidden;*/
+    overflow: hidden;
     cursor: pointer;
     opacity: 1;
     margin-left: 0%;
-    margin-top: -20px;
-    color: whitesmoke;
+    margin-top: 10px;
 
    @media (max-width: 768px){
-     opacity: 1;
-     width: 40px;
+     opacity: 0;
    }
 }
 
@@ -811,16 +805,14 @@ export const Coontainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /*overflow: hidden;*/
+  overflow: hidden;
   cursor: pointer;
   opacity: 1;
   margin-right: 0%;
-  margin-top: -240px;
-  color: whitesmoke;
+  margin-top: -224px;
 
   @media (max-width: 768px){
-     opacity: 1;
-     width: 40px;
+     opacity: 0;
    }
 }
 

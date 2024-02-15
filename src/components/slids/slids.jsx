@@ -14,10 +14,10 @@ export const Slids = () => {
 
   useEffect(() => {
     async function RequaryData(){
-      const req = await api.get(`/slids`)
+      const req = await api.get(`/product`)
       const res = await req.data
 
-      setData(res[0].slids)
+      setData(res)
     }
     RequaryData()
   },[])
@@ -74,7 +74,7 @@ export const Slids = () => {
     localStorage.setItem("size", size.size)
     localStorage.setItem("quantity", quantity.quantity)
 
-    window.location.reload()
+    console.log(e)
   }
 
   if(!data || !data.length) return null
@@ -89,13 +89,8 @@ export const Slids = () => {
     carrousel.current.scrollLeft += carrousel.current.offsetWidth
   }
 
-  console.log(data)
+  console.log(data, "l")
   
-  const imgSlid = [{
-    img: data[0].slids
-  }]
-  console.log(imgSlid[0].image)
-
   return (
     <>
       <CoontainerSlids>
@@ -105,16 +100,20 @@ export const Slids = () => {
           </button>
         </div>
         <div className="carousel" ref={carrousel}>
-          {data.map(res => (
+          {data.map(res => {
+            
+            const { id, image } = res
+
+            return (
               <Link to="/desc" onClick={() => LocalSto(res)}>
-                <div className="item" key={res.id}>
+                <div key={id} className="item">
                   <div className="image">
-                    <img src={res} alt="img" />
+                    <img src={image[0]} alt="img" />
                   </div>
                 </div>
-                
-            </Link>
-          ))}
+              </Link> 
+            )
+          })}
         </div>
         <div className="buttons2">
           <button onClick={(e) => hendleRigthClik(e)}>

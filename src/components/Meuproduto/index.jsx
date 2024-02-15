@@ -47,6 +47,7 @@ export function Meuproduto() {
   return (
     <>
       <ContainerAMR>
+          <img src="logosimples.png" alt="img" className="img" />
          <Logo >
           <a href="/">
             StylesTop

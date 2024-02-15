@@ -184,6 +184,7 @@ const Products = () => {
     <SlidsMenu/>
   {categoroy == "" && categoroyTenis == "" && categoryShort == "" && categoroyCamisetaF == "" && categoroyVestido == "" && categoroyShortF == "" && categoryConjunto == "" && categoroyFone ? <Example /> : 
     <div>
+        <Slids/>
         <ProductProd>
           <section>
           
@@ -296,8 +297,6 @@ const Products = () => {
       
     </ProductProd>
 
-    <Slids/>
-
     <ProductProd>
           <section>
           
@@ -335,7 +334,9 @@ const Products = () => {
       </section>  
       
     </ProductProd>
-    <br />
+
+    <Slids/>
+    
     <ProductProd>
           <section>
           

@@ -9,6 +9,9 @@ export default function SlidsProducts() {
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
             </div>
             <div className="carousel-inner" style={{height: "10%"}}>
                 <ContainerSlid>
@@ -20,6 +23,15 @@ export default function SlidsProducts() {
                     </div>
                     <div className="carousel-item">
                     <img src="bannerEletronico01.psd.gif" className="d-block w-100" alt="img"/>
+                    </div>
+                    <div className="carousel-item">
+                    <img src="banner01.gif" className="d-block w-100" alt="img"/>
+                    </div>
+                    <div className="carousel-item">
+                    <img src="banner02.gif" className="d-block w-100" alt="img"/>
+                    </div>
+                    <div className="carousel-item">
+                    <img src="banner03.gif" className="d-block w-100" alt="img"/>
                     </div>
                 </ContainerSlid>
             </div>

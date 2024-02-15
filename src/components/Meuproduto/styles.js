@@ -155,6 +155,12 @@ export const ContainerAMR = styled.div`
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   text-align: center;
 
+  & .img {
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+  }
+
   & h3 {
     margin-top: 20px;
     font-weight: bold;

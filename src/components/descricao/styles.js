@@ -179,6 +179,7 @@ export const ContainerDesc = styled.div`
   font-size: 1vw;
 
   & .Favorit {
+    display: none;
     opacity: 1;
     cursor: pointer;
 
@@ -389,21 +390,21 @@ export const ContainerDesc = styled.div`
 
       & .addFavorit {
         position: absolute;
-        margin-top: -450px;
+        margin-top: -40px;
         font-size: 5vw;
       }
 
       & .removeFavorit {
         position: absolute;
         color: red;
-        margin-top: -450px;
+        margin-top: -400px;
         font-size: 5vw;
       }
 
       & .compartilhar {
         position: absolute;
         margin-left: 25px;
-        margin-top: -450px;
+        margin-top: -400px;
         font-size: 5vw;
       }
 

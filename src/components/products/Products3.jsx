@@ -114,6 +114,7 @@ const Products = () => {
   const [categoroyCamisetaF, setCategoryCamisetaF] = useState([])
   const [categoroyFone, setCategoryFone] = useState([])
   const [categoroyCalca, setCategoryCalca] = useState([])
+  const [categoroyCalcados, setCategoryCalcados] = useState([])
 
   //Aqui estamos usado o useEffect para deixa os estados sempre atualizados ao carrega o compodnent
   useEffect(() =>{    
@@ -136,6 +137,8 @@ const Products = () => {
       const resFone = await reqFone.data[0].products_categories
       const reqCalca = await api.get("/category/465ce7a8-5174-4543-a7b8-5e8a6ca885b1")
       const resCalca = await reqCalca.data[0].products_categories
+      const reqCalcado = await api.get("/category/1528f451-8509-4b25-90ec-82952c6950df")
+      const resCalcado = await reqCalcado.data[0].products_categories
 
       setCategory(resName)
       setCategoryTenis(resTenis)
@@ -146,6 +149,7 @@ const Products = () => {
       setCategoryCamisetaF(resCamiseta)
       setCategoryFone(resFone)
       setCategoryCalca(resCalca)
+      setCategoryCalcados(resCalcado)
     })()
   },[])
 
@@ -343,6 +347,44 @@ const Products = () => {
           <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[0]}</h2>
         
           {categoroyVestido.map(res => {
+
+          const { id, name, image, price } = res.products;
+
+          let percentual = 0.25;
+          let aumento = price * percentual;
+          let novo_price = price - aumento;
+
+          console.log("img", image[0])
+
+          return (
+            <Link to="/desc" onClick={() => LocalSto(res.products)}>
+              <div key={id}>
+                <img src={image[0]} alt="img" />
+                <h5>{name}</h5>
+                <b className="frete">Frete Gratis</b>
+                <img src="https://www.episinos.com.br/fotos/1/180/icone-entrega.jpg" alt="img" className="cartImg" />
+                <span>
+                  <p className='p'>
+                    <FaCreditCard className='cartao'/> Em até 12x sem juros
+                  </p>
+                </span>
+                <h4 className='oldPrice'>R${price},00 </h4>
+                <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+              </div>
+            </Link>
+            )
+        })
+      }
+      </section>  
+      
+    </ProductProd>
+
+    <ProductProd>
+          <section>
+          
+          <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[1]}</h2>
+        
+          {categoroyCalcados.map(res => {
 
           const { id, name, image, price } = res.products;
 

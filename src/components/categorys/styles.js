@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const ProductProd = styled.div`
-  width: 100%;
+  width: 88%;
   background: transparent;
-  display: inline-block;
+  display: flex;
+  margin: auto;
   margin-top: 50px;
 
   & section {

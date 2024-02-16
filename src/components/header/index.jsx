@@ -101,8 +101,7 @@ export function Header() {
         <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
       </Container>
       <ContainerPRT>
-        <ul>
-        
+        <ul>        
           <li> 
             <span>
               <AiOutlineWhatsApp className="text-white h5 m-1 mb-2 p"/>

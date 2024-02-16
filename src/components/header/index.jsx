@@ -83,9 +83,7 @@ export function Header() {
        </form>
        <DivContainer>
         <div>
-          {!filterData ? ""
-          : 
-          <SeartResult data={filterData} />  
+          {filterData ? <SeartResult data={filterData}/> : ""
         }
         </div>
       </DivContainer>

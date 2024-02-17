@@ -177,7 +177,7 @@ export const buttonContainer = styled.button`
 `
 
 export const ContainerSlid = styled.div`
-margin-top: 25px;
+margin-top: 2px;
 
   & div {
     & img {

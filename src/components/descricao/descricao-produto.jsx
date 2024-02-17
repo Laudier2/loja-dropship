@@ -175,6 +175,7 @@ const Descricao = () => {
   const FilterColor38 = Todes.filter(e => e == "Preto com cinza")
   const FilterColor39 = Todes.filter(e =>  e == "Preto com amarelo")
   const FilterColor40 = Todes.filter(e =>  e == "Preto com roxo")
+  const FilterColor41 = Todes.filter(e =>  e == "Dourado" || e == "dourado" || e == "DOURADO")
   
   console.log(FilterColor2[0], FilterColor1[0])
 
@@ -410,6 +411,7 @@ const Descricao = () => {
                   {FilterColor38[0] ? <button type="button" style={{background: "linear-gradient(90deg, black, gray)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor38[0])}></button> : ""}
                   {FilterColor39[0] ? <button type="button" style={{background: "linear-gradient(90deg, black, yellow)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor39[0])}></button> : ""}
                   {FilterColor40[0] ? <button type="button" style={{background: "linear-gradient(90deg, black, #5c0aeb)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor40[0])}></button> : ""}
+                  {FilterColor41[0] ? <button type="button" style={{background: "#D6A52E", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor41[0])}></button> : ""}
                   { }
                 </div>
                 <br />

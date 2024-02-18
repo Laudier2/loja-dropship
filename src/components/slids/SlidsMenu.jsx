@@ -108,66 +108,6 @@ export function SlidsMenu() {
               <Link to="/maquiagem">
                 <div className="item">
                   <div className="image">
-                    <img src={data[0].image} alt="img" />
-                  </div>
-                </div>
-                <div className="info">
-                  <span className="name">{data[0].name}</span>
-                </div>
-              </Link>
-          </div>
-          <div>
-              <Link to="/conjuntof">
-                <div className="item">
-                  <div className="image">
-                    <img src={data[1].image} alt="img" />
-                  </div>
-                </div>
-                <div className="info">
-                  <span className="name">{data[1].name}</span>
-                </div>
-              </Link>
-          </div>
-          <div>
-              <Link to="/calcaf">
-                <div className="item">
-                  <div className="image">
-                    <img src={data[2].image} alt="img" />
-                  </div>
-                </div>
-                <div className="info">
-                  <span className="name">{data[2].name}</span>
-                </div>
-              </Link>
-          </div>
-          <div>
-              <Link to="/shortm">
-                <div className="item">
-                  <div className="image">
-                    <img src={data[3].image} alt="img" />
-                  </div>
-                </div>
-                <div className="info">
-                  <span className="name">{data[3].name}</span>
-                </div>
-              </Link>
-          </div>
-          <div>
-              <Link to="/shortf">
-                <div className="item">
-                  <div className="image">
-                    <img src={data[4].image} alt="img" />
-                  </div>
-                </div>
-                <div className="info">
-                  <span className="name">{data[4].name}</span>
-                </div>
-              </Link>
-          </div>
-          <div>
-              <Link to="/calcam">
-                <div className="item">
-                  <div className="image">
                     <img src={data[5].image} alt="img" />
                   </div>
                 </div>
@@ -177,7 +117,7 @@ export function SlidsMenu() {
               </Link>
           </div>
           <div>
-              <Link to="/camisetaf">
+              <Link to="/conjuntof">
                 <div className="item">
                   <div className="image">
                     <img src={data[6].image} alt="img" />
@@ -189,7 +129,7 @@ export function SlidsMenu() {
               </Link>
           </div>
           <div>
-              <Link to="/camisetam">
+              <Link to="/calcaf">
                 <div className="item">
                   <div className="image">
                     <img src={data[7].image} alt="img" />
@@ -197,6 +137,66 @@ export function SlidsMenu() {
                 </div>
                 <div className="info">
                   <span className="name">{data[7].name}</span>
+                </div>
+              </Link>
+          </div>
+          <div>
+              <Link to="/shortm">
+                <div className="item">
+                  <div className="image">
+                    <img src={data[8].image} alt="img" />
+                  </div>
+                </div>
+                <div className="info">
+                  <span className="name">{data[8].name}</span>
+                </div>
+              </Link>
+          </div>
+          <div>
+              <Link to="/shortf">
+                <div className="item">
+                  <div className="image">
+                    <img src={data[9].image} alt="img" />
+                  </div>
+                </div>
+                <div className="info">
+                  <span className="name">{data[9].name}</span>
+                </div>
+              </Link>
+          </div>
+          <div>
+              <Link to="/calcam">
+                <div className="item">
+                  <div className="image">
+                    <img src={data[10].image} alt="img" />
+                  </div>
+                </div>
+                <div className="info">
+                  <span className="name">{data[10].name}</span>
+                </div>
+              </Link>
+          </div>
+          <div>
+              <Link to="/camisetaf">
+                <div className="item">
+                  <div className="image">
+                    <img src={data[11].image} alt="img" />
+                  </div>
+                </div>
+                <div className="info">
+                  <span className="name">{data[11].name}</span>
+                </div>
+              </Link>
+          </div>
+          <div>
+              <Link to="/camisetam">
+                <div className="item">
+                  <div className="image">
+                    <img src={data[12].image} alt="img" />
+                  </div>
+                </div>
+                <div className="info">
+                  <span className="name">{data[12].name}</span>
                 </div>
               </Link>
           </div>

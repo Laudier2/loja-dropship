@@ -104,9 +104,9 @@ export const Shortm = () => {
   //Aqui estamos usado o useEffect para deixa os estados sempre atualizados ao carrega o compodnent
   useEffect(() =>{    
     (async() => {
-      const reqName = await api.get("/category/ab556f0a-b7b9-4079-9cc8-ce6d8f4f5117")
+      const reqName = await api.get("/category/")
       const resName = await reqName.data
-      const req = await api.get("/category/")
+      const req = await api.get("/category/41a0d39a-d5d8-4a70-a2a5-050b68591ab5")
       const res = await req.data[0].products_categories
 
       setCategory(resName)

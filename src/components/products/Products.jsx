@@ -113,6 +113,8 @@ export const Products = () => {
   const [categoroyFone, setCategoryFone] = useState([])
   const [categoroyCalca, setCategoryCalca] = useState([])
   const [categoroyBone, setCategoryBone] = useState([])
+  const [categoroyIstetica, setCategoryIstetica] = useState([])
+  const [categoroyShortM, setCategoryShortM] = useState([])
 
   //Aqui estamos usado o useEffect para deixa os estados sempre atualizados ao carrega o compodnent
   useEffect(() =>{    
@@ -137,6 +139,10 @@ export const Products = () => {
       const resCalca = await reqCalca.data[0].products_categories
       const reqBone = await api.get("/category/f93ec5bb-f056-47dd-aa75-9c95f6c4e120")
       const resBone = await reqBone.data[0].products_categories
+      const reqIstetica = await api.get("/category/f4e05ac6-fb7e-4d2a-adf6-70d0c9558678")
+      const resIstetica = await reqIstetica.data[0].products_categories
+      const reqShortM = await api.get("/category/41a0d39a-d5d8-4a70-a2a5-050b68591ab5")
+      const resShortM = await reqShortM.data[0].products_categories
 
       setCategory(resName)
       setCategoryTenis(resTenis)
@@ -148,139 +154,121 @@ export const Products = () => {
       setCategoryFone(resFone)
       setCategoryCalca(resCalca)
       setCategoryBone(resBone)
+      setCategoryIstetica(resIstetica)
+      setCategoryShortM(resShortM)
     })()
   },[])
 
-  //const teste = categoroyVestido.map(img => img)
-
-  /*const [promo, setPromo] = useState([])
-
-  useEffect((
-    async function Promo(){
-      const req = await api.get("/promocao")
-      const res = await req.data;
-
-      setPromo(res)
-    }
-  ), [])*/
-
   const NameCategory = categoroy.map(res => res.name)
-
-  /*
-    var salario = 100;
-    var percentual = 0.25;
-    var aumento = salario * percentual;
-    var novo_price = salario - aumento;
-  */
 
   return (
     <>
     <Header/>
     <SlidsProducts/>
     <SlidsMenu/>
-  {categoroy == "" && categoroyTenis == "" && categoryShort == "" && categoroyCamisetaF == "" && categoroyVestido == "" && categoroyShortF == "" && categoryConjunto == "" && categoroyFone ? <Example /> : 
+    {categoroy == "" && categoroyTenis == "" && categoryShort == "" && categoroyCamisetaF == "" && categoroyVestido == "" && categoroyShortF == "" && categoryConjunto == "" && categoroyFone ? <Example /> : 
     <div>
-        <Slids/>
-        <ProductProd>
-          <section>
-          
-          <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[7]}</h2>
+      <Slids/>
+      <ProductProd>
+        <section>
         
-          {categoroyCalca.map(res => {
+        <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[7]}</h2>
+      
+        {categoroyCalca.map(res => {
 
-          const { id, name, image, price } = res.products;
+        const { id, name, image, price } = res.products;
 
-          let percentual = 0.25;
-          let aumento = price * percentual;
-          let novo_price = price - aumento;
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
 
-          return (
-            <Link to="/desc" onClick={() => LocalSto(res.products)}>
-              <div key={id}>
-                <img src={image[0]} alt="img" />
-                <h5>{name}</h5>
-                <b className="frete">Frete Gratis</b>
-                <img src="card.jpg" alt="img" className="cartImg" />
-                <span>
-                  <p className='p'>
-                    <FaCreditCard className='cartao'/> Em até 12x sem juros
-                  </p>
-                </span>
-                <h4 className='oldPrice'>R${price},00 </h4>
-                <h4 className='oldPricereal'> R$ {novo_price},00</h4>
-              </div>
-            </Link>
-            )
+        return (
+          <Link to="/desc" onClick={() => LocalSto(res.products)}>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <b className="frete">Frete Gratis</b>
+              <img src="card.jpg" alt="img" className="cartImg" />
+              <span>
+                <p className='p'>
+                  <FaCreditCard className='cartao'/> Em até 12x sem juros
+                </p>
+              </span>
+              <h4 className='oldPrice'>R${price},00 </h4>
+              <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+            </div>
+          </Link>
+          )
         })
       }
       </section>  
       
     </ProductProd>
     <ProductProd>
-          <section>
-          
-          <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[11]}</h2>
+        <section>
         
-          {categoroyCamisetaF.map(res => {
+        <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[11]}</h2>
+      
+        {categoroyIstetica.map(res => {
 
-          const { id, name, image, price } = res.products;
+        const { id, name, image, price } = res.products;
 
-          let percentual = 0.25;
-          let aumento = price * percentual;
-          let novo_price = price - aumento;
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
 
-          return (
-            <Link to="/desc" onClick={() => LocalSto(res.products)}>
-              <div key={id}>
-                <img src={image[0]} alt="img" />
-                <h5>{name}</h5>
-                <b className="frete">Frete Gratis</b>
-                <img src="card.jpg" alt="img" className="cartImg" />
-                <span>
-                  <p className='p'>
-                    <FaCreditCard className='cartao'/> Em até 12x sem juros
-                  </p>
-                </span>
-                <h4 className='oldPrice'>R${price},00 </h4>
-                <h4 className='oldPricereal'> R$ {novo_price},00</h4>
-              </div>
-            </Link>
-            )
+        return (
+          <Link to="/desc" onClick={() => LocalSto(res.products)}>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <b className="frete">Frete Gratis</b>
+              <img src="card.jpg" alt="img" className="cartImg" />
+              <span>
+                <p className='p'>
+                  <FaCreditCard className='cartao'/> Em até 12x sem juros
+                </p>
+              </span>
+              <h4 className='oldPrice'>R${price},00 </h4>
+              <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+            </div>
+          </Link>
+          )
         })
       }
       </section>  
       
     </ProductProd>
     <ProductProd>
-          <section>
-          
-          <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[3]}</h2>
+        <section>
         
-          {categoroyFone.map(res => {
+        <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[3]}</h2>
+      
+        {categoroyShortF.map(res => {
 
-          const { id, name, image, price } = res.products;
+        const { id, name, image, price } = res.products;
 
-          let percentual = 0.25;
-          let aumento = price * percentual;
-          let novo_price = price - aumento;
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
 
-          return (
-            <Link to="/desc" onClick={() => LocalSto(res.products)}>
-              <div key={id}>
-                <img src={image[0]} alt="img" />
-                <h5>{name}</h5>
-                <b className="frete">Frete Gratis</b>
-                <img src="card.jpg" alt="img" className="cartImg" />
-                <span>
-                  <p className='p'>
-                    <FaCreditCard className='cartao'/> Em até 12x sem juros
-                  </p>
-                </span>
-                <h4 className='oldPrice'>R${price},00 </h4>
-                <h4 className='oldPricereal'> R$ {novo_price},00</h4>
-              </div>
-            </Link>
-            )
+        return (
+          <Link to="/desc" onClick={() => LocalSto(res.products)}>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <b className="frete">Frete Gratis</b>
+              <img src="card.jpg" alt="img" className="cartImg" />
+              <span>
+                <p className='p'>
+                  <FaCreditCard className='cartao'/> Em até 12x sem juros
+                </p>
+              </span>
+              <h4 className='oldPrice'>R${price},00 </h4>
+              <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+            </div>
+          </Link>
+          )
         })
       }
       </section>  
@@ -288,35 +276,71 @@ export const Products = () => {
     </ProductProd>
 
     <ProductProd>
-          <section>
-          
-          <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[6]}</h2>
+        <section>
         
-          {categoryConjunto.map(res => {
+        <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[6]}</h2>
+      
+        {categoroyFone.map(res => {
 
-          const { id, name, image, price } = res.products;
+        const { id, name, image, price } = res.products;
 
-          let percentual = 0.25;
-          let aumento = price * percentual;
-          let novo_price = price - aumento;
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
 
-          return (
-            <Link to="/desc" onClick={() => LocalSto(res.products)}>
-              <div key={id}>
-                <img src={image[0]} alt="img" />
-                <h5>{name}</h5>
-                <b className="frete">Frete Gratis</b>
-                <img src="card.jpg" alt="img" className="cartImg" />
-                <span>
-                  <p className='p'>
-                    <FaCreditCard className='cartao'/> Em até 12x sem juros
-                  </p>
-                </span>
-                <h4 className='oldPrice'>R${price},00 </h4>
-                <h4 className='oldPricereal'> R$ {novo_price},00</h4>
-              </div>
-            </Link>
-            )
+        return (
+          <Link to="/desc" onClick={() => LocalSto(res.products)}>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <b className="frete">Frete Gratis</b>
+              <img src="card.jpg" alt="img" className="cartImg" />
+              <span>
+                <p className='p'>
+                  <FaCreditCard className='cartao'/> Em até 12x sem juros
+                </p>
+              </span>
+              <h4 className='oldPrice'>R${price},00 </h4>
+              <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+            </div>
+          </Link>
+          )
+        })
+      }
+      </section>  
+      
+    </ProductProd>
+
+    <ProductProd>
+        <section>
+        
+        <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[8]}</h2>
+      
+        {categoroyBone.map(res => {
+
+        const { id, name, image, price } = res.products;
+
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
+
+        return (
+          <Link to="/desc" onClick={() => LocalSto(res.products)}>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <b className="frete">Frete Gratis</b>
+              <img src="card.jpg" alt="img" className="cartImg" />
+              <span>
+                <p className='p'>
+                  <FaCreditCard className='cartao'/> Em até 12x sem juros
+                </p>
+              </span>
+              <h4 className='oldPrice'>R${price},00 </h4>
+              <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+            </div>
+          </Link>
+          )
         })
       }
       </section>  
@@ -326,35 +350,35 @@ export const Products = () => {
     <Slids/>
     
     <ProductProd>
-          <section>
-          
-          <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[0]}</h2>
+        <section>
         
-          {categoroyVestido.map(res => {
+        <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[0]}</h2>
+      
+        {categoroyVestido.map(res => {
 
-          const { id, name, image, price } = res.products;
+        const { id, name, image, price } = res.products;
 
-          let percentual = 0.25;
-          let aumento = price * percentual;
-          let novo_price = price - aumento;
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
 
-          return (
-            <Link to="/desc" onClick={() => LocalSto(res.products)}>
-              <div key={id}>
-                <img src={image[0]} alt="img" />
-                <h5>{name}</h5>
-                <b className="frete">Frete Gratis</b>
-                <img src="card.jpg" alt="img" className="cartImg" />
-                <span>
-                  <p className='p'>
-                    <FaCreditCard className='cartao'/> Em até 12x sem juros
-                  </p>
-                </span>
-                <h4 className='oldPrice'>R${price},00 </h4>
-                <h4 className='oldPricereal'> R$ {novo_price},00</h4>
-              </div>
-            </Link>
-            )
+        return (
+          <Link to="/desc" onClick={() => LocalSto(res.products)}>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <b className="frete">Frete Gratis</b>
+              <img src="card.jpg" alt="img" className="cartImg" />
+              <span>
+                <p className='p'>
+                  <FaCreditCard className='cartao'/> Em até 12x sem juros
+                </p>
+              </span>
+              <h4 className='oldPrice'>R${price},00 </h4>
+              <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+            </div>
+          </Link>
+          )
         })
       }
       </section>  
@@ -366,7 +390,7 @@ export const Products = () => {
           
           <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[1]}</h2>
         
-          {categoroyBone.map(res => {
+          {categoroyTenis.map(res => {
 
           const { id, name, image, price } = res.products;
 
@@ -391,6 +415,76 @@ export const Products = () => {
               </div>
             </Link>
             )
+        })
+      }
+      </section>  
+      
+    </ProductProd>
+    <ProductProd>
+        <section>
+        
+        <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[4]}</h2>
+      
+        {categoryConjunto.map(res => {
+
+        const { id, name, image, price } = res.products;
+
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
+
+        return (
+          <Link to="/desc" onClick={() => LocalSto(res.products)}>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <b className="frete">Frete Gratis</b>
+              <img src="card.jpg" alt="img" className="cartImg" />
+              <span>
+                <p className='p'>
+                  <FaCreditCard className='cartao'/> Em até 12x sem juros
+                </p>
+              </span>
+              <h4 className='oldPrice'>R${price},00 </h4>
+              <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+            </div>
+          </Link>
+          )
+        })
+      }
+      </section>  
+      
+    </ProductProd>
+    <ProductProd>
+        <section>
+        
+        <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[2]}</h2>
+      
+        {categoroyShortM.map(res => {
+
+        const { id, name, image, price } = res.products;
+
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
+
+        return (
+          <Link to="/desc" onClick={() => LocalSto(res.products)}>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <b className="frete">Frete Gratis</b>
+              <img src="card.jpg" alt="img" className="cartImg" />
+              <span>
+                <p className='p'>
+                  <FaCreditCard className='cartao'/> Em até 12x sem juros
+                </p>
+              </span>
+              <h4 className='oldPrice'>R${price},00 </h4>
+              <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+            </div>
+          </Link>
+          )
         })
       }
       </section>  

@@ -118,33 +118,7 @@ export const Conjuntof = () => {
     })()
   },[])
 
-  //const teste = categoroyVestido.map(img => img)
-
-  console.log(categoroy)
-
-  /*const [promo, setPromo] = useState([])
-
-  useEffect((
-    async function Promo(){
-      const req = await api.get("/promocao")
-      const res = await req.data;
-
-      setPromo(res)
-    }
-  ), [])*/
-
-  //console.log(promo)
-
   const NameCategory = categoroy.map(res => res.name)
-
-  console.log(NameCategory)
-
-  /*
-    var salario = 100;
-    var percentual = 0.25;
-    var aumento = salario * percentual;
-    var novo_price = salario - aumento;
-  */
 
   return (
     <>

@@ -110,7 +110,7 @@ export const Calcaf = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/f93ec5bb-f056-47dd-aa75-9c95f6c4e120")
+      const req = await api.get("/category/7080009b-d0f3-4bc7-860e-45972d576933")
       const res = await req.data[0].products_categories
 
       setCategory(resName)
@@ -118,33 +118,7 @@ export const Calcaf = () => {
     })()
   },[])
 
-  //const teste = categoroyVestido.map(img => img)
-
-  console.log(categoroy)
-
-  /*const [promo, setPromo] = useState([])
-
-  useEffect((
-    async function Promo(){
-      const req = await api.get("/promocao")
-      const res = await req.data;
-
-      setPromo(res)
-    }
-  ), [])*/
-
-  //console.log(promo)
-
   const NameCategory = categoroy.map(res => res.name)
-
-  console.log(NameCategory)
-
-  /*
-    var salario = 100;
-    var percentual = 0.25;
-    var aumento = salario * percentual;
-    var novo_price = salario - aumento;
-  */
 
   return (
     <>

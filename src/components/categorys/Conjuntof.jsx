@@ -110,7 +110,7 @@ export const Conjuntof = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/9555b31a-b622-4fa8-be94-c4a157c912fc")
+      const req = await api.get("/category/891670a9-81a3-4451-b0e7-b9649b21743b")
       const res = await req.data[0].products_categories
 
       setCategory(resName)
@@ -176,7 +176,7 @@ export const Conjuntof = () => {
                   <img src={image[0]} alt="img" />
                   <h5>{name}</h5>
                   <b className="frete">Frete Gratis</b>
-                  <img src="https://www.episinos.com.br/fotos/1/180/icone-entrega.jpg" alt="img" className="cartImg" />
+                  <img src="card.jpg" alt="img" className="cartImg" />
                   <span>
                     <p className='p'>
                       <FaCreditCard className='cartao'/> Em até 12x sem juros

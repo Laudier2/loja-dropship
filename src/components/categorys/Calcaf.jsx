@@ -110,7 +110,7 @@ export const Calcaf = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/465ce7a8-5174-4543-a7b8-5e8a6ca885b1")
+      const req = await api.get("/category/f93ec5bb-f056-47dd-aa75-9c95f6c4e120")
       const res = await req.data[0].products_categories
 
       setCategory(resName)
@@ -176,7 +176,7 @@ export const Calcaf = () => {
                   <img src={image[0]} alt="img" />
                   <h5>{name}</h5>
                   <b className="frete">Frete Gratis</b>
-                  <img src="https://www.episinos.com.br/fotos/1/180/icone-entrega.jpg" alt="img" className="cartImg" />
+                  <img src="card.jpg" alt="img" className="cartImg" />
                   <span>
                     <p className='p'>
                       <FaCreditCard className='cartao'/> Em até 12x sem juros

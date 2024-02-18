@@ -176,7 +176,7 @@ export const Rintima = () => {
                   <img src={image[0]} alt="img" />
                   <h5>{name}</h5>
                   <b className="frete">Frete Gratis</b>
-                  <img src="https://www.episinos.com.br/fotos/1/180/icone-entrega.jpg" alt="img" className="cartImg" />
+                  <img src="card.jpg" alt="img" className="cartImg" />
                   <span>
                     <p className='p'>
                       <FaCreditCard className='cartao'/> Em até 12x sem juros

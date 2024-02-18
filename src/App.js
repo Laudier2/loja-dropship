@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.min.css'
 import { ErrorBoundary } from "react-error-boundary";
-import Products from "./components/products/Products3";
+//import { Products } from "./components/products/Products";
 import Desc from "./components/descricao/descricao-produto";
 import Cart from "./components/cart";
 import CartFinalize from "./components/cart/cartFinalize";
@@ -29,6 +29,7 @@ import { Ferramentas } from "./components/categorys/Ferramentas"
 import { Estetica } from "./components/categorys/Estetica"
 import { PoliticasDevolucaoTroca } from "./components/politicaTrocaDevolucao/politicaTrocaDevolucao";
 import { Meuproduto } from "./components/Meuproduto";
+import { Products } from "./components/products/Products"
 
 const TRACKING_ID = "G-YJVYCLYTD3" 
 

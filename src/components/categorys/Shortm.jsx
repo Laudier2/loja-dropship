@@ -39,10 +39,7 @@ export const Shortm = () => {
 
   },[])
   
-  //const history = useHistory()
-  
   //const products = useSelector(productSlace => productSlace.products.items)
-  //console.log(products)
 
   function LocalSto(e) {
 
@@ -96,7 +93,6 @@ export const Shortm = () => {
     localStorage.setItem("size", size.size)
     localStorage.setItem("quantity", quantity.quantity)
 
-    console.log(e)
   }
 
   // Aqui estamos fazenso as requisição na API REstful com o axio, 
@@ -108,9 +104,9 @@ export const Shortm = () => {
   //Aqui estamos usado o useEffect para deixa os estados sempre atualizados ao carrega o compodnent
   useEffect(() =>{    
     (async() => {
-      const reqName = await api.get("/category")
+      const reqName = await api.get("/category/ab556f0a-b7b9-4079-9cc8-ce6d8f4f5117")
       const resName = await reqName.data
-      const req = await api.get("/category/48122c17-5228-46d6-87bc-14ed904d0b78")
+      const req = await api.get("/category/")
       const res = await req.data[0].products_categories
 
       setCategory(resName)
@@ -118,33 +114,9 @@ export const Shortm = () => {
     })()
   },[])
 
-  //const teste = categoroyVestido.map(img => img)
 
-  console.log(categoroy)
-
-  /*const [promo, setPromo] = useState([])
-
-  useEffect((
-    async function Promo(){
-      const req = await api.get("/promocao")
-      const res = await req.data;
-
-      setPromo(res)
-    }
-  ), [])*/
-
-  //console.log(promo)
 
   const NameCategory = categoroy.map(res => res.name)
-
-  console.log(NameCategory)
-
-  /*
-    var salario = 100;
-    var percentual = 0.25;
-    var aumento = salario * percentual;
-    var novo_price = salario - aumento;
-  */
 
   return (
     <>
@@ -158,7 +130,7 @@ export const Shortm = () => {
       <ProductProd>
             <section>
             
-            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[8]}</h2>
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[3]}</h2>
           
             {categoroyData.map(res => {
 
@@ -168,15 +140,13 @@ export const Shortm = () => {
             let aumento = price * percentual;
             let novo_price = price - aumento;
 
-            console.log("img", image[0])
-
             return (
               <Link to="/desc" onClick={() => LocalSto(res.products)}>
                 <div key={id}>
                   <img src={image[0]} alt="img" />
                   <h5>{name}</h5>
                   <b className="frete">Frete Gratis</b>
-                  <img src="https://www.episinos.com.br/fotos/1/180/icone-entrega.jpg" alt="img" className="cartImg" />
+                  <img src="card.jpg" alt="img" className="cartImg" />
                   <span>
                     <p className='p'>
                       <FaCreditCard className='cartao'/> Em até 12x sem juros

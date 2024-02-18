@@ -42,7 +42,6 @@ export const Shortf = () => {
   //const history = useHistory()
   
   //const products = useSelector(productSlace => productSlace.products.items)
-  //console.log(products)
 
   function LocalSto(e) {
 
@@ -96,7 +95,7 @@ export const Shortf = () => {
     localStorage.setItem("size", size.size)
     localStorage.setItem("quantity", quantity.quantity)
 
-    console.log(e)
+    
   }
 
   // Aqui estamos fazenso as requisição na API REstful com o axio, 
@@ -110,7 +109,7 @@ export const Shortf = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/4f9bf968-4ef7-4384-9e16-71050dc22650")
+      const req = await api.get("/category/891670a9-81a3-4451-b0e7-b9649b21743b")
       const res = await req.data[0].products_categories
 
       setCategory(resName)
@@ -118,33 +117,7 @@ export const Shortf = () => {
     })()
   },[])
 
-  //const teste = categoroyVestido.map(img => img)
-
-  console.log(categoroy)
-
-  /*const [promo, setPromo] = useState([])
-
-  useEffect((
-    async function Promo(){
-      const req = await api.get("/promocao")
-      const res = await req.data;
-
-      setPromo(res)
-    }
-  ), [])*/
-
-  //console.log(promo)
-
   const NameCategory = categoroy.map(res => res.name)
-
-  console.log(NameCategory)
-
-  /*
-    var salario = 100;
-    var percentual = 0.25;
-    var aumento = salario * percentual;
-    var novo_price = salario - aumento;
-  */
 
   return (
     <>
@@ -168,15 +141,13 @@ export const Shortf = () => {
             let aumento = price * percentual;
             let novo_price = price - aumento;
 
-            console.log("img", image[0])
-
             return (
               <Link to="/desc" onClick={() => LocalSto(res.products)}>
                 <div key={id}>
                   <img src={image[0]} alt="img" />
                   <h5>{name}</h5>
                   <b className="frete">Frete Gratis</b>
-                  <img src="https://www.episinos.com.br/fotos/1/180/icone-entrega.jpg" alt="img" className="cartImg" />
+                  <img src="card.jpg" alt="img" className="cartImg" />
                   <span>
                     <p className='p'>
                       <FaCreditCard className='cartao'/> Em até 12x sem juros

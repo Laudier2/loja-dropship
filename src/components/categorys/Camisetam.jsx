@@ -110,7 +110,7 @@ export const Camisetam = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/1bc19a3d-c067-4d03-b257-1083ab5e1dc7")
+      const req = await api.get("/category/5a011800-5e65-455c-b62d-f095f6ff8402")
       const res = await req.data[0].products_categories
 
       setCategory(resName)
@@ -176,7 +176,7 @@ export const Camisetam = () => {
                   <img src={image[0]} alt="img" />
                   <h5>{name}</h5>
                   <b className="frete">Frete Gratis</b>
-                  <img src="https://www.episinos.com.br/fotos/1/180/icone-entrega.jpg" alt="img" className="cartImg" />
+                  <img src="card.jpg" alt="img" className="cartImg" />
                   <span>
                     <p className='p'>
                       <FaCreditCard className='cartao'/> Em até 12x sem juros

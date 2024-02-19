@@ -110,7 +110,7 @@ export const Ferramentas = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/06726330-2cb4-433a-8a88-2a16e9a839c3")
+      const req = await api.get("/category/aef0176e-3b35-4ca7-8109-da8ff3fd6853")
       const res = await req.data[0].products_categories
 
       setCategory(resName)
@@ -158,7 +158,7 @@ export const Ferramentas = () => {
       <ProductProd>
             <section>
             
-            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[14]}</h2>
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[9]}</h2>
           
             {categoroyData.map(res => {
 

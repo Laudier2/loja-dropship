@@ -110,7 +110,7 @@ export const Camisetaf = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/78df7ec7-7d12-4123-ba73-6cd335249ef3")
+      const req = await api.get("/category/5a011800-5e65-455c-b62d-f095f6ff8402")
       const res = await req.data[0].products_categories
 
       setCategory(resName)
@@ -158,7 +158,7 @@ export const Camisetaf = () => {
       <ProductProd>
             <section>
             
-            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[11]}</h2>
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[5]}</h2>
           
             {categoroyData.map(res => {
 

@@ -39,6 +39,8 @@ export const Shortm = () => {
 
   },[])
   
+  //const history = useHistory()
+  
   //const products = useSelector(productSlace => productSlace.products.items)
 
   function LocalSto(e) {
@@ -92,7 +94,6 @@ export const Shortm = () => {
     localStorage.setItem("slug", slug.slug)
     localStorage.setItem("size", size.size)
     localStorage.setItem("quantity", quantity.quantity)
-
   }
 
   // Aqui estamos fazenso as requisição na API REstful com o axio, 
@@ -104,7 +105,7 @@ export const Shortm = () => {
   //Aqui estamos usado o useEffect para deixa os estados sempre atualizados ao carrega o compodnent
   useEffect(() =>{    
     (async() => {
-      const reqName = await api.get("/category/")
+      const reqName = await api.get("/category")
       const resName = await reqName.data
       const req = await api.get("/category/41a0d39a-d5d8-4a70-a2a5-050b68591ab5")
       const res = await req.data[0].products_categories
@@ -114,7 +115,7 @@ export const Shortm = () => {
     })()
   },[])
 
-
+  console.log(categoroyData, "teste")
 
   const NameCategory = categoroy.map(res => res.name)
 
@@ -130,7 +131,7 @@ export const Shortm = () => {
       <ProductProd>
             <section>
             
-            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[3]}</h2>
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[2]}</h2>
           
             {categoroyData.map(res => {
 

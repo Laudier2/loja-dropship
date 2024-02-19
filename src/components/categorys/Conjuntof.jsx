@@ -42,7 +42,6 @@ export const Conjuntof = () => {
   //const history = useHistory()
   
   //const products = useSelector(productSlace => productSlace.products.items)
-  //console.log(products)
 
   function LocalSto(e) {
 
@@ -95,8 +94,6 @@ export const Conjuntof = () => {
     localStorage.setItem("slug", slug.slug)
     localStorage.setItem("size", size.size)
     localStorage.setItem("quantity", quantity.quantity)
-
-    console.log(e)
   }
 
   // Aqui estamos fazenso as requisição na API REstful com o axio, 
@@ -132,7 +129,7 @@ export const Conjuntof = () => {
       <ProductProd>
             <section>
             
-            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[6]}</h2>
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[4]}</h2>
           
             {categoroyData.map(res => {
 
@@ -141,8 +138,6 @@ export const Conjuntof = () => {
             let percentual = 0.25;
             let aumento = price * percentual;
             let novo_price = price - aumento;
-
-            console.log("img", image[0])
 
             return (
               <Link to="/desc" onClick={() => LocalSto(res.products)}>

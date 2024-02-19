@@ -110,7 +110,7 @@ export const Estetica = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/a1ce5bbe-56bd-49e8-8f02-8926f4487273")
+      const req = await api.get("/category/f4e05ac6-fb7e-4d2a-adf6-70d0c9558678")
       const res = await req.data[0].products_categories
 
       setCategory(resName)
@@ -118,34 +118,10 @@ export const Estetica = () => {
     })()
   },[])
 
-  //const teste = categoroyVestido.map(img => img)
-
-  console.log(categoroy)
-
-  /*const [promo, setPromo] = useState([])
-
-  useEffect((
-    async function Promo(){
-      const req = await api.get("/promocao")
-      const res = await req.data;
-
-      setPromo(res)
-    }
-  ), [])*/
-
-  //console.log(promo)
-
   const NameCategory = categoroy.map(res => res.name)
 
   console.log(NameCategory)
-
-  /*
-    var salario = 100;
-    var percentual = 0.25;
-    var aumento = salario * percentual;
-    var novo_price = salario - aumento;
-  */
-
+  
   return (
     <>
     <Header/>
@@ -158,7 +134,7 @@ export const Estetica = () => {
       <ProductProd>
             <section>
             
-            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[15]}</h2>
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[11]}</h2>
           
             {categoroyData.map(res => {
 

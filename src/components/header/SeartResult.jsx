@@ -53,7 +53,7 @@ export const SeartResult = ({data}) => {
 		window.location.reload()
   }
 
-    console.log(data)
+    //console.log(data, "t")
 
     const resutList = data.map(item => {
         return (

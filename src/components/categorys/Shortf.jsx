@@ -94,8 +94,6 @@ export const Shortf = () => {
     localStorage.setItem("slug", slug.slug)
     localStorage.setItem("size", size.size)
     localStorage.setItem("quantity", quantity.quantity)
-
-    
   }
 
   // Aqui estamos fazenso as requisição na API REstful com o axio, 
@@ -109,7 +107,7 @@ export const Shortf = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/7080009b-d0f3-4bc7-860e-45972d576933")
+      const req = await api.get("/category/ab556f0a-b7b9-4079-9cc8-ce6d8f4f5117")
       const res = await req.data[0].products_categories
 
       setCategory(resName)
@@ -131,7 +129,7 @@ export const Shortf = () => {
       <ProductProd>
             <section>
             
-            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[9]}</h2>
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[3]}</h2>
           
             {categoroyData.map(res => {
 

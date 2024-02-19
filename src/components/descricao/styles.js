@@ -601,7 +601,11 @@ export const Coontainer = styled.div`
   & .carousel {
     display: flex;
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: auto;
+
+    @media (max-width: 768px) {
+      margin-left: 0px;
+    }
 
     &::-webkit-scrollbar {
       display: none;

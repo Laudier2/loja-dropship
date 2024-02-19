@@ -3,7 +3,6 @@
 import styled from "styled-components"
 
 export const Coontainer = styled.div`
-  margin: 0 auto;
   background: yellow;
 
   @media(max-width: 768px) {
@@ -26,14 +25,16 @@ export const Coontainer = styled.div`
 
     & .item {
       background-color: white;
-      margin: 10px;
+      margin: auto;
+      display: flex;
       padding: 10px;
       width: 60px;
       height: 7vh;
       border-radius: 50px;
       flex: none;
       cursor: pointer;
-      border: solid 1px;
+      color: aqua;
+      margin-top: 5px;
       
       &:hover {
         background-color: darkgray;

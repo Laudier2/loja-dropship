@@ -4,12 +4,9 @@ import { useSelector } from "react-redux";
 import { SlBasket, SlBasketLoaded } from "react-icons/sl";
 import { AiFillAlert } from "react-icons/ai";
 import { AiOutlineWhatsApp } from "react-icons/ai";
-//import { AiOutlineNotification } from "react-icons/ai";
 import { BsTruck } from "react-icons/bs";
 import { BsJournalText } from "react-icons/bs";
 import { LuPackageSearch } from "react-icons/lu";
-//import { HiMiniMagnifyingGlass } from "react-icons/hi2"
-
 
 import Cart from "../cart/index";
 
@@ -59,11 +56,20 @@ export function Header() {
     e.slug[10] == dados ||
     e.slug[11] == dados ||
     e.slug[12] == dados ||
-    e.slug[13] == dados 
+    e.slug[13] == dados ||
+    e.slug[14] == dados || 
+    e.slug[15] == dados ||
+    e.slug[16] == dados ||
+    e.slug[17] == dados ||
+    e.slug[18] == dados ||
+    e.slug[19] == dados ||
+    e.slug[20] == dados ||
+    e.slug[21] == dados ||
+    e.slug[22] == dados 
   )
-  //const filterData = products.filter(e => e.slug == "Vestido")
 
-  console.log(dados)
+  //const filterData = products.filter(e => e.slug[0] == dados)
+  //const filterData = products.filter(e => e.slug == "Vestido")
 
   return (
     <>

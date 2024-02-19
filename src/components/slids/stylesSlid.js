@@ -6,7 +6,7 @@ export const CoontainerSlids = styled.div`
 
   & .carousel {
     display: flex;
-    overflow-x: hidden;
+    overflow-x: auto;
     scroll-behavior: smooth;
     margin-top: 40px;
 
@@ -96,16 +96,14 @@ export const CoontainerSlids = styled.div`
     cursor: pointer;
     opacity: 1;
     margin-left: 0%;
-    margin-top: 1px;
+    margin-top: 22px;
 
    @media (max-width: 768px){
     margin-top: -40px;
     width: 30%;
     height: 170px;
     color: whitesmoke;
-    &:hover{
-      opacity: 0;
-    }
+    display: none;
    }
 }
 
@@ -123,13 +121,14 @@ export const CoontainerSlids = styled.div`
   cursor: pointer;
   opacity: 1;
   margin-right: 0%;
-  margin-top: -180px;
+  margin-top: -185px;
 
   @media (max-width: 768px) {
     margin-top: -130px;
     width: 35%;
     height: 170px;
     color: whitesmoke;
+    display: none;
   }
 }
 

@@ -158,7 +158,7 @@ export const AudioVideo = () => {
       <ProductProd>
             <section>
             
-            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[3]}</h2>
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[6]}</h2>
           
             {categoroyData.map(res => {
 

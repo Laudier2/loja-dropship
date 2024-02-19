@@ -110,7 +110,7 @@ export const Calcam = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/1f356c95-f41e-4cf4-99cf-43c76cb75b4d")
+      const req = await api.get("/category/6f885e5a-3ca5-4eb3-b78c-dc4ea90f0dfc")
       const res = await req.data[0].products_categories
 
       setCategory(resName)

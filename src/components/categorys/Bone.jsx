@@ -1,15 +1,15 @@
 /* eslint-disable eqeqeq */
-//import { useHistory } from 'react-router-dom'
+/* eslint-disable react/jsx-no-comment-textnodes */
 import ReactLoading from 'react-loading';
-//import { useSelector } from 'react-redux';
-import { ProductProd, LoadingPage } from './stylend2';
+import { ProductProd, LoadingPage } from './styles';
 import { FaCreditCard } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import api from '../../api/api';
-import { useState } from 'react';
 import { Header } from '../header';
-import Slids from '../slids/slids';
+import { Slids } from '../slids/slids';
+import { SlidsMenu } from '../slids/SlidsMenu';
+import Footer from '../footer/footer';
 
 const Example = () => (
     /*
@@ -31,18 +31,38 @@ const Example = () => (
 //const product = []
 
 export const Bone = () => {
+
+  useEffect(() => {
+    window.scroll({
+      top: 100,
+    });
+
+  },[])
   
   //const history = useHistory()
   
   //const products = useSelector(productSlace => productSlace.products.items)
-  //console.log(products)
 
   function LocalSto(e) {
 
     localStorage.removeItem("id")
+    localStorage.removeItem("img0")
+    localStorage.removeItem("img1")
+    localStorage.removeItem("img2")
+    localStorage.removeItem("img3")
+    localStorage.removeItem("img4")
+
+    localStorage.removeItem("color0")
+    localStorage.removeItem("color1")
+    localStorage.removeItem("color2")
+    localStorage.removeItem("color3")
+    localStorage.removeItem("color4")
+    localStorage.removeItem("color5")
+
     const dados = JSON.stringify(e)
     const id = JSON.parse(dados)
     localStorage.setItem("id", id.id)
+    localStorage.setItem("categoryId", e.id)
 
     const img = JSON.parse(dados)
     const name = JSON.parse(dados)
@@ -58,10 +78,14 @@ export const Bone = () => {
     localStorage.setItem("img1", img.image[1])
     localStorage.setItem("img2", img.image[2])
     localStorage.setItem("img3", img.image[3])
+    localStorage.setItem("img4", img.image[4])
 
     localStorage.setItem("color0", color.color[0])
     localStorage.setItem("color1", color.color[1])
     localStorage.setItem("color2", color.color[2])
+    localStorage.setItem("color3", color.color[3])
+    localStorage.setItem("color4", color.color[4])
+    localStorage.setItem("color5", color.color[5])
 
     localStorage.setItem("name", name.name)
     localStorage.setItem("description", desc.description)
@@ -70,77 +94,78 @@ export const Bone = () => {
     localStorage.setItem("slug", slug.slug)
     localStorage.setItem("size", size.size)
     localStorage.setItem("quantity", quantity.quantity)
-
-    //console.log(dados)*/
   }
 
-  const [categoroy, setCategory] = useState([])
-  const [categoroyC, setCategoryC] = useState([])
-  const [categoroyS, setCategoryS] = useState([])
-  const [categoroyCA, setCategoryCA] = useState([])
-  const [categoroyName, setCategoryName] = useState([])
+  // Aqui estamos fazenso as requisição na API REstful com o axio, 
+  //e recebendo os dados atraves do useState para poder manipula os estados
 
+  const [categoroy, setCategory] = useState([])
+  const [categoroyData, setCategoryData] = useState([])
+
+  //Aqui estamos usado o useEffect para deixa os estados sempre atualizados ao carrega o compodnent
   useEffect(() =>{    
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const reqB = await api.get("/category/fc80a298-ba09-4195-879c-7ecd5dadbf24")
-      const resB = await reqB.data[0].products_categories
-      const reqC = await api.get("/category/3c6b8fd2-6375-415d-95b1-0fdef777ef5f")
-      const resC = await reqC.data[0].products_categories
-      const reqS = await api.get("/category/7db4cb05-6f6b-4555-9dd4-75965dfcb13f")
-      const resS = await reqS.data[0].products_categories
-      const reqCA = await api.get("/category/d49e0541-24ca-4a45-a9d0-bfc5e294a444")
-      const resCA = await reqCA.data[0].products_categories
+      const req = await api.get("/category/f93ec5bb-f056-47dd-aa75-9c95f6c4e120")
+      const res = await req.data[0].products_categories
 
-      setCategory(resB)
-      setCategoryC(resC)
-      setCategoryS(resS)
-      setCategoryCA(resCA)
-      setCategoryName(resName)
+      setCategory(resName)
+      setCategoryData(res)
     })()
   },[])
 
-  const NameCategory = categoroyName.map(res => res.name)
-
-  console.log(categoroyName)
+  const NameCategory = categoroy.map(res => res.name)
 
   return (
     <>
     <Header/>
     <Slids />
-  {categoroy == "" && categoroyC == "" && categoroyS == "" && categoroyCA == "" ? <Example /> : 
-    <div>
+    <SlidsMenu/>
+    
+    {categoroy == "" && categoroyData == "" ? <Example /> : 
+      <div>
+      <br />
       <ProductProd>
-      <section>
-      
-      <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[0]}</h2>
-      
-      {categoroy.map(res => (
-          <Link to="/desc" onClick={() => LocalSto(res.products)}>
-            <div key={res.id}>
-              <img src={res.products.image[0]} alt="img" />
-              <h5>{res.products.name}</h5>
-              <h3>R${res.products.price}</h3>
-              <span>
-                <p>
-                  <FaCreditCard className='cartao'/> Em até 12x sem juros
-                </p>
-              </span>
-              <button>
-                DESCRIÇÃO
-              </button>
-            </div>
-          </Link>
-          ))
-      }
-      </section>  
-      
-    </ProductProd>   
+            <section>
+            
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[8]}</h2>
+          
+            {categoroyData.map(res => {
+
+            const { id, name, image, price } = res.products;
+
+            let percentual = 0.25;
+            let aumento = price * percentual;
+            let novo_price = price - aumento;
+
+            return (
+              <Link to="/desc" onClick={() => LocalSto(res.products)}>
+                <div key={id}>
+                  <img src={image[0]} alt="img" />
+                  <h5>{name}</h5>
+                  <b className="frete">Frete Gratis</b>
+                  <img src="card.jpg" alt="img" className="cartImg" />
+                  <span>
+                    <p className='p'>
+                      <FaCreditCard className='cartao'/> Em até 12x sem juros
+                    </p>
+                  </span>
+                  <h4 className='oldPrice'>R${price},00 </h4>
+                  <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+                </div>
+              </Link>
+              )
+          })
+        }
+        </section>  
+        
+      </ProductProd>
 
     </div>
   }
-    
+  <Footer/>
   </>
   );
 }
+

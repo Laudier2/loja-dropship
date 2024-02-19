@@ -30,6 +30,7 @@ import { Estetica } from "./components/categorys/Estetica"
 import { PoliticasDevolucaoTroca } from "./components/politicaTrocaDevolucao/politicaTrocaDevolucao";
 import { Meuproduto } from "./components/Meuproduto";
 import { Products } from "./components/products/Products"
+import { Bone } from "./components/categorys/Bone";
 
 const TRACKING_ID = "G-YJVYCLYTD3" 
 
@@ -143,12 +144,16 @@ function App() {
       element: <Ferramentas />,
     },
     {
-      path: "/estetica",
+      path: "/istetica",
       element: <Estetica />,
     },
     {
       path: "/meuproduto",
       element: <Meuproduto />,
+    },
+    {
+      path: "/bone",
+      element: <Bone />,
     }
 
   ]);  

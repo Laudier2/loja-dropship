@@ -1,11 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ContainerFooter, ContainerFooter1, ContainerFooter2 } from './styles';
 import { Link } from 'react-router-dom';
+import emailjs from "@emailjs/browser"
 
 import {ShareSocial} from 'react-share-social'
+import { toast } from 'react-toastify';
 //import { Height } from '@material-ui/icons';
 
 export default function Footer() {
+
+	const [name, setName] = useState([])
+	const [email, setEmail] = useState([])
+
+	function sendEmail(e) {
+		e.preventDefault();
+
+		const templetEmail = {
+			from_name: name,
+			email: email
+		}
+
+		if(name == "" || email == ""){
+			toast.error(`Os compos tem que está preechidos!`)
+		}
+	
+		emailjs.send('service_mu6fcse', 'template_vkb1i55', templetEmail, 'H_LKfhQ_8yndus8Af')
+		  .then((result) => {
+			toast.success("Mensagem enviada com sucesso! 👍 Em breve você receberá um E-mail de com novidades!");
+		  
+		  }, (error) => {
+			  toast.error("Houve um erro tente novamente mais tarde!")			  
+		  });
+	
+		  e.target.reset()
+	
+	}
 
 	const imgCart = [
 		{img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png"},
@@ -36,9 +65,9 @@ export default function Footer() {
 					<h2>StylesTop</h2>
 				</Link>
 				<span>Receba novidades em primeira mão, deixe seu e-mail aqui!</span>
-				<form method='post' name="contact" nelify>
-					<input type="text" placeholder='Nome' name='name' />
-					<input type="email" placeholder='E-mail' name='email' />
+				<form onSubmit={sendEmail} name="contact" nelify>
+					<input type="text" placeholder='Nome' name='name' onChange={(e) => setName(e.target.value)} />
+					<input type="email" placeholder='E-mail' name='email' onChange={(e) => setEmail(e.target.value)} />
 					<input type="submit" value="Enviar" className='btnInput' />
 					{/*<textarea name="message" id="" cols="100%" rows="4" placeholder='Message'></textarea>*/}
 				</form>

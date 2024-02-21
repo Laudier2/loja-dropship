@@ -136,9 +136,9 @@ useEffect(() => {
 console.log(cart[0])*/
 
 const handleSubmit = async (e) => {
-e.preventDefault()
+  e.preventDefault()
 
-if(cart[0] && cart[1] === undefined && cart[2] === undefined && cart[3] == undefined && cart[4] == undefined){
+  if(cart[0] && cart[1] === undefined && cart[2] === undefined && cart[3] == undefined && cart[4] == undefined){
 
     let adress = `Estado: ${data.state} , Cidade: ${data.city} , Cep: ${data.cep} , Barrio: ${data.district} , Rua: ${data.street}, Numero: ${data.number} , AP/Casa: ${data.apartment_or_house} , CPF: ${cpf}`
 
@@ -183,7 +183,7 @@ if(cart[0] && cart[1] === undefined && cart[2] === undefined && cart[3] == undef
         const ids = JSON.stringify(cart[0].id)
         const names = JSON.stringify(cart[0].name)
         const images = JSON.stringify(cart[0].image[0])
-        const prices = JSON.stringify(cart[0].price)
+        const prices = JSON.stringify(novo_price)
         const cartQuantitys = JSON.stringify(cart[0].cartQuantity)
         const cvCodeCompra = JSON.stringify(GeraCode)
         const localTn  = localStorage.getItem("tmMedidas")

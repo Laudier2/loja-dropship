@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React, { useState } from 'react'
 import { ContainerFooter, ContainerFooter1, ContainerFooter2 } from './styles';
 import { Link } from 'react-router-dom';

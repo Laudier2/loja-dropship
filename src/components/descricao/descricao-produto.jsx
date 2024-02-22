@@ -286,6 +286,12 @@ const Descricao = () => {
                     </div>
                     : ""
                     }
+                    {image[4] ?
+                     <div className='div1' >
+                      {!image[4] ? "" : <img src={image[4]} alt="img0" onMouseOver={() => over0(over4)} />}
+                    </div>
+                    : ""
+                    }
                   </div>
                 </div>
                 <ContainerDesc>

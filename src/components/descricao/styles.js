@@ -810,7 +810,7 @@ export const Coontainer = styled.div`
     color: whitesmoke;
 
    @media (max-width: 768px){
-     opacity: 1;
+     opacity: 0;
      width: 40px;
    }
 }
@@ -833,8 +833,9 @@ export const Coontainer = styled.div`
   color: whitesmoke;
 
   @media (max-width: 768px){
-     opacity: 1;
+     opacity: 0;
      width: 40px;
+     margin-top: -248px;
    }
 }
 

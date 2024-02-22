@@ -250,7 +250,7 @@ export const ContainerDesc = styled.div`
 & .divdescSecudare {
   width: 13%;
   margin: auto;
-  margin-top: -22.5%;
+  margin-top: -32.5%;
   margin-left: 70%;
   font-size: 1vw;
 

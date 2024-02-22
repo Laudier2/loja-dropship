@@ -158,34 +158,45 @@ export const ContainerAMR = styled.div`
   & .img3 {
     position: absolute;
     width: 5%;
-    margin-left: -170px;
+    margin-left: -200px;
     border-radius: 50px;
     padding: 10px;
     margin-top: -5px;
 
+    @media (max-width: 1750px) {
+      margin-left: -175px;
+      margin-top: -5px;
+      width: 5%;
+    }
+
+    @media (max-width: 1550px) {
+      margin-left: -175px;
+      margin-top: -5px;
+      width: 5%;
+    }
+
     @media (max-width: 1300px) {
-      margin-left: -125px;
+      margin-left: -135px;
       margin-top: -5px;
       width: 5%;
     }
     
     @media (max-width: 1100px) {
-      margin-left: -125px;
+      margin-left: -115px;
       margin-top: -5px;
       width: 5%;
-      width: 120px;
     }
 
     @media(max-width: 1024px) {
       margin-left: -110px;
       margin-top: -10px;
-      width: 4%;
+      width: 5%;
     }
 
     @media(max-width: 998px) {
       margin-left: -110px;
       margin-top: -10px;
-      width: 6%;
+      width: 5%;
     }
 
     @media(max-width: 768px) {

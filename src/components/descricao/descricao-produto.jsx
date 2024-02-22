@@ -154,6 +154,7 @@ const Descricao = () => {
 		{img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/hipercard@2x.png"},
 		{img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/payment-method-types/pix@2x.png"},
 		{img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/discover@2x.png"},
+		{img: "img_outras/horizontal_logo.png"},
 	]
 
   useEffect(() => {
@@ -262,36 +263,21 @@ const Descricao = () => {
                 <div className="div2">
                   <img src={image[0]} alt="img" className='formatImg' id="logo" />
                   <div className="div3">
-                    {image[0] ?
-                     <div className='div1' >
-                      {!image[0] ? "" : <img src={image[0]} alt="img0" onMouseOver={() => over0(over0)} />}
+                    <div className='div1' >
+                      <img src={image[0]} alt="img0" onMouseOver={() => over0(over0)} />
                     </div>
-                    : ""
-                    }
-                    {image[1] ?
                      <div className='div1' >
-                      {image[1] == "" ? "" : <img src={image[1]} alt="img0" onMouseOver={() => over0(over1)} />}
+                      <img src={image[1]} alt="img0" onMouseOver={() => over1(over1)} />
                     </div>
-                    : ""
-                    }
-                    {image[2] ?
                      <div className='div1' >
-                      {!image[2] ? "" : <img src={image[2]} alt="img0" onMouseOver={() => over0(over2)} />}
+                      <img src={image[2]} alt="img0" onMouseOver={() => over2(over2)} />
                     </div>
-                    : ""
-                    }
-                    {image[3] ?
                      <div className='div1' >
-                      {!image[3] ? "" : <img src={image[3]} alt="img0" onMouseOver={() => over0(over3)} />}
+                      <img src={image[3]} alt="img0" onMouseOver={() => over3(over3)} />
                     </div>
-                    : ""
-                    }
-                    {image[4] ?
                      <div className='div1' >
-                      {!image[4] ? "" : <img src={image[4]} alt="img0" onMouseOver={() => over0(over4)} />}
+                      <img src={image[4]} alt="img0" onMouseOver={() => over4(over4)} />
                     </div>
-                    : ""
-                    }
                   </div>
                 </div>
                 <ContainerDesc>
@@ -312,18 +298,19 @@ const Descricao = () => {
                     <br />
                     
                     <h1>R$ {novo_price},00</h1>
+                    <br />
                     <span>
-                  <FaCreditCard className='mt-1 m-1'/> Em até 12x sem juros
+                  <FaCreditCard style={{margin: "10px"}} /> Em até 12x sem juros
                   <br />
                   {imgCart.map(imgCard => (
-                    <img src={imgCard.img} alt="img" style={{width: "8%", display: "inline-block"}}/>
+                    <img src={imgCard.img} alt="img" style={{width: "15%", display: "inline-block", margin: "5PX"}}/>
                   ))}
                 </span>
                     <br />
                     <br />
-                    <br /><br />
+                    <br />
                     <p>
-                      <strong className=''>Cor: </strong>
+                      <strong >Cor: </strong>
                       <span>{dataCores ? dataCores : "Escolha uma cor"}</span>
                     </p>
                     <div>
@@ -377,37 +364,37 @@ const Descricao = () => {
                     </div>
                     <br />
                     </div>
-                    <div>
+                    <div className='btnButton'>
                       <p>
                         <strong>Tamnho: </strong>
                         <span>{dataTamanho ? dataTamanho : "Escolha uma tamanho"}</span>
                       </p>
                       {divideSizeArrey[0] ? 
-                      <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[0])}>
+                      <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 5px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[0])}>
                         {divideSizeArrey[0]}
                       </button>
                       : ""
                       }
                       {divideSizeArrey[1] ? 
-                      <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[1])}>
+                      <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 5px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[1])}>
                         {divideSizeArrey[1]}
                       </button>
                       : ""
                       }
                       {divideSizeArrey[2] ? 
-                      <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[2])}>
+                      <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 5px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[2])}>
                         {divideSizeArrey[2]}
                       </button>
                       : ""
                       }
                       {divideSizeArrey[3] ? 
-                      <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[3])}>
+                      <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 5px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[3])}>
                         {divideSizeArrey[3]}
                       </button>
                       : ""
                       }
                       {divideSizeArrey[4] ? 
-                        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[4])}>
+                        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 5px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[4])}>
                         {divideSizeArrey[4]}
                       </button>
                       : ""

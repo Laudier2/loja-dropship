@@ -130,12 +130,22 @@ export const ContainerDesc = styled.div`
     background: rgba(128, 128, 128, 0.452);
     padding: 3px;
     border-radius: 5px;
+    margin-top: -15px;
 
     & button {
       &:hover {
         box-shadow: 0 0 0 3px white;
       }
     }
+}
+& .btnButton {
+  margin-bottom: -30px;
+
+  & button {
+    &:hover {
+      box-shadow: 0 0 0 2px gray;
+    }
+  }
 }
 
 @media (max-width: 1750px) {

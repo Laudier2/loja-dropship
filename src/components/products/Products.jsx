@@ -69,7 +69,7 @@ export const Products = () => {
   }
 
   // Aqui estamos fazenso as requisição na API REstful com o axio, 
-  //e recebendo os dados atraves do useState para poder manipula os estados
+  //e recebendo os dados atraves do useState para poder manipula os estados//
 
   const [categoroy, setCategory] = useState([])
   const [categoroyTenis, setCategoryTenis] = useState([])

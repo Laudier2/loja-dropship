@@ -45,6 +45,10 @@ function App() {
 
   },[])
 
+  /*setTimeout(() => {
+    localStorage.clear()
+  },30000)*/
+
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
   }, []);

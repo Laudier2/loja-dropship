@@ -1,12 +1,11 @@
 /* eslint-disable eqeqeq */
-import React, { useEffect, useState } from 'react';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
 import ReactLoading from 'react-loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCart } from '../../redux/cart/cart';
-import {  ConatinerMain } from './styles2';
+import { Wrapper, Conatiner, Row, Panel, Gallery, Section, Description, Colum } from './stylesdescription';
 import { Link } from 'react-router-dom';
 import { FaCreditCard } from "react-icons/fa";
 import { TiStarHalfOutline } from "react-icons/ti";
@@ -52,107 +51,54 @@ const Descricao = () => {
   }
   
   return (
-    <ConatinerMain>
-      {img === "" ? <ReactLoading className='container col-sma-2' type='bars' color='#0000FF' /> :
-        <div >
-          <div className="div2">
-          <img src={img ? img[1] : ""} alt="img" className='formatImg' id="logo" />
-            <div className="div3">
-              <div className='div1' >
-              {img[1] ? "" : <img src={img[1]} alt="img4" onMouseOver={() => over3(over0)} />}
-              </div>
-              <div className='div1' >
-              {!img[2] ? "" : <img src={img[2]} alt="img4" onMouseOver={() => over3(over1)} />}
-              </div>
-              <div className='div1' >
-                {!img[3] ? "" : <img src={img[3]} alt="img2" onMouseOver={() => over2(over2)} />}
-              </div>
-              <div className='div1' >
-              {!img[4] ? "" : <img src={img[4]} alt="img4" onMouseOver={() => over3(over3)} />}
-              </div>
-              <div className='div1' >
-                {!img[5] ? "" : <img src={img[5]} alt="img4" onMouseOver={() => over3(over4)} />}
-              </div>
-            </div>
-          </div>
-          <div className="divdesc">
-              <h5 ><strong>{""}</strong></h5>
-              <div>
-                <span className='mr-2'>4.8</span>
-                <GoStarFill className='text-warning mb-1'/>
-                <GoStarFill className='text-warning mb-1'/>
-                <GoStarFill className='text-warning mb-1'/>
-                <GoStarFill className='text-warning mb-1'/>
-                <TiStarHalfOutline className='text-warning mb-1 h4'/>
-                <span className='ml-2'>(6505)</span>
-                <p></p>
-                <span>ESSE É UM DOS MAIS VENDIDOS NA LOJA</span>
-              </div>
-              <br />
-              <h1>R$ {""},00</h1>
-              <span>
-            <FaCreditCard className='mt-1 m-1'/> Em até 12x sem juros
-          </span>
-              <br />
-              <a href="/desc"><span>ver os meio de pagamento</span></a>
-              <br />
-              <h5>Cores</h5>
-              
-              <div>
-              <br />
-       
-        
-              </div>
-              <div>
-                <br />
-                <h4><strong>DESCRIÇÃO</strong></h4>
-              
-                <p>
-                {""}
-                </p>
-              </div>
-            </div>
-          <div className="divdescSecudare">
-          <strong>Envio para todo o país</strong>
-          <br />
-          <span>Saiba os prazos de entrega e as formas de envio.</span>
-          <div >
-            <LocationOnIcon />
-            <a href="/desc">Frete gratis para todo o pais</a>
-          </div>
-          <br /><br />
-          <div>
-            <p>
-              <strong>Quantidade</strong> 
-              <div>
-                disponivel ({""})
-              </div>
-              <br /><br />
-              <strong>Finalize sua compra aqui!</strong>
-            </p>
-          </div>
-          <Link to="/cartFinali">
-            <button onClick={() => handlerCartAdd(productFilter[0])}>Comprar agora</button>
-            </Link>
-            <button onClick={() => handlerCartAdd(productFilter[0])}>Adicionar ao carrinho</button>
+    <>
+      <Wrapper>
+        <Conatiner>
+          <Row>
+            <a href="#"></a>
+            <a href="#"></a>
+          </Row>
 
-            <br />
-            <div>
-              <br /><br />
-              <p><SwapHorizIcon /> <strong>Devolução Gratis</strong> <br />
-                <span >Você tem 7 dias a partir da data de recebimento.</span>
-              </p>
-            </div>
-            <br />
-            <div>
-              <p><VerifiedUserIcon /> <strong >Compra Garantida</strong> <br />
-                <span >eceba o produto que está esperando ou devolvemos o dinheiro.</span>
-              </p>
-            </div>
-          </div>          
-        </div>
-      }
-    </ConatinerMain>
+          <Panel>
+            <Colum>
+            <img src="https://decathlonpro.vtexassets.com/arquivos/ids/10176268/16507385782524.jpg?v=637865718260400000" alt="img"/>
+            </Colum>
+
+            <Colum>
+              <Description>
+                <h2>Descrição</h2>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at urna tortor. Fusce pharetra porttitor sodales. Donec facilisis enim a placerat tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis turpis quam, nec condimentum ligula faucibus at. Phasellus pretium nisl vel aliquam eleifend. Vivamus velit urna, iaculis vitae vestibulum eget, rhoncus ac lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque aliquet enim non sapien rutrum viverra. Ut euismod sem in erat fringilla, et luctus risus aliquam. Nam maximus orci tincidunt tellus tristique dictum. Nullam ac neque id nunc scelerisque hendrerit. Nam quis sodales risus, at condimentum ipsum. In tempor tortor eros, vel feugiat velit pretium eu. Nulla nec ex magna. Aliquam tincidunt justo urna, a condimentum arcu gravida id.
+                </p>
+              </Description>
+              <section>
+                <h4>Garantia</h4>
+
+                <div>
+                  <span>
+                    <p className="title">
+                      Compra garantida com maior segurança que sxite na intenet.
+                    </p>
+                    <p className="description">
+                      Receba seu produto que esta esperando ou seu dinheiro de volta.
+                    </p>
+                  </span>
+                  <span>
+                    <p className="title">
+                      Grantia de 7 dias uteis apos receber seu produto.
+                    </p>
+                    <p className="description">
+                      Lembre-se que para devolução ou troca você tem 7 dias uteis, e o produto não pode ter cinais de uso.
+                    </p>
+                  </span>
+                </div>
+              </section>
+            </Colum>
+          </Panel>
+        </Conatiner>
+      </Wrapper>
+    </>
   );
 }
 

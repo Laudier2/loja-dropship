@@ -5,8 +5,8 @@ export const ConatinerMain = styled.div`
   width: 100%;
 
   & .div1 {
-    width: 70px;
-    margin-left: -67%;
+    width: 60px;
+    margin-left: 10%;
     margin-top: 2px;
     
 
@@ -16,7 +16,7 @@ export const ConatinerMain = styled.div`
 
     @media (max-width: 768px) {
       width: 40px;
-      margin-left: 30%;
+      margin-left: 10%;
       
       & img {
         width: 40px;
@@ -519,9 +519,19 @@ export const ContainerDesc = styled.div`
 }
 `
 export const ContainerSobre = styled.div`
-  width: 50%;
+  width: 80%;
   margin-left: 10%;
   margin-top: 5%;
+
+  & h4 {
+    text-align: left;
+    font-size: 2vw;
+  }
+
+  & p {
+    text-align: justify;
+    font-size: 1.5vw;
+  }
 
   @media (max-width: 1768px) {
     width: 80%;
@@ -531,7 +541,21 @@ export const ContainerSobre = styled.div`
   @media (max-width: 768px) {
     width: 80%;
     margin: 10%;
+
+    & h4 {
+    text-align: left;
+    font-size: 3vw;
   }
+
+  & p {
+    text-align: justify;
+    font-size: 2.2vw;
+  }
+  }
+`
+
+export const Wrapper = styled.div`
+  width: 90%;
 `
 
 export const ProductOfertas = styled.div`
@@ -819,7 +843,7 @@ export const Coontainer = styled.div`
   cursor: pointer;
   opacity: 1;
   margin-right: 0%;
-  margin-top: -270px;
+  margin-top: -240px;
   color: whitesmoke;
 
   @media (max-width: 768px){

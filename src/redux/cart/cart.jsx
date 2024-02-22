@@ -5,6 +5,7 @@ const initialState = {
     cartItems: localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [],
     tmMedidas: localStorage.getItem("tmMedidas") ? JSON.parse(localStorage.getItem("tmMedidas")) : [],
     tmCores: localStorage.getItem("tmCores") ? JSON.parse(localStorage.getItem("tmCores")) : [],
+    idDescription: localStorage.getItem("idDescription") ? JSON.parse(localStorage.getItem("idDescription")) : [],
     cartTotalQuantyti: 0,
     cartTotalAmount: 0,
 }
@@ -118,6 +119,29 @@ const cartSlice = createSlice({
                 position: "bottom-left"
             })*/
         },
+
+        addDecription(state, action) {
+            
+            const itemsIndex = state.idDescription.findIndex((item) => item.id === action.payload.id)
+
+            /*if (state.tmMedidas[itemsIndex].cartQuantity > 1) {
+                state.tmMedidas[itemsIndex].cartQuantity -= 1;
+            }*/
+
+            if (itemsIndex >= 0) {
+                state.idDescription[itemsIndex].idDescription += 1
+                /*toast.info(`${action.payload.name} ja ta no carrinho, agora são ${state.tmCores[itemsIndex]}`, {
+                    position: "bottom-left"
+                })*/
+            } else {
+                const tempProductId = { ...action.payload};
+                state.idDescription.push(tempProductId)
+                /*toast.success(`${action.payload} adicionado ao carrimho`, {
+                    position: "bottom-left"
+                })*/
+            }
+            localStorage.setItem("idDescription", JSON.stringify(state.idDescription))
+        },
        
         cauculateTotal(state, action) {
             let {total, quantity} = state.cartItems.reduce(
@@ -163,7 +187,7 @@ const cartSlice = createSlice({
     }
 })
 
-export const { addCart, removeFromCart, decrementCart, cauculateTotal, clearCart, addCor, addTm, removeCores } = cartSlice.actions;
+export const { addCart, removeFromCart, decrementCart, cauculateTotal, clearCart, addCor, addTm, removeCores, addDecription } = cartSlice.actions;
 
 export default cartSlice.reducer;
 

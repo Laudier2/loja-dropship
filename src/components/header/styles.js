@@ -270,15 +270,9 @@ export const ContainerPRT = styled.div`
 
       @media (max-width: 768px) {
         width: 100%;
-        padding: 0px 3px;
-        margin: 1px;
-        margin-left: 5px;
-
-        &:hover {
-          margin-left: -10px;
-          padding: 0px 1px 4px 20px;
-          background-color: #FDD201;
-        }
+        margin: 0px 8px 1px 5px;
+        margin-left: -15px;
+        margin-bottom: 5px;
         
         & a {
           color: #000000;
@@ -321,7 +315,7 @@ export const ContainerPRT = styled.div`
 
       &:hover {
         background-color: rgba(128, 128, 128, 0.464);
-
+        
         & .li {
           padding: -15px;
         }

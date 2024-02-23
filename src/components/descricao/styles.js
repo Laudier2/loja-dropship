@@ -139,12 +139,16 @@ export const ContainerDesc = styled.div`
     }
 }
 & .btnButton {
-  margin-bottom: -30px;
+  margin-bottom: 30px;
 
   & button {
     &:hover {
       box-shadow: 0 0 0 2px gray;
     }
+  }
+
+  & p {
+    margin-bottom: -1px;
   }
 }
 
@@ -457,7 +461,7 @@ export const ContainerDesc = styled.div`
     }
 
     & h1 {
-      font-size: 4vw;
+      font-size: 8vw;
     }
   }
 

@@ -683,18 +683,25 @@ export const Coontainer = styled.div`
           //color: #00FF00;
         }
 
-      @media screen and (max-width: 780px) {
-    
-        @media (max-width: 768px) {
-        width: 95%;
+        @media(max-width: 780px) {
+          width: 95%;
 
-        & img {
-          width: 100%;
-          height: 10vh;
-          border-radius: 8px;
+          & img {
+            width: 100%;
+            height: 10vh;
+            border-radius: 8px;
+          }
+
+          & .cartao {
+            font-size: 4vw;
+          }
+
+          & .p {
+            font-size: 4vw;
+            margin: auto;
+          }
+
         }
-      }
-      }
 
       &:haver {
         opacity: 0;

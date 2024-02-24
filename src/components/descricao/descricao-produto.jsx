@@ -20,6 +20,7 @@ import Footer from '../footer/footer';
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { LuShare2 } from "react-icons/lu";
 import { LoadingPage } from '../products/products';
+import { Comentarios } from './comentarios';
 
 
 const Descricao = () => {
@@ -235,7 +236,7 @@ const Descricao = () => {
     <>
       <Header/>
       <ConatinerMain>
-        {productFilter === "" ? <Example/> :
+        {productFilter == "" ? <Example/> :
           prodFilter.map(res => {
 
             const { name, description, quantity, image } = res;
@@ -475,6 +476,7 @@ const Descricao = () => {
           })
         }
       </ConatinerMain>
+      <Comentarios/>
         <SlidsDescriptionOfertas/>
         <Footer/>
     </>

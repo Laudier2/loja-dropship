@@ -4,6 +4,10 @@ export const ConatinerMain = styled.div`
   margin-top: 7%;
   width: 100%;
 
+  & .divImg {
+    width: 300px;
+  }
+
   & .div1 {
     width: 70px;
     margin-left: -67%;
@@ -31,6 +35,11 @@ export const ConatinerMain = styled.div`
     width: 80%;
     display: flex;
     margin: auto;
+
+    & .imfM {
+      width: 50%;
+      margin-left: 12px;
+    }
 
     & .formatImg {
       height: 80vh;

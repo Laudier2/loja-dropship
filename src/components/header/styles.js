@@ -11,7 +11,7 @@ export const Container = styled.div`
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 
   & .bg {
-    background: red;
+    background: var(--color, red);
     border-radius: 20px;
     padding: 1px;
     width: 20px;
@@ -35,6 +35,8 @@ export const Container = styled.div`
       border-radius: 20px;
       background: #eee;
       border-color: #eee;
+      text-align: center;
+      outline: none;
       text-align: center;
 
       &:hover {

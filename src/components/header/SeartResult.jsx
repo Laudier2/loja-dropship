@@ -60,15 +60,15 @@ export const SeartResult = ({data}) => {
             <>
                 { data ?
                     <div>
-                    <span key={item.id} style={{textDecoration: "none"}}>
-                        <span>
-                            <p onClick={() => LocalSto(item)}>{item.name}</p>
-                            {
-                                item.image[0] ? <img src={item.image[0]} onClick={() => LocalSto(item)} alt="img" /> : ""
-                            }
+                        <span key={item.id} style={{textDecoration: "none"}}>
+                            <span>
+                                <p onClick={() => LocalSto(item)}>{item.name}</p>
+                                {
+                                    item.image[0] ? <img src={item.image[0]} onClick={() => LocalSto(item)} alt="img" /> : ""
+                                }
+                            </span>
                         </span>
-                    </span>
-                </div> : 
+                    </div> : 
                 <h4>Veja se voçe escreveu corretamente</h4>
                 }
             </>

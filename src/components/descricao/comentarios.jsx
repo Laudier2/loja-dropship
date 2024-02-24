@@ -3,11 +3,13 @@ import { ConatinerComentarios } from "./stylesComentarios"
 import api from "../../api/api";
 import { useState } from "react";
 //import ReactImageMagnify from "react-image-magnify";
+//Novas mudanças
 
 export const Comentarios = () => {
 
     const [ comentario, setComentario ] = useState([])
 
+    // eslint-disable-next-line no-unused-vars
     const { isLoading, data } = useQuery("comentario", async () => {
         return await api
         .get("/comentario")

@@ -171,9 +171,11 @@ export const ProductProd = styled.div`
 
       & h5 {
         width: 100%;
+        height: 5vh;
         color: #000000;
         font-weight: bold;
         font-size: 2vw;
+        
       }
 
       & b {

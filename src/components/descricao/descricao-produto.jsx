@@ -45,7 +45,7 @@ const Descricao = () => {
 
   });
 
-  console.log(products)
+  //console.log(products[0])
 
   
   const [removeF, setRemovef] = useState([])
@@ -53,26 +53,28 @@ const Descricao = () => {
 
   const navigate = useNavigate()
 
-  const product = useSelector(productsSlice => productsSlice.products.items)
   const cart = useSelector(cartItems => cartItems.cart.cartItems.length)
-  //const cart2 = useSelector(cartItems => [cartItems.cart.cartItems[0]])
-  //const itemsTm = useSelector(cartItems => cartItems.cart.tmMedidas)
-  //const itemsCor = useSelector(cartItems => cartItems.cart.tmCores)
+  //const product = useSelector(productsSlice => productsSlice.products.items)
 
   const localId = localStorage.getItem("id")
   //const BNT = localStorage.getItem("name")
 
-  const productFilter = product.filter(product => (product.id === localId))
-  const prodFilter = [...productFilter]
+  const productFilter2 = products.filter(product => product)
+  const prodFilter2 = [...productFilter2]
+
+  const filterProduct = prodFilter2.map(pro => pro.product)
+  const filterComentario = prodFilter2.map(pro => pro.comentarios)
+  const dataProductFilter = filterProduct.filter(productData => (productData.id === localId))
+    
   
-  const priceFilter = prodFilter.map(pri => pri.price)
-  const colorFilter = prodFilter.map(pri => pri.color)
+  const priceFilter = dataProductFilter.map(pri => pri.price)
+  const colorFilter = dataProductFilter.map(pri => pri.color)
   const divideColorArrey = {...colorFilter[0]}
-
-  const sizeFilter = prodFilter.map(pri => pri.size)
+  
+  const sizeFilter = dataProductFilter.map(pri => pri.size)
   const divideSizeArrey = {...sizeFilter[0]}
-
-  console.log(divideSizeArrey[0])
+  
+  console.log(dataProductFilter)
 
   const dispatch = useDispatch()
 
@@ -255,8 +257,8 @@ const Descricao = () => {
     <>
       <Header/>
       <ConatinerMain>
-        {productFilter == "" ? <Example/> :
-          prodFilter.map(res => {
+        {filterProduct == "" ? <Example/> :
+          dataProductFilter.map(res => {
 
             const { name, description, quantity, image } = res;
 
@@ -465,9 +467,9 @@ const Descricao = () => {
                   </p>
                 </div>
                 
-                  <button onClick={() => handlerCartAdd(productFilter[0])}>Comprar agora</button>
+                  <button onClick={() => handlerCartAdd(dataProductFilter[0])}>Comprar agora</button>
                   
-                  <button onClick={() => handlerCartAdd2(productFilter[0])}>Adicionar ao carrinho</button>
+                  <button onClick={() => handlerCartAdd2(dataProductFilter[0])}>Adicionar ao carrinho</button>
 
                   <br />
                   <div>
@@ -495,9 +497,9 @@ const Descricao = () => {
           })
         }
       </ConatinerMain>
-      <Comentarios/>
-        <SlidsDescriptionOfertas/>
-        <Footer/>
+      <Comentarios dataProduct={filterComentario}/>
+      <SlidsDescriptionOfertas/>
+      <Footer/>
     </>
   );
 }

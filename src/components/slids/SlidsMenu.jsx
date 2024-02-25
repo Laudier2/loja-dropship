@@ -48,7 +48,7 @@ export function SlidsMenu() {
               <Link to="/vestido">
                 <div className="item">
                   <div className="image">
-                    <img src="/img/vestido.webp" alt="img" />
+                    <img src={data[0].image || "/imgCategory/vestido.webp"} alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -60,7 +60,7 @@ export function SlidsMenu() {
               <Link to="/calcados">
                 <div className="item">
                   <div className="image">
-                    <img src="/img/sapatos.webp" alt="img" />
+                    <img src="/imgCategory/tenis.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -72,7 +72,7 @@ export function SlidsMenu() {
               <Link to="/shortm">
                 <div className="item">
                   <div className="image">
-                    <img src="/img/shortM.webp" alt="img" />
+                    <img src="/imgCategory/short-m.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -84,7 +84,7 @@ export function SlidsMenu() {
               <Link to="/shortf">
                 <div className="item">
                   <div className="image">
-                    <img src="/img/shortF.jpg" alt="img" />
+                    <img src="/imgCategory/shor-f.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -96,7 +96,7 @@ export function SlidsMenu() {
               <Link to="/conjuntof">
                 <div className="item">
                   <div className="image">
-                    <img src="/img/conjunto.webp" alt="img" />
+                    <img src="/imgCategory/conjunto-f.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -108,7 +108,7 @@ export function SlidsMenu() {
               <Link to="/camisetaf">
                 <div className="item">
                   <div className="image">
-                    <img src="/img/camisaM.webp" alt="img" />
+                    <img src="/imgCategory/camiseta-m.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -120,7 +120,7 @@ export function SlidsMenu() {
               <Link to="/audiovideo">
                 <div className="item">
                   <div className="image">
-                    <img src="/img/fone3.webp" alt="img" />
+                    <img src="/imgCategory/audioevideo.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -132,7 +132,7 @@ export function SlidsMenu() {
               <Link to="/calcaf">
                 <div className="item">
                   <div className="image">
-                    <img src="/img/calcaF.webp" alt="img" />
+                    <img src="/imgCategory/calca-f.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -144,7 +144,7 @@ export function SlidsMenu() {
               <Link to="/bone">
                 <div className="item">
                   <div className="image">
-                    <img src="/img/bone.webp" alt="img" />
+                    <img src="/imgCategory/bone.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -156,7 +156,7 @@ export function SlidsMenu() {
               <Link to="/ferramentas">
                 <div className="item">
                   <div className="image">
-                    <img src="/img/ferramentas.webp" alt="img" />
+                    <img src="/imgCategory/ferramentas.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -168,7 +168,7 @@ export function SlidsMenu() {
               <Link to="/calcam">
                 <div className="item">
                   <div className="image">
-                    <img src="/img/calcaM.webp" alt="img" />
+                    <img src="/imgCategory/ferramentas.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -180,7 +180,7 @@ export function SlidsMenu() {
               <Link to="/istetica">
                 <div className="item">
                   <div className="image">
-                    <img src="/img/instetica.jpg" alt="img" />
+                    <img src="/imgCategory/estetica.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -192,11 +192,47 @@ export function SlidsMenu() {
               <Link to="/informatica">
                 <div className="item">
                   <div className="image">
-                    <img src="/img/info.webp" alt="img" />
+                    <img src="/imgCategory/info.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
                   <span className="name">{data[12].name}</span>
+                </div>
+              </Link>
+          </div>
+          <div>
+              <Link to="/itimo">
+                <div className="item">
+                  <div className="image">
+                    <img src="/imgCategory/intima.webp" alt="img" />
+                  </div>
+                </div>
+                <div className="info">
+                  <span className="name">{data[13].name}</span>
+                </div>
+              </Link>
+          </div>
+          <div>
+              <Link to="/info">
+                <div className="item">
+                  <div className="image">
+                    <img src="/imgCategory/eletronico.webp" alt="img" />
+                  </div>
+                </div>
+                <div className="info">
+                  <span className="name">{data[14].name}</span>
+                </div>
+              </Link>
+          </div>
+          <div>
+              <Link to="/smartphone">
+                <div className="item">
+                  <div className="image">
+                    <img src="/imgCategory/Smartphone.webp" alt="img" />
+                  </div>
+                </div>
+                <div className="info">
+                  <span className="name">{data[15].name}</span>
                 </div>
               </Link>
           </div>

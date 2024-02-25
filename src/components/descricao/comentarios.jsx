@@ -5,7 +5,9 @@ import { useState } from "react";
 //import ReactImageMagnify from "react-image-magnify";
 //Novas mudanças
 
-export const Comentarios = () => {
+export const Comentarios = ({dataProduct}) => {
+
+	//console.log(dataProduct)
 
     const [ comentario, setComentario ] = useState([])
 

@@ -21,8 +21,6 @@ import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { LuShare2 } from "react-icons/lu";
 import { LoadingPage } from '../products/products';
 import { Comentarios } from './comentarios';
-import { useQuery } from 'react-query';
-import api from '../../api/api';
 
 
 const Descricao = () => {
@@ -30,23 +28,6 @@ const Descricao = () => {
    
   const [dataCores, setDatacores] = useState('')
   const [dataTamanho, setTamanho] = useState('')
-  const [ products, setProducts ] = useState([])
-
-  // eslint-disable-next-line no-unused-vars
-  const { isLoading, data } = useQuery("meuproduto", async () => {
-    return await api
-    .get("/producttodos")
-    .then((res) => setProducts(res.data))
-
-    // eslint-disable-next-line no-unreachable
-    if(isLoading){
-      return <div className="load">Carregando...</div>
-    }
-
-  });
-
-  console.log(products)
-
   
   const [removeF, setRemovef] = useState([])
 

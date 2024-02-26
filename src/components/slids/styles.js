@@ -13,7 +13,8 @@ export const Coontainer = styled.div`
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-    margin-left: 60px;
+    margin-left: 150px;
+    text-decoration-line: none;
 
     @media (max-width: 768px) {
       margin-left: 0px;
@@ -35,6 +36,8 @@ export const Coontainer = styled.div`
       cursor: pointer;
       color: aqua;
       margin-top: 5px;
+      text-decoration-line: none;
+
       
       &:hover {
         background-color: darkgray;
@@ -65,23 +68,32 @@ export const Coontainer = styled.div`
 
     & .info {
       margin-top: 16px;
+      width: 100%;
+      margin: auto;
+      display: flex;
+      
+      & span {
+        text-decoration: none;
+        color: #000000;
+      }
 
       & .name {
         text-align: center;
         font-size: 15px;
         font-weight: bold;
         cursor: pointer;
-        margin-left: 10px;
         padding: 5px;
+        text-decoration: none;
 
         @media (max-width: 768px){
-          font-size: 10px;
+          font-size: 8px;
           margin-left: 10px;
         }
       }
 
       @media (max-width: 768px){
         margin-top: -10px;
+        width: 110%;
       }
 
     }

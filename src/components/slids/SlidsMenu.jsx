@@ -8,8 +8,9 @@ export function SlidsMenu() {
 
   const [ data, setData ] = useState([])
   const carrousel = useRef(null)
-  
-  console.log(data)
+
+  //const convertName = data[13].name.slice(6)
+  //console.log(convertName)
 
   useEffect(() => {
     async function RequaryData(){
@@ -48,7 +49,7 @@ export function SlidsMenu() {
               <Link to="/vestido">
                 <div className="item">
                   <div className="image">
-                    <img src={data[0].image || "/imgCategory/vestido.webp"} alt="img" />
+                    <img src="/imgCategory/vestido.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -168,7 +169,7 @@ export function SlidsMenu() {
               <Link to="/calcam">
                 <div className="item">
                   <div className="image">
-                    <img src="/imgCategory/ferramentas.webp" alt="img" />
+                    <img src="/imgCategory/calca-m.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -204,7 +205,7 @@ export function SlidsMenu() {
               <Link to="/itimo">
                 <div className="item">
                   <div className="image">
-                    <img src="/imgCategory/intima.webp" alt="img" />
+                    <img src="/imgCategory/eletronico.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -216,7 +217,7 @@ export function SlidsMenu() {
               <Link to="/info">
                 <div className="item">
                   <div className="image">
-                    <img src="/imgCategory/eletronico.webp" alt="img" />
+                    <img src="/imgCategory/Smartphone.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -228,7 +229,7 @@ export function SlidsMenu() {
               <Link to="/smartphone">
                 <div className="item">
                   <div className="image">
-                    <img src="/imgCategory/Smartphone.webp" alt="img" />
+                    <img src="/imgCategory/intima.webp" alt="img" />
                   </div>
                 </div>
                 <div className="info">

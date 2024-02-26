@@ -54,10 +54,15 @@ const Descricao = () => {
   const navigate = useNavigate()
 
   const cart = useSelector(cartItems => cartItems.cart.cartItems.length)
-  //const product = useSelector(productsSlice => productsSlice.products.items)
+  const product = useSelector(productsSlice => productsSlice.products.items)
 
   const localId = localStorage.getItem("id")
   //const BNT = localStorage.getItem("name")
+
+  const productFilter = product.filter(product => product)
+  const prodFilter = [...productFilter]
+  const dataProductFilter2 = prodFilter.filter(productData => (productData.id === localId))
+
 
   const productFilter2 = products.filter(product => product)
   const prodFilter2 = [...productFilter2]
@@ -74,7 +79,7 @@ const Descricao = () => {
   const sizeFilter = dataProductFilter.map(pri => pri.size)
   const divideSizeArrey = {...sizeFilter[0]}
   
-  console.log(dataProductFilter)
+  console.log(dataProductFilter2, "teste")
 
   const dispatch = useDispatch()
 
@@ -257,7 +262,7 @@ const Descricao = () => {
     <>
       <Header/>
       <ConatinerMain>
-        {filterProduct == "" ? <Example/> :
+        {dataProductFilter == "" ? <Example/> :
           dataProductFilter.map(res => {
 
             const { name, description, quantity, image } = res;

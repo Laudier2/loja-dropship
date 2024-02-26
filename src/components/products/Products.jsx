@@ -3,7 +3,7 @@
 //import { useHistory } from 'react-router-dom'
 import ReactLoading from 'react-loading';
 //import { useSelector } from 'react-redux';
-import { ProductProd, LoadingPage } from './products';
+import { ProductProd, LoadingPage, ContainerVerMais } from './products';
 import { FaCreditCard } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -82,35 +82,52 @@ export const Products = () => {
   const [categoroyCalca, setCategoryCalca] = useState([])
   const [categoroyBone, setCategoryBone] = useState([])
   const [categoroyIstetica, setCategoryIstetica] = useState([])
+  const [categoroyCalcaM, setCategoryCalcaM] = useState([])
+  const [categoroyInfo, setCategoryInfo] = useState([])
+  const [categoroyEletro, setCategoryEletro] = useState([])
+  const [categoroySmart, setCategorySmart] = useState([])
   const [categoroyShortM, setCategoryShortM] = useState([])
+  const [categoroyIntimo, setCategoryIntimo] = useState([])
+
+  const [vernais, setVermais] = useState(0)
 
   //Aqui estamos usado o useEffect para deixa os estados sempre atualizados ao carrega o compodnent
   useEffect(() =>{    
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const reqVestido = await api.get("/category/ac78a824-5412-43f8-b977-8c855f0dc79b")
+      const reqVestido = await api.get("/category/3b56f30d-0422-428d-a020-b608b3254d08")
       const resVestido = await reqVestido.data[0].products_categories
-      const reqTenis = await api.get("/category/0f89e28e-0b05-4f2a-9ebe-abe4ad95127e")
+      const reqTenis = await api.get("/category/f5379b77-d56e-470c-950b-662221ed54cf")
       const resTenis = await reqTenis.data[0].products_categories
-      const reqShort = await api.get("/category/41a0d39a-d5d8-4a70-a2a5-050b68591ab5")
+      const reqShort = await api.get("/category/25d32c83-91ba-43a9-8e89-76066a4168bf")
       const resShort = await reqShort.data[0].products_categories
-      const reqShortF = await api.get("/category/ab556f0a-b7b9-4079-9cc8-ce6d8f4f5117")
+      const reqShortF = await api.get("/category/cc3ca18b-836f-447d-a2cf-56046e3e8fb0")
       const resShortF = await reqShortF.data[0].products_categories
-      const reqConjunto = await api.get("/category/891670a9-81a3-4451-b0e7-b9649b21743b")
-      const resConjunto = await reqConjunto.data[0].products_categories
-      const reqCamiseta = await api.get("/category/5a011800-5e65-455c-b62d-f095f6ff8402")
-      const resCamiseta = await reqCamiseta.data[0].products_categories
-      const reqFone = await api.get("/category/23a34a5e-aa57-4753-b213-1a6f6537423a")
-      const resFone = await reqFone.data[0].products_categories
-      const reqCalca = await api.get("/category/7080009b-d0f3-4bc7-860e-45972d576933")
-      const resCalca = await reqCalca.data[0].products_categories
-      const reqBone = await api.get("/category/f93ec5bb-f056-47dd-aa75-9c95f6c4e120")
-      const resBone = await reqBone.data[0].products_categories
-      const reqIstetica = await api.get("/category/f4e05ac6-fb7e-4d2a-adf6-70d0c9558678")
-      const resIstetica = await reqIstetica.data[0].products_categories
-      const reqShortM = await api.get("/category/41a0d39a-d5d8-4a70-a2a5-050b68591ab5")
+      const reqShortM = await api.get("/category/25d32c83-91ba-43a9-8e89-76066a4168bf")
       const resShortM = await reqShortM.data[0].products_categories
+      const reqConjunto = await api.get("/category/aeaa62f5-bac8-45d3-86fc-4ed7a8307c7f")
+      const resConjunto = await reqConjunto.data[0].products_categories
+      const reqCamiseta = await api.get("/category/59733ffe-2c96-4acb-aba0-e58045688789")
+      const resCamiseta = await reqCamiseta.data[0].products_categories
+      const reqFone = await api.get("/category/519c1c14-0508-4231-b77b-de73a469c342")
+      const resFone = await reqFone.data[0].products_categories
+      const reqCalca = await api.get("/category/eb40635e-ebe4-4e82-9b25-2811aed37c91")
+      const resCalca = await reqCalca.data[0].products_categories
+      const reqBone = await api.get("/category/5941bdc7-89c7-4d8e-b09a-39311774e29d")
+      const resBone = await reqBone.data[0].products_categories
+      const reqIstetica = await api.get("/category/f3d348ca-1cb5-41e9-a9e3-81c719508cad")
+      const resIstetica = await reqIstetica.data[0].products_categories
+      const reqCalcaM = await api.get("/category/df640fd0-67ce-4856-bd70-bc5121323b24")
+      const resCalcaM = await reqCalcaM.data[0].products_categories
+      const reqInfo = await api.get("/category/1e40a692-3864-4d6d-bb97-3c9819297d57")
+      const resInfo = await reqInfo.data[0].products_categories
+      const reqEletronico = await api.get("/category/3453ecaa-69b5-4e8e-bfd4-04499395e0c4")
+      const resEletronico = await reqEletronico.data[0].products_categories
+      const reqSmatphone = await api.get("/category/25d32c83-91ba-43a9-8e89-76066a4168bf")
+      const resSmatphone = await reqSmatphone.data[0].products_categories
+      const reqIntimo = await api.get("/category/2b55dd57-4b1a-4b3f-9cee-4fb1fab7b85d")
+      const resIntimo = await reqIntimo.data[0].products_categories
 
       setCategory(resName)
       setCategoryTenis(resTenis)
@@ -124,6 +141,11 @@ export const Products = () => {
       setCategoryBone(resBone)
       setCategoryIstetica(resIstetica)
       setCategoryShortM(resShortM)
+      setCategoryCalcaM(resCalcaM)
+      setCategoryInfo(resInfo)
+      setCategoryEletro(resEletronico)
+      setCategorySmart(resSmatphone)
+      setCategoryIntimo(resIntimo)
     })()
   },[])
 
@@ -458,6 +480,187 @@ export const Products = () => {
       </section>  
       
     </ProductProd>
+    <ProductProd>
+        <section>
+        
+        <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[10]}</h2>
+      
+        {categoroyCalcaM.map(res => {
+
+        const { id, name, image, price } = res.products;
+
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
+
+        return (
+          <Link to="/desc" onClick={() => LocalSto(res.products)}>
+            <div key={id}>
+              <img src={image[0]} alt="img" />
+              <h5>{name}</h5>
+              <b className="frete">Frete Gratis</b>
+              <img src="card.jpg" alt="img" className="cartImg" />
+              <span>
+                <p className='p'>
+                  <FaCreditCard className='cartao'/> Em até 12x sem juros
+                </p>
+              </span>
+              <h4 className='oldPrice'>R${price},00 </h4>
+              <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+            </div>
+          </Link>
+          )
+        })
+      }
+      </section>  
+      
+    </ProductProd>
+    <ContainerVerMais>
+      {vernais === 0 ? <button className='vermais' onClick={() => setVermais(1)}>Ver mais</button> :
+        <>
+          <ProductProd>
+            <section>
+            
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[11]}</h2>
+          
+            {categoroyIntimo.map(res => {
+
+            const { id, name, image, price } = res.products;
+
+            let percentual = 0.25;
+            let aumento = price * percentual;
+            let novo_price = price - aumento;
+
+            return (
+              <Link to="/desc" onClick={() => LocalSto(res.products)}>
+                <div key={id}>
+                  <img src={image[0]} alt="img" />
+                  <h5>{name}</h5>
+                  <b className="frete">Frete Gratis</b>
+                  <img src="card.jpg" alt="img" className="cartImg" />
+                  <span>
+                    <p className='p'>
+                      <FaCreditCard className='cartao'/> Em até 12x sem juros
+                    </p>
+                  </span>
+                  <h4 className='oldPrice'>R${price},00 </h4>
+                  <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+                </div>
+              </Link>
+              )
+            })
+          }
+          </section>  
+          
+        </ProductProd>
+        <ProductProd>
+            <section>
+            
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[12]}</h2>
+          
+            {categoroyInfo.map(res => {
+
+            const { id, name, image, price } = res.products;
+
+            let percentual = 0.25;
+            let aumento = price * percentual;
+            let novo_price = price - aumento;
+
+            return (
+              <Link to="/desc" onClick={() => LocalSto(res.products)}>
+                <div key={id}>
+                  <img src={image[0]} alt="img" />
+                  <h5>{name}</h5>
+                  <b className="frete">Frete Gratis</b>
+                  <img src="card.jpg" alt="img" className="cartImg" />
+                  <span>
+                    <p className='p'>
+                      <FaCreditCard className='cartao'/> Em até 12x sem juros
+                    </p>
+                  </span>
+                  <h4 className='oldPrice'>R${price},00 </h4>
+                  <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+                </div>
+              </Link>
+              )
+            })
+          }
+          </section>  
+          
+        </ProductProd>
+        <ProductProd>
+            <section>
+            
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[13]}</h2>
+          
+            {categoroyEletro.map(res => {
+
+            const { id, name, image, price } = res.products;
+
+            let percentual = 0.25;
+            let aumento = price * percentual;
+            let novo_price = price - aumento;
+
+            return (
+              <Link to="/desc" onClick={() => LocalSto(res.products)}>
+                <div key={id}>
+                  <img src={image[0]} alt="img" />
+                  <h5>{name}</h5>
+                  <b className="frete">Frete Gratis</b>
+                  <img src="card.jpg" alt="img" className="cartImg" />
+                  <span>
+                    <p className='p'>
+                      <FaCreditCard className='cartao'/> Em até 12x sem juros
+                    </p>
+                  </span>
+                  <h4 className='oldPrice'>R${price},00 </h4>
+                  <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+                </div>
+              </Link>
+              )
+            })
+          }
+          </section>  
+          
+        </ProductProd>
+        <ProductProd>
+            <section>
+            
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[14]}</h2>
+          
+            {categoroySmart.map(res => {
+
+            const { id, name, image, price } = res.products;
+
+            let percentual = 0.25;
+            let aumento = price * percentual;
+            let novo_price = price - aumento;
+
+            return (
+              <Link to="/desc" onClick={() => LocalSto(res.products)}>
+                <div key={id}>
+                  <img src={image[0]} alt="img" />
+                  <h5>{name}</h5>
+                  <b className="frete">Frete Gratis</b>
+                  <img src="card.jpg" alt="img" className="cartImg" />
+                  <span>
+                    <p className='p'>
+                      <FaCreditCard className='cartao'/> Em até 12x sem juros
+                    </p>
+                  </span>
+                  <h4 className='oldPrice'>R${price},00 </h4>
+                  <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+                </div>
+              </Link>
+              )
+            })
+          }
+          </section>  
+          
+        </ProductProd>
+      </>
+    }
+    </ContainerVerMais>
 
     </div>
   }

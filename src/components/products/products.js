@@ -244,6 +244,37 @@ export const ProductProd = styled.div`
     }
   }
 `
+
+export const ContainerVerMais = styled.div`
+
+  & .vermais {
+      width: 10%;
+      height: 100%;
+      display: flex;
+      margin: auto;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      padding: 8px;
+      border-radius: 10px;
+      outline: none;
+      border: none;
+      background: rgba(128, 128, 128, 0.487);
+      color: #000000;
+      font-weight: bold;
+      font-size: 1.3rem;
+
+      &:hover {
+        background: aquamarine;
+      }
+
+      @media (max-width: 768px) {
+        width: 40%;
+      }
+    }
+`
+
 export const LoadingPage1 = styled.div`
  position: absolute;
   top: 30%;

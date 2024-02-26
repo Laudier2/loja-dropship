@@ -44,31 +44,26 @@ const Descricao = () => {
     }
 
   });
-
-  //console.log(products[0])
-
   
   const [removeF, setRemovef] = useState([])
-
 
   const navigate = useNavigate()
 
   const cart = useSelector(cartItems => cartItems.cart.cartItems.length)
-  const product = useSelector(productsSlice => productsSlice.products.items)
+  //const product = useSelector(productsSlice => productsSlice.products.items)
 
   const localId = localStorage.getItem("id")
   //const BNT = localStorage.getItem("name")
 
-  const productFilter = product.filter(product => product)
-  const prodFilter = [...productFilter]
-  const dataProductFilter2 = prodFilter.filter(productData => (productData.id === localId))
+  //const productFilter = product.filter(product => product)
+  //const prodFilter = [...productFilter]
+  //const dataProductFilter2 = prodFilter.filter(productData => (productData.id === localId))
 
 
   const productFilter2 = products.filter(product => product)
   const prodFilter2 = [...productFilter2]
 
   const filterProduct = prodFilter2.map(pro => pro.product)
-  const filterComentario = prodFilter2.map(pro => pro.comentarios)
   const dataProductFilter = filterProduct.filter(productData => (productData.id === localId))
     
   
@@ -78,8 +73,6 @@ const Descricao = () => {
   
   const sizeFilter = dataProductFilter.map(pri => pri.size)
   const divideSizeArrey = {...sizeFilter[0]}
-  
-  console.log(dataProductFilter2, "teste")
 
   const dispatch = useDispatch()
 
@@ -118,9 +111,6 @@ const Descricao = () => {
    
    const dataCor = {id: id, cor: dataCores}
    const dataTm = {id: id, tm: dataTamanho}
-
-
-   //console.log(dataCor, dataTm)
     
     dispatch(addTm(dataTm))
     dispatch(addCor(dataCor))
@@ -165,11 +155,6 @@ const Descricao = () => {
   }
 
   const existFavorit = localStorage.getItem('favorit')
-
-  //console.log(existFavorit)
- 
-  //console.log(dataCores)
-
   //imagem de meio de pagamentos bandeiras
   const imgCart = [
 		{img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png"},
@@ -238,8 +223,6 @@ const Descricao = () => {
   const FilterColor43 = Todes.filter(e =>  e == "Laranja" || e == "laranja" || e == "LARANJA")
   const FilterColor44 = Todes.filter(e =>  e == "Preto com bage")
   const FilterColor45 = Todes.filter(e =>  e == "Branco com bage")
-  
-  ///console.log(FilterColor2[0], FilterColor1[0])
 
   const Example = () => (
     /*
@@ -502,7 +485,7 @@ const Descricao = () => {
           })
         }
       </ConatinerMain>
-      <Comentarios dataProduct={filterComentario}/>
+      <Comentarios dataProduct={products} idPro={localId}/>
       <SlidsDescriptionOfertas/>
       <Footer/>
     </>

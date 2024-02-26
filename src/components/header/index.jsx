@@ -16,7 +16,8 @@ import { SeartResult } from "./SeartResult";
 
 export function Header() {
 
-  const [ dados, setDados ] = useState([])
+  const complite = "produtos";
+  const [ dados, setDados ] = useState(complite)
 
   const [cartIsVisible, setCartIsVisible] = useState(false);
 

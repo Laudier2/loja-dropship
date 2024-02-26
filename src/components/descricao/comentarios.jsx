@@ -1,30 +1,13 @@
-import { useQuery } from "react-query";
 import { ConatinerComentarios } from "./stylesComentarios"
-import api from "../../api/api";
-import { useState } from "react";
 //import ReactImageMagnify from "react-image-magnify";
 //Novas mudanças
 
-export const Comentarios = ({dataProduct}) => {
+export const Comentarios = ({dataProduct, idPro}) => {
 
-	//console.log(dataProduct)
+	const filterProduct = dataProduct.map(pro => pro.comentarios)
+  	const dataProductFilter = filterProduct.filter(productData => (productData.idProduct == idPro))
 
-    const [ comentario, setComentario ] = useState([])
-
-    // eslint-disable-next-line no-unused-vars
-    const { isLoading, data } = useQuery("comentario", async () => {
-        return await api
-        .get("/comentario")
-        .then((res) => setComentario(res.data))
-    
-        // eslint-disable-next-line no-unreachable
-        if(isLoading){
-          return <div className="load">Carregando...</div>
-        }
-        
-      }
-      
-      );
+	console.log(dataProductFilter)
 
     ///https://i.ibb.co/z6z4z4z/comentarios.png
 
@@ -33,7 +16,7 @@ export const Comentarios = ({dataProduct}) => {
             <h1>Avaliações Do Produto</h1>
 			
             <section>
-				{comentario.map(res => {
+				{dataProductFilter.map(res => {
 
 					const { name, image, message, imgName } = res
 

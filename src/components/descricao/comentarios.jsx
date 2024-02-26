@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import { ConatinerComentarios } from "./stylesComentarios"
 //import ReactImageMagnify from "react-image-magnify";
 //Novas mudanças

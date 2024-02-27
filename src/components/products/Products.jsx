@@ -88,6 +88,7 @@ export const Products = () => {
   const [categoroySmart, setCategorySmart] = useState([])
   const [categoroyShortM, setCategoryShortM] = useState([])
   const [categoroyIntimo, setCategoryIntimo] = useState([])
+  const [categoroyRelogio, setCategoryRelogio] = useState([])
 
   const [vernais, setVermais] = useState(0)
 
@@ -128,6 +129,8 @@ export const Products = () => {
       const resSmatphone = await reqSmatphone.data[0].products_categories
       const reqIntimo = await api.get("/category/2b55dd57-4b1a-4b3f-9cee-4fb1fab7b85d")
       const resIntimo = await reqIntimo.data[0].products_categories
+      const reqRelogio = await api.get("/category/a0eb37e8-ff8c-43ec-8759-a6e3800f2948")
+      const resRelogio = await reqRelogio.data[0].products_categories
 
       setCategory(resName)
       setCategoryTenis(resTenis)
@@ -146,6 +149,7 @@ export const Products = () => {
       setCategoryEletro(resEletronico)
       setCategorySmart(resSmatphone)
       setCategoryIntimo(resIntimo)
+      setCategoryRelogio(resRelogio)
     })()
   },[])
 
@@ -629,6 +633,41 @@ export const Products = () => {
             <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[14]}</h2>
           
             {categoroySmart.map(res => {
+
+            const { id, name, image, price } = res.products;
+
+            let percentual = 0.25;
+            let aumento = price * percentual;
+            let novo_price = price - aumento;
+
+            return (
+              <Link to="/desc" onClick={() => LocalSto(res.products)}>
+                <div key={id}>
+                  <img src={image[0]} alt="img" />
+                  <h5>{name}</h5>
+                  <b className="frete">Frete Gratis</b>
+                  <img src="card.jpg" alt="img" className="cartImg" />
+                  <span>
+                    <p className='p'>
+                      <FaCreditCard className='cartao'/> Em até 12x sem juros
+                    </p>
+                  </span>
+                  <h4 className='oldPrice'>R${price},00 </h4>
+                  <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+                </div>
+              </Link>
+              )
+            })
+          }
+          </section>  
+          
+        </ProductProd>
+        <ProductProd>
+            <section>
+            
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[15]}</h2>
+          
+            {categoroyRelogio.map(res => {
 
             const { id, name, image, price } = res.products;
 

@@ -88,6 +88,7 @@ export const Coontainer = styled.div`
         @media (max-width: 768px){
           font-size: 8px;
           margin-left: 10px;
+          margin-top: 7px;
         }
       }
 

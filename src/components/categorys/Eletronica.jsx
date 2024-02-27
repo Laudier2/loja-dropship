@@ -30,7 +30,7 @@ const Example = () => (
 
 //const product = []
 
-export const Shortm = () => {
+export const Eletronica = () => {
 
   useEffect(() => {
     window.scroll({
@@ -53,6 +53,7 @@ export const Shortm = () => {
     localStorage.setItem("categoryId", e.id)
 
   }
+
   // Aqui estamos fazenso as requisição na API REstful com o axio, 
   //e recebendo os dados atraves do useState para poder manipula os estados
 
@@ -64,7 +65,7 @@ export const Shortm = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/25d32c83-91ba-43a9-8e89-76066a4168bf")
+      const req = await api.get("/category/a733bfb1-4f80-427e-9e18-eedd3a8cd22e")
       const res = await req.data[0].products_categories
 
       setCategory(resName)
@@ -88,7 +89,7 @@ export const Shortm = () => {
       <ProductProd>
             <section>
             
-            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[2]}</h2>
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[13]}</h2>
           
             {categoroyData.map(res => {
 

@@ -30,7 +30,7 @@ const Example = () => (
 
 //const product = []
 
-export const Shortm = () => {
+export const Smartphone = () => {
 
   useEffect(() => {
     window.scroll({
@@ -64,7 +64,7 @@ export const Shortm = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/25d32c83-91ba-43a9-8e89-76066a4168bf")
+      const req = await api.get("/category/3453ecaa-69b5-4e8e-bfd4-04499395e0c4")
       const res = await req.data[0].products_categories
 
       setCategory(resName)
@@ -72,7 +72,7 @@ export const Shortm = () => {
     })()
   },[])
 
-  console.log(categoroyData, "teste")
+  console.log(categoroy)
 
   const NameCategory = categoroy.map(res => res.name)
 
@@ -88,7 +88,7 @@ export const Shortm = () => {
       <ProductProd>
             <section>
             
-            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[2]}</h2>
+            <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[14]}</h2>
           
             {categoroyData.map(res => {
 

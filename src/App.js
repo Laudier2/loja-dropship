@@ -15,7 +15,7 @@ import { Vestido } from "./components/categorys/Vestido";
 import { Calcado } from "./components/categorys/Calcado";
 import { Relogio } from "./components/categorys/Relogio";
 import { AudioVideo } from "./components/categorys/AudioVideo";
-import { Rintima } from "./components/categorys/Rintima";
+import { Intima } from "./components/categorys/Intima";
 import { Maquiagem } from "./components/categorys/Maquiagem";
 import { Conjuntof } from "./components/categorys/Conjuntof";
 import { Calcaf } from "./components/categorys/Calcaf";
@@ -31,6 +31,8 @@ import { PoliticasDevolucaoTroca } from "./components/politicaTrocaDevolucao/pol
 import { Meuproduto } from "./components/Meuproduto";
 import { Products } from "./components/products/Products"
 import { Bone } from "./components/categorys/Bone";
+import { Eletronica } from "./components/categorys/Eletronica";
+import { Smartphone } from "./components/categorys/Smartphone";
 
 const TRACKING_ID = "G-YJVYCLYTD3" 
 
@@ -105,8 +107,8 @@ function App() {
       element: <AudioVideo />,
     },
     {
-      path: "/rintima",
-      element: <Rintima />,
+      path: "/intimo",
+      element: <Intima />,
     },
     {
       path: "/maquiagem",
@@ -148,7 +150,7 @@ function App() {
       element: <Ferramentas />,
     },
     {
-      path: "/istetica",
+      path: "/estetica",
       element: <Estetica />,
     },
     {
@@ -158,6 +160,14 @@ function App() {
     {
       path: "/bone",
       element: <Bone />,
+    },
+    {
+      path: "/eletronica",
+      element: <Eletronica />,
+    },
+    {
+      path: "/smartphone",
+      element: <Smartphone />,
     }
 
   ]);  

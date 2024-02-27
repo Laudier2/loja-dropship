@@ -106,7 +106,7 @@ export function SlidsMenu() {
               </Link>
           </div>
           <div>
-              <Link to="/camisetaf">
+              <Link to="/camisetam">
                 <div className="item">
                   <div className="image">
                     <img src="/imgCategory/camiseta-m.webp" alt="img" />
@@ -178,7 +178,7 @@ export function SlidsMenu() {
               </Link>
           </div>
           <div>
-              <Link to="/istetica">
+              <Link to="/estetica">
                 <div className="item">
                   <div className="image">
                     <img src="/imgCategory/estetica.webp" alt="img" />
@@ -202,7 +202,7 @@ export function SlidsMenu() {
               </Link>
           </div>
           <div>
-              <Link to="/itimo">
+              <Link to="/eletronica">
                 <div className="item">
                   <div className="image">
                     <img src="/imgCategory/eletronico.webp" alt="img" />
@@ -214,7 +214,7 @@ export function SlidsMenu() {
               </Link>
           </div>
           <div>
-              <Link to="/info">
+              <Link to="/smartphone">
                 <div className="item">
                   <div className="image">
                     <img src="/imgCategory/Smartphone.webp" alt="img" />
@@ -226,7 +226,7 @@ export function SlidsMenu() {
               </Link>
           </div>
           <div>
-              <Link to="/smartphone">
+              <Link to="/intimo">
                 <div className="item">
                   <div className="image">
                     <img src="/imgCategory/intima.webp" alt="img" />
@@ -234,6 +234,18 @@ export function SlidsMenu() {
                 </div>
                 <div className="info">
                   <span className="name">{data[15].name}</span>
+                </div>
+              </Link>
+          </div>
+          <div>
+              <Link to="/relogio">
+                <div className="item">
+                  <div className="image">
+                    <img src="/imgCategory/relogio.webp" alt="img" />
+                  </div>
+                </div>
+                <div className="info">
+                  <span className="name">{data[16].name}</span>
                 </div>
               </Link>
           </div>

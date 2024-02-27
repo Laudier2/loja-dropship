@@ -864,3 +864,76 @@ export const Coontainer = styled.div`
   background: transparent
 }
 `
+
+export const ContainerComentario = styled.div`
+
+  & .imgName {
+    margin-top: -2%;
+    width: 4.5%;
+    border-radius: 50px;
+    display: inline-block;
+    border: solid 1px;
+
+    @media (max-width: 768px) {
+      width: 10%;
+      font-size: 2.5vw;
+    }
+  }
+
+  & h5 {
+    font-size: 1.2vw;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 1%;
+
+    @media (max-width: 768px) {
+      font-size: 2.5vw;
+    }
+  }
+
+  & p {
+    font-size: 1.2vw;
+    display: inline-block;
+    margin-left: 1%;
+
+    @media (max-width: 768px) {
+      font-size: 2.5vw;
+    }
+  }
+
+  & .estrelas {
+    font-size: 23px;
+    margin-top: -5px;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      margin-top: -0.5px;
+
+    }
+  }
+
+  & .estrelas2 {
+    font-size: 20px;
+    margin-top: -5px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      margin-top: 1px;
+    }
+  }
+
+  & .imgList {
+    width: 90px;
+    height: 90px;
+    margin: 3px;
+    border-radius: 8px;
+
+    @media (max-width: 768px) {
+      width: 70px;
+      height: 80px;
+      margin: 3px;
+      border-radius: 8px;
+    }
+  }
+  
+`

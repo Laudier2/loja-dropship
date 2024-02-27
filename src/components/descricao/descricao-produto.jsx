@@ -14,7 +14,6 @@ import { FaCreditCard } from "react-icons/fa";
 import { TiStarHalfOutline } from "react-icons/ti";
 import { GoStarFill } from "react-icons/go";
 import { Header } from '../header';
-import './style.css'
 import { SlidsDescriptionOfertas } from './SlidsDescriptionOfertas';
 import Footer from '../footer/footer';
 import { FaRegHeart, FaHeart } from "react-icons/fa";

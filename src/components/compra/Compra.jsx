@@ -1,12 +1,11 @@
 /* eslint-disable eqeqeq */
 import React, { useEffect, useState } from 'react';
 import { ButtonBox, InputBox, CompraStyle, Title } from './stylend';
-import { FormBox, LoadingPage, Logo2 } from "./FormBox";
+import { FormBox, LoadingPage } from "./FormBox";
 import api from '../../api/api';
 import { useSelector } from 'react-redux';
 import ReactLoading from 'react-loading';
 import emailjs from "@emailjs/browser"
-import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 console.clear()

@@ -11,7 +11,7 @@ import { LuPackageSearch } from "react-icons/lu";
 import Cart from "../cart/index";
 
 // Styles
-import { Container, Logo, Buttons, ContainerAMR, ContainerPRT, DivContainer, DivContainerHederFixed} from "./styles";
+import { Container, Logo, Buttons, ContainerAMR, ContainerPRT, DivContainer, DivContainerHederFixo} from "./styles";
 import { SeartResult } from "./SeartResult";
 
 export function Header() {
@@ -83,7 +83,8 @@ export function Header() {
         </Logo>
         <a href="/"><AiFillAlert className="mb-2 h4"/> SUPER OFERTAS - StylesTop</a>
       </ContainerAMR>
-     
+      <DivContainerHederFixo>
+      </DivContainerHederFixo>
       <Container>
        <form onChange={(e) => handleSearch(e)}>
         <input type="search" name="test" id="test" placeholder="Pesquisar"/>
@@ -95,7 +96,6 @@ export function Header() {
         }
         </div>
       </DivContainer>
-      <DivContainerHederFixed></DivContainerHederFixed>
         <Buttons>
           <div onClick={handleCartClick}>
             <b className="bg">{length}</b>

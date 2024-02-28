@@ -48,24 +48,26 @@ export const CompraStyle = styled.div`
 
 export const Title = styled.h1`
     padding: 20px;
-    font-size: 2vw;
-    color: #fff;
+    font-size: 3vw;
+    color: darck;
     text-align: center;
 
     @media (max-width: 768px){
         padding: 0;
         margin-top: 10px;
         margin-bottom: -20px;
-        font-size: 5vw;
+        font-size: 6vw;
+        font-weight: bold;
     }
 `
 
 export const InputBox = styled.div`
     position: relative;
-    margin: 30px;
+    margin: 10px;
     width: 30%;
     border-bottom: 2px solid #fff;
     display: inline-block;
+    
 
     & input{
         width: 100%;
@@ -75,9 +77,10 @@ export const InputBox = styled.div`
         outline: none;
         font-size: 1em;
         padding: 0 -5px 0 0;
-        color: #fff;
+        color: darck;
         border-radius: 5px;
         text-align: justify;
+        font-weight: lighter;
 
         @media (max-width: 768px){
             padding: 0;
@@ -116,7 +119,7 @@ export const InputBox = styled.div`
 `
 
 export const ButtonBox = styled.button`
-    margin-top: -60px;
+    margin-top: 50px;
     width: 50%;
     height: 48px;
     border-radius: 48px;

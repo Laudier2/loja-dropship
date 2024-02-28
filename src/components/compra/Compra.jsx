@@ -247,8 +247,8 @@ const handleSubmit = async (e) => {
 
 
         await api.post("/compra", CreateCompra).then((res) => {
-          toast.success("A compra foi criada com sucesso")
-          console.log(res)
+          toast.success("Estamos redirecinando para o mercado pago")
+          //console.log(res)
         }).catch((err) => {
           toast.error("Houve um erro ", err)
         })
@@ -411,7 +411,7 @@ const handleSubmit = async (e) => {
 
 
         await api.post("/compra", CreateCompra).then((res) => {
-          toast.success("A compra foi criada com sucesso")
+          toast.success("Estamos redirecinando para o mercado pago")
           console.log(res)
         }).catch((err) => {
           toast.error("Houve um erro ", err)
@@ -622,7 +622,7 @@ const handleSubmit = async (e) => {
 
 
         await api.post("/compra", CreateCompra).then((res) => {
-          toast.success("A compra foi criada com sucesso")
+          toast.success("Estamos redirecinando para o mercado pago")
           console.log(res)
         }).catch((err) => {
           toast.error("Houve um erro ", err)
@@ -872,7 +872,7 @@ const handleSubmit = async (e) => {
 
 
         await api.post("/compra", CreateCompra).then((res) => {
-          toast.success("A compra foi criada com sucesso")
+          toast.success("Estamos redirecinando para o mercado pago")
           console.log(res)
         }).catch((err) => {
           toast.error("Houve um erro ", err)
@@ -1183,156 +1183,153 @@ const handleSubmit = async (e) => {
 
   return (
     <>
-     
+
       {cart == "" ? <Example/> :
         <CompraStyle>
-       <FormBox>
-          <form onSubmit={handleSubmit}>
-          <br />
-            <Title>
-              Preencha com seus dados
-            </Title>
-            
-            <InputBox>
-              <ion-icon name="mail-outline"></ion-icon>
-              <input 
-                type="text" 
-                name="name" 
-                id="name" 
-                onChange={(e) => setName(e.target.value)} 
-                value={name.name}  
-                required
-              />
-              <label htmlFor="">Nome completo</label>
-            </InputBox>
-            <InputBox>
-              <input
-                name="email" 
-                type="email" 
-                id="email" 
-                onChange={(e) => setEmail(e.target.value)} 
-                value={email.email} 
-                required 
-              />
-              <label htmlFor="">E-mail</label>
-            </InputBox>
-            <InputBox>
-              <ion-icon name="mail-outline"></ion-icon>
-              <input 
-                type="text" 
-                name="phone" 
-                id="phone" 
-                onChange={(e) => setPhone(e.target.value)} 
-                value={phone.phone}  
-                required
-              />
-              <label htmlFor="">Telefone</label>
-            </InputBox>
-            <InputBox>
-              <ion-icon name="mail-outline"></ion-icon>
-              <input 
-                type="text" 
-                name="state" 
-                id="state" 
-                onChange={(e) => setState(e.target.value)} 
-                value={state.state}  
-                required
-              />
-              <label htmlFor="">Estado</label>
-            </InputBox>
-            <InputBox>
-              <ion-icon name="mail-outline"></ion-icon>
-              <input 
-                type="text" 
-                name="city" 
-                id="city" 
-                onChange={(e) => setCity(e.target.value)} 
-                value={city.city}  
-                required
-              />
-              <label htmlFor="">Cidade</label>
-            </InputBox>
-            <InputBox>
-              <ion-icon name="mail-outline"></ion-icon>
-              <input 
-                type="text" 
-                name="cep" 
-                id="cep" 
-                onChange={(e) => setCep(e.target.value)} 
-                value={cep.cep}  
-                required
-              />
-              <label htmlFor="">Cep</label>
-            </InputBox>
-            <InputBox>
-              <ion-icon name="mail-outline"></ion-icon>
-              <input 
-                type="text" 
-                name="district" 
-                id="district" 
-                onChange={(e) => setDistrict(e.target.value)} 
-                value={district.district}  
-                required
-              />
-              <label htmlFor="">Bairro</label>
-            </InputBox>
-            <InputBox>
-              <ion-icon name="mail-outline"></ion-icon>
-              <input 
-                type="text" 
-                name="street" 
-                id="street" 
-                onChange={(e) => setStreet(e.target.value)} 
-                value={street.street}  
-                required
-              />
-              <label htmlFor="">Rua</label>
-            </InputBox>
-            <InputBox>
-              <ion-icon name="mail-outline"></ion-icon>
-              <input 
-                type="text" 
-                name="number" 
-                id="number" 
-                onChange={(e) => setNumber(e.target.value)} 
-                value={number.number}  
-                required
-              />
-              <label htmlFor="">Numero</label>
-            </InputBox>
-            <InputBox>
-              <ion-icon name="mail-outline"></ion-icon>
-              <input 
-                type="text" 
-                name="house" 
-                id="house" 
-                onChange={(e) => setHouse(e.target.value)} 
-                value={house.house}  
-                required
-              />
-              <label htmlFor="">Complemento AP/CASA</label>
-            </InputBox>     
-            <Logo2>
-              <Link to="/" className='Logo'>Voltar para StylesTop</Link> 
-            </Logo2>
-            <InputBox>
-              <ion-icon name="mail-outline"></ion-icon>
-              <input 
-                type="text" 
-                name="house" 
-                id="house" 
-                onChange={(e) => setCpf(e.target.value)} 
-                value={house.cpf}  
-                required
-              />
-              <label htmlFor="">CPF/CNPJ</label>
-            </InputBox>         
-            <ButtonBox type="submit">
-              Finaliza Compra
-            </ButtonBox>
-          </form>  
-      </FormBox>
-    </CompraStyle>}
+        <FormBox>
+          <Title>
+            Preencha com seus dados
+          </Title>
+          <hr />
+            <form onSubmit={handleSubmit}>
+              <InputBox>
+                <ion-icon name="mail-outline"></ion-icon>
+                <input 
+                  type="text" 
+                  name="name" 
+                  id="name" 
+                  onChange={(e) => setName(e.target.value)} 
+                  value={name.name}  
+                  required
+                />
+                <label htmlFor="">Nome completo</label>
+              </InputBox>
+              <InputBox>
+                <input
+                  name="email" 
+                  type="email" 
+                  id="email" 
+                  onChange={(e) => setEmail(e.target.value)} 
+                  value={email.email} 
+                  required 
+                />
+                <label htmlFor="">E-mail</label>
+              </InputBox>
+              <InputBox>
+                <ion-icon name="mail-outline"></ion-icon>
+                <input 
+                  type="text" 
+                  name="phone" 
+                  id="phone" 
+                  onChange={(e) => setPhone(e.target.value)} 
+                  value={phone.phone}  
+                  required
+                />
+                <label htmlFor="">Telefone</label>
+              </InputBox>
+              <InputBox>
+                <ion-icon name="mail-outline"></ion-icon>
+                <input 
+                  type="text" 
+                  name="state" 
+                  id="state" 
+                  onChange={(e) => setState(e.target.value)} 
+                  value={state.state}  
+                  required
+                />
+                <label htmlFor="">Estado</label>
+              </InputBox>
+              <InputBox>
+                <ion-icon name="mail-outline"></ion-icon>
+                <input 
+                  type="text" 
+                  name="city" 
+                  id="city" 
+                  onChange={(e) => setCity(e.target.value)} 
+                  value={city.city}  
+                  required
+                />
+                <label htmlFor="">Cidade</label>
+              </InputBox>
+              <InputBox>
+                <ion-icon name="mail-outline"></ion-icon>
+                <input 
+                  type="text" 
+                  name="cep" 
+                  id="cep" 
+                  onChange={(e) => setCep(e.target.value)} 
+                  value={cep.cep}  
+                  required
+                />
+                <label htmlFor="">Cep</label>
+              </InputBox>
+              <InputBox>
+                <ion-icon name="mail-outline"></ion-icon>
+                <input 
+                  type="text" 
+                  name="district" 
+                  id="district" 
+                  onChange={(e) => setDistrict(e.target.value)} 
+                  value={district.district}  
+                  required
+                />
+                <label htmlFor="">Bairro</label>
+              </InputBox>
+              <InputBox>
+                <ion-icon name="mail-outline"></ion-icon>
+                <input 
+                  type="text" 
+                  name="street" 
+                  id="street" 
+                  onChange={(e) => setStreet(e.target.value)} 
+                  value={street.street}  
+                  required
+                />
+                <label htmlFor="">Rua</label>
+              </InputBox>
+              <InputBox>
+                <ion-icon name="mail-outline"></ion-icon>
+                <input 
+                  type="text" 
+                  name="number" 
+                  id="number" 
+                  onChange={(e) => setNumber(e.target.value)} 
+                  value={number.number}  
+                  required
+                />
+                <label htmlFor="">Numero</label>
+              </InputBox>
+              <InputBox>
+                <ion-icon name="mail-outline"></ion-icon>
+                <input 
+                  type="text" 
+                  name="house" 
+                  id="house" 
+                  onChange={(e) => setHouse(e.target.value)} 
+                  value={house.house}  
+                  required
+                />
+                <label htmlFor="">Complemento AP/CASA</label>
+              </InputBox>     
+              
+              <InputBox>
+                <ion-icon name="mail-outline"></ion-icon>
+                <input 
+                  type="text" 
+                  name="house" 
+                  id="house" 
+                  onChange={(e) => setCpf(e.target.value)} 
+                  value={house.cpf}  
+                  required
+                />
+                <label htmlFor="">CPF/CNPJ</label>
+              </InputBox>         
+              <ButtonBox type="submit">
+                Finaliza Compra
+              </ButtonBox>
+            </form>  
+        </FormBox>
+      </CompraStyle>}
     </>
   );
 }

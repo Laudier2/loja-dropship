@@ -9,7 +9,7 @@ import Cart from "./components/cart";
 import CartFinalize from "./components/cart/cartFinalize";
 import Politicas from "./components/politica/Politicas";
 import ReactGA from "react-ga" 
-import Compra from "./components/compra/Compra2";
+import Compra from "./components/compra/Compra";
 import Cadastro from "./components/Cadastro/Cadastro";
 import { Vestido } from "./components/categorys/Vestido";
 import { Calcado } from "./components/categorys/Calcado";

@@ -5,8 +5,8 @@ export const FormBox = styled.div`
     position: relative;
     margin-top: 10px;
     width: 50%;
-    height: 900px;
-    background: rgba(33, 36, 36, 0.448);
+    height: 800px;
+    background: rgba(128, 128, 128, 0.487);
     border: 2px solid #ffffff80;
     border-radius: 20px;
     backdrop-filter: blur(15px);
@@ -15,8 +15,8 @@ export const FormBox = styled.div`
     @media (max-width: 768px){
         position: relative;
         width: 90%;
-        height: 110%;
-        background: rgba(33, 36, 36, 0.63);
+        height: 680px;
+        background: rgba(128, 128, 128, 0.487);
         border: 2px solid #ffffff80;
         border-radius: 20px;
         backdrop-filter: blur(15px);

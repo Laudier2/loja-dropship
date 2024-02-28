@@ -241,19 +241,11 @@ const handleSubmit = async (e) => {
           code_compra: code_compra,
           productslist: ArreyData
         }
-        
-        console.log(CreateCompra)
-
 
         await api.post("/compra", CreateCompra).then((res) => {
           toast.success("Estamos redirecinando para o mercado pago")
           //console.log(res)
-        }).catch((err) => {
-          toast.error("Houve um erro ", err)
         })
-      
-    
-        console.log(CreateCompra)
       }
     }
 
@@ -405,19 +397,11 @@ const handleSubmit = async (e) => {
           code_compra: code_compra,
           productslist: ArreyData
         }
-        
-        console.log(CreateCompra)
-
 
         await api.post("/compra", CreateCompra).then((res) => {
           toast.success("Estamos redirecinando para o mercado pago")
           console.log(res)
-        }).catch((err) => {
-          toast.error("Houve um erro ", err)
         })
-      
-    
-        console.log(CreateCompra)
       }
     
     }
@@ -616,19 +600,11 @@ const handleSubmit = async (e) => {
           code_compra: code_compra,
           productslist: ArreyData
         }
-        
-        console.log(CreateCompra)
-
 
         await api.post("/compra", CreateCompra).then((res) => {
           toast.success("Estamos redirecinando para o mercado pago")
           console.log(res)
-        }).catch((err) => {
-          toast.error("Houve um erro ", err)
         })
-      
-    
-        console.log(CreateCompra)
       }
     }
 
@@ -866,19 +842,11 @@ const handleSubmit = async (e) => {
           code_compra: code_compra,
           productslist: ArreyData
         }
-        
-        console.log(CreateCompra)
-
 
         await api.post("/compra", CreateCompra).then((res) => {
           toast.success("Estamos redirecinando para o mercado pago")
           console.log(res)
-        }).catch((err) => {
-          toast.error("Houve um erro ", err)
         })
-      
-    
-        console.log(CreateCompra)
       }
     }
 
@@ -1162,18 +1130,16 @@ const handleSubmit = async (e) => {
           productslist: ArreyData
         }
         
-        console.log(CreateCompra)
+        
 
 
         await api.post("/compra", CreateCompra).then((res) => {
           toast.success("A compra foi criada com sucesso")
           console.log(res)
-        }).catch((err) => {
-          toast.error("Houve um erro ", err)
         })
       
     
-        console.log(CreateCompra)
+        
       }
     }
     

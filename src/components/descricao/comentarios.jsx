@@ -29,15 +29,16 @@ export const Comentarios = ({dataProduct, idPro}) => {
 				return (
 					<ContainerComentario>
 						<span>
-							{estrela - 0.2}
+							<p>{estrela - 0.2}</p>
 								<GoStarFill className='text-warning estrelas3'/>
 								<GoStarFill className='text-warning estrelas3'/>
 								<GoStarFill className='text-warning estrelas3'/>
 								<GoStarFill className='text-warning estrelas3'/>
 								<TiStarHalfOutline className='text-warning estrelas4'/>
 						</span>
-						<h1>Avaliações Do Produto</h1>
-						<div>
+							<h1>Avaliações Do Produto</h1>
+							
+							<div>
 								<img src={imgName} alt="img" className="imgName" />
 								<h5>{name} <br />
 									<GoStarFill className='text-warning estrelas2'/>

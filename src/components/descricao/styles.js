@@ -474,17 +474,6 @@ export const ContainerDesc = styled.div`
     }
   }
 
-  & button {
-    background-color: whitesmoke;
-    border-radius: 6px;
-    font-weight: bold;
-    margin: 3px;
-    padding: 5px;
-
-    &:hover {
-      background-color: rgb(188, 204, 204);
-    }
-  }
 }
 
 & .divdescSecudare {
@@ -496,7 +485,7 @@ export const ContainerDesc = styled.div`
 
   @media (max-width: 1750px) {
     position: inherit;
-    margin-top: -37%;
+    margin-top: -36%;
   }
 
   @media (max-width: 1550px) {
@@ -546,6 +535,11 @@ export const ContainerSobre = styled.div`
   margin-left: 10%;
   margin-top: 5%;
 
+  & p {
+    text-align: justify;
+    font-size: 1.5vw;
+  }
+
   @media (max-width: 1768px) {
     width: 80%;
     margin-top: 1%;
@@ -554,6 +548,11 @@ export const ContainerSobre = styled.div`
   @media (max-width: 768px) {
     width: 80%;
     margin: 10%;
+
+    & p {
+      text-align: justify;
+    }
+
   }
 `
 

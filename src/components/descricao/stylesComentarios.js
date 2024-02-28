@@ -15,19 +15,28 @@ export const ConatinerComentarios = styled.div`
     @media(max-width: 768px) {
       font-size: 4vw;
       margin-bottom: 20px;
-      margin-left: 110px;
+      margin-left: 120px;
     }
   }
 
   & span {
     margin-left: 10px;
-    font-size: 2.5vw;
+    
     font-weight: bold;
 
+    & p {
+      font-size: 2.5vw;
+      margin-left: 1px;
+
+      @media(max-width: 768px) {
+        font-size: 4vw;
+      }
+    }
+
     @media(max-width: 768px) {
-      font-size: 4vw;
+      font-size: 5vw;
       position: absolute;
-      margin-top: 2px;
+      margin-top: -2px;
       margin-left: -1px;
     }
   }
@@ -97,7 +106,7 @@ export const ConatinerComentarios = styled.div`
     margin-top: -5px;
 
     @media (max-width: 768px) {
-      font-size: 16px;
+      font-size: 12px;
       margin-top: -0.5px;
 
     }
@@ -108,7 +117,7 @@ export const ConatinerComentarios = styled.div`
     margin-top: -5px;
 
     @media (max-width: 768px) {
-      font-size: 14px;
+      font-size: 11px;
       margin-top: 1px;
     }
   }
@@ -126,11 +135,11 @@ export const ConatinerComentarios = styled.div`
 
   & .estrelas4 {
     font-size: 38px;
-    margin-top: -8px;
+    margin-top: -10px;
 
     @media (max-width: 768px) {
-      font-size: 16px;
-      margin-top: -0.5px;
+      font-size: 18px;
+      margin-top: -1px;
 
     }
   }

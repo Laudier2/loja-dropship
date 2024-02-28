@@ -256,7 +256,7 @@ const Descricao = () => {
               document.getElementById("logo").src = `${image[1] || image[2]}`;
             }
             function over2() {
-              document.getElementById("logo").src = `${image[2] || image[3]}`;
+              document.getElementById("logo").src = `${image[2] || image[1]}`;
             }
           
             function over3() {
@@ -276,16 +276,16 @@ const Descricao = () => {
                       <img src={image[0] || image[1]} alt="img0" onMouseOver={() => over0(over0)} />
                     </div>
                      <div className='div1' >
-                      <img src={image[1] || image[2]} alt="img0" onMouseOver={() => over1(over1)} />
+                      <img src={image[1] || image[0]} alt="img0" onMouseOver={() => over1(over1)} />
                     </div>
                      <div className='div1' >
-                      <img src={image[2] || image[3]} alt="img0" onMouseOver={() => over2(over2)} />
+                      <img src={image[2] || image[0]} alt="img0" onMouseOver={() => over2(over2)} />
                     </div>
                      <div className='div1' >
-                      <img src={image[3] || image[0]} alt="img0" onMouseOver={() => over3(over3)} />
+                      <img src={image[3] || image[1]} alt="img0" onMouseOver={() => over3(over3)} />
                     </div>
                      <div className='div1' >
-                      <img src={image[4] || image[2]} alt="img0" onMouseOver={() => over4(over4)} />
+                      <img src={image[4] || image[1]} alt="img0" onMouseOver={() => over4(over4)} />
                     </div>
                   </div>
                 </div>
@@ -454,9 +454,9 @@ const Descricao = () => {
                   </p>
                 </div>
                 
-                  <button onClick={() => handlerCartAdd(dataProductFilter[0])}>Comprar agora</button>
+                  <button onClick={() => handlerCartAdd(dataProductFilter[0])} className='btnButton'>Comprar agora</button>
                   
-                  <button onClick={() => handlerCartAdd2(dataProductFilter[0])}>Adicionar ao carrinho</button>
+                  <button onClick={() => handlerCartAdd2(dataProductFilter[0])} className='btnButton'>Adicionar ao carrinho</button>
 
                   <br />
                   <div>

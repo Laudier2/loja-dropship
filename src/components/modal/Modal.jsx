@@ -3,7 +3,7 @@ import './modal.css';
 
 const Modal = ({ dados }) => {
 
-  console.log(dados);
+  //console.log(dados);
 
   return (
     <>
@@ -14,21 +14,21 @@ const Modal = ({ dados }) => {
           </li>
           <li>
             {' '}
-            <strong className="text-primary">ID:</strong> {dados._id}
+            <strong className="text-primary">ID:</strong> {}
           </li>
           <li>
-            <strong className="text-primary">Nome:</strong> {dados.name}
+            <strong className="text-primary">Nome:</strong> {}
           </li>
           <li>
-            <strong className="text-primary">E-mail</strong> {dados.email}
-          </li>
-          <li>
-            {' '}
-            <strong className="text-primary">Phone:</strong> {dados.phone}
+            <strong className="text-primary">E-mail</strong> {}
           </li>
           <li>
             {' '}
-            <strong className="text-primary">Password:</strong> {dados.password}
+            <strong className="text-primary">Phone:</strong> {}
+          </li>
+          <li>
+            {' '}
+            <strong className="text-primary">Password:</strong> {}
           </li>
 
         </ul>

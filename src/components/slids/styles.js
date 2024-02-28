@@ -151,3 +151,6 @@ export const Coontainer = styled.div`
   background: transparent;
 } 
 `
+export const DivContainerHederFixo = styled.div`
+  position: fixed;
+`

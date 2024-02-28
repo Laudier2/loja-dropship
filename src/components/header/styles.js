@@ -461,3 +461,6 @@ export const DivContainer = styled.div`
   }
   
 `
+export const DivContainerHederFixo = styled.div`
+  position: fixed;
+`

@@ -16,42 +16,55 @@ export const Comentarios = ({dataProduct, idPro}) => {
     ///https://i.ibb.co/z6z4z4z/comentarios.png
 
     return (
-			<ConatinerComentarios>
-				<h1>Avaliações Do Produto</h1>
+			<>
+				{dataProduct ? 
+				
+				<ConatinerComentarios>
 	
 				<section>
 			{dataProductFilter.map(res => {
-
-				const { name, image, message, imgName} = res
-
+				
+				const { name, image, message, imgName, estrela} = res
+				
 				return (
 					<ContainerComentario>
+						<span>
+							{estrela - 0.2}
+								<GoStarFill className='text-warning estrelas3'/>
+								<GoStarFill className='text-warning estrelas3'/>
+								<GoStarFill className='text-warning estrelas3'/>
+								<GoStarFill className='text-warning estrelas3'/>
+								<TiStarHalfOutline className='text-warning estrelas4'/>
+						</span>
+						<h1>Avaliações Do Produto</h1>
 						<div>
 								<img src={imgName} alt="img" className="imgName" />
 								<h5>{name} <br />
-				
 									<GoStarFill className='text-warning estrelas2'/>
 									<GoStarFill className='text-warning estrelas2'/>
 									<GoStarFill className='text-warning estrelas2'/>
 									<GoStarFill className='text-warning estrelas2'/>
 									<TiStarHalfOutline className='text-warning estrelas'/>
 								</h5>
-						</div>
-						<div>
-								<p>{message}</p>
-						</div>
-						<div>
-							{image[0] ? <img src={image[0]} alt="comentarios" className="imgList" /> : ""}
-							{image[1] ? <img src={image[1]} alt="comentarios" className="imgList" /> : ""}
-							{image[2] ? <img src={image[2]} alt="comentarios" className="imgList" /> : ""}
-							{image[3] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
-							{image[4] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
-							{image[5] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
-						</div>
-					</ContainerComentario>
-				)
-			})}
-					</section>
-			</ConatinerComentarios>
+								</div>
+								<div>
+										<p>{message}</p>
+								</div>
+								<div>
+									{image[0] ? <img src={image[0]} alt="comentarios" className="imgList" /> : ""}
+									{image[1] ? <img src={image[1]} alt="comentarios" className="imgList" /> : ""}
+									{image[2] ? <img src={image[2]} alt="comentarios" className="imgList" /> : ""}
+									{image[3] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
+									{image[4] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
+									{image[5] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
+								</div>
+							</ContainerComentario>
+						)
+					})}
+							</section>
+					</ConatinerComentarios>
+					: <p style={{display: "flex",  margin: "auto", width: 50}}>Carregando...</p>
+			}
+			</>
     )
 }

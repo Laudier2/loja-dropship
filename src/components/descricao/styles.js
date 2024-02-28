@@ -901,26 +901,7 @@ export const ContainerComentario = styled.div`
     }
   }
 
-  & .estrelas {
-    font-size: 23px;
-    margin-top: -5px;
-
-    @media (max-width: 768px) {
-      font-size: 16px;
-      margin-top: -0.5px;
-
-    }
-  }
-
-  & .estrelas2 {
-    font-size: 20px;
-    margin-top: -5px;
-
-    @media (max-width: 768px) {
-      font-size: 14px;
-      margin-top: 1px;
-    }
-  }
+  
 
   & .imgList {
     width: 90px;

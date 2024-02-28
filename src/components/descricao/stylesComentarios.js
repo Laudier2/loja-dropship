@@ -8,6 +8,28 @@ export const ConatinerComentarios = styled.div`
     color: #222222;
     text-align: center;
     font-size: 2vw;
+    margin-bottom: 50px;
+    display: inline-block;
+    margin-left: 350px;
+
+    @media(max-width: 768px) {
+      font-size: 4vw;
+      margin-bottom: 20px;
+      margin-left: 110px;
+    }
+  }
+
+  & span {
+    margin-left: 10px;
+    font-size: 2.5vw;
+    font-weight: bold;
+
+    @media(max-width: 768px) {
+      font-size: 4vw;
+      position: absolute;
+      margin-top: 2px;
+      margin-left: -1px;
+    }
   }
 
   & section {
@@ -69,6 +91,49 @@ export const ConatinerComentarios = styled.div`
       height: 80px;
       display: inline-block;
     }
+
+    & .estrelas {
+    font-size: 23px;
+    margin-top: -5px;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      margin-top: -0.5px;
+
+    }
+  }
+
+  & .estrelas2 {
+    font-size: 20px;
+    margin-top: -5px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      margin-top: 1px;
+    }
+  }
+
+  & .estrelas3 {
+    font-size: 33px;
+    margin-top: -8px;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      margin-top: -0.5px;
+
+    }
+  }
+
+  & .estrelas4 {
+    font-size: 38px;
+    margin-top: -8px;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      margin-top: -0.5px;
+
+    }
+  }
   }
 
 `

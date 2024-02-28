@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ProductProd = styled.div`
-  width: 88%;
+  width: 100%;
   background: transparent;
   display: flex;
   margin: auto;
@@ -46,7 +46,7 @@ export const ProductProd = styled.div`
       & img {
         width: 100%;
         height: 30vh;
-        border-radius: 8px;
+        border-radius: 1px;
         margin-bottom: 5px;
       }
 
@@ -75,19 +75,6 @@ export const ProductProd = styled.div`
           margin-left: -15px;
           //color: #00FF00;
         }
-
-      @media screen and (max-width: 780px) {
-    
-        @media (max-width: 768px) {
-        width: 95%;
-
-        & img {
-          width: 100%;
-          height: 10vh;
-          border-radius: 8px;
-        }
-      }
-      }
 
       &:haver {
         opacity: 0;
@@ -153,6 +140,7 @@ export const ProductProd = styled.div`
         color: #000000;
         opacity: 0.7;
         padding: 3px;
+        
       }
 
       & .frete {
@@ -167,6 +155,7 @@ export const ProductProd = styled.div`
         color: #000000;
         opacity: 0.7;
         padding: 3px;
+  
       }
 
       & h5 {
@@ -195,9 +184,9 @@ export const ProductProd = styled.div`
       }
       
       & img {
-        width: 100%;
+        width: 110px;
         height: 55%;
-        border-radius: 8px;
+        border-radius: 10px;
         margin-bottom: 2px;
 
         
@@ -240,7 +229,6 @@ export const ProductProd = styled.div`
         }
         }
       }
-      
     }
   }
 `

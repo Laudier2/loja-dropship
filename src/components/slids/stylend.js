@@ -185,10 +185,18 @@ margin-top: 2px;
     }
   }
 
+  @media (max-width: 968px) {
+   & div {
+    & img {      
+      height: 160px;
+    }
+   }
+  }
+
   @media (max-width: 768px) {
    & div {
     & img {      
-      height: 20vh;
+      height: 130px;
     }
    }
   }

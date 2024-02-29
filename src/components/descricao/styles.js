@@ -474,6 +474,17 @@ export const ContainerDesc = styled.div`
     }
   }
 
+  & button {
+    background-color: whitesmoke;
+    border-radius: 6px;
+    font-weight: bold;
+    margin: 3px;
+    padding: 5px;
+
+    &:hover {
+      background-color: rgb(188, 204, 204);
+    }
+  }
 }
 
 & .divdescSecudare {
@@ -899,8 +910,6 @@ export const ContainerComentario = styled.div`
       font-size: 2.5vw;
     }
   }
-
-  
 
   & .imgList {
     width: 90px;

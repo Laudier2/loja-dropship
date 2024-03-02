@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ProductProd = styled.div`
-  width: 100vw;
+  width: 88%;
   background: transparent;
   display: flex;
   margin: auto;
@@ -33,7 +33,7 @@ export const ProductProd = styled.div`
       &:hover {
         opacity: 0.8;
         border-radius: 10px;
-        box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease-in-out;
         cursor: pointer;
         background-color: rgba(255, 255, 255, 0.582);
@@ -41,13 +41,15 @@ export const ProductProd = styled.div`
         font-weight: bold;
         font-size: 0.8rem;
         text-align: center;
+        border: solid 0.1px;
       }
 
       & img {
         width: 100%;
         height: 30vh;
-        border-radius: 1px;
+        border-radius: 8px;
         margin-bottom: 5px;
+        
       }
 
       & h5 {
@@ -75,6 +77,19 @@ export const ProductProd = styled.div`
           margin-left: -15px;
           //color: #00FF00;
         }
+
+      @media screen and (max-width: 780px) {
+    
+        @media (max-width: 768px) {
+        width: 95%;
+
+        & img {
+          width: 100%;
+          height: 10vh;
+          border-radius: 8px;
+        }
+      }
+      }
 
       &:haver {
         opacity: 0;
@@ -140,7 +155,6 @@ export const ProductProd = styled.div`
         color: #000000;
         opacity: 0.7;
         padding: 3px;
-        
       }
 
       & .frete {
@@ -155,16 +169,13 @@ export const ProductProd = styled.div`
         color: #000000;
         opacity: 0.7;
         padding: 3px;
-  
       }
 
       & h5 {
         width: 100%;
-        height: 5vh;
         color: #000000;
         font-weight: bold;
         font-size: 2vw;
-        
       }
 
       & b {
@@ -184,9 +195,9 @@ export const ProductProd = styled.div`
       }
       
       & img {
-        width: 110px;
+        width: 100%;
         height: 55%;
-        border-radius: 10px;
+        border-radius: 8px;
         margin-bottom: 2px;
 
         
@@ -229,40 +240,10 @@ export const ProductProd = styled.div`
         }
         }
       }
+      
     }
   }
 `
-
-export const ContainerVerMais = styled.div`
-
-  & .vermais {
-      width: 10%;
-      height: 100%;
-      display: flex;
-      margin: auto;
-      justify-content: center;
-      align-items: center;
-      margin-top: 50px;
-      margin-bottom: 50px;
-      padding: 8px;
-      border-radius: 10px;
-      outline: none;
-      border: none;
-      background: rgba(128, 128, 128, 0.487);
-      color: #000000;
-      font-weight: bold;
-      font-size: 1.3rem;
-
-      &:hover {
-        background: aquamarine;
-      }
-
-      @media (max-width: 768px) {
-        width: 40%;
-      }
-    }
-`
-
 export const LoadingPage1 = styled.div`
  position: absolute;
   top: 30%;

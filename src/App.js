@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.min.css'
 import { ErrorBoundary } from "react-error-boundary";
 //import { Products } from "./components/products/Products";
-import Desc from "./components/descricao/descricao-produto";
+//import Desc from "./components/descricao/descricao-produto";
 import Cart from "./components/cart";
 import CartFinalize from "./components/cart/cartFinalize";
 import Politicas from "./components/politica/Politicas";
@@ -33,6 +33,7 @@ import { Products } from "./components/products/Products"
 import { Bone } from "./components/categorys/Bone";
 import { Eletronica } from "./components/categorys/Eletronica";
 import { Smartphone } from "./components/categorys/Smartphone";
+import { ConatinerDesc } from "./components/descricao/containerDescription";
 
 const TRACKING_ID = "G-YJVYCLYTD3" 
 
@@ -68,7 +69,7 @@ function App() {
 
     {
       path: "/desc",
-      element: <Desc />,
+      element: <ConatinerDesc />,
     },
 
     {

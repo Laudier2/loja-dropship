@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const ConatinerMain = styled.div`
   margin-top: 7%;
-  width: 100%;
+  width: 100vw;
+  display: none;
 
   & .divImg {
     width: 300px;
@@ -129,6 +130,10 @@ export const ConatinerMain = styled.div`
       }
     }
     
+  }
+
+  @media (max-width: 768px) {
+    display: block;
   }
 
 `

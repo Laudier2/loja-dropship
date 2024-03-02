@@ -188,7 +188,7 @@ margin-top: 2px;
   @media (max-width: 968px) {
    & div {
     & img {      
-      height: 160px;
+      height: 260px;
     }
    }
   }
@@ -196,7 +196,7 @@ margin-top: 2px;
   @media (max-width: 768px) {
    & div {
     & img {      
-      height: 130px;
+      height: 180px;
     }
    }
   }

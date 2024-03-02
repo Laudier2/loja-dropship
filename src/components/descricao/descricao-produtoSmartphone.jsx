@@ -22,9 +22,10 @@ import { LoadingPage } from '../products/products';
 import { Comentarios } from './comentarios';
 import { useQuery } from 'react-query';
 import api from '../../api/api';
+import { ProductContainerPai, ProductDescImage, ProductDescPrimary, ProductDescPrimary2, ProductDescSecudanry, ProductImageMini } from './products_desc';
 
 
-const Descricao = () => {
+export const DescricaoMini = () => {
   //window.location.reload()
    
   const [dataCores, setDatacores] = useState('')
@@ -243,8 +244,8 @@ const Descricao = () => {
   return (
     <>
       <Header/>
-      <ConatinerMain>
-        {dataProductFilter == "" ? <Example/> :
+      <ProductContainerPai>
+      {dataProductFilter == "" ? <Example/> :
           dataProductFilter.map(res => {
 
             const { name, description, quantity, image } = res;
@@ -269,23 +270,269 @@ const Descricao = () => {
 
             return (
               <>
-                <div className="div2">
-                  <img src={image[0]} alt="img" className='formatImg' id="logo" />
-                  <div className="div3">
-                    <div className='div1' >
+                <ProductDescImage>
+                  <img src={image[0]} alt="img" className='imgPrincipal' id="logo" />
+                </ProductDescImage>
+                <ProductImageMini>
+                  <div className="imgMini">
+                    <div className='imgMini' >
                       <img src={image[0] || image[1]} alt="img0" onMouseOver={() => over0(over0)} />
                     </div>
-                     <div className='div1' >
+                     <div className='imgMini' >
                       <img src={image[1] || image[0]} alt="img0" onMouseOver={() => over1(over1)} />
                     </div>
-                     <div className='div1' >
+                     <div className='imgMini' >
                       <img src={image[2] || image[0]} alt="img0" onMouseOver={() => over2(over2)} />
                     </div>
-                     <div className='div1' >
+                     <div className='imgMini' >
                       <img src={image[3] || image[1]} alt="img0" onMouseOver={() => over3(over3)} />
                     </div>
-                     <div className='div1' >
+                     <div className='imgMini' >
                       <img src={image[4] || image[1]} alt="img0" onMouseOver={() => over4(over4)} />
+                    </div>
+                  </div>
+                </ProductImageMini>
+                <ProductDescPrimary>
+                  <div className="divDesc">
+                    <div className="divdesc">
+                    <h5 ><strong>{name}</strong></h5>
+                    <div>
+                      <span className='mr-2'>4.8</span>
+                      <GoStarFill className='text-warning mb-1'/>
+                      <GoStarFill className='text-warning mb-1'/>
+                      <GoStarFill className='text-warning mb-1'/>
+                      <GoStarFill className='text-warning mb-1'/>
+                      <TiStarHalfOutline className='text-warning mb-1 h4'/>
+                      <span className='ml-2'>({quantity})</span>
+                      <p></p>
+                      <span>ESSE É UM DOS MAIS VENDIDOS NA LOJA</span>
+                    </div>
+                    <br />
+                    
+                    <h1>R$ {novo_price},00</h1>
+                    <br />
+                    <span>
+                  <FaCreditCard style={{margin: "10px"}} /> Em até 12x sem juros
+                  <br />
+                  {imgCart.map(imgCard => (
+                    <img src={imgCard.img} alt="img" style={{width: "15%", display: "inline-block", margin: "5PX"}}/>
+                  ))}
+                </span>
+                    <br />
+                    <br />
+                    <br />
+                    <p>
+                      <strong >Cor: </strong>
+                      <span>{dataCores ? dataCores : "Escolha uma cor"}</span>
+                    </p>
+                    <div>
+                    <div role="group" aria-label="Basic example" className='efctButton'>
+                      {FilterColor1[0] ? <button type="button" style={{background: "#000000", border: "none", color: "white", padding: "15px"}} onClick={() => setDatacores(FilterColor1[0])}></button> : ""}
+                      {FilterColor2[0] ? <button type="button" style={{background: "#C8B69A", border: "none", color: "white", padding: "15px"}} onClick={() => setDatacores(FilterColor2[0])}></button> : ""}
+                      {FilterColor3[0] ? <button type="button" style={{background: "#D0BDB2", border: "none", color: "blue", padding: "15px"}} onClick={() => setDatacores(FilterColor3[0])}></button> : ""}
+                      {FilterColor4[0] ? <button type="button" style={{background: "pink", border: "none", color: "gray", padding: "15px"}} onClick={() => setDatacores(FilterColor4[0])}></button> : ""}
+                      {FilterColor5[0] ? <button type="button" style={{background: "#white", border: "solid 1px", color: "green", padding: "15px"}} onClick={() => setDatacores(FilterColor5[0])}></button> : ""}
+                      {FilterColor6[0] ? <button type="button" style={{background: "red", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor6[0])}></button> : ""}
+                      {FilterColor7[0] ? <button type="button" style={{background: "#3084bd", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor7[0])}></button> : ""}
+                      {FilterColor8[0] ? <button type="button" style={{background: "#175de0", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor8[0])}></button> : ""}
+                      {FilterColor9[0] ? <button type="button" style={{backgroundImage: `url("https://www.shutterstock.com/image-vector/camouflage-seamless-pattern-trendy-style-600nw-1456834667.jpg")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor9[0])}></button> : ""}
+                      {FilterColor10[0] ? <button type="button" style={{background: "#fad60c", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor10[0])}></button> : ""}
+                      {FilterColor11[0] ? <button type="button" style={{background: "#d6ec0e", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor11[0])}></button> : ""}
+                      {FilterColor12[0] ? <button type="button" style={{background: "#31b63c", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor12[0])}></button> : ""}
+                      {FilterColor13[0] ? <button type="button" style={{backgroundImage: `url("https://i.pinimg.com/736x/db/48/79/db4879aa3ebd36d996fe2fba6a3ccbef.jpg")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor13[0])}></button> : ""}
+                      {FilterColor14[0] ? <button type="button" style={{background: "#8c5b32", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor14[0])}></button> : ""}
+                      {FilterColor15[0] ? <button type="button" style={{background: "orange", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor15[0])}></button> : ""}
+                      {FilterColor16[0] ? <button type="button" style={{backgroundImage: `url("https://ae01.alicdn.com/kf/S451958a0dc9b415aa02e94e439d709f9R/Conjunto-de-Shorts-e-Top-sem-mangas-estampa-tropical-das-mulheres-decote-em-V-ver-o.jpg_640x640.jpg_.webp")`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor16[0])}></button> : ""}
+                      {FilterColor17[0] ? <button type="button" style={{background: `#712D52`, border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor17[0])}></button> : ""}
+                      {FilterColor18[0] ? <button type="button" style={{background: "#8fc8ed", border: "none", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor18[0])}></button> : ""}
+                      {FilterColor19[0] ? <button type="button" style={{background: "#87f30b", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor19[0])}></button> : ""}
+                      {FilterColor20[0] ? <button type="button" style={{background: "#2525c0", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor20[0])}></button> : ""}
+                      {FilterColor21[0] ? <button type="button" style={{background: "#884E1E", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor21[0])}></button> : ""}
+                      {FilterColor22[0] ? <button type="button" style={{background: "#113adf", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor22[0])}></button> : ""}
+                      {FilterColor23[0] ? <button type="button" style={{background: "#45a2e0", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor23[0])}></button> : ""}
+                      {FilterColor24[0] ? <button type="button" style={{background: "linear-gradient(90deg, white, black)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor24[0])}></button> : ""}
+                      {FilterColor25[0] ? <button type="button" style={{background: "linear-gradient(90deg, white, #00c3ff)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor25[0])}></button> : ""}
+                      {FilterColor26[0] ? <button type="button" style={{background: "linear-gradient(90deg, white, #FA8327)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor26[0])}></button> : ""}
+                      {FilterColor27[0] ? <button type="button" style={{background: "linear-gradient(90deg, white, #c6707e)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor27[0])}></button> : ""}
+                      {FilterColor28[0] ? <button type="button" style={{background: "linear-gradient(90deg, white, green)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor28[0])}></button> : ""}
+                      {FilterColor29[0] ? <button type="button" style={{background: "linear-gradient(90deg, white, red)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor29[0])}></button> : ""}
+                      {FilterColor30[0] ? <button type="button" style={{background: "linear-gradient(90deg, white, gray)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor30[0])}></button> : ""}
+                      {FilterColor31[0] ? <button type="button" style={{background: "linear-gradient(90deg, white, #5c0aeb)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor31[0])}></button> : ""}
+                      {FilterColor32[0] ? <button type="button" style={{background: "linear-gradient(90deg, white, yellow)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor32[0])}></button> : ""}
+                      {FilterColor33[0] ? <button type="button" style={{background: "linear-gradient(90deg, black,#00c3ff )", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor33[0])}></button> : ""}
+                      {FilterColor34[0] ? <button type="button" style={{background: "linear-gradient(90deg, black, #FA8327)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor34[0])}></button> : ""}
+                      {FilterColor35[0] ? <button type="button" style={{background: "linear-gradient(90deg, black, #c6707e)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor35[0])}></button> : ""}
+                      {FilterColor36[0] ? <button type="button" style={{background: "linear-gradient(90deg, black, green)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor36[0])}></button> : ""}
+                      {FilterColor37[0] ? <button type="button" style={{background: "linear-gradient(90deg, black, red)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor37[0])}></button> : ""}
+                      {FilterColor38[0] ? <button type="button" style={{background: "linear-gradient(90deg, black, gray)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor38[0])}></button> : ""}
+                      {FilterColor39[0] ? <button type="button" style={{background: "linear-gradient(90deg, black, yellow)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor39[0])}></button> : ""}
+                      {FilterColor40[0] ? <button type="button" style={{background: "linear-gradient(90deg, black, #5c0aeb)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor40[0])}></button> : ""}
+                      {FilterColor41[0] ? <button type="button" style={{background: "#D6A52E", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor41[0])}></button> : ""}
+                      {FilterColor42[0] ? <button type="button" style={{background: "#57D8DD", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor42[0])}></button> : ""}
+                      {FilterColor43[0] ? <button type="button" style={{background: "#FF662A", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor43[0])}></button> : ""}
+                      {FilterColor44[0] ? <button type="button" style={{background: "linear-gradient(90deg, black, #F0D5B7)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor44[0])}></button> : ""}
+                      {FilterColor45[0] ? <button type="button" style={{background: "linear-gradient(90deg, white, #F0D5B7)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor45[0])}></button> : ""}
+                      { }
+                    </div>
+                    <br />
+                    </div>
+                    <div className='btnButton'>
+                      <p>
+                        <strong>Tamnho: </strong>
+                        <span>{dataTamanho ? dataTamanho : "Escolha uma tamanho"}</span>
+                      </p>
+                      {divideSizeArrey[0] ? 
+                      <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 5px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[0])}>
+                        {divideSizeArrey[0]}
+                      </button>
+                      : ""
+                      }
+                      {divideSizeArrey[1] ? 
+                      <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 5px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[1])}>
+                        {divideSizeArrey[1]}
+                      </button>
+                      : ""
+                      }
+                      {divideSizeArrey[2] ? 
+                      <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 5px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[2])}>
+                        {divideSizeArrey[2]}
+                      </button>
+                      : ""
+                      }
+                      {divideSizeArrey[3] ? 
+                      <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 5px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[3])}>
+                        {divideSizeArrey[3]}
+                      </button>
+                      : ""
+                      }
+                      {divideSizeArrey[4] ? 
+                        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 5px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[4])}>
+                        {divideSizeArrey[4]}
+                      </button>
+                      : ""
+                      }
+                      {divideSizeArrey[5] ? 
+                        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[5])}>
+                        {divideSizeArrey[5]}
+                      </button>
+                      : ""
+                      }
+                      {divideSizeArrey[6] ? 
+                        <button style={{border: "solid 1px", display: "-ms-flexbox", padding: "0px 8px", marginLeft: "1px"}} onClick={() => setTamanho(divideSizeArrey[6])}>
+                        {divideSizeArrey[6]}
+                      </button>
+                      : ""
+                      }
+                  </div>
+
+                    <div>
+                    </div>
+                  </div>
+                  </div>
+                </ProductDescPrimary>
+                <ProductDescPrimary2>
+                  <div className="divDesc">
+                  <div className="divdescSecudare">
+                <strong>Envio para todo o país</strong>
+                <br />
+                <span>Saiba os prazos de entrega e as formas de envio.</span>
+                <div >
+                  <br />
+                  <LocationOnIcon /> Frete Gratis
+                </div>
+                <br />
+                <div>
+                  <p>
+                    <strong>Disponivel em Estoque</strong> 
+                    <div>
+                      disponivel ({quantity})
+                    </div>
+                    <br /><br />
+                    <strong>Finalize sua compra aqui!</strong>
+                  </p>
+                </div>
+                
+                  <button onClick={() => handlerCartAdd(dataProductFilter[0])} className='btnButton'>Comprar agora</button>
+                  
+                  <button onClick={() => handlerCartAdd2(dataProductFilter[0])} className='btnButton'>Adicionar ao carrinho</button>
+
+                  <br />
+                  <div>
+                    <br /><br />
+                    <p><SwapHorizIcon /> <strong>Devolução Gratis</strong> <br />
+                      <span >Você tem 7 dias a partir da data de recebimento.</span>
+                    </p>
+                  </div>
+                  <br />
+                  <div>
+                    <p><VerifiedUserIcon /> <strong >Compra Garantida</strong> <br />
+                      <span >eceba o produto que está esperando ou devolvemos o dinheiro.</span>
+                    </p>
+                  </div>
+                </div>
+                  </div>
+                </ProductDescPrimary2>
+                <ProductDescSecudanry>
+                  <div className="div2">
+                    <h4><strong>DESCRIÇÃO</strong></h4>
+                    <p>
+                      {description}
+                    </p>
+                  </div>
+                </ProductDescSecudanry>
+              </>     
+            )
+        })
+      }
+         
+      </ProductContainerPai>
+      <br /><br /><br /><br /><br /><br /><br />
+     
+      <ConatinerMain style={{marginTop: "-830px"}}>
+        {dataProductFilter == "" ? <Example/> :
+          dataProductFilter.map(res => {
+
+            const { name, description, quantity, image } = res;
+
+            function over0s() {
+              document.getElementById("logo2").src = `${image[0] || image[1]}`;
+            }
+            function over1s() {
+              document.getElementById("logo").src = `${image[1] || image[2]}`;
+            }
+            function over2s() {
+              document.getElementById("logo2").src = `${image[2] || image[1]}`;
+            }
+          
+            function over3s() {
+              document.getElementById("logo2").src = `${image[3] || image[0]}`;
+            }
+          
+            function over4s() {
+              document.getElementById("logo2").src = `${image[4] || image[1]}`;
+            }
+
+            return (
+              <>
+
+              {/*========================================= Resolution Smartphone ================================*/}
+                <div className="div2">
+                  <img src={image[0]} alt="img" className='formatImg' id="logo2" />
+                  <div className="div3">
+                    <div className='div1' >
+                      <img src={image[0] || image[1]} alt="img0" onMouseOver={() => over0s(over0s)} />
+                    </div>
+                     <div className='div1' >
+                      <img src={image[1] || image[0]} alt="img0" onMouseOver={() => over1s(over1s)} />
+                    </div>
+                     <div className='div1' >
+                      <img src={image[2] || image[0]} alt="img0" onMouseOver={() => over2s(over2s)} />
+                    </div>
+                     <div className='div1' >
+                      <img src={image[3] || image[1]} alt="img0" onMouseOver={() => over3s(over3s)} />
+                    </div>
+                     <div className='div1' >
+                      <img src={image[4] || image[1]} alt="img0" onMouseOver={() => over4s(over4s)} />
                     </div>
                   </div>
                 </div>
@@ -491,5 +738,4 @@ const Descricao = () => {
   );
 }
 
-export default Descricao;
 

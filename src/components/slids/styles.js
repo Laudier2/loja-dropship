@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 export const Coontainer = styled.div`
   background: yellow;
+  width: 100vw;
 
   @media(max-width: 768px) {
     height: 100px;
@@ -84,6 +85,10 @@ export const Coontainer = styled.div`
         cursor: pointer;
         padding: 5px;
         text-decoration: none;
+
+        @media (max-width: 1768px) {
+          font-size: 0.8vw;
+        }
 
         @media (max-width: 768px){
           font-size: 8px;

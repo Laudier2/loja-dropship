@@ -243,7 +243,7 @@ export const DescricaoMini = () => {
 
   return (
     <>
-      <Header/>
+     
       <ProductContainerPai>
       {dataProductFilter == "" ? <Example/> :
           dataProductFilter.map(res => {

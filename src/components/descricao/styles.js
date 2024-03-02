@@ -17,6 +17,7 @@ export const ConatinerMain = styled.div`
 
     & img {
       width: 80px;
+      height: 7vh;
     }
 
     @media (max-width: 768px) {

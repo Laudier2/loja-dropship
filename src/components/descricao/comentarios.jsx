@@ -12,8 +12,6 @@ export const Comentarios = ({dataProduct, idPro}) => {
 	const filterProduct = dataProduct.map(pro => pro.comentarios)
 	const dataProductFilter = filterProduct.filter(productData => (productData.idProduct == idPro))
 
-	console.log(dataProductFilter)
-
     ///https://i.ibb.co/z6z4z4z/comentarios.png
 		
 		const page = {

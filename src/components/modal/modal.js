@@ -37,6 +37,8 @@ export const ConatinerModal = styled.div`
         & input {
           width: 100%;
           margin-top: 10px;
+          border-radius: 6px;
+          border: solid 0.1px;
 
           &:focus {
             outline: none;
@@ -47,6 +49,7 @@ export const ConatinerModal = styled.div`
         & textarea {
           width: 100%;
           margin-top: 10px;
+          border-radius: 6px;
 
            &:focus {
             outline: none;

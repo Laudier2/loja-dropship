@@ -9,8 +9,6 @@ const Modal = () => {
 
   const localId = localStorage.getItem("id")
 
-  console.log(localId);
-
   const [images, setImages] = useState([]);
   const [images0, setImages0] = useState([]);
   const [images1, setImages1] = useState([]);
@@ -23,31 +21,31 @@ const Modal = () => {
 
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
-    console.log(imageList, addUpdateIndex);
+    
     setImages(imageList);
   };
 
   const onChange0 = (imageList, addUpdateIndex) => {
     // data for submit
-    console.log(imageList, addUpdateIndex);
+  
     setImages0(imageList);
   };
 
   const onChange1 = (imageList, addUpdateIndex) => {
     // data for submit
-    console.log(imageList, addUpdateIndex);
+   
     setImages1(imageList);
   };
 
   const onChange2 = (imageList, addUpdateIndex) => {
     // data for submit
-    console.log(imageList, addUpdateIndex);
+ 
     setImages2(imageList);
   };
 
   const onChange3 = (imageList, addUpdateIndex) => {
     // data for submit
-    console.log(imageList, addUpdateIndex);
+  
     setImages3(imageList);
   };
 
@@ -85,8 +83,6 @@ const Modal = () => {
     idProduct: localId
   }
 
-  console.log(dataList)
-
   const handleProcess = async (e) => {
 
     //e.preventDefault()
@@ -97,8 +93,6 @@ const Modal = () => {
         id_comentario: `${response.data.comentario.id}`,
         id_product: `${localId}`
       }
-
-      //console.log(dataRelations)
   
       api.post("/comentariorelation", dataRelations2).then((catego) => {
         toast.success(`O relacionamento foi feito!`)

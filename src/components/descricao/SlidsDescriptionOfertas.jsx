@@ -46,8 +46,6 @@ export function SlidsDescriptionOfertas() {
     carrousel.current.scrollLeft += carrousel.current.offsetWidth
   }
 
-  //console.log(data.products_categories)
-
   return (
     <>
       <Coontainer>

@@ -133,7 +133,7 @@ export function Header() {
             <span>
               <AiFillAlert className="text-white h5 m-1 mb-2 p"/>
             </span>
-            <a href="/">Novidade</a>
+            <a href="/relogio">Novidade</a>
           </li>
           <li>
             <span>

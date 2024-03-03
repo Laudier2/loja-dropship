@@ -64,3 +64,18 @@ export const ConatinerModal = styled.div`
    
   }
 `
+
+export const CFontainerImageProduct = styled.div`
+  margin-top: 10px;
+  margin: auto;
+  
+  & h5 {
+    font-size: 4vw;
+    width: 100%;
+  }
+ 
+  @media screen and (max-width: 768px) {
+    margin-top: 10px;
+   
+  }
+`

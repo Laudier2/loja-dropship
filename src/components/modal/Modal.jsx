@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ImageUploading from 'react-images-uploading';
 import { ImCloudUpload } from "react-icons/im";
-import { ConatinerModal } from './modal';
+import { CFontainerImageProduct, ConatinerModal } from './modal';
 import api from '../../api/api';
 import { toast } from 'react-toastify';
 
@@ -169,7 +169,8 @@ const Modal = () => {
             <textarea type="text" placeholder='Seu nome' name='message' onChange={(e) => onChange6(e.target.value)} />
           </li>
         </ul>
-        <h5>Aqui a baixo coloque imagem do produto</h5>
+        <CFontainerImageProduct>
+        <h5>Imagem do produto</h5>
         <div className='imageName'>
           <ImageUploading
             multiple
@@ -213,7 +214,7 @@ const Modal = () => {
                   </div>
                   </div>
                 ))}
-               
+              
               </div>
             )}
           </ImageUploading>
@@ -261,7 +262,7 @@ const Modal = () => {
                   </div>
                   </div>
                 ))}
-               
+              
               </div>
             )}
           </ImageUploading>
@@ -309,7 +310,7 @@ const Modal = () => {
                   </div>
                   </div>
                 ))}
-               
+              
               </div>
             )}
           </ImageUploading>
@@ -357,12 +358,13 @@ const Modal = () => {
                   </div>
                   </div>
                 ))}
-               
-              </div>
-            )}
-          </ImageUploading>
-          </div>
-          <button type="submit" className='btnEnviar' onClick={handleProcess}>Enviar</button>
+              
+                </div>
+              )}
+            </ImageUploading>
+            </div>
+        </CFontainerImageProduct>
+            <button type="submit" className='btnEnviar' onClick={handleProcess}>Enviar</button>
       </div>
     </ConatinerModal>
   );

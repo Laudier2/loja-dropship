@@ -100,7 +100,6 @@ export default function Footer() {
 					'whatsapp',
 					'twitter',
 					'linkedin',
-					'telegram',
 					'reddit',
 					'line',
 					'instapaper',

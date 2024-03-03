@@ -85,9 +85,11 @@ const Modal = () => {
 
   const handleProcess = async (e) => {
 
-    //e.preventDefault()
+    e.preventDefault()
 
-    await api.post("/comentario", dataList).then((response) => {
+    console.log(dataList)
+
+    /*await api.post("/comentario", dataList).then((response) => {
 
       const dataRelations2 = {
         id_comentario: `${response.data.comentario.id}`,
@@ -97,7 +99,7 @@ const Modal = () => {
       api.post("/comentariorelation", dataRelations2).then((catego) => {
         toast.success(`O relacionamento foi feito!`)
       })
-    })
+    })*/
   }
 
   return (

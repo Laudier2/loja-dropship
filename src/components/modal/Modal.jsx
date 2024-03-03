@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import ImageUploading from 'react-images-uploading';
 import { ImCloudUpload } from "react-icons/im";
 import { CFontainerImageProduct, ConatinerModal } from './modal';
-import api from '../../api/api';
-import { toast } from 'react-toastify';
+//import api from '../../api/api';
+//import { toast } from 'react-toastify';
 
 const Modal = () => {
 

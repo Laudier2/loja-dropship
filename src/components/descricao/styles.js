@@ -61,7 +61,10 @@ export const ConatinerMain = styled.div`
         display: flex;
         margin: auto;
       }
-
+      
+      & h4 {
+        font-size: 2vw;
+      }
     }
 
     @media (max-width: 1350px) {
@@ -142,7 +145,6 @@ export const ConatinerMain = styled.div`
 export const ContainerDesc = styled.div`
 
 & .efctButton {
-    background: rgba(128, 128, 128, 0.452);
     padding: 3px;
     border-radius: 5px;
     margin-top: -15px;
@@ -481,14 +483,14 @@ export const ContainerDesc = styled.div`
   }
 
   & button {
-    background-color: whitesmoke;
-    border-radius: 6px;
+    margin: 2px;
+    border: none;
     font-weight: bold;
-    margin: 3px;
-    padding: 5px;
+    border-radius: 6px;
 
     &:hover {
-      background-color: rgb(188, 204, 204);
+      background: #FDD201;
+      box-shadow: 0 0 0 0.3px black;
     }
   }
 }
@@ -566,8 +568,15 @@ export const ContainerSobre = styled.div`
     width: 80%;
     margin: 10%;
 
+    & h4 {
+      font-size: 5vw;
+      font-weight: bold;
+    }
+
     & p {
       text-align: justify;
+      font-size: 2.8vw;
+  
     }
 
   }

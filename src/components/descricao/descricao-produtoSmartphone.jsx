@@ -721,7 +721,7 @@ export const DescricaoMini = () => {
                 </div>
                 </ContainerDesc> 
                 <ContainerSobre>
-                  <h4><strong>DESCRIÇÃO</strong></h4>
+                  <h4>DESCRIÇÃO</h4>
                   <p>
                     {description}
                   </p>

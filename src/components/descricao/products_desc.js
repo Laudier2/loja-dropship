@@ -189,6 +189,7 @@ export const ProductDescSecudanry = styled.div`
 
   @media (max-width: 780px) {
     display: none;
+    
   }
 `
 

@@ -47,7 +47,7 @@ export const Comentarios = ({dataProduct, idPro}) => {
 
 							<button
 								type="button"
-								class="btnButtonModal"
+								className="btnButtonModal"
 								data-bs-toggle="modal"
 								data-bs-target="#exampleModal"
 			

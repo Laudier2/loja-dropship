@@ -20,7 +20,7 @@ export default function SlidsProducts() {
 							<img src="banner01.gif" className="d-block w-100" alt="img"/>
 						</div>
 						<div className="carousel-item">
-							<img src="banner02.gif" className="d-block w-100" alt="img"/>
+							<img src="banner_0.gif" className="d-block w-100" alt="img"/>
 						</div>
 						<div className="carousel-item">
 							<img src="banner03.gif" className="d-block w-100" alt="img"/>

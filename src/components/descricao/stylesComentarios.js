@@ -19,29 +19,6 @@ export const ConatinerComentarios = styled.div`
     }
   }
 
-  & .btnButtonModal {
-    padding: 8px;
-    position: absolute;
-    margin-left: 150px;
-    background: aqua;
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-
-    &:hover {
-      background: #00FF00;
-      box-shadow: 0 0 0 0.px black;
-      padding: 12px;
-    }
-
-    @media (max-width: 768px) {
-      margin-left: -130px;
-      font-size: 2.3vw;
-      margin-top: 30px;
-    }
-  }
-
   & span {
     margin-left: 10px;
     
@@ -59,7 +36,7 @@ export const ConatinerComentarios = styled.div`
     @media(max-width: 768px) {
       font-size: 5vw;
       position: absolute;
-      margin-top: -2px;
+      margin-top: 1170px;
       margin-left: -1px;
     }
   }

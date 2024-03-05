@@ -20,6 +20,17 @@ export const ConatinerMain = styled.div`
       height: 7vh;
     }
 
+    @media (max-width: 968px) {
+      width: 40px;
+      margin-left: 30%;
+      
+      & img {
+        width: 40px;
+        margin-top: 2px;
+      }
+
+    }
+
     @media (max-width: 768px) {
       width: 40px;
       margin-left: 30%;
@@ -51,22 +62,6 @@ export const ConatinerMain = styled.div`
       width: 50%;
     }
 
-    @media (max-width: 768px) {
-      width: 0%;
-      margin-left: 0%;
-      margin-top: 0%;
-      
-      & img {
-        width: 80%;
-        display: flex;
-        margin: auto;
-      }
-      
-      & h4 {
-        font-size: 2vw;
-      }
-    }
-
     @media (max-width: 1350px) {
       & .formatImg {
         height: 40vh;
@@ -75,10 +70,24 @@ export const ConatinerMain = styled.div`
     }
 
     @media (max-width: 768px) {
-      width: 100%;
+      width: 90%;
+      margin-left: 0%;
+      margin-top: 30px;
+      
+      & img {
+        width: 80%;
+        display: flex;
+        margin: auto;
+      }
 
       & .formatImg {
-        height: 40vh;
+        width: 100vw;
+        height: 30vh;
+        margin-left: 50px;
+      }
+      
+      & h4 {
+        font-size: 2vw;
       }
     }
   }
@@ -461,6 +470,7 @@ export const ContainerDesc = styled.div`
   & h1 {
     font-weight: bold;
     font-size: 2vw;
+    
   }
 
   @media (max-width: 768px) {
@@ -719,7 +729,7 @@ export const Coontainer = styled.div`
 
         @media(max-width: 780px) {
           width: 95%;
-
+          
           & img {
             width: 100%;
             height: 10vh;
@@ -880,7 +890,7 @@ export const Coontainer = styled.div`
   @media (max-width: 768px){
      opacity: 0;
      width: 40px;
-     margin-top: -248px;
+     margin-top: 240px;
    }
 }
 
@@ -902,6 +912,8 @@ export const ContainerComentario = styled.div`
     @media (max-width: 768px) {
       width: 10%;
       font-size: 2.5vw;
+      margin-top: 20px;
+      
     }
   }
 
@@ -913,6 +925,8 @@ export const ContainerComentario = styled.div`
 
     @media (max-width: 768px) {
       font-size: 2.5vw;
+      margin-top: 20px;
+      position: absolute;
     }
   }
 
@@ -938,6 +952,44 @@ export const ContainerComentario = styled.div`
       margin: 3px;
       border-radius: 8px;
     }
+  }
+
+  @media (max-width: 768px) {
+
+    & span {
+      margin-top: 1180px;
+    }
+    
+    & h1 {
+      margin-top: 1180px;
+    }
+
+    & .btnButtonModal {
+      padding: 8px;
+      position: absolute;
+      margin-left: 150px;
+      background: aqua;
+      outline: none;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+
+      &:hover {
+        background: #00FF00;
+        box-shadow: 0 0 0 0.px black;
+        padding: 12px;
+      }
+
+      @media (max-width: 768px) {
+        margin-left: -90px;
+        font-size: 2.6vw;
+        margin-top: 1202px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 950px;
   }
   
 `

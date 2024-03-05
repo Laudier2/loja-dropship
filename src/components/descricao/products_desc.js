@@ -31,7 +31,15 @@ export const ProductDescImage = styled.div`
   }
   
   @media screen and (max-width: 768px) {
-    display: none;
+    margin-top: -50px;
+
+    & img {
+      width: 70vw;
+      //object-fit: cover;
+      height: 40vh;
+      margin-left: 40px;
+      margin-top: 20px;
+    }
   }
 
 `
@@ -56,13 +64,22 @@ export const ProductImageMini = styled.div`
         width: 8vw;
         height: 8vw;
       }
-
       @media screen and (max-width: 768px) {
         width: 15vw;
         height: 15vw;
-        display: none;
       }
+
     }
+  }
+
+  @media (max-width: 896px) {
+    margin-top: -48px;
+    margin-left: -15px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: -30px;
+    margin-left: -20px;
   }
 `
 export const ProductDescPrimary = styled.div`
@@ -91,7 +108,11 @@ export const ProductDescPrimary = styled.div`
   }
 
   @media (max-width: 780px) {
-    display: none;
+    margin-top: 300px;
+    margin-left: 0px;
+    position: absolute;
+    width: 80%;
+    
   }
 
   & button {
@@ -112,6 +133,10 @@ export const ProductDescPrimary = styled.div`
     & h5 {
       & strong {
         font-size: 1.2vw;
+
+        @media screen and (max-width: 768px) {
+          font-size: 4.2vw;
+        }
       }
     }
   }
@@ -141,7 +166,10 @@ export const ProductDescPrimary2 = styled.div`
   }
 
   @media (max-width: 780px) {
-    display: none;
+    margin-top: 948px;
+    margin-left: 0px;
+    position: absolute;
+    width: 80%;
   }
 
   & button {
@@ -188,8 +216,10 @@ export const ProductDescSecudanry = styled.div`
   }
 
   @media (max-width: 780px) {
-    display: none;
-    
+    margin-top: 1250px;
+    margin-left: 0px;
+   text-align: justify;
+    width: 90%;
   }
 `
 

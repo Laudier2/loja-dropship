@@ -45,7 +45,7 @@ export const DescricaoMini = () => {
 
   });
   
-  const [removeF, setRemovef] = useState([])
+  //const [removeF, setRemovef] = useState([])
 
   const navigate = useNavigate()
 
@@ -140,7 +140,7 @@ export const DescricaoMini = () => {
   let aumento = priceFilter * percentual;
   let novo_price = priceFilter - aumento;
 
-  const addValue = () => {
+ /* const addValue = () => {
 
     const n = 1
     setRemovef(n)
@@ -154,7 +154,7 @@ export const DescricaoMini = () => {
     localStorage.removeItem('favorit')
   }
 
-  const existFavorit = localStorage.getItem('favorit')
+  const existFavorit = localStorage.getItem('favorit')*/
   //imagem de meio de pagamentos bandeiras
   const imgCart = [
 		{img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png"},

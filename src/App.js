@@ -35,6 +35,7 @@ import { Eletronica } from "./components/categorys/Eletronica";
 import { Smartphone } from "./components/categorys/Smartphone";
 import { ConatinerDesc } from "./components/descricao/containerDescription";
 
+// Conexão com google Analytct
 const TRACKING_ID = "G-YJVYCLYTD3" 
 
 ReactGA.initialize(TRACKING_ID)

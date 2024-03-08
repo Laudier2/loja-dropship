@@ -480,15 +480,14 @@ export const DescricaoMini = () => {
                     </p>
                   </div>
                 </ProductDescSecudanry>
+             
               </>     
             )
         })
       }
          
       </ProductContainerPai>
-
-      
-      <Comentarios dataProduct={products} idPro={localId}/>
+        <Comentarios dataProduct={products} idPro={localId}/>
       <SlidsDescriptionOfertas/>
       <Footer/>
     </>

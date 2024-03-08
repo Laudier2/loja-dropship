@@ -36,7 +36,7 @@ export const ContainerFooter = styled.div`
   }
 
   & span {
-    position: absolute;
+    
     margin-top: -35px;
     margin-left: 50.2%;
     font-weight: bold;

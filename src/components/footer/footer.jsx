@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { ContainerFooter, ContainerFooter1, ContainerFooter2 } from './styles';
 import { Link } from 'react-router-dom';
 import emailjs from "@emailjs/browser"
-
 import {ShareSocial} from 'react-share-social'
 import { toast } from 'react-toastify';
 //import { Height } from '@material-ui/icons';
@@ -65,8 +64,9 @@ export default function Footer() {
 				<Link to="/">
 					<h2>StylesTop</h2>
 				</Link>
-				<span>Receba novidades em primeira mão, deixe seu e-mail aqui!</span>
+				
 				<form onSubmit={sendEmail} name="contact" nelify>
+				<h5>Receba novidades em primeira mão, deixe seu e-mail aqui!</h5>
 					<input type="text" placeholder='Nome' name='name' onChange={(e) => setName(e.target.value)} />
 					<input type="email" placeholder='E-mail' name='email' onChange={(e) => setEmail(e.target.value)} />
 					<input type="submit" value="Enviar" className='btnInput' />

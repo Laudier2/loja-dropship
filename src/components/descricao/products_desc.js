@@ -108,7 +108,7 @@ export const ProductDescPrimary = styled.div`
   }
 
   @media (max-width: 780px) {
-    margin-top: 300px;
+    margin-top: 85%;
     margin-left: 0px;
     position: absolute;
     width: 80%;
@@ -128,14 +128,11 @@ export const ProductDescPrimary = styled.div`
   }
 
   & .divDesc {
-
-  margin: auto;
     & h5 {
       & strong {
         font-size: 1.2vw;
-
         @media screen and (max-width: 768px) {
-          font-size: 4.2vw;
+          font-size: 5.2vw;
         }
       }
     }
@@ -166,7 +163,7 @@ export const ProductDescPrimary2 = styled.div`
   }
 
   @media (max-width: 780px) {
-    margin-top: 948px;
+    margin-top: 918px;
     margin-left: 0px;
     position: absolute;
     width: 80%;
@@ -188,6 +185,7 @@ export const ProductDescPrimary2 = styled.div`
   }
 
   & .divDesc {
+    margin-top: 10px;
     & h5 {
       & strong {
         font-size: 2vw;

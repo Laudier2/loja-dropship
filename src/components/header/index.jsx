@@ -95,7 +95,7 @@ export function Header() {
         }
         </div>
       </DivContainer>
-      <DivContainerHederFixed></DivContainerHederFixed>
+      
         <Buttons>
           <div onClick={handleCartClick}>
             <b className="bg">{length}</b>

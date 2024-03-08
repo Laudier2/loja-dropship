@@ -1,8 +1,7 @@
 /* eslint-disable eqeqeq */
 import { GoStarFill } from "react-icons/go"
-import { ConatinerComentarios } from "./stylesComentarios"
+import { ConatinerComentarios, ContainerComentario } from "./stylesComentarios"
 import { TiStarHalfOutline } from "react-icons/ti"
-import { ContainerComentario } from "./styles"
 import Modal from "../modal/Modal"
 //import ReactImageMagnify from "react-image-magnify";
 //Novas mudanças

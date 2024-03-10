@@ -29,7 +29,7 @@ export const Comentarios = ({dataProduct, idPro}) => {
 	
 				<section>
 			{dataProductFilter.map(res => {
-				
+				//Destruct arrey
 				const { name, image, message, imgName, estrela} = res
 				
 				return (

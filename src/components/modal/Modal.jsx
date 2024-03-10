@@ -114,7 +114,7 @@ const Modal = () => {
         idProduct: localId
       }
 
-      /*await api.post("/comentario", dataListPronto).then((response) => {
+      await api.post("/comentario", dataListPronto).then((response) => {
 
         const dataRelations2 = {
           id_comentario: `${response.data.comentario.id}`,
@@ -124,7 +124,7 @@ const Modal = () => {
         api.post("/comentariorelation", dataRelations2).then((catego) => {
           toast.success(`O relacionamento foi feito!`)
         })
-      })*/
+      })
 
       //console.log(dataList.image[0][0].data_url)
       console.log(dataListPronto)

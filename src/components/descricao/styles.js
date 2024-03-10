@@ -654,9 +654,16 @@ export const ProductOfertas = styled.div`
 //Slids de Ofertas
 
 export const Coontainer = styled.div`
-  margin: 0 auto;
+  width: 100%;
+  margin-top: 1100px;
+
+  @media (max-width: 768px) {
+    margin-top: 2200px;
+  }
 
   & .carousel {
+    width: 100%;
+    margin: auto;
     display: flex;
     scroll-behavior: smooth;
     overflow-x: auto;
@@ -845,6 +852,7 @@ export const Coontainer = styled.div`
       margin: 5px;
     }
   }
+  
 }
 
   & .buttons1 {
@@ -898,5 +906,14 @@ export const Coontainer = styled.div`
   border: none;
   background: transparent
 }
+
+
+`
+
+export const CarouselProduct = styled.div`
+  width: 100%;
+  margin: auto;
+  display: flex;
+  margin-top: 10px;
 `
 

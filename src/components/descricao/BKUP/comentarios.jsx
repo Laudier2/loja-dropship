@@ -1,6 +1,6 @@
 /* eslint-disable eqeqeq */
 import { GoStarFill } from "react-icons/go"
-import { ConatinerComentarios, ContainerComentario } from "./stylesComentarios"
+import { ContainerComentario } from "./stylesComentarios"
 import { TiStarHalfOutline } from "react-icons/ti"
 import Modal from "../modal/Modal"
 //import ReactImageMagnify from "react-image-magnify";
@@ -25,101 +25,101 @@ export const Comentarios = ({dataProduct, idPro}) => {
 			<>
 				{dataProduct ? 
 				
-				<ConatinerComentarios>
+				<>
 	
 				<section>
-			{dataProductFilter.map(res => {
-				//Destruct arrey
-				const { name, image, message, imgName, estrela} = res
+					{dataProductFilter.map(res => {
 				
-				return (
-					<ContainerComentario>
-						<span>
-							<p>{estrela - 0.2}</p>
-								<GoStarFill className='text-warning estrelas3'/>
-								<GoStarFill className='text-warning estrelas3'/>
-								<GoStarFill className='text-warning estrelas3'/>
-								<GoStarFill className='text-warning estrelas3'/>
-								<TiStarHalfOutline className='text-warning estrelas4'/>
-						</span>
-							<h1>Avaliações Do Produto</h1>
-
-							<button
-								type="button"
-								className="btnButtonModal"
-								data-bs-toggle="modal"
-								data-bs-target="#exampleModal"
-			
-							>
-								Deixe seu comentario
-							</button>
-
-							<div
-								class="modal fade"
-								id="exampleModal"
-								tabindex="-1"
-								aria-labelledby="exampleModalLabel"
-								aria-hidden="true"
-							>
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5
-												class="modal-title titolo2"
-												id="exampleModalLabel"
-											>
-												Dados do Usuário
-											</h5>
-											<button
-												type="button"
-												class="btn-close"
-												data-bs-dismiss="modal"
-												aria-label="Close"
-												className="btn-outline-secondary"
-											></button>
-										</div>
-										<div class="modal-body text-dark">
-											<Modal dados={page} />
-										</div>
-										<div class="modal-footer">
-											<button
-												type="button"
-												class="btn btn-outline-secondary btn-block "
-												data-bs-dismiss="modal"
-											>
-												Fecha
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
+							const { name, image, message, imgName, estrela} = res
 							
-							<div>
-								<img src={imgName} alt="img" className="imgName" />
-								<h5>{name} <br />
-									<GoStarFill className='text-warning estrelas2'/>
-									<GoStarFill className='text-warning estrelas2'/>
-									<GoStarFill className='text-warning estrelas2'/>
-									<GoStarFill className='text-warning estrelas2'/>
-									<TiStarHalfOutline className='text-warning estrelas'/>
-								</h5>
-								</div>
-								<div>
-										<p>{message}</p>
-								</div>
-								<div>
-									{image[0] ? <img src={image[0]} alt="comentarios" className="imgList" /> : ""}
-									{image[1] ? <img src={image[1]} alt="comentarios" className="imgList" /> : ""}
-									{image[2] ? <img src={image[2]} alt="comentarios" className="imgList" /> : ""}
-									{image[3] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
-									{image[4] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
-									{image[5] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
-								</div>
-							</ContainerComentario>
-						)
-					})}
+							return (
+								<ContainerComentario>
+									<span>
+										<p>{estrela - 0.2}</p>
+											<GoStarFill className='text-warning estrelas3'/>
+											<GoStarFill className='text-warning estrelas3'/>
+											<GoStarFill className='text-warning estrelas3'/>
+											<GoStarFill className='text-warning estrelas3'/>
+											<TiStarHalfOutline className='text-warning estrelas4'/>
+									</span>
+										<h1>Avaliações Do Produto</h1>
+
+										<button
+											type="button"
+											className="btnButtonModal"
+											data-bs-toggle="modal"
+											data-bs-target="#exampleModal"
+						
+										>
+											Deixe seu comentario
+										</button>
+
+										<div
+											class="modal fade"
+											id="exampleModal"
+											tabindex="-1"
+											aria-labelledby="exampleModalLabel"
+											aria-hidden="true"
+										>
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5
+															class="modal-title titolo2"
+															id="exampleModalLabel"
+														>
+															Dados do Usuário
+														</h5>
+														<button
+															type="button"
+															class="btn-close"
+															data-bs-dismiss="modal"
+															aria-label="Close"
+															className="btn-outline-secondary"
+														></button>
+													</div>
+													<div class="modal-body text-dark">
+														<Modal dados={page} />
+													</div>
+													<div class="modal-footer">
+														<button
+															type="button"
+															class="btn btn-outline-secondary btn-block "
+															data-bs-dismiss="modal"
+														>
+															Fecha
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div>
+											<img src={imgName} alt="img" className="imgName" />
+											<h5>{name} <br />
+												<GoStarFill className='text-warning estrelas2'/>
+												<GoStarFill className='text-warning estrelas2'/>
+												<GoStarFill className='text-warning estrelas2'/>
+												<GoStarFill className='text-warning estrelas2'/>
+												<TiStarHalfOutline className='text-warning estrelas'/>
+											</h5>
+											</div>
+											<div>
+													<p>{message}</p>
+											</div>
+											<div>
+												{image[0] ? <img src={image[0]} alt="comentarios" className="imgList" /> : ""}
+												{image[1] ? <img src={image[1]} alt="comentarios" className="imgList" /> : ""}
+												{image[2] ? <img src={image[2]} alt="comentarios" className="imgList" /> : ""}
+												{image[3] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
+												{image[4] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
+												{image[5] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
+											</div>
+										</ContainerComentario>
+									)
+								})}
 							</section>
-					</ConatinerComentarios>
+					</>
 					: <p style={{display: "flex",  margin: "auto", width: 50}}>Carregando...</p>
 			}
 			</>

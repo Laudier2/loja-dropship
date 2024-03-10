@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const CoontainerSlids = styled.div`
+  width: 100%;
   margin: 0 auto;
   background: yellow;
 
@@ -15,6 +16,7 @@ export const CoontainerSlids = styled.div`
     }
 
     & .item {
+      width: 100%;
       background-color: transparent;
       margin: 10px;
       padding: 10px;
@@ -96,7 +98,7 @@ export const CoontainerSlids = styled.div`
     cursor: pointer;
     opacity: 1;
     margin-left: 0%;
-    margin-top: 22px;
+    margin-top: 1px;
 
    @media (max-width: 768px){
     margin-top: -40px;
@@ -121,7 +123,7 @@ export const CoontainerSlids = styled.div`
   cursor: pointer;
   opacity: 1;
   margin-right: 0%;
-  margin-top: -185px;
+  margin-top: -178px;
 
   @media (max-width: 768px) {
     margin-top: -130px;

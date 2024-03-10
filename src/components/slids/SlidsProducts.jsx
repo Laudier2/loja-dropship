@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContainerSlid } from './stylend'
+import { ContainerSlid } from './slidsProducts'
 
 export default function SlidsProducts() {
   return (

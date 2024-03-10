@@ -177,6 +177,7 @@ export const buttonContainer = styled.button`
 `
 
 export const ContainerSlid = styled.div`
+width: 100%;
 margin-top: 2px;
 
   & div {

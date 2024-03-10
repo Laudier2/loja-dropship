@@ -33,7 +33,7 @@ import { Products } from "./components/products/Products"
 import { Bone } from "./components/categorys/Bone";
 import { Eletronica } from "./components/categorys/Eletronica";
 import { Smartphone } from "./components/categorys/Smartphone";
-import { ConatinerDesc } from "./components/descricao/containerDescription";
+import { DescricaoMini } from "./components/descricao/descricao-produtoSmartphone";
 
 // Conexão com google Analytct
 const TRACKING_ID = "G-YJVYCLYTD3" 
@@ -70,7 +70,7 @@ function App() {
 
     {
       path: "/desc",
-      element: <ConatinerDesc />,
+      element: <DescricaoMini />,
     },
 
     {

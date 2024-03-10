@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Coontainer } from "./styles";
+import { Coontainer } from "./slidsMenu";
 import axios from "axios";
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md'
 import { Link } from "react-router-dom";

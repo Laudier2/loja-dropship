@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const ProductContainerPai = styled.div`
-  width: 90%;
+  width: 90vw;
   height: 100vh;
   margin: auto;
   display: flex;
-  margin-top: 50px;
+
 
   display: grid;
   grid-template-areas: "l r" "f f";
@@ -31,14 +31,14 @@ export const ProductDescImage = styled.div`
   }
   
   @media screen and (max-width: 768px) {
-    margin-top: -1600px;
+  
 
     & img {
-      width: 80vw;
+      width: 70vw;
       //object-fit: cover;
       height: 40vh;
       margin-left: 40px;
-      margin-top: 20px;
+    
     }
   }
 
@@ -64,22 +64,21 @@ export const ProductImageMini = styled.div`
         width: 8vw;
         height: 8vw;
       }
-
-      @media screen and (max-width: 968px) {
-        width: 12vw;
-        height: 12vw;
-      }
-
       @media screen and (max-width: 768px) {
-        width: 12vw;
-        height: 12vw;
+        width: 15vw;
+        height: 15vw;
       }
 
     }
   }
 
+  @media (max-width: 896px) {
+   
+    margin-left: -15px;
+  }
+
   @media screen and (max-width: 768px) {
-    margin-top: -1560px;
+  
     margin-left: -20px;
   }
 `
@@ -109,7 +108,6 @@ export const ProductDescPrimary = styled.div`
   }
 
   @media (max-width: 780px) {
-    margin-top: 300px;
     margin-left: 0px;
     width: 80%;
     
@@ -166,7 +164,7 @@ export const ProductDescPrimary2 = styled.div`
   }
 
   @media (max-width: 780px) {
-    margin-top: 948px;
+  
     margin-left: 0px;
     width: 80%;
   }
@@ -196,10 +194,10 @@ export const ProductDescPrimary2 = styled.div`
 `
 export const ProductDescSecudanry = styled.div`
   grid-area: f;
-  margin-top: 230px;
+ 
 
   @media (max-width: 1750px) {
-    margin-top: 80px;
+   
   }
 
   @media (max-width: 1350px) {
@@ -207,7 +205,7 @@ export const ProductDescSecudanry = styled.div`
   }
 
   @media (max-width: 1171px) {
-    margin-top: 50px;
+  
   }
 
   @media (max-width: 970px) {
@@ -215,19 +213,19 @@ export const ProductDescSecudanry = styled.div`
   }
 
   @media (max-width: 780px) {
-    margin-top: 50px;
+  
     margin-left: 0px;
-   text-align: justify;
+    text-align: justify;
     width: 90%;
   }
 `
 
 export const ProductDescAvaliation = styled.div`
   grid-area: f;
-  margin-top: 150px;
+ 
 
   @media (max-width: 1750px) {
-    margin-top: 250px;
+  
   }
 
   @media (max-width: 1350px) {
@@ -235,7 +233,7 @@ export const ProductDescAvaliation = styled.div`
   }
 
   @media (max-width: 1171px) {
-    margin-top: 350px;
+  
   }
 
   @media (max-width: 970px) {

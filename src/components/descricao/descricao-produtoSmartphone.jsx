@@ -14,15 +14,19 @@ import { FaCreditCard } from "react-icons/fa";
 import { TiStarHalfOutline } from "react-icons/ti";
 import { GoStarFill } from "react-icons/go";
 import { Header } from '../header';
-import { SlidsDescriptionOfertas } from './SlidsDescriptionOfertas';
-import Footer from '../footer/footer';
+//import { SlidsListProducts } from '../slids/SlidsListProducts';
+import Footer from './footer/footer';
 //import { FaRegHeart, FaHeart } from "react-icons/fa";
 //import { LuShare2 } from "react-icons/lu";
 import { LoadingPage } from '../products/products';
-import { Comentarios } from './comentarios';
+//import { Comentarios } from './comentarios';
 import { useQuery } from 'react-query';
 import api from '../../api/api';
 import { ProductContainerPai, ProductDescImage, ProductDescPrimary, ProductDescPrimary2, ProductDescSecudanry, ProductImageMini } from './products_desc';
+import Modal from '../modal/Modal';
+import { ContainerComentario } from './stylesComentarios';
+//import { CarouselProduct } from "./styles"
+import { SlidsDescriptionOfertas } from './SlidsDescriptionOfertas';
 
 
 export const DescricaoMini = () => {
@@ -73,6 +77,9 @@ export const DescricaoMini = () => {
   
   const sizeFilter = dataProductFilter.map(pri => pri.size)
   const divideSizeArrey = {...sizeFilter[0]}
+
+  const filterProductComente = products.map(pro => pro.comentarios)
+	const dataProductFilterComente = filterProductComente.filter(productData => (productData.idProduct == localId))
 
   const dispatch = useDispatch()
 
@@ -479,16 +486,99 @@ export const DescricaoMini = () => {
                       {description}
                     </p>
                   </div>
+                  <div>
+                  {dataProductFilterComente.map(rescoment => {
+				
+                    const { name, image, message, imgName } = rescoment
+                    
+                    return (
+                      <ContainerComentario>
+                        
+                        <button
+                            type="button"
+                            className="btnButtonModal"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
+                  
+                          >
+                            Deixe seu comentario
+                          </button>
+                          <h1>Avaliações Do Produto</h1>
+
+                          <div
+                            class="modal fade"
+                            id="exampleModal"
+                            tabindex="-1"
+                            aria-labelledby="exampleModalLabel"
+                            aria-hidden="true"
+                          >
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5
+                                    class="modal-title titolo2"
+                                    id="exampleModalLabel"
+                                  >
+                                    Dados do Usuário
+                                  </h5>
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                    className="btn-outline-secondary"
+                                  ></button>
+                                </div>
+                                <div class="modal-body text-dark">
+                                  <Modal />
+                                </div>
+                                <div class="modal-footer">
+                                  <button
+                                    type="button"
+                                    class="btn btn-outline-secondary btn-block "
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Fecha
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div>
+                            <img src={imgName} alt="img" className="imgName" />
+                            <h5>{name} <br />
+                              <GoStarFill className='text-warning estrelas2'/>
+                              <GoStarFill className='text-warning estrelas2'/>
+                              <GoStarFill className='text-warning estrelas2'/>
+                              <GoStarFill className='text-warning estrelas2'/>
+                              <TiStarHalfOutline className='text-warning estrelas'/>
+                            </h5>
+                            </div>
+                            <div>
+                                <p>{message}</p>
+                            </div>
+                            <div>
+                              {image[0] ? <img src={image[0]} alt="comentarios" className="imgList" /> : ""}
+                              {image[1] ? <img src={image[1]} alt="comentarios" className="imgList" /> : ""}
+                              {image[2] ? <img src={image[2]} alt="comentarios" className="imgList" /> : ""}
+                              {image[3] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
+                              {image[4] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
+                              {image[5] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
+                            </div>
+                          </ContainerComentario>
+                        )
+                      })}
+                  </div>
                 </ProductDescSecudanry>
-             
+                
               </>     
             )
         })
       }
-         
+      
       </ProductContainerPai>
-        <Comentarios dataProduct={products} idPro={localId}/>
-      <SlidsDescriptionOfertas/>
+      
       <Footer/>
     </>
   );

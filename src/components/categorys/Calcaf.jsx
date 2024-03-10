@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import api from '../../api/api';
 import { Header } from '../header';
-import { Slids } from '../slids/slids';
+import { SlidsListProducts } from '../slids/SlidsListProducts';
 import { SlidsMenu } from '../slids/SlidsMenu';
 import Footer from '../footer/footer';
 
@@ -79,7 +79,7 @@ export const Calcaf = () => {
   return (
     <>
     <Header/>
-    <Slids />
+    <SlidsListProducts />
     <SlidsMenu/>
     
     {categoroy == "" && categoroyData == "" ? <Example /> : 

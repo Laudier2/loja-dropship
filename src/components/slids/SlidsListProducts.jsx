@@ -1,12 +1,12 @@
 import { useEffect, useState, useRef } from "react";
-import { CoontainerSlids } from "./stylesSlid";
+import { CoontainerSlids } from "./slidsListProducts";
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md'
 import { Link } from "react-router-dom";
 import api from "../../api/api";
 //import { useDispatch } from "react-redux";
 //import { addDecription } from "../../redux/cart/cart";
 
-export const Slids = () => {
+export const SlidsListProducts = () => {
 
   const [ data, setData ] = useState([])
   const carrousel = useRef(null)

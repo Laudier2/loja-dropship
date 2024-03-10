@@ -12,7 +12,7 @@ import { Header } from '../header';
 import SlidsProducts from '../slids/SlidsProducts';
 import { SlidsMenu } from '../slids/SlidsMenu';
 import Footer from '../footer/footer';
-import { Slids } from '../slids/slids';
+import { SlidsListProducts } from '../slids/SlidsListProducts';
 //import { useDispatch } from 'react-redux';
 //import { addDecription } from '../../redux/cart/cart';
 
@@ -167,7 +167,7 @@ export const Products = () => {
     <SlidsMenu/>
     {categoroy == "" && categoroyTenis == "" && categoryShort == "" && categoroyCamisetaF == "" && categoroyVestido == "" && categoroyShortF == "" && categoryConjunto == "" && categoroyFone ? <Example /> : 
     <div>
-      <Slids/>
+      <SlidsListProducts/>
       <ProductProd>
         <section>
         
@@ -346,7 +346,7 @@ export const Products = () => {
       
     </ProductProd>
 
-    <Slids/>
+    <SlidsListProducts/>
     
     <ProductProd>
         <section>

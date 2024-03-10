@@ -224,6 +224,26 @@ export const ProductDescSecudanry = styled.div`
   grid-area: f;
   margin-top: 230px;
 
+  & .btnButtonModal {
+      margin-left: 70%;
+      padding: 8px;
+      background: aqua;
+      outline: none;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 60px;
+
+      &:hover {
+        background: yellow;
+        box-shadow: 0 0 0 0.3px black;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 2.6vw;
+      }
+    }
+
   @media (max-width: 1750px) {
     margin-top: 80px;
   }

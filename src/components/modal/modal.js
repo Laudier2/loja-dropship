@@ -73,7 +73,7 @@ export const CFontainerImageProduct = styled.div`
   margin: auto;
   
   & h5 {
-    font-size: 4vw;
+    font-size: 1vw;
     width: 100%;
   }
  

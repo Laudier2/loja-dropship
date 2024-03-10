@@ -487,63 +487,62 @@ export const DescricaoMini = () => {
                     </p>
                   </div>
                   <div>
+                  <button
+                    type="button"
+                    className="btnButtonModal"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+          
+                  >
+                    Deixe seu comentario
+                  </button>
+                  <h1>Avaliações Do Produto</h1>
+
+                  <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5
+                            class="modal-title titolo2"
+                            id="exampleModalLabel"
+                          >
+                            Dados do Usuário
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                            className="btn-outline-secondary"
+                          ></button>
+                        </div>
+                        <div class="modal-body text-dark">
+                          <Modal />
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary btn-block "
+                            data-bs-dismiss="modal"
+                          >
+                            Fecha
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   {dataProductFilterComente.map(rescoment => {
 				
                     const { name, image, message, imgName } = rescoment
                     
                     return (
                       <ContainerComentario>
-                        
-                        <button
-                            type="button"
-                            className="btnButtonModal"
-                            data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"
-                  
-                          >
-                            Deixe seu comentario
-                          </button>
-                          <h1>Avaliações Do Produto</h1>
-
-                          <div
-                            class="modal fade"
-                            id="exampleModal"
-                            tabindex="-1"
-                            aria-labelledby="exampleModalLabel"
-                            aria-hidden="true"
-                          >
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5
-                                    class="modal-title titolo2"
-                                    id="exampleModalLabel"
-                                  >
-                                    Dados do Usuário
-                                  </h5>
-                                  <button
-                                    type="button"
-                                    class="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"
-                                    className="btn-outline-secondary"
-                                  ></button>
-                                </div>
-                                <div class="modal-body text-dark">
-                                  <Modal />
-                                </div>
-                                <div class="modal-footer">
-                                  <button
-                                    type="button"
-                                    class="btn btn-outline-secondary btn-block "
-                                    data-bs-dismiss="modal"
-                                  >
-                                    Fecha
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
                           
                           <div>
                             <img src={imgName} alt="img" className="imgName" />

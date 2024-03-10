@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import ImageUploading from 'react-images-uploading';
 import { ImCloudUpload } from "react-icons/im";
 import { CFontainerImageProduct, ConatinerModal } from './modal';
+import api from '../../api/api';
+import { toast } from 'react-toastify';
 //import api from '../../api/api';
 //import { toast } from 'react-toastify';
 
@@ -87,7 +89,49 @@ const Modal = () => {
 
     e.preventDefault()
 
-    console.log(dataList)
+    if(dataList.image[0]){
+
+      localStorage.setItem("imgZero", dataList.image[0][0].data_url)
+      localStorage.setItem("imgUm", dataList.image[1][0].data_url)
+      localStorage.setItem("imgDois", dataList.image[2][0].data_url)
+      localStorage.setItem("imgTres", dataList.image[3][0].data_url)
+
+      const imgZero = localStorage.getItem("imgZero")
+      const imgUm = localStorage.getItem("imgUm")
+      const imgDois = localStorage.getItem("imgDois")
+      const imgTres = localStorage.getItem("imgTres")
+
+      setTimeout(() => {
+        return;
+      }, 3000);
+
+      const dataListPronto = {
+        imgName: dataList.image[0][0].data_url,
+        image: [`${imgZero}`,`${imgUm}`,`${imgDois}`,`${imgTres}`],
+        name: name,
+        estrela: estrela,
+        message: message,
+        idProduct: localId
+      }
+
+      /*await api.post("/comentario", dataListPronto).then((response) => {
+
+        const dataRelations2 = {
+          id_comentario: `${response.data.comentario.id}`,
+          id_product: `${localId}`
+        }
+    
+        api.post("/comentariorelation", dataRelations2).then((catego) => {
+          toast.success(`O relacionamento foi feito!`)
+        })
+      })*/
+
+      //console.log(dataList.image[0][0].data_url)
+      console.log(dataListPronto)
+    }else{
+      console.log("Tem algo errado")
+    }
+
 
     /*await api.post("/comentario", dataList).then((response) => {
 

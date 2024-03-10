@@ -26,7 +26,7 @@ import { ProductContainerPai, ProductDescImage, ProductDescPrimary, ProductDescP
 import Modal from '../modal/Modal';
 import { ContainerComentario } from './stylesComentarios';
 //import { CarouselProduct } from "./styles"
-import { SlidsDescriptionOfertas } from './SlidsDescriptionOfertas';
+//import { SlidsDescriptionOfertas } from './SlidsDescriptionOfertas';
 
 
 export const DescricaoMini = () => {

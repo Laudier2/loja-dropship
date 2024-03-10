@@ -11,7 +11,7 @@ import { LuPackageSearch } from "react-icons/lu";
 import Cart from "../cart/index";
 
 // Styles
-import { Container, Logo, Buttons, ContainerAMR, ContainerPRT, DivContainer, DivContainerHederFixed} from "./styles";
+import { Container, Logo, Buttons, ContainerAMR, ContainerPRT, DivContainer} from "./styles";
 import { SeartResult } from "./SeartResult";
 
 export function Header() {

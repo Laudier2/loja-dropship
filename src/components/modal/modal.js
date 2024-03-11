@@ -73,12 +73,11 @@ export const CFontainerImageProduct = styled.div`
   margin: auto;
   
   & h5 {
-    font-size: 1vw;
+    font-size: vw;
     width: 100%;
   }
  
   @media screen and (max-width: 768px) {
     margin-top: 10px;
-   
   }
 `

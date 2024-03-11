@@ -516,11 +516,11 @@ export const DescricaoMini = () => {
                           </h5>
                           <button
                             type="button"
-                            class="btn-close"
                             data-bs-dismiss="modal"
                             aria-label="Close"
                             className="btn-outline-secondary"
-                          ></button>
+                            style={{border: "none", fontSize: "30px", borderWidth: "bold", color: "red"}}
+                          >X</button>
                         </div>
                         <div class="modal-body text-dark">
                           <Modal />

@@ -223,6 +223,12 @@ export const ProductDescPrimary2 = styled.div`
 export const ProductDescSecudanry = styled.div`
   grid-area: f;
   margin-top: 230px;
+  font-size: 1.5vw;
+  text-align: justify;
+
+  & h4 {
+    margin-top: -30px;
+  }
 
   & h1 {
     font-size: 2vw;
@@ -272,8 +278,13 @@ export const ProductDescSecudanry = styled.div`
     margin-left: 0px;
     text-align: justify;
     width: 90%;
+    font-size: 2.5vw;
 
     & h1 {
+      font-size: 5vw;
+    }
+
+    & h4 {
       font-size: 5vw;
     }
   }

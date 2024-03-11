@@ -658,7 +658,7 @@ export const Coontainer = styled.div`
   margin-top: 1100px;
 
   @media (max-width: 768px) {
-    margin-top: 2700px;
+    margin-top: 800px;
   }
 
   & .carousel {

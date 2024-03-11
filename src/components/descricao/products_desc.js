@@ -60,9 +60,9 @@ export const ProductDescImage = styled.div`
     margin-top: -1600px;
 
     & img {
-      width: 80vw;
+      width: 70vw;
       //object-fit: cover;
-      height: 40vh;
+      height: 35vh;
       margin-left: 40px;
       margin-top: 20px;
     }
@@ -135,7 +135,7 @@ export const ProductDescPrimary = styled.div`
   }
 
   @media (max-width: 780px) {
-    margin-top: 300px;
+    margin-top: 340px;
     margin-left: 0px;
     width: 80%;
     

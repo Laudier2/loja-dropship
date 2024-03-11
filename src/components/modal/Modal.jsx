@@ -1,3 +1,5 @@
+/* eslint-disable no-dupe-keys */
+/* eslint-disable eqeqeq */
 import React, { useState } from 'react';
 import ImageUploading from 'react-images-uploading';
 import { ImCloudUpload } from "react-icons/im";
@@ -114,7 +116,7 @@ const Modal = () => {
         idProduct: localId
       }
 
-      /*await api.post("/comentario", dataListPronto).then((response) => {
+      await api.post("/comentario", dataListPronto).then((response) => {
 
         const dataRelations2 = {
           id_comentario: `${response.data.comentario.id}`,
@@ -124,7 +126,7 @@ const Modal = () => {
         api.post("/comentariorelation", dataRelations2).then((catego) => {
           toast.success(`O relacionamento foi feito!`)
         })
-      })*/
+      })
 
       //console.log(dataList.image[0][0].data_url)
       console.log(dataListPronto)
@@ -169,25 +171,34 @@ const Modal = () => {
             }) => (
               // write your building UI
               <div className="">
-                <button
-                  className=''
-                  style={isDragging ? { color: 'red' } : undefined}
-                  onClick={onImageUpload}
-                  {...dragProps}
-                >
-                <div>
-                  <ImCloudUpload style={{width: 210, height: 80, cursor: "pointer", margin: "auto", display: "flex"}}/>
-                </div>
-                </button>
-                &nbsp;
-                {imageList.map((image, index) => (
+                {imageList == "" ?
+                <>
+                   <button
+                      className=''
+                      style={isDragging ? { color: 'red' } : undefined}
+                      onClick={onImageUpload}
+                      {...dragProps}
+                    >
+                    <div>
+                      <ImCloudUpload style={{width: 210, height: 80, cursor: "pointer", margin: "auto", display: "flex"}}/>
+                    </div>
+                    </button>
+                    &nbsp;
+                </>
+                : 
+               
+                imageList.map((image, index) => (
                   <div style={{display: "inline-block", margin: 5}}>
                     <div key={index} >
-                      <img src={image['data_url']} alt="" width="220" height="100"/>
+                      <img src={image['data_url']} alt="" width="200" height="200" style={
+                        {borderRadius: "100px", border: "solid 1px", padding: "10px", margin: "5px"}
+                      }/>
                     </div>
                     
                     <div>
-                    <button style={{width: 160, fontSize: 15, fontWeight: "bold"}} onClick={() => onImageRemove(index)}>
+                    <button style={
+                      {width: 160, fontSize: 15, fontWeight: "bold", margin: "auto", background: "#F62D2D", border: "none", padding: "5px", borderRadius: "6px", margin: "auto", background: "#F62D2D", border: "none", padding: "5px", borderRadius: "6px"}
+                      } onClick={() => onImageRemove(index)}>
                       Remove
                     </button>
                   </div>
@@ -244,11 +255,11 @@ const Modal = () => {
                 {imageList.map((image, index) => (
                   <div style={{display: "inline-block", margin: 5}}>
                     <div key={index} >
-                      <img src={image['data_url']} alt="" width="160" height="100"/>
+                      <img src={image['data_url']} alt="" width="100" height="100" style={{margin: "auto", display: "flex"}}/>
                     </div>
                     
                     <div>
-                    <button style={{width: 160, fontSize: 15, fontWeight: "bold"}} onClick={() => onImageRemove(index)}>
+                    <button style={{width: 160, fontSize: 15, fontWeight: "bold", margin: "auto", background: "#F62D2D", border: "none", padding: "5px", borderRadius: "6px"}} onClick={() => onImageRemove(index)}>
                       Remove
                     </button>
                   </div>
@@ -292,11 +303,11 @@ const Modal = () => {
                 {imageList.map((image, index) => (
                   <div style={{display: "inline-block", margin: 5}}>
                     <div key={index} >
-                      <img src={image['data_url']} alt="" width="160" height="100"/>
+                      <img src={image['data_url']} alt="" width="100" height="100" style={{margin: "auto", display: "flex"}}/>
                     </div>
                     
                     <div>
-                    <button style={{width: 160, fontSize: 15, fontWeight: "bold"}} onClick={() => onImageRemove(index)}>
+                    <button style={{width: 160, fontSize: 15, fontWeight: "bold", margin: "auto", background: "#F62D2D", border: "none", padding: "5px", borderRadius: "6px"}} onClick={() => onImageRemove(index)}>
                       Remove
                     </button>
                   </div>
@@ -340,11 +351,11 @@ const Modal = () => {
                 {imageList.map((image, index) => (
                   <div style={{display: "inline-block", margin: 5}}>
                     <div key={index} >
-                      <img src={image['data_url']} alt="" width="160" height="100"/>
+                      <img src={image['data_url']} alt="" width="100" height="100" style={{margin: "auto", display: "flex"}}/>
                     </div>
                     
                     <div>
-                    <button style={{width: 160, fontSize: 15, fontWeight: "bold"}} onClick={() => onImageRemove(index)}>
+                    <button style={{width: 160, fontSize: 15, fontWeight: "bold", margin: "auto", background: "#F62D2D", border: "none", padding: "5px", borderRadius: "6px"}} onClick={() => onImageRemove(index)}>
                       Remove
                     </button>
                   </div>
@@ -388,11 +399,11 @@ const Modal = () => {
                 {imageList.map((image, index) => (
                   <div style={{display: "inline-block", margin: 5}}>
                     <div key={index} >
-                      <img src={image['data_url']} alt="" width="160" height="100"/>
+                      <img src={image['data_url']} alt="" width="100" height="100" style={{margin: "auto", display: "flex"}}/>
                     </div>
                     
                     <div>
-                    <button style={{width: 160, fontSize: 15, fontWeight: "bold"}} onClick={() => onImageRemove(index)}>
+                    <button style={{width: 160, fontSize: 15, fontWeight: "bold", margin: "auto", background: "#F62D2D", border: "none", padding: "5px", borderRadius: "6px"}} onClick={() => onImageRemove(index)}>
                       Remove
                     </button>
                   </div>

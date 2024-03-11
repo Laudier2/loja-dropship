@@ -206,7 +206,7 @@ const Modal = () => {
             <input type="text" placeholder='quantas estrelas' name='estrela' onChange={(e) => onChange5(e.target.value)} />
           </li>
           <li>
-            <textarea type="text" placeholder='Seu nome' name='message' onChange={(e) => onChange6(e.target.value)} />
+            <textarea type="text" maxlength="200" placeholder='Seu nome' name='message' onChange={(e) => onChange6(e.target.value)} />
           </li>
         </ul>
         <CFontainerImageProduct>

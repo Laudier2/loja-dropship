@@ -261,7 +261,7 @@ export const ContainerPRT = styled.div`
 
     @media (max-width: 768px) {
       width: 100%;
-      margin-left: -10px;
+      margin-left: -25px;
     }
 
     & li {

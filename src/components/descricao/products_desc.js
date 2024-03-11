@@ -64,7 +64,7 @@ export const ProductDescImage = styled.div`
       //object-fit: cover;
       height: 35vh;
       margin-left: 40px;
-      margin-top: 20px;
+      margin-top: 60px;
     }
   }
 
@@ -105,7 +105,7 @@ export const ProductImageMini = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    margin-top: -1560px;
+    margin-top: -1540px;
     margin-left: 35px;
   }
 `
@@ -135,7 +135,7 @@ export const ProductDescPrimary = styled.div`
   }
 
   @media (max-width: 780px) {
-    margin-top: 340px;
+    margin-top: 250px;
     margin-left: 0px;
     width: 80%;
     

@@ -224,8 +224,13 @@ export const ProductDescSecudanry = styled.div`
   grid-area: f;
   margin-top: 230px;
 
+  & h1 {
+    font-size: 2vw;
+  }
+
   & .btnButtonModal {
-      margin-left: 70%;
+      margin: auto;
+      display: flex;
       padding: 8px;
       background: aqua;
       outline: none;
@@ -233,6 +238,8 @@ export const ProductDescSecudanry = styled.div`
       border-radius: 6px;
       font-weight: bold;
       margin-top: 60px;
+      margin-bottom: 30px;
+      font-size: 2vw;
 
       &:hover {
         background: yellow;
@@ -263,8 +270,12 @@ export const ProductDescSecudanry = styled.div`
   @media (max-width: 780px) {
     margin-top: 50px;
     margin-left: 0px;
-   text-align: justify;
+    text-align: justify;
     width: 90%;
+
+    & h1 {
+      font-size: 5vw;
+    }
   }
 `
 

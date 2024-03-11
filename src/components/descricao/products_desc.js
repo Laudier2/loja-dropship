@@ -247,7 +247,7 @@ export const ProductDescSecudanry = styled.div`
       }
 
       @media (max-width: 768px) {
-        font-size: 2.6vw;
+        font-size: 3.6vw;
       }
     }
 

@@ -43,6 +43,18 @@ export const ProductDescImage = styled.div`
     }
   }
 
+  @media (max-width: 1750px) {
+    margin-top: -20px;
+
+    & img {
+      width: 45vw;
+      //object-fit: cover;
+      height: 55vh;
+      margin-left: 40px;
+      margin-top: 20px;
+    }
+  }
+
   @media screen and (max-width: 968px) {
     margin-top: -5px;
    
@@ -64,7 +76,7 @@ export const ProductDescImage = styled.div`
       //object-fit: cover;
       height: 35vh;
       margin-left: 40px;
-      margin-top: 60px;
+      margin-top: 150px;
     }
   }
 
@@ -81,6 +93,11 @@ export const ProductImageMini = styled.div`
       object-fit: cover;
       display: grid;
       border: solid 0.5px;
+
+      @media (max-width: 1750px) {
+        margin-left: -40px;
+      }
+    
 
       @media screen and (max-width: 1168px) {
         width: 6vw;
@@ -105,7 +122,7 @@ export const ProductImageMini = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    margin-top: -1540px;
+    margin-top: -1448px;
     margin-left: 35px;
   }
 `
@@ -117,7 +134,7 @@ export const ProductDescPrimary = styled.div`
   @media (max-width: 1750px) {
     width: 17vw;
     grid-area: r;
-    margin-left: -30px;
+    margin-left: -20px;
   }
 
   @media (max-width: 1350px) {
@@ -135,9 +152,9 @@ export const ProductDescPrimary = styled.div`
   }
 
   @media (max-width: 780px) {
-    margin-top: 250px;
+    margin-top: 270px;
     margin-left: 0px;
-    width: 80%;
+    width: 95%;
     
   }
 
@@ -192,9 +209,9 @@ export const ProductDescPrimary2 = styled.div`
   }
 
   @media (max-width: 780px) {
-    margin-top: 948px;
+    margin-top: 840px;
     margin-left: 0px;
-    width: 80%;
+    width: 100%;
   }
 
   & button {
@@ -273,12 +290,12 @@ export const ProductDescSecudanry = styled.div`
   
   }
 
-  @media (max-width: 780px) {
+  @media (max-width: 768px) {
     margin-top: 50px;
     margin-left: 0px;
     text-align: justify;
-    width: 90%;
-    font-size: 2.5vw;
+    width: 100%;
+    font-size: 2.8vw;
 
     & h1 {
       font-size: 5vw;

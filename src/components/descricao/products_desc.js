@@ -125,8 +125,8 @@ export const ProductImageMini = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    margin-top: -1448px;
-    margin-left: 35px;
+    margin-top: -1451px;
+    margin-left: 30px;
   }
 `
 export const ProductDescPrimary = styled.div`

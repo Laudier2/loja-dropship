@@ -30,7 +30,7 @@ export const Coontainer = styled.div`
       margin: auto;
       display: flex;
       padding: 10px;
-      width: 60px;
+      width: 70px;
       height: 7vh;
       border-radius: 50px;
       flex: none;
@@ -52,10 +52,11 @@ export const Coontainer = styled.div`
           object-fit: cover;
           border-radius: 40px;
           margin-left: -5px;
+          
         }
         @media (max-width: 768px) {
           & img {
-            width: 80%;
+            width: 110%;
             height: 6.3vh;
             object-fit: cover;
             margin: auto;

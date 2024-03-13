@@ -5,8 +5,8 @@ import React, { useState } from 'react';
 import ImageUploading from 'react-images-uploading';
 import { ImCloudUpload } from "react-icons/im";
 import { CFontainerImageProduct, ConatinerModal } from './modal';
-import api from '../../api/api';
-import { toast } from 'react-toastify';
+//import api from '../../api/api';
+//import { toast } from 'react-toastify';
 //import api from '../../api/api';
 //import { toast } from 'react-toastify';
 
@@ -16,15 +16,15 @@ const Modal = () => {
 
   const [images, setImages] = useState([]);
   const [images0, setImages0] = useState([]);
-  const [images1, setImages1] = useState([]);
-  const [images2, setImages2] = useState([]);
-  const [images3, setImages3] = useState([]);
+  //const [images1, setImages1] = useState([]);
+  //const [images2, setImages2] = useState([]);
+  //const [images3, setImages3] = useState([]);
   const [name, setName] = useState([]);
   const [estrela, setEstrela] = useState([]);
   const [message, setMessage] = useState([]);
   const maxNumber = 69;
   
-  const [data, setData] = useState({});
+  //const [data, setData] = useState({});
 
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
@@ -38,7 +38,7 @@ const Modal = () => {
     setImages0(imageList);
   };
 
-  const onChange1 = (imageList, addUpdateIndex) => {
+  /*const onChange1 = (imageList, addUpdateIndex) => {
     // data for submit
    
     setImages1(imageList);
@@ -54,7 +54,7 @@ const Modal = () => {
     // data for submit
   
     setImages3(imageList);
-  };
+  };*/
 
   const onChange4 = (e) => {
     // data for submit
@@ -123,7 +123,7 @@ const Modal = () => {
         idProduct: localId
       }
 
-      setTimeout(() => {
+      /*setTimeout(() => {
         setData(dataListPronto)
       }, 3000);
 

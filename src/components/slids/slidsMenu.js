@@ -30,7 +30,7 @@ export const Coontainer = styled.div`
       margin: auto;
       display: flex;
       padding: 10px;
-      width: 70px;
+      width: 60px;
       height: 7vh;
       border-radius: 50px;
       flex: none;

@@ -34,6 +34,7 @@ export const ContainerComentario = styled.div`
     font-size: 1.2vw;
     font-weight: bold;
     display: inline-block;
+    margin-left: 5px;
 
     @media (max-width: 768px) {
       font-size: 2.5vw;

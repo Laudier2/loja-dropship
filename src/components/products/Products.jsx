@@ -125,7 +125,7 @@ export const Products = () => {
       const resCalcaM = await reqCalcaM.data[0].products_categories
       const reqInfo = await api.get("/category/1e40a692-3864-4d6d-bb97-3c9819297d57")
       const resInfo = await reqInfo.data[0].products_categories
-      const reqEletronico = await api.get("/category/3453ecaa-69b5-4e8e-bfd4-04499395e0c4")
+      const reqEletronico = await api.get("/category/a733bfb1-4f80-427e-9e18-eedd3a8cd22e")
       const resEletronico = await reqEletronico.data[0].products_categories
       const reqSmatphone = await api.get("/category/25d32c83-91ba-43a9-8e89-76066a4168bf")
       const resSmatphone = await reqSmatphone.data[0].products_categories

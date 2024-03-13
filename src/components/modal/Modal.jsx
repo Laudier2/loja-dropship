@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable no-dupe-keys */
 /* eslint-disable eqeqeq */
 import React, { useState } from 'react';
@@ -22,6 +23,8 @@ const Modal = () => {
   const [estrela, setEstrela] = useState([]);
   const [message, setMessage] = useState([]);
   const maxNumber = 69;
+  
+  const [data, setData] = useState({});
 
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
@@ -80,7 +83,7 @@ const Modal = () => {
 
   const dataList = {
     imgName: images,
-    image: [images0,images1,images2,images3],
+    image: [images0],
     name: name,
     estrela: estrela,
     message: message,
@@ -93,30 +96,38 @@ const Modal = () => {
 
     if(dataList.image[0]){
 
-      localStorage.setItem("imgZero", dataList.image[0][0].data_url)
-      localStorage.setItem("imgUm", dataList.image[1][0].data_url)
-      localStorage.setItem("imgDois", dataList.image[2][0].data_url)
-      localStorage.setItem("imgTres", dataList.image[3][0].data_url)
+      //console.log(dataList.image[0][0].data_url)
 
-      const imgZero = localStorage.getItem("imgZero")
-      const imgUm = localStorage.getItem("imgUm")
-      const imgDois = localStorage.getItem("imgDois")
-      const imgTres = localStorage.getItem("imgTres")
+      //localStorage.setItem("imgZero", dataList.image[0][0].data_url == "" ? "" : dataList.image[0][0].data_url)
+      //localStorage.setItem("imgUm",  dataList.image[1][0].data_url == "" ? "" : dataList.image[1][0].data_url)
+      //localStorage.setItem("imgDois",  dataList.image[2][0].data_url == "" ? "" : dataList.image[2][0].data_url)
+      //localStorage.setItem("imgTres",  dataList.image[3][0].data_url == "" ? "" : dataList.image[3][0].data_url)
+//
+      //const imgZero = localStorage.getItem("imgZero")
+      //const imgUm = localStorage.getItem("imgUm")
+      //const imgDois = localStorage.getItem("imgDois")
+      //const imgTres = localStorage.getItem("imgTres")
 
       setTimeout(() => {
         return;
       }, 3000);
 
+      const imgTodos = dataList.image[0].map(img => img.data_url)
+
       const dataListPronto = {
-        imgName: dataList.imgName[0][0].data_url,
-        image: [`${imgZero}`,`${imgUm}`,`${imgDois}`,`${imgTres}`],
+        imgName: dataList.imgName[0].data_url,
+        image: imgTodos,
         name: name,
         estrela: estrela,
         message: message,
         idProduct: localId
       }
 
-      await api.post("/comentario", dataListPronto).then((response) => {
+      setTimeout(() => {
+        setData(dataListPronto)
+      }, 3000);
+
+      /*await api.post("/comentario", dataListPronto).then((response) => {
 
         const dataRelations2 = {
           id_comentario: `${response.data.comentario.id}`,
@@ -126,7 +137,7 @@ const Modal = () => {
         api.post("/comentariorelation", dataRelations2).then((catego) => {
           toast.success(`O relacionamento foi feito!`)
         })
-      })
+      })*/
 
       //console.log(dataList.image[0][0].data_url)
       console.log(dataListPronto)
@@ -270,150 +281,7 @@ const Modal = () => {
             )}
           </ImageUploading>
           </div>
-          <div className='imageName'>
-          <ImageUploading
-            multiple
-            value={images1}
-            onChange={onChange1}
-            maxNumber={maxNumber}
-            dataURLKey="data_url"
-          >
-            {({
-              imageList,
-              onImageUpload,
-              onImageRemoveAll,
-              onImageUpdate,
-              onImageRemove,
-              isDragging,
-              dragProps,
-            }) => (
-              // write your building UI
-              <div className="">
-                <button
-                  className=''
-                  style={isDragging ? { color: 'red' } : undefined}
-                  onClick={onImageUpload}
-                  {...dragProps}
-                >
-                <div>
-                  <ImCloudUpload style={{width: 30, height: 30, cursor: "pointer", margin: "auto", display: "flex"}}/>
-                </div>
-                </button>
-                &nbsp;
-                {imageList.map((image, index) => (
-                  <div style={{display: "inline-block", margin: 5}}>
-                    <div key={index} >
-                      <img src={image['data_url']} alt="" width="100" height="100" style={{margin: "auto", display: "flex"}}/>
-                    </div>
-                    
-                    <div>
-                    <button style={{width: 160, fontSize: 15, fontWeight: "bold", margin: "auto", background: "#F62D2D", border: "none", padding: "5px", borderRadius: "6px"}} onClick={() => onImageRemove(index)}>
-                      Remove
-                    </button>
-                  </div>
-                  </div>
-                ))}
-              
-              </div>
-            )}
-          </ImageUploading>
-          </div>
-          <div className='imageName'>
-          <ImageUploading
-            multiple
-            value={images2}
-            onChange={onChange2}
-            maxNumber={maxNumber}
-            dataURLKey="data_url"
-          >
-            {({
-              imageList,
-              onImageUpload,
-              onImageRemoveAll,
-              onImageUpdate,
-              onImageRemove,
-              isDragging,
-              dragProps,
-            }) => (
-              // write your building UI
-              <div className="">
-                <button
-                  className=''
-                  style={isDragging ? { color: 'red' } : undefined}
-                  onClick={onImageUpload}
-                  {...dragProps}
-                >
-                <div>
-                  <ImCloudUpload style={{width: 30, height: 30, cursor: "pointer", margin: "auto", display: "flex"}}/>
-                </div>
-                </button>
-                &nbsp;
-                {imageList.map((image, index) => (
-                  <div style={{display: "inline-block", margin: 5}}>
-                    <div key={index} >
-                      <img src={image['data_url']} alt="" width="100" height="100" style={{margin: "auto", display: "flex"}}/>
-                    </div>
-                    
-                    <div>
-                    <button style={{width: 160, fontSize: 15, fontWeight: "bold", margin: "auto", background: "#F62D2D", border: "none", padding: "5px", borderRadius: "6px"}} onClick={() => onImageRemove(index)}>
-                      Remove
-                    </button>
-                  </div>
-                  </div>
-                ))}
-              
-              </div>
-            )}
-          </ImageUploading>
-          </div>
-          <div className='imageName'>
-          <ImageUploading
-            multiple
-            value={images3}
-            onChange={onChange3}
-            maxNumber={maxNumber}
-            dataURLKey="data_url"
-          >
-            {({
-              imageList,
-              onImageUpload,
-              onImageRemoveAll,
-              onImageUpdate,
-              onImageRemove,
-              isDragging,
-              dragProps,
-            }) => (
-              // write your building UI
-              <div className="">
-                <button
-                  className=''
-                  style={isDragging ? { color: 'red' } : undefined}
-                  onClick={onImageUpload}
-                  {...dragProps}
-                >
-                <div>
-                  <ImCloudUpload style={{width: 30, height: 30, cursor: "pointer", margin: "auto", display: "flex"}}/>
-                </div>
-                </button>
-                &nbsp;
-                {imageList.map((image, index) => (
-                  <div style={{display: "inline-block", margin: 5}}>
-                    <div key={index} >
-                      <img src={image['data_url']} alt="" width="100" height="100" style={{margin: "auto", display: "flex"}}/>
-                    </div>
-                    
-                    <div>
-                    <button style={{width: 160, fontSize: 15, fontWeight: "bold", margin: "auto", background: "#F62D2D", border: "none", padding: "5px", borderRadius: "6px"}} onClick={() => onImageRemove(index)}>
-                      Remove
-                    </button>
-                  </div>
-                  </div>
-                ))}
-              
-                </div>
-              )}
-            </ImageUploading>
-            </div>
+          
         </CFontainerImageProduct>
             <button type="submit" className='btnEnviar' onClick={handleProcess}>Enviar</button>
       </div>

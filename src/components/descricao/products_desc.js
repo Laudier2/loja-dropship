@@ -304,6 +304,10 @@ export const ProductDescSecudanry = styled.div`
     & h4 {
       font-size: 5vw;
     }
+
+    & p {
+      font-size: 4vw;
+    }
   }
 `
 

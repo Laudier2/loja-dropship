@@ -30,6 +30,19 @@ export const ProductDescImage = styled.div`
     margin-left: 80px;
   }
 
+
+  @media (max-width: 1750px) {
+    margin-top: -20px;
+
+    & img {
+      width: 45vw;
+      //object-fit: cover;
+      height: 80vh;
+      margin-left: 40px;
+      margin-top: 20px;
+    }
+  }
+
   @media screen and (max-width: 1068px) {
    
     margin-top: -20px;
@@ -43,17 +56,6 @@ export const ProductDescImage = styled.div`
     }
   }
 
-  @media (max-width: 1750px) {
-    margin-top: -20px;
-
-    & img {
-      width: 45vw;
-      //object-fit: cover;
-      height: 55vh;
-      margin-left: 40px;
-      margin-top: 20px;
-    }
-  }
 
   @media screen and (max-width: 968px) {
     margin-top: -5px;
@@ -83,7 +85,8 @@ export const ProductDescImage = styled.div`
 `
 export const ProductImageMini = styled.div`
   grid-area: l;
-  margin-top: 30px;
+  margin-top: 0px;
+  margin-left: -20px;
 
   & .imgMini {
     margin: 1px;

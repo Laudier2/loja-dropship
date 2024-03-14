@@ -109,7 +109,7 @@ export const Coontainer = styled.div`
   & .buttons1 {
     left: 0;
     position: absolute;
-    width: 6%;
+    width: 2%;
     height: 170px;
     background-color:rgba(255, 255, 255, 0);
     z-index: 99;
@@ -125,7 +125,7 @@ export const Coontainer = styled.div`
     @media (max-width: 768px){
       opacity: 0;
       margin-top: -44px;
-      margin-left: -10px;
+      display: none;
     }
     
 }
@@ -133,7 +133,7 @@ export const Coontainer = styled.div`
 & .buttons2 {
   right: 0;
   position: absolute;
-  width: 5%;
+  width: -2%;
   height: 170px;
   background-color:rgba(255, 255, 255, 0);
   z-index: 99;
@@ -143,12 +143,13 @@ export const Coontainer = styled.div`
   /*overflow: hidden;*/
   cursor: pointer;
   opacity: 1;
-  margin-right: 0.3%;
   margin-top: -92px;
+  background: red;
   
   @media (max-width: 768px){
-    opacity: 0;
-    margin-top: -104px;
+    opacity: 1;
+    margin-top: -86px;
+    display: none;
   }
 }
 

@@ -155,6 +155,7 @@ export const ProductProd = styled.div`
       }
 
       & .frete {
+        margin-top: -30px;
         font-size: 3vw;
         color: #00A650;
       }
@@ -175,6 +176,7 @@ export const ProductProd = styled.div`
         color: #000000;
         font-weight: bold;
         font-size: 2vw;
+        margin-bottom: -20px;
         
       }
 
@@ -204,7 +206,7 @@ export const ProductProd = styled.div`
       }      
 
       & h3 {
-        margin-top: 50px;
+        margin-top: 0px;
         color: #000000;
         font-weight: bold;
         text-align: center;

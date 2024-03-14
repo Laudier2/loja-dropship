@@ -71,7 +71,7 @@ export const ProductDescImage = styled.div`
 
   
   @media screen and (max-width: 768px) {
-    margin-top: -1600px;
+    margin-top: -1590px;
 
     & img {
       width: 70vw;
@@ -125,7 +125,7 @@ export const ProductImageMini = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    margin-top: -1451px;
+    margin-top: -1441px;
     margin-left: 30px;
   }
 `
@@ -268,7 +268,7 @@ export const ProductDescSecudanry = styled.div`
       font-size: 2vw;
 
       &:hover {
-        background: yellow;
+        background: white;
         box-shadow: 0 0 0 0.3px black;
       }
 

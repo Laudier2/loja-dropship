@@ -144,7 +144,6 @@ export const Coontainer = styled.div`
   cursor: pointer;
   opacity: 1;
   margin-top: -92px;
-  background: red;
   
   @media (max-width: 768px){
     opacity: 1;

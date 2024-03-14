@@ -185,7 +185,7 @@ export const DescricaoMini = () => {
 
   const Todes = [divideColorArrey[0], divideColorArrey[1], divideColorArrey[2], divideColorArrey[3], divideColorArrey[4], divideColorArrey[5], divideColorArrey[6]]
 
-  const FilterColor1 = Todes.filter(e => e == "preto" || e == "Preto" || e == "PRETO" || e == "black" || e == "Black")
+  const FilterColor1 = Todes.filter(e => e == "preto" || e == "Preto" || e == "Preta" || e == "PRETO" || e == "black" || e == "Black")
   const FilterColor2 = Todes.filter(e => e == "Bege" || e == "bege" || e == "beje" || e == "Beje" || e == "Gray" || e == "gray" || e == "Cinza" || e == "cinza")
   const FilterColor3 = Todes.filter(e => e == "NUDE" || e == "nude" || e == "Nude")
   const FilterColor4 = Todes.filter(e => e == "ROSA" || e == "Rosa" || e == "rosa" || e == "pink" || e == "Pink" || e == "PINK")
@@ -230,6 +230,7 @@ export const DescricaoMini = () => {
   const FilterColor43 = Todes.filter(e =>  e == "Laranja" || e == "laranja" || e == "LARANJA")
   const FilterColor44 = Todes.filter(e =>  e == "Preto com bage")
   const FilterColor45 = Todes.filter(e =>  e == "Branco com bage")
+  const FilterColor46 = Todes.filter(e =>  e == "Bage" || e == "bege")
 
   const Example = () => (
     /*
@@ -379,6 +380,7 @@ export const DescricaoMini = () => {
                       {FilterColor43[0] ? <button type="button" style={{background: "#FF662A", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor43[0])}></button> : ""}
                       {FilterColor44[0] ? <button type="button" style={{background: "linear-gradient(90deg, black, #F0D5B7)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor44[0])}></button> : ""}
                       {FilterColor45[0] ? <button type="button" style={{background: "linear-gradient(90deg, white, #F0D5B7)", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor45[0])}></button> : ""}
+                      {FilterColor46[0] ? <button type="button" style={{background: "#CEB096", borderColor: "green", color: "red", padding: "15px"}} onClick={() => setDatacores(FilterColor46[0])}></button> : ""}
                       { }
                     </div>
                     <br />

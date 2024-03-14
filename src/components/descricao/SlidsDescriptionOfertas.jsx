@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import { useEffect, useState, useRef } from "react";
 import { Coontainer } from "./styles";
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md'
@@ -23,14 +24,34 @@ export function SlidsDescriptionOfertas() {
     RequaryData()
   },[])
 
+  const localId = localStorage.getItem("id")
+  //const BNT = localStorage.getItem("name")
+
+  //const productFilter = product.filter(product => product)
+  //const prodFilter = [...productFilter]
+  //const dataProductFilter2 = prodFilter.filter(productData => (productData.id === localId))
+
+
+  const filterProduct = data.map(pro => pro)
+  const dataProductFilter = filterProduct.filter(productData => (productData.id === localId))
+  const filterProductBarcode = dataProductFilter.map(pro => pro.bar_code)
+  const dataProductFilterBarcodeList = filterProduct.filter(productData => (productData.bar_code == filterProductBarcode[0][0]))
+
+  console.log(dataProductFilterBarcodeList)
+
   function LocalSto(e) {
 
     localStorage.removeItem("id")
+    localStorage.removeItem("bar_code")
+    localStorage.removeItem("categoryId")
 
     const dados = JSON.stringify(e)
     const id = JSON.parse(dados)
     localStorage.setItem("id", id.id)
     localStorage.setItem("categoryId", e.id)
+    localStorage.setItem("bar_code", e.bar_code)
+
+    window.location.reload()
 
   }
 
@@ -49,13 +70,14 @@ export function SlidsDescriptionOfertas() {
   return (
     <>
       <Coontainer>
+        <h4>Produtos relacionados</h4>
         <div className="buttons1">
           <button onClick={(e) => hendleLeftClik(e)}>
             <MdNavigateBefore className="buttons1" />
           </button>
         </div>
         <div className="carousel" ref={carrousel}>
-          {data.map(res => {
+          {dataProductFilterBarcodeList.map(res => {
 
             const { id, name, image, price } = res;
 
@@ -75,7 +97,7 @@ export function SlidsDescriptionOfertas() {
                     <FaCreditCard className='cartao'/> Em até 12x sem juros
                   </p>
                 </span>
-                <h4 className='oldPrice'>R${price},00 </h4>
+                <h3 className='oldPrice'>R${price},00 </h3>
                 <h4 className='oldPricereal'> R$ {novo_price},00</h4>
               </div>
             </Link>

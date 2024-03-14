@@ -45,12 +45,14 @@ export const Vestido = () => {
   function LocalSto(e) {
 
     localStorage.removeItem("id")
+    localStorage.removeItem("slug")
+    localStorage.removeItem("categoryId")
 
     const dados = JSON.stringify(e)
     const id = JSON.parse(dados)
     localStorage.setItem("id", id.id)
     localStorage.setItem("categoryId", e.id)
-
+    localStorage.setItem("slug", e.bar_code)
   }
 
   // Aqui estamos fazenso as requisição na API REstful com o axio, 

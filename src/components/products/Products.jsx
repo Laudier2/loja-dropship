@@ -60,11 +60,14 @@ export const Products = () => {
   function LocalSto(e) {
 
     localStorage.removeItem("id")
+    localStorage.removeItem("bar_code")
+    localStorage.removeItem("categoryId")
 
     const dados = JSON.stringify(e)
     const id = JSON.parse(dados)
     localStorage.setItem("id", id.id)
     localStorage.setItem("categoryId", e.id)
+    localStorage.setItem("bar_code", e.bar_code)
 
   }
 
@@ -193,7 +196,7 @@ export const Products = () => {
                   <FaCreditCard className='cartao'/> Em até 12x sem juros
                 </p>
               </span>
-              <h4 className='oldPrice'>R${price},00 </h4>
+              <h3 className='oldPrice'>R${price},00 </h3>
               <h4 className='oldPricereal'> R$ {novo_price},00</h4>
             </div>
           </Link>
@@ -228,7 +231,7 @@ export const Products = () => {
                   <FaCreditCard className='cartao'/> Em até 12x sem juros
                 </p>
               </span>
-              <h4 className='oldPrice'>R${price},00 </h4>
+              <h3 className='oldPrice'>R${price},00 </h3>
               <h4 className='oldPricereal'> R$ {novo_price},00</h4>
             </div>
           </Link>
@@ -263,7 +266,7 @@ export const Products = () => {
                   <FaCreditCard className='cartao'/> Em até 12x sem juros
                 </p>
               </span>
-              <h4 className='oldPrice'>R${price},00 </h4>
+              <h3 className='oldPrice'>R${price},00 </h3>
               <h4 className='oldPricereal'> R$ {novo_price},00</h4>
             </div>
           </Link>
@@ -299,7 +302,7 @@ export const Products = () => {
                   <FaCreditCard className='cartao'/> Em até 12x sem juros
                 </p>
               </span>
-              <h4 className='oldPrice'>R${price},00 </h4>
+              <h3 className='oldPrice'>R${price},00 </h3>
               <h4 className='oldPricereal'> R$ {novo_price},00</h4>
             </div>
           </Link>
@@ -335,7 +338,7 @@ export const Products = () => {
                   <FaCreditCard className='cartao'/> Em até 12x sem juros
                 </p>
               </span>
-              <h4 className='oldPrice'>R${price},00 </h4>
+              <h3 className='oldPrice'>R${price},00 </h3>
               <h4 className='oldPricereal'> R$ {novo_price},00</h4>
             </div>
           </Link>
@@ -373,7 +376,7 @@ export const Products = () => {
                   <FaCreditCard className='cartao'/> Em até 12x sem juros
                 </p>
               </span>
-              <h4 className='oldPrice'>R${price},00 </h4>
+              <h3 className='oldPrice'>R${price},00 </h3>
               <h4 className='oldPricereal'> R$ {novo_price},00</h4>
             </div>
           </Link>
@@ -409,7 +412,7 @@ export const Products = () => {
                     <FaCreditCard className='cartao'/> Em até 12x sem juros
                   </p>
                 </span>
-                <h4 className='oldPrice'>R${price},00 </h4>
+                <h3 className='oldPrice'>R${price},00 </h3>
                 <h4 className='oldPricereal'> R$ {novo_price},00</h4>
               </div>
             </Link>
@@ -444,7 +447,7 @@ export const Products = () => {
                   <FaCreditCard className='cartao'/> Em até 12x sem juros
                 </p>
               </span>
-              <h4 className='oldPrice'>R${price},00 </h4>
+              <h3 className='oldPrice'>R${price},00 </h3>
               <h4 className='oldPricereal'> R$ {novo_price},00</h4>
             </div>
           </Link>
@@ -480,7 +483,7 @@ export const Products = () => {
                   <FaCreditCard className='cartao'/> Em até 12x sem juros
                 </p>
               </span>
-              <h4 className='oldPrice'>R${price},00 </h4>
+              <h3 className='oldPrice'>R${price},00 </h3>
               <h4 className='oldPricereal'> R$ {novo_price},00</h4>
             </div>
           </Link>
@@ -518,7 +521,7 @@ export const Products = () => {
                         <FaCreditCard className='cartao'/> Em até 12x sem juros
                       </p>
                     </span>
-                    <h4 className='oldPrice'>R${price},00 </h4>
+                    <h3 className='oldPrice'>R${price},00 </h3>
                     <h4 className='oldPricereal'> R$ {novo_price},00</h4>
                   </div>
                 </Link>
@@ -553,7 +556,7 @@ export const Products = () => {
                       <FaCreditCard className='cartao'/> Em até 12x sem juros
                     </p>
                   </span>
-                  <h4 className='oldPrice'>R${price},00 </h4>
+                  <h3 className='oldPrice'>R${price},00 </h3>
                   <h4 className='oldPricereal'> R$ {novo_price},00</h4>
                 </div>
               </Link>
@@ -588,7 +591,7 @@ export const Products = () => {
                       <FaCreditCard className='cartao'/> Em até 12x sem juros
                     </p>
                   </span>
-                  <h4 className='oldPrice'>R${price},00 </h4>
+                  <h3 className='oldPrice'>R${price},00 </h3>
                   <h4 className='oldPricereal'> R$ {novo_price},00</h4>
                 </div>
               </Link>
@@ -626,7 +629,7 @@ export const Products = () => {
                           <FaCreditCard className='cartao'/> Em até 12x sem juros
                         </p>
                       </span>
-                      <h4 className='oldPrice'>R${price},00 </h4>
+                      <h3 className='oldPrice'>R${price},00 </h3>
                       <h4 className='oldPricereal'> R$ {novo_price},00</h4>
                     </div>
                   </Link>
@@ -661,7 +664,7 @@ export const Products = () => {
                           <FaCreditCard className='cartao'/> Em até 12x sem juros
                         </p>
                       </span>
-                      <h4 className='oldPrice'>R${price},00 </h4>
+                      <h3 className='oldPrice'>R${price},00 </h3>
                       <h4 className='oldPricereal'> R$ {novo_price},00</h4>
                     </div>
                   </Link>
@@ -696,7 +699,7 @@ export const Products = () => {
                           <FaCreditCard className='cartao'/> Em até 12x sem juros
                         </p>
                       </span>
-                      <h4 className='oldPrice'>R${price},00 </h4>
+                      <h3 className='oldPrice'>R${price},00 </h3>
                       <h4 className='oldPricereal'> R$ {novo_price},00</h4>
                     </div>
                   </Link>
@@ -731,7 +734,7 @@ export const Products = () => {
                           <FaCreditCard className='cartao'/> Em até 12x sem juros
                         </p>
                       </span>
-                      <h4 className='oldPrice'>R${price},00 </h4>
+                      <h3 className='oldPrice'>R${price},00 </h3>
                       <h4 className='oldPricereal'> R$ {novo_price},00</h4>
                     </div>
                     

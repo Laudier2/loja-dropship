@@ -47,11 +47,14 @@ export const Camisetaf = () => {
   function LocalSto(e) {
 
     localStorage.removeItem("id")
+    localStorage.removeItem("bar_code")
+    localStorage.removeItem("categoryId")
 
     const dados = JSON.stringify(e)
     const id = JSON.parse(dados)
     localStorage.setItem("id", id.id)
     localStorage.setItem("categoryId", e.id)
+    localStorage.setItem("bar_code", e.bar_code)
 
   }
 

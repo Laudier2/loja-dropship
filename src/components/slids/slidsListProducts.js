@@ -4,6 +4,11 @@ export const CoontainerSlids = styled.div`
   width: 100%;
   margin: 0 auto;
   background: yellow;
+  margin-top: -40px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: -40px;
+  }
 
   & .carousel {
     display: flex;

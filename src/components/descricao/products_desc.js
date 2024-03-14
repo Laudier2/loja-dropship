@@ -105,9 +105,6 @@ export const ProductImageMini = styled.div`
       @media screen and (max-width: 1168px) {
         width: 6vw;
         height: 6vw;
-      }
-
-      @media screen and (max-width: 1068px) {
         margin-left: -40px;
       }
 
@@ -122,6 +119,10 @@ export const ProductImageMini = styled.div`
       }
 
     }
+  }
+
+  @media screen and (max-width: 968px) {
+    margin-top: 30px;
   }
 
   @media screen and (max-width: 768px) {

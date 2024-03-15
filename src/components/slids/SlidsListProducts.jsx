@@ -56,7 +56,7 @@ export const SlidsListProducts = () => {
     carrousel.current.scrollLeft += carrousel.current.offsetWidth
   }
 
-  console.log(data, "l")
+  //console.log(data)
   
   return (
     <>

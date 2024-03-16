@@ -58,6 +58,7 @@ export const DescricaoMini = () => {
 
   const localId = localStorage.getItem("id")
   //const BNT = localStorage.getItem("name")
+  //const BNT = localStorage.getItem("name")
 
   //const productFilter = product.filter(product => product)
   //const prodFilter = [...productFilter]

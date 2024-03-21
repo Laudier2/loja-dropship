@@ -52,12 +52,13 @@ export const ProductDescImage = styled.div`
     }
   }
 
-  @media screen and (max-width: 1068px) {
+  @media screen and (max-width: 1168px) {
    
-    margin-top: -20px;
+    margin-top: -30px;
+    margin-left: -40px;
 
     & img {
-      width: 45vw;
+      width: 60vw;
       //object-fit: cover;
       height: 55vh;
       margin-left: 40px;
@@ -102,9 +103,10 @@ export const ProductImageMini = styled.div`
     
 
       @media screen and (max-width: 1168px) {
-        width: 6vw;
-        height: 6vw;
+        width: 9vw;
+        height: 9vw;
         margin-left: -40px;
+        display: none;
       }
 
       @media screen and (max-width: 968px) {

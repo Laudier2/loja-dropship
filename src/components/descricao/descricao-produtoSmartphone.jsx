@@ -285,9 +285,10 @@ export const DescricaoMini = () => {
                     pagination={{ onClick: true }}
                   >
                     {imgList.map(imgData => (
-                      <SwiperSlide key={id}>
-                        <img src={imgData == "" ? image[0] : imgData} className='imgPrincipal' id="logo" alt="imgPricipal" />
-                      </SwiperSlide>
+                      imgData == null ? image[0] : 
+                        <SwiperSlide key={id}>
+                          <img src={imgData} className='imgPrincipal' id="logo" alt="imgPricipal" />
+                        </SwiperSlide>
                     ))}
                   </Swiper>
                  </ProductDescImage>

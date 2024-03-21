@@ -713,6 +713,43 @@ export const Products = () => {
               </section>  
               
             </ProductProd>
+
+            <ProductProd>
+                <section>
+                
+                <h2 className='ml-3'>{categoroy == "" ? "" : NameCategory[16]}</h2>
+              
+                {categoroyRelogio.map(res => {
+    
+                const { id, name, image, price } = res.products;
+    
+                let percentual = 0.25;
+                let aumento = price * percentual;
+                let novo_price = price - aumento;
+    
+                return (
+                  <Link to="/desc" onClick={() => LocalSto(res.products)}>
+                    <div key={id}>
+                      <img src={image[0]} alt="img" />
+                      <h5>{name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src="card.jpg" alt="img" className="cartImg" />
+                      <span>
+                        <p className='p'>
+                          <FaCreditCard className='cartao'/> Em até 12x sem juros
+                        </p>
+                      </span>
+                      <h3 className='oldPrice'>R${price},00 </h3>
+                      <h4 className='oldPricereal'> R$ {novo_price},00</h4>
+                    </div>
+                    
+                  </Link>
+                  )
+                })
+              }
+              </section>  
+              
+            </ProductProd>
           </>
         }
       </>

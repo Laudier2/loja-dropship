@@ -21,22 +21,13 @@ export const ProductContainerPai = styled.div`
 export const ProductDescImage = styled.div`
   grid-area: l;
   width: 50vw;
-  margin-left: 110px;
- 
+  height: 50vh;
+    
   & img {
     width: 42vw;
     //object-fit: cover;
     height: 80vh;
     margin-left: 80px;
-  }
-
-  
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  @media (max-width: 768px) {
-    margin-left: 0px
   }
 
 
@@ -67,16 +58,27 @@ export const ProductDescImage = styled.div`
 
 
   @media screen and (max-width: 968px) {
-    margin-top: -1660px;
-    width: 100vw;
-    height: 0vh;
-    margin-left: -20px;
+    margin-top: -5px;
+   
+    & img {
+      width: 45vw;
+      //object-fit: cover;
+      height: 55vh;
+      margin-left: 40px;
+      margin-top: 20px;
+    }
+  }
+
+  
+  @media screen and (max-width: 768px) {
+    margin-top: -2050px;
 
     & img {
-      width: 102%;
-      //object-fit: cover;
-      height: 65vh;
-      margin-left: 1px;
+      width: 200%;
+      object-fit: cover;
+      height: 60vh;
+      margin-left: -50px;
+      margin-top: 150px;
     }
   }
 
@@ -85,16 +87,15 @@ export const ProductImageMini = styled.div`
   grid-area: l;
   margin-top: 0px;
   margin-left: -20px;
-  width: 1px;
 
   & .imgMini {
     margin: 1px;
-
     & img {
       width: 5vw;
       height: 5vw;
       object-fit: cover;
-      //display: grid;
+      display: grid;
+      border: solid 0.5px;
 
       @media (max-width: 1750px) {
         margin-left: -40px;
@@ -116,24 +117,19 @@ export const ProductImageMini = styled.div`
         width: 12vw;
         height: 12vw;
       }
-    }
-    
-    @media screen and (max-width: 768px) {
-      margin-left: 30px;
-      height: 10vh;
-      display: none;
-      margin-top: -535px;
-      position: absolute;
-  
-      & img {
-        width: 20vw;
-        height: 22vw;
-        //object-fit: cover;
-        margin-left: -55px;
-      }
+
     }
   }
 
+  @media screen and (max-width: 968px) {
+    margin-top: 30px;
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: -1441px;
+    margin-left: 30px;
+  }
 `
 export const ProductDescPrimary = styled.div`
   width: 17vw;
@@ -157,9 +153,14 @@ export const ProductDescPrimary = styled.div`
   }
 
   @media (max-width: 970px) {
-    margin-top: 450px;
+
+  }
+
+  @media (max-width: 780px) {
+    margin-top: 600px;
     margin-left: 0px;
-    width: 100%;
+    width: 95%;
+    
   }
 
   & button {
@@ -178,6 +179,7 @@ export const ProductDescPrimary = styled.div`
 
   margin: auto;
     & h5 {
+      width: 75%;
       & strong {
         font-size: 1.2vw;
 
@@ -208,9 +210,14 @@ export const ProductDescPrimary2 = styled.div`
   }
 
   @media (max-width: 970px) {
-    margin-top: 1040px;
-    margin-left: -10px;
-    width: 100%;
+    width: 20vw;
+    margin-left: 250px;
+  }
+
+  @media (max-width: 780px) {
+    margin-top: 1200px;
+    margin-left: 0px;
+    width: 86%;
   }
 
   & button {
@@ -268,7 +275,7 @@ export const ProductDescSecudanry = styled.div`
         box-shadow: 0 0 0 0.3px black;
       }
 
-      @media (max-width: 923px) {
+      @media (max-width: 768px) {
         font-size: 3.6vw;
       }
     }
@@ -286,10 +293,14 @@ export const ProductDescSecudanry = styled.div`
   }
 
   @media (max-width: 970px) {
-    margin-top: 50px;
-    margin-left: -10px;
+  
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 200px;
+    margin-left: 0px;
     text-align: justify;
-    width: 100%;
+    width: 86%;
     font-size: 2.8vw;
 
     & h1 {
@@ -304,7 +315,6 @@ export const ProductDescSecudanry = styled.div`
       font-size: 4vw;
     }
   }
-
 `
 
 export const ProductDescAvaliation = styled.div`

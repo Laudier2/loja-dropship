@@ -34,6 +34,17 @@ import { Bone } from "./components/categorys/Bone";
 import { Eletronica } from "./components/categorys/Eletronica";
 import { Smartphone } from "./components/categorys/Smartphone";
 import { DescricaoMini } from "./components/descricao/descricao-produtoSmartphone";
+import { register } from "swiper/element/bundle"
+
+register()
+// eslint-disable-next-line import/first
+import 'swiper/css';
+// eslint-disable-next-line import/first
+import 'swiper/css/navigation';
+// eslint-disable-next-line import/first
+import 'swiper/css/pagination';
+// eslint-disable-next-line import/first
+import 'swiper/css/scrollbar';
 
 // Conexão com google Analytct
 const TRACKING_ID = "G-YJVYCLYTD3" 

@@ -60,11 +60,13 @@ export function SlidsDescriptionOfertas() {
   const hendleLeftClik = (e) => {
     e.preventDefault()
     carrousel.current.scrollLeft -= carrousel.current.offsetWidth
+    console.log(e, "teste")
   }
 
   const hendleRigthClik = (e) => {
     e.preventDefault()
     carrousel.current.scrollLeft += carrousel.current.offsetWidth
+    console.log(e, "teste")
   }
 
   return (

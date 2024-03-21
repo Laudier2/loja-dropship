@@ -66,7 +66,7 @@ export const ProductDescImage = styled.div`
   }
 
 
-  @media screen and (max-width: 968px) {
+  @media screen and (max-width: 923px) {
     margin-top: -1660px;
     width: 100vw;
     height: 0vh;
@@ -75,7 +75,7 @@ export const ProductDescImage = styled.div`
     & img {
       width: 102%;
       //object-fit: cover;
-      height: 65vh;
+      height: 53vh;
       margin-left: 1px;
     }
   }

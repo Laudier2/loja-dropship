@@ -175,7 +175,7 @@ export const ProductDescPrimary = styled.div`
   }
 
   @media (max-width: 970px) {
-    margin-top: 360px;
+    margin-top: 490px;
     margin-left: 0px;
     width: 100%;
   }

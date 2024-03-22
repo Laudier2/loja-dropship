@@ -45,6 +45,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 // eslint-disable-next-line import/first
 import 'swiper/css/scrollbar';
+// eslint-disable-next-line import/first
+//import 'swiper/css/effect-flip';
+
 
 // Conexão com google Analytct
 const TRACKING_ID = "G-YJVYCLYTD3" 

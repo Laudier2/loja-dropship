@@ -26,6 +26,11 @@ import { ProductContainerPai, ProductDescImage, ProductDescPrimary, ProductDescP
 import Modal from '../modal/Modal';
 import { ContainerComentario } from './stylesComentarios';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import {  } from 'swiper';
+import { ModalImageComentario } from '../modal/ModalImageComentario';
+
+import 'swiper/css/effect-creative';
+import { EffectCreative } from 'swiper/modules';
 
 export const DescricaoMini = () => {
   //window.location.reload()
@@ -281,11 +286,21 @@ export const DescricaoMini = () => {
               <>
                 <ProductDescImage>
                   <Swiper 
-                    slidesPerView={1}
-                    pagination={{ onClick: true }}
+                    grabCursor={true}
+                    effect={'creative'}
+                    creativeEffect={{
+                      prev: {
+                        shadow: true,
+                        translate: [0, 0, -400],
+                      },
+                      next: {
+                        translate: ['100%', 0, 0],
+                      },
+                    }}
+                    modules={[EffectCreative]}
                   >
                     {imgList.map(imgData => (
-                      imgData == null ? image[0] : 
+                      imgData == "" ? image[0] : 
                         <SwiperSlide key={id}>
                           <img src={imgData} className='imgPrincipal' id="logo" alt="imgPricipal" />
                         </SwiperSlide>
@@ -553,6 +568,15 @@ export const DescricaoMini = () => {
                   {dataProductFilterComente.map(rescoment => {
 				
                     const { name, image, message, imgName } = rescoment
+
+                    const listImagens = [
+                      image[0],
+                      image[1],
+                      image[2],
+                      image[3],
+                      image[4],
+                      image[5]
+                    ]
                     
                     return (
                       <ContainerComentario>
@@ -570,14 +594,54 @@ export const DescricaoMini = () => {
                             <div>
                                 <p>{message}</p>
                             </div>
+                            
                             <div>
-                              {image[0] ? <img src={image[0]} alt="comentarios" className="imgList" /> : ""}
-                              {image[1] ? <img src={image[1]} alt="comentarios" className="imgList" /> : ""}
-                              {image[2] ? <img src={image[2]} alt="comentarios" className="imgList" /> : ""}
-                              {image[3] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
-                              {image[4] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
-                              {image[5] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
-                            </div>
+                              <button
+                                type="button"
+                                className="btnButtonModalImageComentario"
+                                data-bs-toggle="modal"
+                                data-bs-target="#exampleModalImagesComentario"
+                      
+                              >
+                                <div>
+                                  {image[0] ? <img src={image[0]} alt="comentarios" className="imgList" /> : ""}
+                                  {image[1] ? <img src={image[1]} alt="comentarios" className="imgList" /> : ""}
+                                  {image[2] ? <img src={image[2]} alt="comentarios" className="imgList" /> : ""}
+                                  {image[3] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
+                                  {image[4] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
+                                  {image[5] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
+                                </div>
+                              </button>
+                              <br /><br /><br />
+                              <h1>Avaliações Do Produto</h1>
+
+                              <div
+                                class="modal fade"
+                                id="exampleModalImagesComentario"
+                                tabindex="-1"
+                                aria-labelledby="exampleModalLabel"
+                                aria-hidden="true"
+                              >
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      
+                                      <button
+                                        type="button"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                        className="btn-outline-secondary"
+                                        style={{border: "none", fontSize: "30px", borderWidth: "bold", color: "red"}}
+                                      >X</button>
+                                    </div>
+                                    <div class="modal-body text-dark">
+                                      <ModalImageComentario data={listImagens} />
+                                    </div>
+                                   
+                                  </div>
+                                </div>
+                              </div>
+                              </div>
                           </ContainerComentario>
                         )
                       })}

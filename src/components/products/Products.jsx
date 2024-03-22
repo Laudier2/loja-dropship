@@ -163,7 +163,14 @@ export const Products = () => {
 
   const NameCategory = categoroy.map(res => res.name)
 
-  console.log(categoroy)
+  //console.log(categoroy)
+
+ /*const scrollToTop = () => {
+    window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+ }*/
 
   return (
     <>

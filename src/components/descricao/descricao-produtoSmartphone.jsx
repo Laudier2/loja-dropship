@@ -184,7 +184,7 @@ export const DescricaoMini = () => {
     window.scroll({
       top: 100,
     });
-
+    
   },[])
 
   const Todes = [divideColorArrey[0], divideColorArrey[1], divideColorArrey[2], divideColorArrey[3], divideColorArrey[4], divideColorArrey[5], divideColorArrey[6]]
@@ -253,6 +253,17 @@ export const DescricaoMini = () => {
   </LoadingPage>
 );
 
+const scrollToTop = () => {
+  window.scrollTo({
+  top: 0,
+  behavior: 'smooth'
+})
+}
+
+setTimeout(() => {
+  scrollToTop()
+},300)
+
   return (
     <>
       <Header/>
@@ -298,10 +309,11 @@ export const DescricaoMini = () => {
                       },
                     }}
                     modules={[EffectCreative]}
+                    className='swiper'
                   >
                     {imgList.map(imgData => (
                       imgData == "" ? image[0] : 
-                        <SwiperSlide key={id}>
+                        <SwiperSlide key={id} style={{background: "white"}}>
                           <img src={imgData} className='imgPrincipal' id="logo" alt="imgPricipal" />
                         </SwiperSlide>
                     ))}
@@ -573,9 +585,7 @@ export const DescricaoMini = () => {
                       image[0],
                       image[1],
                       image[2],
-                      image[3],
-                      image[4],
-                      image[5]
+                      image[3]
                     ]
                     
                     return (

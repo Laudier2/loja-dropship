@@ -50,8 +50,9 @@ export function SlidsDescriptionOfertas() {
     localStorage.setItem("id", id.id)
     localStorage.setItem("categoryId", e.id)
     localStorage.setItem("bar_code", e.bar_code)
-
+    
     window.location.reload()
+
 
   }
 

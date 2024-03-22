@@ -22,6 +22,11 @@ export const ProductDescImage = styled.div`
   grid-area: l;
   width: 50vw;
   margin-left: 110px;
+  background: white;
+
+  & .swiper {
+      width: 90%;
+    }
  
   & img {
     width: 42vw;
@@ -43,11 +48,16 @@ export const ProductDescImage = styled.div`
   @media (max-width: 1750px) {
     margin-top: -20px;
 
+    & .swiper {
+      width: 90%;
+      height: 100vh;
+    }
+
     & img {
       width: 45vw;
       //object-fit: cover;
-      height: 80vh;
-      margin-left: 40px;
+      height: 100vh;
+      margin-left: 20px;
       margin-top: 20px;
     }
   }
@@ -55,10 +65,10 @@ export const ProductDescImage = styled.div`
   @media screen and (max-width: 1168px) {
    
     margin-top: -30px;
-    margin-left: -40px;
+    margin-left: -30px;
 
     & img {
-      width: 60vw;
+      width: 55vw;
       //object-fit: cover;
       height: 55vh;
       margin-left: 40px;
@@ -68,10 +78,16 @@ export const ProductDescImage = styled.div`
 
 
   @media screen and (max-width: 923px) {
-    margin-top: -1660px;
+    margin-top: -1640px;
     width: 100vw;
     height: 0vh;
     margin-left: -20px;
+
+
+  & .swiper {
+    height: 60vh;
+    background: white;
+  }
 
     & img {
       width: 102%;
@@ -85,7 +101,7 @@ export const ProductDescImage = styled.div`
 export const ProductImageMini = styled.div`
   grid-area: l;
   margin-top: 0px;
-  margin-left: -20px;
+  margin-left: 70px;
   width: 1px;
 
   & .imgMini {
@@ -159,7 +175,7 @@ export const ProductDescPrimary = styled.div`
   }
 
   @media (max-width: 970px) {
-    margin-top: 450px;
+    margin-top: 360px;
     margin-left: 0px;
     width: 100%;
   }

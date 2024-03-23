@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const ContainerComentario = styled.div`
   margin-top:60px;
 
+  & .btnButtonModalImageComentario {
+    border: none;
+  }
+
   & h1 {
     color: #222222;
     text-align: center;
@@ -61,6 +65,10 @@ export const ContainerComentario = styled.div`
       height: 80px;
       margin: 3px;
       border-radius: 8px;
+    }
+
+    &:hover {
+      border: solid 0.5px;
     }
   }
 

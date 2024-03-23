@@ -614,7 +614,9 @@ setTimeout(() => {
                                 <div>
                                   {imgList[0].map(resImg => (
                                     //console.log(resImg, "res 2")
-                                    <img src={resImg} alt="comentarios" className="imgList" />
+                                    
+                                      resImg == "" ? "" : <img src={resImg} alt="comentarios" className="imgList" />
+                                    
                                     ))}
                                 </div>
                               </button>

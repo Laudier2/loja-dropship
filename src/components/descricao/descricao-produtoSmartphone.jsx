@@ -35,9 +35,10 @@ import { EffectCreative } from 'swiper/modules';
 export const DescricaoMini = () => {
   //window.location.reload()
    
-  const [dataCores, setDatacores] = useState('')
-  const [dataTamanho, setTamanho] = useState('')
+  const [ dataCores, setDatacores ] = useState('')
+  const [ dataTamanho, setTamanho ] = useState('')
   const [ products, setProducts ] = useState([])
+  const [ dataComente, setDatacomente ] = useState([])
 
   // eslint-disable-next-line no-unused-vars
   const { isLoading, data } = useQuery("meuproduto", async () => {
@@ -57,7 +58,7 @@ export const DescricaoMini = () => {
   const navigate = useNavigate()
 
   const cart = useSelector(cartItems => cartItems.cart.cartItems.length)
-  //const product = useSelector(productsSlice => productsSlice.products.items)
+  const product = useSelector(productsSlice => productsSlice.products.items)
 
   const localId = localStorage.getItem("id")
   //const BNT = localStorage.getItem("name")
@@ -68,11 +69,11 @@ export const DescricaoMini = () => {
   //const dataProductFilter2 = prodFilter.filter(productData => (productData.id === localId))
 
 
-  const productFilter2 = products.filter(product => product)
-  const prodFilter2 = [...productFilter2]
+  //const productFilter2 = products.filter(product => product)
+  //const prodFilter2 = [...productFilter2]
 
-  const filterProduct = prodFilter2.map(pro => pro.product)
-  const dataProductFilter = filterProduct.filter(productData => (productData.id === localId))
+  //const filterProduct = prodFilter2.map(pro => pro.product)
+  const dataProductFilter = product.filter(productData => (productData.id === localId))
     
   
   const priceFilter = dataProductFilter.map(pri => pri.price)
@@ -84,6 +85,8 @@ export const DescricaoMini = () => {
 
   const filterProductComente = products.map(pro => pro.comentarios)
 	const dataProductFilterComente = filterProductComente.filter(productData => (productData.idProduct == localId))
+
+  //console.log(dataProductFilter)
 
   const dispatch = useDispatch()
 
@@ -581,12 +584,7 @@ setTimeout(() => {
 				
                     const { name, image, message, imgName } = rescoment
 
-                    const listImagens = [
-                      image[0],
-                      image[1],
-                      image[2],
-                      image[3]
-                    ]
+                    const imgList = [image]
                     
                     return (
                       <ContainerComentario>
@@ -610,42 +608,39 @@ setTimeout(() => {
                                 type="button"
                                 className="btnButtonModalImageComentario"
                                 data-bs-toggle="modal"
-                                data-bs-target="#exampleModalImagesComentario"
-                      
+                                data-bs-target="#exampleModalImagesComentario"     
+                                onClick={() => setDatacomente(image)}                 
                               >
                                 <div>
-                                  {image[0] ? <img src={image[0]} alt="comentarios" className="imgList" /> : ""}
-                                  {image[1] ? <img src={image[1]} alt="comentarios" className="imgList" /> : ""}
-                                  {image[2] ? <img src={image[2]} alt="comentarios" className="imgList" /> : ""}
-                                  {image[3] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
-                                  {image[4] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
-                                  {image[5] ? <img src={image[3]} alt="comentarios" className="imgList" /> : ""}
+                                  {imgList[0].map(resImg => (
+                                    //console.log(resImg, "res 2")
+                                    <img src={resImg} alt="comentarios" className="imgList" />
+                                    ))}
                                 </div>
                               </button>
-                              <br /><br /><br />
-                              <h1>Avaliações Do Produto</h1>
+                              <br />
 
                               <div
-                                class="modal fade"
+                                class="modal fade bg-transparent"
                                 id="exampleModalImagesComentario"
                                 tabindex="-1"
                                 aria-labelledby="exampleModalLabel"
                                 aria-hidden="true"
                               >
                                 <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
+                                  <div class="modal-content bg-transparent border-0">
+                                    <div class="modal-header border-0">
                                       
                                       <button
                                         type="button"
                                         data-bs-dismiss="modal"
                                         aria-label="Close"
-                                        className="btn-outline-secondary"
-                                        style={{border: "none", fontSize: "30px", borderWidth: "bold", color: "red"}}
+                                        className="btn-outline-secondary bg-transparent"
+                                        style={{border: "none", fontSize: "30px", borderWidth: "bold", color: "aqua"}}
                                       >X</button>
                                     </div>
                                     <div class="modal-body text-dark">
-                                      <ModalImageComentario data={listImagens} />
+                                      <ModalImageComentario data={dataComente} />
                                     </div>
                                    
                                   </div>

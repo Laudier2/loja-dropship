@@ -7,6 +7,7 @@ import api from "../../api/api";
 import { FaCreditCard } from "react-icons/fa";
 
 export function SlidsDescriptionOfertas() {
+  //console.clear()
 
   const [ data, setData ] = useState([])
   const carrousel = useRef(null)
@@ -37,7 +38,7 @@ export function SlidsDescriptionOfertas() {
   const filterProductBarcode = dataProductFilter.map(pro => pro.bar_code)
   const dataProductFilterBarcodeList = filterProduct.filter(productData => (productData.bar_code == filterProductBarcode[0][0]))
 
-  console.log(dataProductFilterBarcodeList)
+  //console.log(dataProductFilterBarcodeList)
 
   function LocalSto(e) {
 
@@ -61,13 +62,13 @@ export function SlidsDescriptionOfertas() {
   const hendleLeftClik = (e) => {
     e.preventDefault()
     carrousel.current.scrollLeft -= carrousel.current.offsetWidth
-    console.log(e, "teste")
+    //console.log(e, "teste")
   }
 
   const hendleRigthClik = (e) => {
     e.preventDefault()
     carrousel.current.scrollLeft += carrousel.current.offsetWidth
-    console.log(e, "teste")
+    //console.log(e, "teste")
   }
 
   return (

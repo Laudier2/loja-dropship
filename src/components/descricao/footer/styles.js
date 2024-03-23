@@ -3,7 +3,11 @@ import styled from "styled-components";
 export const ContainerFooterPrimary = styled.div`
   margin-top: 1300px;
   width: 100%;
-  margin-top: 5%;
+
+  @media screen and (max-width: 1750px) {
+    margin-top: 2000px;
+    width: 100%;
+  }
 
   @media screen and (max-width: 768px) {
     margin-top: 2600px;

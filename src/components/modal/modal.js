@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const ConatinerModal = styled.div`
-
-
   
   & div {
 
@@ -66,6 +64,10 @@ export const ConatinerModal = styled.div`
 
    
   }
+`
+
+export const ConatinerModalImageSlids = styled.div`
+  background: transparent;
 `
 
 export const CFontainerImageProduct = styled.div`

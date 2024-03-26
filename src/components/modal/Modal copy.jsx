@@ -13,11 +13,15 @@ const Modal = () => {
 
   const [images, setImages] = useState([]);
   const [imagesLista1, setLista1] = useState([]);
-  const [imagesLista2] = useState([]);
- 
+  const [imagesLista2, setLista2] = useState([]);
+  const [imagesLista3, setLista3] = useState([]);
+  const [imagesLista4, setLista4] = useState([]);
+  const [imagesLista5, setLista5] = useState([]);
   const [imageUm, setImageUm] = useState([])
-  const [imageDois] = useState([])
-  
+  const [imageDois, setImageDois] = useState([])
+  const [imageTres, setImageTres] = useState([])
+  const [imageQuantro, setImageQuantro] = useState([])
+  const [imageSinco, setImageSinco] = useState([])
   const [name, setName] = useState([]);
   const [estrela, setEstrela] = useState([]);
   const [message, setMessage] = useState([]);
@@ -43,7 +47,7 @@ const Modal = () => {
     //console.log(imageList)
   };
 
- /* const onChangeS =(imageList, addUpdateIndex) => {
+  const onChangeS =(imageList, addUpdateIndex) => {
     // data for submit
     
     setImageSinco(imageList[0].data_url);
@@ -68,7 +72,7 @@ const Modal = () => {
   
     setImageQuantro(imageList[0].data_url);
     setLista4(imageList);
-  };*/
+  };
 
   const onChange4 = (e) => {
     // data for submit
@@ -316,7 +320,7 @@ const Modal = () => {
           <ImageUploading
             multiple
             value={imagesLista2}
-            onChange={onChange0}
+            onChange={onChange1}
             maxNumber={maxNumber}
             dataURLKey="data_url"
           >

@@ -67,7 +67,7 @@ export const Smartphone = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/3453ecaa-69b5-4e8e-bfd4-04499395e0c4")
+      const req = await api.get("/category/840f2aa4-349b-4e92-9ce0-68898969ccd5")
       const res = await req.data[0].products_categories
 
       setCategory(resName)

@@ -67,7 +67,7 @@ export const Bone = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/5941bdc7-89c7-4d8e-b09a-39311774e29d")
+      const req = await api.get("/category/d44def2c-c485-4560-86aa-f8de20d3ed6d")
       const res = await req.data[0].products_categories
 
       setCategory(resName)

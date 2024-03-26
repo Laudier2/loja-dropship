@@ -68,7 +68,7 @@ export const Conjuntof = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/aeaa62f5-bac8-45d3-86fc-4ed7a8307c7f")
+      const req = await api.get("/category/53f5596d-9ad3-4c0e-979d-03e8a831c615")
       const res = await req.data[0].products_categories
 
       setCategory(resName)

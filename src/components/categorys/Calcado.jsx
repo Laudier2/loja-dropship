@@ -68,7 +68,7 @@ export const Calcado = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/f5379b77-d56e-470c-950b-662221ed54cf")
+      const req = await api.get("/category/dafc819d-5cd0-438c-b1cf-c73e48f583f7")
       const res = await req.data[0].products_categories
 
       setCategory(resName)

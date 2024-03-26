@@ -69,7 +69,7 @@ export const Intima = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/2b55dd57-4b1a-4b3f-9cee-4fb1fab7b85d")
+      const req = await api.get("/category/e990a69b-f39c-49ce-aa66-c583a363bd92")
       const res = await req.data[0].products_categories
 
       setCategory(resName)

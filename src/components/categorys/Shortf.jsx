@@ -68,7 +68,7 @@ export const Shortf = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/cc3ca18b-836f-447d-a2cf-56046e3e8fb0")
+      const req = await api.get("/category/c3de65d9-a407-4fae-bd69-769641206f55")
       const res = await req.data[0].products_categories
 
       setCategory(resName)

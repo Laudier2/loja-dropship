@@ -69,7 +69,7 @@ export const Calcaf = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/eb40635e-ebe4-4e82-9b25-2811aed37c91")
+      const req = await api.get("/category/8eeaacad-0415-408c-bab9-e927592fad13")
       const res = await req.data[0].products_categories
 
       setCategory(resName)

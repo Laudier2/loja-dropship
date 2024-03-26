@@ -69,7 +69,7 @@ export const AudioVideo = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/519c1c14-0508-4231-b77b-de73a469c342")
+      const req = await api.get("/category/0caf9a82-9e0b-4e69-b5e7-28f279da3574")
       const res = await req.data[0].products_categories
 
       setCategory(resName)

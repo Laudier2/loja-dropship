@@ -69,7 +69,7 @@ export const Relogio = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/a0eb37e8-ff8c-43ec-8759-a6e3800f2948")
+      const req = await api.get("/category/1a7e65e0-2ffa-4641-aecf-5f6a7996afdc")
       const res = await req.data[0].products_categories
 
       setCategory(resName)

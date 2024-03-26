@@ -67,7 +67,7 @@ export const Shortm = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/25d32c83-91ba-43a9-8e89-76066a4168bf")
+      const req = await api.get("/category/53f5596d-9ad3-4c0e-979d-03e8a831c615")
       const res = await req.data[0].products_categories
 
       setCategory(resName)

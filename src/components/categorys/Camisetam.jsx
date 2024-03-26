@@ -69,7 +69,7 @@ export const Camisetam = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/59733ffe-2c96-4acb-aba0-e58045688789")
+      const req = await api.get("/category/a6589306-ab8d-4000-b36c-f1d85392af2a")
       const res = await req.data[0].products_categories
 
       setCategory(resName)

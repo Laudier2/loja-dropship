@@ -5,26 +5,31 @@ import React, { useState } from 'react';
 import ImageUploading from 'react-images-uploading';
 import { ImCloudUpload } from "react-icons/im";
 import { CFontainerImageProduct, ConatinerModal } from './modal';
-//import api from '../../api/api';
-//import { toast } from 'react-toastify';
-//import api from '../../api/api';
-//import { toast } from 'react-toastify';
-
+import api from '../../api/api';
+import { toast } from 'react-toastify';
 const Modal = () => {
 
   const localId = localStorage.getItem("id")
 
   const [images, setImages] = useState([]);
-  const [images0, setImages0] = useState([]);
-  //const [images1, setImages1] = useState([]);
-  //const [images2, setImages2] = useState([]);
-  //const [images3, setImages3] = useState([]);
+  const [imagesLista1, setLista1] = useState([]);
+  const [imagesLista2, setLista2] = useState([]);
+  const [imagesLista3, setLista3] = useState([]);
+  const [imagesLista4, setLista4] = useState([]);
+  const [imagesLista5, setLista5] = useState([]);
+  const [imageUm, setImageUm] = useState([])
+  const [imageDois, setImageDois] = useState([])
+  const [imageTres, setImageTres] = useState([])
+  const [imageQuantro, setImageQuantro] = useState([])
+  const [imageSinco, setImageSinco] = useState([])
   const [name, setName] = useState([]);
   const [estrela, setEstrela] = useState([]);
   const [message, setMessage] = useState([]);
   const maxNumber = 69;
   
   //const [data, setData] = useState({});
+
+  //console.log(imageUm)
 
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
@@ -35,26 +40,39 @@ const Modal = () => {
   const onChange0 = (imageList, addUpdateIndex) => {
     // data for submit
   
-    setImages0(imageList);
+    setImageUm(imageList[0].data_url);
+    
+    setLista1(imageList);
+
+    //console.log(imageList)
   };
 
-  /*const onChange1 = (imageList, addUpdateIndex) => {
+  const onChangeS =(imageList, addUpdateIndex) => {
+    // data for submit
+    
+    setImageSinco(imageList[0].data_url);
+    setLista5(imageList);
+  };
+  const onChange1 = (imageList, addUpdateIndex) => {
     // data for submit
    
-    setImages1(imageList);
+    setImageDois(imageList[0].data_url);
+    setLista2(imageList);
   };
 
   const onChange2 = (imageList, addUpdateIndex) => {
     // data for submit
  
-    setImages2(imageList);
+    setImageTres(imageList[0].data_url);
+    setLista3(imageList);
   };
 
   const onChange3 = (imageList, addUpdateIndex) => {
     // data for submit
   
-    setImages3(imageList);
-  };*/
+    setImageQuantro(imageList[0].data_url);
+    setLista4(imageList);
+  };
 
   const onChange4 = (e) => {
     // data for submit
@@ -83,7 +101,6 @@ const Modal = () => {
 
   const dataList = {
     imgName: images,
-    image: [images0],
     name: name,
     estrela: estrela,
     message: message,
@@ -94,7 +111,7 @@ const Modal = () => {
 
     e.preventDefault()
 
-    if(dataList.image[0]){
+    if(imageUm){
 
       //console.log(dataList.image[0][0].data_url)
 
@@ -108,26 +125,45 @@ const Modal = () => {
       //const imgDois = localStorage.getItem("imgDois")
       //const imgTres = localStorage.getItem("imgTres")
 
-      setTimeout(() => {
+      /*setTimeout(() => {
         return;
-      }, 3000);
+      }, 3000);*/
 
-      const imgTodos = dataList.image[0].map(img => img.data_url)
+      //const imgTodos = dataList.image[0].map(img => img.data_url)
+
+     /* const dataListPronto1 = {
+        imgName: dataList.imgName[0].data_url,
+        imageUm: imageUm[0].data_url,
+        imageDois: imageDois[0].data_url,
+        imageTres: imageTres[0].data_url,
+        imageQuantro: imageQuantro[0].data_url,
+        imageSinco: imageSinco[0].data_url,
+        name: name,
+        estrela: estrela,
+        message: message,
+        idProduct: localId
+      }*/
 
       const dataListPronto = {
+        imageUm: imageUm,
+        imageDois: imageDois,
+        imageTres: "imageTres[0].data_url",
+        imageQuantro: "imageQuantro[0].data_url",
+        imageSinco: "imageSinco[0].data_url",
         imgName: dataList.imgName[0].data_url,
-        image: imgTodos,
         name: name,
         estrela: estrela,
         message: message,
         idProduct: localId
       }
 
-      /*setTimeout(() => {
-        setData(dataListPronto)
-      }, 3000);
+      console.log(dataListPronto)
+    
+      await api.post("/comentario", dataListPronto).then((response) => {
+       setTimeout(() => {
+       }, 10000)
 
-      /*await api.post("/comentario", dataListPronto).then((response) => {
+      toast.success(`Obrigado por da sua opinião!`)
 
         const dataRelations2 = {
           id_comentario: `${response.data.comentario.id}`,
@@ -137,7 +173,7 @@ const Modal = () => {
         api.post("/comentariorelation", dataRelations2).then((catego) => {
           toast.success(`O relacionamento foi feito!`)
         })
-      })*/
+      })
 
       //console.log(dataList.image[0][0].data_url)
       console.log(dataListPronto)
@@ -146,7 +182,7 @@ const Modal = () => {
     }
 
 
-    /*await api.post("/comentario", dataList).then((response) => {
+   /* await api.post("/comentario", dataList).then((response) => {
 
       const dataRelations2 = {
         id_comentario: `${response.data.comentario.id}`,
@@ -236,7 +272,7 @@ const Modal = () => {
         <div className='imageName'>
           <ImageUploading
             multiple
-            value={images0}
+            value={imagesLista1}
             onChange={onChange0}
             maxNumber={maxNumber}
             dataURLKey="data_url"
@@ -263,6 +299,7 @@ const Modal = () => {
                 </div>
                 </button>
                 &nbsp;
+                <br />
                 {imageList.map((image, index) => (
                   <div style={{display: "inline-block", margin: 5}}>
                     <div key={index} >
@@ -270,7 +307,54 @@ const Modal = () => {
                     </div>
                     
                     <div>
-                    <button style={{width: 160, fontSize: 15, fontWeight: "bold", margin: "auto", background: "#F62D2D", border: "none", padding: "5px", borderRadius: "6px"}} onClick={() => onImageRemove(index)}>
+                    <button style={{width: 80, fontSize: 15, fontWeight: "bold", margin: "7px", background: "#F62D2D", border: "none", padding: "5px", borderRadius: "6px"}} onClick={() => onImageRemove(index)}>
+                      Remove
+                    </button>
+                  </div>
+                  </div>
+                ))}
+              
+              </div>
+            )}
+          </ImageUploading>
+          <ImageUploading
+            multiple
+            value={imagesLista2}
+            onChange={onChange1}
+            maxNumber={maxNumber}
+            dataURLKey="data_url"
+          >
+            {({
+              imageList,
+              onImageUpload,
+              onImageRemoveAll,
+              onImageUpdate,
+              onImageRemove,
+              isDragging,
+              dragProps,
+            }) => (
+              // write your building UI
+              <div className="">
+                <button
+                  className=''
+                  style={isDragging ? { color: 'red' } : undefined}
+                  onClick={onImageUpload}
+                  {...dragProps}
+                >
+                <div>
+                  <ImCloudUpload style={{width: 30, height: 30, cursor: "pointer", margin: "auto", display: "flex"}}/>
+                </div>
+                </button>
+                &nbsp;
+                <br />
+                {imageList.map((image, index) => (
+                  <div style={{display: "inline-block", margin: 5}}>
+                    <div key={index} >
+                      <img src={image['data_url']} alt="" width="100" height="100" style={{margin: "auto", display: "flex"}}/>
+                    </div>
+                    
+                    <div>
+                    <button style={{width: 80, fontSize: 15, fontWeight: "bold", margin: "7px", background: "#F62D2D", border: "none", padding: "5px", borderRadius: "6px"}} onClick={() => onImageRemove(index)}>
                       Remove
                     </button>
                   </div>

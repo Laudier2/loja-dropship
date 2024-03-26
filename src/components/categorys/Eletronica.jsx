@@ -68,7 +68,7 @@ export const Eletronica = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/a733bfb1-4f80-427e-9e18-eedd3a8cd22e")
+      const req = await api.get("/category/9e2ab53e-57ec-489a-ab7c-5e4cc6a611a7")
       const res = await req.data[0].products_categories
 
       setCategory(resName)

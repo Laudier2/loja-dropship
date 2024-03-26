@@ -69,7 +69,7 @@ export const Estetica = () => {
     (async() => {
       const reqName = await api.get("/category")
       const resName = await reqName.data
-      const req = await api.get("/category/f3d348ca-1cb5-41e9-a9e3-81c719508cad")
+      const req = await api.get("/category/7d4665f9-356d-441a-b08b-d29e2dcf3381")
       const res = await req.data[0].products_categories
 
       setCategory(resName)

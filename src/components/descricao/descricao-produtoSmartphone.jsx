@@ -23,7 +23,7 @@ import { LoadingPage } from '../products/products';
 import { useQuery } from 'react-query';
 import api from '../../api/api';
 import { ProductContainerPai, ProductDescImage, ProductDescPrimary, ProductDescPrimary2, ProductDescSecudanry, ProductImageMini } from './products_desc';
-import Modal from '../modal/Modal';
+//import Modal from '../modal/Modal';
 import { ContainerComentario } from './stylesComentarios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {  } from 'swiper';
@@ -31,6 +31,7 @@ import { ModalImageComentario } from '../modal/ModalImageComentario';
 
 import 'swiper/css/effect-creative';
 import { EffectCreative } from 'swiper/modules';
+import { ModalDrop } from '../modal/ModalDrop';
 
 export const DescricaoMini = () => {
   //window.location.reload()
@@ -38,7 +39,7 @@ export const DescricaoMini = () => {
   const [ dataCores, setDatacores ] = useState('')
   const [ dataTamanho, setTamanho ] = useState('')
   const [ products, setProducts ] = useState([])
-  const [ dataComente, setDatacomente ] = useState([])
+  const [ setDatacomente ] = useState([])
 
   // eslint-disable-next-line no-unused-vars
   const { isLoading, data } = useQuery("meuproduto", async () => {
@@ -86,7 +87,8 @@ export const DescricaoMini = () => {
   const filterProductComente = products.map(pro => pro.comentarios)
 	const dataProductFilterComente = filterProductComente.filter(productData => (productData.idProduct == localId))
 
-  //console.log(dataProductFilter)
+  //console.log(dataProductFilterComente)
+
 
   const dispatch = useDispatch()
 
@@ -566,7 +568,7 @@ setTimeout(() => {
                           >X</button>
                         </div>
                         <div class="modal-body text-dark">
-                          <Modal />
+                          <ModalDrop />
                         </div>
                         <div class="modal-footer">
                           <button
@@ -582,9 +584,9 @@ setTimeout(() => {
                   </div>
                   {dataProductFilterComente.map(rescoment => {
 				
-                    const { name, image, message, imgName } = rescoment
+                    const { name, message, imageUm, imageDois, imageTres, imageQuantro, imageSinco, imgName } = rescoment
 
-                    const imgList = [image]
+                    const imgList = [imageUm, imageDois, imageTres, imageQuantro, imageSinco ]
                     
                     return (
                       <ContainerComentario>
@@ -612,12 +614,12 @@ setTimeout(() => {
                                 onClick={() => setDatacomente(image)}                 
                               >
                                 <div>
-                                  {imgList[0].map(resImg => (
+                                  {imgList.map(resImg => (
                                     //console.log(resImg, "res 2")
                                     
                                       resImg == "" ? "" : <img src={resImg} alt="comentarios" className="imgList" />
                                     
-                                    ))}
+                                  ))}
                                 </div>
                               </button>
                               <br />
@@ -642,7 +644,7 @@ setTimeout(() => {
                                       >X</button>
                                     </div>
                                     <div class="modal-body text-dark">
-                                      <ModalImageComentario data={dataComente} />
+                                      <ModalImageComentario data={dataProductFilterComente} />
                                     </div>
                                    
                                   </div>

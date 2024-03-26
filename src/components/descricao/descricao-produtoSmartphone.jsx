@@ -39,7 +39,8 @@ export const DescricaoMini = () => {
   const [ dataCores, setDatacores ] = useState('')
   const [ dataTamanho, setTamanho ] = useState('')
   const [ products, setProducts ] = useState([])
-  const [ setDatacomente ] = useState([])
+  const [ datacoment, setDatacomente ] = useState([])
+  console.log(datacoment)
 
   // eslint-disable-next-line no-unused-vars
   const { isLoading, data } = useQuery("meuproduto", async () => {
@@ -584,9 +585,9 @@ setTimeout(() => {
                   </div>
                   {dataProductFilterComente.map(rescoment => {
 				
-                    const { name, message, imageUm, imageDois, imageTres, imageQuantro, imageSinco, imgName } = rescoment
+                    const { name, message, image, imgName } = rescoment
 
-                    const imgList = [imageUm, imageDois, imageTres, imageQuantro, imageSinco ]
+                    const imgList = [image]
                     
                     return (
                       <ContainerComentario>

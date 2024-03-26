@@ -5,9 +5,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 export const ModalImageComentario = ({data}) => {
 
-  //console.log(data)
+  
+  const imgDataRes = [data]
 
-  const imgDataRes = [data[0].imageUm, data[0].imageDois, data[0].imageTres, data[0].imageQuantro, data[0].imageSinco]
+  const res = imgDataRes.map(imgData => imgData[0].image)
+  console.log(res)
 
   return (
     <ConatinerModalImageSlids>
@@ -20,8 +22,8 @@ export const ModalImageComentario = ({data}) => {
           style={{width: "100%", height: "80vh", color: "aqua"}}
         >
           {imgDataRes.map(imgData => (
-            imgData == "" ? data.imageUm : 
-              <SwiperSlide key={imgData} style={{width: "100%", height: "100vh"}}>
+            imgData == "" ? data[0].image[0] : 
+              <SwiperSlide key={imgData[0].image} style={{width: "100%", height: "100vh"}}>
                 <img src={imgData} style={{width: "100%", height: "80vh"}} id="logo" alt="Imagem não encontrada" />
               </SwiperSlide>
           ))}

@@ -305,11 +305,7 @@ const ImageListDrop5 = ({dataTodos}) => {
     if(data){
 
       const dataListPronto = {
-        imageUm: img1,
-        imageDois: img2,
-        imageTres: img3,
-        imageQuantro: img4,
-        imageSinco: img5,
+        image: [img1, img2, img3, img4, img5],
         imgName: dataTodos.imgName,
         name: dataTodos.name,
         estrela: dataTodos.estrela,
